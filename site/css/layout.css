@@ -311,9 +311,28 @@ body {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
-/* A single year has no window to draw on a strip of all time, and the row is
-   worth more to the year's own list - especially on a phone. */
+/*
+ * A year is its own screen, and the top bar belongs to the timeline.
+ *
+ * Search, the date range and the era chips all move a window that the year
+ * view is covering - clicking an era chip while a year is open changes
+ * nothing you can see and does not even update the address. The minimap has
+ * no window to draw. The year view carries its own header, with the year, the
+ * steppers, "View on timeline" and a close button, so none of this is a way
+ * out that is being taken away.
+ *
+ * Hiding .header covers the search, the range and the chips in one go: they
+ * are its children, and absolute positioning does not escape display:none.
+ */
+body[data-year-view="true"] .header,
 body[data-year-view="true"] .minimap { display: none; }
+
+/* A display:none child stops being a grid item, but the row it sat in is
+   still declared, so without this the header leaves a 52px gap behind. */
+body[data-year-view="true"] { grid-template-rows: 1fr; }
+
+/* The padding reserves room for strips that are no longer there. */
+body[data-year-view="true"] .stage { padding-top: 0; }
 
 .minimap__canvas {
   display: block;

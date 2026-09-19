@@ -14,6 +14,8 @@
   gap: var(--step-3);
   flex-wrap: wrap;
   padding: var(--step-3) var(--step-4);
+  /* Nothing sits above this now, so it clears the status bar itself. */
+  padding-top: calc(var(--step-3) + env(safe-area-inset-top, 0px));
   border-bottom: 1px solid var(--rule);
   background: var(--bg-raised);
 }
@@ -153,6 +155,8 @@
     gap: var(--step-2);
     align-items: center;
     padding: var(--step-2) var(--step-3);
+    /* As above: the shorthand would drop the notch inset. */
+    padding-top: calc(var(--step-2) + env(safe-area-inset-top, 0px));
   }
 
   .yearview__year { grid-area: year; font-size: 20px; }
