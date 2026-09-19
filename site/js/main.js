@@ -1,6 +1,6 @@
 import { loadIndex } from './store.js';
 import { createTimeline } from './timeline.js';
-import { formatYear } from './format.js';
+import { formatYear, roundYear } from './format.js';
 
 const stage = document.querySelector('#stage');
 const meta = document.querySelector('#meta');
@@ -31,7 +31,7 @@ async function start() {
     // createTimeline fires onViewChange during construction, so this closure
     // must not reach for the timeline binding it is being passed to.
     const describe = (view) =>
-      `${formatYear(Math.round(view.from))} to ${formatYear(Math.round(view.to))}`;
+      `${formatYear(roundYear(view.from))} to ${formatYear(roundYear(view.to))}`;
 
     const timeline = createTimeline(document.querySelector('#canvas'), {
       entries,
@@ -39,6 +39,9 @@ async function start() {
         meta.textContent = `${entries.length} entries · ${describe(view)}`;
       },
     });
+    // Canvas output cannot be asserted from a unit test without pulling in a
+    // headless-browser dependency, so this handle is the documented way to
+    // verify drawn geometry against view.project() from the console.
     window.__timeline = { timeline, entries, info };
   } catch (error) {
     showError(error);

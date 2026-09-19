@@ -4,6 +4,7 @@ import {
   ANCHORS, ORIGIN_YEAR, presentYear,
   yearToUnit, unitToYear, createView,
 } from './timescale.js';
+import { astro } from './format.js';
 
 describe('yearToUnit / unitToYear', () => {
   test('the origin is 0 and the present is 1', () => {
@@ -169,7 +170,9 @@ describe('ticks are spread across the axis', () => {
     [ORIGIN_YEAR, 2020],
     [-66000000, 2020],
     [-3000, 2020],
+    [-2000, 2000],
     [-600, 600],
+    [-100, 100],
     [1500, 1600],
   ];
 
@@ -235,14 +238,68 @@ describe('deep-time tick labels are round', () => {
 describe('uniform windows produce gap-free ticks', () => {
   // Regression: two unit-space samples could snap to the same year, and the
   // dedupe left a hole - "1550 1551 1552 1553 1554 1556" reads as a bug.
-  const windows = [[1550, 1560], [1500, 1600], [1900, 2000], [-600, -500]];
+  // Windows narrow enough to sit within one or two anchor segments, where the
+  // scale is near-linear and an even year-step is achievable. A window like
+  // [-2000, 2000] crosses three anchor boundaries, so its step legitimately
+  // varies - even *pixel* spacing is the contract there, covered by the
+  // clustering suite above.
+  const windows = [[1550, 1560], [1500, 1600], [1900, 2000], [-600, -500],
+    [-100, 100], [-600, 600], [-20, 20]];
 
   for (const [from, to] of windows) {
     test(`${from}..${to} has an even step`, () => {
       const years = createView(from, to, 1400).ticks().map((t) => t.year);
       const gaps = years.slice(1).map((y, i) => y - years[i]);
-      assert.equal(new Set(gaps).size, 1,
+      const step = Math.min(...gaps);
+      // Every gap is one step, except that a window crossing the BCE/CE seam
+      // skips the year that does not exist and leaves one double gap there.
+      const doubles = gaps.filter((g) => g !== step);
+      assert.ok(doubles.every((g) => g === step * 2) && doubles.length <= 1,
         `uneven steps ${[...new Set(gaps)].join(',')} in ${years.join(' ')}`);
     });
+
+    test(`${from}..${to} labels round years`, () => {
+      for (const year of createView(from, to, 1400).ticks().map((t) => t.year)) {
+        assert.notEqual(year, 0, 'year zero is not a year');
+      }
+    });
   }
+});
+
+describe('the year-zero boundary', () => {
+  // The scale is continuous through 1 BCE / 1 CE, but historical numbering is
+  // not. Every bit of tick arithmetic has to cross that seam astronomically.
+
+  test('span counts elapsed years, not the phantom year zero', () => {
+    // 1 BCE to 1 CE is one elapsed year. Raw subtraction says two, which makes
+    // the one-year zoom clamp stop a full year early.
+    assert.equal(createView(-1, 1, 1000).span, 1);
+    assert.equal(createView(1526, 1857, 1000).span, 331);
+  });
+
+  test('ticks do not throw on a sub-year window straddling year zero', () => {
+    assert.doesNotThrow(() => createView(-1.0046, 0.0047, 1400).ticks());
+  });
+
+  test('ticks survive zooming all the way in on the boundary', () => {
+    let view = createView(-50, 50, 1000);
+    const px = view.project(-1);
+    for (let i = 0; i < 60; i++) view = view.zoomAbout(px, 0.7);
+    assert.doesNotThrow(() => view.ticks());
+    assert.ok(view.span >= 1, `span collapsed to ${view.span}`);
+  });
+
+  test('no tick is ever year zero', () => {
+    for (const [from, to] of [[-100, 100], [-5, 5], [-2000, 2000], [-1, 2]]) {
+      for (const tick of createView(from, to, 1400).ticks()) {
+        assert.notEqual(tick.year, 0, `year zero emitted for ${from}..${to}`);
+      }
+    }
+  });
+
+  test('labels across the boundary read correctly', () => {
+    const labels = createView(-100, 100, 1400).ticks().map((t) => t.label);
+    assert.ok(labels.some((l) => /BCE$/.test(l)), 'expected a BCE label');
+    assert.ok(labels.some((l) => /CE$/.test(l)), 'expected a CE label');
+  });
 });

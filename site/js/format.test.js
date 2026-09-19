@@ -1,6 +1,6 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { astro, historical, duration, formatYear, formatDuration, formatAge } from './format.js';
+import { astro, historical, duration, formatYear, formatDuration, formatAge, roundYear } from './format.js';
 
 describe('year numbering', () => {
   test('astro shifts BCE up by one', () => {
@@ -60,5 +60,27 @@ describe('formatAge', () => {
   });
   test('age across the era boundary', () => {
     assert.equal(formatAge(-5, 5), 'age 9');
+  });
+});
+
+describe('roundYear', () => {
+  test('rounds to a whole year', () => {
+    assert.equal(roundYear(1526.4), 1526);
+    assert.equal(roundYear(-500.6), -501);
+  });
+
+  test('never lands on the year that does not exist', () => {
+    // A view can sit at a fraction of a year either side of the seam; plain
+    // Math.round gives 0 there, and formatYear rejects it.
+    assert.equal(roundYear(0.3), 1);
+    assert.equal(roundYear(0.0047), 1);
+    assert.equal(roundYear(-0.3), -1);
+    assert.equal(roundYear(0), 1);
+  });
+
+  test('a rounded year is always formattable', () => {
+    for (let y = -3; y <= 3; y += 0.1) {
+      assert.doesNotThrow(() => formatYear(roundYear(y)), `failed at ${y}`);
+    }
   });
 });

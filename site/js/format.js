@@ -8,6 +8,15 @@
 /** Geological "before present" is measured from 1950 CE by convention. */
 export const BP_EPOCH = 1950;
 
+/**
+ * Years-before-present at which display switches to ka/Ma/Ga.
+ *
+ * Shared with timescale.js on purpose: tick snapping and tick labelling have to
+ * agree on where deep time starts, or ticks get snapped in one space and
+ * labelled from the other.
+ */
+export const DEEP_TIME_BP = 1e4;
+
 /** Historical year -> astronomical year. Throws on the non-existent year 0. */
 export function astro(year) {
   if (year === 0) throw new RangeError('there is no year zero; use -1 or 1');
@@ -22,6 +31,20 @@ export function historical(astroYear) {
 /** Elapsed years between two historical years (1526..1857 is 331). */
 export function duration(start, end) {
   return astro(end) - astro(start);
+}
+
+/**
+ * Round a possibly fractional year to a whole one, never landing on year 0.
+ *
+ * A view can sit a fraction of a year either side of the BCE/CE seam, and
+ * Math.round lands on 0 there - which formatYear rejects by design. Historical
+ * numbering has no value in (-1, 0), so anything rounding to 0 came from the
+ * CE side and belongs to year 1.
+ */
+export function roundYear(year) {
+  const rounded = Math.round(year);
+  if (rounded !== 0) return rounded;
+  return year < 0 ? -1 : 1;
 }
 
 /** Years before 1950 CE. Negative for years after 1950. */
@@ -44,7 +67,7 @@ export function formatYear(year) {
   const bp = beforePresent(year);
   if (bp >= 1e9) return `${sig(bp / 1e9)} Ga`;
   if (bp >= 1e6) return `${sig(bp / 1e6)} Ma`;
-  if (bp >= 1e4) return `${sig(bp / 1e3)} ka`;
+  if (bp >= DEEP_TIME_BP) return `${sig(bp / 1e3)} ka`;
   if (year < 0) return `${-year} BCE`;
   return year < 1000 ? `${year} CE` : String(year);
 }

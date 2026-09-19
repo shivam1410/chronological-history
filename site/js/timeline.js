@@ -11,7 +11,6 @@ import { createView, ORIGIN_YEAR, presentYear } from './timescale.js';
 import { FLAG_UNCERTAIN_END, FLAG_UNCERTAIN_START } from './store.js';
 
 const AXIS_H = 34;
-const PAD_X = 0;
 const BAR_H = 14;
 const BAR_GAP = 4;
 const MIN_BAR_W = 2;
@@ -22,16 +21,31 @@ const MIN_BAR_W = 2;
 const PLACEHOLDER_ROWS = 18;
 
 export function createTimeline(canvas, { entries = [], onViewChange } = {}) {
+  const laneIds = [...new Set(entries.map((entry) => entry.lane))];
   const ctx = canvas.getContext('2d');
   let view = null;
   let width = 0;
   let height = 0;
   let frame = null;
 
-  function cssVar(name, fallback) {
-    const value = getComputedStyle(document.documentElement)
-      .getPropertyValue(name).trim();
-    return value || fallback;
+  // Resolved once per frame. getComputedStyle forces a style recalc, so calling
+  // it per entry costs a lookup for every bar on every redraw.
+  let theme = null;
+
+  function readTheme() {
+    const style = getComputedStyle(document.documentElement);
+    const read = (name, fallback) => style.getPropertyValue(name).trim() || fallback;
+    const lanes = {};
+    for (const lane of laneIds) lanes[lane] = read(`--lane-${lane}`, '#57524a');
+    return {
+      bg: read('--bg', '#fbfaf7'),
+      bgRaised: read('--bg-raised', '#ffffff'),
+      ink: read('--ink', '#1c1a17'),
+      inkSoft: read('--ink-soft', '#57524a'),
+      rule: read('--rule', '#ddd8ce'),
+      ruleStrong: read('--rule-strong', '#c4bdaf'),
+      lanes,
+    };
   }
 
   function resize() {
@@ -42,12 +56,12 @@ export function createTimeline(canvas, { entries = [], onViewChange } = {}) {
     canvas.width = Math.round(width * dpr);
     canvas.height = Math.round(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    if (view) view = createView(view.from, view.to, width - PAD_X * 2);
+    if (view) view = createView(view.from, view.to, width);
     schedule();
   }
 
   function setView(from, to) {
-    view = createView(from, to, Math.max(1, width - PAD_X * 2));
+    view = createView(from, to, Math.max(1, width));
     schedule();
     onViewChange?.(view);
   }
@@ -58,11 +72,9 @@ export function createTimeline(canvas, { entries = [], onViewChange } = {}) {
   }
 
   function drawAxis() {
-    const ink = cssVar('--ink-soft', '#57524a');
-    const rule = cssVar('--rule', '#ddd8ce');
-    const ruleStrong = cssVar('--rule-strong', '#c4bdaf');
+    const { inkSoft: ink, rule, ruleStrong } = theme;
 
-    ctx.fillStyle = cssVar('--bg-raised', '#fff');
+    ctx.fillStyle = theme.bgRaised;
     ctx.fillRect(0, 0, width, AXIS_H);
     ctx.strokeStyle = rule;
     ctx.lineWidth = 1;
@@ -75,7 +87,7 @@ export function createTimeline(canvas, { entries = [], onViewChange } = {}) {
     ctx.textBaseline = 'middle';
 
     for (const tick of view.ticks()) {
-      const x = Math.round(PAD_X + view.project(tick.year)) + 0.5;
+      const x = Math.round(view.project(tick.year)) + 0.5;
 
       ctx.strokeStyle = tick.major ? ruleStrong : rule;
       ctx.beginPath();
@@ -118,7 +130,7 @@ export function createTimeline(canvas, { entries = [], onViewChange } = {}) {
   }
 
   function laneColour(lane) {
-    return cssVar(`--lane-${lane}`, cssVar('--ink-soft', '#57524a'));
+    return theme.lanes[lane] || theme.inkSoft;
   }
 
   /**
@@ -172,7 +184,7 @@ export function createTimeline(canvas, { entries = [], onViewChange } = {}) {
       const labelW = ctx.measureText(label).width;
       const room = item.point ? width - item.x0 - 10 : item.w - 10;
       if (room > labelW && (item.point || item.w > 40)) {
-        ctx.fillStyle = item.point ? cssVar('--ink', '#000') : contrastInk();
+        ctx.fillStyle = item.point ? theme.ink : contrastInk();
         ctx.textAlign = 'left';
         ctx.fillText(label, item.x0 + (item.point ? 9 : 5), mid);
       }
@@ -182,12 +194,13 @@ export function createTimeline(canvas, { entries = [], onViewChange } = {}) {
   function contrastInk() {
     // Lane fills are mid-tone in both themes; the page background inverts, so
     // the readable text colour on a bar is the background, not the ink.
-    return cssVar('--bg', '#fbfaf7');
+    return theme.bg;
   }
 
   function draw() {
     if (!view) return;
-    ctx.fillStyle = cssVar('--bg', '#fbfaf7');
+    theme = readTheme();
+    ctx.fillStyle = theme.bg;
     ctx.fillRect(0, 0, width, height);
     drawAxis();
     lastVisible = visible();
@@ -201,7 +214,7 @@ export function createTimeline(canvas, { entries = [], onViewChange } = {}) {
   canvas.addEventListener('wheel', (event) => {
     event.preventDefault();
     const rect = canvas.getBoundingClientRect();
-    const px = event.clientX - rect.left - PAD_X;
+    const px = event.clientX - rect.left;
     // Trackpads report fine-grained deltas; clamp so one flick is not a leap.
     const intensity = Math.min(Math.abs(event.deltaY), 50) / 50;
     const factor = event.deltaY < 0 ? 1 - 0.45 * intensity : 1 + 0.8 * intensity;

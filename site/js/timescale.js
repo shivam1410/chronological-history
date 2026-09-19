@@ -11,7 +11,7 @@
  * present), so the curve stays smooth and strictly monotonic end to end.
  */
 
-import { BP_EPOCH, formatYear } from './format.js';
+import { BP_EPOCH, DEEP_TIME_BP, formatYear } from './format.js';
 
 export const ORIGIN_YEAR = -4_540_000_000;
 
@@ -92,7 +92,17 @@ function niceStep(magnitude) {
   return Math.max(1, mult * base);
 }
 
+/** Next rung up the 1/2/5 ladder. */
+function nextStep(step) {
+  const base = 10 ** Math.floor(Math.log10(step) + 1e-9);
+  const mantissa = Math.round(step / base);
+  if (mantissa < 2) return 2 * base;
+  if (mantissa < 5) return 5 * base;
+  return 10 * base;
+}
+
 const TICK_SAMPLES = 9;
+const MAX_TICKS = 12;
 
 /**
  * A window onto the scale, rendered linearly in UNIT space.
@@ -123,7 +133,7 @@ export function createView(from, to, widthPx) {
     let nextFrom = unitToYear(clamp(anchorU - fraction * nextSpan, 0, 1));
     let nextTo = unitToYear(clamp(anchorU + (1 - fraction) * nextSpan, 0, 1));
 
-    if (nextTo - nextFrom < 1) {
+    if (toAstro(nextTo) - toAstro(nextFrom) < 1) {
       // Never collapse below a one-year window.
       const mid = clamp((nextFrom + nextTo) / 2, ORIGIN_YEAR + 0.5, PRESENT - 0.5);
       nextFrom = mid - 0.5;
@@ -141,37 +151,62 @@ export function createView(from, to, widthPx) {
     );
   }
 
+  /**
+   * Ticks spaced evenly on screen, then snapped to round years.
+   *
+   * Sampling in unit space rather than year space is what keeps the axis
+   * readable: on a scale this compressed, evenly spaced round years would pile
+   * up at one end.
+   *
+   * All the arithmetic happens in ASTRONOMICAL years. Historical numbering has
+   * no year 0, so snapping raw historical values near the boundary both picks
+   * inconsistent steps - leaving a ragged ladder for any window spanning BCE to
+   * CE - and can land on year 0 itself, which formatYear rejects.
+   */
   function ticks() {
     const samples = [];
     for (let i = 0; i <= TICK_SAMPLES; i++) {
-      samples.push(unitToYear(uFrom + (i / TICK_SAMPLES) * (uTo - uFrom)));
+      samples.push(unitToYear(uFrom + (i / TICK_SAMPLES) * uSpan));
     }
+    // Spacing is measured astronomically so the missing year 0 does not inflate
+    // a gap that straddles it; snapping stays in historical years so the labels
+    // come out round - astronomical rounding yields "81 BCE" for astro -80.
+    const spaced = samples.map(toAstro);
 
-    const stepFor = new Map();
+    const stepFor = new Map(); // keyed by historical year
     for (let i = 0; i <= TICK_SAMPLES; i++) {
       const lower = Math.max(i - 1, 0);
       const upper = Math.min(i + 1, TICK_SAMPLES);
       // Divide by the intervals actually spanned: the first and last samples
       // have one neighbour, not two, and halving their gap would pick a finer
       // step for them than for the middle of the axis.
-      const spacing = Math.abs(samples[upper] - samples[lower]) / (upper - lower);
+      const spacing = Math.abs(spaced[upper] - spaced[lower]) / (upper - lower);
 
-      // Cap the step at half the sample's own magnitude. Without this a sample
-      // at -430 Ma, whose neighbours are a billion years away, rounds to zero
-      // and every deep-time label collapses onto the present.
-      const bp = BP_EPOCH - toAstro(samples[i]);
-      const deep = bp >= 1e4; // formatYear switches to ka/Ma/Ga here
+      const bp = BP_EPOCH - spaced[i];
+      let step;
+      let snapped;
 
-      // Deep-time labels show years before present, so snapping the historical
-      // year gives values like "602 ka". Snap the BP value instead.
-      const basis = deep ? bp : samples[i];
-      const step = niceStep(Math.min(spacing, Math.abs(basis) / 2));
-      const snapped = Math.round(basis / step) * step;
+      if (bp >= DEEP_TIME_BP) {
+        // Deep-time labels show years before present, so snap the BP value:
+        // snapping the year gives "602 ka". Cap the step at half the sample's
+        // magnitude too, or a sample at -430 Ma whose neighbours are a billion
+        // years away rounds to zero and every label piles onto the present.
+        step = niceStep(Math.min(spacing, Math.abs(bp) / 2));
+        snapped = fromAstro(BP_EPOCH - Math.round(bp / step) * step);
+      } else {
+        // No magnitude cap here. Inside recorded history the spacing alone is
+        // the right step, and capping by |year| would give a sample landing
+        // near year 0 a finer step than its neighbours - which is exactly what
+        // made windows spanning BCE to CE come out ragged.
+        step = niceStep(spacing);
+        snapped = Math.round(samples[i] / step) * step;
+      }
 
-      let year = deep ? fromAstro(BP_EPOCH - snapped) : snapped;
-      if (year === 0) year = 1; // no year zero
-      if (year < lo || year > hi) continue;
-      if (!stepFor.has(year)) stepFor.set(year, step);
+      // No year 0 to snap onto. Drop it rather than nudging it to 1, which
+      // would collide with a neighbouring tick.
+      if (snapped === 0) continue;
+      if (snapped < lo || snapped > hi) continue;
+      if (!stepFor.has(snapped)) stepFor.set(snapped, step);
     }
 
     // When every sample agreed on a step the window is effectively uniform, so
@@ -180,18 +215,28 @@ export function createView(from, to, widthPx) {
     // hole in what should read as an even sequence.
     const steps = new Set(stepFor.values());
     if (steps.size === 1 && stepFor.size >= 2) {
-      const step = [...steps][0];
-      const uniform = new Map();
-      for (let y = Math.ceil(lo / step) * step; y <= hi; y += step) {
-        if (y !== 0) uniform.set(y, step);
+      // Climb the ladder until the count fits rather than abandoning
+      // uniformity: giving up here drops back to per-sample snapping, which
+      // rounds an even 4.4-year spacing onto alternating 4s and 6s.
+      let step = [...steps][0];
+      for (let guard = 0; guard < 24; guard++) {
+        const uniform = new Map();
+        for (let y = Math.ceil(lo / step) * step; y <= hi; y += step) {
+          if (y !== 0) uniform.set(y, step);
+        }
+        if (uniform.size < 2) break;
+        if (uniform.size <= MAX_TICKS) return finish(uniform);
+        step = nextStep(step);
       }
-      if (uniform.size >= 2 && uniform.size <= 12) return finish(uniform);
     }
 
     if (stepFor.size < 2) {
-      // Degenerate window: fall back to labelling its own edges.
-      stepFor.set(Math.ceil(lo), 1);
-      stepFor.set(Math.floor(hi), 1);
+      // A window barely a year wide. Label the two whole years bracketing it,
+      // which may sit marginally outside the window and simply clip.
+      const first = Math.round(lo) || 1;
+      stepFor.clear();
+      stepFor.set(first, 1);
+      stepFor.set(first + 1 === 0 ? 1 : first + 1, 1);
     }
 
     return finish(stepFor);
@@ -211,7 +256,10 @@ export function createView(from, to, widthPx) {
     from: lo,
     to: hi,
     widthPx,
-    span: hi - lo,
+    // Elapsed years. Raw subtraction counts the non-existent year 0, so a
+    // window straddling the boundary reads one year wider than it is - and the
+    // one-year zoom clamp would then stop a full year early.
+    span: toAstro(hi) - toAstro(lo),
     project,
     unproject,
     zoomAbout,
