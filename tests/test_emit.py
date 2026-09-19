@@ -148,7 +148,7 @@ class TestEraBundles:
         bundle = json.loads((tmp_path / "eras" / "ce-1001-1499.json").read_text())
         kabir = bundle["entries"]["kabir"]
         assert kabir["summary"].startswith("Poet-saint")
-        assert kabir["display"] == "c. 1398–1440 – c. 1448–1518"
+        assert kabir["display"] == "c. 1398–1440 to c. 1448–1518"
         assert kabir["regions"] == ["north-india"]
         assert kabir["aliases"] == ["Kabir Das"]
         assert kabir["sources"][0]["url"].startswith("https://")

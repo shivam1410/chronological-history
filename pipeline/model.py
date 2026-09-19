@@ -91,7 +91,10 @@ def _range_display(lo: int, hi: int, lo_txt: str, hi_txt: str, deep: bool) -> st
     if lo < 0 and hi < 0:
         return f"c. {abs(lo)}{EN_DASH}{abs(hi)} BCE"
     if lo > 0 and hi > 0:
-        return f"c. {lo}{EN_DASH}{hi}"
+        # An early-CE range sitting next to a BCE one is ambiguous without the
+        # marker; a four-digit range never needs it.
+        era = " CE" if hi < 1000 else ""
+        return f"c. {lo}{EN_DASH}{hi}{era}"
     return f"c. {abs(lo)} BCE {EN_DASH} {hi} CE"
 
 
@@ -231,6 +234,13 @@ class Entry:
 
     @property
     def display_range(self) -> str:
+        """Start and end as one string.
+
+        When either bound is itself a bracket its display already contains a
+        dash, so joining with another one reads as three dates rather than two
+        ("243 Ma - 233 Ma - 66 Ma"). Switch the join to a word in that case.
+        """
         if self.start == self.end:
             return self.start.display
-        return f"{self.start.display} {EN_DASH} {self.end.display}"
+        joiner = "to" if not (self.start.is_precise and self.end.is_precise) else EN_DASH
+        return f"{self.start.display} {joiner} {self.end.display}"

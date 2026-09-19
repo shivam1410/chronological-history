@@ -175,3 +175,35 @@ class TestDeepTimeRejectsNegativeMagnitudes:
         # silently accepting it yields a year ~66 million CE.
         with pytest.raises(ValueError, match="could not parse"):
             parse_bound("-66 Ma")
+
+
+class TestDisplayRange:
+    """A bracketed bound and the start->end join must not use the same dash."""
+
+    def _entry(self, start, end):
+        from pipeline.model import Entry
+        return Entry(id="x", title="X", kind="period", regions=("global",),
+                     start=parse_bound(start), end=parse_bound(end),
+                     importance=1, summary="s")
+
+    def test_two_precise_bounds_use_a_dash(self):
+        assert self._entry(1526, 1857).display_range == "1526 – 1857"
+
+    def test_a_bracketed_bound_switches_the_join_to_the_word_to(self):
+        # "243 Ma - 233 Ma - 66 Ma" is unreadable: three dashes, two meanings.
+        assert self._entry(["243 Ma", "233 Ma"], "66 Ma").display_range == \
+            "243 Ma – 233 Ma to 66 Ma"
+
+    def test_bracketed_start_with_precise_end(self):
+        assert self._entry([1398, 1440], [1448, 1518]).display_range == \
+            "c. 1398–1440 to c. 1448–1518"
+
+    def test_a_single_precise_year_shows_once(self):
+        assert self._entry(1947, 1947).display_range == "1947"
+
+    def test_early_ce_range_keeps_its_era_marker(self):
+        # "c. 100-300" next to a BCE range is ambiguous.
+        assert parse_bound([100, 300]).display == "c. 100–300 CE"
+
+    def test_late_ce_range_needs_no_marker(self):
+        assert parse_bound([1398, 1440]).display == "c. 1398–1440"
