@@ -8,6 +8,7 @@
  */
 
 import { createView, ORIGIN_YEAR, presentYear } from './timescale.js';
+import { formatYear, roundYear } from './format.js';
 import { hitRow, packLanes } from './layout.js';
 import { FLAG_UNCERTAIN_END, FLAG_UNCERTAIN_START } from './store.js';
 
@@ -48,6 +49,7 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange,
 
   const collapsed = new Set();
   let selectedId = null;
+  let hover = null;
   const laneById = new Map(lanes.map((lane) => [lane.id, lane]));
 
   // ---- theme -------------------------------------------------------------
@@ -337,6 +339,70 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange,
     ctx.restore();
   }
 
+  /**
+   * Crosshair, year readout, and the name of the lane under the cursor.
+   *
+   * On a scale this compressed a bar's position is not readable on its own -
+   * being able to point at it and get the year is what makes the axis usable.
+   */
+  function drawHover() {
+    if (!hover) return;
+    const x = Math.round(hover.x) + 0.5;
+
+    ctx.strokeStyle = theme.accent;
+    ctx.globalAlpha = 0.5;
+    ctx.beginPath();
+    ctx.moveTo(x, AXIS_H);
+    ctx.lineTo(x, height);
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+
+    ctx.font = '11px ui-sans-serif, system-ui, sans-serif';
+    ctx.textBaseline = 'middle';
+
+    // Year badge, pinned to the axis so it never covers the lane it describes.
+    const yearText = formatYear(roundYear(hover.year));
+    const yearW = ctx.measureText(yearText).width + 12;
+    const yearX = Math.min(Math.max(x - yearW / 2, gutter + 2), width - yearW - 2);
+    ctx.fillStyle = theme.accent;
+    ctx.fillRect(yearX, 4, yearW, AXIS_H - 10);
+    ctx.fillStyle = theme.bg;
+    ctx.textAlign = 'center';
+    ctx.fillText(yearText, yearX + yearW / 2, 4 + (AXIS_H - 10) / 2);
+
+    // Lane name, and the entry under the cursor when there is one.
+    const lines = [hover.laneLabel];
+    if (hover.item) {
+      const e = hover.item.entry;
+      const span = e.sMin === e.eMax
+        ? formatYear(e.sMin)
+        : `${formatYear(e.sMin)} \u2013 ${formatYear(e.eMax)}`;
+      lines.unshift(e.title, span);
+    }
+    if (!lines.length) return;
+
+    const padding = 7;
+    const lineH = 15;
+    const boxW = Math.max(...lines.map((t) => ctx.measureText(t).width)) + padding * 2;
+    const boxH = lines.length * lineH + padding * 2 - 3;
+    const bx = Math.min(hover.x + 14, width - boxW - 6);
+    const by = Math.min(hover.y + 14, height - boxH - 6);
+
+    ctx.fillStyle = theme.bgRaised;
+    ctx.strokeStyle = theme.ruleStrong;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.roundRect(bx + 0.5, by + 0.5, boxW, boxH, 5);
+    ctx.fill();
+    ctx.stroke();
+
+    ctx.textAlign = 'left';
+    lines.forEach((text, i) => {
+      ctx.fillStyle = i === lines.length - 1 ? theme.inkFaint : theme.ink;
+      ctx.fillText(text, bx + padding, by + padding + i * lineH + 5);
+    });
+  }
+
   function draw() {
     if (!view) return;
     theme = readTheme();
@@ -351,10 +417,13 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange,
 
     // Gutter edge, drawn last so lane bands cannot bleed over it.
     ctx.strokeStyle = theme.ruleStrong;
+    ctx.lineWidth = 1;
     ctx.beginPath();
     ctx.moveTo(gutter + 0.5, 0);
     ctx.lineTo(gutter + 0.5, height);
     ctx.stroke();
+
+    drawHover();
   }
 
   // ---- view --------------------------------------------------------------
@@ -444,6 +513,36 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange,
     dragging = { x: event.clientX, y: event.clientY, moved: false };
   });
 
+  function trackHover(event) {
+    const rect = canvas.getBoundingClientRect();
+    const cx = event.clientX - rect.left;
+    const cy = event.clientY - rect.top;
+
+    if (cx < gutter || cy < AXIS_H) {
+      if (hover) { hover = null; schedule(); }
+      return;
+    }
+
+    const lane = laneAt(event.clientY);
+    const item = hitTest(event.clientX, event.clientY);
+    hover = {
+      x: cx,
+      y: cy,
+      year: view.unproject(cx - gutter),
+      laneLabel: lane?.label ?? '',
+      item,
+    };
+    canvas.style.cursor = dragging ? 'grabbing' : item ? 'pointer' : 'crosshair';
+    schedule();
+  }
+
+  canvas.addEventListener('pointermove', trackHover);
+  canvas.addEventListener('pointerleave', () => {
+    if (!hover) return;
+    hover = null;
+    schedule();
+  });
+
   canvas.addEventListener('pointermove', (event) => {
     if (!dragging) return;
     const dx = event.clientX - dragging.x;
@@ -500,6 +599,8 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange,
     setView,
     redraw: schedule,
     hitTest,
+    /** Current hover readout, for verification. */
+    get hover() { return hover; },
     select(id) {
       selectedId = id;
       schedule();
