@@ -1,0 +1,152 @@
+.yearview {
+  position: absolute;
+  inset: 0;
+  z-index: 25;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.yearview__head {
+  display: flex;
+  align-items: center;
+  gap: var(--step-3);
+  flex-wrap: wrap;
+  padding: var(--step-3) var(--step-4);
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg-raised);
+}
+
+.yearview__year {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: 26px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.yearview__count { margin: 0; color: var(--ink-faint); font-size: 12px; }
+
+.yearview__steps { display: flex; gap: var(--step-1); }
+
+.yearview__step {
+  padding: 3px var(--step-2);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+}
+
+.yearview__step:hover { border-color: var(--accent); color: var(--ink); }
+
+.yearview__actions { margin-left: auto; display: flex; align-items: center; gap: var(--step-2); }
+
+.yearview__link {
+  padding: 4px var(--step-3);
+  border: 1px solid var(--rule-strong);
+  border-radius: var(--radius);
+  background: var(--bg-sunken);
+  color: var(--ink);
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.yearview__close {
+  width: 30px; height: 30px;
+  border: 0; border-radius: var(--radius);
+  background: transparent; color: var(--ink-soft);
+  font-size: 20px; line-height: 1; cursor: pointer;
+}
+
+.yearview__close:hover { background: var(--bg-sunken); color: var(--ink); }
+
+.yearview__body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--step-4);
+  /* Columns rather than one long list: a busy year runs to dozens of entries,
+     and a single column makes the reader scroll past regions they can see. */
+  columns: 340px;
+  column-gap: var(--step-6);
+}
+
+.yearview__lane {
+  break-inside: avoid;
+  margin: 0 0 var(--step-5);
+}
+
+.yearview__laneName {
+  margin: 0 0 var(--step-2);
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  font-weight: 600;
+}
+
+.yearview__list { margin: 0; padding: 0; list-style: none; }
+
+.yearview__item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0 var(--step-2);
+  padding: var(--step-1) 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 45%, transparent);
+}
+
+.yearview__name {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  font-family: var(--font-text);
+  font-size: 15px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.yearview__name:hover { color: var(--accent); }
+
+.yearview__span {
+  color: var(--ink-faint);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  align-self: center;
+}
+
+.yearview__where {
+  grid-column: 1 / -1;
+  color: var(--ink-faint);
+  font-size: 11px;
+}
+
+/* Something that began or ended in this exact year, rather than a century
+   merely passing through it. */
+.yearview__item[data-boundary="true"] .yearview__name { font-weight: 600; }
+.yearview__where--now { color: var(--accent); }
+
+.yearview__empty { color: var(--ink-faint); }
+
+.yearview :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+@media (max-width: 560px) {
+  .yearview__body { columns: auto; padding: var(--step-3); }
+  .yearview__year { font-size: 20px; }
+  .yearview__count { display: none; }
+}
+
+@media (pointer: coarse) {
+  .yearview__step { min-height: 44px; padding-inline: var(--step-3); }
+  .yearview__link, .yearview__close { min-height: 44px; }
+  .yearview__name { min-height: 32px; }
+}

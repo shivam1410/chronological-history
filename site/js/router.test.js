@@ -4,13 +4,13 @@ import { buildHash, parseHash } from './router.js';
 
 describe('parseHash', () => {
   test('an empty hash is the default view', () => {
-    assert.deepEqual(parseHash(''), { route: 'timeline', from: null, to: null, entryId: null });
-    assert.deepEqual(parseHash('#'), { route: 'timeline', from: null, to: null, entryId: null });
+    assert.deepEqual(parseHash(''), { route: 'timeline', from: null, to: null, entryId: null, year: null });
+    assert.deepEqual(parseHash('#'), { route: 'timeline', from: null, to: null, entryId: null, year: null });
   });
 
   test('a timeline window', () => {
     assert.deepEqual(parseHash('#/timeline?from=1500&to=1600'),
-      { route: 'timeline', from: 1500, to: 1600, entryId: null });
+      { route: 'timeline', from: 1500, to: 1600, entryId: null, year: null });
   });
 
   test('negative and deep-time years survive the round trip', () => {
@@ -21,12 +21,12 @@ describe('parseHash', () => {
 
   test('an entry route keeps the window alongside it', () => {
     assert.deepEqual(parseHash('#/entry/mughal-empire?from=1400&to=1900'),
-      { route: 'entry', from: 1400, to: 1900, entryId: 'mughal-empire' });
+      { route: 'entry', from: 1400, to: 1900, entryId: 'mughal-empire', year: null });
   });
 
   test('an entry route without a window', () => {
     assert.deepEqual(parseHash('#/entry/kabir'),
-      { route: 'entry', from: null, to: null, entryId: 'kabir' });
+      { route: 'entry', from: null, to: null, entryId: 'kabir', year: null });
   });
 
   test('a malformed window is ignored rather than throwing', () => {
@@ -74,5 +74,39 @@ describe('buildHash', () => {
       assert.equal(parsed.to, state.to);
       assert.equal(parsed.entryId, state.entryId);
     }
+  });
+});
+
+describe('the year route', () => {
+  test('parses a year', () => {
+    assert.deepEqual(parseHash('#/year/1555'),
+      { route: 'year', from: null, to: null, entryId: null, year: 1555 });
+  });
+
+  test('parses a BCE year', () => {
+    assert.equal(parseHash('#/year/-500').year, -500);
+  });
+
+  test('builds a year hash', () => {
+    assert.equal(buildHash({ year: 1555 }), '#/year/1555');
+  });
+
+  test('round-trips', () => {
+    for (const year of [1555, -500, 1, -1, 2026]) {
+      assert.equal(parseHash(buildHash({ year })).year, year);
+    }
+  });
+
+  test('year zero is refused, falling back to the timeline', () => {
+    assert.equal(parseHash('#/year/0').route, 'timeline');
+  });
+
+  test('a non-numeric year falls back to the timeline', () => {
+    assert.equal(parseHash('#/year/banana').route, 'timeline');
+  });
+
+  test('other routes carry no year', () => {
+    assert.equal(parseHash('#/timeline?from=1500&to=1600').year, null);
+    assert.equal(parseHash('#/entry/kabir').year, null);
   });
 });

@@ -42,7 +42,9 @@ const SUBLANE_SPAN = 2000;
 /** Only the subcontinent expands; splitting every lane would give ~35 rows. */
 const EXPANDABLE = new Set(['india']);
 
-export function createTimeline(canvas, { entries = [], lanes = [], onViewChange, onSelect } = {}) {
+export function createTimeline(canvas, {
+  entries = [], lanes = [], onViewChange, onSelect, onPickYear,
+} = {}) {
   const ctx = canvas.getContext('2d');
 
   let view = null;
@@ -610,6 +612,14 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange,
   };
   canvas.addEventListener('pointerup', endDrag);
   canvas.addEventListener('pointercancel', endDrag);
+
+  canvas.addEventListener('dblclick', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    const cy = event.clientY - rect.top;
+    if (cy >= AXIS_H) return; // only the axis opens a year
+    const px = event.clientX - rect.left - gutter;
+    onPickYear?.(view.unproject(px));
+  });
 
   const observer = new ResizeObserver(resize);
   observer.observe(canvas);

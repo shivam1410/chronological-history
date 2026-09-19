@@ -10,7 +10,9 @@
 
 import { roundYear } from './format.js';
 
-const DEFAULT_STATE = { route: 'timeline', from: null, to: null, entryId: null };
+const DEFAULT_STATE = {
+  route: 'timeline', from: null, to: null, entryId: null, year: null,
+};
 
 function parseYear(raw) {
   if (raw === null || raw === '') return null;
@@ -30,14 +32,28 @@ export function parseHash(hash) {
 
   const segments = path.split('/').filter(Boolean);
   if (segments[0] === 'entry' && segments[1]) {
-    return { route: 'entry', from, to, entryId: decodeURIComponent(segments[1]) };
+    return {
+      route: 'entry', from, to, year: null,
+      entryId: decodeURIComponent(segments[1]),
+    };
+  }
+  if (segments[0] === 'year') {
+    const year = parseYear(segments[1]);
+    // Year zero does not exist, so a request for it is not a year request.
+    if (year !== null && year !== 0) {
+      return { route: 'year', from, to, entryId: null, year };
+    }
   }
   // Anything unrecognised is still a timeline; a bad link should not dead-end.
-  return { route: 'timeline', from, to, entryId: null };
+  return { route: 'timeline', from, to, entryId: null, year: null };
 }
 
 /** Build a hash from view state. Rounds years and never emits year zero. */
-export function buildHash({ from = null, to = null, entryId = null } = {}) {
+export function buildHash({
+  from = null, to = null, entryId = null, year = null,
+} = {}) {
+  if (year !== null && Number.isFinite(year)) return `#/year/${roundYear(year)}`;
+
   const params = new URLSearchParams();
   if (from !== null && Number.isFinite(from)) params.set('from', String(roundYear(from)));
   if (to !== null && Number.isFinite(to)) params.set('to', String(roundYear(to)));

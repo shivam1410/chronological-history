@@ -5,6 +5,7 @@ import { createRouter } from './router.js';
 import { createMinimap } from './minimap.js';
 import { ERAS } from './eras.js';
 import { createControls } from './controls.js';
+import { createYearView } from './yearview.js';
 import { elapsed, formatYear, roundYear } from './format.js';
 import { ORIGIN_YEAR, presentYear } from './timescale.js';
 
@@ -81,6 +82,21 @@ async function start() {
   // createTimeline fires onViewChange during construction, and that callback
   // reaches for both. Their own callbacks only run on user input, long after
   // the timeline binding exists, so referencing it lazily is safe.
+  // Built before the timeline for the same reason as the minimap: the
+  // callbacks below only fire on user input, long after these bindings exist.
+  const yearView = createYearView(stage, {
+    entries,
+    lanes: info.lanes,
+    onStep: (year) => router.navigate({ year }),
+    onClose: () => router.navigate({
+      from: timeline.view.from, to: timeline.view.to,
+    }),
+    onPick: (entry) => {
+      yearView.close();
+      selectEntry(entry, { focus: true });
+    },
+  });
+
   // Same ordering reason as the minimap: onViewChange fires during
   // createTimeline and reaches for `controls`.
   const controls = createControls({
@@ -91,7 +107,11 @@ async function start() {
     rangeForm: document.querySelector('#range'),
     entries,
     onPick: (entry) => selectEntry(entry, { focus: true }),
-    onRange: (from, to) => timeline.setView(from, to),
+    onRange: (from, to) => {
+      // Both fields the same year is a request for that single year.
+      if (from === to) router.navigate({ year: from });
+      else timeline.setView(from, to);
+    },
   });
 
   const minimap = createMinimap(minimapCanvas, {
@@ -139,6 +159,7 @@ async function start() {
       syncHash(true);
     },
     onSelect: (entry) => selectEntry(entry),
+    onPickYear: (year) => router.navigate({ year: roundYear(year) }),
   });
 
   function selectEntry(entry, { focus = false } = {}) {
@@ -162,6 +183,15 @@ async function start() {
   }
 
   function applyState(state) {
+    if (state.route === 'year' && state.year !== null) {
+      panel.close();
+      timeline.select(null);
+      yearView.show(state.year);
+      live.textContent = `Year view for ${state.year}.`;
+      return;
+    }
+    if (yearView.year !== null) yearView.close();
+
     const from = state.from ?? ORIGIN_YEAR;
     const to = state.to ?? presentYear();
     if (from !== timeline.view.from || to !== timeline.view.to) timeline.setView(from, to);
@@ -178,7 +208,8 @@ async function start() {
   });
 
   window.__timeline = {
-    timeline, panel, router, minimap, controls, entries, info, selectEntry, ERAS,
+    timeline, panel, router, minimap, controls, yearView,
+    entries, info, selectEntry, ERAS,
   };
   applyState(router.current());
   minimap.setWindow(timeline.view.from, timeline.view.to);

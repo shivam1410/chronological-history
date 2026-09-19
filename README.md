@@ -9,8 +9,11 @@ Two ways to look at it:
 
 - **Timeline.** Zoom and pan a continuous scale across deep time and recorded history,
   with parallel regional lanes so you can see what was happening everywhere at once.
-- **Year slice.** Pick a year — say 1555 — and get a cross-section of every region:
-  which empires stood, who was alive, what was being written.
+- **Year slice.** Pick a year — say 1555 — and get a cross-section of every
+  region: which empires stood, who was alive, what was being written. Open it at
+  `#/year/1555`, by double-clicking the axis, or by putting the same year in both
+  date fields. It shows what a bar cannot: that the Mughal Empire was in year 29
+  of 331, and that Akbar was 13.
 
 Coverage is deliberately deep on the Indian subcontinent (Vedic period, scriptural
 composition, Bhakti-era saints, dynasties, the Mughals) with enough world context that

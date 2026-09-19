@@ -290,7 +290,7 @@ export function createControls({
     event.preventDefault();
     const from = parseYearInput(fromInput.value);
     const to = parseYearInput(toInput.value);
-    if (from === null || to === null || from === to) return;
+    if (from === null || to === null) return;
     onRange?.(Math.min(from, to), Math.max(from, to));
     fromInput.blur();
     toInput.blur();
