@@ -116,8 +116,10 @@ export function createPanel(root, { onClose, onNavigate } = {}) {
       const img = document.createElement('img');
       img.src = detail.image.url;
       img.alt = entry.title;
-      img.loading = 'lazy';
+      // Not lazy: a freshly opened panel always has the image above the fold,
+      // and deferring it just makes the panel look broken for a moment.
       img.decoding = 'async';
+      img.referrerPolicy = 'no-referrer';
       img.addEventListener('error', () => figure.remove());
       figure.append(img);
 
