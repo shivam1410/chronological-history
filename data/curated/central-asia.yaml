@@ -183,6 +183,10 @@
   related: [genghis-khan, mongol-empire]
 
 - id: genghis-khan
+  significance: >-
+    He unified the steppe in twenty years and left an administrative system
+    that outlived him by a century. The Black Death travelled the routes his
+    conquests opened.
   title: Genghis Khan
   kind: person
   regions: [central-asia]
@@ -198,6 +202,10 @@
   related: [mongol-empire]
 
 - id: mongol-empire
+  significance: >-
+    It killed on a scale that is still argued about, and it moved goods,
+    ideas, technologies and plague across Eurasia faster than anything before.
+    Both are true at once.
   title: Mongol Empire
   kind: polity
   regions: [central-asia, china, west-asia, eastern-europe]

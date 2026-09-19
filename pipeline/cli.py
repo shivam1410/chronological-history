@@ -16,6 +16,7 @@ from collections import Counter
 from dataclasses import replace
 
 from pipeline import citations as citations_mod
+from pipeline import wikidata as wikidata_mod
 from pipeline import images as images_mod
 from pipeline.emit import bucket_for, write_bundles
 from pipeline.loader import curated_paths, load_entries, load_taxonomy
@@ -28,7 +29,25 @@ def _load():
     if not paths:
         raise SystemExit("no source files found under data/curated/")
     entries = load_entries(paths, taxonomy)
-    return _apply_citations(_apply_images(entries)), taxonomy, paths
+    entries = _apply_wikidata(_apply_citations(_apply_images(entries)))
+    return entries, taxonomy, paths
+
+
+def _apply_wikidata(entries):
+    """Attach the Wikidata id to entries that lack one.
+
+    Only the identifier. Dates are deliberately NOT imported over hand-authored
+    ones - curated data wins, as the spec requires. What Wikidata's dates are
+    for is checking ours, which `audit` reports rather than silently applying.
+    """
+    fetched = wikidata_mod.load()
+    if not fetched:
+        return entries
+    return [
+        replace(entry, wikidata=fetched[entry.id]["qid"])
+        if not entry.wikidata and entry.id in fetched else entry
+        for entry in entries
+    ]
 
 
 def _apply_citations(entries):
@@ -169,6 +188,46 @@ def cmd_audit(_args) -> int:
             if len(unconfirmed) > 12:
                 print(f"    ... and {len(unconfirmed) - 12} more")
 
+    facts = wikidata_mod.load()
+    if facts:
+        agree, differ, absent = [], [], 0
+        for entry in entries:
+            record = facts.get(entry.id)
+            if not record:
+                continue
+            theirs = {int(record[k]) for k in ("birth", "death", "start", "end", "point")
+                      if k in record}
+            if not theirs:
+                absent += 1
+                continue
+            ours = {entry.start.min, entry.start.max, entry.end.min, entry.end.max}
+
+            # Tolerance has to scale. A one-year window is right for 1526 and
+            # meaningless at 3.9 million years, where our BP-offset dates differ
+            # from Wikidata's round figures by thousands of years while meaning
+            # exactly the same thing.
+            def close(theirs_year, ours_year):
+                scale = max(abs(theirs_year), abs(ours_year))
+                tolerance = 1 if scale <= 4000 else scale * 0.01
+                return abs(theirs_year - ours_year) <= tolerance
+
+            if any(close(t, o) for t in theirs for o in ours):
+                agree.append(entry.id)
+            else:
+                differ.append((entry.id, sorted(ours), sorted(theirs)))
+
+        print(f"\n  {len(facts)} entries matched to a Wikidata item")
+        print(f"    our dates agree with Wikidata's     {len(agree):>4}")
+        print(f"    our dates DISAGREE                  {len(differ):>4}")
+        print(f"    Wikidata has no date for it         {absent:>4}")
+        if differ:
+            print("\n  disagreements worth a look")
+            for entry_id, ours, theirs in sorted(differ)[:10]:
+                print(f"    {entry_id:<26} ours {ours[0]}..{ours[-1]}"
+                      f"   wikidata {theirs[0]}..{theirs[-1]}")
+            if len(differ) > 10:
+                print(f"    ... and {len(differ) - 10} more")
+
     if unsourced_contested:
         print("\n  contested entries needing a citation")
         for entry in sorted(unsourced_contested, key=lambda e: e.id)[:15]:
@@ -187,14 +246,30 @@ def cmd_images(_args) -> int:
     print("resolving lead images from Wikipedia articles")
     discovered = images_mod.lead_image_titles(citations_mod.ARTICLES)
 
-    mapping = {**discovered, **images_mod.COMMONS_FILES}
+    # Wikidata's P18 is the richest source, since every matched item carries one.
+    from_wikidata = {
+        entry_id: record["image_file"]
+        for entry_id, record in wikidata_mod.load().items()
+        if record.get("image_file")
+    }
+
+    # Curated last so a hand-chosen lead wins over whatever an article opens with.
+    mapping = {**from_wikidata, **discovered, **images_mod.COMMONS_FILES}
     print(f"\n{len(mapping)} files to look up on Commons "
-          f"({len(images_mod.COMMONS_FILES)} curated, "
-          f"{len(set(discovered) - set(images_mod.COMMONS_FILES))} discovered)\n")
+          f"({len(from_wikidata)} from Wikidata, {len(discovered)} article leads, "
+          f"{len(images_mod.COMMONS_FILES)} curated)\n")
 
     resolved = images_mod.fetch_all(mapping)
-    images_mod.write(resolved)
-    print(f"\nwrote {len(resolved)} images to {images_mod.OUTPUT}")
+
+    print(f"\ndownloading {len(resolved)} images into {images_mod.LOCAL_DIR}")
+    local = images_mod.download_all(resolved)
+    images_mod.write(local)
+    images_mod.write_attribution(local)
+
+    total = sum(r.get("bytes", 0) for r in local.values())
+    print(f"\nwrote {len(local)} images, {total / 1e6:.1f} MB")
+    print(f"  manifest    {images_mod.OUTPUT}")
+    print(f"  credits     {images_mod.ATTRIBUTION}")
     return 0
 
 
@@ -211,6 +286,46 @@ def cmd_cite(_args) -> int:
     return 0
 
 
+def cmd_wikidata(_args) -> int:
+    taxonomy = load_taxonomy()
+    entries = load_entries(curated_paths(), taxonomy)
+
+    # Try the curated article where one exists, otherwise the entry's own
+    # title. Curated ids skip the title check because a human chose them.
+    curated = citations_mod.ARTICLES
+    wanted = {
+        e.id: (e.title, curated.get(e.id, e.title))
+        for e in entries
+    }
+
+    print(f"resolving {len(wanted)} entries to Wikidata items")
+    resolved, rejected = wikidata_mod.resolve_qids(wanted, curated=curated)
+    print(f"\n  matched   {len(resolved)}")
+    print(f"  rejected  {len(rejected)}")
+
+    facts = wikidata_mod.fetch_entities([v["qid"] for v in resolved.values()])
+
+    merged = {}
+    for entry_id, found in resolved.items():
+        record = {"qid": found["qid"], "article": found["title"]}
+        record.update(facts.get(found["qid"], {}))
+        merged[entry_id] = record
+    wikidata_mod.write(merged)
+
+    dated = sum(1 for v in merged.values()
+                if any(k in v for k in ("birth", "death", "start", "end", "point")))
+    imaged = sum(1 for v in merged.values() if "image_file" in v)
+    print(f"\nwrote {len(merged)} items to {wikidata_mod.OUTPUT}")
+    print(f"  carrying dates  {dated}")
+    print(f"  carrying images {imaged}")
+
+    if rejected:
+        print(f"\n  not matched (title mismatch or no item) - first 12 of {len(rejected)}")
+        for line in rejected[:12]:
+            print(f"    {line}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="pipeline.cli")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -220,6 +335,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("audit", help="report sourcing and evidence gaps")
     sub.add_parser("images", help="fetch Commons images for the curated mapping")
     sub.add_parser("cite", help="resolve citations for entries that lack one")
+    sub.add_parser("wikidata", help="resolve entries to Wikidata items (network)")
 
     args = parser.parse_args(argv)
     return {
@@ -229,6 +345,7 @@ def main(argv: list[str] | None = None) -> int:
         "audit": cmd_audit,
         "images": cmd_images,
         "cite": cmd_cite,
+        "wikidata": cmd_wikidata,
     }[args.command](args)
 
 

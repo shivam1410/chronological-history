@@ -77,6 +77,10 @@
 
 # ---- the records ----
 - id: pali-canon-written
+  significance: >-
+    Four centuries between the teacher and the text. Theravada tradition holds
+    the oral transmission exact, so the gap is one of writing, not necessarily
+    of content.
   title: The Pali Canon is committed to writing
   kind: work
   regions: [sri-lanka, india]
@@ -117,6 +121,9 @@
     - {title: "Jainism texts at the Internet Sacred Text Archive", url: "https://archive.sacred-texts.com/jai/index.htm"}
 
 - id: gospels
+  significance: >-
+    Between thirty-five and eighty years, in a different language from the one
+    Jesus spoke, for communities scattered across the Mediterranean.
   title: Composition of the canonical Gospels
   kind: work
   regions: [levant, west-asia]
@@ -136,6 +143,10 @@
     - {title: "Bible and Christian texts at the Internet Sacred Text Archive", url: "https://archive.sacred-texts.com/bib/index.htm"}
 
 - id: quran-codified
+  significance: >-
+    About two decades - the shortest gap between a founder and a fixed text of
+    any major tradition, and the reason its textual history is argued on
+    different grounds from the others.
   title: The Uthmanic codification of the Quran
   kind: work
   regions: [arabia, west-asia]

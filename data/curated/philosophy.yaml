@@ -15,6 +15,9 @@
     other, so stability is an appearance rather than a fact.
 
 - id: confucius
+  significance: >-
+    A philosophy of obligation rather than belief, which shaped Chinese
+    governance through the examination system for two thousand years.
   title: Confucius
   kind: person
   regions: [philosophy, china]
@@ -42,6 +45,10 @@
     the grain of things rather than against it.
 
 - id: socrates
+  significance: >-
+    He wrote nothing, and is known only through students. The shortest gap in
+    the record file, and still enough for two portraits that do not fully
+    agree.
   title: Socrates
   kind: person
   regions: [philosophy, greece]
@@ -56,6 +63,9 @@
   related: [plato, classical-athens]
 
 - id: plato
+  significance: >-
+    The Academy lasted three centuries. Western philosophy has been described,
+    not entirely as a joke, as a series of footnotes to him.
   title: Plato
   kind: person
   regions: [philosophy, greece]
@@ -69,6 +79,10 @@
   related: [socrates, aristotle]
 
 - id: aristotle
+  significance: >-
+    His authority became so total that disputing him was heresy for a
+    millennium - which made overturning him, from Galileo onward, the founding
+    act of modern science.
   title: Aristotle
   kind: person
   regions: [philosophy, greece]
@@ -149,6 +163,10 @@
     independent existence and that this emptiness is not nihilism but relation.
 
 - id: adi-shankara
+  significance: >-
+    He argued his way across the subcontinent and reorganised Hindu thought
+    around non-dualism. Ramanuja's reply, a century later, opened devotion to
+    those outside the upper castes.
   title: Adi Shankara
   kind: person
   regions: [philosophy, south-india]
@@ -304,6 +322,9 @@
   related: [kant]
 
 - id: kant
+  significance: >-
+    He argued the mind supplies the structure of experience rather than merely
+    receiving it, which reframed every philosophical question that followed.
   title: Immanuel Kant
   kind: person
   regions: [philosophy, western-europe]
@@ -355,6 +376,10 @@
     and made an early philosophical case for the equality of women.
 
 - id: marx
+  significance: >-
+    Whatever one makes of the politics, the analytical move - treating
+    economic arrangement as the thing that shapes belief rather than the
+    reverse - is now assumed by historians of every persuasion.
   title: Karl Marx
   kind: person
   regions: [philosophy, western-europe]
@@ -368,6 +393,10 @@
   related: [hegel]
 
 - id: nietzsche
+  significance: >-
+    He asked what happens to morality when its foundations are no longer
+    believed, which is why he is read as diagnosing the twentieth century he
+    did not live to see.
   title: Friedrich Nietzsche
   kind: person
   regions: [philosophy, western-europe]
@@ -511,6 +540,10 @@
   related: [adi-shankara]
 
 - id: ambedkar
+  significance: >-
+    He dismantled the philosophical defence of caste, wrote the constitution
+    of the country that practised it, and then left the religion that
+    sanctioned it.
   title: B. R. Ambedkar
   kind: person
   regions: [philosophy, west-india]
@@ -524,6 +557,10 @@
   related: [indian-independence, buddha]
 
 - id: gandhi-ahimsa
+  significance: >-
+    He turned a religious principle into a political method, and it was
+    studied and reused from Selma to Soweto. Tolstoy's letters are part of its
+    lineage.
   title: Mohandas Gandhi
   kind: person
   regions: [philosophy, west-india]

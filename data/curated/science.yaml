@@ -206,6 +206,10 @@
   related: [tycho-brahe, newton]
 
 - id: newton
+  significance: >-
+    He showed that the same law governs a falling apple and an orbiting moon -
+    the first demonstration that the heavens run on rules discoverable from
+    the ground.
   title: Isaac Newton
   kind: person
   regions: [science, britain]
@@ -283,6 +287,10 @@
     not yet found, then saw them discovered where he said they would be.
 
 - id: marie-curie
+  significance: >-
+    Still the only person to win Nobel Prizes in two different sciences. She
+    died of the radiation she discovered, and her notebooks remain too
+    radioactive to handle.
   title: Marie Curie
   kind: person
   regions: [science, western-europe]
@@ -295,6 +303,10 @@
     remains the only person to win Nobel Prizes in two sciences.
 
 - id: einstein
+  significance: >-
+    Relativity is not an adjustment to Newton but a replacement of what space
+    and time are. GPS satellites must correct for it or drift kilometres off
+    within a day.
   title: Albert Einstein
   kind: person
   regions: [science, western-europe]
@@ -357,6 +369,10 @@
     giving chemistry a way to fingerprint substances.
 
 - id: ramanujan
+  significance: >-
+    He arrived at results that took a century to prove, largely self-taught
+    from a single textbook. Some of his identities are still being found
+    useful in unrelated fields.
   title: Srinivasa Ramanujan
   kind: person
   regions: [science, south-india]
@@ -431,6 +447,10 @@
     structure, used to reach that conclusion without her knowledge.
 
 - id: turing
+  significance: >-
+    He defined what a computer is before any existed, and what no computer can
+    ever decide. The device you are reading this on is an instance of his
+    abstraction.
   title: Alan Turing
   kind: person
   regions: [science, britain]
@@ -456,6 +476,9 @@
 
 # ---- discoveries, as distinct from the people who made them ----
 - id: zero-decimal-system
+  significance: >-
+    Treating nothing as a number is the single most consequential notational
+    change in mathematics. Every calculation you have ever done depends on it.
   title: Zero and the decimal place-value system
   kind: technology
   regions: [science, north-india]
@@ -508,6 +531,9 @@
     specific diseases, which made antisepsis and public sanitation rational.
 
 - id: dna-structure
+  significance: >-
+    The structure explained the function immediately - a molecule shaped to be
+    copied. Few discoveries answer their own question so completely.
   title: The structure of DNA
   kind: discovery
   regions: [science, britain]

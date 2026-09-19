@@ -51,6 +51,10 @@
     - {title: "Nature — Ancient Yersinia pestis genomes", url: "https://www.nature.com/articles/nature13591"}
 
 - id: black-death
+  significance: >-
+    Killing a third of Europe raised the price of labour enough to weaken
+    serfdom. A great deal of what followed - including the Renaissance's
+    funding - runs through that shift.
   title: The Black Death
   kind: event
   regions: [europe, west-asia, north-africa, central-asia]

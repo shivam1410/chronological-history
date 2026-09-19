@@ -218,6 +218,10 @@
     nineteenth century.
 
 - id: transatlantic-slave-trade
+  significance: >-
+    The plantation economies it built financed much of European
+    industrialisation. It is not a side story to the modern world's formation;
+    it is load-bearing.
   title: Transatlantic slave trade
   kind: period
   regions: [west-africa, africa, americas]
@@ -296,6 +300,10 @@
 
 # ---- partition and colonial rule ----
 - id: berlin-conference
+  significance: >-
+    Borders drawn in a European room in two months still define African states
+    today, which is why so many of them cut across peoples rather than between
+    them.
   title: Berlin Conference
   kind: event
   regions: [western-europe, africa, europe]
@@ -368,6 +376,9 @@
 
 # ---- apartheid ----
 - id: apartheid
+  significance: >-
+    Its end in 1994 is within living memory for most adults. On this timeline
+    it sits closer to the present than the Moon landing does.
   title: Apartheid in South Africa
   kind: period
   regions: [east-africa, africa]

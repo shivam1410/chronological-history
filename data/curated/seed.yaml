@@ -4,6 +4,10 @@
 
 # ---------------------------------------------------------------- deep time
 - id: earth-formation
+  significance: >-
+    Everything else on this timeline is compressed into the last tenth of it.
+    If the Earth's history were a single day, recorded human history would
+    occupy the final second.
   title: Formation of the Earth
   kind: geological
   regions: [earth-life]
@@ -42,6 +46,10 @@
     marine species and clearing the ground for the rise of the dinosaurs.
 
 - id: dinosaur-era
+  significance: >-
+    Their 165-million-year run dwarfs our own. Anatomically modern humans have
+    existed for roughly 0.2% as long, which is the proportion this timeline is
+    built to make visible.
   title: Age of the Dinosaurs
   kind: biological
   regions: [earth-life]
@@ -59,6 +67,10 @@
     - {title: "Natural History Museum — Dinosaurs", url: "https://www.nhm.ac.uk/discover/dino-directory.html"}
 
 - id: kpg-extinction
+  significance: >-
+    One bad afternoon reset the terms of life on land. Mammals had already
+    existed for 160 million years as small nocturnal animals; the impact is
+    what let them become anything else.
   title: Cretaceous–Paleogene Extinction
   kind: event
   regions: [earth-life]
@@ -72,6 +84,10 @@
   related: [dinosaur-era]
 
 - id: himalayan-orogeny
+  significance: >-
+    Still happening. The collision that raised these mountains also drives the
+    monsoon that waters the subcontinent, which means it underwrites nearly
+    every Indian entry that follows.
   title: Himalayan Orogeny — India collides with Eurasia
   kind: geological
   regions: [himalaya, india]
@@ -102,6 +118,10 @@
     across the globe.
 
 - id: last-glacial-period
+  significance: >-
+    Sea level was about 125 metres lower, which is why people could walk into
+    Australia and the Americas. Almost every coastline on this timeline before
+    10,000 years ago is now underwater.
   title: Last Glacial Period
   kind: period
   regions: [earth-life]
@@ -151,6 +171,10 @@
     written record belongs to it.
 
 - id: homo-sapiens
+  significance: >-
+    Our species is younger than the Sahara and roughly the same age as the
+    oldest surviving cave floors. Everything in the lanes below happened in
+    the last 5% of our existence.
   title: Emergence of Homo sapiens
   kind: biological
   regions: [east-africa, africa]
@@ -191,6 +215,10 @@
 
 # ---------------------------------------------------------- ancient world
 - id: cuneiform
+  significance: >-
+    Recorded history begins here, and it begins with accounting. The earliest
+    writing is not poetry or scripture but a record of who owed what grain to
+    whom.
   title: Invention of Writing — Cuneiform
   kind: technology
   regions: [mesopotamia, west-asia]
@@ -216,6 +244,10 @@
     long-distance trade networks across Eurasia.
 
 - id: indus-valley
+  significance: >-
+    Larger in area than Egypt and Mesopotamia combined, with standardised
+    weights and planned drainage - and a script nobody can read. It is the
+    largest early civilisation we understand the least.
   title: Indus Valley Civilisation
   kind: polity
   regions: [west-india, north-india, india]
@@ -255,6 +287,10 @@
     the tallest human-made structure for nearly four thousand years.
 
 - id: rigveda
+  significance: >-
+    Transmitted by memory with such precision that the oral version is
+    considered more reliable than the manuscripts. It is the oldest text in
+    this dataset still in continuous liturgical use.
   title: Composition of the Rigveda
   kind: work
   regions: [north-india, india]
@@ -304,6 +340,10 @@
   related: [rigveda]
 
 - id: buddha
+  significance: >-
+    The dates matter more than they look. Shifting him a century changes what
+    he was responding to, and it moves the Pali Canon's four-century gap along
+    with him.
   title: Siddhartha Gautama, the Buddha
   kind: person
   regions: [north-india, india]
@@ -345,6 +385,10 @@
     Parthenon, whose institutions and ideas shaped later European thought.
 
 - id: ramayana
+  significance: >-
+    Its reach is the point. Versions belong to Thailand, Indonesia, Cambodia
+    and Laos, which makes it one of the few narratives to have become
+    foundational to cultures that never shared a state.
   title: Composition of the Valmiki Ramayana
   kind: work
   regions: [north-india, india]
@@ -366,6 +410,10 @@
     - {title: "Encyclopaedia Britannica — Ramayana", url: "https://www.britannica.com/topic/Ramayana-Indian-epic"}
 
 - id: mahabharata
+  significance: >-
+    Roughly ten times the length of the Iliad and Odyssey combined, and it
+    absorbs the Bhagavad Gita as a late insertion - a philosophy that entered
+    the world embedded in a war story.
   title: Composition of the Mahabharata
   kind: work
   regions: [north-india, india]
@@ -382,6 +430,10 @@
   related: [ramayana]
 
 - id: maurya-empire
+  significance: >-
+    The first state to hold most of the subcontinent at once, and the
+    benchmark every later Indian empire was measured against, including the
+    Mughals two thousand years later.
   title: Maurya Empire
   kind: polity
   regions: [north-india, india, deccan]
@@ -395,6 +447,10 @@
   related: [ashoka]
 
 - id: ashoka
+  significance: >-
+    His edicts are the earliest deciphered Indian writing after the Indus
+    script, and they are a ruler publicly regretting his own war - which is
+    close to unique in the ancient record.
   title: Ashoka
   kind: person
   regions: [north-india, india]
@@ -420,6 +476,10 @@
     and axle widths, and began the Great Wall and the terracotta army.
 
 - id: han-dynasty
+  significance: >-
+    Contemporary with Rome and comparable in scale, yet the two empires knew
+    each other mostly as rumours at the ends of the Silk Road. The overlap on
+    this timeline is the point.
   title: Han Dynasty
   kind: polity
   regions: [china, east-asia]
@@ -445,6 +505,10 @@
     carrying silk, spices, paper, Buddhism and plague alike.
 
 - id: roman-empire
+  significance: >-
+    Its collapse in the west is the reference point Europe measured itself
+    against for a thousand years, and the reason 'the fall of Rome' still
+    functions as shorthand for civilisational loss.
   title: Roman Empire (West)
   kind: polity
   regions: [rome, europe, north-africa, west-asia]
@@ -471,6 +535,9 @@
     architecture.
 
 - id: gupta-empire
+  significance: >-
+    The period that produced the decimal place-value system. Almost every
+    number written anywhere today descends from the notation formalised here.
   title: Gupta Empire
   kind: polity
   regions: [north-india, india]
@@ -510,6 +577,10 @@
     community at Medina grew into a polity that unified the Arabian peninsula.
 
 - id: tang-dynasty
+  significance: >-
+    Chang'an was probably the largest city on Earth, with resident Persian,
+    Sogdian, Japanese and Korean communities. Cosmopolitanism is not a modern
+    invention.
   title: Tang Dynasty
   kind: polity
   regions: [china, east-asia]
@@ -522,6 +593,10 @@
     long-distance trade, centred on Chang'an, then the largest city on Earth.
 
 - id: chola-empire
+  significance: >-
+    A rare Indian sea power. Its raids on Srivijaya show the subcontinent
+    projecting force across the Bay of Bengal, which is not how Indian history
+    is usually told.
   title: Imperial Cholas
   kind: polity
   regions: [south-india, india, sri-lanka]
@@ -546,6 +621,10 @@
     ruler Mansa Musa made Timbuktu a centre of scholarship.
 
 - id: delhi-sultanate
+  significance: >-
+    It absorbed the Mongol invasions that flattened Baghdad and Central Asia.
+    Northern India survived largely because this state held, which is why the
+    Mongol lane and the Indian lane diverge here.
   title: Delhi Sultanate
   kind: polity
   regions: [north-india, india, deccan]
@@ -560,6 +639,10 @@
   related: [mughal-empire]
 
 - id: ottoman-empire
+  significance: >-
+    Taking Constantinople in 1453 closed the eastern trade routes to Europe,
+    which is the immediate reason European ships went looking for a way around
+    Africa.
   title: Ottoman Empire
   kind: polity
   regions: [anatolia, west-asia, eastern-europe, north-africa]
@@ -608,6 +691,10 @@
     Forbidden City and sent Zheng He's treasure fleets across the Indian Ocean.
 
 - id: printing-press
+  significance: >-
+    Bi Sheng had movable type four centuries earlier, but an alphabet of 26
+    letters suited it in a way 40,000 characters did not. The technology
+    mattered less than the writing system it met.
   title: Gutenberg's printing press
   kind: technology
   regions: [science, western-europe]
@@ -633,6 +720,10 @@
 
 # ------------------------------------------------------------ bhakti era & early modern
 - id: kabir
+  significance: >-
+    Claimed by Hindus, Muslims and Sikhs alike, and comfortable to none of
+    them. His verses sit in the Guru Granth Sahib, which is why his dates
+    matter to three traditions at once.
   title: Kabir
   kind: person
   regions: [north-india, india]
@@ -653,6 +744,10 @@
     - {title: "Encyclopaedia Britannica — Kabir", url: "https://www.britannica.com/biography/Kabir-Indian-mystic-and-poet"}
 
 - id: guru-nanak
+  significance: >-
+    He rejected caste and ritual at a moment when Kabir was doing the same
+    thing a few hundred miles away - the two bars overlap on this timeline,
+    which is not a coincidence.
   title: Guru Nanak
   kind: person
   regions: [north-india, india]
@@ -694,6 +789,10 @@
     contested Mesopotamia and the Caucasus with the Ottomans for two centuries.
 
 - id: tulsidas
+  significance: >-
+    By writing in Awadhi rather than Sanskrit he moved the Ramayana out of
+    priestly custody. It is the reason the story is recited in villages rather
+    than only in temples.
   title: Tulsidas
   kind: person
   regions: [north-india, india]
@@ -713,6 +812,10 @@
     - {title: "Encyclopaedia Britannica — Tulsidas", url: "https://www.britannica.com/biography/Tulsidas"}
 
 - id: mughal-empire
+  significance: >-
+    At its height it may have produced a quarter of the world's economic
+    output. Its decline and the East India Company's rise are the same event
+    viewed from two ends.
   title: Mughal Empire
   kind: polity
   regions: [north-india, india, deccan, east-india]
@@ -731,6 +834,10 @@
     - {title: "Encyclopaedia Britannica — Mughal dynasty", url: "https://www.britannica.com/topic/Mughal-dynasty"}
 
 - id: akbar
+  significance: >-
+    He abolished the tax on non-Muslims and staged public debates between
+    rival faiths while Europe was fighting its wars of religion. Tulsidas was
+    writing in Awadhi during the same reign.
   title: Akbar
   kind: person
   regions: [north-india, india]
@@ -761,6 +868,10 @@
 
 # ---------------------------------------------------------------- modern
 - id: british-raj
+  significance: >-
+    India's share of world manufacturing fell from roughly a quarter to a few
+    percent across the colonial period. The famines of these decades are
+    counted in tens of millions.
   title: British Raj
   kind: polity
   regions: [india, north-india, south-india, east-india, west-india, deccan]
@@ -775,6 +886,9 @@
   related: [mughal-empire, indian-independence]
 
 - id: origin-of-species
+  significance: >-
+    It supplied a mechanism, which is what earlier evolutionary ideas lacked.
+    Everything in the Earth & Life lane above is legible because of it.
   title: Darwin publishes On the Origin of Species
   kind: work
   regions: [science, britain]
@@ -787,6 +901,10 @@
     it the organising principle of biology.
 
 - id: indian-independence
+  significance: >-
+    The largest and fastest mass migration in history, with a border drawn in
+    five weeks by a lawyer who had never been to India. Its consequences are
+    still being fought over.
   title: Indian Independence and Partition
   kind: event
   regions: [india, north-india, west-india, east-india]

@@ -307,6 +307,9 @@
 
 # ---- conquest and after ----
 - id: columbus-1492
+  significance: >-
+    The beginning of the first genuinely global economy, and of the largest
+    demographic catastrophe on record. The two are the same event.
   title: Columbus reaches the Caribbean
   kind: event
   regions: [mesoamerica, americas, western-europe]

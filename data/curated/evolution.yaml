@@ -4,6 +4,10 @@
 
 # ---- the deep record ----
 - id: origin-of-life
+  significance: >-
+    Life appeared almost as soon as the planet could support it. That speed is
+    the main reason biologists take the possibility of life elsewhere
+    seriously.
   title: Origin of life
   kind: biological
   regions: [earth-life]
@@ -21,6 +25,9 @@
   related: [earth-formation]
 
 - id: great-oxidation
+  significance: >-
+    The first mass extinction was caused by a lifeform poisoning its own
+    atmosphere. It is also the reason anything can breathe.
   title: The Great Oxidation Event
   kind: event
   regions: [earth-life]
@@ -205,6 +212,10 @@
     the trees, showing that bipedalism came before the savannah.
 
 - id: australopithecus
+  significance: >-
+    Lucy settles an old argument. Walking upright came first and the large
+    brain came two million years later, so bipedalism cannot have been a
+    consequence of intelligence.
   title: Australopithecus afarensis
   kind: biological
   regions: [earth-life, east-africa]
@@ -275,6 +286,10 @@
   related: [homo-erectus]
 
 - id: control-of-fire
+  significance: >-
+    Cooking extracts far more energy from the same food, and the widely argued
+    consequence is that our guts shrank while our brains grew. Almost nothing
+    else on this timeline is possible without it.
   title: Control of fire
   kind: technology
   regions: [earth-life, east-africa]
@@ -301,6 +316,10 @@
     Neanderthals, Denisovans and ourselves, though the naming is contested.
 
 - id: neanderthals
+  significance: >-
+    Not a failed draft of us. They had larger brains, survived Ice Age Europe
+    for 400,000 years, and most people outside Africa still carry a fraction
+    of their DNA.
   title: Neanderthals
   kind: biological
   regions: [earth-life, europe, west-asia]
@@ -374,6 +393,10 @@
   related: [homo-sapiens, cave-art]
 
 - id: out-of-africa
+  significance: >-
+    Every person alive outside Africa descends from this dispersal. The
+    genetic bottleneck it created is why humans are less genetically diverse
+    than a single troop of chimpanzees.
   title: The dispersal out of Africa
   kind: event
   regions: [earth-life, africa, west-asia]

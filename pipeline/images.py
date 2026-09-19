@@ -30,7 +30,7 @@ OUTPUT = "data/imported/images.yaml"
 # Ask Commons for a scaled copy rather than the original. The panel shows the
 # picture about 350px wide, and pulling multi-megabyte originals for that is
 # both slow and discourteous to a service that gives its bandwidth away.
-THUMB_WIDTH = 720
+THUMB_WIDTH = 480
 
 # entry id -> Commons file title. Curated: the picture has to actually depict
 # the thing, and be a reasonable lead image rather than a detail or a diagram.
@@ -215,3 +215,83 @@ def load(path: str = OUTPUT) -> dict[str, dict]:
             return yaml.safe_load(handle) or {}
     except FileNotFoundError:
         return {}
+
+
+# ---------------------------------------------------------------------------
+# Downloading, so the deployed site has no runtime dependency on Wikimedia
+# ---------------------------------------------------------------------------
+
+LOCAL_DIR = "site/images"
+ATTRIBUTION = "site/images/CREDITS.md"
+
+_EXT = {"image/jpeg": ".jpg", "image/png": ".png", "image/gif": ".gif",
+        "image/webp": ".webp", "image/svg+xml": ".svg"}
+
+
+def download_all(resolved: dict[str, dict], out_dir: str = LOCAL_DIR,
+                 pause: float = 0.15) -> dict[str, dict]:
+    """Fetch each image into the repo and rewrite its url to a local path.
+
+    Hotlinking makes every visitor's browser call Wikimedia, which is both a
+    runtime dependency the rest of this site does not have and a cost borne by
+    someone giving bandwidth away. The remote url is kept as `source_url` so
+    the origin stays traceable.
+    """
+    import os
+    os.makedirs(out_dir, exist_ok=True)
+    session = requests.Session()
+    out: dict[str, dict] = {}
+
+    for entry_id, record in sorted(resolved.items()):
+        try:
+            response = session.get(record["url"], headers={"User-Agent": USER_AGENT},
+                                   timeout=60)
+            response.raise_for_status()
+        except requests.RequestException as exc:
+            print(f"  {entry_id:<26} download failed ({exc})")
+            continue
+
+        suffix = _EXT.get(response.headers.get("content-type", "").split(";")[0])
+        if not suffix:
+            print(f"  {entry_id:<26} unsupported type "
+                  f"{response.headers.get('content-type')!r}")
+            continue
+
+        name = f"{entry_id}{suffix}"
+        with open(os.path.join(out_dir, name), "wb") as handle:
+            handle.write(response.content)
+
+        out[entry_id] = {**record,
+                         "url": f"images/{name}",
+                         "source_url": record["url"],
+                         "bytes": len(response.content)}
+        time.sleep(pause)
+
+    return out
+
+
+def write_attribution(resolved: dict[str, dict], path: str = ATTRIBUTION) -> None:
+    """A single file listing every image, its author and its licence.
+
+    CC BY-SA requires attribution to travel with the work. The panel shows it
+    per image; this is the same information in one place, for the repo.
+    """
+    import os
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    lines = [
+        "# Image credits",
+        "",
+        "Every image here comes from Wikimedia Commons and is reproduced under",
+        "the licence named beside it. Credit is shown in the site's detail panel",
+        "as well as here, because most of these licences require it.",
+        "",
+        "| Entry | Author | Licence | Source |",
+        "|---|---|---|---|",
+    ]
+    for entry_id, record in sorted(resolved.items()):
+        credit = (record.get("credit") or "Unknown").replace("|", "/")
+        lines.append(
+            f"| `{entry_id}` | {credit} | {record['license']} "
+            f"| [Commons]({record['source']}) |")
+    with open(path, "w", encoding="utf-8") as handle:
+        handle.write("\n".join(lines) + "\n")

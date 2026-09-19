@@ -116,6 +116,10 @@
   related: [tang-dynasty, uyghur-khaganate]
 
 - id: song-dynasty
+  significance: >-
+    Paper money, movable type, the compass and gunpowder weapons all in one
+    dynasty. Europe would acquire these over the following four centuries and
+    call the result a revolution.
   title: Song Dynasty
   kind: polity
   regions: [china, east-asia]
@@ -215,6 +219,9 @@
   related: [printing-press, woodblock-printing, song-dynasty]
 
 - id: gunpowder
+  significance: >-
+    It ended the thousand-year military advantage of steppe cavalry, which
+    closes the Central Asia lane as a source of world-conquering empires.
   title: Gunpowder
   kind: technology
   regions: [china, east-asia]
