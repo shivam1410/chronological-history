@@ -493,15 +493,25 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange,
     event.preventDefault();
     const rect = canvas.getBoundingClientRect();
     const px = event.clientX - rect.left - gutter;
+
+    // Shift keeps the old vertical-scroll gesture for stepping through lanes.
     if (event.shiftKey) {
       scrollY += event.deltaY;
       schedule();
       return;
     }
-    // Trackpads report fine-grained deltas; clamp so one flick is not a leap.
-    const intensity = Math.min(Math.abs(event.deltaY), 50) / 50;
-    const factor = event.deltaY < 0 ? 1 - 0.45 * intensity : 1 + 0.8 * intensity;
-    view = view.zoomAbout(px, factor);
+
+    // A two-finger trackpad swipe sideways slides through time; up and down
+    // zooms. Whichever axis dominates wins, so a slightly diagonal swipe still
+    // does one thing rather than both at once.
+    if (Math.abs(event.deltaX) > Math.abs(event.deltaY)) {
+      view = view.pan(event.deltaX);
+    } else {
+      // Trackpads report fine-grained deltas; clamp so one flick is not a leap.
+      const intensity = Math.min(Math.abs(event.deltaY), 50) / 50;
+      const factor = event.deltaY < 0 ? 1 - 0.45 * intensity : 1 + 0.8 * intensity;
+      view = view.zoomAbout(px, factor);
+    }
     schedule();
     onViewChange?.(view);
   }, { passive: false });
@@ -518,7 +528,15 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange,
     const cx = event.clientX - rect.left;
     const cy = event.clientY - rect.top;
 
-    if (cx < gutter || cy < AXIS_H) {
+    // The cursor says what each region does: the lane gutter toggles a lane,
+    // the axis is not interactive, and the plot area reads a year.
+    if (cy < AXIS_H) {
+      canvas.style.cursor = 'default';
+      if (hover) { hover = null; schedule(); }
+      return;
+    }
+    if (cx < gutter) {
+      canvas.style.cursor = laneAt(event.clientY) ? 'pointer' : 'default';
       if (hover) { hover = null; schedule(); }
       return;
     }
@@ -538,6 +556,7 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange,
 
   canvas.addEventListener('pointermove', trackHover);
   canvas.addEventListener('pointerleave', () => {
+    canvas.style.cursor = 'default';
     if (!hover) return;
     hover = null;
     schedule();

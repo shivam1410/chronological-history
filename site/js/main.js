@@ -4,6 +4,7 @@ import { createPanel } from './panel.js';
 import { createRouter } from './router.js';
 import { createMinimap } from './minimap.js';
 import { ERAS } from './eras.js';
+import { createControls } from './controls.js';
 import { elapsed, formatYear, roundYear } from './format.js';
 import { ORIGIN_YEAR, presentYear } from './timescale.js';
 
@@ -81,6 +82,19 @@ async function start() {
   // createTimeline fires onViewChange during construction, and that callback
   // reaches for both. Their own callbacks only run on user input, long after
   // the timeline binding exists, so referencing it lazily is safe.
+  // Same ordering reason as the minimap: onViewChange fires during
+  // createTimeline and reaches for `controls`.
+  const controls = createControls({
+    searchInput: document.querySelector('#search'),
+    resultsList: document.querySelector('#results'),
+    fromInput: document.querySelector('#from'),
+    toInput: document.querySelector('#to'),
+    rangeForm: document.querySelector('#range'),
+    entries,
+    onPick: (entry) => selectEntry(entry, { focus: true }),
+    onRange: (from, to) => timeline.setView(from, to),
+  });
+
   const minimap = createMinimap(minimapCanvas, {
     entries,
     lanes: info.lanes,
@@ -122,6 +136,7 @@ async function start() {
     onViewChange: (view) => {
       metaLabel.textContent = `${entries.length} entries · ${describe(view)}`;
       minimap.setWindow(view.from, view.to);
+      controls.setRange(view.from, view.to);
       markCurrentEra(view);
       syncHash(true);
     },
@@ -165,10 +180,11 @@ async function start() {
   });
 
   window.__timeline = {
-    timeline, panel, router, minimap, entries, info, selectEntry, ERAS,
+    timeline, panel, router, minimap, controls, entries, info, selectEntry, ERAS,
   };
   applyState(router.current());
   minimap.setWindow(timeline.view.from, timeline.view.to);
+  controls.setRange(timeline.view.from, timeline.view.to);
   markCurrentEra(timeline.view);
   metaLabel.textContent = `${entries.length} entries · ${describe(timeline.view)}`;
 }

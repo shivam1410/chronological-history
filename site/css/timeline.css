@@ -3,10 +3,10 @@
   width: 100%;
   height: 100%;
   touch-action: none;
-  cursor: grab;
+  /* The real cursor is set per region in timeline.js: pointer over the lane
+     gutter, default over the axis, crosshair over the plot. */
+  cursor: default;
 }
-
-.timeline:active { cursor: grabbing; }
 .timeline:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 
 .hint {

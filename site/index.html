@@ -13,7 +13,25 @@
 </head>
 <body>
 <header class="header">
-  <h1 class="header__title">Chronological History</h1>
+  <h1 class="header__title">Chronological&nbsp;History</h1>
+
+  <div class="search">
+    <input id="search" class="search__input" type="search" placeholder="Search history…"
+           role="combobox" aria-expanded="false" aria-controls="results"
+           aria-autocomplete="list" aria-label="Search entries" autocomplete="off" spellcheck="false">
+    <kbd class="search__key">/</kbd>
+    <ul id="results" class="results" role="listbox" aria-label="Search results" hidden></ul>
+  </div>
+
+  <form class="range" id="range" aria-label="Date range">
+    <label class="visually-hidden" for="from">From year</label>
+    <input id="from" class="range__input" autocomplete="off" spellcheck="false" placeholder="from">
+    <span class="range__dash" aria-hidden="true">–</span>
+    <label class="visually-hidden" for="to">To year</label>
+    <input id="to" class="range__input" autocomplete="off" spellcheck="false" placeholder="to">
+    <button type="submit" class="range__go">Go</button>
+  </form>
+
   <nav class="eras" id="eras" aria-label="Jump to an era"></nav>
   <p class="header__meta" id="meta">Loading…</p>
 </header>
