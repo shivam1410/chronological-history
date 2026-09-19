@@ -42,7 +42,7 @@ async function start() {
   canvas.tabIndex = 0;
   const hint = document.createElement('p');
   hint.className = 'hint';
-  hint.textContent = 'scroll to zoom · drag to pan · click an entry';
+  hint.textContent = 'scroll to zoom · drag to pan · click an entry · click the axis for one year';
   stage.append(canvas, hint);
 
   let info;

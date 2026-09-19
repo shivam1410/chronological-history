@@ -3,6 +3,11 @@
 html, body {
   margin: 0;
   height: 100%;
+  /* Tapping a chip was selecting its label, leaving grey highlight boxes over
+     the controls. Text in the panel and year list stays selectable below. */
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
   max-width: 100%;
   overflow-x: hidden;
   background: var(--bg);
@@ -315,6 +320,15 @@ body {
   color: var(--ink);
   font: inherit;
   cursor: pointer;
+}
+
+/* Prose is for reading, so it keeps normal selection. */
+.panel__body,
+.panel__title,
+.yearview__body,
+.yearview__year {
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 .visually-hidden {

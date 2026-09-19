@@ -11,6 +11,7 @@ import { createView, ORIGIN_YEAR, presentYear } from './timescale.js';
 import { formatYear, roundYear } from './format.js';
 import { hitRow, packLanes } from './layout.js';
 import { FLAG_UNCERTAIN_END, FLAG_UNCERTAIN_START } from './store.js';
+import { wrapText } from './wrap.js';
 
 const AXIS_H = 34;
 const BAR_H = 14;
@@ -27,14 +28,21 @@ const HIT_PAD = 10;
 // The lane gutter has to stay legible without eating a phone screen: at 375px
 // a 150px gutter is 40% of the viewport.
 const GUTTER_TIERS = [
-  { upTo: 460, width: 78 },
-  { upTo: 760, width: 104 },
+  { upTo: 460, width: 96 },
+  { upTo: 760, width: 112 },
   { upTo: Infinity, width: 150 },
 ];
 
-/** Fewer stacked rows on a small screen, so a lane is not taller than the view. */
+/** Lane names wrap rather than truncate; this caps how far they wrap. */
+const LANE_LABEL_LINES = 3;
+const LANE_LINE_H = 13;
+
+/** Fewer stacked rows on a small screen, so a lane is not taller than the view
+ *  and the wrapped lane name has room to sit beside it. */
 const NARROW_PX = 760;
-const MAX_ROWS_NARROW = 3;
+const MAX_ROWS_NARROW = 2;
+
+const LANE_FONT = '11px ui-sans-serif, system-ui, sans-serif';
 
 /** Below this window width a lane with sub-regions splits into them. */
 const SUBLANE_SPAN = 2000;
@@ -58,6 +66,11 @@ export function createTimeline(canvas, {
   let frame = null;
 
   const collapsed = new Set();
+
+  // A wide gutter fits the count beside the name; a narrow one gives the name
+  // the full width and drops the count onto its own line underneath.
+  const countInline = () => gutter >= 130;
+  const labelWidth = () => gutter - (countInline() ? 34 : 16);
   let selectedId = null;
   let hover = null;
   const laneById = new Map(lanes.map((lane) => [lane.id, lane]));
@@ -132,9 +145,13 @@ export function createTimeline(canvas, {
     const laid = packed.map((lane) => {
       const isCollapsed = collapsed.has(lane.lane);
       const rowCount = Math.max(1, lane.rows.length);
-      const h = isCollapsed
-        ? LANE_PAD_Y * 2 + COLLAPSED_BAR_H
-        : LANE_PAD_Y * 2 + rowCount * (BAR_H + BAR_GAP) - BAR_GAP;
+      const bars = isCollapsed
+        ? COLLAPSED_BAR_H
+        : rowCount * (BAR_H + BAR_GAP) - BAR_GAP;
+      // A lane is as tall as its bars or its wrapped name, whichever needs more:
+      // a three-line name in a two-row lane would otherwise overflow into the
+      // lane below.
+      const h = LANE_PAD_Y * 2 + Math.max(bars, labelHeight(lane.lane, model));
       const out = {
         ...lane,
         label: model.labels.get(lane.lane) ?? lane.lane,
@@ -256,6 +273,25 @@ export function createTimeline(canvas, {
     }
   }
 
+  /**
+   * The lane name, broken across lines instead of cut off.
+   *
+   * "Centr…" and "Ameri…" name nothing; at phone width almost every lane
+   * truncated to something unreadable. wrapText keeps the name whole and cuts
+   * only a single word too wide for the gutter.
+   */
+  function wrapLabel(text) {
+    ctx.font = LANE_FONT;
+    return wrapText(text, labelWidth(), LANE_LABEL_LINES,
+      (s) => ctx.measureText(s).width);
+  }
+
+  /** Vertical room a lane's wrapped name needs, counting its count line. */
+  function labelHeight(laneId, model) {
+    const label = model.labels.get(laneId) ?? laneId;
+    return (wrapLabel(label).length + (countInline() ? 0 : 1)) * LANE_LINE_H;
+  }
+
   function drawLane(lane) {
     const top = AXIS_H + lane.y - scrollY;
     if (top > height || top + lane.h < AXIS_H) return;
@@ -272,22 +308,28 @@ export function createTimeline(canvas, {
     ctx.fillStyle = colour;
     ctx.fillRect(0, top, 3, lane.h);
 
-    ctx.font = '11px ui-sans-serif, system-ui, sans-serif';
+    ctx.font = LANE_FONT;
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
+
+    const lines = wrapLabel(lane.label);
+    const block = lines.length * LANE_LINE_H;
+    let textY = top + Math.max(LANE_PAD_Y, (lane.h - block) / 2) + LANE_LINE_H / 2;
+
     ctx.fillStyle = theme.ink;
-    const headerY = top + Math.min(lane.h / 2, 14);
-    const maxLabel = gutter - 34;
-    let label = lane.label;
-    while (ctx.measureText(label).width > maxLabel && label.length > 4) {
-      label = `${label.slice(0, -2)}…`;
+    for (const line of lines) {
+      ctx.fillText(line, 10, textY);
+      textY += LANE_LINE_H;
     }
-    ctx.fillText(label, 10, headerY);
 
     ctx.fillStyle = theme.inkFaint;
-    ctx.textAlign = 'right';
-    ctx.fillText(lane.collapsed ? `${lane.count} ›` : String(lane.count),
-      gutter - 8, headerY);
+    const count = lane.collapsed ? `${lane.count} ›` : String(lane.count);
+    if (countInline()) {
+      ctx.textAlign = 'right';
+      ctx.fillText(count, gutter - 8, top + Math.min(lane.h / 2, 14));
+    } else {
+      ctx.fillText(count, 10, textY);
+    }
 
     // Separator
     ctx.strokeStyle = theme.rule;
@@ -379,6 +421,23 @@ export function createTimeline(canvas, {
     ctx.fillStyle = theme.bg;
     ctx.textAlign = 'center';
     ctx.fillText(yearText, yearX + yearW / 2, 4 + (AXIS_H - 10) / 2);
+
+    if (hover.onAxis) {
+      const prompt = 'Click for this year';
+      const padding = 7;
+      const boxW = ctx.measureText(prompt).width + padding * 2;
+      const bx = Math.min(hover.x + 14, width - boxW - 6);
+      ctx.fillStyle = theme.bgRaised;
+      ctx.strokeStyle = theme.ruleStrong;
+      ctx.beginPath();
+      ctx.roundRect(bx + 0.5, AXIS_H + 6.5, boxW, 22, 5);
+      ctx.fill();
+      ctx.stroke();
+      ctx.fillStyle = theme.inkSoft;
+      ctx.textAlign = 'left';
+      ctx.fillText(prompt, bx + padding, AXIS_H + 18);
+      return;
+    }
 
     // Lane name, and the entry under the cursor when there is one. Below the
     // last lane there is neither, and an unfiltered list would still hold one
@@ -543,8 +602,13 @@ export function createTimeline(canvas, {
     // The cursor says what each region does: the lane gutter toggles a lane,
     // the axis is not interactive, and the plot area reads a year.
     if (cy < AXIS_H) {
-      canvas.style.cursor = 'default';
-      if (hover) { hover = null; schedule(); }
+      const onPlot = cx >= gutter;
+      canvas.style.cursor = onPlot ? 'pointer' : 'default';
+      hover = onPlot
+        ? { x: cx, y: cy, year: view.unproject(cx - gutter), laneLabel: '', item: null,
+            onAxis: true }
+        : null;
+      schedule();
       return;
     }
     if (cx < gutter) {
@@ -607,19 +671,24 @@ export function createTimeline(canvas, {
       return;
     }
 
+    if (event.clientY - rect.top < AXIS_H) {
+      axisClick(event);
+      return;
+    }
+
     const hit = hitTest(event.clientX, event.clientY);
     onSelect?.(hit ? hit.entry : null);
   };
   canvas.addEventListener('pointerup', endDrag);
   canvas.addEventListener('pointercancel', endDrag);
 
-  canvas.addEventListener('dblclick', (event) => {
+  function axisClick(event) {
     const rect = canvas.getBoundingClientRect();
     const cy = event.clientY - rect.top;
-    if (cy >= AXIS_H) return; // only the axis opens a year
-    const px = event.clientX - rect.left - gutter;
-    onPickYear?.(view.unproject(px));
-  });
+    const cx = event.clientX - rect.left;
+    if (cy >= AXIS_H || cx < gutter) return;
+    onPickYear?.(view.unproject(cx - gutter));
+  }
 
   const observer = new ResizeObserver(resize);
   observer.observe(canvas);
