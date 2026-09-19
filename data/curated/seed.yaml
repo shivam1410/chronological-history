@@ -1,0 +1,811 @@
+# Phase 1 seed. Deliberately spans every lane and every time scale so the
+# renderer is exercised end to end. Dates that scholarship disputes carry a
+# wide bracket, confidence: contested, and a note naming the competing views.
+
+# ---------------------------------------------------------------- deep time
+- id: earth-formation
+  title: Formation of the Earth
+  kind: geological
+  regions: [earth-life]
+  start: "4.54 Ga"
+  end: "4.54 Ga"
+  importance: 5
+  confidence: medium
+  categories: [evolution]
+  summary: Accretion of the Earth from the solar nebula, dated by radiometric
+    analysis of meteorites and the oldest terrestrial minerals.
+  sources:
+    - {title: "USGS — Age of the Earth", url: "https://pubs.usgs.gov/gip/geotime/age.html"}
+
+- id: cambrian-explosion
+  title: Cambrian Explosion
+  kind: biological
+  regions: [earth-life]
+  start: "538.8 Ma"
+  end: "515 Ma"
+  importance: 4
+  confidence: medium
+  categories: [evolution]
+  summary: A geologically rapid diversification in which most major animal body
+    plans first appear in the fossil record.
+
+- id: permian-triassic-extinction
+  title: Permian–Triassic Extinction
+  kind: event
+  regions: [earth-life]
+  start: "251.9 Ma"
+  end: "251.9 Ma"
+  importance: 4
+  confidence: medium
+  categories: [extinction]
+  summary: The most severe extinction event known, eliminating roughly 80% of
+    marine species and clearing the ground for the rise of the dinosaurs.
+
+- id: dinosaur-era
+  title: Age of the Dinosaurs
+  kind: biological
+  regions: [earth-life]
+  start: ["243 Ma", "233 Ma"]
+  end: "66 Ma"
+  importance: 5
+  confidence: medium
+  categories: [evolution]
+  note: The earliest undisputed dinosaur fossils date to about 233 Ma; possible
+    earlier forms push the origin back towards 243 Ma.
+  summary: Non-avian dinosaurs dominated terrestrial ecosystems for some 165
+    million years, from the Late Triassic until the end of the Cretaceous.
+  related: [permian-triassic-extinction, kpg-extinction]
+  sources:
+    - {title: "Natural History Museum — Dinosaurs", url: "https://www.nhm.ac.uk/discover/dino-directory.html"}
+
+- id: kpg-extinction
+  title: Cretaceous–Paleogene Extinction
+  kind: event
+  regions: [earth-life]
+  start: "66 Ma"
+  end: "66 Ma"
+  importance: 5
+  confidence: high
+  categories: [extinction]
+  summary: An asteroid impact at Chicxulub ended the non-avian dinosaurs and
+    about three quarters of all species, opening the way for mammals.
+  related: [dinosaur-era]
+
+- id: himalayan-orogeny
+  title: Himalayan Orogeny — India collides with Eurasia
+  kind: geological
+  regions: [himalaya, india]
+  start: ["59 Ma", "50 Ma"]
+  end: ongoing
+  importance: 5
+  confidence: medium
+  categories: [orogeny]
+  note: Estimates for the onset of continental collision range from about 59 Ma
+    to 50 Ma depending on whether initial contact or full suturing is dated.
+  summary: The Indian plate, having drifted north from Gondwana, collided with
+    Eurasia and drove up the Himalaya and the Tibetan Plateau. The range is
+    still rising by roughly 5 mm a year.
+  sources:
+    - {title: "USGS — The Himalayas: Two continents collide", url: "https://pubs.usgs.gov/gip/dynamic/himalaya.html"}
+
+- id: pleistocene
+  title: Pleistocene Epoch
+  kind: period
+  regions: [earth-life]
+  start: "2.58 Ma"
+  end: "11.7 ka"
+  importance: 4
+  confidence: high
+  categories: [climate, glaciation]
+  summary: The epoch of repeated glacial cycles, during which ice sheets
+    advanced and retreated more than twenty times and the genus Homo spread
+    across the globe.
+
+- id: last-glacial-period
+  title: Last Glacial Period
+  kind: period
+  regions: [earth-life]
+  start: "115 ka"
+  end: "11.7 ka"
+  importance: 5
+  confidence: high
+  categories: [glaciation, climate]
+  summary: The most recent ice age, when ice sheets covered much of North
+    America and northern Eurasia and sea level fell by about 125 metres.
+  related: [last-glacial-maximum, holocene]
+
+- id: last-glacial-maximum
+  title: Last Glacial Maximum
+  kind: event
+  regions: [earth-life]
+  start: "26.5 ka"
+  end: "19 ka"
+  importance: 4
+  confidence: high
+  categories: [glaciation, climate]
+  summary: The peak of the last ice age, when continental ice sheets reached
+    their greatest extent and Beringia linked Asia to the Americas.
+
+- id: toba-eruption
+  title: Toba Supereruption
+  kind: event
+  regions: [southeast-asia, earth-life]
+  start: "74 ka"
+  end: "74 ka"
+  importance: 3
+  confidence: medium
+  categories: [climate]
+  summary: A supervolcanic eruption in Sumatra, the largest of the Quaternary,
+    followed by a volcanic winter of disputed severity.
+
+- id: holocene
+  title: Holocene Epoch
+  kind: period
+  regions: [earth-life]
+  start: "11.7 ka"
+  end: ongoing
+  importance: 5
+  confidence: high
+  categories: [climate]
+  summary: The current interglacial epoch. Every agricultural society, city and
+    written record belongs to it.
+
+- id: homo-sapiens
+  title: Emergence of Homo sapiens
+  kind: biological
+  regions: [east-africa, africa]
+  start: ["315 ka", "200 ka"]
+  end: ongoing
+  importance: 5
+  confidence: medium
+  categories: [evolution]
+  note: The Jebel Irhoud fossils push anatomically modern traits back to about
+    315 ka; fully modern morphology is usually placed nearer 200 ka.
+  summary: Anatomically modern humans appear in Africa and subsequently disperse
+    across every continent.
+
+- id: aboriginal-australia
+  title: Settlement of Australia
+  kind: event
+  regions: [oceania]
+  start: ["65 ka", "50 ka"]
+  end: ongoing
+  importance: 4
+  confidence: medium
+  categories: [exploration]
+  summary: Humans crossed Wallacea to reach Sahul, beginning the longest
+    continuous cultural tradition known.
+
+- id: neolithic-revolution
+  title: Neolithic Revolution — agriculture begins
+  kind: technology
+  regions: [global]
+  start: "12 ka"
+  end: "5 ka"
+  importance: 5
+  confidence: medium
+  categories: [civilisation]
+  summary: Independent domestication of plants and animals in the Fertile
+    Crescent, China, Mesoamerica, the Andes and elsewhere, ending the exclusively
+    foraging way of life.
+
+# ---------------------------------------------------------- ancient world
+- id: cuneiform
+  title: Invention of Writing — Cuneiform
+  kind: technology
+  regions: [mesopotamia, west-asia]
+  start: [-3400, -3100]
+  end: 75
+  importance: 5
+  confidence: medium
+  categories: [writing]
+  summary: Sumerian accountants in Uruk turned clay tokens into impressed signs,
+    producing the earliest known writing system and the beginning of recorded
+    history.
+
+- id: bronze-age
+  title: Bronze Age
+  kind: period
+  regions: [global]
+  start: -3300
+  end: -1200
+  importance: 4
+  confidence: medium
+  categories: [civilisation]
+  summary: The era of tin-bronze metallurgy, palace economies and the first
+    long-distance trade networks across Eurasia.
+
+- id: indus-valley
+  title: Indus Valley Civilisation
+  kind: polity
+  regions: [west-india, north-india, india]
+  start: -3300
+  end: -1300
+  importance: 5
+  confidence: medium
+  categories: [civilisation]
+  summary: The largest Bronze Age civilisation by area, with planned cities at
+    Mohenjo-daro and Harappa, standardised weights, and a script that remains
+    undeciphered.
+  sources:
+    - {title: "UNESCO — Archaeological Ruins at Moenjodaro", url: "https://whc.unesco.org/en/list/138/"}
+
+- id: egypt-old-kingdom
+  title: Old Kingdom of Egypt
+  kind: polity
+  regions: [egypt, africa]
+  start: -2686
+  end: -2181
+  importance: 4
+  confidence: medium
+  categories: [dynasty, civilisation]
+  summary: The pyramid age, when a centralised Egyptian state organised labour
+    on a scale not seen before.
+
+- id: great-pyramid
+  title: Great Pyramid of Giza
+  kind: structure
+  regions: [egypt, africa]
+  start: [-2580, -2560]
+  end: [-2560, -2540]
+  importance: 4
+  confidence: medium
+  categories: [architecture]
+  summary: Tomb of Khufu and the only surviving wonder of the ancient world;
+    the tallest human-made structure for nearly four thousand years.
+
+- id: rigveda
+  title: Composition of the Rigveda
+  kind: work
+  regions: [north-india, india]
+  start: [-1700, -1100]
+  end: [-1200, -900]
+  importance: 5
+  confidence: contested
+  categories: [scripture]
+  note: Most philologists place the core hymns c. 1500–1200 BCE on linguistic
+    grounds; some Indian scholars argue for substantially earlier dates tied to
+    the Sarasvati river and Indus continuity. No manuscript evidence survives
+    from the period, so all dates are inferential.
+  summary: The oldest surviving Sanskrit text and the foundational Vedic
+    scripture, transmitted orally with extraordinary fidelity for millennia
+    before being written down.
+  aliases: [Rig Veda, Ṛgveda]
+  sources:
+    - {title: "Encyclopaedia Britannica — Rigveda", url: "https://www.britannica.com/topic/Rigveda"}
+    - {title: "UNESCO Memory of the World — Rigveda", url: "https://www.unesco.org/en/memory-world/rigveda"}
+
+- id: iron-age
+  title: Iron Age
+  kind: period
+  regions: [global]
+  start: -1200
+  end: -550
+  importance: 3
+  confidence: medium
+  categories: [civilisation]
+  summary: Iron smelting spread across Eurasia and Africa, cheapening tools and
+    weapons and reshaping the societies that adopted it.
+
+- id: upanishads
+  title: Composition of the principal Upanishads
+  kind: work
+  regions: [north-india, india]
+  start: [-800, -500]
+  end: [-300, -100]
+  importance: 5
+  confidence: contested
+  categories: [scripture, philosophy]
+  note: The oldest prose Upanishads (Brihadaranyaka, Chandogya) are usually put
+    at c. 800–500 BCE; the later verse Upanishads extend to the early centuries
+    BCE. Individual datings vary widely between scholars.
+  summary: Philosophical dialogues concluding the Vedic corpus, introducing
+    brahman, atman and rebirth, and forming the basis of Vedanta.
+  related: [rigveda]
+
+- id: buddha
+  title: Siddhartha Gautama, the Buddha
+  kind: person
+  regions: [north-india, india]
+  start: [-563, -480]
+  end: [-483, -400]
+  importance: 5
+  confidence: contested
+  categories: [religion, philosophy]
+  note: The traditional "long chronology" gives 563–483 BCE; most modern
+    scholarship prefers a "short chronology" placing his death nearer 400 BCE.
+  summary: Founder of Buddhism, who taught a middle path between asceticism and
+    indulgence in the Gangetic plain of the Mahajanapada era.
+  aliases: [Gautama Buddha, Shakyamuni, Siddhartha]
+  sources:
+    - {title: "Encyclopaedia Britannica — Buddha", url: "https://www.britannica.com/biography/Buddha-founder-of-Buddhism"}
+
+- id: achaemenid-empire
+  title: Achaemenid Empire
+  kind: polity
+  regions: [persia, west-asia]
+  start: -550
+  end: -330
+  importance: 4
+  confidence: high
+  categories: [empire]
+  summary: The first Persian empire, stretching from the Indus to the Aegean and
+    administered through satrapies and the Royal Road.
+
+- id: classical-athens
+  title: Classical Athens
+  kind: polity
+  regions: [greece, europe]
+  start: -508
+  end: -322
+  importance: 4
+  confidence: high
+  categories: [kingdom, philosophy]
+  summary: The democratic city-state of Socrates, Plato, Aeschylus and the
+    Parthenon, whose institutions and ideas shaped later European thought.
+
+- id: ramayana
+  title: Composition of the Valmiki Ramayana
+  kind: work
+  regions: [north-india, india]
+  start: [-500, -200]
+  end: [100, 300]
+  importance: 5
+  confidence: contested
+  categories: [epic, scripture]
+  note: The core books are generally dated to roughly the 5th–4th centuries BCE,
+    with books 1 and 7 added later; the text reached something like its present
+    form by about the 3rd century CE. Traditional accounts place the events far
+    earlier, in the Treta Yuga.
+  summary: The Sanskrit epic of Rama, Sita and Ravana, ascribed to Valmiki. With
+    the Mahabharata it is one of the two great epics of the subcontinent and the
+    source of retellings across South and Southeast Asia.
+  aliases: [Rāmāyaṇa]
+  related: [mahabharata, tulsidas]
+  sources:
+    - {title: "Encyclopaedia Britannica — Ramayana", url: "https://www.britannica.com/topic/Ramayana-Indian-epic"}
+
+- id: mahabharata
+  title: Composition of the Mahabharata
+  kind: work
+  regions: [north-india, india]
+  start: [-400, -300]
+  end: [300, 400]
+  importance: 5
+  confidence: contested
+  categories: [epic, scripture]
+  note: Composed and expanded over roughly eight centuries; the Bhagavad Gita is
+    a later insertion usually dated to the first centuries BCE or CE.
+  summary: The longest epic poem known, recounting the Kurukshetra war between
+    the Pandavas and Kauravas and absorbing an enormous body of philosophical
+    and legal material.
+  related: [ramayana]
+
+- id: maurya-empire
+  title: Maurya Empire
+  kind: polity
+  regions: [north-india, india, deccan]
+  start: -322
+  end: -184
+  importance: 5
+  confidence: high
+  categories: [empire]
+  summary: Founded by Chandragupta Maurya, the first empire to unify most of the
+    subcontinent, governed from Pataliputra.
+  related: [ashoka]
+
+- id: ashoka
+  title: Ashoka
+  kind: person
+  regions: [north-india, india]
+  start: [-304, -304]
+  end: -232
+  importance: 5
+  confidence: medium
+  categories: [ruler]
+  summary: Mauryan emperor who, after the carnage at Kalinga, embraced Buddhism
+    and inscribed edicts of dhamma on rock and pillar across his empire.
+  related: [maurya-empire, buddha]
+
+- id: qin-dynasty
+  title: Qin Dynasty
+  kind: polity
+  regions: [china, east-asia]
+  start: -221
+  end: -206
+  importance: 4
+  confidence: high
+  categories: [dynasty, empire]
+  summary: Shi Huangdi unified the warring states, standardised script, weights
+    and axle widths, and began the Great Wall and the terracotta army.
+
+- id: han-dynasty
+  title: Han Dynasty
+  kind: polity
+  regions: [china, east-asia]
+  start: -202
+  end: 220
+  importance: 5
+  confidence: high
+  categories: [dynasty, empire]
+  summary: Four centuries of Chinese imperial rule that established the
+    Confucian bureaucratic state and opened the Silk Road.
+  related: [silk-road]
+
+- id: silk-road
+  title: Silk Road trade networks
+  kind: period
+  regions: [central-asia, china, west-asia, global]
+  start: -130
+  end: 1453
+  importance: 4
+  confidence: medium
+  categories: [trade]
+  summary: Overland routes linking China, India, Persia and the Mediterranean,
+    carrying silk, spices, paper, Buddhism and plague alike.
+
+- id: roman-empire
+  title: Roman Empire (West)
+  kind: polity
+  regions: [rome, europe, north-africa, west-asia]
+  start: -27
+  end: 476
+  importance: 5
+  confidence: high
+  categories: [empire]
+  summary: From Augustus to the deposition of Romulus Augustulus, an empire
+    encircling the Mediterranean whose law, language and roads outlasted it.
+
+# ------------------------------------------------------------ classical & medieval
+- id: maya-classic
+  title: Maya Classic Period
+  kind: period
+  regions: [mesoamerica, americas]
+  start: 250
+  end: 900
+  importance: 4
+  confidence: high
+  categories: [civilisation, writing]
+  summary: The height of Maya city-states such as Tikal and Palenque, with a
+    fully developed writing system, Long Count calendar and monumental
+    architecture.
+
+- id: gupta-empire
+  title: Gupta Empire
+  kind: polity
+  regions: [north-india, india]
+  start: 320
+  end: 550
+  importance: 5
+  confidence: medium
+  categories: [empire, dynasty]
+  summary: A period of consolidation in mathematics, astronomy, Sanskrit
+    literature and temple architecture, often called a classical age of India.
+  related: [aryabhata]
+
+- id: aryabhata
+  title: Aryabhata
+  kind: person
+  regions: [north-india, india]
+  start: 476
+  end: 550
+  importance: 4
+  confidence: medium
+  categories: [mathematics, astronomy, scientist]
+  summary: Astronomer-mathematician who gave a place-value system without zero
+    as a symbol, an accurate value of pi, and a heliocentric-leaning account of
+    the Earth's rotation.
+  related: [gupta-empire]
+
+- id: muhammad
+  title: Prophet Muhammad
+  kind: person
+  regions: [arabia, west-asia]
+  start: [570, 571]
+  end: 632
+  importance: 5
+  confidence: medium
+  categories: [religion]
+  summary: Founder of Islam, whose revelations became the Quran and whose
+    community at Medina grew into a polity that unified the Arabian peninsula.
+
+- id: tang-dynasty
+  title: Tang Dynasty
+  kind: polity
+  regions: [china, east-asia]
+  start: 618
+  end: 907
+  importance: 4
+  confidence: high
+  categories: [dynasty, empire]
+  summary: A cosmopolitan high point of Chinese poetry, Buddhism and
+    long-distance trade, centred on Chang'an, then the largest city on Earth.
+
+- id: chola-empire
+  title: Imperial Cholas
+  kind: polity
+  regions: [south-india, india, sri-lanka]
+  start: 848
+  end: 1279
+  importance: 4
+  confidence: high
+  categories: [empire, dynasty]
+  summary: A Tamil maritime empire that projected power to Sri Lanka, the
+    Maldives and Srivijaya, and built the Brihadisvara temple at Thanjavur.
+
+- id: mali-empire
+  title: Mali Empire
+  kind: polity
+  regions: [west-africa, africa]
+  start: 1235
+  end: 1670
+  importance: 3
+  confidence: medium
+  categories: [empire]
+  summary: West African empire controlling the trans-Saharan gold trade, whose
+    ruler Mansa Musa made Timbuktu a centre of scholarship.
+
+- id: delhi-sultanate
+  title: Delhi Sultanate
+  kind: polity
+  regions: [north-india, india, deccan]
+  start: 1206
+  end: 1526
+  importance: 5
+  confidence: high
+  categories: [empire, dynasty]
+  summary: Five successive Muslim dynasties ruling from Delhi, which repelled
+    the Mongols, extended briefly over most of the subcontinent, and fell to
+    Babur at Panipat.
+  related: [mughal-empire]
+
+- id: ottoman-empire
+  title: Ottoman Empire
+  kind: polity
+  regions: [anatolia, west-asia, eastern-europe, north-africa]
+  start: 1299
+  end: 1922
+  importance: 5
+  confidence: high
+  categories: [empire]
+  summary: Six centuries of rule from Anatolia across the Balkans, the Levant
+    and North Africa, ending the Byzantine empire at Constantinople in 1453.
+
+- id: renaissance
+  title: European Renaissance
+  kind: movement
+  regions: [europe, rome, western-europe]
+  start: [1300, 1350]
+  end: [1600, 1650]
+  importance: 4
+  confidence: medium
+  categories: [philosophy, architecture]
+  summary: A revival of classical learning and naturalistic art beginning in the
+    Italian city-states and spreading across Europe.
+
+- id: vijayanagara-empire
+  title: Vijayanagara Empire
+  kind: polity
+  regions: [south-india, deccan, india]
+  start: 1336
+  end: 1646
+  importance: 4
+  confidence: high
+  categories: [empire]
+  summary: South Indian empire centred on Hampi, which checked sultanate
+    expansion southward for two centuries until its defeat at Talikota in 1565.
+
+- id: ming-dynasty
+  title: Ming Dynasty
+  kind: polity
+  regions: [china, east-asia]
+  start: 1368
+  end: 1644
+  importance: 4
+  confidence: high
+  categories: [dynasty, empire]
+  summary: Restored native Chinese rule after the Mongol Yuan; built the
+    Forbidden City and sent Zheng He's treasure fleets across the Indian Ocean.
+
+- id: printing-press
+  title: Gutenberg's printing press
+  kind: technology
+  regions: [western-europe, europe, global]
+  start: [1440, 1450]
+  end: ongoing
+  importance: 5
+  confidence: medium
+  categories: [writing]
+  summary: Movable metal type in Mainz made books reproducible at scale,
+    accelerating the Reformation, the scientific revolution and mass literacy.
+
+- id: inca-empire
+  title: Inca Empire
+  kind: polity
+  regions: [andes, americas]
+  start: 1438
+  end: 1533
+  importance: 4
+  confidence: high
+  categories: [empire]
+  summary: The largest pre-Columbian state, administered without writing or the
+    wheel through quipu records and a road network spanning the Andes.
+
+# ------------------------------------------------------------ bhakti era & early modern
+- id: kabir
+  title: Kabir
+  kind: person
+  regions: [north-india, india]
+  start: [1398, 1440]
+  end: [1448, 1518]
+  importance: 5
+  confidence: contested
+  categories: [saint, poet, mystic]
+  note: Traditional accounts give 1398–1518, a span of 120 years; most modern
+    scholars prefer c. 1440–1518. The hagiographies are late and the poems were
+    transmitted orally before being collected.
+  summary: Weaver and poet-saint of Varanasi whose blunt couplets rejected both
+    Hindu and Islamic orthodoxy in favour of direct, imageless devotion. Verses
+    attributed to him appear in the Sikh Guru Granth Sahib.
+  aliases: [Kabir Das, Bhagat Kabir, Sant Kabir]
+  related: [guru-nanak, tulsidas, mirabai]
+  sources:
+    - {title: "Encyclopaedia Britannica — Kabir", url: "https://www.britannica.com/biography/Kabir-Indian-mystic-and-poet"}
+
+- id: guru-nanak
+  title: Guru Nanak
+  kind: person
+  regions: [north-india, india]
+  start: 1469
+  end: 1539
+  importance: 5
+  confidence: high
+  categories: [saint, religion, poet]
+  summary: Founder of Sikhism, whose teaching of one formless God and rejection
+    of caste and ritual drew on and reshaped the Bhakti and Sufi currents of his
+    time.
+  related: [kabir]
+
+- id: mirabai
+  title: Mirabai
+  kind: person
+  regions: [west-india, north-india, india]
+  start: [1498, 1504]
+  end: [1546, 1557]
+  importance: 4
+  confidence: contested
+  categories: [saint, poet, mystic]
+  note: Dates rest entirely on later hagiography; nothing contemporary survives.
+  summary: Rajput princess turned wandering devotee of Krishna, whose bhajans in
+    Rajasthani and Braj remain among the most widely sung devotional poems in
+    India.
+  related: [kabir, tulsidas]
+
+- id: safavid-empire
+  title: Safavid Empire
+  kind: polity
+  regions: [persia, west-asia]
+  start: 1501
+  end: 1736
+  importance: 4
+  confidence: high
+  categories: [empire, dynasty]
+  summary: Established Twelver Shi'ism as the state religion of Iran and
+    contested Mesopotamia and the Caucasus with the Ottomans for two centuries.
+
+- id: tulsidas
+  title: Tulsidas
+  kind: person
+  regions: [north-india, india]
+  start: [1497, 1532]
+  end: 1623
+  importance: 5
+  confidence: contested
+  categories: [saint, poet]
+  note: Birth year is disputed between 1497, 1511 and 1532; 1511 is the most
+    commonly cited. The death year of 1623 is better attested.
+  summary: Poet-saint who composed the Ramcharitmanas, retelling the Ramayana in
+    Awadhi rather than Sanskrit and so placing the story of Rama in the mouths of
+    ordinary people across North India.
+  aliases: [Goswami Tulsidas, Tulasidasa]
+  related: [ramayana, kabir, mirabai, mughal-empire]
+  sources:
+    - {title: "Encyclopaedia Britannica — Tulsidas", url: "https://www.britannica.com/biography/Tulsidas"}
+
+- id: mughal-empire
+  title: Mughal Empire
+  kind: polity
+  regions: [north-india, india, deccan, east-india]
+  start: 1526
+  end: 1857
+  importance: 5
+  confidence: high
+  categories: [empire, dynasty]
+  summary: Founded when Babur defeated the Delhi Sultanate at Panipat, the
+    Mughal state came to rule most of the subcontinent, fused Persian and Indian
+    artistic traditions, and survived in name until the British deposed Bahadur
+    Shah II after 1857.
+  aliases: [Timurid Empire of India, Mughal Sultanate]
+  related: [delhi-sultanate, akbar, taj-mahal, british-raj]
+  sources:
+    - {title: "Encyclopaedia Britannica — Mughal dynasty", url: "https://www.britannica.com/topic/Mughal-dynasty"}
+
+- id: akbar
+  title: Akbar
+  kind: person
+  regions: [north-india, india]
+  start: 1542
+  end: 1605
+  importance: 5
+  confidence: high
+  categories: [ruler]
+  summary: Third Mughal emperor, who acceded at thirteen in 1556, abolished the
+    jizya, took Rajput wives and allies, and convened debates between Muslim,
+    Hindu, Jain, Zoroastrian and Jesuit scholars at Fatehpur Sikri.
+  related: [mughal-empire, tulsidas]
+
+- id: taj-mahal
+  title: Taj Mahal
+  kind: structure
+  regions: [north-india, india]
+  start: 1632
+  end: 1653
+  importance: 4
+  confidence: high
+  categories: [architecture]
+  summary: Mausoleum built by Shah Jahan for Mumtaz Mahal at Agra, the high
+    point of Mughal architecture.
+  related: [mughal-empire]
+  sources:
+    - {title: "UNESCO — Taj Mahal", url: "https://whc.unesco.org/en/list/252/"}
+
+# ---------------------------------------------------------------- modern
+- id: british-raj
+  title: British Raj
+  kind: polity
+  regions: [india, north-india, south-india, east-india, west-india, deccan]
+  start: 1858
+  end: 1947
+  importance: 5
+  confidence: high
+  categories: [colonialism, empire]
+  summary: Direct Crown rule over the subcontinent following the rebellion of
+    1857 and the dissolution of the East India Company, ending with partition
+    and independence.
+  related: [mughal-empire, indian-independence]
+
+- id: origin-of-species
+  title: Darwin publishes On the Origin of Species
+  kind: work
+  regions: [britain, europe, global]
+  start: 1859
+  end: 1859
+  importance: 5
+  confidence: high
+  categories: [evolution, scientist]
+  summary: Set out evolution by natural selection with enough evidence to make
+    it the organising principle of biology.
+
+- id: indian-independence
+  title: Indian Independence and Partition
+  kind: event
+  regions: [india, north-india, west-india, east-india]
+  start: 1947
+  end: 1947
+  importance: 5
+  confidence: high
+  categories: [independence]
+  summary: British India was partitioned into the dominions of India and
+    Pakistan, ending colonial rule and displacing some fifteen million people.
+  related: [british-raj]
+
+- id: moon-landing
+  title: Apollo 11 Moon landing
+  kind: event
+  regions: [global, north-america]
+  start: 1969
+  end: 1969
+  importance: 4
+  confidence: high
+  categories: [exploration]
+  summary: The first crewed landing on another world.

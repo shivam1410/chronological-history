@@ -1,0 +1,87 @@
+# Lanes shown on the timeline, in display order.
+# `sub_regions` are used when the view is narrow enough to expand a lane.
+- id: earth-life
+  label: Earth & Life
+  order: 1
+  color: "--lane-earth-life"
+  note: Non-human deep time - geology, climate, and the history of life.
+
+- id: india
+  label: Indian Subcontinent
+  order: 2
+  color: "--lane-india"
+  sub_regions:
+    - {id: north-india, label: North India}
+    - {id: south-india, label: South India}
+    - {id: east-india, label: East India}
+    - {id: west-india, label: West India}
+    - {id: deccan, label: Deccan}
+    - {id: himalaya, label: Himalaya & Tibet}
+    - {id: sri-lanka, label: Sri Lanka}
+
+- id: east-asia
+  label: East & Southeast Asia
+  order: 3
+  color: "--lane-east-asia"
+  sub_regions:
+    - {id: china, label: China}
+    - {id: japan, label: Japan}
+    - {id: korea, label: Korea}
+    - {id: southeast-asia, label: Southeast Asia}
+
+- id: central-asia
+  label: Central Asia & the Steppe
+  order: 4
+  color: "--lane-central-asia"
+
+- id: west-asia
+  label: West Asia & Persia
+  order: 5
+  color: "--lane-west-asia"
+  sub_regions:
+    - {id: mesopotamia, label: Mesopotamia}
+    - {id: persia, label: Persia}
+    - {id: levant, label: Levant}
+    - {id: arabia, label: Arabia}
+    - {id: anatolia, label: Anatolia}
+
+- id: europe
+  label: Europe & Mediterranean
+  order: 6
+  color: "--lane-europe"
+  sub_regions:
+    - {id: greece, label: Greece}
+    - {id: rome, label: Rome & Italy}
+    - {id: western-europe, label: Western Europe}
+    - {id: eastern-europe, label: Eastern Europe}
+    - {id: britain, label: Britain & Ireland}
+
+- id: africa
+  label: Africa
+  order: 7
+  color: "--lane-africa"
+  sub_regions:
+    - {id: egypt, label: Egypt}
+    - {id: west-africa, label: West Africa}
+    - {id: east-africa, label: East Africa}
+    - {id: north-africa, label: North Africa}
+
+- id: americas
+  label: Americas
+  order: 8
+  color: "--lane-americas"
+  sub_regions:
+    - {id: mesoamerica, label: Mesoamerica}
+    - {id: andes, label: Andes}
+    - {id: north-america, label: North America}
+
+- id: oceania
+  label: Oceania
+  order: 9
+  color: "--lane-oceania"
+
+- id: global
+  label: Global / Science & Ideas
+  order: 10
+  color: "--lane-global"
+  note: Entries with no single home - technologies, ideas, and worldwide events.

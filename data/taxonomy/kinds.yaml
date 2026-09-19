@@ -1,0 +1,10 @@
+- {id: person,     label: Person}
+- {id: work,       label: Text or Work}
+- {id: polity,     label: Polity}
+- {id: event,      label: Event}
+- {id: period,     label: Period}
+- {id: geological, label: Geological}
+- {id: biological, label: Biological}
+- {id: structure,  label: Structure}
+- {id: movement,   label: Movement}
+- {id: technology, label: Technology}
