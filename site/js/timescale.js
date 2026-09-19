@@ -95,7 +95,12 @@ function niceStep(magnitude) {
 const TICK_SAMPLES = 9;
 
 /**
- * A window onto the scale, rendered linearly in sp-space.
+ * A window onto the scale, rendered linearly in UNIT space.
+ *
+ * Unit space, not raw sp-space: the anchors are the whole point of this module,
+ * and projecting through sp directly bypasses them - recorded history collapses
+ * back to about a twelfth of the axis. Inside a single anchor segment unit is
+ * linear in sp anyway, so a zoomed window is still near-linear in years.
  *
  * Views are immutable: zoomAbout and pan return new ones.
  */
@@ -103,22 +108,20 @@ export function createView(from, to, widthPx) {
   const lo = clamp(Math.min(from, to), ORIGIN_YEAR, PRESENT);
   const hi = clamp(Math.max(from, to), ORIGIN_YEAR, PRESENT);
 
-  const spFrom = sp(lo);
-  const spTo = sp(hi);
-  const spSpan = spFrom - spTo; // positive: sp decreases as the year increases
+  const uFrom = yearToUnit(lo);
+  const uTo = yearToUnit(hi);
+  const uSpan = uTo - uFrom || Number.EPSILON;
 
-  const project = (year) => ((spFrom - sp(year)) / spSpan) * widthPx;
-  const unproject = (px) => yearFromSp(spFrom - (px / widthPx) * spSpan);
+  const project = (year) => ((yearToUnit(year) - uFrom) / uSpan) * widthPx;
+  const unproject = (px) => unitToYear(uFrom + (px / widthPx) * uSpan);
 
   function zoomAbout(px, factor) {
     const fraction = px / widthPx;
-    const anchorSp = spFrom - fraction * spSpan;
-    const nextSpan = spSpan * factor;
-    let nextFrom = yearFromSp(anchorSp + fraction * nextSpan);
-    let nextTo = yearFromSp(anchorSp - (1 - fraction) * nextSpan);
+    const anchorU = uFrom + fraction * uSpan;
+    const nextSpan = uSpan * factor;
 
-    nextFrom = clamp(nextFrom, ORIGIN_YEAR, PRESENT);
-    nextTo = clamp(nextTo, ORIGIN_YEAR, PRESENT);
+    let nextFrom = unitToYear(clamp(anchorU - fraction * nextSpan, 0, 1));
+    let nextTo = unitToYear(clamp(anchorU + (1 - fraction) * nextSpan, 0, 1));
 
     if (nextTo - nextFrom < 1) {
       // Never collapse below a one-year window.
@@ -130,20 +133,15 @@ export function createView(from, to, widthPx) {
   }
 
   function pan(px) {
-    const shift = (px / widthPx) * spSpan;
-    return createView(yearFromSp(spFrom - shift), yearFromSp(spTo - shift), widthPx);
+    const shift = (px / widthPx) * uSpan;
+    return createView(
+      unitToYear(clamp(uFrom + shift, 0, 1)),
+      unitToYear(clamp(uTo + shift, 0, 1)),
+      widthPx,
+    );
   }
 
-  /**
-   * Ticks spaced evenly on screen, then snapped to round years.
-   *
-   * Sampling in unit space rather than year space is what keeps the axis
-   * readable: on a scale this compressed, evenly spaced round years would pile
-   * up at one end.
-   */
   function ticks() {
-    const uFrom = yearToUnit(lo);
-    const uTo = yearToUnit(hi);
     const samples = [];
     for (let i = 0; i <= TICK_SAMPLES; i++) {
       samples.push(unitToYear(uFrom + (i / TICK_SAMPLES) * (uTo - uFrom)));
@@ -151,13 +149,43 @@ export function createView(from, to, widthPx) {
 
     const stepFor = new Map();
     for (let i = 0; i <= TICK_SAMPLES; i++) {
-      const before = samples[Math.max(i - 1, 0)];
-      const after = samples[Math.min(i + 1, TICK_SAMPLES)];
-      const step = niceStep(Math.abs(after - before) / 2);
-      let year = Math.round(samples[i] / step) * step;
+      const lower = Math.max(i - 1, 0);
+      const upper = Math.min(i + 1, TICK_SAMPLES);
+      // Divide by the intervals actually spanned: the first and last samples
+      // have one neighbour, not two, and halving their gap would pick a finer
+      // step for them than for the middle of the axis.
+      const spacing = Math.abs(samples[upper] - samples[lower]) / (upper - lower);
+
+      // Cap the step at half the sample's own magnitude. Without this a sample
+      // at -430 Ma, whose neighbours are a billion years away, rounds to zero
+      // and every deep-time label collapses onto the present.
+      const bp = BP_EPOCH - toAstro(samples[i]);
+      const deep = bp >= 1e4; // formatYear switches to ka/Ma/Ga here
+
+      // Deep-time labels show years before present, so snapping the historical
+      // year gives values like "602 ka". Snap the BP value instead.
+      const basis = deep ? bp : samples[i];
+      const step = niceStep(Math.min(spacing, Math.abs(basis) / 2));
+      const snapped = Math.round(basis / step) * step;
+
+      let year = deep ? fromAstro(BP_EPOCH - snapped) : snapped;
       if (year === 0) year = 1; // no year zero
       if (year < lo || year > hi) continue;
       if (!stepFor.has(year)) stepFor.set(year, step);
+    }
+
+    // When every sample agreed on a step the window is effectively uniform, so
+    // lay the ticks out on that step directly. Snapping samples individually
+    // can round two of them onto the same year, and the dedupe then leaves a
+    // hole in what should read as an even sequence.
+    const steps = new Set(stepFor.values());
+    if (steps.size === 1 && stepFor.size >= 2) {
+      const step = [...steps][0];
+      const uniform = new Map();
+      for (let y = Math.ceil(lo / step) * step; y <= hi; y += step) {
+        if (y !== 0) uniform.set(y, step);
+      }
+      if (uniform.size >= 2 && uniform.size <= 12) return finish(uniform);
     }
 
     if (stepFor.size < 2) {
@@ -166,6 +194,10 @@ export function createView(from, to, widthPx) {
       stepFor.set(Math.floor(hi), 1);
     }
 
+    return finish(stepFor);
+  }
+
+  function finish(stepFor) {
     return [...stepFor.keys()]
       .sort((a, b) => a - b)
       .map((year) => ({

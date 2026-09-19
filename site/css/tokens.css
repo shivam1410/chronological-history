@@ -1,0 +1,90 @@
+/* Design tokens. Every colour is defined once here and redefined for dark. */
+
+:root {
+  color-scheme: light dark;
+
+  --bg: #fbfaf7;
+  --bg-raised: #ffffff;
+  --bg-sunken: #f2f0ea;
+  --ink: #1c1a17;
+  --ink-soft: #57524a;
+  --ink-faint: #8b847a;
+  --rule: #ddd8ce;
+  --rule-strong: #c4bdaf;
+  --accent: #8a5a2b;
+
+  /* Lane hues, chosen to stay separable under protanopia and deuteranopia. */
+  --lane-earth-life: #6b7f5c;
+  --lane-india: #b4652a;
+  --lane-east-asia: #a8434a;
+  --lane-central-asia: #8a6d3b;
+  --lane-west-asia: #4f7a8a;
+  --lane-europe: #5a5f9c;
+  --lane-africa: #927339;
+  --lane-americas: #3f7a63;
+  --lane-oceania: #7a5a8a;
+  --lane-global: #6e6a63;
+
+  --font-ui: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-text: ui-serif, Georgia, "Times New Roman", serif;
+
+  --step-1: 4px;
+  --step-2: 8px;
+  --step-3: 12px;
+  --step-4: 16px;
+  --step-5: 24px;
+  --step-6: 32px;
+
+  --radius: 6px;
+  --header-h: 52px;
+  --axis-h: 34px;
+  --minimap-h: 38px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14130f;
+    --bg-raised: #1e1c17;
+    --bg-sunken: #0d0c0a;
+    --ink: #ece7dd;
+    --ink-soft: #a9a294;
+    --ink-faint: #746d61;
+    --rule: #2e2b24;
+    --rule-strong: #464137;
+    --accent: #d99b5c;
+
+    --lane-earth-life: #9ab387;
+    --lane-india: #e0965a;
+    --lane-east-asia: #dd7a80;
+    --lane-central-asia: #c7a36a;
+    --lane-west-asia: #7fb4c6;
+    --lane-europe: #9298dd;
+    --lane-africa: #cfa963;
+    --lane-americas: #6bb394;
+    --lane-oceania: #b48cc4;
+    --lane-global: #a7a299;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #14130f;
+  --bg-raised: #1e1c17;
+  --bg-sunken: #0d0c0a;
+  --ink: #ece7dd;
+  --ink-soft: #a9a294;
+  --ink-faint: #746d61;
+  --rule: #2e2b24;
+  --rule-strong: #464137;
+  --accent: #d99b5c;
+
+  --lane-earth-life: #9ab387;
+  --lane-india: #e0965a;
+  --lane-east-asia: #dd7a80;
+  --lane-central-asia: #c7a36a;
+  --lane-west-asia: #7fb4c6;
+  --lane-europe: #9298dd;
+  --lane-africa: #cfa963;
+  --lane-americas: #6bb394;
+  --lane-oceania: #b48cc4;
+  --lane-global: #a7a299;
+}

@@ -160,3 +160,89 @@ describe('ticks', () => {
     }
   });
 });
+
+describe('ticks are spread across the axis', () => {
+  // Regression: deep-time samples were snapped with a step larger than the
+  // year's own magnitude, rounding them to zero and piling every label up at
+  // the present.
+  const windows = [
+    [ORIGIN_YEAR, 2020],
+    [-66000000, 2020],
+    [-3000, 2020],
+    [-600, 600],
+    [1500, 1600],
+  ];
+
+  for (const [from, to] of windows) {
+    test(`no clustering for ${from}..${to}`, () => {
+      const view = createView(from, to, 1400);
+      const xs = view.ticks().map((t) => view.project(t.year));
+      const gaps = xs.slice(1).map((x, i) => x - xs[i]);
+      const min = Math.min(...gaps);
+      const max = Math.max(...gaps);
+      assert.ok(min > 8, `ticks only ${min.toFixed(1)}px apart`);
+      assert.ok(max / min < 5, `gap ratio ${(max / min).toFixed(1)} is too uneven`);
+    });
+
+    test(`ticks span most of the axis for ${from}..${to}`, () => {
+      const view = createView(from, to, 1400);
+      const xs = view.ticks().map((t) => view.project(t.year));
+      assert.ok(Math.max(...xs) - Math.min(...xs) > 1400 * 0.6,
+        'ticks cover less than 60% of the width');
+    });
+  }
+});
+
+describe('the view honours the anchored budget', () => {
+  // Regression: createView projected linearly in raw sp-space, which bypassed
+  // the anchors entirely and handed recorded history ~12% of the axis - the
+  // pure-log behaviour the anchors exist to avoid.
+  test('recorded history gets ~48% of the full-range axis', () => {
+    const view = createView(ORIGIN_YEAR, presentYear(), 1000);
+    const share = (view.widthPx - view.project(-3000)) / view.widthPx;
+    assert.ok(Math.abs(share - 0.48) < 0.01,
+      `recorded history got ${(share * 100).toFixed(1)}% of the axis`);
+  });
+
+  test('the Pleistocene gets ~12% of the full-range axis', () => {
+    const view = createView(ORIGIN_YEAR, presentYear(), 1000);
+    const share = (view.project(-11700) - view.project(-2580000)) / view.widthPx;
+    assert.ok(Math.abs(share - 0.12) < 0.01,
+      `Pleistocene got ${(share * 100).toFixed(1)}% of the axis`);
+  });
+});
+
+describe('deep-time tick labels are round', () => {
+  // Deep-time ticks snap in years-before-present, because the label is a BP
+  // value: snapping the historical year instead yields "602 ka" and "81.9 ka".
+  const windows = [[ORIGIN_YEAR, 2020], [-66000000, 2020], [-2000000, -5000]];
+
+  for (const [from, to] of windows) {
+    test(`${from}..${to}`, () => {
+      for (const tick of createView(from, to, 1400).ticks()) {
+        const m = tick.label.match(/^([\d.]+) (ka|Ma|Ga)$/);
+        if (!m) continue;
+        const value = Number(m[1]);
+        const mantissa = value / 10 ** Math.floor(Math.log10(value));
+        assert.ok([1, 1.5, 2, 2.5, 3, 4, 5, 6, 7, 8, 9].some(
+          (x) => Math.abs(mantissa - x) < 0.01),
+          `"${tick.label}" is not a round value`);
+      }
+    });
+  }
+});
+
+describe('uniform windows produce gap-free ticks', () => {
+  // Regression: two unit-space samples could snap to the same year, and the
+  // dedupe left a hole - "1550 1551 1552 1553 1554 1556" reads as a bug.
+  const windows = [[1550, 1560], [1500, 1600], [1900, 2000], [-600, -500]];
+
+  for (const [from, to] of windows) {
+    test(`${from}..${to} has an even step`, () => {
+      const years = createView(from, to, 1400).ticks().map((t) => t.year);
+      const gaps = years.slice(1).map((y, i) => y - years[i]);
+      assert.equal(new Set(gaps).size, 1,
+        `uneven steps ${[...new Set(gaps)].join(',')} in ${years.join(' ')}`);
+    });
+  }
+});
