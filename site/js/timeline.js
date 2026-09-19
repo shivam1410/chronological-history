@@ -3,49 +3,350 @@
  *
  * Canvas rather than DOM because the dataset reaches tens of thousands of
  * entries and per-frame transforms on that many nodes would jank. Everything
- * geometric lives in timescale.js, which is pure and unit-tested; this file
- * only draws and handles input.
+ * geometric lives in timescale.js and layout.js, both pure and unit-tested;
+ * this file draws, handles input, and owns nothing else.
  */
 
 import { createView, ORIGIN_YEAR, presentYear } from './timescale.js';
+import { packLanes } from './layout.js';
 import { FLAG_UNCERTAIN_END, FLAG_UNCERTAIN_START } from './store.js';
 
 const AXIS_H = 34;
 const BAR_H = 14;
 const BAR_GAP = 4;
-const MIN_BAR_W = 2;
+const LANE_PAD_Y = 6;
+const LANE_SEP = 1;
+const MIN_BAR_W = 3;
+const MAX_ROWS = 6;
+const COLLAPSED_BAR_H = 5;
 
-// Phase 1 spreads bars over a fixed number of rows just so the skeleton is
-// legible. Phase 2.1 replaces this with real first-fit interval packing in
-// layout.js, which is where per-lane row assignment belongs.
-const PLACEHOLDER_ROWS = 18;
+const GUTTER_W = 150;
+const GUTTER_W_NARROW = 92;
+const NARROW_PX = 680;
 
-export function createTimeline(canvas, { entries = [], onViewChange } = {}) {
-  const laneIds = [...new Set(entries.map((entry) => entry.lane))];
+/** Below this window width a lane with sub-regions splits into them. */
+const SUBLANE_SPAN = 2000;
+
+/** Only the subcontinent expands; splitting every lane would give ~35 rows. */
+const EXPANDABLE = new Set(['india']);
+
+export function createTimeline(canvas, { entries = [], lanes = [], onViewChange } = {}) {
   const ctx = canvas.getContext('2d');
+
   let view = null;
   let width = 0;
   let height = 0;
+  let gutter = GUTTER_W;
+  let scrollY = 0;
+  let contentH = 0;
+  let theme = null;
+  let layout = [];
   let frame = null;
 
-  // Resolved once per frame. getComputedStyle forces a style recalc, so calling
-  // it per entry costs a lookup for every bar on every redraw.
-  let theme = null;
+  const collapsed = new Set();
+  const laneById = new Map(lanes.map((lane) => [lane.id, lane]));
+
+  // ---- theme -------------------------------------------------------------
 
   function readTheme() {
     const style = getComputedStyle(document.documentElement);
     const read = (name, fallback) => style.getPropertyValue(name).trim() || fallback;
-    const lanes = {};
-    for (const lane of laneIds) lanes[lane] = read(`--lane-${lane}`, '#57524a');
+    const colours = {};
+    for (const lane of lanes) colours[lane.id] = read(lane.color, '#57524a');
     return {
       bg: read('--bg', '#fbfaf7'),
       bgRaised: read('--bg-raised', '#ffffff'),
+      bgSunken: read('--bg-sunken', '#f2f0ea'),
       ink: read('--ink', '#1c1a17'),
       inkSoft: read('--ink-soft', '#57524a'),
+      inkFaint: read('--ink-faint', '#8b847a'),
       rule: read('--rule', '#ddd8ce'),
       ruleStrong: read('--rule-strong', '#c4bdaf'),
-      lanes,
+      lanes: colours,
     };
+  }
+
+  const laneColour = (id) =>
+    theme.lanes[id] || theme.lanes[laneById.get(id)?.id] || theme.inkSoft;
+
+  /** Same colour at low alpha, for the faded edge of an uncertain bound.
+   *  Hex alpha rather than color-mix(): an unparseable colour makes
+   *  addColorStop throw, which would abort the whole frame. */
+  const faded = (colour) =>
+    (/^#[0-9a-f]{6}$/i.test(colour) ? `${colour}38` : colour);
+
+  // ---- lane model --------------------------------------------------------
+
+  /**
+   * Which rows to show, and what to group entries by.
+   *
+   * At a wide window the ten lanes are enough. Zoomed inside two millennia the
+   * subcontinent carries most of the detail, so it splits into its sub-regions
+   * - the spine carries both `lane` and `region` for exactly this.
+   */
+  function laneModel() {
+    const expand = view.span < SUBLANE_SPAN;
+    const order = [];
+    const labels = new Map();
+    const colours = new Map();
+
+    for (const lane of lanes) {
+      order.push(lane.id);
+      labels.set(lane.id, lane.label);
+      colours.set(lane.id, lane.id);
+      if (!expand || !EXPANDABLE.has(lane.id)) continue;
+      for (const sub of lane.subRegions ?? []) {
+        order.push(sub);
+        labels.set(sub, lane.subRegionLabels?.[sub] ?? sub);
+        colours.set(sub, lane.id);
+      }
+    }
+    return { order, labels, colours, key: expand ? 'region' : 'lane' };
+  }
+
+  function computeLayout() {
+    const model = laneModel();
+    const packed = packLanes(entries, model.order, view, {
+      maxRows: MAX_ROWS,
+      minWidthPx: MIN_BAR_W,
+      laneKey: model.key,
+    });
+
+    let y = 0;
+    const laid = packed.map((lane) => {
+      const isCollapsed = collapsed.has(lane.lane);
+      const rowCount = Math.max(1, lane.rows.length);
+      const h = isCollapsed
+        ? LANE_PAD_Y * 2 + COLLAPSED_BAR_H
+        : LANE_PAD_Y * 2 + rowCount * (BAR_H + BAR_GAP) - BAR_GAP;
+      const out = {
+        ...lane,
+        label: model.labels.get(lane.lane) ?? lane.lane,
+        colourKey: model.colours.get(lane.lane) ?? lane.lane,
+        collapsed: isCollapsed,
+        y,
+        h,
+        count: lane.rows.flat().length + lane.hidden,
+      };
+      y += h + LANE_SEP;
+      return out;
+    });
+
+    contentH = y;
+    scrollY = Math.max(0, Math.min(scrollY, Math.max(0, contentH - (height - AXIS_H))));
+    return laid;
+  }
+
+  // ---- drawing -----------------------------------------------------------
+
+  function drawAxis() {
+    ctx.fillStyle = theme.bgRaised;
+    ctx.fillRect(0, 0, width, AXIS_H);
+
+    ctx.font = '11px ui-sans-serif, system-ui, sans-serif';
+    ctx.textBaseline = 'middle';
+
+    for (const tick of view.ticks()) {
+      const x = Math.round(gutter + view.project(tick.year)) + 0.5;
+
+      ctx.strokeStyle = tick.major ? theme.ruleStrong : theme.rule;
+      ctx.beginPath();
+      ctx.moveTo(x, AXIS_H - (tick.major ? 9 : 5));
+      ctx.lineTo(x, AXIS_H);
+      ctx.stroke();
+
+      ctx.strokeStyle = theme.rule;
+      ctx.globalAlpha = 0.4;
+      ctx.beginPath();
+      ctx.moveTo(x, AXIS_H);
+      ctx.lineTo(x, height);
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+
+      ctx.fillStyle = theme.inkSoft;
+      ctx.textAlign = x < gutter + 30 ? 'left' : x > width - 34 ? 'right' : 'center';
+      ctx.fillText(tick.label, Math.max(x, gutter + 2), AXIS_H / 2 - 3);
+    }
+
+    ctx.strokeStyle = theme.rule;
+    ctx.beginPath();
+    ctx.moveTo(0, AXIS_H - 0.5);
+    ctx.lineTo(width, AXIS_H - 0.5);
+    ctx.stroke();
+  }
+
+  function drawBar(item, y, colour, h = BAR_H) {
+    const fuzzyStart = item.entry.flags & FLAG_UNCERTAIN_START;
+    const fuzzyEnd = item.entry.flags & FLAG_UNCERTAIN_END;
+
+    if (fuzzyStart || fuzzyEnd) {
+      // An uncertain bound fades out, so a bracketed date never reads as exact.
+      const grad = ctx.createLinearGradient(item.x0, 0, item.x0 + item.w, 0);
+      const soft = faded(colour);
+      const edge = Math.min(0.3, 22 / Math.max(item.w, 1));
+      grad.addColorStop(0, fuzzyStart ? soft : colour);
+      grad.addColorStop(edge, colour);
+      grad.addColorStop(1 - edge, colour);
+      grad.addColorStop(1, fuzzyEnd ? soft : colour);
+      ctx.fillStyle = grad;
+    } else {
+      ctx.fillStyle = colour;
+    }
+    ctx.fillRect(item.x0, y, item.w, h);
+  }
+
+  function drawPoint(item, mid, colour) {
+    ctx.fillStyle = colour;
+    ctx.beginPath();
+    ctx.moveTo(item.x0, mid - 5);
+    ctx.lineTo(item.x0 + 5, mid);
+    ctx.lineTo(item.x0, mid + 5);
+    ctx.lineTo(item.x0 - 5, mid);
+    ctx.closePath();
+    ctx.fill();
+  }
+
+  /**
+   * Label a bar if it fits inside, else to its right when the gap allows.
+   *
+   * Importance breaks the tie when space is short: at a wide window the lanes
+   * are dense enough that labelling everything would be unreadable, so minor
+   * entries give up their label before major ones do.
+   */
+  function drawLabel(item, next, mid, minImportance) {
+    if (item.entry.imp < minImportance) return;
+    const label = item.entry.title;
+    const textW = ctx.measureText(label).width;
+
+    if (!item.point) {
+      // Clamp the label into the visible span of the bar. Long-running entries
+      // - an empire spanning the whole window - start off-canvas, and a label
+      // pinned to the true left edge would simply never be drawn.
+      const left = Math.max(item.x0, gutter);
+      const right = Math.min(item.x0 + item.w, width);
+      if (right - left >= textW + 12) {
+        ctx.fillStyle = theme.bg;
+        ctx.textAlign = 'left';
+        ctx.fillText(label, left + 6, mid);
+        return;
+      }
+    }
+
+    const room = (next ? next.x0 : width) - (item.x0 + item.w) - 10;
+    if (room >= textW) {
+      ctx.fillStyle = theme.ink;
+      ctx.textAlign = 'left';
+      ctx.fillText(label, item.x0 + item.w + (item.point ? 6 : 5), mid);
+    }
+  }
+
+  function drawLane(lane) {
+    const top = AXIS_H + lane.y - scrollY;
+    if (top > height || top + lane.h < AXIS_H) return;
+
+    const colour = laneColour(lane.colourKey);
+
+    // Lane band
+    ctx.fillStyle = theme.bg;
+    ctx.fillRect(gutter, top, width - gutter, lane.h);
+
+    // Gutter header
+    ctx.fillStyle = theme.bgRaised;
+    ctx.fillRect(0, top, gutter, lane.h);
+    ctx.fillStyle = colour;
+    ctx.fillRect(0, top, 3, lane.h);
+
+    ctx.font = '11px ui-sans-serif, system-ui, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    ctx.fillStyle = theme.ink;
+    const headerY = top + Math.min(lane.h / 2, 14);
+    const maxLabel = gutter - 34;
+    let label = lane.label;
+    while (ctx.measureText(label).width > maxLabel && label.length > 4) {
+      label = `${label.slice(0, -2)}…`;
+    }
+    ctx.fillText(label, 10, headerY);
+
+    ctx.fillStyle = theme.inkFaint;
+    ctx.textAlign = 'right';
+    ctx.fillText(lane.collapsed ? `${lane.count} ›` : String(lane.count),
+      gutter - 8, headerY);
+
+    // Separator
+    ctx.strokeStyle = theme.rule;
+    ctx.beginPath();
+    ctx.moveTo(0, top + lane.h + 0.5);
+    ctx.lineTo(width, top + lane.h + 0.5);
+    ctx.stroke();
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(gutter, Math.max(top, AXIS_H), width - gutter,
+      Math.min(lane.h, top + lane.h - AXIS_H));
+    ctx.clip();
+
+    if (lane.collapsed) {
+      const y = top + LANE_PAD_Y;
+      ctx.globalAlpha = 0.55;
+      for (const item of lane.rows.flat()) drawBar(item, y, colour, COLLAPSED_BAR_H);
+      ctx.globalAlpha = 1;
+      ctx.restore();
+      return;
+    }
+
+    // Dense lanes drop minor labels first.
+    const density = lane.rows.flat().length / Math.max(1, (width - gutter) / 120);
+    const minImportance = density > 2.2 ? 4 : density > 1.2 ? 3 : 1;
+
+    lane.rows.forEach((row, r) => {
+      const y = top + LANE_PAD_Y + r * (BAR_H + BAR_GAP);
+      const mid = y + BAR_H / 2;
+      row.forEach((item, i) => {
+        if (item.point) drawPoint(item, mid, colour);
+        else drawBar(item, y, colour);
+        drawLabel(item, row[i + 1], mid, minImportance);
+      });
+    });
+
+    if (lane.hidden > 0) {
+      const text = `+${lane.hidden} more`;
+      const w = ctx.measureText(text).width + 10;
+      const y = top + lane.h - LANE_PAD_Y - BAR_H;
+      ctx.fillStyle = theme.bgSunken;
+      ctx.fillRect(width - w - 6, y, w, BAR_H);
+      ctx.fillStyle = theme.inkSoft;
+      ctx.textAlign = 'right';
+      ctx.fillText(text, width - 11, y + BAR_H / 2);
+    }
+
+    ctx.restore();
+  }
+
+  function draw() {
+    if (!view) return;
+    theme = readTheme();
+    layout = computeLayout();
+
+    ctx.fillStyle = theme.bg;
+    ctx.fillRect(0, 0, width, height);
+
+    for (const lane of layout) drawLane(lane);
+
+    drawAxis();
+
+    // Gutter edge, drawn last so lane bands cannot bleed over it.
+    ctx.strokeStyle = theme.ruleStrong;
+    ctx.beginPath();
+    ctx.moveTo(gutter + 0.5, 0);
+    ctx.lineTo(gutter + 0.5, height);
+    ctx.stroke();
+  }
+
+  // ---- view --------------------------------------------------------------
+
+  function timelineWidth() {
+    return Math.max(1, width - gutter);
   }
 
   function resize() {
@@ -53,15 +354,16 @@ export function createTimeline(canvas, { entries = [], onViewChange } = {}) {
     const dpr = window.devicePixelRatio || 1;
     width = Math.max(1, Math.round(rect.width));
     height = Math.max(1, Math.round(rect.height));
+    gutter = width < NARROW_PX ? GUTTER_W_NARROW : GUTTER_W;
     canvas.width = Math.round(width * dpr);
     canvas.height = Math.round(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    if (view) view = createView(view.from, view.to, width);
+    if (view) view = createView(view.from, view.to, timelineWidth());
     schedule();
   }
 
   function setView(from, to) {
-    view = createView(from, to, Math.max(1, width));
+    view = createView(from, to, timelineWidth());
     schedule();
     onViewChange?.(view);
   }
@@ -71,150 +373,22 @@ export function createTimeline(canvas, { entries = [], onViewChange } = {}) {
     frame = requestAnimationFrame(() => { frame = null; draw(); });
   }
 
-  function drawAxis() {
-    const { inkSoft: ink, rule, ruleStrong } = theme;
-
-    ctx.fillStyle = theme.bgRaised;
-    ctx.fillRect(0, 0, width, AXIS_H);
-    ctx.strokeStyle = rule;
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(0, AXIS_H - 0.5);
-    ctx.lineTo(width, AXIS_H - 0.5);
-    ctx.stroke();
-
-    ctx.font = '11px ui-sans-serif, system-ui, sans-serif';
-    ctx.textBaseline = 'middle';
-
-    for (const tick of view.ticks()) {
-      const x = Math.round(view.project(tick.year)) + 0.5;
-
-      ctx.strokeStyle = tick.major ? ruleStrong : rule;
-      ctx.beginPath();
-      ctx.moveTo(x, AXIS_H - (tick.major ? 9 : 5));
-      ctx.lineTo(x, AXIS_H);
-      ctx.stroke();
-
-      // Full-height guide behind the content.
-      ctx.strokeStyle = rule;
-      ctx.globalAlpha = 0.45;
-      ctx.beginPath();
-      ctx.moveTo(x, AXIS_H);
-      ctx.lineTo(x, height);
-      ctx.stroke();
-      ctx.globalAlpha = 1;
-
-      ctx.fillStyle = ink;
-      ctx.textAlign = x < 34 ? 'left' : x > width - 34 ? 'right' : 'center';
-      ctx.fillText(tick.label, x, AXIS_H / 2 - 3);
-    }
+  function laneAt(clientY) {
+    const y = clientY - canvas.getBoundingClientRect().top - AXIS_H + scrollY;
+    return layout.find((lane) => y >= lane.y && y < lane.y + lane.h);
   }
-
-  /** Entries overlapping the visible window, with their pixel geometry. */
-  function visible() {
-    const out = [];
-    entries.forEach((entry, index) => {
-      if (entry.eMax < view.from || entry.sMin > view.to) return;
-      const x0 = view.project(entry.sMin);
-      const x1 = view.project(entry.eMax);
-      out.push({
-        entry,
-        x0,
-        x1,
-        w: Math.max(MIN_BAR_W, x1 - x0),
-        row: index % PLACEHOLDER_ROWS,
-        point: entry.sMin === entry.eMax,
-      });
-    });
-    return out;
-  }
-
-  function laneColour(lane) {
-    return theme.lanes[lane] || theme.inkSoft;
-  }
-
-  /**
-   * Same colour at low alpha, for the faded edge of an uncertain bound.
-   *
-   * Appends hex alpha rather than using color-mix(): an unparseable colour
-   * makes addColorStop throw, which would abort the whole frame.
-   */
-  function faded(colour) {
-    return /^#[0-9a-f]{6}$/i.test(colour) ? `${colour}38` : colour;
-  }
-
-  function drawEntries(items) {
-    ctx.font = '11px ui-sans-serif, system-ui, sans-serif';
-    ctx.textBaseline = 'middle';
-
-    for (const item of items) {
-      const y = AXIS_H + BAR_GAP + item.row * (BAR_H + BAR_GAP);
-      if (y > height) continue;
-      const colour = laneColour(item.entry.lane);
-      const mid = y + BAR_H / 2;
-
-      if (item.point) {
-        ctx.fillStyle = colour;
-        ctx.beginPath();
-        ctx.moveTo(item.x0, mid - 5);
-        ctx.lineTo(item.x0 + 5, mid);
-        ctx.lineTo(item.x0, mid + 5);
-        ctx.lineTo(item.x0 - 5, mid);
-        ctx.closePath();
-        ctx.fill();
-      } else {
-        // Uncertain bounds fade out, so a bracketed date never reads as exact.
-        const fuzzyStart = item.entry.flags & FLAG_UNCERTAIN_START;
-        const fuzzyEnd = item.entry.flags & FLAG_UNCERTAIN_END;
-        if (fuzzyStart || fuzzyEnd) {
-          const grad = ctx.createLinearGradient(item.x0, 0, item.x0 + item.w, 0);
-          const soft = faded(colour);
-          grad.addColorStop(0, fuzzyStart ? soft : colour);
-          grad.addColorStop(Math.min(0.28, 24 / item.w), colour);
-          grad.addColorStop(Math.max(0.72, 1 - 24 / item.w), colour);
-          grad.addColorStop(1, fuzzyEnd ? soft : colour);
-          ctx.fillStyle = grad;
-        } else {
-          ctx.fillStyle = colour;
-        }
-        ctx.fillRect(item.x0, y, item.w, BAR_H);
-      }
-
-      const label = item.entry.title;
-      const labelW = ctx.measureText(label).width;
-      const room = item.point ? width - item.x0 - 10 : item.w - 10;
-      if (room > labelW && (item.point || item.w > 40)) {
-        ctx.fillStyle = item.point ? theme.ink : contrastInk();
-        ctx.textAlign = 'left';
-        ctx.fillText(label, item.x0 + (item.point ? 9 : 5), mid);
-      }
-    }
-  }
-
-  function contrastInk() {
-    // Lane fills are mid-tone in both themes; the page background inverts, so
-    // the readable text colour on a bar is the background, not the ink.
-    return theme.bg;
-  }
-
-  function draw() {
-    if (!view) return;
-    theme = readTheme();
-    ctx.fillStyle = theme.bg;
-    ctx.fillRect(0, 0, width, height);
-    drawAxis();
-    lastVisible = visible();
-    drawEntries(lastVisible);
-  }
-
-  let lastVisible = [];
 
   // ---- input -------------------------------------------------------------
 
   canvas.addEventListener('wheel', (event) => {
     event.preventDefault();
     const rect = canvas.getBoundingClientRect();
-    const px = event.clientX - rect.left;
+    const px = event.clientX - rect.left - gutter;
+    if (event.shiftKey) {
+      scrollY += event.deltaY;
+      schedule();
+      return;
+    }
     // Trackpads report fine-grained deltas; clamp so one flick is not a leap.
     const intensity = Math.min(Math.abs(event.deltaY), 50) / 50;
     const factor = event.deltaY < 0 ? 1 - 0.45 * intensity : 1 + 0.8 * intensity;
@@ -227,23 +401,40 @@ export function createTimeline(canvas, { entries = [], onViewChange } = {}) {
 
   canvas.addEventListener('pointerdown', (event) => {
     canvas.setPointerCapture(event.pointerId);
-    dragging = { x: event.clientX };
+    dragging = { x: event.clientX, y: event.clientY, moved: false };
   });
 
   canvas.addEventListener('pointermove', (event) => {
     if (!dragging) return;
     const dx = event.clientX - dragging.x;
-    if (dx === 0) return;
+    const dy = event.clientY - dragging.y;
+    if (dx === 0 && dy === 0) return;
+    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) dragging.moved = true;
     dragging.x = event.clientX;
-    view = view.pan(-dx);
+    dragging.y = event.clientY;
+    if (dx) view = view.pan(-dx);
+    if (dy) scrollY -= dy;
     schedule();
-    onViewChange?.(view);
+    if (dx) onViewChange?.(view);
   });
 
   const endDrag = (event) => {
     if (!dragging) return;
+    const wasDrag = dragging.moved;
     dragging = null;
     canvas.releasePointerCapture?.(event.pointerId);
+    if (wasDrag) return;
+
+    // A click in the gutter toggles that lane.
+    const rect = canvas.getBoundingClientRect();
+    if (event.clientX - rect.left < gutter) {
+      const lane = laneAt(event.clientY);
+      if (lane) {
+        if (collapsed.has(lane.lane)) collapsed.delete(lane.lane);
+        else collapsed.add(lane.lane);
+        schedule();
+      }
+    }
   };
   canvas.addEventListener('pointerup', endDrag);
   canvas.addEventListener('pointercancel', endDrag);
@@ -256,8 +447,15 @@ export function createTimeline(canvas, { entries = [], onViewChange } = {}) {
 
   return {
     get view() { return view; },
-    get visible() { return lastVisible; },
+    get layout() { return layout; },
+    get gutter() { return gutter; },
+    get scrollY() { return scrollY; },
+    get contentHeight() { return contentH; },
     setView,
     redraw: schedule,
+    toggleLane: (id) => {
+      if (collapsed.has(id)) collapsed.delete(id); else collapsed.add(id);
+      schedule();
+    },
   };
 }

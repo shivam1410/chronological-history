@@ -35,6 +35,7 @@ async function start() {
 
     const timeline = createTimeline(document.querySelector('#canvas'), {
       entries,
+      lanes: info.lanes,
       onViewChange: (view) => {
         meta.textContent = `${entries.length} entries · ${describe(view)}`;
       },

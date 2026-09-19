@@ -11,6 +11,7 @@ const DEFAULTS = {
   maxRows: 6,
   gapPx: 4,
   minWidthPx: 3,
+  laneKey: 'lane',
 };
 
 /** Entries overlapping the view's window. Touching an edge counts. */
@@ -72,18 +73,25 @@ export function packLane(entries, view, options = {}) {
 /**
  * Pack every lane, in the given order, skipping lanes with nothing in view.
  *
- * An entry whose lane is not in `laneOrder` falls through to `global` rather
+ * `laneKey` chooses the grouping field: `lane` for the default view, `region`
+ * when a zoomed-in window expands a lane into its sub-regions.
+ *
+ * An entry whose group is not in `laneOrder` falls through to `global` rather
  * than disappearing - a lane missing from the taxonomy is a data bug, and a
  * silently dropped entry hides it.
  */
 export function packLanes(entries, laneOrder, view, options = {}) {
+  const { laneKey } = { ...DEFAULTS, ...options };
   const known = new Set(laneOrder);
   const fallback = known.has('global') ? 'global' : laneOrder[laneOrder.length - 1];
 
   const byLane = new Map(laneOrder.map((lane) => [lane, []]));
   for (const entry of cull(entries, view)) {
-    const lane = known.has(entry.lane) ? entry.lane : fallback;
-    byLane.get(lane)?.push(entry);
+    // Try the requested key, then the entry's lane, then global. The middle
+    // step matters: when only some lanes expand into sub-regions, an entry
+    // tagged `rome` must fall back to `europe`, not all the way to `global`.
+    const group = [entry[laneKey], entry.lane].find((id) => known.has(id)) ?? fallback;
+    byLane.get(group)?.push(entry);
   }
 
   return laneOrder

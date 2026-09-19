@@ -168,3 +168,55 @@ describe('packLanes', () => {
     assert.equal(lanes[0].rows.flat().length, 1);
   });
 });
+
+describe('packLanes with a custom grouping key', () => {
+  const view = fakeView(0, 1000, 1000);
+
+  test('groups by region when asked, for sub-lane expansion', () => {
+    const entries = [
+      entry('a', 0, 100, { lane: 'india', region: 'north-india' }),
+      entry('b', 0, 100, { lane: 'india', region: 'south-india' }),
+    ];
+    const lanes = packLanes(entries, ['north-india', 'south-india'], view,
+      { laneKey: 'region' });
+    assert.deepEqual(lanes.map((l) => l.lane), ['north-india', 'south-india']);
+    assert.equal(lanes[0].rows.flat().length, 1);
+    assert.equal(lanes[1].rows.flat().length, 1);
+  });
+
+  test('an entry whose region is not in the order falls back, not away', () => {
+    const entries = [entry('a', 0, 100, { lane: 'india', region: 'deccan' })];
+    const lanes = packLanes(entries, ['north-india', 'global'], view,
+      { laneKey: 'region' });
+    assert.equal(lanes.reduce((n, l) => n + l.rows.flat().length, 0), 1);
+  });
+});
+
+describe('region grouping falls back to the lane, not to global', () => {
+  const view = fakeView(0, 1000, 1000);
+
+  // Only some lanes expand into sub-regions. An entry tagged with a sub-region
+  // of a lane that did NOT expand must land in its own lane - dumping it into
+  // global puts Roman and Chinese history under "Global / Science & Ideas".
+  test('an unexpanded lane keeps its own entries', () => {
+    const entries = [
+      entry('caesar', 0, 100, { lane: 'europe', region: 'rome' }),
+      entry('han', 0, 100, { lane: 'east-asia', region: 'china' }),
+      entry('akbar', 0, 100, { lane: 'india', region: 'north-india' }),
+    ];
+    const lanes = packLanes(entries, ['north-india', 'east-asia', 'europe', 'global'],
+      view, { laneKey: 'region' });
+    const placed = Object.fromEntries(
+      lanes.map((l) => [l.lane, l.rows.flat().map((i) => i.entry.id)]));
+    assert.deepEqual(placed.europe, ['caesar']);
+    assert.deepEqual(placed['east-asia'], ['han']);
+    assert.deepEqual(placed['north-india'], ['akbar']);
+    assert.equal(placed.global, undefined);
+  });
+
+  test('global still catches an entry whose lane is unknown too', () => {
+    const entries = [entry('x', 0, 100, { lane: 'atlantis', region: 'atlantis' })];
+    const lanes = packLanes(entries, ['india', 'global'], view, { laneKey: 'region' });
+    assert.deepEqual(lanes.map((l) => l.lane), ['global']);
+  });
+});
