@@ -524,7 +524,10 @@ body[data-year-view="true"] .stage { padding-top: 0; }
   .eras { top: var(--header-h); }
 
   .range__input { width: 96px; }
-  .stage { padding-top: var(--strip-h); }
+  /* A dark gap between the era strip and the axis. Both are drawn on the
+     raised background, so without it the tabs and the year labels run
+     together as one band and the axis stops reading as part of the chart. */
+  .stage { padding-top: calc(var(--strip-h) + 8px); }
   .hint { display: none; }
 }
 
