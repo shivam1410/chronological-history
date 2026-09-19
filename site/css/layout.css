@@ -14,8 +14,14 @@ html, body {
 
 body {
   display: grid;
-  grid-template-rows: var(--header-h) 1fr var(--minimap-h);
+  /* The minimap row is auto rather than fixed so it can carry the bottom
+     safe-area inset without the canvas losing height to it. */
+  grid-template-rows: var(--header-h) 1fr auto;
   overflow: hidden;
+  /* 100% resolves against a viewport that excludes mobile browser chrome, so
+     the last row ends up underneath the home indicator and the app switcher.
+     dvh tracks the chrome as it shows and hides. */
+  height: 100dvh;
 }
 
 /* ---------------------------------------------------------------- header */
@@ -277,12 +283,15 @@ body {
 .minimap {
   border-top: 1px solid var(--rule);
   background: var(--bg-sunken);
+  /* Clears the iOS home indicator and Android gesture bar. Needs
+     viewport-fit=cover on the viewport meta, which index.html sets. */
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 .minimap__canvas {
   display: block;
   width: 100%;
-  height: 100%;
+  height: var(--minimap-h);
   cursor: pointer;
   touch-action: none;
 }

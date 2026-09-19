@@ -186,6 +186,9 @@ export function createControls({
 
   // ---- search ------------------------------------------------------------
 
+  let results = [];
+  let active = -1;
+
   function closeResults() {
     results = [];
     active = -1;
