@@ -214,15 +214,37 @@ Pleistocene/Ice Age 12%, early Holocene 10%, all recorded history 48% — of whi
 The `2026` anchor is the present; `ANCHORS[last]` is regenerated from the current year at
 module load so the scale does not silently stop at a hardcoded date.
 
-A **view** is a `[fromYear, toYear]` window rendered linearly in `sp`-space, so the scale
-is locally near-linear when zoomed in and strongly compressive at full range. Exports:
+A **view** is a `[fromYear, toYear]` window rendered linearly in **unit space** — that is,
+through `yearToUnit`, not through `sp` directly.
+
+> **Corrected during Phase 1.** This section originally specified projecting linearly in
+> `sp`-space. That is wrong and shipped as a real bug: projecting through `sp` bypasses the
+> anchors entirely, and recorded history collapsed back to ~12% of the axis — precisely the
+> pure-log behaviour the anchors exist to prevent. Inside one anchor segment `unit` is linear
+> in `sp` anyway, so a zoomed window is still near-linear in years; across segments only unit
+> space honours the budget. Two tests now assert the 48%/12% split directly against a view
+> rather than against `yearToUnit` alone, so this cannot regress silently.
+
+Exports:
 `yearToUnit`, `unitToYear`, `createView(from,to,widthPx)`, `view.project(year) -> px`,
 `view.unproject(px) -> year`, `view.zoomAbout(px, factor)`, `view.pan(px)`,
 `view.ticks() -> [{year, label, major}]`.
 
-Ticks are chosen from a fixed ladder
-(`1, 2, 5, 10, 25, 50, 100, 250, 500, 1e3, 5e3, 1e4, 1e5, 1e6, 1e7, 1e8, 1e9`) as the
-smallest step yielding ≤ 12 labels in the window, formatted by `format.js` as
+Ticks are sampled at even intervals in unit space — so they are evenly spaced on screen —
+then snapped to round values on a 1/2/5 × 10^k ladder. Three rules that a fixed-ladder
+approach missed, each now covered by a regression test:
+
+- the snapping step is capped at half the sample's own magnitude, or a sample at −430 Ma
+  whose neighbours are a billion years away rounds to zero and every deep-time label piles
+  onto the present;
+- deep-time ticks snap in **years-before-present**, not in historical years, because the
+  label shows a BP value — snapping the year gives `602 ka` instead of `600 ka`;
+- the first and last samples span one interval, not two, so their spacing must not be
+  halved, or they pick a finer step than the middle of the axis and leave gaps like
+  `1553 1554 1556` in an otherwise even sequence.
+
+When every sample agrees on one step the window is uniform and ticks are laid out on that
+step directly, which keeps such sequences gap-free. Labels come from `format.js`:
 `4.54 Ga`, `66 Ma`, `12 ka`, `500 BCE`, `1555`.
 
 ### Lane layout contract (`site/js/layout.js`)

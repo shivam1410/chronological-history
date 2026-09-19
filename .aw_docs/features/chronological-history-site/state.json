@@ -1,24 +1,28 @@
 {
   "feature_slug": "chronological-history-site",
-  "stage": "plan",
-  "mode": "full",
-  "status": "ready_for_build",
+  "stage": "build",
+  "mode": "code",
+  "status": "phase_1_complete",
   "created": "2026-09-19",
   "artifacts": {
     "prd.md": "written",
     "design.md": "written",
     "spec.md": "written",
     "tasks.md": "written",
-    "designs/": "not_created — ASCII layouts in design.md plus css/tokens.css are the design contract"
+    "designs/": "not_created \u2014 ASCII layouts in design.md plus css/tokens.css are the design contract",
+    "execution.md": "written"
   },
   "key_inputs": {
-    "data_strategy": "hybrid — curated YAML core, Wikidata SPARQL import for breadth, curated always wins on merge",
+    "data_strategy": "hybrid \u2014 curated YAML core, Wikidata SPARQL import for breadth, curated always wins on merge",
     "coverage": "India-deep with world context",
     "primary_views": "zoomable deep-time timeline canvas AND year-slice cross-section",
     "tooling": "Python pipeline emitting JSON; site is pure static HTML/CSS/vanilla ES modules",
     "hosting": "GitHub Pages via Actions publishing site/"
   },
-  "internal_skills_used": ["using-aw-skills", "aw-plan"],
+  "internal_skills_used": [
+    "using-aw-skills",
+    "aw-plan"
+  ],
   "assumptions": [
     "Years use historical numbering with no year zero; a single astro()/historical() pair is the only conversion boundary",
     "Deep-time shorthand (ka/Ma/Ga) is relative to 1950 CE per geological BP convention",
@@ -43,20 +47,101 @@
       "p1-frontend": "site/js pure modules, ready after slice 1.1",
       "p3-content": "data/curated/*.yaml, one file per subagent, ready after Phase 4 validation lands"
     },
-    "never_parallel": ["slices touching site/js/timeline.js", "pipeline/cli.py wiring", "Phase 6 performance work"]
+    "never_parallel": [
+      "slices touching site/js/timeline.js",
+      "pipeline/cli.py wiring",
+      "Phase 6 performance work"
+    ]
   },
   "review_points": [
-    "end of Phase 1 — scale precision, no-year-zero handling, byte-stable build",
-    "end of Phase 2 — no dropped entries, pan smoothness, deep-link stability",
-    "end of Phase 3 — spot-check 20 entries against cited sources",
-    "end of Phase 4 — PRD criteria 1-6 demonstrable",
-    "end of Phase 5 — curated entries survived the merge byte-identical",
-    "end of Phase 6 — all nine PRD criteria against the live site"
+    "end of Phase 1 \u2014 scale precision, no-year-zero handling, byte-stable build",
+    "end of Phase 2 \u2014 no dropped entries, pan smoothness, deep-link stability",
+    "end of Phase 3 \u2014 spot-check 20 entries against cited sources",
+    "end of Phase 4 \u2014 PRD criteria 1-6 demonstrable",
+    "end of Phase 5 \u2014 curated entries survived the merge byte-identical",
+    "end of Phase 6 \u2014 all nine PRD criteria against the live site"
   ],
   "open_risks": [
     "Indian chronology is contested; entries must carry wide brackets, a note naming competing positions, and sources rather than picking a side",
     "Wikidata coverage of Indian scriptural and Bhakti chronology is thin; curated data carries that weight",
     "spine.json size at scale is a Phase 6 checkpoint with lane sharding as the named fallback"
   ],
-  "recommended_next": ["/aw:build"]
+  "recommended_next": [
+    "/aw:build (Phase 2, slice 2.1)"
+  ],
+  "completed_phases": [
+    "Phase 1 \u2014 Walking skeleton"
+  ],
+  "current_phase": "Phase 2 \u2014 Timeline depth",
+  "completed_slices": [
+    "1.1",
+    "1.2",
+    "1.3",
+    "1.4",
+    "1.5",
+    "1.6"
+  ],
+  "remaining_slices": [
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "3.5",
+    "4.1",
+    "4.2",
+    "4.3",
+    "5.1",
+    "5.2",
+    "5.3",
+    "6.1",
+    "6.2",
+    "6.3",
+    "6.4"
+  ],
+  "parallel_execution": {
+    "used": true,
+    "max_parallel_subagents": 1,
+    "cap": 3,
+    "groups_used": [
+      "p1-content alongside p1-frontend"
+    ]
+  },
+  "validation_commands": [
+    "make test-py (95 passed)",
+    "make test-js (67 passed)",
+    "make build",
+    "make validate",
+    "browser verification at localhost:8000"
+  ],
+  "reviewer_agents": {
+    "1.2": "python-reviewer",
+    "1.4": "python-reviewer",
+    "1.5 + 1.6": "typescript-reviewer (JS)"
+  },
+  "blocking_findings_fixed": [
+    "Bound.width bypassed astro(), off by one across the era boundary",
+    "loader accepted non-mapping items, empty regions, and blank required strings",
+    "createView projected in sp-space, making the scale anchors inert"
+  ],
+  "deferred_findings": [
+    "Bound accepts an empty explicit display and derives instead - forgiving behaviour is intended"
+  ],
+  "spec_corrections": [
+    "Time scale contract: views project through yearToUnit (unit space), not raw sp-space",
+    "Tick generation: unit-space sampling with magnitude-capped, BP-aware snapping"
+  ],
+  "save_point_commits": [
+    "e1129a9 chore: scaffold repo, make targets, and test harness",
+    "22604a9 feat(pipeline): entry model with no-year-zero arithmetic and fuzzy dates",
+    "bbbf37b fix(pipeline): route Bound.width through astro and enforce bound invariants",
+    "e8a4120 feat(data): region/kind/category taxonomy and 59-entry seed",
+    "5534590 feat(pipeline): load sources and emit spine/meta/era bundles",
+    "19f9126 feat(site): piecewise-log time scale and display formatting",
+    "4daa674 fix(pipeline): enforce the loader strictness the contract already promised",
+    "b422520 feat(site): canvas timeline with zoom, pan, and adaptive axis"
+  ]
 }
