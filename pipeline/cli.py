@@ -292,7 +292,7 @@ def cmd_wikidata(_args) -> int:
 
     # Try the curated article where one exists, otherwise the entry's own
     # title. Curated ids skip the title check because a human chose them.
-    curated = citations_mod.ARTICLES
+    curated = {**citations_mod.ARTICLES, **wikidata_mod.EXTRA_ARTICLES}
     wanted = {
         e.id: (e.title, curated.get(e.id, e.title))
         for e in entries

@@ -1,9 +1,39 @@
+abolition-brazil:
+  article: Lei Áurea
+  image_file: File:Mostra Brasilis a Brasília 03.jpg
+  label: Lei Áurea
+  qid: Q1519167
+abolition-british:
+  article: Slavery Abolition Act 1833
+  image_file: File:Coat of arms of Great Britain (1714–1801).svg
+  label: Slavery Abolition Act 1833
+  qid: Q487420
+abolition-us:
+  article: Thirteenth Amendment to the United States Constitution
+  label: Thirteenth Amendment to the United States Constitution
+  qid: Q175613
+aboriginal-australia:
+  article: Prehistory of Australia
+  label: Prehistory of Australia
+  qid: Q2588711
 achaemenid-empire:
   article: Achaemenid Empire
   end: '-330'
   label: Achaemenid Empire
   qid: Q389688
   start: '-550'
+acheulean-handaxe:
+  article: Acheulean
+  end: '-148000'
+  image_file: File:Biface Extension.png
+  label: Acheulean
+  qid: Q210774
+  start: '-1760000'
+adi-granth-compiled:
+  article: Guru Granth Sahib
+  image_file: File:Sri Guru Granth Sahib Nishan.jpg
+  label: Guru Granth Sahib
+  qid: Q203249
 adi-shankara:
   article: Adi Shankara
   birth: '788'
@@ -11,6 +41,12 @@ adi-shankara:
   image_file: File:Raja Ravi Varma - Sankaracharya.jpg
   label: Ādi Shankara
   qid: Q180967
+african-independence-wave:
+  article: Decolonisation of Africa
+  end: '1975'
+  label: decolonisation of Africa
+  qid: Q1146918
+  start: '1950'
 akbar:
   article: Akbar
   birth: '1542'
@@ -39,6 +75,13 @@ al-ghazali:
   image_file: File:Al-Ghazali by Khalil Gibran.png
   label: Al-Ghazali
   qid: Q9546
+al-khwarizmi:
+  article: Al-Khwarizmi
+  birth: '750'
+  death: '846'
+  image_file: File:Al-Khwarizmi portrait.jpg
+  label: Muḥammad ibn Musa al-Khwarizmi
+  qid: Q9038
 algerian-war:
   article: Algerian War
   end: '1962'
@@ -83,6 +126,17 @@ antonine-plague:
   label: Antonine Plague
   qid: Q599141
   start: '165'
+apartheid:
+  article: Apartheid
+  image_file: File:DurbanSign1989.jpg
+  label: apartheid
+  qid: Q11409
+apes-emerge:
+  article: Ape
+  image_file: File:Weisshandgibbon tierpark berlin.jpg
+  label: Hominoidea
+  qid: Q102470
+  start: '-20400000'
 aquinas:
   article: Thomas Aquinas
   birth: '1225'
@@ -90,6 +144,11 @@ aquinas:
   image_file: File:St-thomas-aquinasFXD.jpg
   label: Thomas Aquinas
   qid: Q9438
+aral-sea:
+  article: Aral Sea
+  image_file: File:Aral Sea 1989-2008.jpg
+  label: Aral Sea
+  qid: Q35883
 archimedes:
   article: Archimedes
   birth: '-287'
@@ -118,6 +177,11 @@ aryabhata:
   image_file: File:2064 aryabhata-crp.jpg
   label: Aryabhata
   qid: Q11359
+ashanti-empire:
+  article: Asante Empire
+  image_file: File:Asante map.jpg
+  label: Ashanti Empire
+  qid: Q722071
 ashoka:
   article: Ashoka
   birth: '-304'
@@ -145,11 +209,24 @@ australopithecus:
   label: Australopithecus afarensis cumio
   qid: Q107685
   start: '-3900000'
+austronesian-expansion:
+  article: Austronesian peoples
+  image_file: File:Taiwanese aborigines.JPG
+  label: Austronesian peoples
+  qid: Q861225
 avesta-written:
   article: Avesta
   image_file: File:Avesta, translated by Ignacy Pietraszewski.jpg
   label: Avesta
   qid: Q83426
+avicenna:
+  article: Avicenna
+  birth: '980'
+  death: '1037'
+  image_file: File:Avicenna Portrait on Silver Vase - Museum at BuAli Sina (Avicenna)
+    Mausoleum - Hamadan - Western Iran (7423560860).jpg
+  label: Avicenna
+  qid: Q8011
 ayutthaya:
   article: Ayutthaya Kingdom
   label: Ayutthaya Kingdom
@@ -216,6 +293,11 @@ black-death:
   label: Black Death
   qid: Q42005
   start: '1346'
+blackbirding:
+  article: Blackbirding
+  image_file: File:Groupe de Kanakas dans une exploitation de canne à sucre du Queensland.jpg
+  label: blackbirding
+  qid: Q880704
 bohr:
   article: Niels Bohr
   birth: '1885'
@@ -247,6 +329,13 @@ bronze-age:
   label: Bronze Age
   qid: Q11761
   start: '-3300'
+buddha:
+  article: The Buddha
+  birth: '-563'
+  death: '-483'
+  image_file: File:Buddha in Sarnath Museum (Dhammajak Mutra).jpg
+  label: The Buddha
+  qid: Q9441
 cahokia:
   article: Cahokia
   image_file: File:Monks Mound in July.JPG
@@ -257,6 +346,16 @@ cambrian-explosion:
   label: Cambrian explosion
   point: '-543000000'
   qid: Q32919
+cave-art:
+  article: Cave painting
+  image_file: File:(1)Jabiru dreaming-7.jpg
+  label: cave painting
+  qid: Q214334
+chaco-canyon:
+  article: Chaco Culture National Historical Park
+  image_file: File:Chaco Canyon Chetro Ketl great kiva plaza NPS.jpg
+  label: Chaco Culture National Historical Park
+  qid: Q732463
 chagatai-khanate:
   article: Chagatai Khanate
   label: Chagatai Khanate
@@ -268,6 +367,24 @@ chavin:
   label: Chavín culture
   qid: Q13341477
   start: '-1300'
+chimu:
+  article: Chimor
+  end: '1470'
+  image_file: File:Photomontage Chimu Culture.jpg
+  label: Chimor
+  qid: Q581741
+  start: '900'
+chola-empire:
+  article: Chola dynasty
+  image_file: File:Darasuram, Airavatesvara Temple, Entrance, India.jpg
+  label: Chola dynasty
+  qid: Q151148
+cholera-pandemics:
+  article: History of cholera
+  image_file: File:Cholera.jpg
+  label: cholera outbreak
+  qid: Q959265
+  start: '1817'
 classical-athens:
   article: Classical Athens
   image_file: File:View of the Acropolis Athens (pixinn.net).jpg
@@ -281,6 +398,17 @@ cocoliztli-epidemics:
   point: '1600'
   qid: Q63472138
   start: '1545'
+columbian-exchange-epidemics:
+  article: Columbian exchange
+  image_file: File:New World Domesticated plants.JPG
+  label: Columbian Exchange
+  qid: Q767253
+columbus-1492:
+  article: Voyages of Christopher Columbus
+  end: '1504'
+  label: voyages by Christopher Columbus
+  qid: Q18578423
+  start: '1492'
 confucius:
   article: Confucius
   birth: '-552'
@@ -320,6 +448,12 @@ cultural-revolution:
   point: '1966'
   qid: Q8690
   start: '1966'
+cuneiform:
+  article: Cuneiform
+  end: '-50'
+  image_file: File:Sales contract Shuruppak Louvre AO3766.jpg
+  label: cuneiform
+  qid: Q401
 cv-raman:
   article: C. V. Raman
   birth: '1888'
@@ -355,6 +489,12 @@ descartes:
   image_file: File:Frans Hals - Portret van René Descartes.jpg
   label: ''
   qid: Q9191
+dinosaur-era:
+  article: Dinosaur
+  image_file: File:Various dinosaurs2.png
+  label: dinosaur
+  qid: Q430
+  start: '-233230000'
 dirac:
   article: Paul Dirac
   birth: '1902'
@@ -362,6 +502,11 @@ dirac:
   image_file: File:Paul Dirac, 1933.jpg
   label: Paul Dirac
   qid: Q47480
+dna-structure:
+  article: Nucleic acid double helix
+  image_file: File:DNA stub.svg
+  label: nucleic acid double helix
+  qid: Q60535862
 dog-domestication:
   article: Domestication of the dog
   image_file: File:Différences faciales.png
@@ -374,6 +519,11 @@ dostoevsky:
   image_file: File:Vasily Perov - Портрет Ф.М.Достоевского - Google Art Project.jpg
   label: Fyodor Dostoyevsky
   qid: Q991
+earth-formation:
+  article: History of Earth
+  image_file: File:2025-07-31-Elektro-L-3.png
+  label: history of Earth
+  qid: Q156312
 edo-period:
   article: Edo period
   end: '1868'
@@ -438,6 +588,13 @@ fall-of-tenochtitlan:
   label: Fall of Tenochtitlan
   qid: Q593267
   start: '1521'
+fall-of-the-inca:
+  article: Spanish conquest of the Inca Empire
+  end: '1572'
+  image_file: File:Inca-Spanish confrontation.JPG
+  label: Spanish conquest of the Inca Empire
+  qid: Q636771
+  start: '1532'
 faraday:
   article: Michael Faraday
   birth: '1791'
@@ -452,6 +609,16 @@ feynman:
   image_file: File:RichardFeynman-PaineMansionWoods1984 copyrightTamikoThiel bw.jpg
   label: Richard Feynman
   qid: Q39246
+first-birds:
+  article: Origin of birds
+  image_file: File:Archaeopteryx lithographica.JPG
+  label: origin of birds
+  qid: Q905761
+first-mammals:
+  article: Evolution of mammals
+  image_file: File:Sau mit ihren Ferkeln.jpg
+  label: evolution of mammals
+  qid: Q785301
 fleming-penicillin:
   article: Alexander Fleming
   birth: '1881'
@@ -459,6 +626,11 @@ fleming-penicillin:
   image_file: File:Synthetic Production of Penicillin TR1468.jpg
   label: Alexander Fleming
   qid: Q37064
+flowering-plants:
+  article: Flowering plant
+  image_file: File:Sweetbay Magnolia Magnolia virginiana Flower Closeup 2242px.jpg
+  label: ''
+  qid: Q25314
 galileo:
   article: Galileo Galilei
   birth: '1564'
@@ -466,6 +638,13 @@ galileo:
   image_file: File:Galileo.arp.300pix.jpg
   label: Galileo Galilei
   qid: Q307
+gandhi-ahimsa:
+  article: Mahatma Gandhi
+  birth: '1869'
+  death: '1948'
+  image_file: File:Mahatma-Gandhi, studio, 1931.jpg
+  label: Mahatma Gandhi
+  qid: Q1001
 genghis-khan:
   article: Genghis Khan
   birth: '1162'
@@ -481,11 +660,27 @@ ghana-empire:
   article: Ghana Empire
   label: Ghana Empire
   qid: Q206789
+ghana-independence:
+  article: Ghana
+  image_file: File:Beach with palms Ghana.jpg
+  label: Ghana
+  qid: Q117
+gokturk-khaganate:
+  article: Turkic Khaganate
+  label: Turkic Khaganate
+  qid: Q94632756
 golden-horde:
   article: Golden Horde
   image_file: File:Golden Horde in the Catalan Atlas (1375).jpg
   label: Golden Horde
   qid: Q79965
+goryeo-dynasty:
+  article: Goryeo
+  end: '1392'
+  image_file: File:Goryeonobles.jpg
+  label: Goryeo
+  qid: Q28208
+  start: '918'
 gospels:
   article: Gospel
   image_file: File:P46.jpg
@@ -495,6 +690,11 @@ grand-canal:
   article: Grand Canal
   label: Grand Canal
   qid: Q400872
+grasslands-spread:
+  article: Grassland
+  image_file: File:Chile (3), Patagonia, Road Y-50 towards Rio Verde.JPG
+  label: grassland
+  qid: Q1006733
 great-game:
   article: Great Game
   end: '1895'
@@ -510,6 +710,11 @@ great-leap-forward:
   point: '1958'
   qid: Q58715
   start: '1958'
+great-oxidation:
+  article: Great Oxidation Event
+  label: Great Oxygenation Event
+  point: '-2450000000'
+  qid: Q837561
 great-plague-london:
   article: Great Plague of London
   end: '1666'
@@ -543,6 +748,11 @@ gupta-empire:
   article: Gupta Empire
   label: Gupta Empire
   qid: Q11774
+guru-granth-sahib:
+  article: Guru Granth Sahib
+  image_file: File:Sri Guru Granth Sahib Nishan.jpg
+  label: Guru Granth Sahib
+  qid: Q203249
 guru-nanak:
   article: Guru Nanak
   birth: '1469'
@@ -550,6 +760,11 @@ guru-nanak:
   image_file: File:Mural painting of Guru Nanak from Gurdwara Baba Atal Rai.jpg
   label: Guru Nanak
   qid: Q83322
+hadith-collections:
+  article: Hadith
+  image_file: File:Hadith Books.jpg
+  label: hadith
+  qid: Q234343
 haitian-revolution:
   article: Haitian Revolution
   end: '1804'
@@ -564,6 +779,11 @@ han-dynasty:
     Gansu Province.jpg
   label: Han dynasty
   qid: Q7209
+hangul:
+  article: Hangul
+  image_file: File:Hangeul-basic.png
+  label: Hangul
+  qid: Q8222
 hannah-arendt:
   article: Hannah Arendt
   birth: '1906'
@@ -571,6 +791,10 @@ hannah-arendt:
   image_file: File:Hannah Arendt 1975 (cropped).jpg
   label: Hannah Arendt
   qid: Q60025
+hawaiian-kingdom:
+  article: Hawaiian Kingdom
+  label: Kingdom of Hawaiʻi
+  qid: Q156418
 hegel:
   article: Georg Wilhelm Friedrich Hegel
   birth: '1770'
@@ -619,6 +843,11 @@ herero-nama-genocide:
   point: '1904'
   qid: Q312492
   start: '1904'
+himalayan-orogeny:
+  article: Himalayas
+  image_file: File:Himalayas.jpg
+  label: Himalayas
+  qid: Q5451
 hippocrates:
   article: Hippocrates
   birth: '-460'
@@ -626,6 +855,24 @@ hippocrates:
   image_file: File:Hippocrates rubens.jpg
   label: Hippocrates
   qid: Q5264
+hiroshima-nagasaki:
+  article: Atomic bombings of Hiroshima and Nagasaki
+  image_file: File:Atomic bombing of Japan.jpg
+  label: atomic bombings of Hiroshima and Nagasaki
+  point: '1945'
+  qid: Q488
+hiv-aids:
+  article: HIV/AIDS
+  image_file: File:Human Immunodeficency Virus - stylized rendering.jpg
+  label: HIV/AIDS
+  qid: Q12199
+  start: '1959'
+holocene:
+  article: Holocene
+  image_file: File:Mollweide.jpg
+  label: Holocene
+  qid: Q25445
+  start: '-9701'
 homer:
   article: Homer
   birth: '-900'
@@ -672,6 +919,11 @@ homo-naledi:
   label: Homo naledi
   qid: Q20962857
   start: '-335000'
+homo-sapiens:
+  article: Human
+  image_file: File:Akha cropped hires.JPG
+  label: human
+  qid: Q5
 horse-domestication:
   article: Domestication of the horse
   image_file: File:Cave painting in Doushe cave, Lorstan, Iran, 8th millennium BC.JPG
@@ -707,6 +959,13 @@ ibn-khaldun:
   image_file: File:Bust of Ibn Khaldun (Casbah of Bejaia, Algeria).jpg
   label: Ibn Khaldun
   qid: Q9294
+ibn-rushd:
+  article: Averroes
+  birth: '1126'
+  death: '1198'
+  image_file: File:Statue of Averroes in Córdoba, Spain.jpg
+  label: Averroes
+  qid: Q39837
 inca-empire:
   article: Inca Empire
   end: '1533'
@@ -714,10 +973,24 @@ inca-empire:
   label: Inca Empire
   qid: Q28573
   start: '1438'
+indian-independence:
+  article: Partition of India
+  image_file: File:Partition of India 1947 en.svg
+  label: partition of India
+  point: '1947'
+  qid: Q129053
 indian-ocean-slave-trade:
   article: Indian Ocean slave trade
   label: Indian Ocean slave trade
   qid: Q105322255
+indonesia-independence:
+  article: Indonesian National Revolution
+  end: '1949'
+  image_file: File:COLLECTIE TROPENMUSEUM Militaire kolonne tijdens de eerste politionele
+    actie TMnr 10029135.jpg
+  label: Indonesian National Revolution
+  qid: Q1332160
+  start: '1945'
 indus-valley:
   article: Indus Valley Civilisation
   end: '-1800'
@@ -725,6 +998,14 @@ indus-valley:
   label: Indus Valley Civilization
   qid: Q42534
   start: '-3000'
+influenza-1918:
+  article: Spanish flu
+  end: '1920'
+  image_file: File:Emergency hospital during Influenza epidemic, Camp Funston, Kansas
+    - NCP 1603.jpg
+  label: 1918–1920 flu pandemic
+  qid: Q178275
+  start: '1918'
 irish-independence:
   article: Irish independence
   label: Irish independence
@@ -740,6 +1021,12 @@ iroquois-confederacy:
   image_file: File:1914 Panoramic View of Iroquois.jpg
   label: Iroquois
   qid: Q68518
+israel-founded:
+  article: Israeli Declaration of Independence
+  image_file: File:Israel Declaration of Independence.jpg
+  label: Declaration of the Establishment of the State of Israel
+  point: '1948'
+  qid: Q223732
 jain-agamas:
   article: Jain literature
   image_file: File:12th-century Yogasastra, Hemachandra Jainism, Sanskrit, 1 mm Devanagari
@@ -759,6 +1046,11 @@ jomon-period:
   label: Jōmon period
   qid: Q52824
   start: '-13000'
+joseon-dynasty:
+  article: Joseon
+  image_file: File:1894JoseonSeoul.jpg
+  label: Joseon
+  qid: Q28179
 kabir:
   article: Kabir
   birth: '1440'
@@ -832,6 +1124,12 @@ korean-war:
   label: Korean War
   qid: Q8663
   start: '1950'
+kpg-extinction:
+  article: Cretaceous–Paleogene extinction event
+  image_file: File:KT-impact.jpg
+  label: Cretaceous-Paleogene mass extinction
+  point: '-66000000'
+  qid: Q55811
 krishnamurti:
   article: Jiddu Krishnamurti
   birth: '1895'
@@ -839,10 +1137,24 @@ krishnamurti:
   image_file: File:Jiddu Krishnamurti 01.jpg
   label: Jiddu Krishnamurti
   qid: Q179266
+kuk-swamp-agriculture:
+  article: Kuk Swamp
+  image_file: File:Kuk New Guinea 2002.jpg
+  label: Kuk Swamp
+  qid: Q1165562
+kula-ring:
+  article: Kula ring
+  label: Kula ring
+  qid: Q375273
 kushan-empire:
   article: Kushan Empire
   label: Kushan Empire
   qid: Q25979
+land-plants:
+  article: Embryophyte
+  image_file: File:Plants.jpg
+  label: ''
+  qid: Q192154
 laozi:
   article: Laozi
   birth: '-604'
@@ -882,6 +1194,11 @@ lavoisier:
   image_file: File:David - Portrait of Monsieur Lavoisier (cropped).jpg
   label: Antoine Lavoisier
   qid: Q39607
+liberia-independence:
+  article: Liberia
+  image_file: File:Liberian Capitol Building.jpg
+  label: Liberia
+  qid: Q1014
 locke:
   article: John Locke
   birth: '1632'
@@ -889,12 +1206,30 @@ locke:
   image_file: File:JohnLocke.png
   label: ''
   qid: Q9353
+lusophone-independence:
+  article: Portuguese Colonial War
+  end: '1974'
+  image_file: File:MatasdorioOnzo.jpg
+  label: Portuguese Colonial War
+  qid: Q609836
+  start: '1961'
+mabo-decision:
+  article: Mabo v Queensland (No 2)
+  end: '1992'
+  label: Mabo v Queensland (No 2)
+  qid: Q1501525
+  start: '1992'
 madhvacharya:
   article: Madhvacharya
   birth: '1190'
   death: '1278'
   label: Madhvacharya
   qid: Q335371
+magnetic-compass:
+  article: Compass
+  image_file: File:Plastic-compass.jpg
+  label: compass
+  qid: Q34735
 mahabharata:
   article: Mahabharata
   image_file: File:Kurukshetra.jpg
@@ -907,6 +1242,11 @@ mahavira:
   image_file: File:Mahavir.jpg
   label: Mahavira
   qid: Q9422
+maize-domestication:
+  article: Maize
+  image_file: File:Corntassel 7095.jpg
+  label: maize
+  qid: Q11575
 majapahit:
   article: Majapahit
   label: Majapahit
@@ -937,6 +1277,13 @@ mandela:
   image_file: File:Nelson Mandela 1994.jpg
   label: Nelson Mandela
   qid: Q8023
+mansa-musa-hajj:
+  article: Mansa Musa
+  birth: '1280'
+  death: '1337'
+  image_file: File:Kanga Moussa Atlas Catalan.jpg
+  label: Mansa Musa
+  qid: Q309333
 marcus-aurelius:
   article: Marcus Aurelius
   birth: '121'
@@ -970,12 +1317,23 @@ maxwell:
   image_file: File:James-Clerk-Maxwell-1831-1879.jpg
   label: James Clerk Maxwell
   qid: Q9095
+maya-classic:
+  article: Maya civilization
+  image_file: File:El Castillo, Chichén Itzá.jpg
+  label: Maya civilization
+  qid: Q28567
 maya-collapse:
   article: Classic Maya collapse
   image_file: File:TulumCatherwood1844.jpg
   label: Classic Maya collapse
   point: '900'
   qid: Q2736642
+maya-writing:
+  article: Maya script
+  end: '1600'
+  image_file: File:Balam 3.svg
+  label: Mayan hieroglyphs
+  qid: Q211248
 meiji-restoration:
   article: Meiji Restoration
   end: '1889'
@@ -1023,6 +1381,11 @@ mirabai:
   image_file: File:Meerabai painting.jpg
   label: Meera
   qid: Q466330
+moai:
+  article: Moai
+  image_file: File:Ahu Tongariki.jpg
+  label: moai
+  qid: Q20350
 moche:
   article: Moche culture
   end: '700'
@@ -1033,6 +1396,16 @@ mongol-empire:
   article: Mongol Empire
   label: Mongol Empire
   qid: Q12557
+monte-alban:
+  article: Monte Albán
+  image_file: File:Monte Albán archeological site, Oaxaca.jpg
+  label: Monte Albán
+  qid: Q464899
+moon-landing:
+  article: Apollo 11
+  image_file: File:Apollo 11 Crew.jpg
+  label: Apollo 11
+  qid: Q43653
 movable-type:
   article: Movable type
   label: movable type
@@ -1042,6 +1415,19 @@ mughal-empire:
   image_file: File:MughalEmpire1700.svg
   label: Mughal Empire
   qid: Q33296
+muhammad:
+  article: Muhammad
+  birth: '571'
+  death: '632'
+  image_file: File:Muslim depiction of Muhammad - 17th century Ottoman copy from the
+    "Edinburgh codex".jpg
+  label: Muhammad
+  qid: Q9458
+multicellular-life:
+  article: Multicellular organism
+  image_file: File:C elegans stained.jpg
+  label: multicellular organism
+  qid: Q36458
 nagarjuna:
   article: Nagarjuna
   birth: '150'
@@ -1049,6 +1435,35 @@ nagarjuna:
   image_file: File:Nagarjuna at Samye Ling Monastery.JPG
   label: Nagarjuna
   qid: Q171195
+namibia-independence:
+  article: Namibia
+  image_file: File:Duna en Sossusvlei, Namibia, 2018-08-06, DD 002.jpg
+  label: Namibia
+  qid: Q1030
+nazca-lines:
+  article: Nazca lines
+  image_file: File:Líneas de Nazca, Nazca, Perú, 2015-07-29, DD 58.JPG
+  label: Nazca Lines
+  qid: Q2620036
+neanderthal-extinction:
+  article: Neanderthal extinction
+  label: Neanderthal extinction
+  point: '-38000'
+  qid: Q6984280
+neanderthals:
+  article: Neanderthal
+  end: '-38050'
+  image_file: File:Homo sapiens neanderthalensis.jpg
+  label: Neanderthal
+  qid: Q40171
+  start: '-248050'
+neolithic-revolution:
+  article: Neolithic Revolution
+  end: '-3000'
+  image_file: File:Knapp of Howar 2.jpg
+  label: neolithic revolution
+  qid: Q180548
+  start: '-9000'
 new-zealand-wars:
   article: New Zealand Wars
   end: '1872'
@@ -1070,6 +1485,21 @@ nietzsche:
   image_file: File:Nietzsche187a.jpg
   label: ''
   qid: Q9358
+norse-vinland:
+  article: Vinland
+  image_file: File:Carlb-ansemeadows-vinland-01.jpg
+  label: Vinland
+  qid: Q192823
+norte-chico:
+  article: Caral–Supe civilization
+  image_file: File:Aspero.jpg
+  label: Caral–Supe civilization
+  qid: Q153836
+olmec:
+  article: Olmecs
+  label: Olmecas
+  qid: Q135364
+  start: '-1400'
 opium-wars:
   article: Opium Wars
   end: '1860'
@@ -1088,16 +1518,42 @@ origin-of-life:
   image_file: File:Champagne vent white smokers.jpg
   label: abiogenesis
   qid: Q231218
+origin-of-species:
+  article: On the Origin of Species
+  image_file: File:Origin of Species title page.jpg
+  label: On the Origin of Species
+  qid: Q20124
 ottoman-empire:
   article: Ottoman Empire
   image_file: File:Rise of Ottoman empire.png
   label: Ottoman Empire
   qid: Q12560
+out-of-africa:
+  article: Recent African origin of modern humans
+  image_file: File:World map of prehistoric human migrations.jpg
+  label: recent African origin of modern humans
+  qid: Q7478419
 oyo-empire:
   article: Oyo Empire
   image_file: File:Palace of Alaafin of Oyo circa mid-1900s.jpg
   label: Oyo Empire
   qid: Q849623
+pacific-nuclear-testing:
+  article: Nuclear weapons testing
+  image_file: File:Trinity shot color.jpg
+  label: nuclear weapons testing
+  qid: Q210112
+pacific-sea-level:
+  article: Sea level rise
+  image_file: File:Rhos on Sea Coastal Defence Improvements - Gwelliannau i Amddiffynfeydd
+    Arfordirol Llandrillo-yn-Rhos; Mehefin - June 2023 01.jpg
+  label: sea level rise
+  qid: Q841083
+pali-canon-written:
+  article: Pali Canon
+  image_file: File:Tipitaka1.jpg
+  label: Pāli Canon
+  qid: Q215685
 panama-canal:
   article: Panama Canal
   image_file: File:Panama Canal Gatun Locks.jpg
@@ -1112,6 +1568,11 @@ peopling-of-americas:
   article: Peopling of the Americas
   label: peopling of the Americas
   qid: Q13925462
+permian-triassic-extinction:
+  article: Permian–Triassic extinction event
+  label: Permian-Triassic mass extinction
+  point: '-251900000'
+  qid: Q141118
 plague-of-athens:
   article: Plague of Athens
   end: '-426'
@@ -1130,6 +1591,68 @@ plato:
   image_file: File:Plato Silanion Musei Capitolini MC1377.jpg
   label: Plato
   qid: Q859
+plato-on-socrates:
+  article: Socratic problem
+  label: Socratic problem
+  qid: Q2916178
+pleistocene:
+  article: Pleistocene
+  end: '-9701'
+  image_file: File:Mollweide Paleographic Map of Earth, 21 Ka (Late Pleistocene Age).png
+  label: Pleistocene
+  qid: Q25546
+  start: '-2580000'
+png-independence:
+  article: Papua New Guinea
+  image_file: File:Papua New Guinea map.png
+  label: Papua New Guinea
+  qid: Q691
+polio-vaccine:
+  article: Polio vaccine
+  image_file: File:Poliodrops.jpg
+  label: polio vaccine
+  qid: Q1519099
+polynesian-navigation:
+  article: Polynesian navigation
+  label: Polynesian navigation
+  point: '-3000'
+  qid: Q826781
+potato-domestication:
+  article: Potato
+  image_file: File:Potato sprout, January 23, 2006.jpg
+  label: potato
+  qid: Q10998
+potosi-silver:
+  article: Potosí
+  image_file: File:Vista de la Villa Imperial de Potosí.jpg
+  label: Potosí
+  qid: Q35045
+prc-founded:
+  article: Chinese Communist Revolution
+  end: '1949'
+  image_file: File:People's Liberation Army occupied the presidential palace 1949.jpg
+  label: Chinese Communist Revolution
+  qid: Q32993
+  start: '1927'
+primates:
+  article: Primate
+  image_file: File:Primates - some families.jpg
+  label: primate
+  qid: Q7380
+  start: '-55000000'
+printing-press:
+  article: Printing press
+  image_file: File:The Caxton Celebration - William Caxton showing specimens of his
+    printing to King Edward IV and his Queen.jpg
+  label: printing press
+  qid: Q144334
+ptolemy:
+  article: Ptolemy
+  birth: '100'
+  death: '170'
+  image_file: File:PSM V78 D326 Ptolemy.png
+  label: Ptolemy
+  qid: Q34943
 pythagoras:
   article: Pythagoras
   birth: '-550'
@@ -1147,6 +1670,10 @@ qing-dynasty:
   label: Qing dynasty
   qid: Q8733
   start: '1636'
+quran-codified:
+  article: History of the Quran
+  label: history of the Quran
+  qid: Q1517448
 ramanuja:
   article: Ramanuja
   birth: '1017'
@@ -1161,11 +1688,49 @@ ramanujan:
   image_file: File:Srinivasa Ramanujan - OPC - 2 (cleaned).jpg
   label: Srinivasa Ramanujan
   qid: Q83163
+ramayana:
+  article: Ramayana
+  image_file: File:Battle at Lanka, Ramayana, Udaipur, 1649-53.jpg
+  label: Ramayana
+  qid: Q37293
+ramcharitmanas:
+  article: Ramcharitmanas
+  label: Ramcharitmanas
+  qid: Q2724561
 rapa-nui-decline:
   article: Easter Island
   image_file: File:Easter Island 5.jpg
   label: Easter Island
   qid: Q14452
+reform-and-opening:
+  article: Reform and opening up
+  label: Chinese economic reform
+  point: '1978'
+  qid: Q1205521
+  start: '1978'
+renaissance:
+  article: Renaissance
+  end: '1650'
+  image_file: File:Sandro Botticelli 046.jpg
+  label: Renaissance
+  qid: Q4692
+  start: '1400'
+residential-schools:
+  article: Canadian Indian residential school system
+  label: Canadian Indian residential school system
+  qid: Q945507
+rigveda:
+  article: Rigveda
+  image_file: File:Rigveda MS2097.jpg
+  label: Rigveda
+  qid: Q727413
+roman-empire:
+  article: Roman Empire
+  end: '395'
+  image_file: File:Inscription Theatre Leptis Magna Libya.JPG
+  label: Roman Empire
+  qid: Q2277
+  start: '-27'
 rosalind-franklin:
   article: Rosalind Franklin
   birth: '1920'
@@ -1179,6 +1744,25 @@ russian-conquest-central-asia:
   label: Russian colonisation of Central Asia
   point: '1839'
   qid: Q25591101
+russian-flu-1889:
+  article: 1889–1890 pandemic
+  end: '1892'
+  image_file: File:Everyone has Influenza - The Round of Doctors and Druggists.jpg
+  label: 1889–1890 pandemic
+  point: '1889'
+  qid: Q10658304
+  start: '1889'
+sack-of-baghdad:
+  article: Siege of Baghdad
+  end: '1258'
+  image_file: File:Bagdad1258.jpg
+  label: Siege of Baghdad
+  qid: Q369560
+  start: '1258'
+safavid-empire:
+  article: Safavid Iran
+  label: Safavid Iran
+  qid: Q18234383
 sahelanthropus:
   article: Sahelanthropus
   end: '-6200000'
@@ -1186,10 +1770,20 @@ sahelanthropus:
   label: Sahelanthropus
   qid: Q15103944
   start: '-7000000'
+sahul-separation:
+  article: Sahul
+  image_file: File:Map of Sunda and Sahul.png
+  label: Sahul
+  qid: Q56276943
 samanid-empire:
   article: Samanid Empire
   label: Samanid Empire
   qid: Q12150341
+samoa-independence:
+  article: Samoa
+  image_file: File:Beach on Upolu Island, Samoa, 2009.jpg
+  label: Samoa
+  qid: Q683
 sartre:
   article: Jean-Paul Sartre
   birth: '1905'
@@ -1225,6 +1819,11 @@ scramble-for-africa:
   label: Scramble for Africa
   qid: Q179848
   start: '1885'
+scythians:
+  article: Scythians
+  image_file: File:Scythian Warriors.jpg
+  label: Scythians
+  qid: Q131802
 second-plague-pandemic:
   article: Second plague pandemic
   end: '1880'
@@ -1249,6 +1848,10 @@ sengoku-period:
   label: Sengoku period
   qid: Q204023
   start: '1467'
+settlement-of-aotearoa:
+  article: Māori history
+  label: Māori history
+  qid: Q85787414
 settlement-of-hawaii:
   article: Ancient Hawaii
   image_file: File:Puʻu Loa Petroglyphs(3).jpg
@@ -1269,6 +1872,16 @@ sharpeville-massacre:
   label: Sharpeville massacre
   point: '1960'
   qid: Q518753
+silk-road:
+  article: Silk Road
+  image_file: File:Silk road Kazakhstan.svg
+  label: Silk Road
+  qid: Q36288
+smallpox-eradication:
+  article: Smallpox
+  image_file: File:Smallpox virus virions TEM PHIL 1849.JPG
+  label: smallpox
+  qid: Q12214
 socrates:
   article: Socrates
   birth: '-470'
@@ -1276,6 +1889,12 @@ socrates:
   image_file: File:Socrates Louvre.jpg
   label: Socrates
   qid: Q913
+sogdian-merchants:
+  article: Sogdia
+  image_file: File:Sogdian Tribute Bearers on the Apadana Staircase 16 (Best Viewed
+    Size "Large") (4689076272).jpg
+  label: Sogdia
+  qid: Q486244
 song-dynasty:
   article: Song dynasty
   end: '1279'
@@ -1287,6 +1906,18 @@ songhai-empire:
   article: Songhai Empire
   label: Songhai Empire
   qid: Q202687
+south-africa-1994:
+  article: 1994 South African general election
+  end: '1994'
+  label: 1994 South African general election
+  point: '1994'
+  qid: Q957012
+  start: '1994'
+south-sudan-independence:
+  article: South Sudan
+  image_file: File:South Sudan topographic map.svg
+  label: South Sudan
+  qid: Q958
 soviet-central-asia:
   article: Soviet Central Asia
   image_file: File:Map of Central Asia.svg
@@ -1316,6 +1947,10 @@ srivijaya:
   article: Srivijaya
   label: Srivijaya
   qid: Q234197
+stolen-generations:
+  article: Stolen Generations
+  label: Stolen Generations
+  qid: Q639836
 stone-tools:
   article: Stone tool
   image_file: File:National park stone tools.jpg
@@ -1332,6 +1967,11 @@ sushruta:
   image_file: File:सुश्रुत.jpg
   label: Suśruta
   qid: Q383027
+swahili-coast:
+  article: Swahili coast
+  image_file: File:Shimoni fishermen.JPG
+  label: Swahili coast
+  qid: Q2739014
 taiping-rebellion:
   article: Taiping Rebellion
   end: '1864'
@@ -1345,6 +1985,11 @@ taj-mahal:
   image_file: File:Taj Mahal (Edited).jpeg
   label: Taj Mahal
   qid: Q9141
+talmud:
+  article: Talmud
+  image_file: File:Talmud set.JPG
+  label: Talmud
+  qid: Q43290
 tang-dynasty:
   article: Tang dynasty
   end: '907'
@@ -1352,11 +1997,26 @@ tang-dynasty:
   label: Tang dynasty
   qid: Q9683
   start: '618'
+telescope:
+  article: History of the telescope
+  label: history of the telescope
+  qid: Q2530956
+tenochtitlan:
+  article: Tenochtitlan
+  image_file: File:Vista completa de Tenochtitlán.jpg
+  label: Tenochtitlan
+  qid: Q13695
 teotihuacan:
   article: Teotihuacan
   image_file: File:ZA77 Teotihuacán edo de mex Herberto de la rosa.jpg
   label: Teotihuacan
   qid: Q172613
+tetrapods-on-land:
+  article: Tetrapod
+  image_file: File:Feuer Salamander 2.jpg
+  label: ''
+  qid: Q19159
+  start: '-367500000'
 thales:
   article: Thales of Miletus
   birth: '-650'
@@ -1372,6 +2032,26 @@ third-plague-pandemic:
   label: third plague pandemic
   qid: Q1259178
   start: '1855'
+three-kingdoms:
+  article: Three Kingdoms
+  end: '280'
+  image_file: File:Saam Gwok 262 CE.png
+  label: Three Kingdoms
+  qid: Q185043
+  start: '220'
+timbuktu:
+  article: Timbuktu
+  image_file: File:Timbuktu Mosque Sankore.jpg
+  label: Timbuktu
+  qid: Q9427
+timur:
+  article: Timur
+  birth: '1336'
+  death: '1405'
+  image_file: File:Timur seated (earliest known portrait), Timurid genealogy, 1405-1409,
+    Samarkand (TSMK, H2152).jpg
+  label: Timur
+  qid: Q8462
 timurid-empire:
   article: Timurid Empire
   label: Timurid Empire
@@ -1383,6 +2063,11 @@ tiwanaku:
   label: Tiwanaku
   qid: Q61750
   start: '400'
+toba-eruption:
+  article: Lake Toba
+  image_file: File:Toba zoom.jpg
+  label: Lake Toba
+  qid: Q183360
 tolstoy:
   article: Leo Tolstoy
   birth: '1828'
@@ -1390,12 +2075,21 @@ tolstoy:
   image_file: File:L.N.Tolstoy Prokudin-Gorsky.jpg
   label: Leo Tolstoy
   qid: Q7243
+trail-of-tears:
+  article: Trail of Tears
+  label: Trail of Tears
+  qid: Q750448
 trans-saharan-trade:
   article: Trans-Saharan slave trade
   image_file: File:A long line of men are marching with their hands thrust thro Wellcome
     V0041263.jpg
   label: Trans-Saharan slave trade
   qid: Q104778119
+transatlantic-slave-trade:
+  article: Atlantic slave trade
+  image_file: File:Slaveshipposter.jpg
+  label: Atlantic slave trade
+  qid: Q10701282
 treaty-of-waitangi:
   article: Treaty of Waitangi
   image_file: File:Treatyofwaitangi.jpg
@@ -1431,6 +2125,13 @@ tycho-brahe:
   image_file: File:Porträtt av Tycho Brahe - Skoklosters slott - 90153.tif
   label: Tycho Brahe
   qid: Q36620
+ulugh-beg:
+  article: Ulugh Beg
+  birth: '1394'
+  death: '1449'
+  image_file: File:Ulugh Beg, Timurid painting 1425-50.jpg
+  label: Ulugh Beg
+  qid: Q486088
 upanishads:
   article: Upanishads
   image_file: File:MS Indic 37, Isa upanisad. Wellcome L0027330.jpg
@@ -1444,6 +2145,12 @@ us-civil-war:
   point: '1865'
   qid: Q8676
   start: '1861'
+us-independence:
+  article: United States Declaration of Independence
+  image_file: File:United States Declaration of Independence.jpg
+  label: United States Declaration of Independence
+  point: '1776'
+  qid: Q127912
 uyghur-khaganate:
   article: Uyghur Khaganate
   label: Uyghur Khaganate
@@ -1458,6 +2165,13 @@ variolation:
   image_file: File:Inoculation day 16.png
   label: inoculation
   qid: Q1664296
+vietnam-independence:
+  article: First Indochina War
+  end: '1954'
+  image_file: File:French indochina 1953 12 1.png
+  label: First Indochina War
+  qid: Q748780
+  start: '1946'
 vijayanagara-empire:
   article: Vijayanagara Empire
   label: Vijayanagara Empire
@@ -1473,6 +2187,13 @@ wari:
   article: Wari Empire
   label: Wari Empire
   qid: Q923516
+warring-states:
+  article: Warring States period
+  end: '-221'
+  image_file: File:China Warring States Period.png
+  label: Warring States period
+  qid: Q185063
+  start: '-476'
 wittgenstein:
   article: Ludwig Wittgenstein
   birth: '1889'
@@ -1491,6 +2212,25 @@ wounded-knee:
   label: Wounded Knee Massacre
   point: '1890'
   qid: Q108413
+xinhai-revolution:
+  article: 1911 Revolution
+  end: '1912'
+  image_file: File:Xinhai Revolution in Shanghai.jpg
+  label: Xinhai Revolution
+  point: '1911'
+  qid: Q190517
+  start: '1911'
+xiongnu:
+  article: Xiongnu
+  image_file: File:Xiongnu chieftain (black backgrouond).jpg
+  label: Xiongnu
+  qid: Q188836
+year-of-africa:
+  article: Year of Africa
+  image_file: File:Africa independence dates.svg
+  label: Year of Africa
+  point: '1960'
+  qid: Q387647
 yuan-dynasty:
   article: Yuan dynasty
   image_file: File:Yuan Provinces.png
@@ -1508,11 +2248,23 @@ zero-decimal-system:
   image_file: File:Chess x0t45.svg
   label: zero
   qid: Q204
+zheng-he-voyages:
+  article: Ming treasure voyages
+  end: '1433'
+  image_file: File:Zheng He's Treasure Ship 3.jpg
+  label: Treasure Voyages
+  qid: Q699127
+  start: '1405'
 zhou-dynasty:
   article: Zhou dynasty
   image_file: File:Zhou capitales.svg
   label: Zhou dynasty
   qid: Q35216
+zimbabwe-independence:
+  article: Zimbabwe
+  image_file: File:000 Zimbabveja harta.PNG
+  label: Zimbabwe
+  qid: Q954
 zoroaster:
   article: Zoroaster
   birth: '-628'
