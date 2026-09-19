@@ -80,6 +80,30 @@ Years use historical numbering: `-1` is 1 BCE, `1` is 1 CE, and **there is no ye
 `make build` refuses to emit if anything fails validation, so a bad date or a dangling
 cross-reference stops the build rather than silently corrupting the timeline.
 
+## How it was designed and built
+
+The full planning record lives in [`docs/`](docs/) and is worth reading before
+changing anything structural — particularly `spec.md`, which is the contract the
+code is written against.
+
+| Document | What it covers |
+|---|---|
+| [docs/prd.md](docs/prd.md) | Goal, scope, non-goals, acceptance criteria, risks |
+| [docs/design.md](docs/design.md) | Screens, states, interaction rules, accessibility notes |
+| [docs/spec.md](docs/spec.md) | Data model, the time-scale contract, bundle formats, decisions and the alternatives rejected |
+| [docs/tasks.md](docs/tasks.md) | Phase-by-phase plan, with the validation each slice has to pass |
+| [docs/execution.md](docs/execution.md) | What actually happened: save points, proofs, and every defect found and fixed |
+| [docs/state.json](docs/state.json) | Machine-readable build state |
+
+Two things in there are load-bearing and easy to break by accident:
+
+- **The time scale is anchored, not plainly logarithmic.** A plain log gave the
+  Pleistocene a third of the axis and all of recorded history a twelfth. See
+  *Time scale contract* in [docs/spec.md](docs/spec.md).
+- **There is no year zero.** `-1` is 1 BCE and `1` is 1 CE, so year arithmetic
+  has to route through `astro()` / `elapsed()`. This has caused more bugs here
+  than everything else combined.
+
 ## Where the data comes from
 
 Every entry is **hand-authored**. Nothing here was scraped.
