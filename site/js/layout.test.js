@@ -1,6 +1,6 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { cull, packLane, packLanes } from './layout.js';
+import { cull, hitRow, packLane, packLanes } from './layout.js';
 
 /** Linear stand-in for a view, so expectations are obvious arithmetic. */
 function fakeView(from, to, widthPx) {
@@ -218,5 +218,42 @@ describe('region grouping falls back to the lane, not to global', () => {
     const entries = [entry('x', 0, 100, { lane: 'atlantis', region: 'atlantis' })];
     const lanes = packLanes(entries, ['india', 'global'], view, { laneKey: 'region' });
     assert.deepEqual(lanes.map((l) => l.lane), ['global']);
+  });
+});
+
+describe('hitRow', () => {
+  const view = fakeView(0, 1000, 1000);
+  const row = packLane(
+    [entry('a', 0, 100), entry('b', 300, 400), entry('p', 700, 700)], view).rows[0];
+
+  test('finds the item under the cursor', () => {
+    assert.equal(hitRow(row, 50)?.entry.id, 'a');
+    assert.equal(hitRow(row, 350)?.entry.id, 'b');
+  });
+
+  test('hits either edge of a bar', () => {
+    assert.equal(hitRow(row, 300)?.entry.id, 'b');
+    assert.equal(hitRow(row, 400)?.entry.id, 'b');
+  });
+
+  test('returns null in the gap between bars', () => {
+    assert.equal(hitRow(row, 200), null);
+  });
+
+  test('pads a narrow target so it stays clickable', () => {
+    // The point event at 700 is 3px wide; without padding it is unhittable.
+    assert.equal(hitRow(row, 690, 12)?.entry.id, 'p');
+    assert.equal(hitRow(row, 712, 12)?.entry.id, 'p');
+    assert.equal(hitRow(row, 740, 12), null);
+  });
+
+  test('prefers the nearer item when two padded boxes overlap', () => {
+    const tight = packLane([entry('x', 100, 102), entry('y', 130, 132)], view).rows[0];
+    assert.equal(hitRow(tight, 104, 24)?.entry.id, 'x');
+    assert.equal(hitRow(tight, 128, 24)?.entry.id, 'y');
+  });
+
+  test('an empty row hits nothing', () => {
+    assert.equal(hitRow([], 50), null);
   });
 });

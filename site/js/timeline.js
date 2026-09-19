@@ -8,7 +8,7 @@
  */
 
 import { createView, ORIGIN_YEAR, presentYear } from './timescale.js';
-import { packLanes } from './layout.js';
+import { hitRow, packLanes } from './layout.js';
 import { FLAG_UNCERTAIN_END, FLAG_UNCERTAIN_START } from './store.js';
 
 const AXIS_H = 34;
@@ -20,6 +20,9 @@ const MIN_BAR_W = 3;
 const MAX_ROWS = 6;
 const COLLAPSED_BAR_H = 5;
 
+/** Padding added to each target's hit box, so a 3px bar is still clickable. */
+const HIT_PAD = 10;
+
 const GUTTER_W = 150;
 const GUTTER_W_NARROW = 92;
 const NARROW_PX = 680;
@@ -30,7 +33,7 @@ const SUBLANE_SPAN = 2000;
 /** Only the subcontinent expands; splitting every lane would give ~35 rows. */
 const EXPANDABLE = new Set(['india']);
 
-export function createTimeline(canvas, { entries = [], lanes = [], onViewChange } = {}) {
+export function createTimeline(canvas, { entries = [], lanes = [], onViewChange, onSelect } = {}) {
   const ctx = canvas.getContext('2d');
 
   let view = null;
@@ -44,6 +47,7 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange 
   let frame = null;
 
   const collapsed = new Set();
+  let selectedId = null;
   const laneById = new Map(lanes.map((lane) => [lane.id, lane]));
 
   // ---- theme -------------------------------------------------------------
@@ -222,8 +226,8 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange 
       // Clamp the label into the visible span of the bar. Long-running entries
       // - an empire spanning the whole window - start off-canvas, and a label
       // pinned to the true left edge would simply never be drawn.
-      const left = Math.max(item.x0, gutter);
-      const right = Math.min(item.x0 + item.w, width);
+      const left = Math.max(item.x0, 0);
+      const right = Math.min(item.x0 + item.w, width - gutter);
       if (right - left >= textW + 12) {
         ctx.fillStyle = theme.bg;
         ctx.textAlign = 'left';
@@ -232,7 +236,7 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange 
       }
     }
 
-    const room = (next ? next.x0 : width) - (item.x0 + item.w) - 10;
+    const room = (next ? next.x0 : width - gutter) - (item.x0 + item.w) - 10;
     if (room >= textW) {
       ctx.fillStyle = theme.ink;
       ctx.textAlign = 'left';
@@ -285,6 +289,9 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange 
     ctx.rect(gutter, Math.max(top, AXIS_H), width - gutter,
       Math.min(lane.h, top + lane.h - AXIS_H));
     ctx.clip();
+    // layout.js works in timeline-area coordinates, where 0 is view.from. The
+    // gutter offset is applied once, here, so bars land under their own axis.
+    ctx.translate(gutter, 0);
 
     if (lane.collapsed) {
       const y = top + LANE_PAD_Y;
@@ -305,6 +312,12 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange 
       row.forEach((item, i) => {
         if (item.point) drawPoint(item, mid, colour);
         else drawBar(item, y, colour);
+        if (item.entry.id === selectedId) {
+          ctx.strokeStyle = theme.ink;
+          ctx.lineWidth = 2;
+          ctx.strokeRect(item.x0 - 1.5, y - 1.5, item.w + 3, BAR_H + 3);
+          ctx.lineWidth = 1;
+        }
         drawLabel(item, row[i + 1], mid, minImportance);
       });
     });
@@ -313,11 +326,12 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange 
       const text = `+${lane.hidden} more`;
       const w = ctx.measureText(text).width + 10;
       const y = top + lane.h - LANE_PAD_Y - BAR_H;
+      const right = width - gutter;
       ctx.fillStyle = theme.bgSunken;
-      ctx.fillRect(width - w - 6, y, w, BAR_H);
+      ctx.fillRect(right - w - 6, y, w, BAR_H);
       ctx.fillStyle = theme.inkSoft;
       ctx.textAlign = 'right';
-      ctx.fillText(text, width - 11, y + BAR_H / 2);
+      ctx.fillText(text, right - 11, y + BAR_H / 2);
     }
 
     ctx.restore();
@@ -371,6 +385,32 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange 
   function schedule() {
     if (frame !== null) return;
     frame = requestAnimationFrame(() => { frame = null; draw(); });
+  }
+
+  /**
+   * The entry under a client point, or null.
+   *
+   * Lanes are scanned by y, then the row index falls out of the fixed row
+   * pitch, so only one packed row is ever searched.
+   */
+  function hitTest(clientX, clientY) {
+    const rect = canvas.getBoundingClientRect();
+    const cx = clientX - rect.left;
+    const cy = clientY - rect.top;
+    if (cx < gutter || cy < AXIS_H) return null;
+
+    const x = cx - gutter;
+    const y = cy - AXIS_H + scrollY;
+    const lane = layout.find((l) => y >= l.y && y < l.y + l.h);
+    if (!lane) return null;
+
+    if (lane.collapsed) {
+      const flat = [...lane.rows.flat()].sort((a, b) => a.x0 - b.x0);
+      return hitRow(flat, x, HIT_PAD);
+    }
+
+    const row = lane.rows[Math.floor((y - lane.y - LANE_PAD_Y) / (BAR_H + BAR_GAP))];
+    return row ? hitRow(row, x, HIT_PAD) : null;
   }
 
   function laneAt(clientY) {
@@ -434,7 +474,11 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange 
         else collapsed.add(lane.lane);
         schedule();
       }
+      return;
     }
+
+    const hit = hitTest(event.clientX, event.clientY);
+    onSelect?.(hit ? hit.entry : null);
   };
   canvas.addEventListener('pointerup', endDrag);
   canvas.addEventListener('pointercancel', endDrag);
@@ -449,10 +493,24 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange 
     get view() { return view; },
     get layout() { return layout; },
     get gutter() { return gutter; },
+    /** Canvas x at which an item's left edge is drawn. */
+    screenX: (item) => gutter + item.x0,
     get scrollY() { return scrollY; },
     get contentHeight() { return contentH; },
     setView,
     redraw: schedule,
+    hitTest,
+    select(id) {
+      selectedId = id;
+      schedule();
+    },
+    /** Pixel geometry of a currently laid-out entry, or null. */
+    itemFor(id) {
+      for (const lane of layout) {
+        for (const item of lane.rows.flat()) if (item.entry.id === id) return item;
+      }
+      return null;
+    },
     toggleLane: (id) => {
       if (collapsed.has(id)) collapsed.delete(id); else collapsed.add(id);
       schedule();

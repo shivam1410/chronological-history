@@ -98,3 +98,32 @@ export function packLanes(entries, laneOrder, view, options = {}) {
     .filter((lane) => byLane.get(lane).length > 0)
     .map((lane) => ({ lane, ...packLane(byLane.get(lane), view, options) }));
 }
+
+/**
+ * The item under `x` in a packed row, or null.
+ *
+ * `padPx` widens each target's hit box without widening what is drawn, so a
+ * point event or a one-pixel bar stays clickable. Where two padded boxes
+ * overlap the nearer bar wins, measured against the drawn edges rather than the
+ * padded ones - otherwise the padding would decide the tie.
+ */
+export function hitRow(row, x, padPx = 0) {
+  let best = null;
+  let bestDistance = Infinity;
+
+  for (const item of row) {
+    // Rows are packed in ascending x0, so once a target starts to the right of
+    // the cursor, no later one can contain it.
+    if (x < item.x0 - padPx) break;
+    if (x > item.x0 + item.w + padPx) continue;
+
+    const distance = x < item.x0
+      ? item.x0 - x
+      : Math.max(0, x - (item.x0 + item.w));
+    if (distance < bestDistance) {
+      best = item;
+      bestDistance = distance;
+    }
+  }
+  return best;
+}

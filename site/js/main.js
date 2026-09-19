@@ -1,12 +1,16 @@
-import { loadIndex } from './store.js';
+import { loadEra, loadIndex } from './store.js';
 import { createTimeline } from './timeline.js';
+import { createPanel } from './panel.js';
+import { createRouter } from './router.js';
 import { formatYear, roundYear } from './format.js';
+import { ORIGIN_YEAR, presentYear } from './timescale.js';
 
 const stage = document.querySelector('#stage');
-const meta = document.querySelector('#meta');
+const metaLabel = document.querySelector('#meta');
+const live = document.querySelector('#live');
 
 function showError(error) {
-  stage.innerHTML = '';
+  stage.replaceChildren();
   const box = document.createElement('div');
   box.className = 'error';
   box.innerHTML = `
@@ -22,31 +26,102 @@ function showError(error) {
   stage.append(box);
 }
 
+const describe = (view) =>
+  `${formatYear(roundYear(view.from))} to ${formatYear(roundYear(view.to))}`;
+
 async function start() {
-  stage.innerHTML = '<canvas id="canvas" class="timeline" tabindex="0"></canvas>'
-    + '<p class="hint">scroll to zoom · drag to pan</p>';
+  stage.replaceChildren();
+  const canvas = document.createElement('canvas');
+  canvas.id = 'canvas';
+  canvas.className = 'timeline';
+  canvas.tabIndex = 0;
+  const hint = document.createElement('p');
+  hint.className = 'hint';
+  hint.textContent = 'scroll to zoom · drag to pan · click an entry';
+  stage.append(canvas, hint);
+
+  let info;
+  let entries;
   try {
-    const { meta: info, entries } = await loadIndex();
-
-    // createTimeline fires onViewChange during construction, so this closure
-    // must not reach for the timeline binding it is being passed to.
-    const describe = (view) =>
-      `${formatYear(roundYear(view.from))} to ${formatYear(roundYear(view.to))}`;
-
-    const timeline = createTimeline(document.querySelector('#canvas'), {
-      entries,
-      lanes: info.lanes,
-      onViewChange: (view) => {
-        meta.textContent = `${entries.length} entries · ${describe(view)}`;
-      },
-    });
-    // Canvas output cannot be asserted from a unit test without pulling in a
-    // headless-browser dependency, so this handle is the documented way to
-    // verify drawn geometry against view.project() from the console.
-    window.__timeline = { timeline, entries, info };
+    ({ meta: info, entries } = await loadIndex());
   } catch (error) {
     showError(error);
+    return;
   }
+
+  const byId = new Map(entries.map((entry) => [entry.id, entry]));
+
+  // The hash is the source of truth; writes are debounced so a drag does not
+  // push one history entry per animation frame.
+  let router;
+  let writeTimer = null;
+  const syncHash = (replace = false) => {
+    clearTimeout(writeTimer);
+    writeTimer = setTimeout(() => {
+      router.navigate(
+        { from: timeline.view.from, to: timeline.view.to, entryId: panel.openId },
+        { replace },
+      );
+    }, 180);
+  };
+
+  const panel = createPanel(stage, {
+    onClose: () => {
+      timeline.select(null);
+      syncHash();
+    },
+    onNavigate: (id) => selectEntry(byId.get(id) ?? null, { focus: true }),
+  });
+
+  const timeline = createTimeline(canvas, {
+    entries,
+    lanes: info.lanes,
+    onViewChange: (view) => {
+      metaLabel.textContent = `${entries.length} entries · ${describe(view)}`;
+      syncHash(true);
+    },
+    onSelect: (entry) => selectEntry(entry),
+  });
+
+  function selectEntry(entry, { focus = false } = {}) {
+    if (!entry) {
+      panel.close();
+      timeline.select(null);
+      return;
+    }
+    timeline.select(entry.id);
+    if (focus) {
+      // Arriving from a related-entry chip: bring the entry into view.
+      const pad = Math.max(1, (entry.eMax - entry.sMin) * 0.6);
+      timeline.setView(entry.sMin - pad, entry.eMax + pad);
+    }
+    panel.open(entry, async () => {
+      const bundle = await loadEra(entry.bucket);
+      return bundle.entries[entry.id] ?? {};
+    }, { returnFocusTo: canvas });
+    live.textContent = `${entry.title}. ${describe(timeline.view)}.`;
+    syncHash();
+  }
+
+  function applyState(state) {
+    const from = state.from ?? ORIGIN_YEAR;
+    const to = state.to ?? presentYear();
+    if (from !== timeline.view.from || to !== timeline.view.to) timeline.setView(from, to);
+
+    const entry = state.entryId ? byId.get(state.entryId) : null;
+    if (entry && panel.openId !== entry.id) selectEntry(entry);
+    else if (!entry && panel.openId) { panel.close(); timeline.select(null); }
+  }
+
+  router = createRouter({ onChange: applyState });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !panel.openId) canvas.focus();
+  });
+
+  window.__timeline = { timeline, panel, router, entries, info, selectEntry };
+  applyState(router.current());
+  metaLabel.textContent = `${entries.length} entries · ${describe(timeline.view)}`;
 }
 
 start();
