@@ -190,28 +190,22 @@ def cmd_audit(_args) -> int:
 
     facts = wikidata_mod.load()
     if facts:
-        agree, differ, absent = [], [], 0
+        agree, differ, absent, excluded = [], [], 0, 0
         for entry in entries:
             record = facts.get(entry.id)
             if not record:
                 continue
-            theirs = {int(record[k]) for k in ("birth", "death", "start", "end", "point")
-                      if k in record}
+            if entry.id in wikidata_mod.DATE_CHECK_EXCLUDED:
+                excluded += 1
+                continue
+            theirs = [int(record[k])
+                      for k in ("birth", "death", "start", "end", "point")
+                      if k in record]
             if not theirs:
                 absent += 1
                 continue
-            ours = {entry.start.min, entry.start.max, entry.end.min, entry.end.max}
-
-            # Tolerance has to scale. A one-year window is right for 1526 and
-            # meaningless at 3.9 million years, where our BP-offset dates differ
-            # from Wikidata's round figures by thousands of years while meaning
-            # exactly the same thing.
-            def close(theirs_year, ours_year):
-                scale = max(abs(theirs_year), abs(ours_year))
-                tolerance = 1 if scale <= 4000 else scale * 0.01
-                return abs(theirs_year - ours_year) <= tolerance
-
-            if any(close(t, o) for t in theirs for o in ours):
+            ours = (entry.start.min, entry.end.max)
+            if wikidata_mod.dates_agree(ours, theirs):
                 agree.append(entry.id)
             else:
                 differ.append((entry.id, sorted(ours), sorted(theirs)))
@@ -220,13 +214,14 @@ def cmd_audit(_args) -> int:
         print(f"    our dates agree with Wikidata's     {len(agree):>4}")
         print(f"    our dates DISAGREE                  {len(differ):>4}")
         print(f"    Wikidata has no date for it         {absent:>4}")
+        print(f"    excluded, item is a different thing {excluded:>4}")
         if differ:
             print("\n  disagreements worth a look")
-            for entry_id, ours, theirs in sorted(differ)[:10]:
-                print(f"    {entry_id:<26} ours {ours[0]}..{ours[-1]}"
-                      f"   wikidata {theirs[0]}..{theirs[-1]}")
-            if len(differ) > 10:
-                print(f"    ... and {len(differ) - 10} more")
+            for entry_id, ours, theirs in sorted(differ):
+                o = f"{format_year(ours[0])}..{format_year(ours[-1])}"
+                t = (f"{format_year(theirs[0])}..{format_year(theirs[-1])}"
+                     if len(theirs) > 1 else format_year(theirs[0]))
+                print(f"    {entry_id:<26} ours {o:<24} wikidata {t}")
 
     if unsourced_contested:
         print("\n  contested entries needing a citation")

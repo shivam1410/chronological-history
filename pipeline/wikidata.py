@@ -373,3 +373,50 @@ EXTRA_ARTICLES: dict[str, str] = {
     "talmud": "Talmud",
     "plato-on-socrates": "Socratic problem",
 }
+
+
+#: Entries whose Wikidata item is a related but different subject. The image
+#: and identifier are still worth having; the dates are not comparable, so
+#: excluding them keeps the audit honest instead of flagging a known mismatch
+#: as if it were a discovery.
+DATE_CHECK_EXCLUDED: dict[str, str] = {
+    "bijak-kabir":
+        "Q[Kabir] is the poet; this entry is when his collections were written "
+        "down, one to two centuries after his death.",
+    "mansa-musa-hajj":
+        "Q[Mansa Musa] is the ruler; this entry is his 1324 pilgrimage, not his "
+        "lifespan.",
+    "hiv-aids":
+        "Wikidata dates the earliest confirmed infection (1959); this entry is "
+        "the pandemic as recognised from 1981.",
+    "polynesian-navigation":
+        "Wikidata dates the Austronesian expansion's origin; this entry is the "
+        "era of settlement voyaging.",
+    "aztec-empire":
+        "Wikidata dates the Tenochtitlan dynasty from 1367; this entry is the "
+        "Triple Alliance from 1428.",
+}
+
+
+def dates_agree(ours: tuple[int, int], theirs: Iterable[int]) -> bool:
+    """Does any Wikidata date corroborate our bracket?
+
+    Agreement means a date of theirs falls inside our bracket, or sits close
+    enough to one of its edges. Containment matters most: Wikidata usually
+    records a single point where this dataset records a range, so 1.0 Ma for
+    the control of fire corroborates a 1.5 Ma - 400 ka bracket rather than
+    contradicting it.
+
+    Tolerance scales, because one year is right for 1526 and meaningless at
+    3.9 million years, where a BP-offset date and a round figure differ by
+    thousands while meaning the same thing.
+    """
+    low, high = min(ours), max(ours)
+    for year in theirs:
+        if low <= year <= high:
+            return True
+        edge = low if year < low else high
+        scale = max(abs(year), abs(edge))
+        if abs(year - edge) <= (1 if scale <= 4000 else scale * 0.01):
+            return True
+    return False

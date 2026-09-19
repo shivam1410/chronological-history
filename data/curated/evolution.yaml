@@ -31,7 +31,7 @@
   title: The Great Oxidation Event
   kind: event
   regions: [earth-life]
-  start: "2.4 Ga"
+  start: "2.45 Ga"
   end: "2 Ga"
   importance: 5
   confidence: medium
@@ -48,6 +48,11 @@
   end: "1.6 Ga"
   importance: 5
   confidence: contested
+  note: >-
+    Wikidata gives 2.7 Ga, a figure resting on sterane biomarkers from
+    Australian shales that later work attributes to contamination. The bracket
+    here follows the fossil and molecular evidence instead, where Grypania at
+    about 2.1 Ga is the earliest widely accepted candidate.
   categories: [evolution]
   summary: One cell engulfed another and kept it, producing the mitochondrion.
     Every plant, animal and fungus descends from that single merger.
@@ -170,6 +175,8 @@
     about 30 to 25 million years ago, with the lineages clearly distinct by
     roughly 20 Ma. Wikidata gives 20.4 Ma, at the young end.
   categories: [evolution]
+  sources:
+    - {title: "Wikipedia — Hominoidea", url: "https://en.wikipedia.org/wiki/Ape"}
   summary: The hominoids appear — larger-bodied, tailless, with shoulders built
     for hanging rather than running along branches.
 
