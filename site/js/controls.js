@@ -337,6 +337,38 @@ export function createControls({
     });
   }
 
+  // ---- keyboard dismissal ------------------------------------------------
+
+  /*
+   * Dismissing the on-screen keyboard does not blur the field.
+   *
+   * Android's back button and iOS's "Done" close the keyboard without firing
+   * blur, so the field keeps focus: it still shows a focus ring, the results
+   * list stays open over the timeline, and setRange goes on skipping updates
+   * because it believes the reader is mid-edit.
+   *
+   * There is no event for "the keyboard closed", but visualViewport reports
+   * the space it occupies. A large jump back up is the keyboard leaving; the
+   * threshold keeps a URL bar sliding in and out from counting.
+   */
+  const viewport = window.visualViewport;
+  if (viewport) {
+    const KEYBOARD_PX = 120;
+    let lastHeight = viewport.height;
+    viewport.addEventListener('resize', () => {
+      const grew = viewport.height - lastHeight > KEYBOARD_PX;
+      lastHeight = viewport.height;
+      if (!grew) return;
+      const active = document.activeElement;
+      if (active === searchInput) {
+        closeResults();
+        searchInput.blur();
+      } else if (active === fromInput || active === toInput) {
+        active.blur();
+      }
+    });
+  }
+
   return {
     /** Reflect the current window, unless the reader is mid-edit. */
     setRange(from, to) {

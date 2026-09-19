@@ -428,6 +428,43 @@ body[data-year-view="true"] .stage { padding-top: 0; }
 }
 
 @media (max-width: 560px) {
+  /* Era chips become tabs. Seven pills will not sit on one line - at 12px the
+     labels alone are 348px of a 375px screen, and the borders and pill padding
+     push them well past it - so the chrome goes and the labels do the work.
+     At 11px they total 323px and fit with room to spare. overflow-x stays as a
+     fallback for a 320px screen. */
+  .eras {
+    gap: 4px;
+    justify-content: space-between;
+    padding-inline: 6px;
+  }
+
+  /* No horizontal padding: seven labels are 323px of a 363px row, so padding
+     would leave nothing for space-between to spread between them. The tap
+     target is unaffected - it stays 44px tall. */
+  .eras button {
+    flex: 0 1 auto;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    font-size: 11px;
+  }
+
+  .eras button:hover { border-color: transparent; }
+
+  .eras button[aria-current="true"] {
+    border-bottom-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* The slash hint is for a keyboard nobody has here, and it costs the search
+     field the width of its own badge. */
+  .search__key { display: none; }
+  .search__input { padding-right: var(--step-3); }
+
   /* Three stacked strips - search, dates, eras - cost about 156px on a phone,
      a fifth of the screen, before any history is drawn. The date row is the
      one to fold: it is read far more often than it is set, and the reading is
@@ -435,8 +472,16 @@ body[data-year-view="true"] .stage { padding-top: 0; }
      and the row itself appears over the era chips only while in use, so
      opening it shifts nothing below. */
   .header__title { display: none; }
-  .search { max-width: none; flex: 1 1 auto; margin-left: 0; }
-  .range__summary { display: inline-flex; }
+  /* The search field had the lion's share of the bar while the date button -
+     which is read far more often than search is typed - was squeezed. */
+  .search { max-width: none; flex: 1 1 auto; min-width: 0; margin-left: 0; }
+
+  .range__summary {
+    display: inline-flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    min-width: 150px;
+  }
 
   .range {
     display: none;
@@ -476,13 +521,21 @@ body[data-year-view="true"] .stage { padding-top: 0; }
 @media (pointer: coarse) {
   :root {
     --strip-h: 52px;
+    /* Taller on a phone: it is a drag target here, not just a picture. */
+    --minimap-h: 54px;
     /* Raising the token covers every control that uses it. Listing them by
        name here is what left the date summary at 30px against a 44px search
        field, and below the target size this block exists to enforce. */
     --control-h: 44px;
   }
 
-  .eras button { padding-inline: var(--step-3); }
+  /* Chips only. The phone layout turns these into tabs with no horizontal
+     padding, and this rule used to override that from further down the file -
+     the buttons were then shrunk below their own text width, which ran
+     "Bronze Age" into "Classical". */
+  @media (min-width: 561px) {
+    .eras button { padding-inline: var(--step-3); }
+  }
 
   .range__toggle {
     width: 44px;
