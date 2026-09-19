@@ -1,0 +1,595 @@
+# East and Southeast Asia. China's dynastic record is the longest continuous
+# written history anywhere, and much of what Europe later called its own
+# revolution in printing, powder and navigation started here.
+
+# ---- early China ----
+- id: shang-dynasty
+  title: Shang Dynasty
+  kind: polity
+  regions: [china, east-asia]
+  start: -1600
+  end: -1046
+  importance: 4
+  confidence: medium
+  categories: [dynasty, writing]
+  summary: The earliest Chinese dynasty confirmed by archaeology, known through
+    bronze vessels and the oracle bones whose divination records are the oldest
+    Chinese writing yet found.
+  related: [oracle-bone-script]
+
+- id: oracle-bone-script
+  title: Oracle bone script
+  kind: technology
+  regions: [china, east-asia]
+  start: [-1250, -1200]
+  end: -1046
+  importance: 4
+  confidence: medium
+  categories: [writing]
+  summary: Questions put to ancestors were inscribed on turtle plastrons and ox
+    scapulae, then cracked with heat to read the answer. The characters are
+    recognisably ancestral to those written today.
+  related: [shang-dynasty, cuneiform]
+
+- id: zhou-dynasty
+  title: Zhou Dynasty
+  kind: polity
+  regions: [china, east-asia]
+  start: -1046
+  end: -256
+  importance: 4
+  confidence: medium
+  categories: [dynasty]
+  summary: The longest dynasty in Chinese history, which introduced the Mandate
+    of Heaven — the doctrine that rule is conditional on conduct, and may be
+    withdrawn.
+
+- id: warring-states
+  title: Spring and Autumn and Warring States periods
+  kind: period
+  regions: [china, east-asia]
+  start: -771
+  end: -221
+  importance: 5
+  confidence: high
+  categories: [war, philosopher]
+  summary: Five centuries of fragmentation and near-constant war that produced,
+    paradoxically, the richest period in Chinese thought — Confucianism,
+    Daoism, Legalism and Mohism all take shape here.
+  related: [confucius, laozi, qin-dynasty]
+
+# ---- imperial China ----
+- id: three-kingdoms
+  title: Three Kingdoms period
+  kind: period
+  regions: [china, east-asia]
+  start: 220
+  end: 280
+  importance: 3
+  confidence: high
+  categories: [war, kingdom]
+  summary: Sixty years of civil war after the Han collapse, remembered less for
+    its politics than for becoming the subject of one of China's great novels
+    twelve centuries later.
+  related: [han-dynasty]
+
+- id: sui-dynasty
+  title: Sui Dynasty
+  kind: polity
+  regions: [china, east-asia]
+  start: 581
+  end: 618
+  importance: 3
+  confidence: high
+  categories: [dynasty]
+  summary: Reunified China after three centuries of division and built the
+    Grand Canal, exhausting itself in the process and lasting barely a
+    generation.
+  related: [grand-canal, tang-dynasty]
+
+- id: grand-canal
+  title: The Grand Canal
+  kind: structure
+  regions: [china, east-asia]
+  start: 605
+  end: ongoing
+  importance: 4
+  confidence: high
+  categories: [architecture, trade]
+  summary: Nearly 1,800 km linking the Yangtze rice country to the northern
+    capitals, the longest artificial waterway ever built and still in use.
+
+- id: an-lushan-rebellion
+  title: An Lushan Rebellion
+  kind: event
+  regions: [china, east-asia]
+  start: 755
+  end: 763
+  importance: 4
+  confidence: contested
+  categories: [war]
+  note: Census figures show a fall of some 36 million, but much of that is
+    collapse of the registration system rather than deaths. The rebellion was
+    nonetheless catastrophic.
+  summary: A revolt that broke the Tang at its height, and by the census
+    numbers is sometimes counted among the deadliest conflicts in history.
+  related: [tang-dynasty, uyghur-khaganate]
+
+- id: song-dynasty
+  title: Song Dynasty
+  kind: polity
+  regions: [china, east-asia]
+  start: 960
+  end: 1279
+  importance: 5
+  confidence: high
+  categories: [dynasty, trade]
+  summary: A commercial and technological high point — paper money, movable
+    type, the mariner's compass, gunpowder weapons and blast furnaces — all
+    under a state run by examination-selected scholars rather than warriors.
+  related: [gunpowder, movable-type, magnetic-compass, paper-making]
+
+- id: yuan-dynasty
+  title: Yuan Dynasty
+  kind: polity
+  regions: [china, east-asia]
+  start: 1271
+  end: 1368
+  importance: 4
+  confidence: high
+  categories: [dynasty, empire]
+  summary: Mongol rule over all of China, which opened the overland routes wide
+    enough for Marco Polo to travel them and for plague to travel back.
+  related: [mongol-empire, black-death]
+
+- id: zheng-he-voyages
+  title: The voyages of Zheng He
+  kind: event
+  regions: [china, east-asia]
+  start: 1405
+  end: 1433
+  importance: 4
+  confidence: high
+  categories: [exploration, trade]
+  summary: Seven Ming treasure fleets reached India, Arabia and East Africa
+    with ships far larger than anything in Europe — and were then halted by
+    imperial decree, the records burned, decades before Columbus sailed.
+  related: [ming-dynasty, swahili-coast]
+
+- id: qing-dynasty
+  title: Qing Dynasty
+  kind: polity
+  regions: [china, east-asia]
+  start: 1636
+  end: 1912
+  importance: 5
+  confidence: high
+  categories: [dynasty, empire]
+  summary: China's last dynasty, Manchu in origin, which tripled the empire's
+    territory and then spent its final century losing wars, territory and
+    legitimacy to industrial powers.
+  related: [opium-wars, taiping-rebellion, xinhai-revolution]
+
+# ---- Chinese inventions ----
+- id: paper-making
+  title: Paper
+  kind: technology
+  regions: [china, east-asia]
+  start: [-200, 105]
+  end: ongoing
+  importance: 5
+  confidence: medium
+  categories: [writing, discovery]
+  note: Cai Lun is traditionally credited in 105 CE, but fragments predate him
+    by up to three centuries; he probably improved and standardised a process
+    already in use.
+  summary: Cheap writing material, which took roughly a thousand years to reach
+    Europe by way of Samarkand and the Islamic world.
+  related: [sogdian-merchants, printing-press]
+
+- id: woodblock-printing
+  title: Woodblock printing
+  kind: technology
+  regions: [china, east-asia]
+  start: [650, 700]
+  end: ongoing
+  importance: 4
+  confidence: medium
+  categories: [writing, discovery]
+  summary: Printing from carved blocks produced the world's earliest dated
+    printed book in 868, some six centuries before Gutenberg.
+  related: [printing-press, paper-making]
+
+- id: movable-type
+  title: Movable type
+  kind: technology
+  regions: [china, east-asia]
+  start: [1040, 1045]
+  end: ongoing
+  importance: 4
+  confidence: medium
+  categories: [writing, discovery]
+  summary: Bi Sheng cut individual characters in clay four centuries before
+    Gutenberg. With tens of thousands of characters to handle, it never
+    displaced woodblock printing in China the way it did in Europe.
+  related: [printing-press, woodblock-printing, song-dynasty]
+
+- id: gunpowder
+  title: Gunpowder
+  kind: technology
+  regions: [china, east-asia]
+  start: [850, 900]
+  end: ongoing
+  importance: 5
+  confidence: medium
+  categories: [discovery, war]
+  summary: Found by alchemists looking for an elixir of immortality, and in use
+    in weapons within two centuries. It ended the long military advantage of
+    the steppe cavalry and, with it, an age.
+  related: [song-dynasty, mongol-empire]
+
+- id: magnetic-compass
+  title: The magnetic compass
+  kind: technology
+  regions: [china, east-asia]
+  start: [1040, 1119]
+  end: ongoing
+  importance: 5
+  confidence: medium
+  categories: [discovery, exploration]
+  summary: Known as a divination tool earlier, described for navigation by the
+    eleventh century — the instrument that made open-ocean sailing routine.
+  related: [song-dynasty, european-contact-pacific]
+
+# ---- modern China ----
+- id: opium-wars
+  title: The Opium Wars
+  kind: event
+  regions: [china, east-asia, britain]
+  start: 1839
+  end: 1860
+  importance: 5
+  confidence: high
+  categories: [war, colonialism, trade]
+  summary: Britain went to war twice to compel China to keep importing opium,
+    winning treaty ports, extraterritoriality and Hong Kong. In China this
+    opens what is still taught as the century of humiliation.
+  related: [qing-dynasty]
+
+- id: taiping-rebellion
+  title: Taiping Rebellion
+  kind: event
+  regions: [china, east-asia]
+  start: 1850
+  end: 1864
+  importance: 4
+  confidence: contested
+  categories: [war]
+  note: Death estimates range from 20 to 70 million, making it plausibly the
+    deadliest civil war in history. The records are poor.
+  summary: A millenarian revolt led by a man who believed himself the younger
+    brother of Jesus, which held much of southern China for over a decade.
+
+- id: xinhai-revolution
+  title: Xinhai Revolution
+  kind: event
+  regions: [china, east-asia]
+  start: 1911
+  end: 1912
+  importance: 4
+  confidence: high
+  categories: [independence]
+  summary: Ended two thousand years of imperial rule and founded a republic
+    that promptly fragmented among warlords.
+  related: [qing-dynasty]
+
+- id: second-sino-japanese-war
+  title: Second Sino-Japanese War
+  kind: event
+  regions: [china, japan, east-asia]
+  start: 1937
+  end: 1945
+  importance: 5
+  confidence: contested
+  categories: [war]
+  note: Chinese casualty estimates run to 20 million, most of them civilians.
+    Japanese and Chinese accounts of specific atrocities, notably at Nanjing,
+    remain a live diplomatic dispute.
+  summary: Japan's invasion of China, which merged into the Second World War
+    and cost more Chinese lives than any other conflict of the century.
+
+- id: prc-founded
+  title: Founding of the People's Republic of China
+  kind: event
+  regions: [china, east-asia]
+  start: 1949
+  end: 1949
+  importance: 5
+  confidence: high
+  categories: [independence]
+  summary: The Communist victory in the civil war ended four decades of
+    warlordism, invasion and revolution.
+
+- id: great-leap-forward
+  title: Great Leap Forward
+  kind: event
+  regions: [china, east-asia]
+  start: 1958
+  end: 1962
+  importance: 5
+  confidence: contested
+  categories: [economics]
+  note: Excess-death estimates range from 15 to 55 million, with 30 million
+    often cited. The Chinese state has never published a full accounting.
+  summary: A forced collectivisation and industrialisation drive that produced
+    the deadliest famine in recorded history.
+
+- id: cultural-revolution
+  title: Cultural Revolution
+  kind: period
+  regions: [china, east-asia]
+  start: 1966
+  end: 1976
+  importance: 5
+  confidence: high
+  categories: [human-rights]
+  summary: A decade of mobilised political violence that closed universities,
+    destroyed historical artefacts and monasteries, and displaced or killed
+    intellectuals, officials and teachers in enormous numbers.
+
+- id: reform-and-opening
+  title: Reform and Opening
+  kind: period
+  regions: [china, east-asia]
+  start: 1978
+  end: ongoing
+  importance: 5
+  confidence: high
+  categories: [economics]
+  summary: Market reforms under Deng Xiaoping moved several hundred million
+    people out of poverty within a generation, the fastest such change ever
+    recorded.
+
+# ---- Japan ----
+- id: jomon-period
+  title: Jomon period
+  kind: period
+  regions: [japan, east-asia]
+  start: "14 ka"
+  end: -300
+  importance: 3
+  confidence: medium
+  categories: [civilisation]
+  summary: Hunter-gatherers who made some of the oldest known pottery anywhere
+    and sustained a settled way of life for ten thousand years without farming.
+
+- id: heian-period
+  title: Heian period
+  kind: period
+  regions: [japan, east-asia]
+  start: 794
+  end: 1185
+  importance: 4
+  confidence: high
+  categories: [dynasty, literature]
+  summary: An aristocratic court culture that produced The Tale of Genji,
+    often called the first novel, written by a noblewoman at the turn of the
+    eleventh century.
+
+- id: kamakura-shogunate
+  title: Kamakura shogunate
+  kind: polity
+  regions: [japan, east-asia]
+  start: 1185
+  end: 1333
+  importance: 3
+  confidence: high
+  categories: [dynasty]
+  summary: Military government under the shogun, with the emperor reduced to
+    ceremony. It twice survived Mongol invasion, helped by the storms later
+    called kamikaze.
+  related: [mongol-empire]
+
+- id: sengoku-period
+  title: Sengoku period
+  kind: period
+  regions: [japan, east-asia]
+  start: 1467
+  end: 1615
+  importance: 3
+  confidence: high
+  categories: [war]
+  summary: A century and a half of warring domains, ended by three successive
+    unifiers and the firearms Portuguese traders had introduced.
+
+- id: edo-period
+  title: Edo period
+  kind: period
+  regions: [japan, east-asia]
+  start: 1603
+  end: 1868
+  importance: 4
+  confidence: high
+  categories: [dynasty]
+  summary: Two and a half centuries of Tokugawa peace under near-total
+    isolation, during which Japan urbanised heavily and developed a distinctive
+    popular culture of woodblock prints and theatre.
+
+- id: meiji-restoration
+  title: Meiji Restoration
+  kind: event
+  regions: [japan, east-asia]
+  start: 1868
+  end: 1912
+  importance: 5
+  confidence: high
+  categories: [independence, economics]
+  summary: Confronted with Western gunboats, Japan deliberately industrialised
+    in a single generation — the only non-Western state to do so on its own
+    terms in the nineteenth century.
+
+- id: hiroshima-nagasaki
+  title: Atomic bombing of Hiroshima and Nagasaki
+  kind: event
+  regions: [japan, east-asia]
+  start: 1945
+  end: 1945
+  importance: 5
+  confidence: high
+  categories: [war]
+  summary: The only use of nuclear weapons in war, killing well over a hundred
+    thousand people, most of them instantly, and ending the Second World War
+    days later.
+  related: [einstein, pacific-nuclear-testing]
+
+# ---- Korea ----
+- id: korea-three-kingdoms
+  title: Three Kingdoms of Korea
+  kind: period
+  regions: [korea, east-asia]
+  start: -57
+  end: 668
+  importance: 3
+  confidence: medium
+  categories: [kingdom]
+  summary: Goguryeo, Baekje and Silla contended for the peninsula for seven
+    centuries, transmitting Buddhism and Chinese writing on to Japan along the
+    way.
+
+- id: goryeo-dynasty
+  title: Goryeo Dynasty
+  kind: polity
+  regions: [korea, east-asia]
+  start: 918
+  end: 1392
+  importance: 3
+  confidence: high
+  categories: [dynasty]
+  summary: Gave Korea its English name, produced celadon ceramics of
+    exceptional quality, and printed with metal movable type decades before
+    Gutenberg.
+  related: [movable-type]
+
+- id: joseon-dynasty
+  title: Joseon Dynasty
+  kind: polity
+  regions: [korea, east-asia]
+  start: 1392
+  end: 1897
+  importance: 4
+  confidence: high
+  categories: [dynasty]
+  summary: Five centuries of Confucian rule, and the origin of hangul — an
+    alphabet designed from scratch in the 1440s to be learnable in a morning,
+    explicitly so that commoners could write.
+  related: [hangul]
+
+- id: hangul
+  title: Creation of hangul
+  kind: technology
+  regions: [korea, east-asia]
+  start: 1443
+  end: 1446
+  importance: 4
+  confidence: high
+  categories: [writing, discovery]
+  summary: One of the very few writing systems with a known inventor, a known
+    date and a stated rationale — its letter shapes depict the mouth positions
+    that make the sounds.
+  related: [joseon-dynasty]
+
+- id: korean-war
+  title: Korean War
+  kind: event
+  regions: [korea, east-asia]
+  start: 1950
+  end: 1953
+  importance: 4
+  confidence: high
+  categories: [war]
+  summary: Ended in armistice rather than peace, leaving a division that has
+    now lasted longer than the unified state that preceded it.
+
+# ---- Southeast Asia ----
+- id: srivijaya
+  title: Srivijaya
+  kind: polity
+  regions: [southeast-asia, east-asia]
+  start: [650, 671]
+  end: [1288, 1377]
+  importance: 3
+  confidence: medium
+  categories: [empire, trade, religion]
+  summary: A Buddhist maritime power controlling the Malacca and Sunda straits,
+    and a centre of Buddhist learning that Chinese pilgrims stopped at on their
+    way to India.
+
+- id: borobudur
+  title: Borobudur
+  kind: structure
+  regions: [southeast-asia, east-asia]
+  start: [780, 780]
+  end: [833, 850]
+  importance: 4
+  confidence: medium
+  categories: [architecture, religion]
+  summary: The largest Buddhist monument in the world, a stepped stone mandala
+    in central Java, abandoned within a century and a half and overgrown for
+    most of a millennium.
+  sources:
+    - {title: "UNESCO — Borobudur Temple Compounds", url: "https://whc.unesco.org/en/list/592/"}
+
+- id: khmer-empire
+  title: Khmer Empire
+  kind: polity
+  regions: [southeast-asia, east-asia]
+  start: 802
+  end: 1431
+  importance: 4
+  confidence: high
+  categories: [empire]
+  summary: Ruled mainland Southeast Asia from Angkor, a hydraulic city whose
+    reservoirs and canals supported a population larger than any pre-industrial
+    urban centre in Europe.
+  related: [angkor-wat]
+
+- id: angkor-wat
+  title: Angkor Wat
+  kind: structure
+  regions: [southeast-asia, east-asia]
+  start: [1113, 1122]
+  end: [1150, 1150]
+  importance: 5
+  confidence: medium
+  categories: [architecture, religion]
+  summary: The largest religious structure ever built, raised as a Hindu temple
+    to Vishnu and later becoming Buddhist — and never wholly abandoned.
+  related: [khmer-empire]
+  sources:
+    - {title: "UNESCO — Angkor", url: "https://whc.unesco.org/en/list/668/"}
+
+- id: majapahit
+  title: Majapahit
+  kind: polity
+  regions: [southeast-asia, east-asia]
+  start: 1293
+  end: [1500, 1527]
+  importance: 3
+  confidence: medium
+  categories: [empire, trade]
+  summary: The last major Hindu-Buddhist empire of the archipelago, whose
+    claimed reach across maritime Southeast Asia is still invoked in Indonesian
+    national memory.
+
+- id: ayutthaya
+  title: Ayutthaya Kingdom
+  kind: polity
+  regions: [southeast-asia, east-asia]
+  start: 1351
+  end: 1767
+  importance: 3
+  confidence: high
+  categories: [kingdom, trade]
+  summary: A cosmopolitan Siamese capital that hosted Portuguese, Dutch,
+    Japanese and Persian quarters, and was destroyed by a Burmese army after
+    four centuries.

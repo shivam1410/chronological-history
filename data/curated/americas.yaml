@@ -1,0 +1,444 @@
+# The Americas. Two independent inventions of agriculture, cities larger than
+# contemporary European capitals, and writing developed from scratch - almost
+# all of it flattened in the historical record by what happened after 1492.
+
+# ---- peopling and agriculture ----
+- id: peopling-of-americas
+  title: Peopling of the Americas
+  kind: event
+  regions: [north-america, americas]
+  start: ["25 ka", "20 ka"]
+  end: "13 ka"
+  importance: 5
+  confidence: contested
+  categories: [exploration]
+  note: The old Clovis-first model is dead. Footprints at White Sands may push
+    arrival back to 23,000 years ago, and a coastal route is now favoured over
+    an ice-free corridor, but the earliest dates remain disputed.
+  summary: Humans crossed from Siberia into a continent with no people in it,
+    and reached the southern tip of South America within a few thousand years.
+  related: [last-glacial-maximum]
+
+- id: maize-domestication
+  title: Domestication of maize
+  kind: technology
+  regions: [mesoamerica, americas]
+  start: "9 ka"
+  end: "5 ka"
+  importance: 5
+  confidence: medium
+  categories: [civilisation, discovery]
+  summary: Bred from a grass called teosinte in the Balsas valley over
+    millennia of selection, maize became the staple that every later
+    Mesoamerican civilisation was built on. One of a handful of independent
+    inventions of farming worldwide.
+  related: [neolithic-revolution, kuk-swamp-agriculture]
+
+- id: potato-domestication
+  title: Domestication of the potato
+  kind: technology
+  regions: [andes, americas]
+  start: "10 ka"
+  end: "7 ka"
+  importance: 4
+  confidence: medium
+  categories: [civilisation, discovery]
+  summary: Domesticated around Lake Titicaca and bred into thousands of
+    varieties suited to different altitudes. After 1492 it became a staple of
+    Europe and, in Ireland, the subject of a catastrophic dependence.
+
+# ---- early civilisations ----
+- id: norte-chico
+  title: Norte Chico (Caral)
+  kind: polity
+  regions: [andes, americas]
+  start: -3500
+  end: -1800
+  importance: 4
+  confidence: medium
+  categories: [civilisation, architecture]
+  summary: The oldest known complex society in the Americas, raising
+    monumental platform mounds on the Peruvian coast while the pyramids were
+    being built in Egypt — and apparently without pottery or warfare.
+  sources:
+    - {title: "UNESCO — Sacred City of Caral-Supe", url: "https://whc.unesco.org/en/list/1269/"}
+
+- id: olmec
+  title: The Olmec
+  kind: polity
+  regions: [mesoamerica, americas]
+  start: -1500
+  end: -400
+  importance: 4
+  confidence: medium
+  categories: [civilisation, architecture]
+  summary: Mesoamerica's foundational culture, known for colossal basalt heads
+    carved without metal tools, and for the calendar, ballgame and ritual forms
+    that later peoples inherited.
+
+- id: chavin
+  title: Chavín culture
+  kind: polity
+  regions: [andes, americas]
+  start: -900
+  end: -200
+  importance: 3
+  confidence: medium
+  categories: [civilisation, religion]
+  summary: A religious centre in the Peruvian highlands whose art style spread
+    across the Andes, apparently by pilgrimage rather than conquest.
+
+- id: monte-alban
+  title: Monte Albán and the Zapotec
+  kind: polity
+  regions: [mesoamerica, americas]
+  start: -500
+  end: 850
+  importance: 3
+  confidence: medium
+  categories: [civilisation, writing]
+  summary: A city levelled from a mountaintop, and the source of some of the
+    earliest writing in the Americas.
+
+- id: nazca-lines
+  title: The Nazca lines
+  kind: structure
+  regions: [andes, americas]
+  start: -500
+  end: 500
+  importance: 3
+  confidence: medium
+  categories: [architecture, religion]
+  summary: Hundreds of figures and straight lines scraped into the desert over
+    a thousand years, most plausibly walked as ritual paths, and legible in
+    full only from the surrounding hills or the air.
+
+- id: teotihuacan
+  title: Teotihuacan
+  kind: polity
+  regions: [mesoamerica, americas]
+  start: -100
+  end: 550
+  importance: 5
+  confidence: medium
+  categories: [civilisation, architecture]
+  note: Who built and ruled it is unknown. It has no surviving royal portraits
+    or king lists, which is unusual enough to have prompted theories of
+    collective rule.
+  summary: A city of well over a hundred thousand people laid out on a grid,
+    among the largest in the world at its height. The Aztecs found it long
+    abandoned and named it the place where the gods were born.
+
+- id: moche
+  title: Moche culture
+  kind: polity
+  regions: [andes, americas]
+  start: 100
+  end: 700
+  importance: 3
+  confidence: medium
+  categories: [civilisation]
+  summary: Coastal Peruvian society known for irrigation on a large scale and
+    for ceramics of unusual realism, including portrait vessels of identifiable
+    individuals.
+
+- id: maya-writing
+  title: Maya writing and the Long Count
+  kind: technology
+  regions: [mesoamerica, americas]
+  start: -300
+  end: 1697
+  importance: 5
+  confidence: medium
+  categories: [writing, astronomy]
+  summary: A fully developed logosyllabic script, the only one in the
+    pre-Columbian Americas able to record any spoken sentence, paired with a
+    calendar tracking cycles over millions of days.
+  related: [maya-classic, maya-collapse]
+
+- id: maya-collapse
+  title: The Classic Maya collapse
+  kind: event
+  regions: [mesoamerica, americas]
+  start: 800
+  end: 950
+  importance: 4
+  confidence: contested
+  categories: [civilisation, climate]
+  note: Drought, warfare, soil exhaustion and political fragmentation are all
+    argued for, probably in combination. The Maya themselves did not disappear
+    and number in the millions today; it was the southern city-states that
+    were abandoned.
+  summary: Within roughly a century the great lowland cities were given up and
+    monument-carving stopped.
+  related: [maya-classic]
+
+# ---- later states ----
+- id: tiwanaku
+  title: Tiwanaku
+  kind: polity
+  regions: [andes, americas]
+  start: 500
+  end: 1000
+  importance: 3
+  confidence: medium
+  categories: [civilisation, architecture]
+  summary: A highland state on Lake Titicaca whose precision stonework at
+    3,850 metres has attracted more mystical speculation than it deserves and
+    less archaeological attention than it warrants.
+
+- id: wari
+  title: Wari Empire
+  kind: polity
+  regions: [andes, americas]
+  start: 600
+  end: 1000
+  importance: 3
+  confidence: medium
+  categories: [empire]
+  summary: Built the administrative and road systems across the Andes that the
+    Inca would later inherit and extend.
+  related: [inca-empire]
+
+- id: chaco-canyon
+  title: Chaco Canyon
+  kind: structure
+  regions: [north-america, americas]
+  start: 850
+  end: 1150
+  importance: 4
+  confidence: medium
+  categories: [architecture, astronomy]
+  summary: Ancestral Puebloan great houses of several hundred rooms, aligned to
+    solar and lunar cycles and linked by engineered roads running straight
+    across the desert for tens of kilometres.
+  sources:
+    - {title: "UNESCO — Chaco Culture", url: "https://whc.unesco.org/en/list/353/"}
+
+- id: norse-vinland
+  title: Norse settlement at Vinland
+  kind: event
+  regions: [north-america, americas]
+  start: [1000, 1021]
+  end: [1021, 1050]
+  importance: 3
+  confidence: medium
+  note: Tree-ring dating of wood at L'Anse aux Meadows fixes occupation to
+    exactly 1021 CE, the earliest precisely dated European presence in the
+    Americas.
+  categories: [exploration]
+  summary: Norse from Greenland built a small settlement in Newfoundland,
+    stayed briefly, and left — nearly five centuries before Columbus, with no
+    lasting consequence.
+
+- id: cahokia
+  title: Cahokia
+  kind: polity
+  regions: [north-america, americas]
+  start: 1050
+  end: 1350
+  importance: 4
+  confidence: medium
+  categories: [civilisation, architecture]
+  summary: The largest city north of Mexico before the eighteenth century,
+    centred on an earthen mound with a larger base than the Great Pyramid, and
+    abandoned before any European saw it.
+  sources:
+    - {title: "UNESCO — Cahokia Mounds", url: "https://whc.unesco.org/en/list/198/"}
+
+- id: chimu
+  title: Chimú Empire
+  kind: polity
+  regions: [andes, americas]
+  start: 900
+  end: 1470
+  importance: 3
+  confidence: medium
+  categories: [empire]
+  summary: Ruled the Peruvian coast from Chan Chan, the largest adobe city ever
+    built, until the Inca cut its water supply and absorbed it.
+  related: [inca-empire]
+
+- id: iroquois-confederacy
+  title: The Haudenosaunee Confederacy
+  kind: polity
+  regions: [north-america, americas]
+  start: [1142, 1450]
+  end: ongoing
+  importance: 4
+  confidence: contested
+  categories: [kingdom, human-rights]
+  note: Oral tradition and a solar eclipse point to 1142; many historians
+    prefer the fifteenth century. Claims about its influence on the US
+    constitution are debated but were formally acknowledged by Congress in 1988.
+  summary: A league of five, later six, nations governed by a recorded
+    constitution with councils, consensus procedure and the power of clan
+    mothers to remove leaders — one of the longest-running participatory
+    systems anywhere.
+
+- id: tenochtitlan
+  title: Founding of Tenochtitlan
+  kind: event
+  regions: [mesoamerica, americas]
+  start: 1325
+  end: 1325
+  importance: 4
+  confidence: medium
+  categories: [architecture, civilisation]
+  summary: Built on an island in Lake Texcoco and grown by floating gardens and
+    causeways into a city of perhaps two hundred thousand — larger than any in
+    Spain when the Spanish arrived.
+  related: [aztec-empire, fall-of-tenochtitlan]
+
+- id: aztec-empire
+  title: Aztec Empire
+  kind: polity
+  regions: [mesoamerica, americas]
+  start: 1428
+  end: 1521
+  importance: 5
+  confidence: high
+  categories: [empire]
+  summary: A tribute empire of the Triple Alliance dominating central Mexico,
+    with compulsory schooling, botanical gardens and a professional merchant
+    class — brought down in two years by disease, Spanish steel and the tens of
+    thousands of subject-city allies who joined the invaders.
+  related: [tenochtitlan, fall-of-tenochtitlan]
+
+# ---- conquest and after ----
+- id: columbus-1492
+  title: Columbus reaches the Caribbean
+  kind: event
+  regions: [mesoamerica, americas, western-europe]
+  start: 1492
+  end: 1492
+  importance: 5
+  confidence: high
+  categories: [exploration, colonialism]
+  summary: Four voyages looking for Asia, which instead began the permanent
+    linking of two hemispheres — and, within a generation, the collapse of the
+    Caribbean's indigenous population.
+  related: [columbian-exchange-epidemics, transatlantic-slave-trade]
+
+- id: fall-of-tenochtitlan
+  title: Fall of Tenochtitlan
+  kind: event
+  regions: [mesoamerica, americas]
+  start: 1519
+  end: 1521
+  importance: 5
+  confidence: high
+  categories: [war, colonialism]
+  summary: A two-year campaign ending in a siege, in which smallpox and
+    indigenous allies mattered more than Spanish numbers. The city was razed
+    and Mexico City built on it.
+  related: [aztec-empire, columbian-exchange-epidemics]
+
+- id: fall-of-the-inca
+  title: Spanish conquest of the Inca
+  kind: event
+  regions: [andes, americas]
+  start: 1532
+  end: 1572
+  importance: 5
+  confidence: high
+  categories: [war, colonialism]
+  summary: Pizarro seized the emperor at Cajamarca with fewer than two hundred
+    men, exploiting a civil war and an epidemic that had already killed the
+    previous ruler. Resistance continued from Vilcabamba for forty years.
+  related: [inca-empire, columbian-exchange-epidemics]
+
+- id: potosi-silver
+  title: The silver of Potosí
+  kind: period
+  regions: [andes, americas]
+  start: 1545
+  end: 1825
+  importance: 5
+  confidence: medium
+  categories: [trade, slavery, colonialism]
+  summary: A single mountain produced a large share of the world's silver for
+    two centuries, financing the Spanish empire and flowing on to China. It was
+    worked under the mita labour draft at a cost in indigenous and African
+    lives that contemporaries already described as devouring men.
+
+- id: trail-of-tears
+  title: Indian removal and the Trail of Tears
+  kind: event
+  regions: [north-america, americas]
+  start: 1830
+  end: 1850
+  importance: 4
+  confidence: high
+  categories: [human-rights, colonialism]
+  summary: The forced march of the Cherokee, Choctaw, Muscogee, Chickasaw and
+    Seminole west of the Mississippi, carried out after the Supreme Court had
+    ruled against it, killing thousands on the way.
+
+- id: us-civil-war
+  title: American Civil War
+  kind: event
+  regions: [north-america, americas]
+  start: 1861
+  end: 1865
+  importance: 5
+  confidence: high
+  categories: [war, slavery]
+  summary: Fought over whether slavery would expand, and settled by abolishing
+    it, at a cost of roughly 750,000 lives.
+  related: [abolition-us]
+
+- id: residential-schools
+  title: Residential and boarding schools
+  kind: period
+  regions: [north-america, americas]
+  start: 1860
+  end: 1996
+  importance: 5
+  confidence: high
+  categories: [human-rights, colonialism]
+  summary: Indigenous children in Canada and the United States were removed to
+    church- and state-run schools explicitly intended to erase their languages
+    and cultures. Canada's Truth and Reconciliation Commission described the
+    policy as cultural genocide; unmarked graves are still being found.
+  related: [stolen-generations]
+
+- id: wounded-knee
+  title: Wounded Knee massacre
+  kind: event
+  regions: [north-america, americas]
+  start: 1890
+  end: 1890
+  importance: 4
+  confidence: high
+  categories: [human-rights, war]
+  summary: US troops killed around three hundred Lakota, most of them unarmed
+    and many women and children, in the event conventionally taken to close the
+    Plains wars.
+
+- id: mexican-revolution
+  title: Mexican Revolution
+  kind: event
+  regions: [mesoamerica, americas]
+  start: 1910
+  end: 1920
+  importance: 4
+  confidence: high
+  categories: [war, independence]
+  summary: A decade of civil war against a thirty-year dictatorship, which
+    produced land reform, a constitution that was radical for its time, and
+    something close to a million deaths.
+
+- id: panama-canal
+  title: Panama Canal
+  kind: structure
+  regions: [mesoamerica, americas]
+  start: 1904
+  end: 1914
+  importance: 4
+  confidence: high
+  categories: [architecture, trade]
+  summary: Cut the sea route between the Atlantic and Pacific by thousands of
+    kilometres, after a French attempt had failed and tens of thousands of
+    workers had died, mostly of malaria and yellow fever.
+  related: [malaria, germ-theory]
