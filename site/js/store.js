@@ -8,7 +8,7 @@
  */
 
 const SPINE_FIELDS = [
-  'id', 'title', 'kind', 'lane',
+  'id', 'title', 'kind', 'lane', 'region',
   'sMin', 'sMax', 'eMin', 'eMax',
   'imp', 'bucket', 'flags',
 ];

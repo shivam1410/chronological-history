@@ -159,6 +159,30 @@ class TestEraBundles:
         assert bundle["entries"]["mughal-empire"]["related"] == ["kabir"]
 
 
+class TestSpineCarriesTheSpecificRegion:
+    """Sub-lane expansion needs the region, not just the lane it rolls up to."""
+
+    def test_row_carries_the_primary_region(self, built):
+        _, _, spine = built
+        row = dict(zip(spine["fields"], next(
+            r for r in spine["rows"] if r[0] == "mughal-empire")))
+        assert row["region"] == "north-india"
+        assert row["lane"] == "india"
+
+    def test_region_equals_lane_when_the_entry_is_tagged_at_lane_level(self, built):
+        _, _, spine = built
+        row = dict(zip(spine["fields"], next(
+            r for r in spine["rows"] if r[0] == "renaissance")))
+        assert row["region"] == "europe"
+        assert row["lane"] == "europe"
+
+    def test_meta_exposes_sub_region_labels_for_expansion(self, built):
+        _, meta, _ = built
+        india = next(l for l in meta["lanes"] if l["id"] == "india")
+        assert india["subRegions"] == ["north-india"]
+        assert india["subRegionLabels"]["north-india"] == "North India"
+
+
 class TestFlagsSetByOtherOrigins:
     """The ongoing and imported bits were only ever asserted absent before."""
 

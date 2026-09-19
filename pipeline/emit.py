@@ -23,7 +23,7 @@ from dataclasses import dataclass
 from pipeline.loader import Entry, Taxonomy
 
 SPINE_FIELDS = (
-    "id", "title", "kind", "lane",
+    "id", "title", "kind", "lane", "region",
     "sMin", "sMax", "eMin", "eMax",
     "imp", "bucket", "flags",
 )
@@ -99,11 +99,16 @@ def _flags(entry: Entry) -> int:
 
 
 def _spine_row(entry: Entry, taxonomy: Taxonomy, bucket: str) -> list:
+    # The primary region is the most specific one the author gave; `lane` is
+    # what it rolls up to. Both are needed: lanes group the default view, and
+    # sub-regions are what a zoomed-in view expands a lane into.
+    region = entry.regions[0]
     return [
         entry.id,
         entry.title,
         entry.kind,
-        taxonomy.lane_for(entry.regions[0]) or "global",
+        taxonomy.lane_for(region) or "global",
+        region,
         entry.start.min, entry.start.max,
         entry.end.min, entry.end.max,
         entry.importance,
@@ -180,6 +185,7 @@ def write_bundles(
                 "order": lane.order,
                 "color": lane.color,
                 "subRegions": [sub_id for sub_id, _ in lane.sub_regions],
+                "subRegionLabels": {sub_id: label for sub_id, label in lane.sub_regions},
             }
             for lane in taxonomy.lanes
         ],
