@@ -236,8 +236,17 @@ def parse_image(raw: object) -> "Image | None":
             raise ValueError(f"image needs a non-empty {key!r}")
 
     url = str(raw["url"]).strip()
-    if not url.startswith("https://"):
-        raise ValueError(f"image url must be https, got {url!r}")
+    # Either a remote https url, or a file downloaded into the site's own
+    # images directory. Traversal and absolute paths are refused so a manifest
+    # can never point the page outside that directory.
+    local = (
+        url.startswith("images/")
+        and ".." not in url.split("/")
+        and url != "images/"
+    )
+    if not (url.startswith("https://") or local):
+        raise ValueError(
+            f"image url must be https or a path under images/, got {url!r}")
 
     return Image(
         url=url,

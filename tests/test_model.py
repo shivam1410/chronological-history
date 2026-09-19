@@ -247,3 +247,31 @@ class TestImage:
         with pytest.raises(ValueError, match="https"):
             parse_image({"url": "http://x/a.jpg", "license": "CC0",
                          "source": "https://commons.wikimedia.org/x"})
+
+
+class TestImageLocalPaths:
+    """Images are downloaded into the repo, so the url may be a local path."""
+
+    def _img(self, url):
+        from pipeline.model import parse_image
+        return parse_image({"url": url, "license": "CC0",
+                            "source": "https://commons.wikimedia.org/x"})
+
+    def test_a_local_images_path_is_accepted(self):
+        assert self._img("images/adi-shankara.jpg").url == "images/adi-shankara.jpg"
+
+    def test_https_is_still_accepted(self):
+        assert self._img("https://upload.wikimedia.org/a.jpg").url.startswith("https://")
+
+    @pytest.mark.parametrize("url", [
+        "http://upload.wikimedia.org/a.jpg",   # insecure remote
+        "/etc/passwd",                          # absolute path
+        "images/../../secrets.txt",             # traversal
+        "../secrets.txt",                       # traversal
+        "data/spine.json",                      # outside the images directory
+        "javascript:alert(1)",                  # not a path at all
+    ])
+    def test_anything_else_is_refused(self, url):
+        from pipeline.model import parse_image
+        with pytest.raises(ValueError):
+            self._img(url)
