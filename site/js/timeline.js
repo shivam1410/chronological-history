@@ -25,6 +25,9 @@ const COLLAPSED_BAR_H = 5;
 /** Padding added to each target's hit box, so a 3px bar is still clickable. */
 const HIT_PAD = 10;
 
+/** Travel before a touch drag commits to panning time or scrolling lanes. */
+const AXIS_LOCK_PX = 12;
+
 // The lane gutter has to stay legible without eating a phone screen: at 375px
 // a 150px gutter is 40% of the viewport.
 const GUTTER_TIERS = [
@@ -669,9 +672,52 @@ export function createTimeline(canvas, {
 
   let dragging = null;
 
+  /**
+   * Live pointers, so two fingers can be told from one.
+   *
+   * Zooming had no touch gesture at all: a phone could drag to pan, but the
+   * only ways to change the span were the era tabs and the date filter. On a
+   * timeline covering 4.5 billion years that is the central interaction, so
+   * pinch belongs here.
+   */
+  const pointers = new Map();
+  let pinch = null;
+
+  /** Separation of the two fingers, and the plot-space point between them. */
+  function pinchState() {
+    const [a, b] = [...pointers.values()];
+    const rect = canvas.getBoundingClientRect();
+    return {
+      distance: Math.hypot(a.x - b.x, a.y - b.y),
+      midX: (a.x + b.x) / 2 - rect.left - gutter,
+    };
+  }
+
   canvas.addEventListener('pointerdown', (event) => {
-    canvas.setPointerCapture(event.pointerId);
-    dragging = { x: event.clientX, y: event.clientY, moved: false };
+    pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    // Capture is an optimisation, not a precondition. It throws if the pointer
+    // is already gone, and a throw here used to abandon the rest of this
+    // handler - so the gesture was never registered at all.
+    try {
+      canvas.setPointerCapture(event.pointerId);
+    } catch {
+      // Nothing to do: the gesture still tracks through the events below.
+    }
+
+    if (pointers.size === 2) {
+      // A second finger ends the drag rather than fighting it, or the view
+      // lurches sideways as the hands settle.
+      dragging = null;
+      pinch = pinchState();
+      return;
+    }
+    if (pointers.size > 2) return;
+
+    dragging = {
+      x: event.clientX, y: event.clientY, moved: false,
+      touch: event.pointerType === 'touch',
+      totalX: 0, totalY: 0, axis: null,
+    };
   });
 
   function trackHover(event) {
@@ -719,6 +765,26 @@ export function createTimeline(canvas, {
   });
 
   canvas.addEventListener('pointermove', (event) => {
+    if (pointers.has(event.pointerId)) {
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    }
+
+    if (pinch && pointers.size >= 2) {
+      const next = pinchState();
+      // Fingers apart is a shorter span, so the factor is the ratio inverted.
+      // Guard the degenerate case: two pointers at the same point give zero.
+      if (pinch.distance > 0 && next.distance > 0) {
+        const factor = pinch.distance / next.distance;
+        if (Math.abs(1 - factor) > 0.002) {
+          view = view.zoomAbout(next.midX, factor);
+          schedule();
+          onViewChange?.(view);
+        }
+      }
+      pinch = next;
+      return;
+    }
+
     if (!dragging) return;
     const dx = event.clientX - dragging.x;
     const dy = event.clientY - dragging.y;
@@ -726,17 +792,53 @@ export function createTimeline(canvas, {
     if (Math.abs(dx) > 3 || Math.abs(dy) > 3) dragging.moved = true;
     dragging.x = event.clientX;
     dragging.y = event.clientY;
-    if (dx) view = view.pan(-dx);
-    if (dy) scrollY -= dy;
+
+    // A finger is not a mouse. A swipe meant for one axis always carries some
+    // of the other, so panning through time and scrolling the lanes happened
+    // at once and neither landed where it was aimed. The first decisive
+    // movement picks the axis and the gesture keeps it, which is what the
+    // wheel handler already does for a trackpad.
+    dragging.totalX += Math.abs(dx);
+    dragging.totalY += Math.abs(dy);
+    if (dragging.touch && !dragging.axis
+        && dragging.totalX + dragging.totalY > AXIS_LOCK_PX) {
+      dragging.axis = dragging.totalX >= dragging.totalY ? 'x' : 'y';
+    }
+
+    // Until the axis is settled a touch drag moves nothing. The scale is
+    // logarithmic, so a stray four pixels at the deep-time end is millions of
+    // years - applying the wobble before the gesture has declared itself is
+    // not harmless, and it was enough to shift 25.3 Ma to 30.3 Ma on a swipe
+    // meant only to scroll.
+    const undecided = dragging.touch && !dragging.axis;
+    const panBy = undecided || dragging.axis === 'y' ? 0 : dx;
+    const scrollBy = undecided || dragging.axis === 'x' ? 0 : dy;
+    if (panBy) view = view.pan(-panBy);
+    if (scrollBy) scrollY -= scrollBy;
     schedule();
-    if (dx) onViewChange?.(view);
+    if (panBy) onViewChange?.(view);
   });
 
   const endDrag = (event) => {
+    pointers.delete(event.pointerId);
+    canvas.releasePointerCapture?.(event.pointerId);
+
+    if (pointers.size < 2) pinch = null;
+    if (pointers.size === 1 && !dragging) {
+      // One finger lifted from a pinch. Carry on as a drag from where the
+      // other finger actually is, so the view does not jump to meet it, and
+      // count it as already moved so the lift is not read as a tap.
+      const [remaining] = [...pointers.values()];
+      dragging = {
+        x: remaining.x, y: remaining.y, moved: true, touch: true,
+        totalX: 0, totalY: 0, axis: null,
+      };
+      return;
+    }
+
     if (!dragging) return;
     const wasDrag = dragging.moved;
     dragging = null;
-    canvas.releasePointerCapture?.(event.pointerId);
     if (wasDrag) return;
 
     // A click in the gutter toggles that lane.
