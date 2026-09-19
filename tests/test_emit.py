@@ -183,6 +183,37 @@ class TestSpineCarriesTheSpecificRegion:
         assert india["subRegionLabels"]["north-india"] == "North India"
 
 
+class TestSpineCarriesSearchText:
+    """Search must match aliases, so they ride in the spine, not only details."""
+
+    def test_aliases_are_joined_into_the_spine(self, built):
+        _, _, spine = built
+        row = dict(zip(spine["fields"], next(
+            r for r in spine["rows"] if r[0] == "kabir")))
+        assert row["alias"] == "Kabir Das"
+
+    def test_entries_without_aliases_carry_an_empty_string(self, built):
+        _, _, spine = built
+        row = dict(zip(spine["fields"], next(
+            r for r in spine["rows"] if r[0] == "renaissance")))
+        assert row["alias"] == ""
+
+    def test_multiple_aliases_are_pipe_separated(self, tmp_path, taxonomy):
+        from pipeline.emit import write_bundles
+        from pipeline.loader import load_entries
+        src = tmp_path / "x.yaml"
+        src.write_text(
+            "- id: x\n  title: X\n  kind: polity\n  regions: [europe]\n"
+            "  start: 1\n  end: 2\n  importance: 1\n  summary: s\n"
+            "  aliases: [One, Two, Three]\n")
+        entries = load_entries([str(src)], taxonomy)
+        write_bundles(entries, taxonomy, out_dir=str(tmp_path / "out"))
+        import json
+        spine = json.loads((tmp_path / "out" / "spine.json").read_text())
+        row = dict(zip(spine["fields"], spine["rows"][0]))
+        assert row["alias"] == "One|Two|Three"
+
+
 class TestFlagsSetByOtherOrigins:
     """The ongoing and imported bits were only ever asserted absent before."""
 

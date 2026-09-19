@@ -23,7 +23,7 @@ from dataclasses import dataclass
 from pipeline.loader import Entry, Taxonomy
 
 SPINE_FIELDS = (
-    "id", "title", "kind", "lane", "region",
+    "id", "title", "kind", "lane", "region", "alias",
     "sMin", "sMax", "eMin", "eMax",
     "imp", "bucket", "flags",
 )
@@ -109,6 +109,10 @@ def _spine_row(entry: Entry, taxonomy: Taxonomy, bucket: str) -> list:
         entry.kind,
         taxonomy.lane_for(region) or "global",
         region,
+        # Aliases ride in the spine because search has to match them and the
+        # spine is the only thing guaranteed to be loaded. Pipe-separated
+        # rather than nested, to keep the row a flat array.
+        "|".join(entry.aliases),
         entry.start.min, entry.start.max,
         entry.end.min, entry.end.max,
         entry.importance,
