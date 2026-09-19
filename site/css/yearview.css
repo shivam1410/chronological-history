@@ -140,9 +140,60 @@
 .yearview :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 @media (max-width: 560px) {
+  /* The header was taking more than half the screen: the year on one line,
+     six steppers wrapped onto a second, and the actions onto a third. It is
+     now two compact rows, with the steppers scrolling instead of wrapping. */
+  .yearview__head {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    grid-template-areas: "year count link close" "steps steps steps steps";
+    gap: var(--step-2);
+    align-items: center;
+    padding: var(--step-2) var(--step-3);
+  }
+
+  .yearview__year { grid-area: year; font-size: 20px; }
+  .yearview__count { grid-area: count; display: block; font-size: 11px; white-space: nowrap; }
+  .yearview__link { grid-area: link; padding: 4px var(--step-2); font-size: 11px; }
+  .yearview__close { grid-area: close; }
+  .yearview__actions { display: contents; }
+
+  .yearview__steps {
+    grid-area: steps;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 2px;
+  }
+
+  .yearview__steps::-webkit-scrollbar { display: none; }
+  .yearview__step { flex: 0 0 auto; }
+
   .yearview__body { columns: auto; padding: var(--step-3); }
-  .yearview__year { font-size: 20px; }
-  .yearview__count { display: none; }
+  .yearview__lane { margin-bottom: var(--step-4); }
+
+  /* Stack rather than compete for width: a long title and a date range on one
+     line forces both to wrap. */
+  .yearview__item {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 5px 0;
+  }
+
+  .yearview__name { font-size: 15px; line-height: 1.3; }
+
+  .yearview__span,
+  .yearview__where {
+    grid-column: 1;
+    display: inline;
+    font-size: 11px;
+  }
+
+  /* Span and position read as one meta line under the title. */
+  .yearview__span::after {
+    content: " \00b7 ";
+    color: var(--ink-faint);
+  }
 }
 
 @media (pointer: coarse) {

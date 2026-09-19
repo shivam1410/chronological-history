@@ -73,9 +73,12 @@ async function start() {
   const panel = createPanel(stage, {
     onClose: () => {
       timeline.select(null);
-      syncHash();
+      if (yearView.year === null) syncHash();
     },
-    onNavigate: (id) => selectEntry(byId.get(id) ?? null, { focus: true }),
+    onNavigate: (id) => selectEntry(byId.get(id) ?? null, {
+      focus: yearView.year === null,
+      keepYearView: yearView.year !== null,
+    }),
   });
 
   // The minimap and era buttons are built before the timeline because
@@ -91,10 +94,18 @@ async function start() {
     onClose: () => router.navigate({
       from: timeline.view.from, to: timeline.view.to,
     }),
-    onPick: (entry) => {
-      yearView.close();
-      selectEntry(entry, { focus: true });
+    // Centre the timeline on the year being viewed, with enough either side
+    // to see what it sat between.
+    onViewOnTimeline: (year) => {
+      const half = 75;
+      const from = year - half === 0 ? -1 : year - half;
+      const to = year + half === 0 ? 1 : year + half;
+      router.navigate({ from, to });
     },
+    // Opens the detail panel over the year list rather than leaving it. The
+    // header's "View on timeline" is the explicit way out; losing a year's
+    // worth of context to read one entry is not a reasonable price for a click.
+    onPick: (entry) => selectEntry(entry, { keepYearView: true }),
   });
 
   // Same ordering reason as the minimap: onViewChange fires during
@@ -162,7 +173,7 @@ async function start() {
     onPickYear: (year) => router.navigate({ year: roundYear(year) }),
   });
 
-  function selectEntry(entry, { focus = false } = {}) {
+  function selectEntry(entry, { focus = false, keepYearView = false } = {}) {
     if (!entry) {
       panel.close();
       timeline.select(null);
@@ -179,7 +190,10 @@ async function start() {
       return bundle.entries[entry.id] ?? {};
     }, { returnFocusTo: canvas });
     live.textContent = `${entry.title}. ${describe(timeline.view)}.`;
-    syncHash();
+
+    // The year stays the address while its list is open, so the panel is a
+    // detail on top of it rather than a new place.
+    if (!keepYearView) syncHash();
   }
 
   function applyState(state) {

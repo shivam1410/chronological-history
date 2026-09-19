@@ -25,7 +25,9 @@ function el(tag, className, text) {
   return node;
 }
 
-export function createYearView(root, { entries, lanes, onStep, onClose, onPick }) {
+export function createYearView(root, {
+  entries, lanes, onStep, onClose, onPick, onViewOnTimeline,
+}) {
   const laneOrder = lanes.map((lane) => lane.id);
   const laneLabel = new Map(lanes.map((lane) => [lane.id, lane.label]));
   let node = null;
@@ -58,7 +60,7 @@ export function createYearView(root, { entries, lanes, onStep, onClose, onPick }
     title.id = 'yearview-title';
 
     const count = el('p', 'yearview__count',
-      hits.length === 1 ? '1 entry underway' : `${hits.length} entries underway`);
+      hits.length === 1 ? '1 entry' : `${hits.length} entries`);
 
     const steps = el('div', 'yearview__steps');
     for (const { label, delta } of STEPS) {
@@ -72,9 +74,11 @@ export function createYearView(root, { entries, lanes, onStep, onClose, onPick }
     }
 
     const actions = el('div', 'yearview__actions');
+    // Goes to the timeline AT this year. Closing with the x just returns to
+    // whatever window the timeline already had, which is a different thing.
     const toTimeline = el('button', 'yearview__link', 'View on timeline');
     toTimeline.type = 'button';
-    toTimeline.addEventListener('click', () => close());
+    toTimeline.addEventListener('click', () => onViewOnTimeline?.(year));
     const closeBtn = el('button', 'yearview__close', '×');
     closeBtn.type = 'button';
     closeBtn.setAttribute('aria-label', 'Close the year view');
@@ -106,10 +110,12 @@ export function createYearView(root, { entries, lanes, onStep, onClose, onPick }
         name.type = 'button';
         name.addEventListener('click', () => onPick?.(entry));
 
+        // Order matters for the stacked mobile layout: title, then span, then
+        // position, so the last two read as one meta line beneath the name.
         item.append(name, el('span', 'yearview__span', span(entry)));
-        const where = positionIn(entry, year);
         item.append(el('span',
-          `yearview__where${boundary ? ' yearview__where--now' : ''}`, where));
+          `yearview__where${boundary ? ' yearview__where--now' : ''}`,
+          positionIn(entry, year)));
         list.append(item);
       }
       section.append(list);
