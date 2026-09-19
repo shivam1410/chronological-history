@@ -87,12 +87,30 @@ def _tuple_of_str(raw: object, field: str, where: str) -> tuple[str, ...]:
     return tuple(str(item) for item in raw)
 
 
-def _build_entry(raw: dict, source_file: str) -> Entry:
-    entry_id = raw.get("id", "<no id>")
-    where = f"{source_file}: entry '{entry_id}'"
+def _required_str(raw: dict, field: str, where: str) -> str:
+    """A required string field that is present but blank is an authoring slip.
 
+    Without this, a bare ``title:`` becomes the literal string "None" and rides
+    all the way through to the rendered timeline.
+    """
+    value = raw[field]
+    if value is None or not str(value).strip():
+        raise ValueError(f"{where}: '{field}' must not be empty")
+    return str(value)
+
+
+def _required_int(raw: dict, field: str, where: str) -> int:
+    value = raw[field]
+    if isinstance(value, bool) or not isinstance(value, int):
+        raise ValueError(f"{where}: '{field}' must be a whole number, got {value!r}")
+    return value
+
+
+def _build_entry(raw: object, source_file: str) -> Entry:
     if not isinstance(raw, dict):
         raise ValueError(f"{source_file}: expected a mapping, got {type(raw).__name__}")
+
+    where = f"{source_file}: entry '{raw.get('id', '<no id>')}'"
 
     unknown = set(raw) - KNOWN_FIELDS
     if unknown:
@@ -113,20 +131,29 @@ def _build_entry(raw: dict, source_file: str) -> Entry:
             f"{where}: starts at {start.min} but ends at {end.max}"
         )
 
-    sources = tuple(
-        Source(title=str(s["title"]), url=str(s["url"]))
-        for s in raw.get("sources") or ()
-    )
+    raw_sources = raw.get("sources") or []
+    if not isinstance(raw_sources, list):
+        raise ValueError(f"{where}: 'sources' must be a list")
+    try:
+        sources = tuple(
+            Source(title=str(s["title"]), url=str(s["url"])) for s in raw_sources
+        )
+    except (KeyError, TypeError) as exc:
+        raise ValueError(f"{where}: each source needs 'title' and 'url' ({exc})") from exc
+
+    regions = _tuple_of_str(raw["regions"], "regions", where)
+    if not regions:
+        raise ValueError(f"{where}: 'regions' needs at least one value")
 
     return Entry(
-        id=str(raw["id"]),
-        title=str(raw["title"]),
-        kind=str(raw["kind"]),
-        regions=_tuple_of_str(raw["regions"], "regions", where),
+        id=_required_str(raw, "id", where),
+        title=_required_str(raw, "title", where),
+        kind=_required_str(raw, "kind", where),
+        regions=regions,
         start=start,
         end=end,
-        importance=int(raw["importance"]),
-        summary=" ".join(str(raw["summary"]).split()),
+        importance=_required_int(raw, "importance", where),
+        summary=" ".join(_required_str(raw, "summary", where).split()),
         categories=_tuple_of_str(raw.get("categories"), "categories", where),
         aliases=_tuple_of_str(raw.get("aliases"), "aliases", where),
         significance=raw.get("significance"),

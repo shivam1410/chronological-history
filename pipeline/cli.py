@@ -71,7 +71,7 @@ def cmd_build(_args) -> int:
 
 
 def cmd_validate(_args) -> int:
-    entries, taxonomy, paths = _load()
+    entries, _taxonomy, paths = _load()
     # The full rule set lands in Phase 4; loading already enforces schema,
     # date parsing, and ordering, so a clean load is a real signal today.
     print(f"loaded {len(entries)} entries from {len(paths)} file(s) with no errors")

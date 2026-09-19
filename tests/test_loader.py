@@ -41,11 +41,12 @@ class TestTaxonomy:
 
 class TestLoadEntries:
     def test_every_entry_is_loaded(self, entries):
-        assert len(entries) == 4
+        assert len(entries) == 6
 
     def test_entries_are_returned_in_id_order(self, entries):
         assert [e.id for e in entries] == [
-            "dinosaur-era", "kabir", "mughal-empire", "renaissance",
+            "dinosaur-era", "holocene", "imported-example",
+            "kabir", "mughal-empire", "renaissance",
         ]
 
     def test_scalar_dates_become_precise_bounds(self, entries):
@@ -109,3 +110,57 @@ class TestLoadErrors:
             load_entries([str(bad)], taxonomy)
         assert "broken.yaml" in str(exc.value)
         assert "kabir" in str(exc.value)
+
+
+class TestLoaderStrictness:
+    """Regression tests from the slice 1.4 chunk review.
+
+    Each of these previously loaded silently or crashed without naming the file
+    and entry, which is exactly what the loader's strictness is meant to prevent.
+    """
+
+    def _load(self, tmp_path, body, taxonomy):
+        path = tmp_path / "bad.yaml"
+        path.write_text(body)
+        return load_entries([str(path)], taxonomy)
+
+    def test_non_mapping_list_item_is_rejected_cleanly(self, tmp_path, taxonomy):
+        with pytest.raises(ValueError, match="expected a mapping, got str"):
+            self._load(tmp_path, '- "just a string"\n', taxonomy)
+
+    def test_empty_regions_is_rejected(self, tmp_path, taxonomy):
+        body = ("- id: x\n  title: X\n  kind: polity\n  regions: []\n"
+                "  start: 1\n  end: 2\n  importance: 1\n  summary: s\n")
+        with pytest.raises(ValueError, match="'regions' needs at least one value"):
+            self._load(tmp_path, body, taxonomy)
+
+    def test_null_regions_is_rejected(self, tmp_path, taxonomy):
+        body = ("- id: x\n  title: X\n  kind: polity\n  regions:\n"
+                "  start: 1\n  end: 2\n  importance: 1\n  summary: s\n")
+        with pytest.raises(ValueError, match="'regions' needs at least one value"):
+            self._load(tmp_path, body, taxonomy)
+
+    @pytest.mark.parametrize("field", ["title", "kind", "summary"])
+    def test_blank_required_string_is_rejected(self, tmp_path, taxonomy, field):
+        fields = {"id": "x", "title": "X", "kind": "polity", "regions": "[europe]",
+                  "start": "1", "end": "2", "importance": "1", "summary": "s"}
+        fields[field] = ""
+        body = "- " + "\n  ".join(f"{k}: {v}" for k, v in fields.items()) + "\n"
+        with pytest.raises(ValueError, match=f"'{field}' must not be empty"):
+            self._load(tmp_path, body, taxonomy)
+
+    def test_source_missing_a_field_names_the_entry(self, tmp_path, taxonomy):
+        body = ("- id: x\n  title: X\n  kind: polity\n  regions: [europe]\n"
+                "  start: 1\n  end: 2\n  importance: 1\n  summary: s\n"
+                "  sources:\n    - {url: 'https://example.com'}\n")
+        with pytest.raises(ValueError) as exc:
+            self._load(tmp_path, body, taxonomy)
+        assert "bad.yaml" in str(exc.value)
+        assert "'x'" in str(exc.value)
+        assert "title" in str(exc.value)
+
+    def test_non_integer_importance_is_rejected(self, tmp_path, taxonomy):
+        body = ("- id: x\n  title: X\n  kind: polity\n  regions: [europe]\n"
+                "  start: 1\n  end: 2\n  importance: 4.9\n  summary: s\n")
+        with pytest.raises(ValueError, match="'importance' must be a whole number"):
+            self._load(tmp_path, body, taxonomy)

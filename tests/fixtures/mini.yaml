@@ -39,3 +39,23 @@
   end: "66 Ma"
   importance: 5
   summary: Non-avian dinosaurs dominated the land.
+
+- id: holocene
+  title: Holocene Epoch
+  kind: period
+  regions: [europe]
+  start: -9000
+  end: ongoing
+  importance: 4
+  summary: The current interglacial epoch.
+
+- id: imported-example
+  title: Imported Example
+  kind: person
+  regions: [europe]
+  start: 1600
+  end: 1660
+  importance: 1
+  origin: wikidata
+  wikidata: Q12345
+  summary: An entry that came from the Wikidata importer.

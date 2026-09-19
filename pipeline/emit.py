@@ -63,7 +63,10 @@ def _build_buckets() -> tuple[EraBucket, ...]:
     for start in (1, 501, 1_001):
         end = 1_499 if start == 1_001 else start + 499
         buckets.append(EraBucket(f"ce-{start:04d}-{end:04d}", start, end))
-    for start in range(1_500, 2_100, 100):
+    # Extend the century ladder past the present so a "ongoing" entry, whose end
+    # bound tracks the current year, always has a bucket of its own.
+    last_century = (_dt.date.today().year // 100 + 1) * 100
+    for start in range(1_500, last_century, 100):
         buckets.append(EraBucket(f"{start}-{start + 99}", start, start + 99))
     return tuple(buckets)
 
@@ -95,7 +98,7 @@ def _flags(entry: Entry) -> int:
     return flags
 
 
-def _spine_row(entry: Entry, taxonomy: Taxonomy) -> list:
+def _spine_row(entry: Entry, taxonomy: Taxonomy, bucket: str) -> list:
     return [
         entry.id,
         entry.title,
@@ -104,7 +107,7 @@ def _spine_row(entry: Entry, taxonomy: Taxonomy) -> list:
         entry.start.min, entry.start.max,
         entry.end.min, entry.end.max,
         entry.importance,
-        bucket_for(entry.start.min),
+        bucket,
         _flags(entry),
     ]
 
@@ -151,11 +154,12 @@ def write_bundles(
     """Write meta, spine and era bundles. Returns the meta payload."""
     entries = sorted(entries, key=lambda e: (e.start.min, e.id))
 
-    rows = [_spine_row(e, taxonomy) for e in entries]
+    buckets = {e.id: bucket_for(e.start.min) for e in entries}
+    rows = [_spine_row(e, taxonomy, buckets[e.id]) for e in entries]
 
     by_bucket: dict[str, dict] = {}
     for entry in entries:
-        by_bucket.setdefault(bucket_for(entry.start.min), {})[entry.id] = _detail(entry)
+        by_bucket.setdefault(buckets[entry.id], {})[entry.id] = _detail(entry)
 
     meta = {
         "generated": _dt.datetime.now(_dt.timezone.utc).replace(

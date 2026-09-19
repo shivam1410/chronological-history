@@ -71,14 +71,14 @@ class TestBucketing:
 class TestMeta:
     def test_counts(self, built):
         _, meta, _ = built
-        assert meta["counts"]["entries"] == 4
-        assert meta["counts"]["curated"] == 4
-        assert meta["counts"]["imported"] == 0
+        assert meta["counts"]["entries"] == 6
+        assert meta["counts"]["curated"] == 5
+        assert meta["counts"]["imported"] == 1
 
     def test_year_range_spans_the_dataset(self, built):
         _, meta, _ = built
         assert meta["yearRange"][0] == -232_998_051   # dinosaur start
-        assert meta["yearRange"][1] == 1857           # Mughal end
+        assert meta["yearRange"][1] >= 2026           # holocene is ongoing
 
     def test_lanes_carry_label_order_and_colour(self, built):
         _, meta, _ = built
@@ -106,7 +106,7 @@ class TestSpine:
 
     def test_every_entry_is_present(self, built):
         _, _, spine = built
-        assert len(spine["rows"]) == 4
+        assert len(spine["rows"]) == 6
 
     def test_a_row_carries_the_interval_and_lane(self, built):
         _, _, spine = built
@@ -157,6 +157,24 @@ class TestEraBundles:
         tmp_path, _, _ = built
         bundle = json.loads((tmp_path / "eras" / "1500-1599.json").read_text())
         assert bundle["entries"]["mughal-empire"]["related"] == ["kabir"]
+
+
+class TestFlagsSetByOtherOrigins:
+    """The ongoing and imported bits were only ever asserted absent before."""
+
+    def test_ongoing_entry_sets_the_ongoing_flag(self, built):
+        _, _, spine = built
+        row = dict(zip(spine["fields"], next(
+            r for r in spine["rows"] if r[0] == "holocene")))
+        assert row["flags"] & FLAG_ONGOING
+        assert not row["flags"] & FLAG_IMPORTED
+
+    def test_imported_entry_sets_the_imported_flag(self, built):
+        _, _, spine = built
+        row = dict(zip(spine["fields"], next(
+            r for r in spine["rows"] if r[0] == "imported-example")))
+        assert row["flags"] & FLAG_IMPORTED
+        assert not row["flags"] & FLAG_ONGOING
 
 
 class TestDeterminism:
