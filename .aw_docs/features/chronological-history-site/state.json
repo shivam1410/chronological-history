@@ -2,7 +2,7 @@
   "feature_slug": "chronological-history-site",
   "stage": "build",
   "mode": "code",
-  "status": "phase_1_complete",
+  "status": "phase_1_complete_reviewed",
   "created": "2026-09-19",
   "artifacts": {
     "prd.md": "written",
@@ -111,11 +111,11 @@
     ]
   },
   "validation_commands": [
-    "make test-py (95 passed)",
-    "make test-js (67 passed)",
+    "make test-py (101 passed)",
+    "make test-js (89 passed)",
     "make build",
     "make validate",
-    "browser verification at localhost:8000"
+    "browser verification at localhost:8000 including the BCE/CE seam"
   ],
   "reviewer_agents": {
     "1.2": "python-reviewer",
@@ -125,7 +125,11 @@
   "blocking_findings_fixed": [
     "Bound.width bypassed astro(), off by one across the era boundary",
     "loader accepted non-mapping items, empty regions, and blank required strings",
-    "createView projected in sp-space, making the scale anchors inert"
+    "createView projected in sp-space, making the scale anchors inert",
+    "ticks() threw on any sub-year window straddling the BCE/CE seam, halting the render loop",
+    "windows spanning BCE to CE produced a ragged tick ladder from a misapplied magnitude cap",
+    "view.span counted the non-existent year 0, so the one-year zoom clamp stopped early",
+    "main.js rounded the header year onto year 0 with bare Math.round"
   ],
   "deferred_findings": [
     "Bound accepts an empty explicit display and derives instead - forgiving behaviour is intended"

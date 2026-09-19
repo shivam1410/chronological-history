@@ -16,7 +16,7 @@ Route `/aw:build` · mode `code` · sequential, with one bounded parallel pair
 | 1.5 Time scale | `19f9126` | RED on missing modules → 48 GREEN |
 | 1.6 Canvas timeline | `b422520` | axis-only screenshot → bars; drawn x == `view.project` |
 
-Final state: **95 pytest + 67 node:test, all green.** `make build` emits 59 entries
+Final state: **101 pytest + 89 node:test, all green.** `make build` emits 59 entries
 across 18 era bundles; `spine.json` is 6.0 KB raw / 2.0 KB gzipped (~100 B per entry,
 so ~400 KB gzipped at 20,000 entries — inside the 600 KB budget).
 
@@ -36,7 +36,7 @@ Proof taken instead, as `tasks.md` requires:
 
 ### Defects found and fixed inside the phase
 
-Six, all caught by review or by running the thing:
+Ten, all caught by review or by running the thing:
 
 1. **`Bound.width` bypassed `astro()`** (1.2 review, blocking) — raw historical
    subtraction over-counted by one for any bracket straddling the BCE/CE boundary.
@@ -55,8 +55,24 @@ Six, all caught by review or by running the thing:
    sample's own magnitude, rounding to zero.
 6. **Tick sequences had holes** (1.6) — edge samples halved a gap they span once, so
    narrow windows read `1553 1554 1556`.
+7. **`ticks()` threw on any sub-year window straddling the seam** (1.5/1.6 review,
+   blocking) — reachable by zooming near 1 BCE. `drawAxis` calls `ticks()` every frame,
+   so the canvas stopped rendering entirely.
+8. **Every window spanning BCE to CE produced a ragged ladder** (1.5/1.6 review,
+   blocking) — the magnitude cap meant for deep-time BP values was applied to ordinary
+   years, so a sample near year 0 picked a finer step than its neighbours.
+   `[-600, 600]` gave gaps of 200/100/150/149/50.
+9. **`view.span` counted the year that does not exist** (found while fixing 7) — a window
+   across the seam measured one year wider than it is, so the one-year zoom clamp stopped
+   a full year early.
+10. **`main.js` rounded the header year with bare `Math.round`** (found while verifying
+    the fix) — lands on 0 for a view sitting just past the seam, and `formatYear` rejects
+    it. `roundYear()` now covers every display rounding.
 
-Each fix landed with a failing test first.
+Each fix landed with a failing test first. Defects 7-10 are one class: year arithmetic
+performed on raw historical values across a seam that only exists in historical numbering.
+Spacing is now measured astronomically and snapping stays historical, because
+astronomically-correct snapping yields labels like `81 BCE` and `2001 BCE`.
 
 ### Simplification applied
 
@@ -69,6 +85,14 @@ Each fix landed with a failing test first.
   colour makes `addColorStop` throw, which aborts the whole frame.
 - Dead `globalAlpha` assignments removed from the label path.
 - Unused `taxonomy` binding dropped from `cmd_validate`.
+- One shared `DEEP_TIME_BP` constant replaces two literals that had to stay in sync — the
+  coupling that caused the label-clustering regression in the first place.
+- CSS custom properties resolved once per frame instead of once per bar; `getComputedStyle`
+  forces a style recalc, which would have scaled badly once real lane packing lands.
+- Always-zero `PAD_X` removed rather than left threaded through four call sites as a hook
+  nothing used.
+- Bracketed date ranges join with "to" instead of a second en dash, so a bracketed bound
+  no longer reads as three dates (`243 Ma - 233 Ma - 66 Ma`).
 
 ### Deferred, with rationale
 
