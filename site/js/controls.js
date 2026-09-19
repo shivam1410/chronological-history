@@ -7,15 +7,57 @@
  */
 
 import { buildIndex, search } from './search.js';
-import { formatYear, roundYear } from './format.js';
+import { BP_EPOCH, formatYear, fromAstroYear, roundYear } from './format.js';
 
 const MAX_RESULTS = 8;
 
+/**
+ * Suggested boundaries for the range fields, offered as a native datalist.
+ *
+ * A dropdown rather than a plain text box because most of these are values
+ * nobody would think to type - "2.58 Ma" is the start of the Pleistocene, and
+ * you only know that if you already knew it.
+ */
+const YEAR_ANCHORS = [
+  ['4.54 Ga', 'Earth forms'],
+  ['541 Ma', 'Cambrian explosion'],
+  ['252 Ma', 'Permian extinction'],
+  ['66 Ma', 'End of the dinosaurs'],
+  ['2.58 Ma', 'Pleistocene begins'],
+  ['12 ka', 'Agriculture begins'],
+  ['3000 BCE', 'Writing, Bronze Age'],
+  ['1000 BCE', 'Iron Age'],
+  ['500 BCE', 'Buddha, classical Greece'],
+  ['1 CE', 'Common Era begins'],
+  ['500 CE', 'Fall of Rome'],
+  ['1000', 'High Middle Ages'],
+  ['1500', 'Renaissance, Mughals'],
+  ['1700', 'Enlightenment'],
+  ['1800', 'Industrial era'],
+  ['1900', 'Twentieth century'],
+  ['2000', 'Present day'],
+];
+
+const DEEP_UNITS = { ka: 1e3, Ma: 1e6, Ga: 1e9 };
+const DEEP_RE = /^(\d+(?:\.\d+)?)\s*(ka|Ma|Ga)$/;
+
+/**
+ * Parse what the range fields accept, which must include everything they can
+ * display: "4.54 Ga", "66 Ma", "12 ka", "500 BCE", "-500", "1526", "1526 CE".
+ *
+ * The deep-time suffixes matter because the fields are filled from formatYear,
+ * so without them the round trip turns "4.54 Ga" into the year 4.
+ */
 function parseYearInput(raw) {
   const text = String(raw ?? '').trim();
   if (!text) return null;
 
-  // Accept "500 BCE", "500 bc", "-500", "1526", "1526 CE".
+  const deep = DEEP_RE.exec(text);
+  if (deep) {
+    const bp = Math.round(Number(deep[1]) * DEEP_UNITS[deep[2]]);
+    return fromAstroYear(BP_EPOCH - bp);
+  }
+
   // Anchored at the end rather than on a word boundary: there is no boundary
   // between a digit and a letter, so "500BCE" would not match \bBCE.
   const era = /b\.?c\.?e?\.?$/i.test(text) ? -1 : 1;
@@ -33,6 +75,20 @@ export function createControls({
   entries, onPick, onRange,
 }) {
   const index = buildIndex(entries);
+
+  // A shared datalist turns both range fields into combo boxes: the suggestions
+  // drop down, and anything else can still be typed.
+  const anchors = document.createElement('datalist');
+  anchors.id = 'year-anchors';
+  for (const [value, label] of YEAR_ANCHORS) {
+    const option = document.createElement('option');
+    option.value = value;
+    option.label = label;
+    anchors.append(option);
+  }
+  rangeForm.append(anchors);
+  fromInput.setAttribute('list', anchors.id);
+  toInput.setAttribute('list', anchors.id);
   let results = [];
   let active = -1;
 
@@ -130,6 +186,10 @@ export function createControls({
   });
 
   // ---- date range --------------------------------------------------------
+
+  for (const input of [fromInput, toInput]) {
+    input.addEventListener('focus', () => input.select());
+  }
 
   rangeForm.addEventListener('submit', (event) => {
     event.preventDefault();

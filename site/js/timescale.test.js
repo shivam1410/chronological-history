@@ -238,13 +238,14 @@ describe('deep-time tick labels are round', () => {
 describe('uniform windows produce gap-free ticks', () => {
   // Regression: two unit-space samples could snap to the same year, and the
   // dedupe left a hole - "1550 1551 1552 1553 1554 1556" reads as a bug.
-  // Windows narrow enough to sit within one or two anchor segments, where the
-  // scale is near-linear and an even year-step is achievable. A window like
-  // [-2000, 2000] crosses three anchor boundaries, so its step legitimately
-  // varies - even *pixel* spacing is the contract there, covered by the
-  // clustering suite above.
+  // Windows narrow enough to sit inside ONE anchor segment, where the scale is
+  // near-linear and an even year-step is achievable. A window spanning several
+  // segments - [-2000, 2000] or [-600, 600], which cross the -500 and 500
+  // anchors - compresses unevenly, so its ticks legitimately vary in step and
+  // some get thinned out to stay readable. Even *pixel* spacing is the
+  // contract there, and the clustering suite above covers it.
   const windows = [[1550, 1560], [1500, 1600], [1900, 2000], [-600, -500],
-    [-100, 100], [-600, 600], [-20, 20]];
+    [-100, 100], [-20, 20]];
 
   for (const [from, to] of windows) {
     test(`${from}..${to} has an even step`, () => {
@@ -301,5 +302,33 @@ describe('the year-zero boundary', () => {
     const labels = createView(-100, 100, 1400).ticks().map((t) => t.label);
     assert.ok(labels.some((l) => /BCE$/.test(l)), 'expected a BCE label');
     assert.ok(labels.some((l) => /CE$/.test(l)), 'expected a CE label');
+  });
+});
+
+describe('tick density follows the available width', () => {
+  // A phone gives the plot area under 300px. Nine labels there overlap into
+  // "4 G400 Ma30 Ma600 ka", which is worse than showing four.
+  test('a narrow axis gets fewer ticks', () => {
+    const narrow = createView(ORIGIN_YEAR, 2020, 280).ticks();
+    const wide = createView(ORIGIN_YEAR, 2020, 1400).ticks();
+    assert.ok(narrow.length < wide.length,
+      `narrow ${narrow.length} vs wide ${wide.length}`);
+    assert.ok(narrow.length >= 2, 'at least two ticks');
+  });
+
+  test('labels have room to breathe at every width', () => {
+    for (const width of [240, 280, 375, 600, 1024, 1400]) {
+      for (const [from, to] of [[ORIGIN_YEAR, 2020], [-3000, 2020], [1500, 1600]]) {
+        const view = createView(from, to, width);
+        const xs = view.ticks().map((t) => view.project(t.year));
+        const gaps = xs.slice(1).map((x, i) => x - xs[i]);
+        assert.ok(Math.min(...gaps) >= 55,
+          `${width}px ${from}..${to}: ticks only ${Math.min(...gaps).toFixed(0)}px apart`);
+      }
+    }
+  });
+
+  test('a wide axis still caps at twelve', () => {
+    assert.ok(createView(ORIGIN_YEAR, 2020, 3000).ticks().length <= 12);
   });
 });

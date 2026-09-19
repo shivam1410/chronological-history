@@ -106,6 +106,9 @@ function nextStep(step) {
 const TICK_SAMPLES = 9;
 const MAX_TICKS = 12;
 
+/** Roughly the widest tick label, so labels are not asked to overlap. */
+const PX_PER_TICK = 92;
+
 /**
  * A window onto the scale, rendered linearly in UNIT space.
  *
@@ -166,9 +169,10 @@ export function createView(from, to, widthPx) {
    * CE - and can land on year 0 itself, which formatYear rejects.
    */
   function ticks() {
+    const sampleCount = TICK_SAMPLES;
     const samples = [];
-    for (let i = 0; i <= TICK_SAMPLES; i++) {
-      samples.push(unitToYear(uFrom + (i / TICK_SAMPLES) * uSpan));
+    for (let i = 0; i <= sampleCount; i++) {
+      samples.push(unitToYear(uFrom + (i / sampleCount) * uSpan));
     }
     // Spacing is measured astronomically so the missing year 0 does not inflate
     // a gap that straddles it; snapping stays in historical years so the labels
@@ -176,9 +180,9 @@ export function createView(from, to, widthPx) {
     const spaced = samples.map(toAstro);
 
     const stepFor = new Map(); // keyed by historical year
-    for (let i = 0; i <= TICK_SAMPLES; i++) {
+    for (let i = 0; i <= sampleCount; i++) {
       const lower = Math.max(i - 1, 0);
-      const upper = Math.min(i + 1, TICK_SAMPLES);
+      const upper = Math.min(i + 1, sampleCount);
       // Divide by the intervals actually spanned: the first and last samples
       // have one neighbour, not two, and halving their gap would pick a finer
       // step for them than for the middle of the axis.
@@ -245,13 +249,37 @@ export function createView(from, to, widthPx) {
   }
 
   function finish(stepFor) {
-    return [...stepFor.keys()]
+    return thin([...stepFor.keys()]
       .sort((a, b) => a - b)
       .map((year) => ({
         year,
         label: formatYear(year),
         major: Math.abs(year) % (stepFor.get(year) * 5) === 0,
-      }));
+      })));
+  }
+
+  /**
+   * Drop ticks that would sit too close to read.
+   *
+   * Thinning here rather than by sampling fewer points, because a coarse
+   * ladder does not give fewer good ticks - it gives bad ones. With three
+   * samples across 4.5 billion years the middle sample's neighbours are
+   * billions of years away, so its rounding step swallows it entirely.
+   */
+  function thin(ticks) {
+    if (ticks.length <= 2) return ticks;
+    const at = (tick) => ((yearToUnit(tick.year) - uFrom) / uSpan) * widthPx;
+
+    const kept = [ticks[0]];
+    for (let i = 1; i < ticks.length - 1; i++) {
+      if (at(ticks[i]) - at(kept[kept.length - 1]) >= PX_PER_TICK) kept.push(ticks[i]);
+    }
+
+    // The last tick anchors the right edge, so prefer it over its neighbour.
+    const last = ticks[ticks.length - 1];
+    if (at(last) - at(kept[kept.length - 1]) >= PX_PER_TICK) kept.push(last);
+    else if (kept.length > 1) kept[kept.length - 1] = last;
+    return kept;
   }
 
   return {

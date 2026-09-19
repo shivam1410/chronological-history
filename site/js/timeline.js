@@ -24,9 +24,17 @@ const COLLAPSED_BAR_H = 5;
 /** Padding added to each target's hit box, so a 3px bar is still clickable. */
 const HIT_PAD = 10;
 
-const GUTTER_W = 150;
-const GUTTER_W_NARROW = 92;
-const NARROW_PX = 680;
+// The lane gutter has to stay legible without eating a phone screen: at 375px
+// a 150px gutter is 40% of the viewport.
+const GUTTER_TIERS = [
+  { upTo: 460, width: 78 },
+  { upTo: 760, width: 104 },
+  { upTo: Infinity, width: 150 },
+];
+
+/** Fewer stacked rows on a small screen, so a lane is not taller than the view. */
+const NARROW_PX = 760;
+const MAX_ROWS_NARROW = 3;
 
 /** Below this window width a lane with sub-regions splits into them. */
 const SUBLANE_SPAN = 2000;
@@ -40,7 +48,7 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange,
   let view = null;
   let width = 0;
   let height = 0;
-  let gutter = GUTTER_W;
+  let gutter = GUTTER_TIERS.at(-1).width;
   let scrollY = 0;
   let contentH = 0;
   let theme = null;
@@ -113,7 +121,7 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange,
   function computeLayout() {
     const model = laneModel();
     const packed = packLanes(entries, model.order, view, {
-      maxRows: MAX_ROWS,
+      maxRows: width < NARROW_PX ? MAX_ROWS_NARROW : MAX_ROWS,
       minWidthPx: MIN_BAR_W,
       laneKey: model.key,
     });
@@ -439,7 +447,7 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange,
     const dpr = window.devicePixelRatio || 1;
     width = Math.max(1, Math.round(rect.width));
     height = Math.max(1, Math.round(rect.height));
-    gutter = width < NARROW_PX ? GUTTER_W_NARROW : GUTTER_W;
+    gutter = GUTTER_TIERS.find((t) => width <= t.upTo).width;
     canvas.width = Math.round(width * dpr);
     canvas.height = Math.round(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
