@@ -28,13 +28,18 @@ const HIT_PAD = 10;
 /** Travel before a touch drag commits to panning time or scrolling lanes. */
 const AXIS_LOCK_PX = 12;
 
-// The lane gutter has to stay legible without eating a phone screen: at 375px
-// a 150px gutter is 40% of the viewport.
+// The lane gutter has to stay legible without eating a phone screen. Below
+// 560px it stops being a column at all: a 96px gutter was 26% of a 375px
+// screen, leaving 279px for 4.5 billion years. The name moves to a strip above
+// each lane instead, and the chart gets the whole width.
 const GUTTER_TIERS = [
-  { upTo: 460, width: 96 },
+  { upTo: 560, width: 0 },
   { upTo: 760, width: 112 },
   { upTo: Infinity, width: 150 },
 ];
+
+/** Height of the name strip drawn above a lane when there is no gutter. */
+const LANE_HEAD_H = 17;
 
 /** Lane names wrap rather than truncate; this caps how far they wrap. */
 const LANE_LABEL_LINES = 3;
@@ -74,6 +79,10 @@ export function createTimeline(canvas, {
   // the full width and drops the count onto its own line underneath.
   const countInline = () => gutter >= 130;
   const labelWidth = () => gutter - (countInline() ? 34 : 16);
+
+  // No gutter means the lane name sits on its own strip above the bars.
+  const labelsAbove = () => gutter === 0;
+  const laneHead = () => (labelsAbove() ? LANE_HEAD_H : 0);
   let selectedId = null;
   let hover = null;
   const laneById = new Map(lanes.map((lane) => [lane.id, lane]));
@@ -304,6 +313,9 @@ export function createTimeline(canvas, {
   /** Vertical room a lane's wrapped name needs, counting its count line. */
   const labelHeights = new Map();
   function labelHeight(laneId, model) {
+    // Above the lane the name has the full width and its own strip, which
+    // laneHeightWith adds separately - it asks for no room beside the bars.
+    if (labelsAbove()) return 0;
     const key = `${gutter}|${laneId}`;
     const cached = labelHeights.get(key);
     if (cached !== undefined) return cached;
@@ -318,7 +330,7 @@ export function createTimeline(canvas, {
     const bars = collapsed.has(lane.lane)
       ? COLLAPSED_BAR_H
       : Math.max(1, rowsShown) * (BAR_H + BAR_GAP) - BAR_GAP;
-    return LANE_PAD_Y * 2 + Math.max(bars, labelHeight(lane.lane, model));
+    return laneHead() + LANE_PAD_Y * 2 + Math.max(bars, labelHeight(lane.lane, model));
   }
 
   /** Entries a lane would keep behind "+N more" at this cap. */
@@ -339,7 +351,13 @@ export function createTimeline(canvas, {
    */
   function rowCaps(packed, model) {
     const caps = new Map();
-    const base = width >= NARROW_PX ? MAX_ROWS : MAX_ROWS_NARROW;
+    // With the name on its own strip every lane costs 17px more, and twelve
+    // two-row lanes no longer fit. Starting from one row lets the fitter below
+    // hand the difference to the lanes that need it, which keeps every lane on
+    // screen instead of pushing the last two off the bottom.
+    const base = width >= NARROW_PX
+      ? MAX_ROWS
+      : (labelsAbove() ? 1 : MAX_ROWS_NARROW);
     for (const lane of packed) caps.set(lane.lane, base);
     if (width >= NARROW_PX) return caps;
 
@@ -380,15 +398,36 @@ export function createTimeline(canvas, {
     ctx.fillStyle = theme.bg;
     ctx.fillRect(gutter, top, width - gutter, lane.h);
 
+    ctx.font = LANE_FONT;
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+
+    if (labelsAbove()) {
+      // A strip across the top of the lane. The name has the full width here,
+      // so it never wraps and never truncates, and the count sits right after
+      // it rather than across a column from it.
+      ctx.fillStyle = theme.bgRaised;
+      ctx.fillRect(0, top, width, LANE_HEAD_H);
+      ctx.fillStyle = colour;
+      ctx.fillRect(0, top, 3, LANE_HEAD_H);
+
+      const midY = top + LANE_HEAD_H / 2;
+      ctx.fillStyle = theme.ink;
+      ctx.fillText(lane.label, 8, midY);
+      ctx.fillStyle = theme.inkFaint;
+      ctx.fillText(
+        lane.collapsed ? `${lane.count} \u203a` : String(lane.count),
+        8 + ctx.measureText(lane.label).width + 6, midY);
+
+      drawLaneBody(lane, top, colour);
+      return;
+    }
+
     // Gutter header
     ctx.fillStyle = theme.bgRaised;
     ctx.fillRect(0, top, gutter, lane.h);
     ctx.fillStyle = colour;
     ctx.fillRect(0, top, 3, lane.h);
-
-    ctx.font = LANE_FONT;
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'middle';
 
     // Anchored to the top of the lane, not centred in it. A tall lane - six
     // rows on a desktop - is ~104px, so centring floats the name into the
@@ -414,6 +453,11 @@ export function createTimeline(canvas, {
       ctx.fillText(count, 10, textY);
     }
 
+    drawLaneBody(lane, top, colour);
+  }
+
+  /** Bars, labels and the overflow badge - everything below the lane name. */
+  function drawLaneBody(lane, top, colour) {
     // Separator
     ctx.strokeStyle = theme.rule;
     ctx.beginPath();
@@ -431,7 +475,7 @@ export function createTimeline(canvas, {
     ctx.translate(gutter, 0);
 
     if (lane.collapsed) {
-      const y = top + LANE_PAD_Y;
+      const y = top + laneHead() + LANE_PAD_Y;
       ctx.globalAlpha = 0.55;
       for (const item of lane.rows.flat()) drawBar(item, y, colour, COLLAPSED_BAR_H);
       ctx.globalAlpha = 1;
@@ -444,7 +488,7 @@ export function createTimeline(canvas, {
     const minImportance = density > 2.2 ? 4 : density > 1.2 ? 3 : 1;
 
     lane.rows.forEach((row, r) => {
-      const y = top + LANE_PAD_Y + r * (BAR_H + BAR_GAP);
+      const y = top + laneHead() + LANE_PAD_Y + r * (BAR_H + BAR_GAP);
       const mid = y + BAR_H / 2;
       row.forEach((item, i) => {
         if (item.point) drawPoint(item, mid, colour);
@@ -569,13 +613,16 @@ export function createTimeline(canvas, {
 
     drawAxis();
 
-    // Gutter edge, drawn last so lane bands cannot bleed over it.
-    ctx.strokeStyle = theme.ruleStrong;
-    ctx.lineWidth = 1;
-    ctx.beginPath();
-    ctx.moveTo(gutter + 0.5, 0);
-    ctx.lineTo(gutter + 0.5, height);
-    ctx.stroke();
+    // Gutter edge, drawn last so lane bands cannot bleed over it. With no
+    // gutter there is no edge - and this must not skip drawHover below.
+    if (gutter > 0) {
+      ctx.strokeStyle = theme.ruleStrong;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(gutter + 0.5, 0);
+      ctx.lineTo(gutter + 0.5, height);
+      ctx.stroke();
+    }
 
     drawHover();
   }
@@ -632,8 +679,22 @@ export function createTimeline(canvas, {
       return hitRow(flat, x, HIT_PAD);
     }
 
-    const row = lane.rows[Math.floor((y - lane.y - LANE_PAD_Y) / (BAR_H + BAR_GAP))];
+    // A negative index - a tap on the name strip - floors below zero and finds
+    // no row, which is what should happen: that strip toggles the lane.
+    const row = lane.rows[
+      Math.floor((y - lane.y - laneHead() - LANE_PAD_Y) / (BAR_H + BAR_GAP))];
     return row ? hitRow(row, x, HIT_PAD) : null;
+  }
+
+  /** The lane whose name strip is under this point, if any. */
+  function laneHeadAt(clientX, clientY) {
+    if (!labelsAbove()) return null;
+    const rect = canvas.getBoundingClientRect();
+    if (clientY - rect.top < AXIS_H) return null;
+    const lane = laneAt(clientY);
+    if (!lane) return null;
+    const y = clientY - rect.top - AXIS_H + scrollY;
+    return y - lane.y < LANE_HEAD_H ? lane : null;
   }
 
   function laneAt(clientY) {
@@ -743,6 +804,13 @@ export function createTimeline(canvas, {
       return;
     }
 
+    // The name strip took the gutter's job of toggling a lane.
+    if (laneHeadAt(event.clientX, event.clientY)) {
+      canvas.style.cursor = 'pointer';
+      if (hover) { hover = null; schedule(); }
+      return;
+    }
+
     const lane = laneAt(event.clientY);
     const item = hitTest(event.clientX, event.clientY);
     hover = {
@@ -841,10 +909,12 @@ export function createTimeline(canvas, {
     dragging = null;
     if (wasDrag) return;
 
-    // A click in the gutter toggles that lane.
+    // A click in the gutter - or, with no gutter, on the lane's name strip -
+    // toggles that lane.
     const rect = canvas.getBoundingClientRect();
-    if (event.clientX - rect.left < gutter) {
-      const lane = laneAt(event.clientY);
+    const headLane = laneHeadAt(event.clientX, event.clientY);
+    if (event.clientX - rect.left < gutter || headLane) {
+      const lane = headLane ?? laneAt(event.clientY);
       if (lane) {
         if (collapsed.has(lane.lane)) collapsed.delete(lane.lane);
         else collapsed.add(lane.lane);
