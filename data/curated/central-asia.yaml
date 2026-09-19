@@ -7,7 +7,11 @@
   kind: technology
   regions: [central-asia]
   start: ["5.5 ka", "5 ka"]
-  end: ongoing
+  end: -1000
+  significance: >-
+    Horses stayed central to transport and warfare until the internal
+    combustion engine displaced them, which is a longer run than any machine
+    has yet managed.
   importance: 5
   confidence: contested
   categories: [civilisation, discovery]

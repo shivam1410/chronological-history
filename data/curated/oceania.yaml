@@ -64,7 +64,10 @@
   kind: technology
   regions: [oceania]
   start: -1000
-  end: ongoing
+  end: 1300
+  significance: >-
+    Dismissed for two centuries as accidental drift, it was vindicated in 1976
+    when Hokule'a sailed Hawaii to Tahiti with no instruments at all.
   importance: 5
   confidence: medium
   categories: [exploration, astronomy]

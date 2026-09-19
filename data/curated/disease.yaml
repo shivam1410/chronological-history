@@ -212,7 +212,13 @@
   kind: event
   regions: [global, north-america]
   start: [1900, 1916]
-  end: ongoing
+  end: 1988
+  significance: >-
+    Paralytic polio was a recurring terror of twentieth-century summers; it is
+    now endemic in two countries.
+  note: >-
+    From the epidemic era through the 1955 vaccine to the launch of the global
+    eradication initiative.
   importance: 3
   confidence: medium
   categories: [disease, medicine]

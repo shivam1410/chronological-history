@@ -498,7 +498,13 @@
   kind: technology
   regions: [science, western-europe]
   start: 1608
-  end: ongoing
+  end: 1700
+  significance: >-
+    Pointed at the sky in 1609, it ended the idea of a perfect and unchanging
+    heaven within a single lifetime.
+  note: >-
+    From the Dutch lens-grinders to the instrument being standard equipment in
+    astronomy.
   importance: 4
   confidence: high
   categories: [instrument, astronomy, discovery]
@@ -511,7 +517,13 @@
   kind: technology
   regions: [science, britain]
   start: 1796
-  end: ongoing
+  end: 1900
+  significance: >-
+    It is the only medical technique that has driven a human disease to
+    extinction, which it did to smallpox in 1980.
+  note: >-
+    From Jenner's demonstration to national vaccination programmes across
+    Europe and the Americas.
   importance: 5
   confidence: high
   categories: [medicine, discovery]
@@ -523,7 +535,13 @@
   kind: technology
   regions: [science, western-europe]
   start: [1860, 1880]
-  end: ongoing
+  end: 1900
+  significance: >-
+    Accepting that specific organisms cause specific diseases is what made
+    surgery survivable and public sanitation rational rather than merely tidy.
+  note: >-
+    From Pasteur and Koch's work to general acceptance and the sanitation and
+    antisepsis that followed from it.
   importance: 5
   confidence: medium
   categories: [medicine, biology, discovery]

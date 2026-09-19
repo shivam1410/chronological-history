@@ -699,7 +699,10 @@
   kind: technology
   regions: [science, western-europe]
   start: [1440, 1450]
-  end: ongoing
+  end: 1500
+  note: >-
+    The incunabula period, by the end of which presses were operating in more
+    than two hundred European towns.
   importance: 5
   confidence: medium
   categories: [writing]

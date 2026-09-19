@@ -180,7 +180,10 @@
   kind: technology
   regions: [china, east-asia]
   start: [-200, 105]
-  end: ongoing
+  end: 1400
+  significance: >-
+    Cheap writing material is the precondition for almost everything printed,
+    which is why the printing press arrives in Europe only once paper has.
   importance: 5
   confidence: medium
   categories: [writing, discovery]
@@ -196,7 +199,14 @@
   kind: technology
   regions: [china, east-asia]
   start: [650, 700]
-  end: ongoing
+  end: 1450
+  significance: >-
+    It produced the world's earliest dated printed book in 868, six centuries
+    before Gutenberg, and stayed better suited than movable type to a script
+    of tens of thousands of characters.
+  note: >-
+    The bar ends where movable type takes over in Europe; block printing
+    remained in use across East Asia long after.
   importance: 4
   confidence: medium
   categories: [writing, discovery]
@@ -209,7 +219,14 @@
   kind: technology
   regions: [china, east-asia]
   start: [1040, 1045]
-  end: ongoing
+  end: 1450
+  significance: >-
+    The technology mattered less than the writing system it met. An alphabet
+    of twenty-six letters suited it in a way forty thousand characters did
+    not.
+  note: >-
+    From Bi Sheng's clay type to Gutenberg's metal type in Europe - the two
+    ends of the same idea, four centuries apart.
   importance: 4
   confidence: medium
   categories: [writing, discovery]
@@ -226,7 +243,9 @@
   kind: technology
   regions: [china, east-asia]
   start: [850, 900]
-  end: ongoing
+  end: 1500
+  note: >-
+    From the first formulae to firearms reshaping warfare on three continents.
   importance: 5
   confidence: medium
   categories: [discovery, war]
@@ -240,7 +259,13 @@
   kind: technology
   regions: [china, east-asia]
   start: [1040, 1119]
-  end: ongoing
+  end: 1500
+  significance: >-
+    Open-ocean sailing out of sight of land becomes routine rather than
+    exceptional, which is the precondition for every voyage of the following
+    two centuries.
+  note: >-
+    From the first navigational descriptions to routine use on ocean voyages.
   importance: 5
   confidence: medium
   categories: [discovery, exploration]
