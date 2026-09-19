@@ -148,3 +148,30 @@ class TestFormatYear:
     ])
     def test_format_year(self, year, expected):
         assert format_year(year) == expected
+
+
+class TestBoundInvariants:
+    """Regression tests from the slice 1.2 chunk review."""
+
+    def test_width_routes_through_astro_across_the_era_boundary(self):
+        # 1 BCE to 1 CE is one elapsed year. Raw subtraction would say two.
+        assert Bound(-1, 1, "x").width == 1
+
+    def test_width_of_a_same_era_bracket(self):
+        assert Bound(1398, 1440, "x").width == 42
+
+    def test_bound_rejects_a_reversed_bracket_on_direct_construction(self):
+        with pytest.raises(ValueError, match="falls after"):
+            Bound(5, -5, "backwards")
+
+    def test_bound_rejects_year_zero_on_direct_construction(self):
+        with pytest.raises(ValueError, match="no year zero"):
+            Bound(0, 0, "impossible")
+
+
+class TestDeepTimeRejectsNegativeMagnitudes:
+    def test_negative_deep_time_is_rejected(self):
+        # "before present" cannot be negative; this is an authoring typo, and
+        # silently accepting it yields a year ~66 million CE.
+        with pytest.raises(ValueError, match="could not parse"):
+            parse_bound("-66 Ma")

@@ -25,7 +25,7 @@ PRESENT = _dt.date.today().year
 EN_DASH = "–"
 
 _DEEP_UNITS = {"ka": 1_000, "Ma": 1_000_000, "Ga": 1_000_000_000}
-_DEEP_RE = re.compile(r"^(-?\d+(?:\.\d+)?)\s*(ka|Ma|Ga)$")
+_DEEP_RE = re.compile(r"^(\d+(?:\.\d+)?)\s*(ka|Ma|Ga)$")
 _INT_RE = re.compile(r"^-?\d+$")
 
 
@@ -101,11 +101,24 @@ def _range_display(lo: int, hi: int, lo_txt: str, hi_txt: str, deep: bool) -> st
 
 @dataclass(frozen=True)
 class Bound:
-    """A bracketed date. ``min == max`` means a precise year."""
+    """A bracketed date. ``min == max`` means a precise year.
+
+    The invariants are enforced here rather than in :func:`parse_bound` so that
+    a ``Bound`` built directly - by the loader, a test, or an importer - cannot
+    carry a reversed bracket or the non-existent year zero.
+    """
 
     min: int
     max: int
     display: str
+
+    def __post_init__(self) -> None:
+        astro(self.min)  # raises on year zero
+        astro(self.max)
+        if self.min > self.max:
+            raise ValueError(
+                f"date bound min {self.min} falls after max {self.max}"
+            )
 
     @property
     def is_precise(self) -> bool:
@@ -113,7 +126,8 @@ class Bound:
 
     @property
     def width(self) -> int:
-        return self.max - self.min
+        """Elapsed years spanned by the bracket, via the astronomical boundary."""
+        return duration(self.min, self.max)
 
 
 def is_ongoing(raw: object) -> bool:
@@ -175,9 +189,6 @@ def parse_bound(raw: object) -> Bound:
         lo, lo_txt, lo_deep = _parse_scalar(raw)
         hi, hi_txt, hi_deep = lo, lo_txt, lo_deep
         explicit = None
-
-    if lo > hi:
-        raise ValueError(f"date bound min {lo} falls after max {hi}")
 
     if explicit:
         return Bound(lo, hi, explicit)
