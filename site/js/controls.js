@@ -71,7 +71,7 @@ function parseYearInput(raw) {
 }
 
 export function createControls({
-  searchInput, resultsList, fromInput, toInput, rangeForm,
+  searchInput, resultsList, fromInput, toInput, rangeForm, rangeSummary,
   entries, onPick, onRange,
 }) {
   const index = buildIndex(entries);
@@ -80,6 +80,19 @@ export function createControls({
   // affordance at all for datalist on a text input, and where browsers do
   // show one it is a 6px arrow that people miss. Each field gets a visible
   // chevron and a styled, keyboard-navigable list.
+  /**
+   * Submit the range form.
+   *
+   * Explicit, because implicit submission cannot be relied on here: below
+   * 760px the Go button is display:none, and a form whose only submit button
+   * is not rendered does not submit on Enter with two fields in it. The date
+   * filter was silently dead on phones.
+   */
+  function submitRange() {
+    if (rangeForm.requestSubmit) rangeForm.requestSubmit();
+    else rangeForm.dispatchEvent(new Event('submit', { cancelable: true }));
+  }
+
   function attachDropdown(input) {
     const field = document.createElement('div');
     field.className = 'range__field';
@@ -110,9 +123,7 @@ export function createControls({
     const choose = (i) => {
       input.value = YEAR_ANCHORS[i][0];
       close();
-      rangeForm.requestSubmit
-        ? rangeForm.requestSubmit()
-        : rangeForm.dispatchEvent(new Event('submit', { cancelable: true }));
+      submitRange();
     };
 
     YEAR_ANCHORS.forEach(([value, label], i) => {
@@ -165,9 +176,10 @@ export function createControls({
         if (list.hidden) show();
         open = (open - 1 + YEAR_ANCHORS.length) % YEAR_ANCHORS.length;
         paint();
-      } else if (event.key === 'Enter' && open >= 0) {
+      } else if (event.key === 'Enter') {
         event.preventDefault();
-        choose(open);
+        if (open >= 0) choose(open);
+        else submitRange();
       } else if (event.key === 'Escape') {
         close();
       }
@@ -291,10 +303,39 @@ export function createControls({
     const from = parseYearInput(fromInput.value);
     const to = parseYearInput(toInput.value);
     if (from === null || to === null) return;
-    onRange?.(Math.min(from, to), Math.max(from, to));
+    // Blur before applying, not after. setRange skips a field that is being
+    // edited, so applying first leaves the summary showing the old window.
     fromInput.blur();
     toInput.blur();
+    setRangeOpen(false);
+    onRange?.(Math.min(from, to), Math.max(from, to));
   });
+
+  // On a phone the range form is hidden behind a summary button, so that the
+  // date row does not hold a strip of the screen it only needs while in use.
+  // Above that breakpoint CSS keeps the form visible and this only ever sets
+  // an attribute nothing reads.
+  function setRangeOpen(open) {
+    if (!rangeSummary) return;
+    rangeSummary.setAttribute('aria-expanded', String(open));
+    if (open) rangeForm.dataset.open = 'true';
+    else delete rangeForm.dataset.open;
+  }
+
+  if (rangeSummary) {
+    rangeSummary.addEventListener('click', () => {
+      const open = rangeSummary.getAttribute('aria-expanded') !== 'true';
+      setRangeOpen(open);
+      // Focus only on opening, and only once the row is displayed.
+      if (open) fromInput.focus();
+    });
+
+    rangeForm.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      setRangeOpen(false);
+      rangeSummary.focus();
+    });
+  }
 
   return {
     /** Reflect the current window, unless the reader is mid-edit. */
@@ -304,9 +345,22 @@ export function createControls({
       if (editing) return;
       fromInput.value = formatYear(roundYear(from));
       toInput.value = formatYear(roundYear(to));
+      // The summary is the only reading of the window on a phone, so it
+      // tracks the view whether or not the row behind it is open.
+      if (rangeSummary) {
+        rangeSummary.firstChild
+          ? rangeSummary.firstChild.replaceWith(rangeLabel(from, to))
+          : rangeSummary.append(rangeLabel(from, to));
+      }
     },
     closeResults,
   };
+}
+
+/** The window as one string, e.g. "4.54 Ga – 2026". */
+function rangeLabel(from, to) {
+  return document.createTextNode(
+    `${formatYear(roundYear(from))} – ${formatYear(roundYear(to))}`);
 }
 
 export { parseYearInput };

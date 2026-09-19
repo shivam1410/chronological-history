@@ -231,6 +231,28 @@ body {
 
 .range__dash { color: var(--ink-faint); }
 
+/* Shown only where the date row would otherwise cost its own strip. */
+.range__summary {
+  display: none;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: var(--step-1);
+  padding: 5px var(--step-3);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--bg-sunken);
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.range__summary::after { content: '\25be'; color: var(--ink-faint); }
+.range__summary[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
+.range__summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
 .range__go {
   padding: 4px var(--step-2);
   border: 1px solid var(--rule);
@@ -378,18 +400,24 @@ body {
 }
 
 @media (max-width: 560px) {
-  /* Search takes the header; the range moves to its own strip beneath it, so
-     neither has to be squeezed to the point of uselessness. */
+  /* Three stacked strips - search, dates, eras - cost about 156px on a phone,
+     a fifth of the screen, before any history is drawn. The date row is the
+     one to fold: it is read far more often than it is set, and the reading is
+     a dozen characters. A summary button carries the reading in the header,
+     and the row itself appears over the era chips only while in use, so
+     opening it shifts nothing below. */
   .header__title { display: none; }
   .search { max-width: none; flex: 1 1 auto; margin-left: 0; }
+  .range__summary { display: inline-flex; }
 
-  /* Two strips stack under the header: dates first, then eras. */
   .range {
+    display: none;
     position: absolute;
     top: var(--header-h);
     left: 0;
     right: 0;
-    z-index: 20;
+    /* Above the era strip it covers, so the timeline never moves. */
+    z-index: 25;
     height: var(--strip-h);
     justify-content: center;
     padding: 0 var(--step-3);
@@ -397,10 +425,12 @@ body {
     background: var(--bg-raised);
   }
 
-  .eras { top: calc(var(--header-h) + var(--strip-h)); }
+  .range[data-open="true"] { display: flex; }
+
+  .eras { top: var(--header-h); }
 
   .range__input { width: 96px; }
-  .stage { padding-top: calc(var(--strip-h) * 2); }
+  .stage { padding-top: var(--strip-h); }
   .hint { display: none; }
 }
 

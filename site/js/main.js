@@ -131,6 +131,7 @@ async function start() {
     fromInput: document.querySelector('#from'),
     toInput: document.querySelector('#to'),
     rangeForm: document.querySelector('#range'),
+    rangeSummary: document.querySelector('#range-summary'),
     entries,
     onPick: (entry) => selectEntry(entry, { focus: true }),
     onRange: (from, to) => {
