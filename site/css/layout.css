@@ -55,19 +55,14 @@ body {
   text-overflow: ellipsis;
 }
 
-.header__meta {
-  margin-left: auto;
-  color: var(--ink-faint);
-  font-size: 12px;
-  font-variant-numeric: tabular-nums;
-  white-space: nowrap;
-}
-
 /* ---------------------------------------------------------------- search */
 
 .search {
   position: relative;
-  flex: 1 1 180px;
+  /* Pushes itself and the date range to the right edge, leaving the era jumps
+     next to the title on the left. */
+  margin-left: auto;
+  flex: 0 1 260px;
   max-width: 260px;
   min-width: 110px;
 }
@@ -151,7 +146,7 @@ body {
 }
 
 .range__input {
-  width: 84px;
+  width: 94px;
   padding: 4px var(--step-2);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
@@ -250,6 +245,7 @@ body {
   display: flex;
   gap: var(--step-1);
   min-width: 0;
+  flex: 0 1 auto;
   overflow-x: auto;
   scrollbar-width: none;
 }
@@ -332,8 +328,10 @@ body {
 
 /* ----------------------------------------------------------- responsive */
 
-@media (max-width: 1180px) {
-  .header__meta { display: none; }
+@media (max-width: 1280px) {
+  /* Below this the era chips start clipping. The title is the least useful
+     thing in the bar - the tab already says what this is - so it goes first. */
+  .header__title { display: none; }
 }
 
 @media (max-width: 980px) {
@@ -369,7 +367,7 @@ body {
   /* Search takes the header; the range moves to its own strip beneath it, so
      neither has to be squeezed to the point of uselessness. */
   .header__title { display: none; }
-  .search { max-width: none; flex: 1 1 auto; }
+  .search { max-width: none; flex: 1 1 auto; margin-left: 0; }
 
   /* Two strips stack under the header: dates first, then eras. */
   .range {
@@ -390,4 +388,49 @@ body {
   .range__input { width: 96px; }
   .stage { padding-top: calc(var(--strip-h) * 2); }
   .hint { display: none; }
+}
+
+/* ------------------------------------------------- touch input ergonomics */
+
+/*
+ * Keyed to pointer type rather than screen width, because the constraint is
+ * the finger, not the viewport - a touchscreen laptop needs these too, and a
+ * narrow desktop window does not.
+ *
+ * Apple asks for 44pt and Android for 48dp. Everything here was between 20 and
+ * 32px, which looks correct in an emulated viewport and is annoying to hit on
+ * an actual phone.
+ */
+@media (pointer: coarse) {
+  :root { --strip-h: 52px; }
+
+  .search__input,
+  .range__input { min-height: 44px; }
+
+  .eras button {
+    min-height: 44px;
+    padding-inline: var(--step-3);
+  }
+
+  .range__toggle {
+    width: 44px;
+    height: 44px;
+    right: 0;
+  }
+
+  /* The 44px arrow eats into the text, so the field has to grow with it or
+     "3600 BCE" truncates to "3600 B". */
+  .range__input {
+    padding-right: 40px;
+    padding-left: var(--step-2);
+    width: 132px;
+  }
+
+  /* Menu rows need the same treatment; a 26px row in a dropdown is worse than
+     a 26px button, because the neighbours are one mistake away. */
+  .range__option,
+  .results__item { min-height: 44px; align-items: center; }
+
+  .panel__close { width: 44px; height: 44px; font-size: 24px; }
+  .panel__chip { min-height: 36px; display: inline-flex; align-items: center; }
 }

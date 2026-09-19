@@ -9,7 +9,6 @@ import { elapsed, formatYear, roundYear } from './format.js';
 import { ORIGIN_YEAR, presentYear } from './timescale.js';
 
 const stage = document.querySelector('#stage');
-const metaLabel = document.querySelector('#meta');
 const live = document.querySelector('#live');
 const eraNav = document.querySelector('#eras');
 const minimapCanvas = document.querySelector('#minimap');
@@ -134,7 +133,6 @@ async function start() {
     entries,
     lanes: info.lanes,
     onViewChange: (view) => {
-      metaLabel.textContent = `${entries.length} entries · ${describe(view)}`;
       minimap.setWindow(view.from, view.to);
       controls.setRange(view.from, view.to);
       markCurrentEra(view);
@@ -186,7 +184,6 @@ async function start() {
   minimap.setWindow(timeline.view.from, timeline.view.to);
   controls.setRange(timeline.view.from, timeline.view.to);
   markCurrentEra(timeline.view);
-  metaLabel.textContent = `${entries.length} entries · ${describe(timeline.view)}`;
 }
 
 start();

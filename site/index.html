@@ -15,6 +15,8 @@
 <header class="header">
   <h1 class="header__title">Chronological&nbsp;History</h1>
 
+  <nav class="eras" id="eras" aria-label="Jump to an era"></nav>
+
   <div class="search">
     <input id="search" class="search__input" type="search" placeholder="Search history…"
            role="combobox" aria-expanded="false" aria-controls="results"
@@ -31,9 +33,6 @@
     <input id="to" class="range__input" spellcheck="false" placeholder="to">
     <button type="submit" class="range__go">Go</button>
   </form>
-
-  <nav class="eras" id="eras" aria-label="Jump to an era"></nav>
-  <p class="header__meta" id="meta">Loading…</p>
 </header>
 <main class="stage" id="stage"></main>
 <div class="minimap" id="minimap-wrap">
