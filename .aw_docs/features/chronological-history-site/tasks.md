@@ -277,7 +277,10 @@ Mahajanapadas, Buddha, Mahavira, Maurya, Ashoka, Sangam era, Satavahana, Gupta,
 Aryabhata, Kalidasa. Composition brackets for Rigveda, Brahmanas, Upanishads, Ramayana,
 Mahabharata, Bhagavad Gita, and the Puranas — each `contested` where scholarship is
 divided, with a `note` naming the competing positions and at least two sources.
-Acceptance: ≥ 70 entries. Commit: `feat(data): India — prehistory through the Gupta era`
+Every scripture and epic entry also carries a `texts:` link to a full public-domain
+translation on `archive.sacred-texts.com`.
+Acceptance: ≥ 70 entries, and every `work` entry has at least one `texts:` link.
+Commit: `feat(data): India — prehistory through the Gupta era`
 
 ### 3.3 India — medieval to modern · `docs`
 `india-medieval.yaml`, `india-modern.yaml` — Chola, Rashtrakuta, Pala, Delhi Sultanate,
@@ -292,6 +295,9 @@ Commits: `feat(data): India — medieval dynasties and Bhakti era`,
 
 ### 3.4 World context · `docs`
 `world-ancient.yaml`, `world-medieval.yaml`, `world-modern.yaml`, `science.yaml` —
+non-India `work` entries (Tao Te Ching, Analects, Avesta, Quran, Kojiki, Popol Vuh,
+Dhammapada, Torah, Gospels) likewise carry `texts:` links where a public-domain
+translation exists —
 Mesopotamia, Egypt, China (dynasty by dynasty), Persia, Greece, Rome, Maya, Andes,
 Mali, Aksum, Islamic caliphates, Byzantium, medieval Europe, Mongols, Ottoman, Safavid,
 Ming/Qing, Renaissance, Enlightenment, industrial and modern eras, plus a science and
