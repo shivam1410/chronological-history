@@ -135,30 +135,42 @@ export function createTimeline(canvas, {
 
   function computeLayout() {
     const model = laneModel();
+    // Always packed to the widest cap, then trimmed to what fits. First-fit
+    // fills row 1 before row 2, so the rows that survive the trim hold exactly
+    // what a pack at the smaller cap would have put there - one pack per
+    // frame instead of one per candidate height.
     const packed = packLanes(entries, model.order, view, {
-      maxRows: width < NARROW_PX ? MAX_ROWS_NARROW : MAX_ROWS,
+      maxRows: MAX_ROWS,
       minWidthPx: MIN_BAR_W,
       laneKey: model.key,
     });
+    const caps = rowCaps(packed, model);
 
     let y = 0;
     const laid = packed.map((lane) => {
       const isCollapsed = collapsed.has(lane.lane);
-      const rowCount = Math.max(1, lane.rows.length);
-      const bars = isCollapsed
-        ? COLLAPSED_BAR_H
-        : rowCount * (BAR_H + BAR_GAP) - BAR_GAP;
+      const cap = caps.get(lane.lane) ?? MAX_ROWS;
+      // A collapsed lane draws every entry into one thin band, so trimming its
+      // rows would drop entries it has the room for.
+      const rows = isCollapsed ? lane.rows : lane.rows.slice(0, cap);
+      const trimmed = isCollapsed
+        ? 0
+        : lane.rows.slice(cap).reduce((n, row) => n + row.length, 0);
       // A lane is as tall as its bars or its wrapped name, whichever needs more:
       // a three-line name in a two-row lane would otherwise overflow into the
       // lane below.
-      const h = LANE_PAD_Y * 2 + Math.max(bars, labelHeight(lane.lane, model));
+      const h = laneHeightWith(lane, rows.length, model);
       const out = {
         ...lane,
+        rows,
+        hidden: lane.hidden + trimmed,
         label: model.labels.get(lane.lane) ?? lane.lane,
         colourKey: model.colours.get(lane.lane) ?? lane.lane,
         collapsed: isCollapsed,
         y,
         h,
+        // Counted before the trim: the gutter reports what the lane holds in
+        // this window, not what happened to be drawn.
         count: lane.rows.flat().length + lane.hidden,
       };
       y += h + LANE_SEP;
@@ -287,9 +299,72 @@ export function createTimeline(canvas, {
   }
 
   /** Vertical room a lane's wrapped name needs, counting its count line. */
+  const labelHeights = new Map();
   function labelHeight(laneId, model) {
+    const key = `${gutter}|${laneId}`;
+    const cached = labelHeights.get(key);
+    if (cached !== undefined) return cached;
     const label = model.labels.get(laneId) ?? laneId;
-    return (wrapLabel(label).length + (countInline() ? 0 : 1)) * LANE_LINE_H;
+    const h = (wrapLabel(label).length + (countInline() ? 0 : 1)) * LANE_LINE_H;
+    labelHeights.set(key, h);
+    return h;
+  }
+
+  /** Height a lane takes when this many of its rows are shown. */
+  function laneHeightWith(lane, rowsShown, model) {
+    const bars = collapsed.has(lane.lane)
+      ? COLLAPSED_BAR_H
+      : Math.max(1, rowsShown) * (BAR_H + BAR_GAP) - BAR_GAP;
+    return LANE_PAD_Y * 2 + Math.max(bars, labelHeight(lane.lane, model));
+  }
+
+  /** Entries a lane would keep behind "+N more" at this cap. */
+  const beyond = (lane, cap) =>
+    lane.rows.slice(cap).reduce((n, row) => n + row.length, 0) + lane.hidden;
+
+  /**
+   * How many rows to draw, per lane.
+   *
+   * A phone screen was left with room to spare below the last lane while
+   * entries sat behind "+38 more". One more row for every lane does not fit -
+   * twelve lanes at three rows need more height than the screen has - so the
+   * spare space goes to the lanes hiding the most, a row at a time, until it
+   * runs out. Lane heights already vary with how many rows a lane fills, so
+   * uneven lanes are not a new thing to look at.
+   *
+   * Wide screens keep the full cap and scroll as they did.
+   */
+  function rowCaps(packed, model) {
+    const caps = new Map();
+    const base = width >= NARROW_PX ? MAX_ROWS : MAX_ROWS_NARROW;
+    for (const lane of packed) caps.set(lane.lane, base);
+    if (width >= NARROW_PX) return caps;
+
+    const heightAt = (lane, cap) =>
+      laneHeightWith(lane, Math.min(lane.rows.length, cap), model);
+
+    let spare = (height - AXIS_H) - packed.reduce(
+      (sum, lane) => sum + heightAt(lane, base) + LANE_SEP, 0);
+    if (spare <= 0) return caps;
+
+    // Busiest first, so the scarce rows land where they reveal the most.
+    const queue = [...packed].sort((a, b) => beyond(b, base) - beyond(a, base));
+
+    // Repeats until nothing more fits: a lane can earn a second extra row
+    // while a narrower one still cannot afford its first.
+    for (let granted = true; granted && spare > 0;) {
+      granted = false;
+      for (const lane of queue) {
+        const cap = caps.get(lane.lane);
+        if (cap >= MAX_ROWS || lane.rows.length <= cap) continue;
+        const cost = heightAt(lane, cap + 1) - heightAt(lane, cap);
+        if (cost > spare) continue;
+        caps.set(lane.lane, cap + 1);
+        spare -= cost;
+        granted = true;
+      }
+    }
+    return caps;
   }
 
   function drawLane(lane) {
