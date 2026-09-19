@@ -1,4 +1,4 @@
-.PHONY: build validate test test-py test-js serve stats setup clean
+.PHONY: build validate test test-py test-js serve stats audit images setup clean
 
 # Prefer the project venv when present, else fall back to python3.
 PY := $(shell [ -x .venv/bin/python ] && echo .venv/bin/python || echo python3)
@@ -16,6 +16,12 @@ validate:  ## validate sources without emitting
 
 stats:  ## coverage report over the built dataset
 	$(PY) -m pipeline.cli stats
+
+audit:  ## where the evidence is thin
+	$(PY) -m pipeline.cli audit
+
+images:  ## fetch Commons images (network)
+	$(PY) -m pipeline.cli images
 
 test: test-py test-js  ## run both suites
 

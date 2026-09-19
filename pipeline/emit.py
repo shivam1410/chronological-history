@@ -138,6 +138,13 @@ def _detail(entry: Entry) -> dict:
         detail["aliases"] = list(entry.aliases)
     if entry.related:
         detail["related"] = list(entry.related)
+    if entry.image:
+        detail["image"] = {
+            "url": entry.image.url,
+            "license": entry.image.license,
+            "source": entry.image.source,
+            "credit": entry.image.credit,
+        }
     if entry.texts:
         detail["texts"] = [{"title": t.title, "url": t.url} for t in entry.texts]
     if entry.sources:

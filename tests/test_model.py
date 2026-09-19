@@ -207,3 +207,43 @@ class TestDisplayRange:
 
     def test_late_ce_range_needs_no_marker(self):
         assert parse_bound([1398, 1440]).display == "c. 1398–1440"
+
+
+class TestImage:
+    """An image without its licence is not usable, so the model rejects it."""
+
+    def test_full_image_parses(self):
+        from pipeline.model import Image, parse_image
+        img = parse_image({
+            "url": "https://upload.wikimedia.org/a/b.jpg",
+            "credit": "A Photographer",
+            "license": "CC BY-SA 4.0",
+            "source": "https://commons.wikimedia.org/wiki/File:B.jpg",
+        })
+        assert isinstance(img, Image)
+        assert img.license == "CC BY-SA 4.0"
+
+    def test_none_is_allowed(self):
+        from pipeline.model import parse_image
+        assert parse_image(None) is None
+
+    @pytest.mark.parametrize("missing", ["url", "license", "source"])
+    def test_required_keys(self, missing):
+        from pipeline.model import parse_image
+        raw = {"url": "https://x/a.jpg", "credit": "C",
+               "license": "CC0", "source": "https://commons.wikimedia.org/x"}
+        raw.pop(missing)
+        with pytest.raises(ValueError, match=missing):
+            parse_image(raw)
+
+    def test_credit_may_be_empty_for_public_domain(self):
+        from pipeline.model import parse_image
+        img = parse_image({"url": "https://x/a.jpg", "license": "Public domain",
+                           "source": "https://commons.wikimedia.org/x"})
+        assert img.credit == ""
+
+    def test_url_must_be_https(self):
+        from pipeline.model import parse_image
+        with pytest.raises(ValueError, match="https"):
+            parse_image({"url": "http://x/a.jpg", "license": "CC0",
+                         "source": "https://commons.wikimedia.org/x"})

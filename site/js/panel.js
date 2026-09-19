@@ -108,6 +108,29 @@ export function createPanel(root, { onClose, onNavigate } = {}) {
     dates.textContent = detail.display ?? '';
     body.replaceChildren();
 
+    // Most of these are CC BY-SA, which requires the credit and the licence to
+    // travel with the picture. Showing the image without them is a breach, so
+    // the figure is built as one unit.
+    if (detail.image?.url) {
+      const figure = el('figure', 'panel__figure');
+      const img = document.createElement('img');
+      img.src = detail.image.url;
+      img.alt = entry.title;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.addEventListener('error', () => figure.remove());
+      figure.append(img);
+
+      const caption = el('figcaption', 'panel__credit');
+      const link = el('a', null, detail.image.credit || 'Wikimedia Commons');
+      link.href = detail.image.source;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      caption.append(link, document.createTextNode(` \u00b7 ${detail.image.license}`));
+      figure.append(caption);
+      body.append(figure);
+    }
+
     if (detail.confidence && CONFIDENCE_NOTE[detail.confidence]) {
       const flag = el('p', `panel__flag panel__flag--${detail.confidence}`,
         CONFIDENCE_NOTE[detail.confidence]);

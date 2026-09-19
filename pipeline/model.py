@@ -211,6 +211,43 @@ class Source:
 
 
 @dataclass(frozen=True)
+class Image:
+    """A picture, with everything needed to display it lawfully.
+
+    `license` and `source` are required, not optional. Most freely licensed
+    images carry conditions - attribution, share-alike - and an image whose
+    terms we cannot state is one we must not show.
+    """
+
+    url: str
+    license: str
+    source: str
+    credit: str = ""
+
+
+def parse_image(raw: object) -> "Image | None":
+    if raw is None:
+        return None
+    if not isinstance(raw, dict):
+        raise ValueError(f"image must be a mapping, got {type(raw).__name__}")
+
+    for key in ("url", "license", "source"):
+        if not str(raw.get(key) or "").strip():
+            raise ValueError(f"image needs a non-empty {key!r}")
+
+    url = str(raw["url"]).strip()
+    if not url.startswith("https://"):
+        raise ValueError(f"image url must be https, got {url!r}")
+
+    return Image(
+        url=url,
+        license=str(raw["license"]).strip(),
+        source=str(raw["source"]).strip(),
+        credit=" ".join(str(raw.get("credit") or "").split()),
+    )
+
+
+@dataclass(frozen=True)
 class Entry:
     id: str
     title: str
@@ -227,6 +264,7 @@ class Entry:
     related: tuple[str, ...] = ()
     sources: tuple[Source, ...] = ()   # citations for the DATING claim
     texts: tuple[Source, ...] = ()     # where to READ the work itself
+    image: Image | None = None
     wikidata: str | None = None
     confidence: str = "high"
     origin: str = "curated"

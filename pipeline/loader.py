@@ -12,12 +12,12 @@ from dataclasses import dataclass
 
 import yaml
 
-from pipeline.model import Bound, Entry, Source, is_ongoing, parse_bound
+from pipeline.model import Bound, Entry, Source, is_ongoing, parse_bound, parse_image
 
 REQUIRED_FIELDS = {"id", "title", "kind", "regions", "start", "end", "importance", "summary"}
 OPTIONAL_FIELDS = {
     "categories", "aliases", "significance", "note", "related",
-    "sources", "texts", "wikidata", "confidence", "origin",
+    "sources", "texts", "image", "wikidata", "confidence", "origin",
 }
 KNOWN_FIELDS = REQUIRED_FIELDS | OPTIONAL_FIELDS
 
@@ -165,6 +165,10 @@ def _build_entry(raw: object, source_file: str) -> Entry:
 
     sources = _source_list(raw, "sources", where)
     texts = _source_list(raw, "texts", where)
+    try:
+        image = parse_image(raw.get("image"))
+    except ValueError as exc:
+        raise ValueError(f"{where}: {exc}") from exc
 
     regions = _tuple_of_str(raw["regions"], "regions", where)
     if not regions:
@@ -186,6 +190,7 @@ def _build_entry(raw: object, source_file: str) -> Entry:
         related=_tuple_of_str(raw.get("related"), "related", where),
         sources=sources,
         texts=texts,
+        image=image,
         wikidata=raw.get("wikidata"),
         confidence=str(raw.get("confidence", "high")),
         origin=str(raw.get("origin", "curated")),

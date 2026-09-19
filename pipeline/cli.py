@@ -13,6 +13,9 @@ import argparse
 import sys
 from collections import Counter
 
+from dataclasses import replace
+
+from pipeline import images as images_mod
 from pipeline.emit import bucket_for, write_bundles
 from pipeline.loader import curated_paths, load_entries, load_taxonomy
 from pipeline.model import format_year
@@ -23,7 +26,26 @@ def _load():
     paths = curated_paths()
     if not paths:
         raise SystemExit("no source files found under data/curated/")
-    return load_entries(paths, taxonomy), taxonomy, paths
+    entries = load_entries(paths, taxonomy)
+    return _apply_images(entries), taxonomy, paths
+
+
+def _apply_images(entries):
+    """Attach fetched Commons images to entries that do not declare one.
+
+    Kept out of the curated YAML so that machine-fetched metadata never gets
+    mixed into hand-authored files.
+    """
+    from pipeline.model import parse_image
+
+    fetched = images_mod.load()
+    if not fetched:
+        return entries
+    return [
+        replace(entry, image=parse_image(fetched[entry.id]))
+        if entry.image is None and entry.id in fetched else entry
+        for entry in entries
+    ]
 
 
 def _summary(entries, taxonomy) -> None:
@@ -88,18 +110,59 @@ def cmd_stats(_args) -> int:
     return 0
 
 
+def cmd_audit(_args) -> int:
+    """Where the dataset's evidence is thin.
+
+    Everything here was written from knowledge rather than researched from
+    sources, so this is the honest measure of how much of it a reader can
+    check independently.
+    """
+    entries, _taxonomy, _paths = _load()
+    sourced = [e for e in entries if e.sources]
+    contested = [e for e in entries if e.confidence == "contested"]
+    unsourced_contested = [e for e in contested if not e.sources]
+
+    print(f"\n  {len(entries)} entries")
+    print(f"    with a source link      {len(sourced):>4}"
+          f"  ({100 * len(sourced) // max(1, len(entries))}%)")
+    print(f"    with an image           "
+          f"{len([e for e in entries if e.image]):>4}")
+    print(f"    marked contested        {len(contested):>4}")
+    print(f"    contested, unsourced    {len(unsourced_contested):>4}"
+          f"   <- each of these should cite the dispute")
+
+    if unsourced_contested:
+        print("\n  contested entries needing a citation")
+        for entry in sorted(unsourced_contested, key=lambda e: e.id)[:15]:
+            print(f"    {entry.id}")
+        if len(unsourced_contested) > 15:
+            print(f"    ... and {len(unsourced_contested) - 15} more")
+    return 0
+
+
+def cmd_images(_args) -> int:
+    resolved = images_mod.fetch_all()
+    images_mod.write(resolved)
+    print(f"\nwrote {len(resolved)} images to {images_mod.OUTPUT}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="pipeline.cli")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("build", help="emit site/data from data/ sources")
     sub.add_parser("validate", help="check sources without emitting")
     sub.add_parser("stats", help="coverage report")
+    sub.add_parser("audit", help="report sourcing and evidence gaps")
+    sub.add_parser("images", help="fetch Commons images for the curated mapping")
 
     args = parser.parse_args(argv)
     return {
         "build": cmd_build,
         "validate": cmd_validate,
         "stats": cmd_stats,
+        "audit": cmd_audit,
+        "images": cmd_images,
     }[args.command](args)
 
 

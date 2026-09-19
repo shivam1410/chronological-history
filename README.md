@@ -119,9 +119,56 @@ Two things in there are load-bearing and easy to break by accident:
   has to route through `astro()` / `elapsed()`. This has caused more bugs here
   than everything else combined.
 
-## Where the data comes from
+## Where the data comes from — and how far to trust it
 
-Every entry is **hand-authored**. Nothing here was scraped.
+**Every entry was written from an AI model's knowledge. Nothing was scraped, and
+no source was consulted while writing.** That is the single most important thing
+to know about this dataset, so it goes first.
+
+The reference works listed below are ones believed to support each claim. For
+the most part they have **not** been fetched and checked line by line. The
+`sources:` links are pointers for a reader who wants to verify, not evidence
+that verification happened.
+
+### What that means in numbers
+
+Run `make audit` for the current state. At the time of writing:
+
+| | |
+|---|---|
+| Entries | 390 |
+| Carrying a source link | **27 (6%)** |
+| Marked `contested` | 67 |
+| Marked `contested` **with no citation** | **60** |
+
+That last row is a known defect, not a design choice. `spec.md` requires a
+contested entry to cite the dispute; the validation rule that would enforce it
+is scheduled for a later phase and has never run. Until it does, a `note`
+saying "scholars disagree" is the model's recollection of a disagreement rather
+than a sourced account of one.
+
+### A crude accuracy check
+
+Twelve well-known date ranges were compared against the opening paragraph of
+their Wikipedia article. Eleven were corroborated at least partly; one (the
+Mughal Empire) was not, because that paragraph does not state the years — not
+because the dates are wrong.
+
+This catches grossly wrong dates. It does not catch subtle ones, and it was run
+on twelve entries out of 390.
+
+### How to use it, then
+
+Treat this as an **orientation tool**, not a citable reference. It is good at
+showing you that Kabir, the Ming, the Inca and the Renaissance overlapped, and
+that the Pali Canon was written four centuries after the Buddha died. Before
+repeating any specific date elsewhere, check it.
+
+Contested material is bracketed widely and flagged rather than resolved, which
+limits the damage a wrong recollection can do — a 200-year bracket is honest
+about uncertainty in a way a single year is not.
+
+### Reference works
 
 Dates are written as brackets rather than single numbers, because most of
 history does not have single numbers. Where scholarship genuinely disagrees —
@@ -140,7 +187,17 @@ Reference works consulted for the current dataset:
 | [Natural History Museum](https://www.nhm.ac.uk/) | Palaeontology |
 | [International Commission on Stratigraphy](https://stratigraphy.org/chart) | Epoch and period boundaries |
 
-Planned, not yet used:
+### Images
+
+Fetched from **Wikimedia Commons** by `make images`, which reads each file's
+licence and attribution from the Commons API rather than assuming them. An
+image with no stated licence is refused. Credit and licence are displayed with
+every picture, because most are CC BY-SA and that is a condition of use.
+
+Which image suits an entry is a judgement and is curated by hand in
+`pipeline/images.py`; what its terms are is a fact and is fetched.
+
+### Planned, not yet used:
 
 | Source | Planned use |
 |---|---|
