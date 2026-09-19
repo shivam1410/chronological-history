@@ -1,0 +1,339 @@
+# Oceania. The Pacific was settled by the most demanding open-ocean voyaging
+# in human history, and New Guinea is one of a handful of places where farming
+# was invented independently rather than borrowed.
+
+- id: sahul-separation
+  title: Sahul breaks apart
+  kind: event
+  regions: [oceania]
+  start: "12 ka"
+  end: "8 ka"
+  importance: 3
+  confidence: medium
+  categories: [climate, glaciation]
+  summary: Post-glacial sea-level rise flooded the land bridges, separating
+    Australia, New Guinea and Tasmania and isolating their peoples from one
+    another for the next eight thousand years.
+  related: [last-glacial-period, aboriginal-australia]
+
+- id: kuk-swamp-agriculture
+  title: Agriculture begins in the New Guinea highlands
+  kind: technology
+  regions: [oceania]
+  start: "10 ka"
+  end: "7 ka"
+  importance: 5
+  confidence: medium
+  categories: [civilisation, discovery]
+  summary: Drainage ditches at Kuk Swamp show banana, taro and yam cultivation
+    from around 7000 BCE — one of only a handful of places worldwide where
+    farming was invented rather than adopted from elsewhere.
+  related: [neolithic-revolution]
+  sources:
+    - {title: "UNESCO — Kuk Early Agricultural Site", url: "https://whc.unesco.org/en/list/887/"}
+
+- id: austronesian-expansion
+  title: The Austronesian expansion
+  kind: period
+  regions: [oceania, southeast-asia]
+  start: -3000
+  end: 1300
+  importance: 5
+  confidence: medium
+  categories: [exploration, trade]
+  summary: From Taiwan, seafarers carrying outrigger canoes, pigs and taro
+    spread across half the globe — reaching Madagascar in the west and Easter
+    Island in the east, the widest distribution of any language family before
+    European expansion.
+
+- id: lapita-culture
+  title: Lapita culture
+  kind: period
+  regions: [oceania]
+  start: -1500
+  end: -500
+  importance: 4
+  confidence: medium
+  categories: [civilisation, exploration]
+  summary: Identified by a distinctive stamped pottery found from New Guinea to
+    Samoa, the Lapita were the first people to reach the islands beyond the
+    Solomons, crossing open water far out of sight of land.
+
+- id: polynesian-navigation
+  title: Polynesian wayfinding
+  kind: technology
+  regions: [oceania]
+  start: -1000
+  end: ongoing
+  importance: 5
+  confidence: medium
+  categories: [exploration, astronomy]
+  note: Dismissed for two centuries as accidental drift, the tradition was
+    vindicated in 1976 when Hokule'a sailed Hawaii to Tahiti without instruments.
+  summary: Navigation by star paths, swell patterns, cloud formations and bird
+    behaviour, carried in memory rather than on charts, and accurate enough to
+    find islands a few kilometres wide across thousands of kilometres of ocean.
+
+- id: tui-tonga-empire
+  title: Tuʻi Tonga
+  kind: polity
+  regions: [oceania]
+  start: [950, 1000]
+  end: 1865
+  importance: 3
+  confidence: medium
+  categories: [empire, kingdom]
+  summary: A maritime chiefdom whose influence reached Fiji and Samoa, with
+    monumental stone tombs and a hereditary line lasting nearly a millennium.
+
+- id: settlement-of-hawaii
+  title: Settlement of Hawaii
+  kind: event
+  regions: [oceania]
+  start: [1000, 1100]
+  end: [1200, 1300]
+  importance: 3
+  confidence: contested
+  note: Radiocarbon re-dating has pulled the arrival several centuries later
+    than mid-twentieth-century estimates.
+  categories: [exploration]
+  summary: Voyagers from the Marquesas or Society Islands crossed more than
+    three thousand kilometres of open ocean to reach the most isolated
+    archipelago on Earth.
+  related: [polynesian-navigation]
+
+- id: settlement-of-rapa-nui
+  title: Settlement of Rapa Nui
+  kind: event
+  regions: [oceania]
+  start: [1150, 1200]
+  end: [1250, 1300]
+  importance: 3
+  confidence: contested
+  categories: [exploration]
+  summary: The easternmost point of Polynesian settlement, reached across some
+    of the emptiest ocean on the planet.
+  related: [moai, polynesian-navigation]
+
+- id: moai
+  title: The moai of Rapa Nui
+  kind: structure
+  regions: [oceania]
+  start: [1250, 1250]
+  end: [1500, 1650]
+  importance: 4
+  confidence: medium
+  categories: [architecture]
+  summary: Nearly a thousand monolithic ancestor figures, the largest almost
+    ten metres tall, carved from volcanic tuff and moved kilometres across the
+    island without draught animals or wheels.
+  related: [settlement-of-rapa-nui, rapa-nui-decline]
+
+- id: rapa-nui-decline
+  title: Population decline on Rapa Nui
+  kind: period
+  regions: [oceania]
+  start: [1600, 1722]
+  end: [1877, 1877]
+  importance: 3
+  confidence: contested
+  note: The popular account of self-inflicted ecological collapse is heavily
+    disputed. Recent work points instead to rats eating palm seeds, and above
+    all to European contact — disease and the Peruvian slave raids of the 1860s,
+    which reduced the population to barely a hundred people.
+  summary: Once told as a parable of a society destroying its own environment,
+    the island's collapse is now widely attributed to introduced rats and,
+    decisively, to contact.
+
+- id: settlement-of-aotearoa
+  title: Settlement of Aotearoa
+  kind: event
+  regions: [oceania]
+  start: [1250, 1280]
+  end: [1300, 1350]
+  importance: 4
+  confidence: medium
+  categories: [exploration]
+  summary: The last major landmass on Earth to be settled by humans, reached by
+    Polynesian voyagers who became the Māori.
+  related: [polynesian-navigation, treaty-of-waitangi]
+
+- id: kula-ring
+  title: The kula ring
+  kind: period
+  regions: [oceania]
+  start: [1000, 1500]
+  end: ongoing
+  importance: 3
+  confidence: medium
+  categories: [trade]
+  summary: A ceremonial exchange of shell valuables circulating in opposite
+    directions between Melanesian islands, studied in the 1910s and foundational
+    to the anthropology of gift economies.
+
+- id: european-contact-pacific
+  title: European contact in the Pacific
+  kind: period
+  regions: [oceania, britain]
+  start: 1521
+  end: 1779
+  importance: 4
+  confidence: high
+  categories: [exploration, colonialism]
+  summary: From Magellan's crossing to Cook's three voyages, European charting
+    of the Pacific was followed within a generation by disease, missionaries and
+    annexation.
+
+- id: australian-frontier-wars
+  title: Australian frontier wars
+  kind: period
+  regions: [oceania]
+  start: 1788
+  end: 1934
+  importance: 5
+  confidence: contested
+  categories: [colonialism, war, human-rights]
+  note: Aboriginal deaths are estimated in the tens of thousands from violence
+    alone, with far greater losses to introduced disease and dispossession. The
+    scale and the framing both remain politically contested in Australia.
+  summary: A century and a half of dispossession and killing as pastoral
+    settlement spread, conducted without treaty and long absent from official
+    histories.
+  related: [aboriginal-australia, stolen-generations]
+
+- id: hawaiian-kingdom
+  title: Kingdom of Hawaii
+  kind: polity
+  regions: [oceania]
+  start: 1795
+  end: 1893
+  importance: 3
+  confidence: high
+  categories: [kingdom, colonialism]
+  summary: Unified under Kamehameha I and internationally recognised, it was
+    overthrown in 1893 by American business interests backed by US marines —
+    an act for which Congress formally apologised a century later.
+
+- id: treaty-of-waitangi
+  title: Treaty of Waitangi
+  kind: event
+  regions: [oceania]
+  start: 1840
+  end: 1840
+  importance: 4
+  confidence: high
+  categories: [treaty, colonialism]
+  note: The Māori and English texts differ on the central point. The English
+    cedes sovereignty; the Māori cedes kāwanatanga, or governorship, while
+    retaining tino rangatiratanga, or full chieftainship.
+  summary: The founding document of New Zealand, signed in two versions that do
+    not say the same thing — a discrepancy still being litigated.
+  related: [settlement-of-aotearoa, new-zealand-wars]
+
+- id: new-zealand-wars
+  title: New Zealand Wars
+  kind: period
+  regions: [oceania]
+  start: 1845
+  end: 1872
+  importance: 3
+  confidence: high
+  categories: [war, colonialism]
+  summary: Conflicts over land and sovereignty between the Crown and Māori
+    iwi, followed by confiscations of territory from tribes deemed rebellious.
+  related: [treaty-of-waitangi]
+
+- id: blackbirding
+  title: Blackbirding in the Pacific
+  kind: period
+  regions: [oceania]
+  start: 1863
+  end: 1904
+  importance: 4
+  confidence: medium
+  categories: [slavery, colonialism]
+  summary: Around sixty thousand Pacific Islanders were taken, often by
+    deception or force, to work sugar plantations in Queensland and Fiji — a
+    coerced labour trade running decades after slavery was abolished elsewhere.
+  related: [transatlantic-slave-trade]
+
+- id: stolen-generations
+  title: The Stolen Generations
+  kind: period
+  regions: [oceania]
+  start: 1910
+  end: 1970
+  importance: 5
+  confidence: high
+  categories: [human-rights, colonialism]
+  summary: Aboriginal and Torres Strait Islander children were removed from
+    their families by state policy for six decades. The 1997 Bringing Them Home
+    report documented the consequences; a national apology followed in 2008.
+  related: [australian-frontier-wars, mabo-decision]
+
+- id: pacific-nuclear-testing
+  title: Nuclear testing in the Pacific
+  kind: period
+  regions: [oceania]
+  start: 1946
+  end: 1996
+  importance: 4
+  confidence: high
+  categories: [human-rights]
+  summary: The United States, Britain and France conducted over three hundred
+    nuclear tests across the Pacific, displacing populations from Bikini,
+    Enewetak and Moruroa, several of whom have never been able to return.
+
+- id: samoa-independence
+  title: Samoa becomes independent
+  kind: event
+  regions: [oceania]
+  start: 1962
+  end: 1962
+  importance: 3
+  confidence: high
+  categories: [independence]
+  summary: The first Pacific Island nation to gain independence in the
+    twentieth century, opening a wave that ran through Fiji and Tonga in 1970.
+  related: [african-independence-wave]
+
+- id: png-independence
+  title: Papua New Guinea independence
+  kind: event
+  regions: [oceania]
+  start: 1975
+  end: 1975
+  importance: 3
+  confidence: high
+  categories: [independence]
+  summary: Independence from Australian administration, for a country holding
+    over eight hundred languages — more linguistic diversity than any other
+    state on Earth.
+
+- id: mabo-decision
+  title: Mabo and the recognition of native title
+  kind: event
+  regions: [oceania]
+  start: 1992
+  end: 1992
+  importance: 4
+  confidence: high
+  categories: [human-rights, independence]
+  summary: Australia's High Court rejected the doctrine that the continent had
+    belonged to no one before 1788, recognising for the first time in law that
+    Indigenous people held title to their land.
+  related: [australian-frontier-wars, stolen-generations]
+
+- id: pacific-sea-level
+  title: Sea-level rise in the Pacific
+  kind: period
+  regions: [oceania]
+  start: 1990
+  end: ongoing
+  importance: 4
+  confidence: medium
+  categories: [climate]
+  summary: Low-lying atoll states including Tuvalu, Kiribati and the Marshall
+    Islands face the loss of habitable land within this century, having
+    contributed almost nothing to the emissions causing it.
+  related: [holocene]

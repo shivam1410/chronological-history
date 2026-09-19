@@ -1,0 +1,396 @@
+# Central Asia and the Steppe. For most of history this was not a periphery
+# between China, Persia and Europe but the corridor connecting them, and the
+# source of the cavalry empires that repeatedly overran all three.
+
+- id: horse-domestication
+  title: Domestication of the horse
+  kind: technology
+  regions: [central-asia]
+  start: ["5.5 ka", "5 ka"]
+  end: ongoing
+  importance: 5
+  confidence: contested
+  categories: [civilisation, discovery]
+  note: The Botai culture of northern Kazakhstan shows the earliest strong
+    evidence, around 3500 BCE, but genetic work suggests modern domestic horses
+    descend from a later lineage on the Pontic-Caspian steppe.
+  summary: Riding turned the steppe from a barrier into a highway and gave its
+    peoples a military advantage over settled neighbours that lasted until
+    gunpowder.
+
+- id: andronovo-culture
+  title: Andronovo culture
+  kind: period
+  regions: [central-asia]
+  start: -2000
+  end: -900
+  importance: 3
+  confidence: medium
+  categories: [civilisation]
+  summary: A bronze-working, chariot-building complex across the western steppe,
+    widely associated with the Indo-Iranian languages that later spread into
+    Iran and the Indian subcontinent.
+  related: [rigveda]
+
+- id: scythians
+  title: The Scythians
+  kind: polity
+  regions: [central-asia, eastern-europe]
+  start: -900
+  end: 300
+  importance: 4
+  confidence: medium
+  categories: [kingdom, trade]
+  summary: Mounted nomads ranging from the Black Sea to the Altai, known to
+    Herodotus as unconquerable and to archaeology through frozen tombs that
+    preserved their gold work, tattoos and horses.
+
+- id: xiongnu
+  title: Xiongnu confederation
+  kind: polity
+  regions: [central-asia, china]
+  start: -209
+  end: 91
+  importance: 4
+  confidence: medium
+  categories: [empire]
+  summary: The first great steppe confederation, powerful enough to extract
+    tribute from Han China and to make wall-building a matter of state policy.
+  related: [han-dynasty, silk-road]
+
+- id: kushan-empire
+  title: Kushan Empire
+  kind: polity
+  regions: [central-asia, north-india]
+  start: [30, 30]
+  end: [375, 375]
+  importance: 4
+  confidence: medium
+  categories: [empire, trade, religion]
+  summary: Founded by the Yuezhi from the steppe, it straddled the routes
+    between Rome, Persia, India and China, and under Kanishka carried Buddhism
+    north into Central Asia and on towards China.
+  related: [silk-road, buddha]
+
+- id: sogdian-merchants
+  title: The Sogdian trading network
+  kind: period
+  regions: [central-asia]
+  start: [200, 300]
+  end: [900, 1000]
+  importance: 4
+  confidence: medium
+  categories: [trade, writing]
+  summary: Merchants from Samarkand and Bukhara ran the commerce of the Silk
+    Road for centuries, and their language became its lingua franca — carrying
+    Buddhist, Manichaean and Christian texts east alongside the goods.
+  related: [silk-road]
+
+- id: hephthalites
+  title: The Hephthalites
+  kind: polity
+  regions: [central-asia, persia, north-india]
+  start: [440, 450]
+  end: [560, 570]
+  importance: 3
+  confidence: contested
+  categories: [empire]
+  note: Their origin and language remain unsettled; the sources are hostile and
+    second-hand.
+  summary: Steppe confederation that killed a Sasanian emperor, extracted
+    tribute from Persia, and broke into north-west India, hastening the end of
+    Gupta power.
+  related: [gupta-empire]
+
+- id: gokturk-khaganate
+  title: Göktürk Khaganate
+  kind: polity
+  regions: [central-asia]
+  start: 552
+  end: 744
+  importance: 4
+  confidence: high
+  categories: [empire, writing]
+  summary: The first state to call itself Türk, stretching from Manchuria to
+    the Black Sea, and the source of the Orkhon inscriptions — the earliest
+    surviving texts in any Turkic language.
+
+- id: uyghur-khaganate
+  title: Uyghur Khaganate
+  kind: polity
+  regions: [central-asia]
+  start: 744
+  end: 840
+  importance: 3
+  confidence: high
+  categories: [empire, religion]
+  summary: Steppe empire that adopted Manichaeism as a state religion and
+    propped up the Tang dynasty after the An Lushan rebellion, at a price.
+  related: [tang-dynasty]
+
+- id: samanid-empire
+  title: Samanid Empire
+  kind: polity
+  regions: [central-asia, persia]
+  start: 819
+  end: 999
+  importance: 4
+  confidence: high
+  categories: [empire, dynasty]
+  summary: Presided over a Persian literary and scientific revival centred on
+    Bukhara, whose library and patronage produced Avicenna and Ferdowsi's
+    Shahnameh.
+  related: [avicenna, al-biruni]
+
+- id: karakhanid-khanate
+  title: Kara-Khanid Khanate
+  kind: polity
+  regions: [central-asia]
+  start: 840
+  end: 1212
+  importance: 3
+  confidence: medium
+  categories: [empire, religion]
+  summary: The first Turkic dynasty to adopt Islam, which set the religious
+    course of Central Asia for the next thousand years.
+
+- id: seljuk-empire
+  title: Seljuk Empire
+  kind: polity
+  regions: [central-asia, persia, anatolia]
+  start: 1037
+  end: 1194
+  importance: 4
+  confidence: high
+  categories: [empire]
+  summary: Turkic dynasty out of the steppe that took Baghdad, shattered
+    Byzantine power at Manzikert in 1071, and so opened Anatolia to Turkish
+    settlement and Europe to the idea of a crusade.
+  related: [ottoman-empire]
+
+- id: khwarazmian-empire
+  title: Khwarazmian Empire
+  kind: polity
+  regions: [central-asia, persia]
+  start: 1077
+  end: 1231
+  importance: 3
+  confidence: high
+  categories: [empire]
+  summary: The dominant power of Central Asia until its shah executed Genghis
+    Khan's envoys, an error that brought the Mongols down on it and erased the
+    state within five years.
+  related: [genghis-khan, mongol-empire]
+
+- id: genghis-khan
+  title: Genghis Khan
+  kind: person
+  regions: [central-asia]
+  start: [1155, 1167]
+  end: 1227
+  importance: 5
+  confidence: contested
+  categories: [ruler]
+  note: The birth year is given variously as 1155, 1162 or 1167 across the
+    surviving sources.
+  summary: Unified the Mongol tribes and built, in twenty years, the machinery
+    that would conquer more territory than any leader before or since.
+  related: [mongol-empire]
+
+- id: mongol-empire
+  title: Mongol Empire
+  kind: polity
+  regions: [central-asia, china, west-asia, eastern-europe]
+  start: 1206
+  end: 1368
+  importance: 5
+  confidence: high
+  categories: [empire]
+  note: Mortality estimates for the conquests run to tens of millions and are
+    built largely from chroniclers with reason to exaggerate.
+  summary: The largest contiguous land empire in history, stretching from Korea
+    to Hungary. Its conquests were catastrophically violent, and the peace that
+    followed moved goods, technologies, people and plague across Eurasia faster
+    than at any time before.
+  related: [genghis-khan, silk-road, black-death, golden-horde, chagatai-khanate]
+  sources:
+    - {title: "Encyclopaedia Britannica — Mongol empire", url: "https://www.britannica.com/place/Mongol-empire"}
+
+- id: sack-of-baghdad
+  title: Mongol sack of Baghdad
+  kind: event
+  regions: [central-asia, west-asia]
+  start: 1258
+  end: 1258
+  importance: 4
+  confidence: high
+  categories: [battle, war]
+  summary: Ended the Abbasid Caliphate and destroyed the House of Wisdom with
+    its libraries, a loss from which the Islamic scholarly world took centuries
+    to recover.
+  related: [mongol-empire]
+
+- id: golden-horde
+  title: Golden Horde
+  kind: polity
+  regions: [central-asia, eastern-europe]
+  start: 1242
+  end: 1502
+  importance: 4
+  confidence: high
+  categories: [empire, dynasty]
+  summary: The Mongol successor state over the Russian principalities, whose
+    two and a half centuries of overlordship shaped the autocratic state that
+    Moscow became after throwing it off.
+  related: [mongol-empire]
+
+- id: chagatai-khanate
+  title: Chagatai Khanate
+  kind: polity
+  regions: [central-asia]
+  start: 1226
+  end: 1687
+  importance: 3
+  confidence: medium
+  categories: [empire, dynasty]
+  summary: The Mongol successor state in Central Asia proper, from which Timur
+    and later Babur both drew their legitimacy.
+  related: [mongol-empire, timur, mughal-empire]
+
+- id: timur
+  title: Timur (Tamerlane)
+  kind: person
+  regions: [central-asia]
+  start: [1320, 1336]
+  end: 1405
+  importance: 4
+  confidence: medium
+  categories: [ruler]
+  summary: Conqueror from Transoxiana who campaigned from Delhi to Ankara with
+    exceptional brutality, and spent the proceeds making Samarkand one of the
+    most beautiful cities on Earth.
+  related: [timurid-empire, delhi-sultanate]
+
+- id: timurid-empire
+  title: Timurid Empire
+  kind: polity
+  regions: [central-asia, persia]
+  start: 1370
+  end: 1507
+  importance: 4
+  confidence: high
+  categories: [empire, dynasty]
+  summary: Presided over a renaissance in Persian painting, architecture and
+    astronomy; its displaced heir Babur went on to found the Mughal Empire in
+    India.
+  related: [timur, mughal-empire, ulugh-beg]
+
+- id: ulugh-beg
+  title: Ulugh Beg and the Samarkand observatory
+  kind: person
+  regions: [central-asia]
+  start: 1394
+  end: 1449
+  importance: 4
+  confidence: high
+  categories: [ruler, astronomy, scientist]
+  summary: A Timurid ruler who built a three-storey sextant at Samarkand and
+    catalogued nearly a thousand stars to an accuracy unmatched until the
+    telescope — then was murdered by his son for his trouble.
+  related: [timurid-empire]
+
+- id: russian-conquest-central-asia
+  title: Russian conquest of Central Asia
+  kind: period
+  regions: [central-asia, eastern-europe]
+  start: 1839
+  end: 1895
+  importance: 4
+  confidence: high
+  categories: [colonialism, war]
+  summary: Tsarist armies absorbed the khanates of Khiva, Bukhara and Kokand,
+    closing the era of independent steppe states and bringing Russia to the
+    borders of British India.
+
+- id: great-game
+  title: The Great Game
+  kind: period
+  regions: [central-asia, britain]
+  start: [1830, 1830]
+  end: [1895, 1907]
+  importance: 3
+  confidence: medium
+  categories: [colonialism, war]
+  summary: Decades of manoeuvring between the Russian and British empires over
+    Central Asia and Afghanistan, which drew borders still contested today.
+
+- id: soviet-central-asia
+  title: Soviet Central Asia
+  kind: period
+  regions: [central-asia]
+  start: 1924
+  end: 1991
+  importance: 4
+  confidence: high
+  categories: [colonialism, empire]
+  summary: Moscow drew five republics along ethnic lines that had not existed
+    as political borders before, forcibly settled nomads at enormous cost in
+    life, and turned much of the region over to cotton.
+  related: [soviet-dissolution, aral-sea]
+
+- id: aral-sea
+  title: Desiccation of the Aral Sea
+  kind: event
+  regions: [central-asia]
+  start: 1960
+  end: ongoing
+  importance: 4
+  confidence: high
+  categories: [climate]
+  summary: Soviet irrigation diverted the two rivers feeding what was the
+    world's fourth-largest lake; it has lost most of its volume, leaving a salt
+    desert, a collapsed fishery and a public health crisis.
+  related: [soviet-central-asia]
+
+# ---- Central Asian scholars, filed under science but tagged to the region ----
+- id: avicenna
+  title: Avicenna (Ibn Sina)
+  kind: person
+  regions: [science, central-asia]
+  start: [980, 980]
+  end: 1037
+  importance: 5
+  confidence: medium
+  categories: [scientist, philosopher, medicine]
+  summary: Born near Bukhara, he wrote a medical encyclopaedia used as a
+    standard text in Europe for six centuries and a philosophical system that
+    shaped both Islamic and scholastic thought.
+  related: [samanid-empire, aquinas, al-ghazali]
+
+- id: al-biruni
+  title: Al-Biruni
+  kind: person
+  regions: [science, central-asia]
+  start: 973
+  end: [1048, 1050]
+  importance: 4
+  confidence: medium
+  categories: [scientist, astronomy, mathematics]
+  summary: Polymath from Khwarazm who measured the Earth's radius from a
+    mountain observation, and wrote a study of India notable for trying to
+    describe a foreign culture on its own terms.
+  related: [samanid-empire]
+
+- id: al-farabi
+  title: Al-Farabi
+  kind: person
+  regions: [philosophy, central-asia]
+  start: [870, 872]
+  end: [950, 951]
+  importance: 3
+  confidence: contested
+  categories: [philosopher, logic]
+  summary: Known as the Second Teacher after Aristotle, he transmitted Greek
+    logic and political philosophy into Arabic and influenced everyone who
+    followed him in that tradition.
+  related: [aristotle, avicenna]
