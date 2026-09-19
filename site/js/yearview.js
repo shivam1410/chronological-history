@@ -33,12 +33,19 @@ export function createYearView(root, {
   let node = null;
   let shownYear = null;
 
-  function close() {
+  /**
+   * @param {{silent?: boolean}} options  silent skips onClose, for a caller
+   *   that is already navigating somewhere specific. onClose exists so the
+   *   close button can put the reader back on the timeline they left; when
+   *   the route itself changed, that restore would undo the new route.
+   */
+  function close({ silent = false } = {}) {
     if (!node) return;
     node.remove();
     node = null;
     shownYear = null;
-    onClose?.();
+    delete document.body.dataset.yearView;
+    if (!silent) onClose?.();
   }
 
   function span(entry) {
@@ -82,7 +89,7 @@ export function createYearView(root, {
     const closeBtn = el('button', 'yearview__close', '×');
     closeBtn.type = 'button';
     closeBtn.setAttribute('aria-label', 'Close the year view');
-    closeBtn.addEventListener('click', close);
+    closeBtn.addEventListener('click', () => close());
     actions.append(toTimeline, closeBtn);
 
     head.append(title, count, steps, actions);
@@ -134,6 +141,10 @@ export function createYearView(root, {
       else root.append(next);
       node = next;
       shownYear = year;
+      // Marks the whole document, because what it hides - the minimap - is a
+      // sibling of the stage this view lives in. A single year has no window
+      // to place on a 4.5-billion-year strip, so the minimap says nothing.
+      document.body.dataset.yearView = 'true';
       node.querySelector('.yearview__close')?.focus();
     },
 

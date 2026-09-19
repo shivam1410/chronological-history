@@ -78,6 +78,12 @@ async function start() {
   const syncHash = (replace = false) => {
     clearTimeout(writeTimer);
     writeTimer = setTimeout(() => {
+      // A year is its own address. The timeline keeps a window underneath the
+      // year view and fires onViewChange while it is open - including once
+      // during its own construction - so without this a deep link to a year
+      // rewrites itself to the timeline route within 180ms, and reloading or
+      // sharing the link loses the year.
+      if (yearView.year !== null) return;
       router.navigate(
         { from: timeline.view.from, to: timeline.view.to, entryId: panel.openId },
         { replace },
@@ -220,7 +226,11 @@ async function start() {
       live.textContent = `Year view for ${state.year}.`;
       return;
     }
-    if (yearView.year !== null) yearView.close();
+    // Silent: this state change already says where to go, and onClose would
+    // navigate back to the window the timeline happened to be showing -
+    // which is what made "View on timeline" land on the old view instead of
+    // the year it named.
+    if (yearView.year !== null) yearView.close({ silent: true });
 
     const from = state.from ?? ORIGIN_YEAR;
     const to = state.to ?? presentYear();

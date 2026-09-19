@@ -311,6 +311,10 @@ body {
   padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
+/* A single year has no window to draw on a strip of all time, and the row is
+   worth more to the year's own list - especially on a phone. */
+body[data-year-view="true"] .minimap { display: none; }
+
 .minimap__canvas {
   display: block;
   width: 100%;

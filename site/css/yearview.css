@@ -70,6 +70,9 @@
   flex: 1;
   overflow-y: auto;
   padding: var(--step-4);
+  /* The minimap row normally carries this inset, and it is hidden here, so
+     the last entries would otherwise sit under the home indicator. */
+  padding-bottom: calc(var(--step-4) + env(safe-area-inset-bottom, 0px));
   /* Columns rather than one long list: a busy year runs to dozens of entries,
      and a single column makes the reader scroll past regions they can see. */
   columns: 340px;
@@ -169,7 +172,13 @@
   .yearview__steps::-webkit-scrollbar { display: none; }
   .yearview__step { flex: 0 0 auto; }
 
-  .yearview__body { columns: auto; padding: var(--step-3); }
+  /* The shorthand would drop the safe-area inset set above, which is exactly
+     where it matters most - this is the phone case. */
+  .yearview__body {
+    columns: auto;
+    padding: var(--step-3);
+    padding-bottom: calc(var(--step-3) + env(safe-area-inset-bottom, 0px));
+  }
   .yearview__lane { margin-bottom: var(--step-4); }
 
   /* Stack rather than compete for width: a long title and a date range on one
