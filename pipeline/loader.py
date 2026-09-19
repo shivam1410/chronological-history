@@ -17,7 +17,7 @@ from pipeline.model import Bound, Entry, Source, is_ongoing, parse_bound
 REQUIRED_FIELDS = {"id", "title", "kind", "regions", "start", "end", "importance", "summary"}
 OPTIONAL_FIELDS = {
     "categories", "aliases", "significance", "note", "related",
-    "sources", "wikidata", "confidence", "origin",
+    "sources", "texts", "wikidata", "confidence", "origin",
 }
 KNOWN_FIELDS = REQUIRED_FIELDS | OPTIONAL_FIELDS
 
@@ -58,13 +58,25 @@ def _read_yaml(path: str) -> list:
     return data
 
 
+def _unique_by_id(rows: list, path: str) -> list:
+    """A repeated id silently overwrites the first definition, so reject it."""
+    seen = set()
+    for row in rows:
+        row_id = row["id"]
+        if row_id in seen:
+            raise ValueError(f"{path}: duplicate id {row_id!r}")
+        seen.add(row_id)
+    return rows
+
+
 def load_taxonomy(
     regions_path: str = "data/taxonomy/regions.yaml",
     kinds_path: str = "data/taxonomy/kinds.yaml",
     categories_path: str = "data/taxonomy/categories.yaml",
 ) -> Taxonomy:
     lanes, region_to_lane = [], {}
-    for raw in sorted(_read_yaml(regions_path), key=lambda r: r["order"]):
+    regions = _unique_by_id(_read_yaml(regions_path), regions_path)
+    for raw in sorted(regions, key=lambda r: r["order"]):
         subs = tuple((s["id"], s["label"]) for s in raw.get("sub_regions", ()))
         lanes.append(Lane(
             id=raw["id"], label=raw["label"], order=raw["order"],
@@ -74,8 +86,10 @@ def load_taxonomy(
         for sub_id, _ in subs:
             region_to_lane[sub_id] = raw["id"]
 
-    kinds = {k["id"]: k["label"] for k in _read_yaml(kinds_path)}
-    categories = {c["id"]: c["label"] for c in _read_yaml(categories_path)}
+    kinds = {k["id"]: k["label"]
+             for k in _unique_by_id(_read_yaml(kinds_path), kinds_path)}
+    categories = {c["id"]: c["label"]
+                  for c in _unique_by_id(_read_yaml(categories_path), categories_path)}
     return Taxonomy(tuple(lanes), kinds, categories, region_to_lane)
 
 
@@ -85,6 +99,24 @@ def _tuple_of_str(raw: object, field: str, where: str) -> tuple[str, ...]:
     if not isinstance(raw, list):
         raise ValueError(f"{where}: '{field}' must be a list")
     return tuple(str(item) for item in raw)
+
+
+def _source_list(raw: dict, field: str, where: str) -> tuple[Source, ...]:
+    """Parse a list of {title, url} records.
+
+    Shared by `sources` (what backs the dating) and `texts` (where to read the
+    work itself). They are separate fields because they answer different
+    questions, but they have the same shape.
+    """
+    items = raw.get(field) or []
+    if not isinstance(items, list):
+        raise ValueError(f"{where}: '{field}' must be a list")
+    try:
+        return tuple(Source(title=str(i["title"]), url=str(i["url"])) for i in items)
+    except (KeyError, TypeError) as exc:
+        raise ValueError(
+            f"{where}: each entry in '{field}' needs 'title' and 'url' ({exc})"
+        ) from exc
 
 
 def _required_str(raw: dict, field: str, where: str) -> str:
@@ -131,15 +163,8 @@ def _build_entry(raw: object, source_file: str) -> Entry:
             f"{where}: starts at {start.min} but ends at {end.max}"
         )
 
-    raw_sources = raw.get("sources") or []
-    if not isinstance(raw_sources, list):
-        raise ValueError(f"{where}: 'sources' must be a list")
-    try:
-        sources = tuple(
-            Source(title=str(s["title"]), url=str(s["url"])) for s in raw_sources
-        )
-    except (KeyError, TypeError) as exc:
-        raise ValueError(f"{where}: each source needs 'title' and 'url' ({exc})") from exc
+    sources = _source_list(raw, "sources", where)
+    texts = _source_list(raw, "texts", where)
 
     regions = _tuple_of_str(raw["regions"], "regions", where)
     if not regions:
@@ -160,6 +185,7 @@ def _build_entry(raw: object, source_file: str) -> Entry:
         note=" ".join(str(raw["note"]).split()) if raw.get("note") else None,
         related=_tuple_of_str(raw.get("related"), "related", where),
         sources=sources,
+        texts=texts,
         wikidata=raw.get("wikidata"),
         confidence=str(raw.get("confidence", "high")),
         origin=str(raw.get("origin", "curated")),

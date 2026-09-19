@@ -24,7 +24,6 @@
 - {id: literature,  label: Literature}
 - {id: disease,     label: Disease}
 - {id: pandemic,    label: Pandemic}
-- {id: independence, label: Independence}
 - {id: slavery,     label: Slavery}
 - {id: human-rights, label: Human Rights}
 - {id: mathematics, label: Mathematics}

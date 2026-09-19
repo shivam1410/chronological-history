@@ -71,6 +71,21 @@ Add to the relevant file under `data/curated/`, then `make build`.
       url: https://www.britannica.com/biography/Kabir-Indian-mystic-and-poet
 ```
 
+Two link fields, deliberately separate:
+
+```yaml
+  sources:                    # what backs the DATES
+    - title: Encyclopaedia Britannica — Kabir
+      url: https://www.britannica.com/biography/Kabir-Indian-mystic-and-poet
+  texts:                      # where to READ the work itself
+    - title: Bijak of Kabir (Ahmad Shah translation)
+      url: https://archive.sacred-texts.com/hin/kabir/index.htm
+```
+
+A source has to be current scholarship; a text just has to be a faithful,
+freely readable edition. Keeping them apart means an out-of-date translation can
+still be linked for reading without being cited as evidence for a date.
+
 Dates are always brackets, never bare guesses. `1526` means precisely 1526;
 `[1398, 1440]` means somewhere in that window. Deep time uses `"66 Ma"`, `"4.54 Ga"`,
 `"12 ka"` — thousands/millions/billions of years before 1950 CE.

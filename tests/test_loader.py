@@ -164,3 +164,65 @@ class TestLoaderStrictness:
                 "  start: 1\n  end: 2\n  importance: 4.9\n  summary: s\n")
         with pytest.raises(ValueError, match="'importance' must be a whole number"):
             self._load(tmp_path, body, taxonomy)
+
+
+class TestTextsField:
+    """`texts:` points at the work itself; `sources:` cites its dating."""
+
+    def _entry(self, tmp_path, taxonomy, body):
+        path = tmp_path / "t.yaml"
+        path.write_text(
+            "- id: x\n  title: X\n  kind: work\n  regions: [europe]\n"
+            "  start: 1\n  end: 2\n  importance: 1\n  summary: s\n" + body)
+        return load_entries([str(path)], taxonomy)[0]
+
+    def test_defaults_to_empty(self, tmp_path, taxonomy):
+        assert self._entry(tmp_path, taxonomy, "").texts == ()
+
+    def test_parses_into_source_records(self, tmp_path, taxonomy):
+        entry = self._entry(tmp_path, taxonomy,
+            "  texts:\n    - {title: Griffith translation,"
+            " url: 'https://archive.sacred-texts.com/hin/rigveda/index.htm'}\n")
+        assert len(entry.texts) == 1
+        assert entry.texts[0].title == "Griffith translation"
+        assert entry.texts[0].url.startswith("https://archive.sacred-texts.com/")
+
+    def test_is_independent_of_sources(self, tmp_path, taxonomy):
+        entry = self._entry(tmp_path, taxonomy,
+            "  texts:\n    - {title: T, url: 'https://example.com/t'}\n"
+            "  sources:\n    - {title: S, url: 'https://example.com/s'}\n")
+        assert entry.texts[0].title == "T"
+        assert entry.sources[0].title == "S"
+
+    def test_a_text_missing_a_field_names_the_entry(self, tmp_path, taxonomy):
+        with pytest.raises(ValueError) as exc:
+            self._entry(tmp_path, taxonomy, "  texts:\n    - {url: 'https://x.com'}\n")
+        assert "'x'" in str(exc.value)
+        assert "title" in str(exc.value)
+
+
+class TestTaxonomyIntegrity:
+    """A duplicated id silently overwrites the first definition."""
+
+    def test_duplicate_category_ids_are_rejected(self, tmp_path):
+        cats = tmp_path / "categories.yaml"
+        cats.write_text("- {id: empire, label: Empire}\n- {id: empire, label: Realm}\n")
+        with pytest.raises(ValueError, match="duplicate.*'empire'"):
+            load_taxonomy(
+                regions_path=f"{FIXTURES}/mini_taxonomy_regions.yaml",
+                kinds_path="data/taxonomy/kinds.yaml",
+                categories_path=str(cats))
+
+    def test_duplicate_region_ids_are_rejected(self, tmp_path):
+        regions = tmp_path / "regions.yaml"
+        regions.write_text(
+            '- {id: india, label: India, order: 1, color: "--a"}\n'
+            '- {id: india, label: Bharat, order: 2, color: "--b"}\n')
+        with pytest.raises(ValueError, match="duplicate.*'india'"):
+            load_taxonomy(
+                regions_path=str(regions),
+                kinds_path="data/taxonomy/kinds.yaml",
+                categories_path="data/taxonomy/categories.yaml")
+
+    def test_the_real_taxonomy_has_no_duplicates(self):
+        load_taxonomy()  # must not raise

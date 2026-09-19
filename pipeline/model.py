@@ -225,7 +225,8 @@ class Entry:
     significance: str | None = None
     note: str | None = None
     related: tuple[str, ...] = ()
-    sources: tuple[Source, ...] = ()
+    sources: tuple[Source, ...] = ()   # citations for the DATING claim
+    texts: tuple[Source, ...] = ()     # where to READ the work itself
     wikidata: str | None = None
     confidence: str = "high"
     origin: str = "curated"

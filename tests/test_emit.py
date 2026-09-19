@@ -245,3 +245,26 @@ class TestDeterminism:
         meta_a.pop("generated")
         meta_b.pop("generated")
         assert meta_a == meta_b
+
+
+class TestTextsInEraBundle:
+    def test_texts_ride_alongside_sources_under_their_own_key(self, tmp_path, taxonomy):
+        from pipeline.emit import write_bundles
+        from pipeline.loader import load_entries
+        src = tmp_path / "t.yaml"
+        src.write_text(
+            "- id: x\n  title: X\n  kind: work\n  regions: [europe]\n"
+            "  start: 1\n  end: 2\n  importance: 1\n  summary: s\n"
+            "  texts:\n    - {title: Read it, url: 'https://example.com/read'}\n"
+            "  sources:\n    - {title: Cite it, url: 'https://example.com/cite'}\n")
+        write_bundles(load_entries([str(src)], taxonomy), taxonomy,
+                      out_dir=str(tmp_path / "out"))
+        bundle = json.loads((tmp_path / "out" / "eras" / "ce-0001-0500.json").read_text())
+        entry = bundle["entries"]["x"]
+        assert entry["texts"] == [{"title": "Read it", "url": "https://example.com/read"}]
+        assert entry["sources"] == [{"title": "Cite it", "url": "https://example.com/cite"}]
+
+    def test_absent_texts_are_omitted_entirely(self, built):
+        tmp_path, _, _ = built
+        bundle = json.loads((tmp_path / "eras" / "1500-1599.json").read_text())
+        assert "texts" not in bundle["entries"]["mughal-empire"]
