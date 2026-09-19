@@ -45,6 +45,21 @@ async function start() {
   hint.textContent = 'scroll to zoom · drag to pan · click an entry · click the axis for one year';
   stage.append(canvas, hint);
 
+  // The hint sits over the bottom-right of the chart, so it retires once it has
+  // been read - on the first real interaction, or after long enough that the
+  // reader is not going to have one. It has said its piece by then.
+  const retireHint = () => {
+    hint.dataset.retired = 'true';
+    clearTimeout(hintTimer);
+    for (const event of ['pointerdown', 'wheel', 'keydown']) {
+      canvas.removeEventListener(event, retireHint);
+    }
+  };
+  const hintTimer = setTimeout(retireHint, 12_000);
+  for (const event of ['pointerdown', 'wheel', 'keydown']) {
+    canvas.addEventListener(event, retireHint, { passive: true });
+  }
+
   let info;
   let entries;
   try {

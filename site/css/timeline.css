@@ -19,4 +19,11 @@
   color: var(--ink-faint);
   font-size: 11px;
   pointer-events: none;
+  transition: opacity 400ms ease;
+}
+
+.hint[data-retired="true"] { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hint { transition: none; }
 }

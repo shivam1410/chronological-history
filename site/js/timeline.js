@@ -312,11 +312,15 @@ export function createTimeline(canvas, {
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
 
+    // Anchored to the top of the lane, not centred in it. A tall lane - six
+    // rows on a desktop - is ~104px, so centring floats the name into the
+    // middle of the gutter while the inline count stays pinned near the top,
+    // and the two read as unrelated.
     const lines = wrapLabel(lane.label);
-    const block = lines.length * LANE_LINE_H;
-    let textY = top + Math.max(LANE_PAD_Y, (lane.h - block) / 2) + LANE_LINE_H / 2;
+    const firstLineY = top + LANE_PAD_Y + LANE_LINE_H / 2;
 
     ctx.fillStyle = theme.ink;
+    let textY = firstLineY;
     for (const line of lines) {
       ctx.fillText(line, 10, textY);
       textY += LANE_LINE_H;
@@ -325,8 +329,9 @@ export function createTimeline(canvas, {
     ctx.fillStyle = theme.inkFaint;
     const count = lane.collapsed ? `${lane.count} ›` : String(lane.count);
     if (countInline()) {
+      // Shares the first line's baseline, which is what ties it to the name.
       ctx.textAlign = 'right';
-      ctx.fillText(count, gutter - 8, top + Math.min(lane.h / 2, 14));
+      ctx.fillText(count, gutter - 8, firstLineY);
     } else {
       ctx.fillText(count, 10, textY);
     }
