@@ -264,6 +264,26 @@ Each slice below is one or more YAML files under `data/curated/`, validated by
 `parallel_write_scope: data/curated/<file>.yaml` ·
 `parallel_ready_when: Phase 4 validation rules have landed`.
 
+### 3.0b Taxonomy: a science lane and new categories · `code` · RED → GREEN
+- Files: `data/taxonomy/regions.yaml`, `data/taxonomy/categories.yaml`,
+  `site/css/tokens.css`, `tests/test_loader.py`, `tests/test_emit.py`
+- [ ] RED: tests asserting the `science` lane loads with its own order and colour
+      token, that an entry tagged `science` resolves to that lane rather than
+      `global`, and that the new categories validate
+- [ ] Split the current `global` lane ("Global / Science & Ideas") into two:
+      `science` (Science & Discovery — people, discoveries, instruments, theories)
+      and `global` (Global — things with no single home: ages, pandemics, trade)
+- [ ] Add `--lane-science` to `tokens.css` in both themes
+- [ ] Reassign existing seed entries: `origin-of-species`, `aryabhata`,
+      `printing-press`, `moon-landing` move to `science`
+- [ ] New categories: `disease`, `pandemic`, `independence`, `slavery`,
+      `human-rights`, `discovery`, `instrument`
+- Acceptance: scientists occupy their own row at every zoom level
+- Validation: `make test-py && make build && make stats`
+- Commit: `feat(data): dedicated science lane and categories for disease, independence, rights`
+- Size: S
+- Prerequisite for 3.4 and 3.6.
+
 ### 3.1 Deep time · `docs`
 `deep-time.yaml` — Hadean through Holocene, mass extinctions, Cambrian explosion,
 dinosaur era, K–Pg, Himalayan orogeny (India–Eurasia collision through ongoing uplift),
@@ -307,11 +327,78 @@ Acceptance: ≥ 155 entries; for every century from 500 BCE to 2000 CE at least 
 non-India lanes have an active entry.
 Commits: one per file.
 
+### 3.6 Science and discovery · `docs`
+`science.yaml` — a dedicated lane of people and discoveries, so the thread of
+what was *known* runs parallel to what was happening politically. Aryabhata,
+Brahmagupta, Bhaskara II, Sushruta, Charaka, al-Khwarizmi, Ibn al-Haytham,
+Shen Kuo, Archimedes, Hypatia, Copernicus, Galileo, Kepler, Newton, Lavoisier,
+Darwin, Mendel, Curie, Ramanujan, Bose, Raman, Einstein, Noether, Fleming,
+Franklin, Turing, Hopper, Sagan, plus the discoveries themselves (zero and the
+decimal system, algebra, printing, the telescope, vaccination, germ theory,
+electricity, evolution, relativity, antibiotics, DNA's structure, computing,
+spaceflight, the genome).
+Acceptance: ≥ 60 entries, the lane is populated in every century from 500 BCE on.
+Commit: `feat(data): science and discovery lane`
+
+### 3.7 Disease and pandemics · `docs`
+`disease.yaml` — Plague of Athens, Antonine Plague, Plague of Justinian, the
+Black Death, the Columbian exchange epidemics, recurring smallpox, the 1817
+cholera pandemics, the 1918 influenza pandemic, HIV/AIDS, COVID-19, alongside
+the countermeasures (variolation, Jenner's vaccine, germ theory, penicillin,
+smallpox eradication).
+Each carries an honest mortality range in `summary` where scholarship supports
+one, and `confidence: contested` where it does not.
+Acceptance: ≥ 20 entries; every pandemic entry cites a source.
+Commit: `feat(data): epidemics, pandemics, and the medical response`
+
+### 3.8 Independence, slavery, and rights · `docs`
+`independence.yaml`, `africa.yaml` — independence dates for every country the
+dataset touches, concentrated on the twentieth-century decolonisation waves
+(1947 South Asia, 1956-1970 Africa, 1810-1825 Latin America), each as a point
+event in its own region.
+African history gets proper depth rather than a footnote: Nubia, Aksum, Ghana,
+Mali, Songhai, Great Zimbabwe, Benin, Ethiopia; then the trans-Saharan and
+transatlantic slave trades with their date ranges and scale, abolition dates by
+country, the Scramble for Africa and the Berlin Conference, colonial rule,
+independence, and apartheid in South Africa (1948-1994) through to the
+democratic election.
+Acceptance: ≥ 90 entries; Africa is populated in every century from 500 BCE on,
+and no African century is represented solely by colonialism.
+Commits: `feat(data): independence dates by country`,
+`feat(data): African history, the slave trades, and apartheid`
+
+### 3.9 The record gap: when the accounts were written · `docs`
+`records.yaml` — for each major religious figure, a paired `work` entry for when
+the surviving account of them was actually written down, `related` to the person
+and carrying a `texts:` link. The distance between the two is often centuries,
+and showing it side by side is something a timeline can do that prose cannot.
+
+| Figure | Record | Approximate gap |
+|---|---|---|
+| Buddha | Pali Canon committed to writing | ~4 centuries |
+| Mahavira | Jain Agamas fixed at the Valabhi council | ~9-10 centuries |
+| Jesus | the canonical Gospels | ~35-80 years |
+| Muhammad | the Uthmanic codification of the Quran | ~20 years |
+| Guru Nanak | Adi Granth compiled, then the Guru Granth Sahib | ~65 / ~165 years |
+| Kabir | Bijak and the Guru Granth Sahib collections | ~1-2 centuries |
+| Confucius | the Analects | ~2-3 centuries |
+| Zoroaster | the Avesta written down | contested, many centuries |
+| Socrates | Plato's and Xenophon's accounts | ~1 generation |
+
+Every entry in this file is `confidence: contested` or `medium`, carries a `note`
+naming the competing positions, and cites at least two sources. Where a tradition
+holds that the text is contemporaneous or eternal, the `note` says so plainly
+rather than asserting the academic dating as settled fact.
+Acceptance: ≥ 18 entries; every one has a `related` link to its figure, a
+`texts:` link, a `note`, and ≥ 2 sources.
+Commit: `feat(data): when the accounts of major figures were written down`
+
 ### 3.5 Coverage audit · `docs`
 - [ ] Add `cli.stats` output: entries per lane per century, and a gap list
 - [ ] Run `make stats`, fill every gap the audit names
 - [ ] Verify PRD criteria 4 and 6 by hand in the browser
-- Acceptance: no century from 500 BCE on has fewer than four populated lanes
+- Acceptance: no century from 500 BCE on has fewer than four populated lanes,
+  and the `science` lane is populated in every century from 500 BCE on
 - Validation: `make stats`
 - Commit: `feat(data): close coverage gaps found by the audit`
 - Size: M
