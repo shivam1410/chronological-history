@@ -59,15 +59,6 @@
   cursor: pointer;
 }
 
-.yearview__close {
-  width: 30px; height: 30px;
-  border: 0; border-radius: var(--radius);
-  background: transparent; color: var(--ink-soft);
-  font-size: 20px; line-height: 1; cursor: pointer;
-}
-
-.yearview__close:hover { background: var(--bg-sunken); color: var(--ink); }
-
 .yearview__body {
   flex: 1;
   overflow-y: auto;
@@ -150,8 +141,8 @@
      now two compact rows, with the steppers scrolling instead of wrapping. */
   .yearview__head {
     display: grid;
-    grid-template-columns: auto 1fr auto auto;
-    grid-template-areas: "year count link close" "steps steps steps steps";
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: "year count link" "steps steps steps";
     gap: var(--step-2);
     align-items: center;
     padding: var(--step-2) var(--step-3);
@@ -162,19 +153,23 @@
   .yearview__year { grid-area: year; font-size: 20px; }
   .yearview__count { grid-area: count; display: block; font-size: 11px; white-space: nowrap; }
   .yearview__link { grid-area: link; padding: 4px var(--step-2); font-size: 11px; }
-  .yearview__close { grid-area: close; }
   .yearview__actions { display: contents; }
 
+  /* The steppers own this row, so they share it equally rather than bunching
+     at the left with dead space beside them. Equal widths also mean the same
+     target size wherever your thumb lands. */
   .yearview__steps {
     grid-area: steps;
     flex-wrap: nowrap;
-    overflow-x: auto;
-    scrollbar-width: none;
-    padding-bottom: 2px;
+    gap: var(--step-1);
   }
 
-  .yearview__steps::-webkit-scrollbar { display: none; }
-  .yearview__step { flex: 0 0 auto; }
+  .yearview__step {
+    flex: 1 1 0;
+    min-width: 0;
+    padding-inline: 2px;
+    text-align: center;
+  }
 
   /* The shorthand would drop the safe-area inset set above, which is exactly
      where it matters most - this is the phone case. */
@@ -210,7 +205,15 @@
 }
 
 @media (pointer: coarse) {
-  .yearview__step { min-height: 44px; padding-inline: var(--step-3); }
-  .yearview__link, .yearview__close { min-height: 44px; }
+  /* Height only - the width comes from sharing the row, and padding here
+     would push the six of them wider than the screen. */
+  .yearview__step { min-height: 44px; }
+  .yearview__link { min-height: 44px; }
   .yearview__name { min-height: 32px; }
+}
+
+/* Above the phone layout the steppers sit inline in a single header row, and
+   keep their natural width. */
+@media (min-width: 561px) {
+  .yearview__step { padding-inline: var(--step-3); }
 }

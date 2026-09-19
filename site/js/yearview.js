@@ -61,6 +61,17 @@ export function createYearView(root, {
     const panel = el('section', 'yearview');
     panel.setAttribute('role', 'dialog');
     panel.setAttribute('aria-labelledby', 'yearview-title');
+    // Focusable so the dialog itself can take focus when it opens, now that
+    // there is no close button to put it on.
+    panel.tabIndex = -1;
+    // Escape keeps what the close button did - back to the window you left,
+    // which is not where "View on timeline" goes. Without it the year view
+    // has no pointer-free exit.
+    panel.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      event.stopPropagation();
+      close();
+    });
 
     const head = el('header', 'yearview__head');
     const title = el('h2', 'yearview__year', formatYear(year));
@@ -81,16 +92,13 @@ export function createYearView(root, {
     }
 
     const actions = el('div', 'yearview__actions');
-    // Goes to the timeline AT this year. Closing with the x just returns to
-    // whatever window the timeline already had, which is a different thing.
+    // The only button out, and it goes to the timeline AT this year. Escape
+    // still returns to the window the timeline already had, which is a
+    // different destination.
     const toTimeline = el('button', 'yearview__link', 'View on timeline');
     toTimeline.type = 'button';
     toTimeline.addEventListener('click', () => onViewOnTimeline?.(year));
-    const closeBtn = el('button', 'yearview__close', '×');
-    closeBtn.type = 'button';
-    closeBtn.setAttribute('aria-label', 'Close the year view');
-    closeBtn.addEventListener('click', () => close());
-    actions.append(toTimeline, closeBtn);
+    actions.append(toTimeline);
 
     head.append(title, count, steps, actions);
     panel.append(head);
@@ -145,7 +153,7 @@ export function createYearView(root, {
       // sibling of the stage this view lives in. A single year has no window
       // to place on a 4.5-billion-year strip, so the minimap says nothing.
       document.body.dataset.yearView = 'true';
-      node.querySelector('.yearview__close')?.focus();
+      node.focus();
     },
 
     close,
