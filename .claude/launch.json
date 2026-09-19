@@ -4,7 +4,13 @@
     {
       "name": "chronology",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8000", "--directory", "site"],
+      "runtimeArgs": [
+        "tools/devserver.py",
+        "--port",
+        "8000",
+        "--directory",
+        "site"
+      ],
       "port": 8000
     }
   ]

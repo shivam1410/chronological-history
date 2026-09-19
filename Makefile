@@ -27,9 +27,8 @@ test-js:
 	@if ls site/js/*.test.js >/dev/null 2>&1; then node --test site/js/; \
 	else echo "no js tests yet"; fi
 
-serve:  ## preview at http://localhost:8000
-	@echo "serving site/ at http://localhost:8000"
-	@cd site && $(PY) -m http.server 8000
+serve:  ## preview at http://localhost:8000 (no browser caching)
+	@$(PY) tools/devserver.py --port 8000 --directory site
 
 clean:
 	rm -rf site/data/eras site/data/*.json .pytest_cache

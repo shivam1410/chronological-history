@@ -14,9 +14,13 @@
 <body>
 <header class="header">
   <h1 class="header__title">Chronological History</h1>
+  <nav class="eras" id="eras" aria-label="Jump to an era"></nav>
   <p class="header__meta" id="meta">Loading…</p>
 </header>
 <main class="stage" id="stage"></main>
+<div class="minimap" id="minimap-wrap">
+  <canvas class="minimap__canvas" id="minimap" aria-hidden="true"></canvas>
+</div>
 <div class="visually-hidden" role="status" aria-live="polite" id="live"></div>
 <script type="module" src="js/main.js"></script>
 </body>
