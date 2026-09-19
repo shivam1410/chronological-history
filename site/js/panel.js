@@ -50,6 +50,7 @@ export function createPanel(root, { onClose, onNavigate } = {}) {
     node.remove();
     node = null;
     openId = null;
+    delete document.body.dataset.panel;
     const returnTo = invoker;
     invoker = null;
     returnTo?.focus?.();
@@ -206,6 +207,10 @@ export function createPanel(root, { onClose, onNavigate } = {}) {
       root.append(panel);
       node = panel;
       openId = entry.id;
+      // Marks the document so the phone layout can give the card the minimap's
+      // row. The minimap is a sibling of the stage this panel lives in, so it
+      // cannot be covered from here.
+      document.body.dataset.panel = 'open';
       panel.querySelector('.panel__close').focus();
 
       loadDetail()

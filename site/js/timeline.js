@@ -18,6 +18,13 @@ const BAR_H = 14;
 const BAR_GAP = 4;
 const LANE_PAD_Y = 6;
 const LANE_SEP = 1;
+
+/*
+ * On a phone the lanes are separated by space, not a hairline. A 1px rule
+ * between a lane's last bars and the next lane's name strip left them reading
+ * as one continuous block; the gap gives each lane a visible start.
+ */
+const PHONE_LANE_SEP = 10;
 const MIN_BAR_W = 3;
 const MAX_ROWS = 6;
 const COLLAPSED_BAR_H = 5;
@@ -101,6 +108,7 @@ export function createTimeline(canvas, {
   const laneFont = () => (labelsAbove() ? PHONE_LANE_FONT : LANE_FONT);
   const labelFont = () => (labelsAbove() ? PHONE_LABEL_FONT : LANE_FONT);
   const axisFont = () => (labelsAbove() ? PHONE_AXIS_FONT : AXIS_FONT);
+  const laneSep = () => (labelsAbove() ? PHONE_LANE_SEP : LANE_SEP);
   let selectedId = null;
   let hover = null;
   const laneById = new Map(lanes.map((lane) => [lane.id, lane]));
@@ -203,7 +211,7 @@ export function createTimeline(canvas, {
         // this window, not what happened to be drawn.
         count: lane.rows.flat().length + lane.hidden,
       };
-      y += h + LANE_SEP;
+      y += h + laneSep();
       return out;
     });
 
@@ -442,12 +450,15 @@ export function createTimeline(canvas, {
     // inheriting whatever the lane name happened to leave behind.
     ctx.font = labelFont();
 
-    // Separator
-    ctx.strokeStyle = theme.rule;
-    ctx.beginPath();
-    ctx.moveTo(0, top + lane.h + 0.5);
-    ctx.lineTo(width, top + lane.h + 0.5);
-    ctx.stroke();
+    // Separator. Where lanes are parted by a gap the rule has nothing left to
+    // do, and would hang in the middle of that gap.
+    if (!labelsAbove()) {
+      ctx.strokeStyle = theme.rule;
+      ctx.beginPath();
+      ctx.moveTo(0, top + lane.h + 0.5);
+      ctx.lineTo(width, top + lane.h + 0.5);
+      ctx.stroke();
+    }
 
     ctx.save();
     ctx.beginPath();
