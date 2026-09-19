@@ -542,8 +542,9 @@ body[data-year-view="true"] .stage { padding-top: 0; }
 @media (pointer: coarse) {
   :root {
     --strip-h: 52px;
-    /* Taller on a phone: it is a drag target here, not just a picture. */
-    --minimap-h: 54px;
+    /* Taller on a phone: it is a drag target here, not just a picture, and
+       the marks now grow to fill it. */
+    --minimap-h: 74px;
     /* Raising the token covers every control that uses it. Listing them by
        name here is what left the date summary at 30px against a 44px search
        field, and below the target size this block exists to enforce. */

@@ -10,7 +10,12 @@ import { elapsed } from './format.js';
 import { createView } from './timescale.js';
 import { FULL_RANGE } from './eras.js';
 
-const MARK_H = 3;
+/*
+ * Marks grow with the strip rather than sitting at a fixed 3px. The cap only
+ * bites on a tall strip - a phone's - where the old one left the lower third
+ * empty; a desktop strip is short enough that the height, not the cap, decides.
+ */
+const MAX_PITCH = 9;
 const MARK_GAP = 1;
 const PAD_Y = 4;
 
@@ -54,7 +59,7 @@ export function createMinimap(canvas, { entries = [], lanes = [], onWindow } = {
     // One thin mark per entry, stacked by lane, so the strip reads as a
     // density map of where the dataset actually has material.
     const rows = Math.max(1, laneOrder.length);
-    const pitch = Math.min(MARK_H + MARK_GAP, (height - PAD_Y * 2) / rows);
+    const pitch = Math.min(MAX_PITCH, (height - PAD_Y * 2) / rows);
     ctx.globalAlpha = 0.75;
     for (const entry of entries) {
       const row = Math.max(0, laneOrder.indexOf(entry.lane));
