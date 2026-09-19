@@ -1,0 +1,303 @@
+# The record gap: each major figure paired with the date the surviving account
+# of them was written down. The distance is often centuries, and seeing the two
+# bars side by side says something prose struggles to.
+#
+# Where a tradition holds its text to be contemporaneous, eternal, or preserved
+# exactly by oral transmission, the note says so. These are the academic
+# datings of the surviving written record, not a verdict on the tradition.
+
+# ---- figures not yet in the dataset ----
+- id: mahavira
+  title: Mahavira
+  kind: person
+  regions: [north-india, india]
+  start: [-599, -497]
+  end: [-527, -425]
+  importance: 4
+  confidence: contested
+  categories: [religion, philosopher]
+  note: Jain tradition gives 599–527 BCE. Much modern scholarship places him
+    later, roughly 497–425 BCE, partly by tying his dates to the revised
+    chronology of the Buddha.
+  summary: The twenty-fourth and last Tirthankara of Jainism, who taught
+    radical non-violence, non-attachment and the many-sidedness of truth.
+  related: [jain-agamas, buddha]
+  texts:
+    - {title: "Jainism texts at the Internet Sacred Text Archive", url: "https://archive.sacred-texts.com/jai/index.htm"}
+
+- id: jesus
+  title: Jesus of Nazareth
+  kind: person
+  regions: [levant, west-asia]
+  start: [-6, -4]
+  end: [30, 33]
+  importance: 5
+  confidence: contested
+  categories: [religion]
+  note: Birth is placed a few years before 1 CE because the calendar's
+    sixth-century calculation was slightly off. The crucifixion is usually
+    dated to 30 or 33 CE.
+  summary: An itinerant Jewish teacher in Roman Judaea whose execution and the
+    movement that followed became Christianity.
+  related: [gospels]
+
+- id: zoroaster
+  title: Zoroaster
+  kind: person
+  regions: [persia, west-asia]
+  start: [-1500, -628]
+  end: [-1000, -551]
+  importance: 4
+  confidence: contested
+  categories: [religion, philosopher]
+  note: One of the widest genuine disputes in chronology. Linguistic analysis
+    of the Gathas suggests roughly 1500–1000 BCE; Greek and later Zoroastrian
+    sources suggest the seventh or sixth century BCE. The bracket spans both.
+  summary: Prophet of Zoroastrianism, who framed existence as a moral contest
+    between truth and falsehood — a dualism that shaped later Jewish, Christian
+    and Islamic thought.
+  related: [avesta-written]
+  texts:
+    - {title: "Zoroastrian texts at the Internet Sacred Text Archive", url: "https://archive.sacred-texts.com/zor/index.htm"}
+
+- id: homer
+  title: Homer
+  kind: person
+  regions: [greece, europe]
+  start: [-850, -750]
+  end: [-800, -700]
+  importance: 3
+  confidence: contested
+  note: Whether Homer was one poet, several, or a name attached to a tradition
+    is unresolved and probably unresolvable.
+  categories: [poet, literature]
+  summary: The name attached to the Iliad and the Odyssey, composed orally and
+    written down generations later.
+  related: [homeric-epics-written]
+
+# ---- the records ----
+- id: pali-canon-written
+  title: The Pali Canon is committed to writing
+  kind: work
+  regions: [sri-lanka, india]
+  start: [-29, -29]
+  end: [-17, 100]
+  importance: 5
+  confidence: contested
+  categories: [scripture]
+  note: Sri Lankan chronicles place the writing at Aluvihare during a famine,
+    around 29 BCE. Theravada tradition holds the oral transmission to have been
+    exact, so the gap is a gap in writing, not necessarily in content.
+  summary: Roughly four centuries after the Buddha's death, his teachings were
+    written on palm leaves in Sri Lanka because war and famine threatened the
+    monks who held them in memory.
+  related: [buddha]
+  texts:
+    - {title: "Buddhist texts at the Internet Sacred Text Archive", url: "https://archive.sacred-texts.com/bud/index.htm"}
+  sources:
+    - {title: "Encyclopaedia Britannica — Pali canon", url: "https://www.britannica.com/topic/Tipitaka"}
+
+- id: jain-agamas
+  title: The Jain Agamas are fixed in writing
+  kind: work
+  regions: [west-india, india]
+  start: [453, 466]
+  end: [453, 466]
+  importance: 4
+  confidence: contested
+  categories: [scripture]
+  note: The council at Valabhi is dated to either 453 or 466 CE. The Digambara
+    tradition holds that the original canon was lost entirely, and does not
+    accept the Svetambara Agamas — so the gap is disputed in kind, not only in
+    length.
+  summary: Close to a millennium after Mahavira, a council in Gujarat set down
+    the Svetambara canon that had until then been carried orally.
+  related: [mahavira]
+  texts:
+    - {title: "Jainism texts at the Internet Sacred Text Archive", url: "https://archive.sacred-texts.com/jai/index.htm"}
+
+- id: gospels
+  title: Composition of the canonical Gospels
+  kind: work
+  regions: [levant, west-asia]
+  start: [65, 70]
+  end: [95, 110]
+  importance: 5
+  confidence: contested
+  categories: [scripture]
+  note: Mark is generally dated around 65–75 CE, Matthew and Luke in the 80s,
+    John around 90–110. Traditional attributions to eyewitnesses are held by
+    many Christians and doubted by most critical scholars.
+  summary: The four accounts of Jesus's life were written between roughly
+    thirty-five and eighty years after his death, in Greek, for communities
+    scattered across the eastern Mediterranean.
+  related: [jesus, roman-empire]
+  texts:
+    - {title: "Bible and Christian texts at the Internet Sacred Text Archive", url: "https://archive.sacred-texts.com/bib/index.htm"}
+
+- id: quran-codified
+  title: The Uthmanic codification of the Quran
+  kind: work
+  regions: [arabia, west-asia]
+  start: [650, 650]
+  end: [656, 656]
+  importance: 5
+  confidence: medium
+  categories: [scripture]
+  note: Islamic doctrine holds the Quran to be the uncreated word of God,
+    recited by Muhammad and memorised and written by companions during his
+    lifetime; the caliph Uthman's work was standardisation of an existing text,
+    not composition. Manuscript finds at Sana'a are broadly consistent with an
+    early fixed text.
+  summary: Roughly two decades after Muhammad's death, a standard written
+    version was established and variant copies withdrawn — the shortest gap
+    between a founder and a fixed text of any major tradition.
+  related: [muhammad]
+  texts:
+    - {title: "Islamic texts at the Internet Sacred Text Archive", url: "https://archive.sacred-texts.com/isl/index.htm"}
+
+- id: hadith-collections
+  title: The canonical Hadith collections
+  kind: work
+  regions: [persia, west-asia]
+  start: [846, 846]
+  end: [915, 915]
+  importance: 4
+  confidence: medium
+  categories: [scripture]
+  summary: The reports of Muhammad's sayings and conduct were sifted and
+    compiled roughly two centuries after his death, by compilers who developed
+    an entire science of chain-of-transmission criticism to do it.
+  related: [muhammad, quran-codified]
+
+- id: adi-granth-compiled
+  title: Compilation of the Adi Granth
+  kind: work
+  regions: [north-india, india]
+  start: 1604
+  end: 1604
+  importance: 5
+  confidence: high
+  categories: [scripture]
+  summary: Guru Arjan compiled the hymns of the first five Gurus, together with
+    verses by Kabir, Ravidas, Namdev and Sufi poets — sixty-five years after
+    Guru Nanak's death, and unusually for scripture, largely in the authors'
+    own words rather than reported.
+  related: [guru-nanak, kabir, guru-granth-sahib]
+  texts:
+    - {title: "Sikh texts at the Internet Sacred Text Archive", url: "https://archive.sacred-texts.com/skh/index.htm"}
+
+- id: guru-granth-sahib
+  title: The Guru Granth Sahib becomes the final Guru
+  kind: work
+  regions: [north-india, india]
+  start: 1705
+  end: 1708
+  importance: 5
+  confidence: high
+  categories: [scripture]
+  note: Sikh tradition regards the text as a living Guru rather than a record
+    of one, which makes "record gap" an imperfect description here.
+  summary: Guru Gobind Singh added the ninth Guru's hymns and declared the
+    scripture itself the perpetual Guru, ending the line of human successors.
+  related: [adi-granth-compiled, guru-nanak]
+
+- id: bijak-kabir
+  title: The Kabir collections are written down
+  kind: work
+  regions: [north-india, india]
+  start: [1570, 1604]
+  end: [1700, 1805]
+  importance: 3
+  confidence: contested
+  categories: [scripture, poet]
+  note: Three separate traditions preserve different Kabirs — the Bijak of the
+    Kabir Panth, the Guru Granth Sahib selection, and the Rajasthani
+    manuscripts. They disagree on wording and on which verses are his at all.
+  summary: Kabir was probably illiterate and certainly did not write a book;
+    what survives was collected by followers from oral circulation, decades to
+    centuries after his death.
+  related: [kabir, adi-granth-compiled]
+
+- id: avesta-written
+  title: The Avesta is written down
+  kind: work
+  regions: [persia, west-asia]
+  start: [224, 300]
+  end: [600, 651]
+  importance: 4
+  confidence: contested
+  categories: [scripture]
+  note: A script was invented specifically to record it. Much of the canon was
+    subsequently lost; what survives is a fraction of what Sasanian sources
+    describe.
+  summary: Possibly two thousand years after Zoroaster, the Sasanian empire
+    committed the Avesta to writing — the widest gap between a founder and a
+    written record in this dataset.
+  related: [zoroaster]
+  texts:
+    - {title: "Zoroastrian texts at the Internet Sacred Text Archive", url: "https://archive.sacred-texts.com/zor/index.htm"}
+
+- id: plato-on-socrates
+  title: Plato and Xenophon write down Socrates
+  kind: work
+  regions: [greece, europe]
+  start: [-399, -395]
+  end: [-355, -347]
+  importance: 4
+  confidence: medium
+  note: Whether the dialogues report Socrates or use him as a mouthpiece for
+    Plato is the "Socratic problem", and is unresolved.
+  categories: [philosopher, literature]
+  summary: Socrates wrote nothing. Everything attributed to him comes from
+    students writing within a generation of his execution — the shortest gap
+    here, and still enough for two portraits that do not fully agree.
+  related: [socrates, plato]
+  texts:
+    - {title: "Classical texts at the Internet Sacred Text Archive", url: "https://archive.sacred-texts.com/cla/index.htm"}
+
+- id: homeric-epics-written
+  title: The Homeric epics are written down
+  kind: work
+  regions: [greece, europe]
+  start: [-750, -700]
+  end: [-550, -520]
+  importance: 3
+  confidence: contested
+  categories: [literature, epic]
+  summary: Composed and performed orally for generations, then fixed in writing
+    once the Greek alphabet made it possible — and standardised in Athens in
+    the sixth century BCE.
+  related: [homer]
+
+- id: talmud
+  title: Compilation of the Talmud
+  kind: work
+  regions: [levant, west-asia]
+  start: [200, 200]
+  end: [500, 600]
+  importance: 4
+  confidence: medium
+  categories: [scripture, logic]
+  summary: Three centuries of rabbinic argument recorded rather than resolved,
+    preserving minority opinions alongside majority rulings — a record of
+    reasoning as much as of conclusions.
+  texts:
+    - {title: "Judaism texts at the Internet Sacred Text Archive", url: "https://archive.sacred-texts.com/bib/index.htm"}
+
+- id: ramcharitmanas
+  title: Tulsidas writes the Ramcharitmanas
+  kind: work
+  regions: [north-india, india]
+  start: 1574
+  end: [1576, 1577]
+  importance: 5
+  confidence: medium
+  categories: [epic, scripture, poet]
+  summary: The counter-example in this file — an author writing his own book in
+    his own lifetime, in the spoken Awadhi rather than Sanskrit, and so putting
+    the story of Rama directly into the mouths of people who could not read it
+    otherwise.
+  related: [tulsidas, ramayana]
+  texts:
+    - {title: "Hindu texts at the Internet Sacred Text Archive", url: "https://archive.sacred-texts.com/hin/index.htm"}
