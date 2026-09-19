@@ -52,6 +52,8 @@ const PHONE_BAR_H = 20;
 const PHONE_ROWS = 3;
 const PHONE_LANE_FONT = '13px ui-sans-serif, system-ui, sans-serif';
 const PHONE_LABEL_FONT = '12.5px ui-sans-serif, system-ui, sans-serif';
+const AXIS_FONT = '11px ui-sans-serif, system-ui, sans-serif';
+const PHONE_AXIS_FONT = '12.5px ui-sans-serif, system-ui, sans-serif';
 
 /** Lane names wrap rather than truncate; this caps how far they wrap. */
 const LANE_LABEL_LINES = 3;
@@ -98,6 +100,7 @@ export function createTimeline(canvas, {
   const barH = () => (labelsAbove() ? PHONE_BAR_H : BAR_H);
   const laneFont = () => (labelsAbove() ? PHONE_LANE_FONT : LANE_FONT);
   const labelFont = () => (labelsAbove() ? PHONE_LABEL_FONT : LANE_FONT);
+  const axisFont = () => (labelsAbove() ? PHONE_AXIS_FONT : AXIS_FONT);
   let selectedId = null;
   let hover = null;
   const laneById = new Map(lanes.map((lane) => [lane.id, lane]));
@@ -215,7 +218,7 @@ export function createTimeline(canvas, {
     ctx.fillStyle = theme.bgRaised;
     ctx.fillRect(0, 0, width, AXIS_H);
 
-    ctx.font = '11px ui-sans-serif, system-ui, sans-serif';
+    ctx.font = axisFont();
     ctx.textBaseline = 'middle';
 
     for (const tick of view.ticks()) {
@@ -517,7 +520,7 @@ export function createTimeline(canvas, {
     ctx.stroke();
     ctx.globalAlpha = 1;
 
-    ctx.font = '11px ui-sans-serif, system-ui, sans-serif';
+    ctx.font = axisFont();
     ctx.textBaseline = 'middle';
 
     // Year badge, pinned to the axis so it never covers the lane it describes.
