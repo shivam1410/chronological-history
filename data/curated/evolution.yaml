@@ -1,0 +1,431 @@
+# Life before us. The Earth & Life lane previously jumped from the Pleistocene
+# straight to Homo sapiens, which skipped four billion years and every other
+# member of our own genus.
+
+# ---- the deep record ----
+- id: origin-of-life
+  title: Origin of life
+  kind: biological
+  regions: [earth-life]
+  start: "4.1 Ga"
+  end: "3.5 Ga"
+  importance: 5
+  confidence: contested
+  categories: [evolution]
+  note: Carbon isotope signatures in Greenland zircons hint at 4.1 Ga;
+    undisputed microfossils are closer to 3.5 Ga. How life began remains
+    unsolved.
+  summary: Self-replicating chemistry appeared within a few hundred million
+    years of the Earth becoming habitable — startlingly fast, which is one
+    reason the question of life elsewhere stays open.
+  related: [earth-formation]
+
+- id: great-oxidation
+  title: The Great Oxidation Event
+  kind: event
+  regions: [earth-life]
+  start: "2.4 Ga"
+  end: "2 Ga"
+  importance: 5
+  confidence: medium
+  categories: [evolution, climate, extinction]
+  summary: Cyanobacteria filled the atmosphere with oxygen, poisoning most
+    existing life and rusting the oceans. The largest pollution event in
+    history, and the reason anything breathes today.
+
+- id: eukaryotes
+  title: First eukaryotic cells
+  kind: biological
+  regions: [earth-life]
+  start: "2.1 Ga"
+  end: "1.6 Ga"
+  importance: 5
+  confidence: contested
+  categories: [evolution]
+  summary: One cell engulfed another and kept it, producing the mitochondrion.
+    Every plant, animal and fungus descends from that single merger.
+
+- id: multicellular-life
+  title: Multicellular life and the Ediacaran biota
+  kind: biological
+  regions: [earth-life]
+  start: "1 Ga"
+  end: "538 Ma"
+  importance: 4
+  confidence: medium
+  categories: [evolution]
+  summary: Cells began staying together and specialising, producing the soft
+    frond-like Ediacaran organisms that preceded the Cambrian and mostly left
+    no descendants.
+  related: [cambrian-explosion]
+
+- id: land-plants
+  title: Plants colonise land
+  kind: biological
+  regions: [earth-life]
+  start: "500 Ma"
+  end: "420 Ma"
+  importance: 4
+  confidence: medium
+  categories: [evolution]
+  summary: Life moved out of the water, building the soils and drawing down the
+    carbon dioxide that made a terrestrial biosphere possible.
+
+- id: tetrapods-on-land
+  title: Vertebrates walk on land
+  kind: biological
+  regions: [earth-life]
+  start: "395 Ma"
+  end: "360 Ma"
+  importance: 4
+  confidence: medium
+  categories: [evolution]
+  summary: Lobe-finned fish with limb-like fins moved into shallows and then
+    onto land. Every amphibian, reptile, bird and mammal is descended from
+    them, which is why our limbs have the same bone pattern.
+
+- id: first-mammals
+  title: First mammals
+  kind: biological
+  regions: [earth-life]
+  start: "225 Ma"
+  end: "66 Ma"
+  importance: 4
+  confidence: medium
+  categories: [evolution]
+  summary: Small, nocturnal and insect-eating, mammals spent 160 million years
+    in the shadow of the dinosaurs before the asteroid gave them the daylight.
+  related: [dinosaur-era, kpg-extinction]
+
+- id: first-birds
+  title: Birds evolve from dinosaurs
+  kind: biological
+  regions: [earth-life]
+  start: "165 Ma"
+  end: "150 Ma"
+  importance: 4
+  confidence: medium
+  categories: [evolution]
+  summary: Feathered theropods took to the air. Birds are not the dinosaurs'
+    relatives but their surviving branch, which means the group never actually
+    went extinct.
+  related: [dinosaur-era]
+
+- id: flowering-plants
+  title: Flowering plants
+  kind: biological
+  regions: [earth-life]
+  start: "140 Ma"
+  end: ongoing
+  importance: 3
+  confidence: medium
+  categories: [evolution]
+  summary: Angiosperms coevolved with insect pollinators and came to dominate
+    the land, eventually supplying almost everything humans eat.
+
+- id: primates
+  title: First primates
+  kind: biological
+  regions: [earth-life]
+  start: "66 Ma"
+  end: ongoing
+  importance: 4
+  confidence: medium
+  categories: [evolution]
+  summary: Small tree-dwellers with grasping hands, forward-facing eyes and
+    unusually large brains for their size, radiating in the space left by the
+    dinosaurs.
+  related: [kpg-extinction]
+
+- id: grasslands-spread
+  title: Grasslands spread
+  kind: period
+  regions: [earth-life]
+  start: "34 Ma"
+  end: "5 Ma"
+  importance: 3
+  confidence: medium
+  categories: [evolution, climate]
+  summary: A cooling, drying world replaced forest with open grassland across
+    Africa — the habitat change that put our ancestors on the ground and
+    eventually on two feet.
+
+# ---- the hominin line ----
+- id: apes-emerge
+  title: Apes diverge from monkeys
+  kind: biological
+  regions: [earth-life, africa]
+  start: "25 Ma"
+  end: ongoing
+  importance: 3
+  confidence: medium
+  categories: [evolution]
+  summary: The hominoids appear — larger-bodied, tailless, with shoulders built
+    for hanging rather than running along branches.
+
+- id: human-chimp-split
+  title: The human and chimpanzee lines separate
+  kind: event
+  regions: [earth-life, africa]
+  start: "9 Ma"
+  end: "6 Ma"
+  importance: 5
+  confidence: contested
+  categories: [evolution]
+  note: Molecular clocks give a range of roughly 6 to 13 million years
+    depending on assumed mutation rates; the fossil record is sparse.
+  summary: The last common ancestor of humans and chimpanzees lived in Africa.
+    Everything human happened in the time since.
+  related: [sahelanthropus]
+
+- id: sahelanthropus
+  title: Sahelanthropus tchadensis
+  kind: biological
+  regions: [earth-life, west-africa]
+  start: "7.2 Ma"
+  end: "6.8 Ma"
+  importance: 3
+  confidence: contested
+  note: Whether it walked upright, and whether it sits on our side of the split
+    at all, is still argued from a single distorted skull.
+  categories: [evolution]
+  summary: One of the oldest candidates for a hominin, found in Chad, with a
+    skull base hinting at upright posture.
+
+- id: ardipithecus
+  title: Ardipithecus ramidus
+  kind: biological
+  regions: [earth-life, east-africa]
+  start: "4.5 Ma"
+  end: "4.2 Ma"
+  importance: 3
+  confidence: medium
+  categories: [evolution]
+  summary: Walked upright on the ground while keeping a grasping big toe for
+    the trees, showing that bipedalism came before the savannah.
+
+- id: australopithecus
+  title: Australopithecus afarensis
+  kind: biological
+  regions: [earth-life, east-africa]
+  start: "3.9 Ma"
+  end: "2.9 Ma"
+  importance: 5
+  confidence: medium
+  categories: [evolution]
+  summary: Fully bipedal with an ape-sized brain, known from the skeleton
+    called Lucy and from footprints at Laetoli preserved in volcanic ash. Upright
+    walking came first; the big brain came much later.
+  related: [stone-tools, human-chimp-split]
+
+- id: stone-tools
+  title: The first stone tools
+  kind: technology
+  regions: [earth-life, east-africa]
+  start: "3.3 Ma"
+  end: "2.6 Ma"
+  importance: 5
+  confidence: contested
+  categories: [evolution, discovery]
+  note: The Lomekwi tools at 3.3 Ma predate our genus and are disputed; the
+    Oldowan industry from 2.6 Ma is not.
+  summary: Deliberately struck sharp flakes, the beginning of a technological
+    record that runs unbroken to the present.
+  related: [australopithecus, homo-habilis]
+
+- id: homo-habilis
+  title: Homo habilis
+  kind: biological
+  regions: [earth-life, east-africa]
+  start: "2.4 Ma"
+  end: "1.65 Ma"
+  importance: 4
+  confidence: contested
+  note: Whether habilis belongs in Homo at all is a long-running argument.
+  categories: [evolution]
+  summary: The earliest widely accepted member of our genus, with a larger
+    brain than the australopithecines and a firm association with stone tools.
+
+- id: homo-erectus
+  title: Homo erectus
+  kind: biological
+  regions: [earth-life, east-africa, east-asia]
+  start: "2 Ma"
+  end: "110 ka"
+  importance: 5
+  confidence: medium
+  categories: [evolution]
+  summary: The first hominin with body proportions like ours, the first to
+    leave Africa, and the longest-lived species of human by a wide margin —
+    nearly two million years, roughly ten times our own run so far.
+  related: [control-of-fire, acheulean-handaxe]
+
+- id: acheulean-handaxe
+  title: The Acheulean hand axe
+  kind: technology
+  regions: [earth-life, east-africa]
+  start: "1.76 Ma"
+  end: "130 ka"
+  importance: 4
+  confidence: medium
+  categories: [evolution, discovery]
+  summary: A symmetrical teardrop tool made to essentially the same design
+    across Africa, Europe and Asia for more than a million years — the longest
+    unchanged technology in human history.
+  related: [homo-erectus]
+
+- id: control-of-fire
+  title: Control of fire
+  kind: technology
+  regions: [earth-life, east-africa]
+  start: "1.5 Ma"
+  end: "400 ka"
+  importance: 5
+  confidence: contested
+  note: Scattered evidence goes back 1.5 million years; habitual, controlled
+    use is only firmly attested from around 400,000 years ago.
+  summary: Cooking releases far more energy from food than chewing raw, and is
+    widely argued to be what allowed brains to grow while guts shrank.
+  related: [homo-erectus]
+
+- id: homo-heidelbergensis
+  title: Homo heidelbergensis
+  kind: biological
+  regions: [earth-life, africa, europe]
+  start: "700 ka"
+  end: "200 ka"
+  importance: 3
+  confidence: contested
+  categories: [evolution]
+  summary: A widespread population generally taken to be the common ancestor of
+    Neanderthals, Denisovans and ourselves, though the naming is contested.
+
+- id: neanderthals
+  title: Neanderthals
+  kind: biological
+  regions: [earth-life, europe, west-asia]
+  start: "430 ka"
+  end: "40 ka"
+  importance: 5
+  confidence: medium
+  categories: [evolution]
+  summary: Cold-adapted humans across Europe and western Asia with brains as
+    large as ours, who buried their dead, made ochre pigment and glue, and
+    cared for the injured. They interbred with our ancestors, and most people
+    outside Africa carry a small percentage of their DNA.
+  related: [homo-sapiens, denisovans, neanderthal-extinction]
+  sources:
+    - {title: "Natural History Museum — Neanderthals", url: "https://www.nhm.ac.uk/discover/who-were-the-neanderthals.html"}
+
+- id: denisovans
+  title: Denisovans
+  kind: biological
+  regions: [earth-life, central-asia, east-asia]
+  start: "300 ka"
+  end: "30 ka"
+  importance: 4
+  confidence: contested
+  note: Known almost entirely from DNA rather than bones — a finger fragment, a
+    few teeth and a jaw. A whole human population identified by genome first.
+  summary: A sister group to the Neanderthals spread across Asia, whose genes
+    survive in present-day populations from Melanesia to Tibet, including a
+    variant that makes high-altitude life possible.
+  related: [neanderthals, homo-sapiens]
+
+- id: homo-naledi
+  title: Homo naledi
+  kind: biological
+  regions: [earth-life, east-africa]
+  start: "335 ka"
+  end: "236 ka"
+  importance: 3
+  confidence: contested
+  note: Claims that it deliberately buried its dead are disputed and would be
+    remarkable for a brain a third the size of ours.
+  summary: A small-brained human found deep inside a South African cave system,
+    alive at the same time as the first Homo sapiens.
+
+- id: homo-floresiensis
+  title: Homo floresiensis
+  kind: biological
+  regions: [earth-life, southeast-asia]
+  start: "100 ka"
+  end: "50 ka"
+  importance: 3
+  confidence: medium
+  categories: [evolution]
+  summary: A metre-tall human on the Indonesian island of Flores, shrunk by
+    island isolation and surviving until our own species arrived nearby.
+
+- id: behavioural-modernity
+  title: Symbolic behaviour appears
+  kind: period
+  regions: [earth-life, africa]
+  start: "120 ka"
+  end: "40 ka"
+  importance: 5
+  confidence: contested
+  categories: [evolution]
+  note: Whether this was a sudden revolution or a slow accumulation is one of
+    the central arguments in palaeoanthropology.
+  summary: Engraved ochre, shell beads, pigment and long-distance exchange
+    appear in Africa long before the European cave paintings — evidence of
+    minds that dealt in symbols.
+  related: [homo-sapiens, cave-art]
+
+- id: out-of-africa
+  title: The dispersal out of Africa
+  kind: event
+  regions: [earth-life, africa, west-asia]
+  start: "80 ka"
+  end: "50 ka"
+  importance: 5
+  confidence: medium
+  note: Earlier excursions reached the Levant by 190,000 years ago but left no
+    descendants; this is the dispersal everyone outside Africa descends from.
+  summary: A relatively small population left Africa and, within forty thousand
+    years, occupied every continent except Antarctica.
+  related: [homo-sapiens, aboriginal-australia, peopling-of-americas]
+
+- id: cave-art
+  title: The oldest cave art
+  kind: work
+  regions: [earth-life, southeast-asia, europe]
+  start: "51 ka"
+  end: "30 ka"
+  importance: 4
+  confidence: medium
+  summary: Painted animals and hand stencils in Sulawesi, Borneo and southern
+    France, including what may be the oldest narrative scene yet found. The
+    Sulawesi dates overturned the assumption that such art began in Europe.
+  categories: [evolution]
+  related: [behavioural-modernity]
+
+- id: neanderthal-extinction
+  title: Neanderthals disappear
+  kind: event
+  regions: [earth-life, europe]
+  start: "42 ka"
+  end: "39 ka"
+  importance: 4
+  confidence: medium
+  categories: [evolution, extinction]
+  summary: The last Neanderthal populations vanish a few thousand years after
+    Homo sapiens reaches Europe, leaving us the only human species on Earth for
+    the first time in millions of years.
+  related: [neanderthals, homo-sapiens]
+
+- id: dog-domestication
+  title: Domestication of the dog
+  kind: technology
+  regions: [earth-life, central-asia, europe]
+  start: "30 ka"
+  end: "15 ka"
+  importance: 4
+  confidence: contested
+  categories: [evolution, discovery]
+  note: Where and how many times wolves were domesticated is unsettled; the
+    genetic and archaeological dates disagree.
+  summary: The first domesticated animal, thousands of years before any plant
+    or livestock, and the only one that arguably chose us as much as we chose it.
+  related: [neolithic-revolution]

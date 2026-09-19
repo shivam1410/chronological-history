@@ -27,11 +27,13 @@ body {
   padding: 0 var(--step-4);
   border-bottom: 1px solid var(--rule);
   background: var(--bg-raised);
-  /* Without these the header cannot shrink, so it forces the page wider than
-     the screen - which widens the layout viewport, which then stops every
-     max-width query below from ever matching. */
+  /* min-width: 0 is what actually lets the header shrink; without it the
+     header forces the page wider than the screen, which widens the layout
+     viewport and stops every max-width query below from ever matching.
+     Overflow must stay visible - the search and date dropdowns are absolutely
+     positioned children, and clipping here cuts them off entirely. */
   min-width: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .header > * { min-width: 0; }
@@ -241,6 +243,7 @@ body {
 .eras {
   display: flex;
   gap: var(--step-1);
+  min-width: 0;
   overflow-x: auto;
   scrollbar-width: none;
 }
