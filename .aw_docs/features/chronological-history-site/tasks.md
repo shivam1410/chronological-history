@@ -240,6 +240,21 @@ minimap, and the URL as the source of truth.
 
 ## Phase 3 — Curated dataset
 
+### 3.0 Reading-link field · `code` · RED → GREEN
+- Files: `pipeline/model.py`, `pipeline/loader.py`, `pipeline/emit.py`,
+  `tests/test_model.py`, `tests/test_loader.py`, `tests/test_emit.py`, `README.md`
+- [ ] RED: tests asserting `texts:` parses into `Source` records, defaults to `()`,
+      rejects an entry missing `title` or `url` with the file/entry context, and lands in
+      the era bundle alongside `sources` but under its own key
+- [ ] Run `make test-py` — confirm RED, implement, confirm green
+- [ ] Document the field and the sources-vs-texts distinction in `README.md`
+- Acceptance: an entry can carry both a dating citation and a link to read the work
+- Validation: `make test-py && make build`
+- Commit: `feat(pipeline): texts field for links to the works themselves`
+- Size: S
+- Prerequisite for 3.2 and 3.4, which author the scripture entries that use it.
+
+
 **Outcome:** ≥ 400 curated entries; every lane populated from 500 BCE on; every original
 question answerable with sources.
 

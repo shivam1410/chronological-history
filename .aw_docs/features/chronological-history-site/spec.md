@@ -128,7 +128,8 @@ class Entry:
     significance: str | None = None
     note: str | None = None           # used to name competing scholarly positions
     related: tuple[str,...] = ()      # entry ids; validated to exist
-    sources: tuple[Source,...] = ()
+    sources: tuple[Source,...] = ()   # citations for the DATING claim
+    texts: tuple[Source,...] = ()     # where to READ the work itself
     wikidata: str | None = None       # Qid
     confidence: str = "high"          # high | medium | contested
     origin: str = "curated"           # curated | wikidata
@@ -163,6 +164,19 @@ alone, with no further fetch. Array-of-arrays to keep bytes down:
 
 `flags` is a bitfield: `1` = uncertain start, `2` = uncertain end, `4` = ongoing,
 `8` = contested, `16` = imported.
+
+### Reading links (`texts:`)
+
+`sources:` cites the evidence for an entry's *dates*. `texts:` points at the work
+itself, so a reader can go from "Ramayana, c. 500 BCE - 200 CE" straight to a full
+translation. They are separate fields because they answer different questions and have
+different trust requirements: a source has to be current scholarship, whereas a text
+just has to be a faithful, freely readable edition.
+
+The Internet Sacred Text Archive (`archive.sacred-texts.com`) is the main supplier:
+public domain, stable URLs, no API and no machine-readable metadata, so the mapping is
+hand-curated - roughly 40-60 scripture and `work` entries, not a scrape. Validation
+treats `texts[]` exactly like `sources[]`: each needs a title and an http(s) url.
 
 ### `site/data/eras/<bucket>.json`
 
@@ -322,6 +336,7 @@ groups with empty lanes omitted. Entries whose `sMin == year` or `eMax == year` 
 
 | Decision | Chosen | Rejected | Why |
 |---|---|---|---|
+| sacred-texts.com | curated `texts:` reading links | scraping it for dates | its translations are 1880s-1910s; their chronologies are a century stale and would degrade exactly the contested entries we bracket most carefully |
 | Storage format | YAML source → generated JSON | SQLite + sql.js | ~1.5 MB wasm payload; binary blobs are not diffable or reviewable in git |
 | Site framework | none (vanilla ESM) | Vue / React / Svelte | build step and dependency tree for a two-view site |
 | JS test runner | `node --test` (built-in) | Vitest / Jest | keeps the repo at zero npm dependencies |
