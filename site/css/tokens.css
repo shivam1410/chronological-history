@@ -41,6 +41,8 @@
   --header-h: 52px;
   --axis-h: 34px;
   --minimap-h: 38px;
+  /* Height of a stacked control strip below the header on narrow screens. */
+  --strip-h: 33px;
 }
 
 @media (prefers-color-scheme: dark) {

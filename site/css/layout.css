@@ -337,7 +337,25 @@ body {
 }
 
 @media (max-width: 980px) {
-  .eras { display: none; }
+  /* The era chips get their own scrollable strip rather than being hidden or
+     folded into a menu. Jumping eras is the main way to move across 4.5
+     billion years, so burying it would cost two taps and make the primary
+     navigation undiscoverable. The row already scrolls horizontally. */
+  .eras {
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    z-index: 15;
+    height: var(--strip-h);
+    align-items: center;
+    padding: 0 var(--step-3);
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg-raised);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .stage { padding-top: var(--strip-h); }
 }
 
 @media (max-width: 760px) {
@@ -353,19 +371,23 @@ body {
   .header__title { display: none; }
   .search { max-width: none; flex: 1 1 auto; }
 
+  /* Two strips stack under the header: dates first, then eras. */
   .range {
     position: absolute;
     top: var(--header-h);
     left: 0;
     right: 0;
     z-index: 20;
+    height: var(--strip-h);
     justify-content: center;
-    padding: 5px var(--step-3);
+    padding: 0 var(--step-3);
     border-bottom: 1px solid var(--rule);
     background: var(--bg-raised);
   }
 
+  .eras { top: calc(var(--header-h) + var(--strip-h)); }
+
   .range__input { width: 96px; }
-  .stage { padding-top: 31px; }
+  .stage { padding-top: calc(var(--strip-h) * 2); }
   .hint { display: none; }
 }
