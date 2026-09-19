@@ -34,10 +34,27 @@ jobs:
       - name: Confirm site/data is in sync with data/
         # site/data is generated but committed, so the site never needs the
         # pipeline at deploy time. A stale bundle would ship silently.
+        #
+        # meta.json carries a build timestamp that changes on every run by
+        # design, so it is compared with that field removed; everything else
+        # must be byte-identical.
         run: |
-          python -m pipeline.cli build
-          if ! git diff --quiet -- site/data; then
-            echo "::error::site/data is out of date. Run 'make build' and commit the result."
-            git --no-pager diff --stat -- site/data
-            exit 1
+          strip_generated() {
+            python -c "import json,sys; d=json.load(sys.stdin); d.pop('generated', None); print(json.dumps(d, sort_keys=True))"
+          }
+          git show HEAD:site/data/meta.json | strip_generated > /tmp/meta-before.json
+          python -m pipeline.cli build >/dev/null
+          strip_generated < site/data/meta.json > /tmp/meta-after.json
+
+          failed=0
+          if ! diff -q /tmp/meta-before.json /tmp/meta-after.json >/dev/null; then
+            echo "::error::site/data/meta.json is out of date. Run 'make build' and commit the result."
+            diff /tmp/meta-before.json /tmp/meta-after.json | head -20 || true
+            failed=1
           fi
+          if ! git diff --quiet -- site/data/spine.json site/data/eras; then
+            echo "::error::site/data bundles are out of date. Run 'make build' and commit the result."
+            git --no-pager diff --stat -- site/data/spine.json site/data/eras
+            failed=1
+          fi
+          exit $failed
