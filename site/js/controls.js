@@ -76,21 +76,113 @@ export function createControls({
 }) {
   const index = buildIndex(entries);
 
-  // A shared datalist turns both range fields into combo boxes: the suggestions
-  // drop down, and anything else can still be typed.
-  const anchors = document.createElement('datalist');
-  anchors.id = 'year-anchors';
-  for (const [value, label] of YEAR_ANCHORS) {
-    const option = document.createElement('option');
-    option.value = value;
-    option.label = label;
-    anchors.append(option);
+  // A real dropdown rather than a native datalist: Safari renders no
+  // affordance at all for datalist on a text input, and where browsers do
+  // show one it is a 6px arrow that people miss. Each field gets a visible
+  // chevron and a styled, keyboard-navigable list.
+  function attachDropdown(input) {
+    const field = document.createElement('div');
+    field.className = 'range__field';
+    input.replaceWith(field);
+    field.append(input);
+
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'range__toggle';
+    toggle.tabIndex = -1;
+    toggle.setAttribute('aria-label', 'Choose a date');
+    toggle.textContent = '\u25be';
+
+    const list = document.createElement('ul');
+    list.className = 'range__list';
+    list.setAttribute('role', 'listbox');
+    list.hidden = true;
+
+    let open = -1;
+
+    const close = () => {
+      list.hidden = true;
+      open = -1;
+      input.setAttribute('aria-expanded', 'false');
+      paint();
+    };
+
+    const choose = (i) => {
+      input.value = YEAR_ANCHORS[i][0];
+      close();
+      rangeForm.requestSubmit
+        ? rangeForm.requestSubmit()
+        : rangeForm.dispatchEvent(new Event('submit', { cancelable: true }));
+    };
+
+    YEAR_ANCHORS.forEach(([value, label], i) => {
+      const item = document.createElement('li');
+      item.className = 'range__option';
+      item.setAttribute('role', 'option');
+      item.innerHTML = '';
+      const when = document.createElement('span');
+      when.className = 'range__option-value';
+      when.textContent = value;
+      const what = document.createElement('span');
+      what.className = 'range__option-label';
+      what.textContent = label;
+      item.append(when, what);
+      item.addEventListener('mousedown', (event) => {
+        event.preventDefault(); // blur would close the list first
+        choose(i);
+      });
+      list.append(item);
+    });
+
+    function paint() {
+      [...list.children].forEach((item, i) => {
+        item.setAttribute('aria-selected', String(i === open));
+        if (i === open) item.dataset.active = 'true';
+        else delete item.dataset.active;
+      });
+      if (open >= 0) list.children[open].scrollIntoView({ block: 'nearest' });
+    }
+
+    function show() {
+      list.hidden = false;
+      input.setAttribute('aria-expanded', 'true');
+      paint();
+    }
+
+    toggle.addEventListener('mousedown', (event) => {
+      event.preventDefault();
+      if (list.hidden) { show(); input.focus(); } else close();
+    });
+
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        if (list.hidden) show();
+        open = (open + 1) % YEAR_ANCHORS.length;
+        paint();
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        if (list.hidden) show();
+        open = (open - 1 + YEAR_ANCHORS.length) % YEAR_ANCHORS.length;
+        paint();
+      } else if (event.key === 'Enter' && open >= 0) {
+        event.preventDefault();
+        choose(open);
+      } else if (event.key === 'Escape') {
+        close();
+      }
+    });
+
+    input.addEventListener('blur', () => setTimeout(close, 120));
+    input.setAttribute('role', 'combobox');
+    input.setAttribute('aria-expanded', 'false');
+    input.setAttribute('autocomplete', 'off');
+
+    field.append(toggle, list);
   }
-  rangeForm.append(anchors);
-  fromInput.setAttribute('list', anchors.id);
-  toInput.setAttribute('list', anchors.id);
-  let results = [];
-  let active = -1;
+
+  attachDropdown(fromInput);
+  attachDropdown(toInput);
 
   // ---- search ------------------------------------------------------------
 
