@@ -11,7 +11,9 @@
  * present), so the curve stays smooth and strictly monotonic end to end.
  */
 
-import { BP_EPOCH, DEEP_TIME_BP, formatYear } from './format.js';
+import {
+  BP_EPOCH, DEEP_TIME_BP, formatYear, fromAstroYear, toAstroYear,
+} from './format.js';
 
 export const ORIGIN_YEAR = -4_540_000_000;
 
@@ -37,11 +39,11 @@ export const ANCHORS = [
   [PRESENT, 1.0],
 ];
 
-// The public astro()/historical() in format.js reject year zero, which is right
-// for data. The scale is a continuous function and has to pass smoothly through
-// the boundary, so it uses unguarded equivalents.
-const toAstro = (year) => (year < 0 ? year + 1 : year);
-const fromAstro = (a) => (a <= 0 ? a - 1 : a);
+// The scale is a continuous function and has to pass smoothly through the
+// year-zero seam, so it uses format.js's unguarded conversions rather than the
+// data-facing astro()/historical(), which reject year 0 by design.
+const toAstro = toAstroYear;
+const fromAstro = fromAstroYear;
 
 /** log10 of years-before-present, offset so the argument stays positive. */
 const sp = (year) => Math.log10(BP_EPOCH - toAstro(year) + 1000);

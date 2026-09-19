@@ -4,7 +4,7 @@ import { createPanel } from './panel.js';
 import { createRouter } from './router.js';
 import { createMinimap } from './minimap.js';
 import { ERAS } from './eras.js';
-import { formatYear, roundYear } from './format.js';
+import { elapsed, formatYear, roundYear } from './format.js';
 import { ORIGIN_YEAR, presentYear } from './timescale.js';
 
 const stage = document.querySelector('#stage');
@@ -102,8 +102,8 @@ async function start() {
     let best = null;
     let bestFraction = 0;
     for (const era of ERAS) {
-      const overlap = Math.min(view.to, era.to) - Math.max(view.from, era.from);
-      const fraction = overlap / (view.to - view.from);
+      const overlap = elapsed(Math.max(view.from, era.from), Math.min(view.to, era.to));
+      const fraction = overlap / view.span;
       if (overlap > 0 && fraction > bestFraction) {
         bestFraction = fraction;
         best = era.id;
@@ -137,7 +137,7 @@ async function start() {
     timeline.select(entry.id);
     if (focus) {
       // Arriving from a related-entry chip: bring the entry into view.
-      const pad = Math.max(1, (entry.eMax - entry.sMin) * 0.6);
+      const pad = Math.max(1, elapsed(entry.sMin, entry.eMax) * 0.6);
       timeline.setView(entry.sMin - pad, entry.eMax + pad);
     }
     panel.open(entry, async () => {

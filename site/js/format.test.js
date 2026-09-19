@@ -1,6 +1,9 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { astro, historical, duration, formatYear, formatDuration, formatAge, roundYear } from './format.js';
+import {
+  astro, historical, duration, elapsed, formatYear, formatDuration,
+  formatAge, roundYear, toAstroYear, fromAstroYear,
+} from './format.js';
 
 describe('year numbering', () => {
   test('astro shifts BCE up by one', () => {
@@ -82,5 +85,38 @@ describe('roundYear', () => {
     for (let y = -3; y <= 3; y += 0.1) {
       assert.doesNotThrow(() => formatYear(roundYear(y)), `failed at ${y}`);
     }
+  });
+});
+
+describe('elapsed', () => {
+  test('matches duration for whole years', () => {
+    assert.equal(elapsed(1526, 1857), 331);
+    assert.equal(elapsed(-1, 1), 1);
+    assert.equal(elapsed(-500, 200), 699);
+  });
+
+  test('tolerates fractional years, which duration cannot', () => {
+    // A view sits at fractional years all the time; astro() throws on 0, so
+    // UI heuristics need a conversion that stays continuous through the seam.
+    assert.doesNotThrow(() => elapsed(-0.4, 0.4));
+    assert.ok(Math.abs(elapsed(1500.5, 1600.5) - 100) < 1e-9);
+  });
+
+  test('is the astro difference, not raw subtraction', () => {
+    // Raw subtraction would say 701 here, counting the year that is not a year.
+    assert.notEqual(elapsed(-500, 200), 200 - -500);
+  });
+});
+
+describe('toAstroYear / fromAstroYear', () => {
+  test('round-trip whole years', () => {
+    for (const y of [-500, -1, 1, 1526]) {
+      assert.equal(fromAstroYear(toAstroYear(y)), y);
+    }
+  });
+
+  test('do not throw on zero, unlike astro/historical', () => {
+    assert.doesNotThrow(() => toAstroYear(0));
+    assert.throws(() => astro(0));
   });
 });

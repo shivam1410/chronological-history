@@ -1,5 +1,7 @@
 # Chronological History
 
+**Live: https://shivam1410.github.io/chronological-history/**
+
 An interactive timeline of everything — from the formation of the Earth 4.54 billion
 years ago to the present day — built to make historical *simultaneity* visible.
 
@@ -89,4 +91,5 @@ cross-reference stops the build rather than silently corrupting the timeline.
 | `site/` | The deployable static site |
 | `site/js/*.test.js` | Unit tests for the pure modules, via `node --test` |
 | `tests/` | pytest suite for the pipeline |
-| `.aw_docs/features/` | Planning artifacts: PRD, design, spec, tasks |
+| `docs/` | Planning artifacts: PRD, design, spec, tasks, execution log |
+| `.github/workflows/` | CI (tests + data freshness) and GitHub Pages deploy |

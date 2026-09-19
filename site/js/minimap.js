@@ -6,6 +6,7 @@
  * Dragging it moves the main window without changing the zoom.
  */
 
+import { elapsed } from './format.js';
 import { createView } from './timescale.js';
 import { FULL_RANGE } from './eras.js';
 
@@ -93,7 +94,7 @@ export function createMinimap(canvas, { entries = [], lanes = [], onWindow } = {
   /** Centre the current window on the year under `px`, keeping its span. */
   function moveTo(px) {
     const centre = view.unproject(Math.max(0, Math.min(width, px)));
-    const half = (window_.to - window_.from) / 2;
+    const half = elapsed(window_.from, window_.to) / 2;
     onWindow?.(centre - half, centre + half);
   }
 

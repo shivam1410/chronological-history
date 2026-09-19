@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate the data sources
+        run: python -m pipeline.cli validate
+
+      - name: Python tests
+        run: python -m pytest
+
+      - name: JavaScript tests
+        run: node --test site/js/
+
+      - name: Confirm site/data is in sync with data/
+        # site/data is generated but committed, so the site never needs the
+        # pipeline at deploy time. A stale bundle would ship silently.
+        run: |
+          python -m pipeline.cli build
+          if ! git diff --quiet -- site/data; then
+            echo "::error::site/data is out of date. Run 'make build' and commit the result."
+            git --no-pager diff --stat -- site/data
+            exit 1
+          fi

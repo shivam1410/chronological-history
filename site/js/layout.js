@@ -81,6 +81,10 @@ export function packLane(entries, view, options = {}) {
  * silently dropped entry hides it.
  */
 export function packLanes(entries, laneOrder, view, options = {}) {
+  // With no lanes there is nowhere to put anything, and the fallback below
+  // would be undefined - which would drop entries without counting them.
+  if (!laneOrder?.length) return [];
+
   const { laneKey } = { ...DEFAULTS, ...options };
   const known = new Set(laneOrder);
   const fallback = known.has('global') ? 'global' : laneOrder[laneOrder.length - 1];

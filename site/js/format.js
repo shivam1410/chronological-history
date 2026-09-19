@@ -34,6 +34,21 @@ export function duration(start, end) {
 }
 
 /**
+ * Unguarded historical -> astronomical, for continuous math.
+ *
+ * astro() rejects year 0 because no *entry* may claim it. A view, a drag
+ * midpoint or an interpolated tick is a continuous quantity that has to pass
+ * smoothly through the seam, so it uses these instead.
+ */
+export const toAstroYear = (year) => (year < 0 ? year + 1 : year);
+export const fromAstroYear = (a) => (a <= 0 ? a - 1 : a);
+
+/** Elapsed years, tolerant of fractional inputs. */
+export function elapsed(from, to) {
+  return toAstroYear(to) - toAstroYear(from);
+}
+
+/**
  * Round a possibly fractional year to a whole one, never landing on year 0.
  *
  * A view can sit a fraction of a year either side of the BCE/CE seam, and

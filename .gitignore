@@ -5,3 +5,6 @@ venv/
 .pytest_cache/
 data/imported/.cache/
 .DS_Store
+
+# Local editor/agent config, not part of the project
+.claude/
