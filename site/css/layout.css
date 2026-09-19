@@ -284,6 +284,7 @@ body {
 .eras::-webkit-scrollbar { display: none; }
 
 .eras button {
+  min-height: var(--control-h);
   padding: 3px var(--step-2);
   border: 1px solid var(--rule);
   border-radius: 999px;
@@ -481,10 +482,7 @@ body[data-year-view="true"] .stage { padding-top: 0; }
     --control-h: 44px;
   }
 
-  .eras button {
-    min-height: 44px;
-    padding-inline: var(--step-3);
-  }
+  .eras button { padding-inline: var(--step-3); }
 
   .range__toggle {
     width: 44px;
