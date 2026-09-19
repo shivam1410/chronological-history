@@ -80,6 +80,38 @@ Years use historical numbering: `-1` is 1 BCE, `1` is 1 CE, and **there is no ye
 `make build` refuses to emit if anything fails validation, so a bad date or a dangling
 cross-reference stops the build rather than silently corrupting the timeline.
 
+## Where the data comes from
+
+Every entry is **hand-authored**. Nothing here was scraped.
+
+Dates are written as brackets rather than single numbers, because most of
+history does not have single numbers. Where scholarship genuinely disagrees —
+Kabir's lifespan, the composition of the Rigveda, the Buddha's dates — the entry
+carries a wide bracket, `confidence: contested`, a `note` naming the competing
+positions, and at least one citation. The build refuses to emit an entry with a
+bracket wider than 200 years that still claims `confidence: high`.
+
+Reference works consulted for the current dataset:
+
+| Source | Used for |
+|---|---|
+| [Encyclopaedia Britannica](https://www.britannica.com/) | Biographical and dynastic dates |
+| [UNESCO World Heritage](https://whc.unesco.org/) | Monuments and archaeological sites |
+| [USGS](https://www.usgs.gov/) | Geological dating and the Himalayan orogeny |
+| [Natural History Museum](https://www.nhm.ac.uk/) | Palaeontology |
+| [International Commission on Stratigraphy](https://stratigraphy.org/chart) | Epoch and period boundaries |
+
+Planned, not yet used:
+
+| Source | Planned use |
+|---|---|
+| [Internet Sacred Text Archive](https://archive.sacred-texts.com/) | `texts:` links to full public-domain translations — **not** for dates; its translations are from the 1880s–1910s and their chronologies are a century out of date |
+| [Wikidata](https://www.wikidata.org/) | Breadth via SPARQL, with curated entries always winning on merge |
+
+Where a religious tradition holds a text to be contemporaneous or eternal, the
+`note` says so plainly rather than presenting the academic dating as settled.
+This is a reference tool, not an argument.
+
 ## Layout
 
 | Path | What |

@@ -1,0 +1,533 @@
+# Science & Discovery. The first region decides the lane; the home region
+# follows it, so an entry shows up as a scientist and still says where.
+
+- id: thales
+  title: Thales of Miletus
+  kind: person
+  regions: [science, greece]
+  start: [-626, -623]
+  end: [-548, -545]
+  importance: 3
+  confidence: contested
+  categories: [scientist, philosopher, astronomy]
+  note: No contemporary record survives; the dates come from later Greek sources.
+  summary: Sought explanations for natural events in nature rather than in the
+    gods, and is credited with predicting a solar eclipse.
+
+- id: pythagoras
+  title: Pythagoras
+  kind: person
+  regions: [science, greece]
+  start: [-575, -570]
+  end: [-500, -495]
+  importance: 3
+  confidence: contested
+  categories: [scientist, mathematics, philosopher]
+  note: The man and his school are hard to separate; most attributed results
+    may belong to followers.
+  summary: Founded a school that treated number and ratio as the underlying
+    structure of reality, including the relationship between string length and
+    musical pitch.
+
+- id: hippocrates
+  title: Hippocrates
+  kind: person
+  regions: [science, greece]
+  start: [-460, -460]
+  end: [-375, -370]
+  importance: 4
+  confidence: medium
+  categories: [scientist, medicine]
+  summary: Separated medicine from superstition by insisting that disease has
+    natural causes and should be studied through careful observation.
+
+- id: sushruta
+  title: Sushruta
+  kind: person
+  regions: [science, north-india]
+  start: [-800, -600]
+  end: [-700, -500]
+  importance: 3
+  confidence: contested
+  categories: [scientist, medicine]
+  note: Dating rests on the Sushruta Samhita's layers; the surviving text was
+    revised for centuries after any historical Sushruta.
+  summary: Associated with an early surgical tradition describing cataract
+    couching, reconstructive skin grafts, and hundreds of instruments.
+
+- id: euclid
+  title: Euclid
+  kind: person
+  regions: [science, egypt]
+  start: [-325, -300]
+  end: [-270, -260]
+  importance: 5
+  confidence: contested
+  categories: [scientist, mathematics]
+  note: Almost nothing personal is known; the dates bracket his active period in
+    Alexandria.
+  summary: Organised geometry into a system of definitions, postulates and
+    proofs whose structure set the pattern for mathematical argument ever after.
+
+- id: archimedes
+  title: Archimedes
+  kind: person
+  regions: [science, rome]
+  start: -287
+  end: -212
+  importance: 5
+  confidence: medium
+  categories: [scientist, mathematics, physics]
+  summary: Worked out the principles of levers and buoyancy and came close to
+    integral calculus while calculating areas and volumes.
+
+- id: eratosthenes
+  title: Eratosthenes
+  kind: person
+  regions: [science, egypt]
+  start: [-276, -276]
+  end: [-195, -194]
+  importance: 4
+  confidence: medium
+  categories: [scientist, astronomy, mathematics]
+  summary: Measured the circumference of the Earth from the difference in
+    shadow lengths between two Egyptian cities, and came remarkably close.
+
+- id: ptolemy
+  title: Claudius Ptolemy
+  kind: person
+  regions: [science, egypt]
+  start: [100, 100]
+  end: [160, 170]
+  importance: 4
+  confidence: medium
+  categories: [scientist, astronomy]
+  summary: Assembled an Earth-centred model of the heavens accurate enough to
+    predict planetary positions, which held authority for fourteen centuries.
+
+- id: brahmagupta
+  title: Brahmagupta
+  kind: person
+  regions: [science, north-india]
+  start: 598
+  end: [665, 670]
+  importance: 5
+  confidence: medium
+  categories: [scientist, mathematics, astronomy]
+  summary: Gave the first known rules for arithmetic with zero and negative
+    numbers, treating debt and nothingness as numbers in their own right.
+  related: [aryabhata]
+
+- id: al-khwarizmi
+  title: Muhammad ibn Musa al-Khwarizmi
+  kind: person
+  regions: [science, persia]
+  start: [780, 780]
+  end: [847, 850]
+  importance: 5
+  confidence: medium
+  categories: [scientist, mathematics]
+  summary: Set out systematic methods for solving equations, giving algebra its
+    name, and carried Indian decimal numerals into the wider world.
+
+- id: ibn-al-haytham
+  title: Ibn al-Haytham
+  kind: person
+  regions: [science, arabia]
+  start: [965, 965]
+  end: [1040, 1040]
+  importance: 4
+  confidence: medium
+  categories: [scientist, physics]
+  summary: Showed that vision works by light entering the eye and insisted
+    claims be tested by experiment, an early statement of scientific method.
+
+- id: bhaskara-ii
+  title: Bhaskara II
+  kind: person
+  regions: [science, deccan]
+  start: 1114
+  end: 1185
+  importance: 4
+  confidence: medium
+  categories: [scientist, mathematics, astronomy]
+  summary: Wrote the Siddhanta Shiromani, handling quadratic and indeterminate
+    equations and anticipating parts of differential calculus.
+
+- id: copernicus
+  title: Nicolaus Copernicus
+  kind: person
+  regions: [science, eastern-europe]
+  start: 1473
+  end: 1543
+  importance: 5
+  confidence: high
+  categories: [scientist, astronomy]
+  summary: Put the Sun rather than the Earth at the centre of the planetary
+    system, published as he lay dying.
+
+- id: tycho-brahe
+  title: Tycho Brahe
+  kind: person
+  regions: [science, western-europe]
+  start: 1546
+  end: 1601
+  importance: 3
+  confidence: high
+  categories: [scientist, astronomy]
+  summary: Measured the positions of the planets with unmatched precision for
+    the naked eye, producing the data Kepler later made sense of.
+  related: [kepler]
+
+- id: galileo
+  title: Galileo Galilei
+  kind: person
+  regions: [science, rome]
+  start: 1564
+  end: 1642
+  importance: 5
+  confidence: high
+  categories: [scientist, astronomy, physics]
+  summary: Turned the telescope on the sky, found moons around Jupiter and
+    phases on Venus, and was tried by the Inquisition for saying what they meant.
+  related: [copernicus, renaissance]
+
+- id: kepler
+  title: Johannes Kepler
+  kind: person
+  regions: [science, western-europe]
+  start: 1571
+  end: 1630
+  importance: 5
+  confidence: high
+  categories: [scientist, astronomy]
+  summary: Replaced circular orbits with ellipses and found the three laws that
+    govern planetary motion.
+  related: [tycho-brahe, newton]
+
+- id: newton
+  title: Isaac Newton
+  kind: person
+  regions: [science, britain]
+  start: 1643
+  end: 1727
+  importance: 5
+  confidence: high
+  categories: [scientist, physics, mathematics]
+  note: Born 25 December 1642 by the Julian calendar England still used;
+    4 January 1643 in the Gregorian calendar used here.
+  summary: Showed that the same law of gravitation governs a falling apple and
+    an orbiting moon, and built the calculus needed to prove it.
+  related: [kepler, galileo]
+
+- id: lavoisier
+  title: Antoine Lavoisier
+  kind: person
+  regions: [science, western-europe]
+  start: 1743
+  end: 1794
+  importance: 4
+  confidence: high
+  categories: [scientist, chemistry]
+  summary: Established that matter is conserved in chemical reactions and named
+    oxygen; guillotined during the Terror.
+
+- id: faraday
+  title: Michael Faraday
+  kind: person
+  regions: [science, britain]
+  start: 1791
+  end: 1867
+  importance: 5
+  confidence: high
+  categories: [scientist, physics]
+  summary: Discovered electromagnetic induction, the effect that makes every
+    generator and transformer work.
+  related: [maxwell]
+
+- id: mendel
+  title: Gregor Mendel
+  kind: person
+  regions: [science, eastern-europe]
+  start: 1822
+  end: 1884
+  importance: 5
+  confidence: high
+  categories: [scientist, biology]
+  summary: Worked out the statistical rules of inheritance by breeding pea
+    plants, and was ignored for thirty-five years.
+
+- id: maxwell
+  title: James Clerk Maxwell
+  kind: person
+  regions: [science, britain]
+  start: 1831
+  end: 1879
+  importance: 5
+  confidence: high
+  categories: [scientist, physics]
+  summary: Unified electricity, magnetism and light into four equations, and
+    predicted radio waves before anyone had made one.
+  related: [faraday, einstein]
+
+- id: mendeleev
+  title: Dmitri Mendeleev
+  kind: person
+  regions: [science, eastern-europe]
+  start: 1834
+  end: 1907
+  importance: 4
+  confidence: high
+  categories: [scientist, chemistry]
+  summary: Arranged the elements by periodic properties and left gaps for ones
+    not yet found, then saw them discovered where he said they would be.
+
+- id: marie-curie
+  title: Marie Curie
+  kind: person
+  regions: [science, western-europe]
+  start: 1867
+  end: 1934
+  importance: 5
+  confidence: high
+  categories: [scientist, physics, chemistry]
+  summary: Discovered polonium and radium, coined the term radioactivity, and
+    remains the only person to win Nobel Prizes in two sciences.
+
+- id: einstein
+  title: Albert Einstein
+  kind: person
+  regions: [science, western-europe]
+  start: 1879
+  end: 1955
+  importance: 5
+  confidence: high
+  categories: [scientist, physics]
+  summary: Recast space and time as one flexible fabric shaped by mass, and
+    showed light behaves as particles as well as waves.
+  related: [maxwell, bohr]
+
+- id: emmy-noether
+  title: Emmy Noether
+  kind: person
+  regions: [science, western-europe]
+  start: 1882
+  end: 1935
+  importance: 4
+  confidence: high
+  categories: [scientist, mathematics, physics]
+  summary: Proved that every conservation law in physics follows from a
+    symmetry, a result underpinning much of modern theory.
+
+- id: bohr
+  title: Niels Bohr
+  kind: person
+  regions: [science, western-europe]
+  start: 1885
+  end: 1962
+  importance: 5
+  confidence: high
+  categories: [scientist, physics]
+  summary: Modelled the atom with electrons confined to fixed energy levels and
+    became the chief interpreter of quantum theory.
+  related: [einstein, heisenberg]
+
+- id: schrodinger
+  title: Erwin Schrödinger
+  kind: person
+  regions: [science, western-europe]
+  start: 1887
+  end: 1961
+  importance: 4
+  confidence: high
+  categories: [scientist, physics]
+  summary: Wrote the wave equation describing how quantum states evolve, and
+    posed the cat thought experiment to show how strange that was.
+
+- id: cv-raman
+  title: C. V. Raman
+  kind: person
+  regions: [science, south-india]
+  start: 1888
+  end: 1970
+  importance: 4
+  confidence: high
+  categories: [scientist, physics]
+  summary: Found that light scattering off molecules shifts in wavelength,
+    giving chemistry a way to fingerprint substances.
+
+- id: ramanujan
+  title: Srinivasa Ramanujan
+  kind: person
+  regions: [science, south-india]
+  start: 1887
+  end: 1920
+  importance: 5
+  confidence: high
+  categories: [scientist, mathematics]
+  summary: Produced thousands of identities in number theory with almost no
+    formal training, some of which took a century to prove.
+
+- id: satyendra-bose
+  title: Satyendra Nath Bose
+  kind: person
+  regions: [science, east-india]
+  start: 1894
+  end: 1974
+  importance: 4
+  confidence: high
+  categories: [scientist, physics]
+  summary: Derived the statistics governing particles that can share a quantum
+    state, the class since named bosons after him.
+  related: [einstein]
+
+- id: heisenberg
+  title: Werner Heisenberg
+  kind: person
+  regions: [science, western-europe]
+  start: 1901
+  end: 1976
+  importance: 5
+  confidence: high
+  categories: [scientist, physics]
+  summary: Formulated the first complete quantum mechanics and the uncertainty
+    principle, which sets a hard limit on what can be known at once.
+  related: [bohr, schrodinger]
+
+- id: dirac
+  title: Paul Dirac
+  kind: person
+  regions: [science, britain]
+  start: 1902
+  end: 1984
+  importance: 4
+  confidence: high
+  categories: [scientist, physics]
+  summary: Merged quantum mechanics with special relativity and, from the
+    equation's spare solutions, predicted antimatter.
+
+- id: fleming-penicillin
+  title: Alexander Fleming
+  kind: person
+  regions: [science, britain]
+  start: 1881
+  end: 1955
+  importance: 4
+  confidence: high
+  categories: [scientist, medicine, biology]
+  summary: Noticed a mould killing bacteria on a contaminated plate, the
+    observation that became penicillin and the antibiotic era.
+
+- id: rosalind-franklin
+  title: Rosalind Franklin
+  kind: person
+  regions: [science, britain]
+  start: 1920
+  end: 1958
+  importance: 4
+  confidence: high
+  categories: [scientist, biology, chemistry]
+  summary: Produced the X-ray diffraction images that revealed DNA's helical
+    structure, used to reach that conclusion without her knowledge.
+
+- id: turing
+  title: Alan Turing
+  kind: person
+  regions: [science, britain]
+  start: 1912
+  end: 1954
+  importance: 5
+  confidence: high
+  categories: [scientist, computing, mathematics, logic]
+  summary: Defined what a computing machine is and what it can never decide,
+    broke wartime ciphers, and was prosecuted for being gay.
+
+- id: feynman
+  title: Richard Feynman
+  kind: person
+  regions: [science, north-america]
+  start: 1918
+  end: 1988
+  importance: 4
+  confidence: high
+  categories: [scientist, physics]
+  summary: Built a working quantum theory of light and matter and a diagram
+    notation that made its calculations tractable.
+
+# ---- discoveries, as distinct from the people who made them ----
+- id: zero-decimal-system
+  title: Zero and the decimal place-value system
+  kind: technology
+  regions: [science, north-india]
+  start: [-300, 300]
+  end: [628, 628]
+  importance: 5
+  confidence: contested
+  categories: [mathematics, discovery]
+  note: Place value appears in Indian texts over several centuries; Brahmagupta
+    in 628 CE gives the first surviving rules for zero as a number.
+  summary: Treating zero as a number rather than an absence made written
+    arithmetic practical and underlies every calculation since.
+  related: [brahmagupta, al-khwarizmi]
+
+- id: telescope
+  title: The telescope
+  kind: technology
+  regions: [science, western-europe]
+  start: 1608
+  end: ongoing
+  importance: 4
+  confidence: high
+  categories: [instrument, astronomy, discovery]
+  summary: A Dutch lens-grinder's device that, pointed upward the following
+    year, ended the idea of a perfect and unchanging heaven.
+  related: [galileo]
+
+- id: vaccination
+  title: Vaccination
+  kind: technology
+  regions: [science, britain]
+  start: 1796
+  end: ongoing
+  importance: 5
+  confidence: high
+  categories: [medicine, discovery]
+  summary: Jenner's demonstration that cowpox protects against smallpox,
+    building on much older inoculation practice in Asia and Africa.
+
+- id: germ-theory
+  title: Germ theory of disease
+  kind: technology
+  regions: [science, western-europe]
+  start: [1860, 1880]
+  end: ongoing
+  importance: 5
+  confidence: medium
+  categories: [medicine, biology, discovery]
+  summary: Pasteur and Koch established that specific microorganisms cause
+    specific diseases, which made antisepsis and public sanitation rational.
+
+- id: dna-structure
+  title: The structure of DNA
+  kind: discovery
+  regions: [science, britain]
+  start: 1953
+  end: 1953
+  importance: 5
+  confidence: high
+  categories: [biology, discovery]
+  summary: The double helix explained at a stroke how heredity is stored and
+    copied.
+  related: [rosalind-franklin, mendel]
+
+- id: human-genome
+  title: Human Genome Project
+  kind: event
+  regions: [science, global]
+  start: 1990
+  end: 2003
+  importance: 4
+  confidence: high
+  categories: [biology, discovery]
+  summary: Sequenced the three billion letters of human DNA and published the
+    result openly.

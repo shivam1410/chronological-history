@@ -486,7 +486,7 @@
 - id: aryabhata
   title: Aryabhata
   kind: person
-  regions: [north-india, india]
+  regions: [science, north-india]
   start: 476
   end: 550
   importance: 4
@@ -610,7 +610,7 @@
 - id: printing-press
   title: Gutenberg's printing press
   kind: technology
-  regions: [western-europe, europe, global]
+  regions: [science, western-europe]
   start: [1440, 1450]
   end: ongoing
   importance: 5
@@ -777,7 +777,7 @@
 - id: origin-of-species
   title: Darwin publishes On the Origin of Species
   kind: work
-  regions: [britain, europe, global]
+  regions: [science, britain]
   start: 1859
   end: 1859
   importance: 5
@@ -802,7 +802,7 @@
 - id: moon-landing
   title: Apollo 11 Moon landing
   kind: event
-  regions: [global, north-america]
+  regions: [science, north-america]
   start: 1969
   end: 1969
   importance: 4

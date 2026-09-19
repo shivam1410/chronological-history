@@ -80,8 +80,26 @@
   order: 9
   color: "--lane-oceania"
 
-- id: global
-  label: Global / Science & Ideas
+- id: science
+  label: Science & Discovery
   order: 10
+  color: "--lane-science"
+  note: >-
+    People and discoveries. A row of its own so the thread of what was known
+    runs alongside what was happening politically. Tag the home region second
+    (regions: [science, britain]) - the first entry decides the lane, the rest
+    show as chips.
+
+- id: philosophy
+  label: Philosophy & Ideas
+  order: 11
+  color: "--lane-philosophy"
+  note: >-
+    Philosophers and schools of thought, same convention as science - put the
+    home region second.
+
+- id: global
+  label: Global
+  order: 12
   color: "--lane-global"
-  note: Entries with no single home - technologies, ideas, and worldwide events.
+  note: Entries with no single home - ages, pandemics, worldwide events.

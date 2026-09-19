@@ -12,6 +12,21 @@
 - {id: mystic,      label: Mystic}
 - {id: ruler,       label: Ruler}
 - {id: scientist,   label: Scientist}
+- {id: philosopher, label: Philosopher}
+- {id: physics,     label: Physics}
+- {id: chemistry,   label: Chemistry}
+- {id: biology,     label: Biology}
+- {id: computing,   label: Computing}
+- {id: discovery,   label: Discovery}
+- {id: logic,       label: Logic}
+- {id: ethics,      label: Ethics}
+- {id: economics,   label: Economics}
+- {id: literature,  label: Literature}
+- {id: disease,     label: Disease}
+- {id: pandemic,    label: Pandemic}
+- {id: independence, label: Independence}
+- {id: slavery,     label: Slavery}
+- {id: human-rights, label: Human Rights}
 - {id: mathematics, label: Mathematics}
 - {id: astronomy,   label: Astronomy}
 - {id: medicine,    label: Medicine}

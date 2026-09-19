@@ -1,0 +1,578 @@
+# Philosophy & Ideas. First region decides the lane; home region follows.
+
+# ---- Greece ----
+- id: heraclitus
+  title: Heraclitus
+  kind: person
+  regions: [philosophy, greece]
+  start: [-540, -535]
+  end: [-480, -475]
+  importance: 3
+  confidence: contested
+  categories: [philosopher]
+  note: Known only through fragments quoted by later writers.
+  summary: Held that everything is in flux and that opposites depend on each
+    other, so stability is an appearance rather than a fact.
+
+- id: confucius
+  title: Confucius
+  kind: person
+  regions: [philosophy, china]
+  start: -551
+  end: -479
+  importance: 5
+  confidence: medium
+  categories: [philosopher, ethics]
+  summary: Taught that social order grows from personal character, ritual
+    propriety and obligations running in both directions between ruler and ruled.
+  related: [analects]
+
+- id: laozi
+  title: Laozi
+  kind: person
+  regions: [philosophy, china]
+  start: [-600, -400]
+  end: [-530, -350]
+  importance: 4
+  confidence: contested
+  note: Possibly not a single historical person; the Daodejing may be a
+    composite text assembled over generations.
+  categories: [philosopher]
+  summary: The figure behind Daoism, which counsels acting in accordance with
+    the grain of things rather than against it.
+
+- id: socrates
+  title: Socrates
+  kind: person
+  regions: [philosophy, greece]
+  start: [-470, -469]
+  end: -399
+  importance: 5
+  confidence: medium
+  categories: [philosopher, ethics]
+  summary: Wrote nothing, but by relentless questioning turned philosophy from
+    speculation about nature to examination of how one ought to live. Executed
+    by Athens for impiety and corrupting the young.
+  related: [plato, classical-athens]
+
+- id: plato
+  title: Plato
+  kind: person
+  regions: [philosophy, greece]
+  start: [-428, -427]
+  end: [-348, -347]
+  importance: 5
+  confidence: medium
+  categories: [philosopher]
+  summary: Argued that the changing world we see is a shadow of unchanging
+    forms, and founded the Academy, which lasted three centuries.
+  related: [socrates, aristotle]
+
+- id: aristotle
+  title: Aristotle
+  kind: person
+  regions: [philosophy, greece]
+  start: -384
+  end: -322
+  importance: 5
+  confidence: medium
+  categories: [philosopher, logic, scientist]
+  summary: Built the first formal logic and wrote systematically on almost
+    everything, from biology to ethics to poetry, dominating European thought
+    for nearly two millennia.
+  related: [plato, ibn-rushd, aquinas]
+
+- id: epicurus
+  title: Epicurus
+  kind: person
+  regions: [philosophy, greece]
+  start: -341
+  end: -270
+  importance: 3
+  confidence: medium
+  categories: [philosopher, ethics]
+  summary: Taught that pleasure rightly understood means freedom from pain and
+    fear, best found in friendship and modest living.
+
+- id: zeno-stoic
+  title: Zeno of Citium
+  kind: person
+  regions: [philosophy, greece]
+  start: [-336, -334]
+  end: [-265, -262]
+  importance: 4
+  confidence: medium
+  categories: [philosopher, ethics]
+  summary: Founded Stoicism, which holds that virtue is the only real good and
+    that peace comes from separating what we control from what we do not.
+  related: [marcus-aurelius]
+
+- id: marcus-aurelius
+  title: Marcus Aurelius
+  kind: person
+  regions: [philosophy, rome]
+  start: 121
+  end: 180
+  importance: 4
+  confidence: high
+  categories: [philosopher, ethics, ruler]
+  summary: Roman emperor whose private notebook of Stoic self-instruction
+    became one of the most read works of ancient philosophy.
+  related: [zeno-stoic]
+
+# ---- India ----
+- id: kautilya
+  title: Kautilya (Chanakya)
+  kind: person
+  regions: [philosophy, north-india]
+  start: [-375, -350]
+  end: [-283, -275]
+  importance: 4
+  confidence: contested
+  categories: [philosopher, ruler]
+  note: The Arthashastra reached its present form centuries later; how much is
+    his is disputed.
+  summary: Political theorist and minister to the first Mauryan emperor, whose
+    Arthashastra treats statecraft, economics and espionage without moralising.
+  related: [maurya-empire]
+
+- id: nagarjuna
+  title: Nagarjuna
+  kind: person
+  regions: [philosophy, deccan]
+  start: [150, 150]
+  end: [250, 250]
+  importance: 4
+  confidence: contested
+  categories: [philosopher]
+  summary: Founder of the Madhyamaka school, arguing that nothing possesses
+    independent existence and that this emptiness is not nihilism but relation.
+
+- id: adi-shankara
+  title: Adi Shankara
+  kind: person
+  regions: [philosophy, south-india]
+  start: [700, 788]
+  end: [750, 820]
+  importance: 5
+  confidence: contested
+  note: Traditional dates give 788-820; many historians prefer the early
+    eighth century. Both are inferences from later hagiography.
+  categories: [philosopher, religion]
+  summary: Systematised Advaita Vedanta, arguing that the self and ultimate
+    reality are not two things, and debated his way across the subcontinent.
+  related: [upanishads, ramanuja]
+
+- id: ramanuja
+  title: Ramanuja
+  kind: person
+  regions: [philosophy, south-india]
+  start: [1017, 1017]
+  end: [1137, 1137]
+  importance: 4
+  confidence: medium
+  categories: [philosopher, religion]
+  summary: Answered Shankara with a qualified non-dualism in which the world
+    and individual selves are real as the body of the divine, opening devotion
+    to those outside the upper castes.
+  related: [adi-shankara]
+
+- id: madhvacharya
+  title: Madhvacharya
+  kind: person
+  regions: [philosophy, south-india]
+  start: [1199, 1238]
+  end: [1278, 1317]
+  importance: 3
+  confidence: contested
+  categories: [philosopher, religion]
+  summary: Argued for outright dualism, holding the difference between God,
+    self and world to be permanent and real.
+  related: [adi-shankara, ramanuja]
+
+# ---- Islamic world ----
+- id: al-ghazali
+  title: Al-Ghazali
+  kind: person
+  regions: [philosophy, persia]
+  start: [1056, 1058]
+  end: 1111
+  importance: 4
+  confidence: medium
+  categories: [philosopher, religion]
+  summary: Attacked the claims of the philosophers on their own logical terms,
+    then turned to Sufism, reshaping Islamic thought for centuries.
+
+- id: ibn-rushd
+  title: Ibn Rushd (Averroes)
+  kind: person
+  regions: [philosophy, north-africa]
+  start: 1126
+  end: 1198
+  importance: 4
+  confidence: high
+  categories: [philosopher, logic]
+  summary: Defended philosophy against al-Ghazali and wrote commentaries on
+    Aristotle that carried Greek thought back into Latin Europe.
+  related: [aristotle, al-ghazali, aquinas]
+
+- id: ibn-khaldun
+  title: Ibn Khaldun
+  kind: person
+  regions: [philosophy, north-africa]
+  start: 1332
+  end: 1406
+  importance: 4
+  confidence: high
+  categories: [philosopher, economics]
+  summary: Treated the rise and fall of states as a subject with its own laws,
+    founding something close to sociology four centuries early.
+
+# ---- Europe ----
+- id: augustine
+  title: Augustine of Hippo
+  kind: person
+  regions: [philosophy, north-africa]
+  start: 354
+  end: 430
+  importance: 4
+  confidence: high
+  categories: [philosopher, religion]
+  summary: Fused Christian doctrine with Platonic philosophy and wrote an
+    introspective autobiography unlike anything before it.
+
+- id: aquinas
+  title: Thomas Aquinas
+  kind: person
+  regions: [philosophy, rome]
+  start: [1224, 1225]
+  end: 1274
+  importance: 4
+  confidence: high
+  categories: [philosopher, religion, logic]
+  summary: Reconciled Aristotle with Christian theology so thoroughly that the
+    synthesis became Catholic orthodoxy.
+  related: [aristotle, ibn-rushd]
+
+- id: descartes
+  title: René Descartes
+  kind: person
+  regions: [philosophy, western-europe]
+  start: 1596
+  end: 1650
+  importance: 5
+  confidence: high
+  categories: [philosopher, mathematics]
+  summary: Tried to doubt everything and found he could not doubt that he was
+    doubting, making the thinking self the starting point of modern philosophy.
+
+- id: spinoza
+  title: Baruch Spinoza
+  kind: person
+  regions: [philosophy, western-europe]
+  start: 1632
+  end: 1677
+  importance: 4
+  confidence: high
+  categories: [philosopher, ethics]
+  summary: Identified God with nature itself and argued for freedom of thought,
+    for which he was expelled from his community and read in secret.
+
+- id: locke
+  title: John Locke
+  kind: person
+  regions: [philosophy, britain]
+  start: 1632
+  end: 1704
+  importance: 5
+  confidence: high
+  categories: [philosopher, ethics]
+  summary: Held that the mind begins without innate ideas and that government
+    is legitimate only by consent of the governed.
+
+- id: hume
+  title: David Hume
+  kind: person
+  regions: [philosophy, britain]
+  start: 1711
+  end: 1776
+  importance: 5
+  confidence: high
+  categories: [philosopher, logic]
+  summary: Showed that causation and the self are habits of mind rather than
+    things observed, a scepticism that woke Kant from his dogmatic slumber.
+  related: [kant]
+
+- id: kant
+  title: Immanuel Kant
+  kind: person
+  regions: [philosophy, western-europe]
+  start: 1724
+  end: 1804
+  importance: 5
+  confidence: high
+  categories: [philosopher, ethics, logic]
+  summary: Argued that the mind imposes space, time and causality on experience,
+    and grounded morality in a rule one could will everyone to follow.
+  related: [hume, hegel]
+
+- id: hegel
+  title: Georg Wilhelm Friedrich Hegel
+  kind: person
+  regions: [philosophy, western-europe]
+  start: 1770
+  end: 1831
+  importance: 5
+  confidence: high
+  categories: [philosopher]
+  summary: Saw history as reason working itself out through conflict and
+    resolution, an idea Marx would later turn on its head.
+  related: [kant, marx]
+
+- id: schopenhauer
+  title: Arthur Schopenhauer
+  kind: person
+  regions: [philosophy, western-europe]
+  start: 1788
+  end: 1860
+  importance: 3
+  confidence: high
+  categories: [philosopher]
+  summary: Held that a blind striving will underlies everything, and drew
+    openly on Indian philosophy in saying so.
+  related: [upanishads, nietzsche]
+
+- id: mill
+  title: John Stuart Mill
+  kind: person
+  regions: [philosophy, britain]
+  start: 1806
+  end: 1873
+  importance: 4
+  confidence: high
+  categories: [philosopher, ethics, economics]
+  summary: Argued that liberty should be limited only to prevent harm to others,
+    and made an early philosophical case for the equality of women.
+
+- id: marx
+  title: Karl Marx
+  kind: person
+  regions: [philosophy, western-europe]
+  start: 1818
+  end: 1883
+  importance: 5
+  confidence: high
+  categories: [philosopher, economics]
+  summary: Analysed capitalism as a historical stage driven by class conflict,
+    and insisted philosophy should change the world rather than interpret it.
+  related: [hegel]
+
+- id: nietzsche
+  title: Friedrich Nietzsche
+  kind: person
+  regions: [philosophy, western-europe]
+  start: 1844
+  end: 1900
+  importance: 5
+  confidence: high
+  categories: [philosopher, ethics]
+  summary: Declared inherited moral certainties dead and asked what values a
+    person might create once nothing is given.
+  related: [schopenhauer]
+
+# ---- Russia ----
+- id: dostoevsky
+  title: Fyodor Dostoevsky
+  kind: person
+  regions: [philosophy, eastern-europe]
+  start: 1821
+  end: 1881
+  importance: 4
+  confidence: high
+  categories: [philosopher, literature, ethics]
+  summary: Explored guilt, faith and freedom through fiction, staging the
+    argument against God more forcefully than most believers dared.
+
+- id: tolstoy
+  title: Leo Tolstoy
+  kind: person
+  regions: [philosophy, eastern-europe]
+  start: 1828
+  end: 1910
+  importance: 4
+  confidence: high
+  categories: [philosopher, ethics, literature]
+  summary: Turned from novels to a radical Christian ethic of nonviolence and
+    voluntary poverty; his correspondence with Gandhi shaped satyagraha.
+  related: [gandhi-ahimsa]
+
+- id: berdyaev
+  title: Nikolai Berdyaev
+  kind: person
+  regions: [philosophy, eastern-europe]
+  start: 1874
+  end: 1948
+  importance: 3
+  confidence: high
+  categories: [philosopher, religion]
+  summary: Russian religious existentialist who put creative freedom at the
+    centre of human dignity, and was expelled by the Soviet state for it.
+
+# ---- twentieth century ----
+- id: bertrand-russell
+  title: Bertrand Russell
+  kind: person
+  regions: [philosophy, britain]
+  start: 1872
+  end: 1970
+  importance: 5
+  confidence: high
+  categories: [philosopher, logic, mathematics]
+  summary: Tried to ground mathematics in logic, helped found analytic
+    philosophy, and was jailed twice for opposing war.
+  related: [wittgenstein]
+
+- id: wittgenstein
+  title: Ludwig Wittgenstein
+  kind: person
+  regions: [philosophy, western-europe]
+  start: 1889
+  end: 1951
+  importance: 5
+  confidence: high
+  categories: [philosopher, logic]
+  summary: Argued first that philosophy's problems dissolve once language is
+    clear, then that meaning is use, refuting much of his own earlier work.
+  related: [bertrand-russell]
+
+- id: heidegger
+  title: Martin Heidegger
+  kind: person
+  regions: [philosophy, western-europe]
+  start: 1889
+  end: 1976
+  importance: 4
+  confidence: high
+  categories: [philosopher]
+  note: His membership of the Nazi party and refusal to renounce it remain
+    central to how the work is assessed.
+  summary: Reopened the question of what it means for anything to be, and made
+    mortality and everyday absorption central to the answer.
+
+- id: sartre
+  title: Jean-Paul Sartre
+  kind: person
+  regions: [philosophy, western-europe]
+  start: 1905
+  end: 1980
+  importance: 4
+  confidence: high
+  categories: [philosopher, ethics, literature]
+  summary: Held that we exist first and define ourselves afterwards, so freedom
+    is inescapable and responsibility total.
+  related: [de-beauvoir]
+
+- id: de-beauvoir
+  title: Simone de Beauvoir
+  kind: person
+  regions: [philosophy, western-europe]
+  start: 1908
+  end: 1986
+  importance: 4
+  confidence: high
+  categories: [philosopher, ethics]
+  summary: Argued that woman has been constructed as the other against which
+    man defines himself, founding modern feminist philosophy.
+  related: [sartre]
+
+- id: hannah-arendt
+  title: Hannah Arendt
+  kind: person
+  regions: [philosophy, western-europe]
+  start: 1906
+  end: 1975
+  importance: 4
+  confidence: high
+  categories: [philosopher, ethics]
+  summary: Analysed totalitarianism as a new form of rule and argued that
+    great evil is often done by unremarkable people who stop thinking.
+
+- id: vivekananda
+  title: Swami Vivekananda
+  kind: person
+  regions: [philosophy, east-india]
+  start: 1863
+  end: 1902
+  importance: 4
+  confidence: high
+  categories: [philosopher, religion]
+  summary: Presented Vedanta to the West as a universal philosophy and pressed
+    for a Hinduism expressed through service.
+  related: [adi-shankara]
+
+- id: ambedkar
+  title: B. R. Ambedkar
+  kind: person
+  regions: [philosophy, west-india]
+  start: 1891
+  end: 1956
+  importance: 5
+  confidence: high
+  categories: [philosopher, ethics, human-rights]
+  summary: Economist and jurist who dismantled the philosophical defence of
+    caste, drafted India's constitution, and led a mass conversion to Buddhism.
+  related: [indian-independence, buddha]
+
+- id: gandhi-ahimsa
+  title: Mohandas Gandhi
+  kind: person
+  regions: [philosophy, west-india]
+  start: 1869
+  end: 1948
+  importance: 5
+  confidence: high
+  categories: [philosopher, ethics, human-rights]
+  summary: Built a political method out of nonviolence and self-suffering,
+    drawing on Jain ahimsa, the Gita and Tolstoy.
+  related: [tolstoy, indian-independence]
+
+- id: krishnamurti
+  title: Jiddu Krishnamurti
+  kind: person
+  regions: [philosophy, south-india]
+  start: 1895
+  end: 1986
+  importance: 3
+  confidence: high
+  categories: [philosopher]
+  summary: Dissolved the organisation built to proclaim him a world teacher,
+    then spent sixty years arguing that truth needs no authority at all.
+
+# ---- texts ----
+- id: analects
+  title: Compilation of the Analects
+  kind: work
+  regions: [philosophy, china]
+  start: [-479, -400]
+  end: [-221, -150]
+  importance: 4
+  confidence: contested
+  categories: [philosopher, scripture]
+  note: Assembled by later disciples over generations; the layers are still
+    debated.
+  summary: The record of Confucius's sayings, put together after his death and
+    the basis of the Chinese examination system for centuries.
+  related: [confucius]
+
+- id: daodejing
+  title: Compilation of the Daodejing
+  kind: work
+  regions: [philosophy, china]
+  start: [-400, -300]
+  end: [-250, -200]
+  importance: 4
+  confidence: contested
+  categories: [scripture, philosopher]
+  summary: The foundational Daoist text, traditionally ascribed to Laozi but
+    probably composite.
+  related: [laozi]

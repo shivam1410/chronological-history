@@ -370,15 +370,17 @@ export function createTimeline(canvas, { entries = [], lanes = [], onViewChange,
     ctx.textAlign = 'center';
     ctx.fillText(yearText, yearX + yearW / 2, 4 + (AXIS_H - 10) / 2);
 
-    // Lane name, and the entry under the cursor when there is one.
-    const lines = [hover.laneLabel];
+    // Lane name, and the entry under the cursor when there is one. Below the
+    // last lane there is neither, and an unfiltered list would still hold one
+    // empty string - which drew an empty box hanging off the crosshair.
+    const lines = [];
     if (hover.item) {
       const e = hover.item.entry;
-      const span = e.sMin === e.eMax
+      lines.push(e.title, e.sMin === e.eMax
         ? formatYear(e.sMin)
-        : `${formatYear(e.sMin)} \u2013 ${formatYear(e.eMax)}`;
-      lines.unshift(e.title, span);
+        : `${formatYear(e.sMin)} \u2013 ${formatYear(e.eMax)}`);
     }
+    if (hover.laneLabel) lines.push(hover.laneLabel);
     if (!lines.length) return;
 
     const padding = 7;
