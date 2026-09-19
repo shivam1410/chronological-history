@@ -39,7 +39,19 @@ const GUTTER_TIERS = [
 ];
 
 /** Height of the name strip drawn above a lane when there is no gutter. */
-const LANE_HEAD_H = 17;
+const LANE_HEAD_H = 24;
+
+/*
+ * A phone gets taller rows and larger type than a desktop, not smaller.
+ * Everything here was sized for a gutter layout on a wide screen and then
+ * inherited by the phone, where 11px text on a 14px bar reads as fine print.
+ * Rows no longer shrink to fit the screen either - there are more of them than
+ * fit, and the chart scrolls.
+ */
+const PHONE_BAR_H = 20;
+const PHONE_ROWS = 3;
+const PHONE_LANE_FONT = '13px ui-sans-serif, system-ui, sans-serif';
+const PHONE_LABEL_FONT = '12.5px ui-sans-serif, system-ui, sans-serif';
 
 /** Lane names wrap rather than truncate; this caps how far they wrap. */
 const LANE_LABEL_LINES = 3;
@@ -83,6 +95,9 @@ export function createTimeline(canvas, {
   // No gutter means the lane name sits on its own strip above the bars.
   const labelsAbove = () => gutter === 0;
   const laneHead = () => (labelsAbove() ? LANE_HEAD_H : 0);
+  const barH = () => (labelsAbove() ? PHONE_BAR_H : BAR_H);
+  const laneFont = () => (labelsAbove() ? PHONE_LANE_FONT : LANE_FONT);
+  const labelFont = () => (labelsAbove() ? PHONE_LABEL_FONT : LANE_FONT);
   let selectedId = null;
   let hover = null;
   const laneById = new Map(lanes.map((lane) => [lane.id, lane]));
@@ -156,7 +171,7 @@ export function createTimeline(canvas, {
       minWidthPx: MIN_BAR_W,
       laneKey: model.key,
     });
-    const caps = rowCaps(packed, model);
+    const caps = rowCaps(packed);
 
     let y = 0;
     const laid = packed.map((lane) => {
@@ -232,7 +247,7 @@ export function createTimeline(canvas, {
     ctx.stroke();
   }
 
-  function drawBar(item, y, colour, h = BAR_H) {
+  function drawBar(item, y, colour, h = barH()) {
     const fuzzyStart = item.entry.flags & FLAG_UNCERTAIN_START;
     const fuzzyEnd = item.entry.flags & FLAG_UNCERTAIN_END;
 
@@ -305,7 +320,7 @@ export function createTimeline(canvas, {
    * only a single word too wide for the gutter.
    */
   function wrapLabel(text) {
-    ctx.font = LANE_FONT;
+    ctx.font = laneFont();
     return wrapText(text, labelWidth(), LANE_LABEL_LINES,
       (s) => ctx.measureText(s).width);
   }
@@ -329,63 +344,25 @@ export function createTimeline(canvas, {
   function laneHeightWith(lane, rowsShown, model) {
     const bars = collapsed.has(lane.lane)
       ? COLLAPSED_BAR_H
-      : Math.max(1, rowsShown) * (BAR_H + BAR_GAP) - BAR_GAP;
+      : Math.max(1, rowsShown) * (barH() + BAR_GAP) - BAR_GAP;
     return laneHead() + LANE_PAD_Y * 2 + Math.max(bars, labelHeight(lane.lane, model));
   }
-
-  /** Entries a lane would keep behind "+N more" at this cap. */
-  const beyond = (lane, cap) =>
-    lane.rows.slice(cap).reduce((n, row) => n + row.length, 0) + lane.hidden;
 
   /**
    * How many rows to draw, per lane.
    *
-   * A phone screen was left with room to spare below the last lane while
-   * entries sat behind "+38 more". One more row for every lane does not fit -
-   * twelve lanes at three rows need more height than the screen has - so the
-   * spare space goes to the lanes hiding the most, a row at a time, until it
-   * runs out. Lane heights already vary with how many rows a lane fills, so
-   * uneven lanes are not a new thing to look at.
-   *
-   * Wide screens keep the full cap and scroll as they did.
+   * A fixed number, not a number chosen to make everything fit. Squeezing
+   * twelve lanes onto one screen meant most of them got a single row while
+   * entries piled up behind "+N more"; there are simply more rows than a phone
+   * has height for, so the chart scrolls instead and each row gets its proper
+   * size. Vertical drag scrolls it, and with the axis lock a swipe up does
+   * only that.
    */
-  function rowCaps(packed, model) {
-    const caps = new Map();
-    // With the name on its own strip every lane costs 17px more, and twelve
-    // two-row lanes no longer fit. Starting from one row lets the fitter below
-    // hand the difference to the lanes that need it, which keeps every lane on
-    // screen instead of pushing the last two off the bottom.
-    const base = width >= NARROW_PX
+  function rowCaps(packed) {
+    const cap = width >= NARROW_PX
       ? MAX_ROWS
-      : (labelsAbove() ? 1 : MAX_ROWS_NARROW);
-    for (const lane of packed) caps.set(lane.lane, base);
-    if (width >= NARROW_PX) return caps;
-
-    const heightAt = (lane, cap) =>
-      laneHeightWith(lane, Math.min(lane.rows.length, cap), model);
-
-    let spare = (height - AXIS_H) - packed.reduce(
-      (sum, lane) => sum + heightAt(lane, base) + LANE_SEP, 0);
-    if (spare <= 0) return caps;
-
-    // Busiest first, so the scarce rows land where they reveal the most.
-    const queue = [...packed].sort((a, b) => beyond(b, base) - beyond(a, base));
-
-    // Repeats until nothing more fits: a lane can earn a second extra row
-    // while a narrower one still cannot afford its first.
-    for (let granted = true; granted && spare > 0;) {
-      granted = false;
-      for (const lane of queue) {
-        const cap = caps.get(lane.lane);
-        if (cap >= MAX_ROWS || lane.rows.length <= cap) continue;
-        const cost = heightAt(lane, cap + 1) - heightAt(lane, cap);
-        if (cost > spare) continue;
-        caps.set(lane.lane, cap + 1);
-        spare -= cost;
-        granted = true;
-      }
-    }
-    return caps;
+      : (labelsAbove() ? PHONE_ROWS : MAX_ROWS_NARROW);
+    return new Map(packed.map((lane) => [lane.lane, cap]));
   }
 
   function drawLane(lane) {
@@ -398,7 +375,7 @@ export function createTimeline(canvas, {
     ctx.fillStyle = theme.bg;
     ctx.fillRect(gutter, top, width - gutter, lane.h);
 
-    ctx.font = LANE_FONT;
+    ctx.font = laneFont();
     ctx.textAlign = 'left';
     ctx.textBaseline = 'middle';
 
@@ -458,6 +435,10 @@ export function createTimeline(canvas, {
 
   /** Bars, labels and the overflow badge - everything below the lane name. */
   function drawLaneBody(lane, top, colour) {
+    // Entry labels and the overflow badge, set explicitly rather than
+    // inheriting whatever the lane name happened to leave behind.
+    ctx.font = labelFont();
+
     // Separator
     ctx.strokeStyle = theme.rule;
     ctx.beginPath();
@@ -488,15 +469,15 @@ export function createTimeline(canvas, {
     const minImportance = density > 2.2 ? 4 : density > 1.2 ? 3 : 1;
 
     lane.rows.forEach((row, r) => {
-      const y = top + laneHead() + LANE_PAD_Y + r * (BAR_H + BAR_GAP);
-      const mid = y + BAR_H / 2;
+      const y = top + laneHead() + LANE_PAD_Y + r * (barH() + BAR_GAP);
+      const mid = y + barH() / 2;
       row.forEach((item, i) => {
         if (item.point) drawPoint(item, mid, colour);
         else drawBar(item, y, colour);
         if (item.entry.id === selectedId) {
           ctx.strokeStyle = theme.ink;
           ctx.lineWidth = 2;
-          ctx.strokeRect(item.x0 - 1.5, y - 1.5, item.w + 3, BAR_H + 3);
+          ctx.strokeRect(item.x0 - 1.5, y - 1.5, item.w + 3, barH() + 3);
           ctx.lineWidth = 1;
         }
         drawLabel(item, row[i + 1], mid, minImportance);
@@ -506,13 +487,13 @@ export function createTimeline(canvas, {
     if (lane.hidden > 0) {
       const text = `+${lane.hidden} more`;
       const w = ctx.measureText(text).width + 10;
-      const y = top + lane.h - LANE_PAD_Y - BAR_H;
+      const y = top + lane.h - LANE_PAD_Y - barH();
       const right = width - gutter;
       ctx.fillStyle = theme.bgSunken;
-      ctx.fillRect(right - w - 6, y, w, BAR_H);
+      ctx.fillRect(right - w - 6, y, w, barH());
       ctx.fillStyle = theme.inkSoft;
       ctx.textAlign = 'right';
-      ctx.fillText(text, right - 11, y + BAR_H / 2);
+      ctx.fillText(text, right - 11, y + barH() / 2);
     }
 
     ctx.restore();
@@ -682,7 +663,7 @@ export function createTimeline(canvas, {
     // A negative index - a tap on the name strip - floors below zero and finds
     // no row, which is what should happen: that strip toggles the lane.
     const row = lane.rows[
-      Math.floor((y - lane.y - laneHead() - LANE_PAD_Y) / (BAR_H + BAR_GAP))];
+      Math.floor((y - lane.y - laneHead() - LANE_PAD_Y) / (barH() + BAR_GAP))];
     return row ? hitRow(row, x, HIT_PAD) : null;
   }
 

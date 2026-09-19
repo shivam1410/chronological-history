@@ -161,7 +161,21 @@ async function start() {
     button.addEventListener('click', () => timeline.setView(era.from, era.to));
     return button;
   });
-  eraNav.replaceChildren(...eraButtons);
+  // Dividers are real elements, not pseudo-elements on the buttons: with the
+  // row justified the gaps are whatever is left over, and a pseudo-element at
+  // a fixed offset drifts off-centre as that changes. As flex items they are
+  // placed by the same justification as the labels.
+  const eraChildren = [];
+  eraButtons.forEach((button, i) => {
+    if (i > 0) {
+      const rule = document.createElement('span');
+      rule.className = 'eras__rule';
+      rule.setAttribute('aria-hidden', 'true');
+      eraChildren.push(rule);
+    }
+    eraChildren.push(button);
+  });
+  eraNav.replaceChildren(...eraChildren);
 
   /** Highlight the era the window mostly sits inside, for orientation. */
   function markCurrentEra(view) {

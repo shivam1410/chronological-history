@@ -296,6 +296,8 @@ body {
   cursor: pointer;
 }
 
+.eras__rule { display: none; }
+
 .eras button:hover { border-color: var(--rule-strong); color: var(--ink); }
 .eras button[aria-current="true"] { border-color: var(--accent); color: var(--accent); }
 .eras button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
@@ -434,12 +436,20 @@ body[data-year-view="true"] .stage { padding-top: 0; }
      At 11px they total 323px and fit with room to spare. overflow-x stays as a
      fallback for a 320px screen. */
   .eras {
-    /* A fixed gap rather than space-between: the dividers below are placed at
-       a set offset, and space-between makes the gap depend on however wide
-       the labels happen to render. */
-    gap: 6px;
-    justify-content: center;
+    /* Justified: the row spans the bar, and the leftover width is shared
+       evenly around the labels and the dividers between them. */
+    gap: 2px;
+    justify-content: space-between;
     padding-inline: 6px;
+  }
+
+  .eras__rule {
+    display: block;
+    flex: 0 0 auto;
+    align-self: center;
+    width: 1px;
+    height: 14px;
+    background: var(--rule-strong);
   }
 
   /* No horizontal padding: seven labels are 323px of a 363px row, so padding
@@ -457,21 +467,11 @@ body[data-year-view="true"] .stage { padding-top: 0; }
     border-radius: 0;
     border-bottom: 2px solid transparent;
     background: transparent;
-    font-size: 11px;
-  }
-
-  /* A hairline between tabs, so seven labels in a row read as seven things
-     rather than one sentence. Absolutely positioned in the middle of the gap
-     because it must cost no width - the labels are 323px of a 363px row, and
-     there is not enough slack to give each divider its own column. */
-  .eras button + button::before {
-    content: '';
-    position: absolute;
-    left: -3.5px;
-    top: 50%;
-    height: 13px;
-    border-left: 1px solid var(--rule-strong);
-    transform: translateY(-50%);
+    /* Sized to the screen rather than pinned at 11px, which is legible on a
+       375px phone and too small on a 412px one. The ceiling is where seven
+       labels, six dividers and their gaps stop fitting on one line: about
+       12.6px at 412px wide, 11.3px at 375px. */
+    font-size: clamp(11px, calc(3.4vw - 1.44px), 12.6px);
   }
 
   .eras button:hover { border-color: transparent; }
