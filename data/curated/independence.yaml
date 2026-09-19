@@ -1,0 +1,284 @@
+# Independence, grouped into the waves it actually came in. Individual dates
+# for the largest or most consequential, period entries for the waves, so a
+# single year like 1960 does not turn into seventeen indistinguishable marks.
+
+- id: us-independence
+  title: United States declares independence
+  kind: event
+  regions: [north-america, americas]
+  start: 1776
+  end: 1776
+  importance: 5
+  confidence: high
+  categories: [independence]
+  summary: Thirteen British colonies declared themselves free, on the argument
+    that legitimate government rests on consent — an argument whose authors
+    held people in slavery while making it.
+  related: [locke, abolition-us]
+
+- id: latin-american-independence
+  title: Latin American wars of independence
+  kind: period
+  regions: [andes, mesoamerica, americas]
+  start: 1808
+  end: 1833
+  importance: 5
+  confidence: high
+  categories: [independence, war]
+  summary: Napoleon's occupation of Spain broke the link to the colonies, and
+    within twenty-five years almost all of Spanish and Portuguese America was
+    independent — Argentina in 1816, Chile 1818, Colombia 1819, Mexico and Peru
+    1821, Brazil 1822.
+  related: [haitian-revolution]
+
+- id: greek-independence
+  title: Greek War of Independence
+  kind: event
+  regions: [greece, europe, anatolia]
+  start: 1821
+  end: 1832
+  importance: 3
+  confidence: high
+  categories: [independence, war]
+  summary: The first successful nationalist revolt against Ottoman rule, and
+    the start of the empire's long unravelling in the Balkans.
+  related: [ottoman-empire]
+
+- id: liberia-independence
+  title: Liberia declares independence
+  kind: event
+  regions: [west-africa, africa]
+  start: 1847
+  end: 1847
+  importance: 3
+  confidence: high
+  categories: [independence]
+  summary: Founded by freed American slaves and declared independent in 1847,
+    making it, with Ethiopia, one of only two African states to escape
+    colonisation — at the cost of a settler elite ruling the indigenous
+    majority.
+
+- id: irish-independence
+  title: Irish independence
+  kind: event
+  regions: [britain, europe]
+  start: 1916
+  end: 1922
+  importance: 3
+  confidence: high
+  categories: [independence, war]
+  summary: The Easter Rising, war, and then a treaty that partitioned the
+    island — a sequence of rising, repression and partition that recurred
+    across the British empire.
+
+- id: indonesia-independence
+  title: Indonesian independence
+  kind: event
+  regions: [southeast-asia, east-asia]
+  start: 1945
+  end: 1949
+  importance: 4
+  confidence: high
+  categories: [independence, war]
+  summary: Declared days after the Japanese surrender, then defended through
+    four years of war before the Netherlands conceded.
+
+- id: vietnam-independence
+  title: Vietnamese independence
+  kind: event
+  regions: [southeast-asia, east-asia]
+  start: 1945
+  end: 1954
+  importance: 4
+  confidence: high
+  categories: [independence, war]
+  summary: Declared in 1945 and secured against France at Dien Bien Phu in
+    1954, which partitioned the country and set up the war that followed.
+
+- id: south-asia-partition-wave
+  title: Independence across South Asia
+  kind: period
+  regions: [india, sri-lanka, south-india]
+  start: 1947
+  end: 1948
+  importance: 5
+  confidence: high
+  categories: [independence]
+  summary: India and Pakistan in August 1947, Burma and Ceylon the following
+    year — the first and largest wave of post-war decolonisation, and the
+    template for what followed in Africa.
+  related: [indian-independence, british-raj]
+
+- id: israel-founded
+  title: Founding of Israel
+  kind: event
+  regions: [levant, west-asia]
+  start: 1948
+  end: 1948
+  importance: 4
+  confidence: high
+  categories: [independence, war]
+  note: The same events are known to Palestinians as the Nakba, in which
+    roughly 700,000 people were displaced. Both descriptions refer to the same
+    year and are recorded here without adjudication.
+  summary: The British mandate ended and Israel declared independence,
+    immediately followed by war with neighbouring Arab states.
+
+- id: arab-independence-wave
+  title: Independence across North Africa and the Middle East
+  kind: period
+  regions: [north-africa, west-asia, arabia]
+  start: 1951
+  end: 1971
+  importance: 4
+  confidence: high
+  categories: [independence]
+  summary: Libya in 1951, Sudan, Morocco and Tunisia in 1956, Kuwait 1961,
+    Algeria 1962 after a brutal eight-year war, and the Gulf states by 1971.
+
+- id: algerian-war
+  title: Algerian War of Independence
+  kind: event
+  regions: [north-africa, africa]
+  start: 1954
+  end: 1962
+  importance: 4
+  confidence: contested
+  categories: [independence, war, colonialism]
+  note: Death tolls are heavily disputed — French estimates around 350,000,
+    Algerian accounts closer to 1.5 million.
+  summary: Eight years of war, torture and mass displacement ended 132 years of
+    French rule and brought down the French Fourth Republic.
+
+- id: ghana-independence
+  title: Ghana becomes independent
+  kind: event
+  regions: [west-africa, africa]
+  start: 1957
+  end: 1957
+  importance: 5
+  confidence: high
+  categories: [independence]
+  summary: The first sub-Saharan colony to gain independence, under Kwame
+    Nkrumah, whose pan-Africanism set the terms for the wave that followed.
+  related: [year-of-africa]
+
+- id: year-of-africa
+  title: The Year of Africa
+  kind: event
+  regions: [west-africa, east-africa, north-africa, africa]
+  start: 1960
+  end: 1960
+  importance: 5
+  confidence: high
+  categories: [independence]
+  summary: Seventeen African countries became independent in a single year,
+    including Nigeria, the Congo, Senegal, Madagascar and Somalia. The
+    continent's political map changed more in twelve months than in the
+    previous sixty years.
+  related: [ghana-independence, scramble-for-africa, african-independence-wave]
+
+- id: african-independence-wave
+  title: African decolonisation
+  kind: period
+  regions: [africa, west-africa, east-africa]
+  start: 1951
+  end: 1980
+  importance: 5
+  confidence: high
+  categories: [independence]
+  summary: Within three decades almost every African colony became independent,
+    inheriting borders drawn in Berlin, economies built for extraction, and in
+    several cases immediate civil war.
+  related: [berlin-conference, year-of-africa, zimbabwe-independence]
+
+- id: east-africa-independence
+  title: Independence in East Africa
+  kind: period
+  regions: [east-africa, africa]
+  start: 1961
+  end: 1968
+  importance: 3
+  confidence: high
+  categories: [independence]
+  summary: Tanganyika in 1961, Uganda 1962, Kenya 1963 after the Mau Mau
+    insurgency and its suppression, Zambia and Malawi 1964.
+
+- id: bangladesh-independence
+  title: Bangladesh independence
+  kind: event
+  regions: [east-india, india]
+  start: 1971
+  end: 1971
+  importance: 4
+  confidence: contested
+  categories: [independence, war]
+  note: Bangladeshi accounts give three million killed; independent estimates
+    range from 300,000 upward. The scale is disputed, the atrocity is not.
+  summary: East Pakistan broke away after a war marked by mass killing and the
+    displacement of ten million refugees into India, which intervened decisively.
+
+- id: lusophone-independence
+  title: Independence of the Portuguese colonies
+  kind: event
+  regions: [west-africa, east-africa, africa]
+  start: 1974
+  end: 1975
+  importance: 4
+  confidence: high
+  categories: [independence, war]
+  summary: Angola, Mozambique, Guinea-Bissau and Cape Verde became independent
+    after a coup in Lisbon ended the dictatorship that had fought to keep them;
+    Angola and Mozambique slid straight into long civil wars.
+
+- id: zimbabwe-independence
+  title: Zimbabwe independence
+  kind: event
+  regions: [east-africa, africa]
+  start: 1980
+  end: 1980
+  importance: 3
+  confidence: high
+  categories: [independence, war]
+  summary: Majority rule after fifteen years of unilateral white minority
+    government and a guerrilla war to end it.
+
+- id: namibia-independence
+  title: Namibia independence
+  kind: event
+  regions: [east-africa, africa]
+  start: 1990
+  end: 1990
+  importance: 3
+  confidence: high
+  categories: [independence]
+  summary: The last African colony to become independent, having passed from
+    German to South African rule and been held in defiance of the UN for
+    decades.
+  related: [herero-nama-genocide]
+
+- id: soviet-dissolution
+  title: Dissolution of the Soviet Union
+  kind: event
+  regions: [eastern-europe, central-asia]
+  start: 1991
+  end: 1991
+  importance: 5
+  confidence: high
+  categories: [independence]
+  summary: Fifteen republics became independent states in a single year,
+    including the Baltic states, Ukraine and the Central Asian republics — the
+    last great wave of new countries.
+
+- id: south-sudan-independence
+  title: South Sudan independence
+  kind: event
+  regions: [east-africa, africa]
+  start: 2011
+  end: 2011
+  importance: 3
+  confidence: high
+  categories: [independence]
+  summary: The world's newest widely recognised country, created by referendum
+    after two civil wars spanning half a century, and in civil war again within
+    two years.

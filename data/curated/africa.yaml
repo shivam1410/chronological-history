@@ -1,0 +1,439 @@
+# African history at something closer to its real weight. The continent had
+# states, universities and trade networks for millennia before colonisation,
+# and this file is ordered to show that rather than starting at 1884.
+
+# ---- states and kingdoms ----
+- id: kingdom-of-kush
+  title: Kingdom of Kush
+  kind: polity
+  regions: [egypt, africa]
+  start: -1070
+  end: 350
+  importance: 4
+  confidence: medium
+  categories: [kingdom, civilisation]
+  summary: Nubian kingdom on the upper Nile that ruled Egypt outright as its
+    25th dynasty, and outlasted it by nearly a thousand years from Meroë, where
+    it wrote in its own still only partly deciphered script.
+
+- id: kingdom-of-aksum
+  title: Kingdom of Aksum
+  kind: polity
+  regions: [east-africa, africa]
+  start: [80, 100]
+  end: [940, 960]
+  importance: 4
+  confidence: medium
+  categories: [kingdom, trade]
+  summary: A Red Sea trading power that minted its own coinage, raised
+    monumental stelae, and adopted Christianity in the fourth century — among
+    the earliest states anywhere to do so.
+
+- id: ghana-empire
+  title: Ghana Empire
+  kind: polity
+  regions: [west-africa, africa]
+  start: [300, 700]
+  end: [1240, 1240]
+  importance: 3
+  confidence: contested
+  categories: [empire, trade]
+  note: Origins are known mainly from later Arabic geographers; the early
+    dates are inferred.
+  summary: The first of the great West African empires, grown wealthy taxing
+    the trade in gold moving north and salt moving south.
+  related: [trans-saharan-trade]
+
+- id: swahili-coast
+  title: Swahili coast city-states
+  kind: polity
+  regions: [east-africa, africa]
+  start: [800, 900]
+  end: [1500, 1600]
+  importance: 3
+  confidence: medium
+  categories: [trade, civilisation]
+  summary: Kilwa, Mombasa, Zanzibar and their neighbours traded gold, ivory and
+    enslaved people across the Indian Ocean as far as China, producing a
+    Bantu-Arabic language and an urban culture of stone towns.
+
+- id: kanem-bornu
+  title: Kanem–Bornu Empire
+  kind: polity
+  regions: [west-africa, africa]
+  start: [700, 900]
+  end: 1900
+  importance: 3
+  confidence: medium
+  categories: [empire, trade]
+  summary: One of the longest-lived states in African history, controlling the
+    central Saharan trade routes around Lake Chad for roughly a millennium.
+
+- id: great-zimbabwe
+  title: Great Zimbabwe
+  kind: structure
+  regions: [east-africa, africa]
+  start: [1100, 1100]
+  end: [1450, 1450]
+  importance: 4
+  confidence: medium
+  categories: [architecture, civilisation, trade]
+  note: Colonial-era officials insisted the stonework could not be African and
+    suppressed evidence to the contrary; its Shona origin is not in doubt.
+  summary: A capital of dry-stone walls up to eleven metres high, at the centre
+    of a gold-trading state linked to the Swahili coast and the Indian Ocean.
+
+- id: benin-kingdom
+  title: Kingdom of Benin
+  kind: polity
+  regions: [west-africa, africa]
+  start: [1180, 1200]
+  end: 1897
+  importance: 4
+  confidence: medium
+  categories: [kingdom, architecture]
+  summary: A West African state renowned for brass and ivory sculpture of
+    extraordinary technical refinement, sacked by a British expedition in 1897
+    whose loot is still held in museums across Europe and North America.
+
+- id: ethiopian-empire
+  title: Ethiopian Empire
+  kind: polity
+  regions: [east-africa, africa]
+  start: 1270
+  end: 1974
+  importance: 4
+  confidence: high
+  categories: [empire, dynasty]
+  summary: Seven centuries of continuous statehood, the only African power to
+    defeat a European army decisively at Adwa in 1896 and so escape the
+    partition of the continent.
+  related: [scramble-for-africa]
+
+- id: mansa-musa-hajj
+  title: Mansa Musa's pilgrimage to Mecca
+  kind: event
+  regions: [west-africa, africa]
+  start: 1324
+  end: 1325
+  importance: 3
+  confidence: medium
+  categories: [trade, religion]
+  summary: The Mali emperor crossed the Sahara with an entourage so laden with
+    gold that his spending in Cairo is said to have depressed its value for a
+    decade, and put Mali on European maps for the first time.
+  related: [mali-empire, timbuktu]
+
+- id: timbuktu
+  title: Timbuktu and the Sankore scholars
+  kind: structure
+  regions: [west-africa, africa]
+  start: [1100, 1300]
+  end: [1591, 1600]
+  importance: 4
+  confidence: medium
+  categories: [architecture, writing, philosopher]
+  summary: A Saharan trading city that became a centre of Islamic scholarship,
+    its manuscript libraries holding works on astronomy, law and medicine —
+    evidence of a written African intellectual tradition that colonial
+    historiography denied existed.
+  related: [mali-empire, songhai-empire]
+
+- id: songhai-empire
+  title: Songhai Empire
+  kind: polity
+  regions: [west-africa, africa]
+  start: 1464
+  end: 1591
+  importance: 4
+  confidence: high
+  categories: [empire, trade]
+  summary: The largest state in West African history at its height, ended by a
+    Moroccan army carrying firearms across the Sahara.
+  related: [mali-empire, timbuktu]
+
+- id: oyo-empire
+  title: Oyo Empire
+  kind: polity
+  regions: [west-africa, africa]
+  start: [1300, 1400]
+  end: 1896
+  importance: 3
+  confidence: medium
+  categories: [empire]
+  summary: A Yoruba state whose cavalry dominated the forest belt, governed
+    through a council that could compel a king to take his own life.
+
+- id: ashanti-empire
+  title: Ashanti Empire
+  kind: polity
+  regions: [west-africa, africa]
+  start: 1701
+  end: 1902
+  importance: 3
+  confidence: high
+  categories: [empire]
+  summary: A centralised Akan state that fought four wars against Britain over
+    a century before being annexed.
+
+- id: zulu-kingdom
+  title: Zulu Kingdom
+  kind: polity
+  regions: [east-africa, africa]
+  start: 1816
+  end: 1897
+  importance: 3
+  confidence: high
+  categories: [kingdom]
+  summary: Built by Shaka through military reorganisation, and remembered in
+    Britain chiefly for destroying a British column at Isandlwana in 1879.
+
+# ---- the slave trades ----
+- id: trans-saharan-trade
+  title: Trans-Saharan slave trade
+  kind: period
+  regions: [west-africa, north-africa, africa]
+  start: [650, 700]
+  end: [1900, 1960]
+  importance: 4
+  confidence: contested
+  categories: [slavery, trade]
+  note: Estimates of around nine million people trafficked over thirteen
+    centuries are extrapolations from fragmentary records, and are disputed.
+  summary: Enslaved people were moved north across the desert alongside gold
+    and salt for more than a millennium — the longest-running of the trades in
+    African people, and the least documented.
+
+- id: indian-ocean-slave-trade
+  title: Indian Ocean slave trade
+  kind: period
+  regions: [east-africa, africa, west-asia]
+  start: [800, 900]
+  end: [1900, 1960]
+  importance: 3
+  confidence: contested
+  categories: [slavery, trade]
+  summary: Enslaved East Africans were carried to Arabia, Persia and India over
+    a comparably long period, with Zanzibar as the principal market in the
+    nineteenth century.
+
+- id: transatlantic-slave-trade
+  title: Transatlantic slave trade
+  kind: period
+  regions: [west-africa, africa, americas]
+  start: 1501
+  end: 1867
+  importance: 5
+  confidence: high
+  categories: [slavery, trade, colonialism]
+  note: The Trans-Atlantic Slave Trade Database records roughly 12.5 million
+    people embarked and about 10.7 million surviving the crossing — a figure
+    built from surviving voyage records, so a floor rather than a total.
+  summary: Over three and a half centuries, more than twelve million Africans
+    were shipped to the Americas to be worked, overwhelmingly on sugar, cotton
+    and tobacco plantations. It was the largest forced migration in history and
+    the foundation of the plantation economies of the Atlantic world.
+  related: [haitian-revolution, abolition-british, abolition-us, abolition-brazil]
+  sources:
+    - {title: "SlaveVoyages — Trans-Atlantic Slave Trade Database", url: "https://www.slavevoyages.org/"}
+
+- id: haitian-revolution
+  title: Haitian Revolution
+  kind: event
+  regions: [mesoamerica, americas, africa]
+  start: 1791
+  end: 1804
+  importance: 5
+  confidence: high
+  categories: [slavery, independence, war]
+  summary: The only slave revolt in history to found a state. Enslaved people
+    in Saint-Domingue defeated French, Spanish and British forces in turn, and
+    declared Haiti independent in 1804 — after which France extracted
+    reparations for the loss of its slaves that Haiti paid until 1947.
+  related: [transatlantic-slave-trade]
+
+- id: abolition-british
+  title: Britain abolishes the slave trade, then slavery
+  kind: event
+  regions: [britain, africa, europe]
+  start: 1807
+  end: 1838
+  importance: 4
+  confidence: high
+  categories: [slavery, human-rights]
+  note: The 1833 Act compensated slave owners, not the enslaved; the resulting
+    government debt was not finally repaid until 2015.
+  summary: The trade was outlawed in 1807 and slavery itself across most of the
+    empire from 1834, with an intermediate period of compulsory unpaid
+    "apprenticeship" that ended in 1838.
+
+- id: abolition-us
+  title: Abolition of slavery in the United States
+  kind: event
+  regions: [north-america, americas, africa]
+  start: 1865
+  end: 1865
+  importance: 5
+  confidence: high
+  categories: [slavery, human-rights]
+  summary: The Thirteenth Amendment ended slavery after a civil war fought over
+    it, though its exception for punishment of crime shaped incarceration for
+    the next century and a half.
+
+- id: abolition-brazil
+  title: Brazil abolishes slavery
+  kind: event
+  regions: [andes, americas, africa]
+  start: 1888
+  end: 1888
+  importance: 4
+  confidence: high
+  categories: [slavery, human-rights]
+  summary: The last country in the Americas to abolish slavery, and the
+    destination of roughly four in ten of all Africans carried across the
+    Atlantic.
+  related: [transatlantic-slave-trade]
+
+# ---- partition and colonial rule ----
+- id: berlin-conference
+  title: Berlin Conference
+  kind: event
+  regions: [western-europe, africa, europe]
+  start: 1884
+  end: 1885
+  importance: 5
+  confidence: high
+  categories: [colonialism, treaty]
+  summary: European powers met to agree rules for claiming African territory.
+    No African was present. The borders drawn there cut through peoples and
+    polities and are, with few changes, the borders of today.
+  related: [scramble-for-africa]
+
+- id: scramble-for-africa
+  title: The Scramble for Africa
+  kind: period
+  regions: [africa, western-europe]
+  start: 1881
+  end: 1914
+  importance: 5
+  confidence: high
+  categories: [colonialism, empire]
+  summary: In roughly thirty years European powers moved from controlling
+    coastal enclaves to occupying almost the entire continent. Only Ethiopia
+    and Liberia remained independent.
+  related: [berlin-conference, ethiopian-empire, congo-free-state]
+
+- id: congo-free-state
+  title: Congo Free State
+  kind: polity
+  regions: [west-africa, africa]
+  start: 1885
+  end: 1908
+  importance: 4
+  confidence: contested
+  categories: [colonialism, slavery]
+  note: Estimates of population decline run to around ten million, combining
+    killing, starvation, disease and collapsed birth rates. No census exists
+    for the period, so the figure is contested.
+  summary: Held as the personal property of Leopold II of Belgium and run for
+    rubber through forced labour, mutilation and hostage-taking, until
+    international revulsion forced its transfer to the Belgian state.
+
+- id: herero-nama-genocide
+  title: Herero and Nama genocide
+  kind: event
+  regions: [east-africa, africa]
+  start: 1904
+  end: 1908
+  importance: 4
+  confidence: high
+  categories: [colonialism, human-rights]
+  summary: German colonial forces in South West Africa drove the Herero into
+    the desert and interned survivors in camps, killing an estimated 80% of the
+    Herero and half the Nama. Germany formally acknowledged it as genocide in
+    2021.
+
+- id: maji-maji-rebellion
+  title: Maji Maji Rebellion
+  kind: event
+  regions: [east-africa, africa]
+  start: 1905
+  end: 1907
+  importance: 3
+  confidence: high
+  categories: [colonialism, war]
+  summary: A broad uprising against German rule and forced cotton cultivation
+    in East Africa, suppressed by a scorched-earth campaign that caused famine
+    killing perhaps a quarter of a million people.
+
+# ---- apartheid ----
+- id: apartheid
+  title: Apartheid in South Africa
+  kind: period
+  regions: [east-africa, africa]
+  start: 1948
+  end: 1994
+  importance: 5
+  confidence: high
+  categories: [human-rights, colonialism]
+  summary: A legal system classifying every person by race and allocating
+    where they could live, work, study and whom they could marry accordingly.
+    It stripped Black South Africans — the large majority — of citizenship,
+    assigning them to nominally independent homelands.
+  related: [sharpeville-massacre, soweto-uprising, mandela, south-africa-1994]
+  sources:
+    - {title: "South African History Online — Apartheid legislation", url: "https://www.sahistory.org.za/article/apartheid-legislation-1850s-1970s"}
+
+- id: sharpeville-massacre
+  title: Sharpeville massacre
+  kind: event
+  regions: [east-africa, africa]
+  start: 1960
+  end: 1960
+  importance: 4
+  confidence: high
+  categories: [human-rights]
+  summary: Police fired on a crowd protesting the pass laws, killing 69 people,
+    most shot in the back. It ended the era of non-violent protest, drove the
+    liberation movements underground, and turned world opinion.
+
+- id: mandela
+  title: Nelson Mandela
+  kind: person
+  regions: [east-africa, africa]
+  start: 1918
+  end: 2013
+  importance: 5
+  confidence: high
+  categories: [human-rights, ruler]
+  summary: Imprisoned for twenty-seven years for his part in the armed struggle
+    against apartheid, he negotiated its dismantling on release and became the
+    first president elected by all South Africans.
+  related: [apartheid, south-africa-1994]
+
+- id: soweto-uprising
+  title: Soweto uprising
+  kind: event
+  regions: [east-africa, africa]
+  start: 1976
+  end: 1976
+  importance: 4
+  confidence: high
+  categories: [human-rights]
+  summary: School students protesting compulsory instruction in Afrikaans were
+    shot at by police; the images that followed made apartheid internationally
+    indefensible and triggered a decade of sustained revolt.
+
+- id: south-africa-1994
+  title: South Africa's first democratic election
+  kind: event
+  regions: [east-africa, africa]
+  start: 1994
+  end: 1994
+  importance: 5
+  confidence: high
+  categories: [independence, human-rights]
+  summary: All South Africans voted together for the first time, ending
+    apartheid. The Truth and Reconciliation Commission that followed chose
+    public testimony over prosecution, a bargain still argued about.
+  related: [apartheid, mandela]

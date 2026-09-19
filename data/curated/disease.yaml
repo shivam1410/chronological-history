@@ -1,0 +1,287 @@
+# Epidemics, pandemics, and the measures that eventually answered them.
+# Mortality estimates for pre-modern outbreaks are reconstructions, not counts;
+# where the range is wide the entry says so rather than picking a number.
+
+- id: plague-of-athens
+  title: Plague of Athens
+  kind: event
+  regions: [greece, europe]
+  start: -430
+  end: -426
+  importance: 3
+  confidence: medium
+  categories: [disease]
+  note: The pathogen is still unidentified; typhoid fever and typhus are the
+    most argued-for candidates.
+  summary: Struck Athens during the Peloponnesian War, killing perhaps a
+    quarter of the population including Pericles, and is often counted among
+    the reasons Athens lost.
+  related: [classical-athens]
+
+- id: antonine-plague
+  title: Antonine Plague
+  kind: event
+  regions: [rome, europe, west-asia]
+  start: 165
+  end: 180
+  importance: 3
+  confidence: medium
+  categories: [disease, pandemic]
+  note: Probably smallpox or measles; contemporary descriptions are not
+    specific enough to settle it.
+  summary: Carried back by armies returning from the east, it killed millions
+    across the Roman empire and thinned the legions for a generation.
+  related: [roman-empire, marcus-aurelius]
+
+- id: plague-of-justinian
+  title: Plague of Justinian
+  kind: event
+  regions: [west-asia, europe, north-africa]
+  start: 541
+  end: 549
+  importance: 4
+  confidence: medium
+  categories: [disease, pandemic]
+  note: The first documented pandemic of Yersinia pestis, confirmed by DNA
+    recovered from sixth-century graves. Death tolls are heavily disputed;
+    older estimates of half the Mediterranean population are now widely doubted.
+  summary: Reached Constantinople in 541 and returned in waves for two
+    centuries, crippling Justinian's attempt to reunite the Roman world.
+  sources:
+    - {title: "Nature — Ancient Yersinia pestis genomes", url: "https://www.nature.com/articles/nature13591"}
+
+- id: black-death
+  title: The Black Death
+  kind: event
+  regions: [europe, west-asia, north-africa, central-asia]
+  start: 1346
+  end: 1353
+  importance: 5
+  confidence: medium
+  categories: [disease, pandemic]
+  note: Estimates run from 30% to 60% of Europe's population; the figure varies
+    enormously by region and the records are uneven.
+  summary: The deadliest documented pandemic, which reached Europe along trade
+    routes from Central Asia and killed so large a share of the population that
+    wages rose, serfdom weakened, and the social order did not recover its
+    former shape.
+  related: [second-plague-pandemic, silk-road]
+  sources:
+    - {title: "Encyclopaedia Britannica — Black Death", url: "https://www.britannica.com/event/Black-Death"}
+
+- id: second-plague-pandemic
+  title: Second plague pandemic
+  kind: period
+  regions: [europe, west-asia, north-africa]
+  start: 1346
+  end: [1840, 1890]
+  importance: 4
+  confidence: medium
+  categories: [disease, pandemic]
+  summary: The Black Death was the opening wave of an era of recurring plague
+    outbreaks that returned somewhere in Europe or the Mediterranean roughly
+    every decade for five centuries.
+  related: [black-death, great-plague-london]
+
+- id: columbian-exchange-epidemics
+  title: Epidemics of the Columbian exchange
+  kind: period
+  regions: [mesoamerica, andes, north-america, americas]
+  start: 1492
+  end: [1650, 1700]
+  importance: 5
+  confidence: contested
+  categories: [disease, pandemic, colonialism]
+  note: Estimates of indigenous population loss range from about 50% to over
+    90% across the Americas. The pre-contact population itself is disputed,
+    which is why the proportion is uncertain rather than the death toll alone.
+  summary: Smallpox, measles, influenza and typhus arrived with Europeans in
+    populations with no prior exposure, causing the largest demographic
+    catastrophe in recorded history and enabling conquests that force alone
+    could not have achieved.
+  related: [inca-empire, maya-classic, smallpox-eradication]
+  sources:
+    - {title: "Smithsonian — Disease and the Columbian Exchange", url: "https://www.si.edu/spotlight/the-columbian-exchange"}
+
+- id: cocoliztli-epidemics
+  title: Cocoliztli epidemics
+  kind: event
+  regions: [mesoamerica, americas]
+  start: 1545
+  end: 1576
+  importance: 3
+  confidence: contested
+  categories: [disease]
+  note: The cause is unresolved; a 2018 study recovered Salmonella enterica
+    DNA from victims, but indigenous viral haemorrhagic fever is still argued.
+  summary: Two catastrophic outbreaks in New Spain, the first killing an
+    estimated five to fifteen million people in the Mexican highlands.
+  related: [columbian-exchange-epidemics]
+
+- id: great-plague-london
+  title: Great Plague of London
+  kind: event
+  regions: [britain, europe]
+  start: 1665
+  end: 1666
+  importance: 3
+  confidence: high
+  categories: [disease]
+  summary: Killed roughly a quarter of London's population in eighteen months,
+    and was followed the next year by the fire that burned much of the city.
+
+- id: variolation
+  title: Variolation
+  kind: technology
+  regions: [global, china, west-asia, africa]
+  start: [1000, 1500]
+  end: 1800
+  importance: 3
+  confidence: contested
+  categories: [medicine, disease]
+  note: Practised in China, India, the Ottoman empire and West Africa well
+    before it reached Europe; the earliest dates are not securely established.
+  summary: Deliberate infection with material from a mild smallpox case to
+    produce immunity — risky, but the first effective control of an epidemic
+    disease, and the practice vaccination replaced.
+  related: [vaccination]
+
+- id: third-plague-pandemic
+  title: Third plague pandemic
+  kind: period
+  regions: [china, india, global]
+  start: 1855
+  end: 1960
+  importance: 3
+  confidence: medium
+  categories: [disease, pandemic]
+  summary: Began in Yunnan and spread by steamship to every inhabited
+    continent, killing over twelve million people, most of them in India. It
+    was during this pandemic that the plague bacterium was finally identified.
+
+- id: cholera-pandemics
+  title: The cholera pandemics
+  kind: period
+  regions: [east-india, india, global]
+  start: 1817
+  end: ongoing
+  importance: 4
+  confidence: medium
+  categories: [disease, pandemic]
+  summary: Seven pandemics since 1817, all originating in the Ganges delta. The
+    1854 London outbreak prompted John Snow to trace cases to a single water
+    pump, which founded epidemiology and made the case for sanitation.
+  related: [germ-theory]
+
+- id: russian-flu-1889
+  title: 1889 influenza pandemic
+  kind: event
+  regions: [global, eastern-europe]
+  start: 1889
+  end: 1890
+  importance: 2
+  confidence: medium
+  categories: [disease, pandemic]
+  summary: The first pandemic to spread along railways and telegraph-linked
+    cities, killing around a million people and reported almost in real time.
+
+- id: influenza-1918
+  title: 1918 influenza pandemic
+  kind: event
+  regions: [global]
+  start: 1918
+  end: 1920
+  importance: 5
+  confidence: medium
+  categories: [disease, pandemic]
+  note: Estimates range from 17 million to 50 million deaths and occasionally
+    higher; India alone may account for a fifth. Wartime censorship means the
+    contemporary record is poor.
+  summary: Infected roughly a third of humanity and killed more people than the
+    war that spread it, with unusually high mortality among healthy young
+    adults.
+  sources:
+    - {title: "CDC — 1918 Pandemic", url: "https://www.cdc.gov/flu/pandemic-resources/1918-pandemic-h1n1.html"}
+
+- id: polio-vaccine
+  title: Polio epidemics and the vaccine
+  kind: event
+  regions: [global, north-america]
+  start: [1900, 1916]
+  end: ongoing
+  importance: 3
+  confidence: medium
+  categories: [disease, medicine]
+  summary: Paralytic polio became a recurring terror of twentieth-century
+    summers until the 1955 vaccine; the disease is now close to eradication.
+
+- id: smallpox-eradication
+  title: Eradication of smallpox
+  kind: event
+  regions: [global]
+  start: 1967
+  end: 1980
+  importance: 5
+  confidence: high
+  categories: [disease, medicine]
+  summary: A coordinated global vaccination campaign eliminated smallpox
+    entirely — the only human disease ever deliberately driven to extinction,
+    after it had killed an estimated 300 million people in the twentieth
+    century alone.
+  related: [vaccination, variolation]
+  sources:
+    - {title: "WHO — Smallpox eradication", url: "https://www.who.int/health-topics/smallpox"}
+
+- id: hiv-aids
+  title: HIV/AIDS pandemic
+  kind: period
+  regions: [east-africa, africa, global]
+  start: 1981
+  end: ongoing
+  importance: 5
+  confidence: high
+  categories: [disease, pandemic]
+  summary: Identified in 1981 and traced to a mid-century crossover from
+    primates in central Africa. It has killed over 40 million people; the
+    antiretroviral therapies developed from 1996 turned it from a death
+    sentence into a manageable condition for those who can obtain them.
+
+- id: covid-19
+  title: COVID-19 pandemic
+  kind: event
+  regions: [global, china]
+  start: 2019
+  end: 2023
+  importance: 5
+  confidence: medium
+  categories: [disease, pandemic]
+  note: Reported deaths approach 7 million; excess-mortality estimates are
+    roughly three times that.
+  summary: The first pandemic of a novel coronavirus, met within a year by
+    vaccines built on mRNA technology that had been in development for decades.
+
+- id: tuberculosis
+  title: Tuberculosis
+  kind: period
+  regions: [global]
+  start: "9 ka"
+  end: ongoing
+  importance: 4
+  confidence: medium
+  categories: [disease]
+  note: Found in Neolithic remains; the deep start reflects the earliest
+    skeletal evidence, not a discrete outbreak.
+  summary: Has probably killed more people than any other infectious disease in
+    history, and still kills over a million a year despite being curable.
+
+- id: malaria
+  title: Malaria
+  kind: period
+  regions: [global, africa]
+  start: "10 ka"
+  end: ongoing
+  importance: 4
+  confidence: medium
+  categories: [disease]
+  summary: Endemic across the tropics for millennia, shaping human genetics
+    through traits like sickle-cell that confer partial resistance at a cost.
