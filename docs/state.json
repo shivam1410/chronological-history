@@ -2,7 +2,7 @@
   "feature_slug": "chronological-history-site",
   "stage": "build",
   "mode": "code",
-  "status": "phase_1_complete_reviewed",
+  "status": "phase_3_in_progress",
   "created": "2026-09-19",
   "artifacts": {
     "prd.md": "written",
@@ -67,25 +67,33 @@
     "spine.json size at scale is a Phase 6 checkpoint with lane sharding as the named fallback"
   ],
   "recommended_next": [
-    "/aw:build (Phase 2, slice 2.1)"
+    "/aw:build (Phase 3: 3.2/3.3 Indian depth, then 3.5 coverage audit)"
   ],
   "completed_phases": [
-    "Phase 1 \u2014 Walking skeleton"
+    "Phase 1 \u2014 Walking skeleton",
+    "Phase 2 \u2014 Timeline depth"
   ],
-  "current_phase": "Phase 2 \u2014 Timeline depth",
+  "current_phase": "Phase 3 \u2014 Curated dataset",
   "completed_slices": [
     "1.1",
     "1.2",
     "1.3",
     "1.4",
     "1.5",
-    "1.6"
-  ],
-  "remaining_slices": [
+    "1.6",
     "2.1",
     "2.2",
     "2.3",
     "2.4",
+    "2.5",
+    "3.0",
+    "3.6-science",
+    "3.6-philosophy",
+    "3.7",
+    "3.8",
+    "3.9"
+  ],
+  "remaining_slices": [
     "3.1",
     "3.2",
     "3.3",
@@ -93,14 +101,12 @@
     "3.5",
     "4.1",
     "4.2",
-    "4.3",
     "5.1",
     "5.2",
     "5.3",
     "6.1",
     "6.2",
-    "6.3",
-    "6.4"
+    "6.3"
   ],
   "parallel_execution": {
     "used": true,
@@ -147,5 +153,7 @@
     "19f9126 feat(site): piecewise-log time scale and display formatting",
     "4daa674 fix(pipeline): enforce the loader strictness the contract already promised",
     "b422520 feat(site): canvas timeline with zoom, pan, and adaptive axis"
-  ]
+  ],
+  "entry_count": 233,
+  "deployed": "https://shivam1410.github.io/chronological-history/"
 }

@@ -106,3 +106,64 @@ astronomically-correct snapping yields labels like `81 BCE` and `2001 BCE`.
 
 Phase 2 — timeline depth. Slice 2.1 (`layout.js` first-fit lane packing) is the entry
 point and replaces `PLACEHOLDER_ROWS` in `timeline.js`.
+
+---
+
+## Phase 2 — Timeline depth (complete)
+
+| Slice | Save point | Proof |
+|---|---|---|
+| 2.1 Lane packing | `213f3ac` | RED on missing module → 21 GREEN |
+| 2.2 Lane rendering | `ce4ce0c` | drawn + hidden == culled at five windows, no duplicates |
+| 2.3 Hit testing, panel, routing | `db62cda` | 13 entries across 9 lanes hit-test to themselves; deep link restores window + entry |
+| 2.4 Minimap + era jumps | `117d43a` | all 7 eras land exactly on their bounds; 3 minimap drags track with zero unit error |
+| 2.5 Hover readout | `9e30226` | year badge, lane name and entry under the cursor |
+
+Chunk review: **approve, no blocking issues.** Three advisories taken in `a0b336b`.
+
+### Defects found in Phase 2
+
+1. **Bars drew one gutter-width left of their own axis** (blocking). `layout.js`
+   works in 0-based timeline coordinates; the renderer never applied the offset.
+   The 2.2 accounting check could not catch it — it verifies counts, not
+   positions. The renderer now exposes `screenX()` so alignment is asserted.
+2. **Region grouping dumped non-India sub-regions into `global`** — Roman and
+   Chinese history landed under "Global / Science & Ideas" at zoomed windows.
+3. **Bars spanning both window edges lost their labels**, pinned off-canvas.
+4. **The hover tooltip drew an empty box** below the last lane, where there is
+   neither an entry nor a lane name. The guard checked array length, but the
+   array always held one empty string.
+
+## Phase 3 — Curated dataset (in progress)
+
+| Slice | Save point | Entries |
+|---|---|---|
+| 3.0 `texts:` field + taxonomy duplicate guard | `638c8a0` | — |
+| 3.6 Science & Discovery | `54b041f` | 46 |
+| Philosophy & Ideas | `54b041f` | 44 |
+| 3.7 Disease and pandemics | `39dd0a5` | 19 |
+| 3.8 African history, slave trades, apartheid | `39dd0a5` | 31 |
+| 3.8 Independence | `39dd0a5` | 21 |
+| 3.9 The record gap | `7d2ea63` | 17 |
+
+**233 entries.** Lane coverage moved from four thin regional lanes to
+Africa 42, Science 46, Philosophy 44, India 32, Europe 16, West Asia 14.
+
+### Handling of contested material
+
+Wide brackets plus a `note` naming the competing positions, rather than a
+chosen number, for: Congo Free State mortality, Algerian war deaths, Bangladesh
+1971, indigenous population loss in the Americas, Black Death share of
+population, the 1918 influenza toll, and Zoroaster's dates (a genuine
+~900-year scholarly spread).
+
+Where a religious tradition's own account differs from the academic dating, the
+`note` says so plainly — Theravada holds the oral transmission exact, Islamic
+doctrine holds the Quran uncreated, Sikh tradition regards the Guru Granth
+Sahib as a living Guru rather than a record, and Digambara Jains do not accept
+the Svetambara canon at all.
+
+### Remaining in Phase 3
+
+3.1 deep time expansion, 3.2/3.3 Indian depth, 3.4 world context,
+3.5 coverage audit. Oceania (1) and Central Asia (1) are the thinnest lanes.
