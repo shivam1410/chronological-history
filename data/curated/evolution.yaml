@@ -162,10 +162,13 @@
   title: Apes diverge from monkeys
   kind: biological
   regions: [earth-life, africa]
-  start: "25 Ma"
-  end: ongoing
+  start: ["30 Ma", "25 Ma"]
+  end: ["25 Ma", "20 Ma"]
   importance: 3
-  confidence: medium
+  confidence: contested
+  note: Molecular and fossil estimates for the catarrhine split range from
+    about 30 to 25 million years ago, with the lineages clearly distinct by
+    roughly 20 Ma. Wikidata gives 20.4 Ma, at the young end.
   categories: [evolution]
   summary: The hominoids appear — larger-bodied, tailless, with shoulders built
     for hanging rather than running along branches.
