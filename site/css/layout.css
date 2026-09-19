@@ -434,8 +434,11 @@ body[data-year-view="true"] .stage { padding-top: 0; }
      At 11px they total 323px and fit with room to spare. overflow-x stays as a
      fallback for a 320px screen. */
   .eras {
-    gap: 4px;
-    justify-content: space-between;
+    /* A fixed gap rather than space-between: the dividers below are placed at
+       a set offset, and space-between makes the gap depend on however wide
+       the labels happen to render. */
+    gap: 6px;
+    justify-content: center;
     padding-inline: 6px;
   }
 
@@ -443,14 +446,32 @@ body[data-year-view="true"] .stage { padding-top: 0; }
      would leave nothing for space-between to spread between them. The tap
      target is unaffected - it stays 44px tall. */
   .eras button {
-    flex: 0 1 auto;
-    min-width: 0;
+    position: relative;
+    /* Never shrink. Allowing it let the row squeeze seven labels into a width
+       that could not hold them, so the text spilled past its own box and the
+       dividers landed on top of it. Below about 370px the row scrolls
+       instead, which is honest about not fitting. */
+    flex: 0 0 auto;
     padding: 0;
     border: 0;
     border-radius: 0;
     border-bottom: 2px solid transparent;
     background: transparent;
     font-size: 11px;
+  }
+
+  /* A hairline between tabs, so seven labels in a row read as seven things
+     rather than one sentence. Absolutely positioned in the middle of the gap
+     because it must cost no width - the labels are 323px of a 363px row, and
+     there is not enough slack to give each divider its own column. */
+  .eras button + button::before {
+    content: '';
+    position: absolute;
+    left: -3.5px;
+    top: 50%;
+    height: 13px;
+    border-left: 1px solid var(--rule-strong);
+    transform: translateY(-50%);
   }
 
   .eras button:hover { border-color: transparent; }
