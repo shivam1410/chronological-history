@@ -179,7 +179,20 @@ def cmd_audit(_args) -> int:
 
 
 def cmd_images(_args) -> int:
-    resolved = images_mod.fetch_all()
+    """Curated filenames first, then every article's own lead image.
+
+    The hand-written mapping wins where it exists, because a chosen image is
+    usually a better lead than whatever the article happens to open with.
+    """
+    print("resolving lead images from Wikipedia articles")
+    discovered = images_mod.lead_image_titles(citations_mod.ARTICLES)
+
+    mapping = {**discovered, **images_mod.COMMONS_FILES}
+    print(f"\n{len(mapping)} files to look up on Commons "
+          f"({len(images_mod.COMMONS_FILES)} curated, "
+          f"{len(set(discovered) - set(images_mod.COMMONS_FILES))} discovered)\n")
+
+    resolved = images_mod.fetch_all(mapping)
     images_mod.write(resolved)
     print(f"\nwrote {len(resolved)} images to {images_mod.OUTPUT}")
     return 0
