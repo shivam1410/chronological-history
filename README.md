@@ -119,6 +119,61 @@ Two things in there are load-bearing and easy to break by accident:
   has to route through `astro()` / `elapsed()`. This has caused more bugs here
   than everything else combined.
 
+## Nothing is fetched at render time
+
+The deployed site makes exactly one kind of network request: three local JSON
+files from its own origin. It never calls Wikidata, Wikipedia or Commons.
+
+```
+you run, on demand            committed to git              served as static files
+──────────────────            ────────────────              ──────────────────────
+make wikidata  ──┐
+make cite      ──┼──query──▶  data/imported/*.yaml
+make images    ──┘            site/images/*
+                                      │
+make build     ─────────merge─────────┴──▶  site/data/spine.json
+                                            site/data/meta.json
+                                            site/data/eras/*.json   ──▶  browser
+```
+
+Those fetch commands run on your machine when you choose. Their output is
+committed, so the site is frozen between runs and works whether or not any
+upstream service is up. CI rebuilds from `data/` on every push and fails if
+`site/data/` has drifted, so a stale bundle cannot ship unnoticed.
+
+Images are downloaded into `site/images/` rather than hotlinked, so a visitor's
+browser never contacts Wikimedia either.
+
+### The commands
+
+| Command | Network | What it does |
+|---|---|---|
+| `make build` | no | Merge `data/` into the JSON the site reads |
+| `make validate` | no | Check the sources without emitting |
+| `make audit` | no | Report sourcing gaps and date disagreements |
+| `make wikidata` | yes | Resolve entries to Wikidata items |
+| `make cite` | yes | Resolve citations and check what they say |
+| `make images` | yes | Resolve, download and credit images |
+
+### How Wikidata is used
+
+Entries are matched to Wikidata items by article title, and **only the
+identifier is imported**. Dates are deliberately not applied over hand-authored
+ones — they are used to *check* them, and `make audit` reports where the two
+disagree. That comparison is the only independent check this dataset has on
+dates that were written from recall.
+
+Matching is strict: an item is accepted only when its title equals the entry's
+own, ignoring case, accents and a leading article. No prefix matching, because
+no string rule separates "Euclid" / "Euclid of Alexandria" from "Homer" /
+"Homer Simpson". Roughly a third of entries are therefore left unmatched, which
+is the right way to be wrong — a false positive imports another entity's dates
+under our label.
+
+It still gets things wrong. The check caught `bijak-kabir`, an entry about when
+Kabir's collections were written down, matched to Kabir the person and offered
+his lifespan instead.
+
 ## Where the data comes from — and how far to trust it
 
 **Every entry was written from an AI model's knowledge. Nothing was scraped, and
