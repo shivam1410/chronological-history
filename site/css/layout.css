@@ -74,6 +74,7 @@ body {
 
 .search__input {
   width: 100%;
+  min-height: var(--control-h);
   padding: 5px var(--step-5) 5px var(--step-3);
   border: 1px solid var(--rule);
   border-radius: 999px;
@@ -152,6 +153,7 @@ body {
 
 .range__input {
   width: 94px;
+  min-height: var(--control-h);
   padding: 4px var(--step-2);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
@@ -237,13 +239,14 @@ body {
   flex: 0 0 auto;
   align-items: center;
   gap: var(--step-1);
+  min-height: var(--control-h);
   padding: 5px var(--step-3);
   border: 1px solid var(--rule);
   border-radius: 999px;
   background: var(--bg-sunken);
   color: var(--ink-soft);
   font: inherit;
-  font-size: 12px;
+  font-size: 13px;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
   cursor: pointer;
@@ -254,6 +257,7 @@ body {
 .range__summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 
 .range__go {
+  min-height: var(--control-h);
   padding: 4px var(--step-2);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
@@ -469,10 +473,13 @@ body[data-year-view="true"] .stage { padding-top: 0; }
  * an actual phone.
  */
 @media (pointer: coarse) {
-  :root { --strip-h: 52px; }
-
-  .search__input,
-  .range__input { min-height: 44px; }
+  :root {
+    --strip-h: 52px;
+    /* Raising the token covers every control that uses it. Listing them by
+       name here is what left the date summary at 30px against a 44px search
+       field, and below the target size this block exists to enforce. */
+    --control-h: 44px;
+  }
 
   .eras button {
     min-height: 44px;

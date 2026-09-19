@@ -43,6 +43,10 @@
   --minimap-h: 38px;
   /* Height of a stacked control strip below the header on narrow screens. */
   --strip-h: 33px;
+  /* One height for every control in the top bar. Search, the date fields and
+     the date summary were 32, 28 and 30px, which reads as misalignment rather
+     than hierarchy. Raised to 44 for touch, below. */
+  --control-h: 32px;
 }
 
 @media (prefers-color-scheme: dark) {
