@@ -137,15 +137,36 @@ Run `make audit` for the current state. At the time of writing:
 | | |
 |---|---|
 | Entries | 390 |
-| Carrying a source link | **27 (6%)** |
+| Carrying a source link | 87 (22%) |
 | Marked `contested` | 67 |
-| Marked `contested` **with no citation** | **60** |
+| Marked `contested` with no citation | **0** |
 
-That last row is a known defect, not a design choice. `spec.md` requires a
-contested entry to cite the dispute; the validation rule that would enforce it
-is scheduled for a later phase and has never run. Until it does, a `note`
-saying "scholars disagree" is the model's recollection of a disagreement rather
-than a sourced account of one.
+Every contested entry now cites something. That is a lower bar than it sounds,
+and the next section says why.
+
+### A citation is not a verification
+
+Sixty of those citations were added by `make cite`, which resolves each entry
+to a Wikipedia article, follows redirects to the canonical title, and then
+checks whether the article's own opening section mentions the dates this
+dataset claims. Nothing is asserted without being fetched first.
+
+The results are not uniformly reassuring, and are reported rather than hidden:
+
+| Does the cited article's opening mention our dates? | Entries |
+|---|---|
+| Yes, both bounds | 12 |
+| One bound | 13 |
+| **Neither** | **22** |
+| Not checkable — deep time, no bare years to match | 13 |
+
+Those 22 are not necessarily wrong. An article's first paragraph often
+summarises a subject without restating its dates, so this is a weak test that
+produces false alarms. But they are the entries where this dataset's date and
+its citation have not been shown to agree, and `make audit` lists them by name.
+
+These are also **tertiary sources**. They point a reader at where a dispute is
+documented; they are not evidence that the bracket here is the right one.
 
 ### A crude accuracy check
 

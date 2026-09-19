@@ -1,4 +1,4 @@
-.PHONY: build validate test test-py test-js serve stats audit images setup clean
+.PHONY: build validate test test-py test-js serve stats audit images cite setup clean
 
 # Prefer the project venv when present, else fall back to python3.
 PY := $(shell [ -x .venv/bin/python ] && echo .venv/bin/python || echo python3)
@@ -22,6 +22,9 @@ audit:  ## where the evidence is thin
 
 images:  ## fetch Commons images (network)
 	$(PY) -m pipeline.cli images
+
+cite:  ## resolve citations for entries that lack one (network)
+	$(PY) -m pipeline.cli cite
 
 test: test-py test-js  ## run both suites
 

@@ -15,6 +15,7 @@ from collections import Counter
 
 from dataclasses import replace
 
+from pipeline import citations as citations_mod
 from pipeline import images as images_mod
 from pipeline.emit import bucket_for, write_bundles
 from pipeline.loader import curated_paths, load_entries, load_taxonomy
@@ -27,7 +28,26 @@ def _load():
     if not paths:
         raise SystemExit("no source files found under data/curated/")
     entries = load_entries(paths, taxonomy)
-    return _apply_images(entries), taxonomy, paths
+    return _apply_citations(_apply_images(entries)), taxonomy, paths
+
+
+def _apply_citations(entries):
+    """Attach fetched citations to entries that cite nothing yet.
+
+    Kept out of the curated YAML because these were resolved by machine, and
+    mixing them into hand-authored files would blur which is which.
+    """
+    from pipeline.model import Source
+
+    fetched = citations_mod.load()
+    if not fetched:
+        return entries
+    return [
+        replace(entry, sources=(Source(title=fetched[entry.id]["title"],
+                                       url=fetched[entry.id]["url"]),))
+        if not entry.sources and entry.id in fetched else entry
+        for entry in entries
+    ]
 
 
 def _apply_images(entries):
@@ -131,6 +151,24 @@ def cmd_audit(_args) -> int:
     print(f"    contested, unsourced    {len(unsourced_contested):>4}"
           f"   <- each of these should cite the dispute")
 
+    fetched = citations_mod.load()
+    if fetched:
+        verdicts = Counter(v.get("dates_corroborated", "?") for v in fetched.values())
+        print("\n  of the machine-resolved citations, does the cited article's")
+        print("  own opening mention the dates this dataset claims?")
+        for verdict in ("yes", "partial", "no", "not checked (deep time)"):
+            if verdicts.get(verdict):
+                print(f"    {verdict:<26} {verdicts[verdict]:>3}")
+        unconfirmed = [k for k, v in fetched.items()
+                       if v.get("dates_corroborated") == "no"]
+        if unconfirmed:
+            print("\n  cited but NOT corroborated by the article's opening")
+            print("  (not necessarily wrong - worth a human's eye)")
+            for entry_id in sorted(unconfirmed)[:12]:
+                print(f"    {entry_id}")
+            if len(unconfirmed) > 12:
+                print(f"    ... and {len(unconfirmed) - 12} more")
+
     if unsourced_contested:
         print("\n  contested entries needing a citation")
         for entry in sorted(unsourced_contested, key=lambda e: e.id)[:15]:
@@ -147,6 +185,19 @@ def cmd_images(_args) -> int:
     return 0
 
 
+def cmd_cite(_args) -> int:
+    taxonomy = load_taxonomy()
+    entries = load_entries(curated_paths(), taxonomy)
+    resolved = citations_mod.fetch_all({e.id: e for e in entries})
+    citations_mod.write(resolved)
+
+    verdicts = Counter(v["dates_corroborated"] for v in resolved.values())
+    print(f"\nresolved {len(resolved)} citations -> {citations_mod.OUTPUT}")
+    for verdict, count in sorted(verdicts.items()):
+        print(f"  dates corroborated: {verdict:<26} {count}")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(prog="pipeline.cli")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -155,6 +206,7 @@ def main(argv: list[str] | None = None) -> int:
     sub.add_parser("stats", help="coverage report")
     sub.add_parser("audit", help="report sourcing and evidence gaps")
     sub.add_parser("images", help="fetch Commons images for the curated mapping")
+    sub.add_parser("cite", help="resolve citations for entries that lack one")
 
     args = parser.parse_args(argv)
     return {
@@ -163,6 +215,7 @@ def main(argv: list[str] | None = None) -> int:
         "stats": cmd_stats,
         "audit": cmd_audit,
         "images": cmd_images,
+        "cite": cmd_cite,
     }[args.command](args)
 
 
