@@ -1,0 +1,62 @@
+{
+  "feature_slug": "chronological-history-site",
+  "stage": "plan",
+  "mode": "full",
+  "status": "ready_for_build",
+  "created": "2026-09-19",
+  "artifacts": {
+    "prd.md": "written",
+    "design.md": "written",
+    "spec.md": "written",
+    "tasks.md": "written",
+    "designs/": "not_created — ASCII layouts in design.md plus css/tokens.css are the design contract"
+  },
+  "key_inputs": {
+    "data_strategy": "hybrid — curated YAML core, Wikidata SPARQL import for breadth, curated always wins on merge",
+    "coverage": "India-deep with world context",
+    "primary_views": "zoomable deep-time timeline canvas AND year-slice cross-section",
+    "tooling": "Python pipeline emitting JSON; site is pure static HTML/CSS/vanilla ES modules",
+    "hosting": "GitHub Pages via Actions publishing site/"
+  },
+  "internal_skills_used": ["using-aw-skills", "aw-plan"],
+  "assumptions": [
+    "Years use historical numbering with no year zero; a single astro()/historical() pair is the only conversion boundary",
+    "Deep-time shorthand (ka/Ma/Ga) is relative to 1950 CE per geological BP convention",
+    "Generated site/data/ is committed so the site never requires the pipeline at deploy time",
+    "Node is a test-time dependency only, via the built-in node:test runner; the site has zero runtime dependencies",
+    "ES modules and fetch require http(s); local preview uses python3 -m http.server",
+    "First-paint budget is 600 KB gzipped at 20,000 entries"
+  ],
+  "verified_during_planning": [
+    "Anchored piecewise-log time scale is strictly monotone over ~9000 sampled years spanning 4.54 Ga to the present",
+    "Round-trip yearToUnit/unitToYear error is under 1e-5 years at all anchors and probe points",
+    "Budget allocation measured: recorded history 48%, Pleistocene 12%, deep time to K-Pg 20%",
+    "A naive pure-log scale was prototyped and rejected (recorded history got only 12% of the bar)",
+    "Clamping BP at zero would collapse 1950-present to a single point; the +1000 offset is required instead",
+    "Python 3.14, Node 20 with node:test, and git 2.50 are available in this environment"
+  ],
+  "save_point_commit_policy": "one focused commit per numbered slice, using the commit message named in that slice",
+  "parallel_build_policy": {
+    "max_parallel_subagents": 3,
+    "groups": {
+      "p1-content": "data/ authoring, ready after slice 1.2",
+      "p1-frontend": "site/js pure modules, ready after slice 1.1",
+      "p3-content": "data/curated/*.yaml, one file per subagent, ready after Phase 4 validation lands"
+    },
+    "never_parallel": ["slices touching site/js/timeline.js", "pipeline/cli.py wiring", "Phase 6 performance work"]
+  },
+  "review_points": [
+    "end of Phase 1 — scale precision, no-year-zero handling, byte-stable build",
+    "end of Phase 2 — no dropped entries, pan smoothness, deep-link stability",
+    "end of Phase 3 — spot-check 20 entries against cited sources",
+    "end of Phase 4 — PRD criteria 1-6 demonstrable",
+    "end of Phase 5 — curated entries survived the merge byte-identical",
+    "end of Phase 6 — all nine PRD criteria against the live site"
+  ],
+  "open_risks": [
+    "Indian chronology is contested; entries must carry wide brackets, a note naming competing positions, and sources rather than picking a side",
+    "Wikidata coverage of Indian scriptural and Bhakti chronology is thin; curated data carries that weight",
+    "spine.json size at scale is a Phase 6 checkpoint with lane sharding as the named fallback"
+  ],
+  "recommended_next": ["/aw:build"]
+}
