@@ -1,0 +1,3 @@
+- {id: india, label: Indian Subcontinent, order: 1, color: "--lane-india",
+   sub_regions: [{id: north-india, label: North India}]}
+- {id: europe, label: Europe, order: 2, color: "--lane-europe"}

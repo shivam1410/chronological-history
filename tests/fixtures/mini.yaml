@@ -1,0 +1,41 @@
+- id: mughal-empire
+  title: Mughal Empire
+  kind: polity
+  regions: [north-india]
+  start: 1526
+  end: 1857
+  importance: 5
+  summary: Ruled most of the subcontinent.
+  categories: [empire]
+  related: [kabir]
+
+- id: kabir
+  title: Kabir
+  kind: person
+  regions: [north-india]
+  start: [1398, 1440]
+  end: [1448, 1518]
+  importance: 4
+  confidence: contested
+  summary: Poet-saint of the Bhakti movement.
+  aliases: [Kabir Das]
+  sources:
+    - {title: Britannica, url: "https://www.britannica.com/biography/Kabir-Indian-mystic-and-poet"}
+
+- id: renaissance
+  title: Renaissance
+  kind: movement
+  regions: [europe]
+  start: 1300
+  end: 1600
+  importance: 3
+  summary: Revival of classical learning.
+
+- id: dinosaur-era
+  title: Age of the Dinosaurs
+  kind: biological
+  regions: [india, europe]
+  start: "233 Ma"
+  end: "66 Ma"
+  importance: 5
+  summary: Non-avian dinosaurs dominated the land.
