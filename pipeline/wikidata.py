@@ -222,6 +222,40 @@ def load(path: str = OUTPUT) -> dict:
 # Entries with no single fitting article are deliberately left out rather than
 # forced onto an approximate one.
 EXTRA_ARTICLES: dict[str, str] = {
+    # Titles this dataset words its own way, pointed at the article that
+    # carries the subject. Each was checked by hand; the five entries left out
+    # below have no single article to point at.
+    "ajanta-caves": "Ajanta Caves",
+    "arpanet": "ARPANET",
+    "baroque": "Baroque",
+    "benin-bronzes": "Benin Bronzes",
+    "chinese-landscape-painting": "Shan shui",
+    "cleopatra": "Cleopatra",
+    "dijkstra": "Edsger W. Dijkstra",
+    "eniac": "ENIAC",
+    "first-world-war": "World War I",
+    "ghalib": "Ghalib",
+    "hilbert-program": "Entscheidungsproblem",
+    "hokusai": "Hokusai",
+    "integrated-circuit": "Integrated circuit",
+    "islamic-calligraphy": "Islamic calligraphy",
+    "napoleon": "Napoleon",
+    "persian-miniature": "Persian miniature",
+    "phidias-greek-sculpture": "Ancient Greek sculpture",
+    "picasso-cubism": "Pablo Picasso",
+    "railways": "History of rail transport",
+    "second-world-war": "World War II",
+    "tansen": "Tansen",
+    "telegraph": "Electrical telegraph",
+    "transistor": "Transistor",
+    #
+    # Left out on purpose, per the note above. Each is a composite this
+    # dataset assembled - a wave of independence across a continent, two
+    # centuries of emissions - and no single article covers it. Pointing them
+    # at an approximate one would import another subject's dates in silence:
+    #   arab-independence-wave, east-africa-independence,
+    #   south-asia-partition-wave, european-contact-pacific, coal-and-carbon
+    #
     # deep time and evolution
     "earth-formation": "History of Earth",
     "great-oxidation": "Great Oxidation Event",

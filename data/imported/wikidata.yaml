@@ -47,6 +47,11 @@ african-independence-wave:
   label: decolonisation of Africa
   qid: Q1146918
   start: '1950'
+ajanta-caves:
+  article: Ajanta Caves
+  image_file: File:Ajanta cave no. 9 2010.jpg
+  label: Ajanta Caves
+  qid: Q184427
 akbar:
   article: Akbar
   birth: '1542'
@@ -192,6 +197,11 @@ aristotle:
   image_file: File:Aristotle Altemps Inv8575.jpg
   label: Aristotle
   qid: Q868
+arpanet:
+  article: ARPANET
+  image_file: File:Arpanet logical map, march 1977.png
+  label: ''
+  qid: Q177524
 aryabhata:
   article: Aryabhata
   birth: '476'
@@ -286,6 +296,13 @@ bangladesh-independence:
   label: Bangladesh Liberation War
   qid: Q371394
   start: '1971'
+baroque:
+  article: Baroque
+  end: '1750'
+  image_file: File:Doria Pamphili 6284.jpg
+  label: Baroque
+  qid: Q37853
+  start: '1590'
 basho:
   article: Matsuo Bashō
   birth: '1644'
@@ -309,6 +326,11 @@ behavioural-modernity:
   article: Behavioral modernity
   label: behavioral modernity
   qid: Q2706556
+benin-bronzes:
+  article: Benin Bronzes
+  image_file: File:Benin Bronzes.jpg
+  label: Benin Bronzes
+  qid: Q248101
 benin-kingdom:
   article: Kingdom of Benin
   image_file: File:Benin kingdom Louvre A97-4-1.jpg
@@ -482,6 +504,11 @@ chimu:
   label: Chimor
   qid: Q581741
   start: '900'
+chinese-landscape-painting:
+  article: Shan shui
+  image_file: File:早春图轴.北宋.郭熙绘.绢本浅设色.宋神宗熙宁五年.台北故宫博物院藏.tif
+  label: shan shui
+  qid: Q516583
 chola-empire:
   article: Chola dynasty
   image_file: File:Darasuram, Airavatesvara Temple, Entrance, India.jpg
@@ -509,6 +536,13 @@ classical-athens:
   image_file: File:View of the Acropolis Athens (pixinn.net).jpg
   label: Classical Athens
   qid: Q844930
+cleopatra:
+  article: Cleopatra
+  birth: '-69'
+  death: '-30'
+  image_file: File:Kleopatra-VII.-Altes-Museum-Berlin1.jpg
+  label: Cleopatra
+  qid: Q635
 cocoliztli-epidemics:
   article: Cocoliztli epidemics
   end: '1631'
@@ -630,6 +664,13 @@ dickens:
   image_file: File:Dickens Gurney head.jpg
   label: Charles Dickens
   qid: Q5686
+dijkstra:
+  article: Edsger W. Dijkstra
+  birth: '1930'
+  death: '2002'
+  image_file: File:Edsger Dijkstra 1994.jpg
+  label: Edsger W. Dijkstra
+  qid: Q8556
 dinosaur-era:
   article: Dinosaur
   image_file: File:Various dinosaurs2.png
@@ -711,6 +752,11 @@ emmy-noether:
   image_file: File:Noether.jpg
   label: Emmy Noether
   qid: Q7099
+eniac:
+  article: ENIAC
+  image_file: File:Two women operating ENIAC (full resolution).jpg
+  label: ENIAC
+  qid: Q169399
 epicurus:
   article: Epicurus
   birth: '-342'
@@ -787,6 +833,14 @@ first-mammals:
   image_file: File:Sau mit ihren Ferkeln.jpg
   label: evolution of mammals
   qid: Q785301
+first-world-war:
+  article: World War I
+  end: '1918'
+  image_file: File:WWImontage.jpg
+  label: World War I
+  point: '1918'
+  qid: Q361
+  start: '1914'
 fleming-penicillin:
   article: Alexander Fleming
   birth: '1881'
@@ -839,6 +893,13 @@ germ-theory:
   article: Germ theory of disease
   label: germ theory of disease
   qid: Q1425837
+ghalib:
+  article: Ghalib
+  birth: '1797'
+  death: '1869'
+  image_file: File:Mirza Ghalib photograph 3.jpg
+  label: Mirza Ghalib
+  qid: Q107000
 ghana-empire:
   article: Ghana Empire
   label: Ghana Empire
@@ -1047,6 +1108,10 @@ herero-nama-genocide:
   point: '1904'
   qid: Q312492
   start: '1904'
+hilbert-program:
+  article: Entscheidungsproblem
+  label: Entscheidungsproblem
+  qid: Q11030584
 himalayan-orogeny:
   article: Himalayas
   image_file: File:Himalayas.jpg
@@ -1071,6 +1136,13 @@ hiv-aids:
   label: HIV/AIDS
   qid: Q12199
   start: '1959'
+hokusai:
+  article: Hokusai
+  birth: '1760'
+  death: '1849'
+  image_file: File:Hokusai as an old man.jpg
+  label: Katsushika Hokusai
+  qid: Q5586
 holocaust:
   article: The Holocaust
   end: '1945'
@@ -1244,6 +1316,11 @@ influenza-1918:
   label: 1918–1920 flu pandemic
   qid: Q178275
   start: '1918'
+integrated-circuit:
+  article: Integrated circuit
+  image_file: File:NXP PCF8577C LCD driver with I²C (Colour Corrected).jpg
+  label: integrated circuit
+  qid: Q80831
 irish-independence:
   article: Irish independence
   label: Irish independence
@@ -1259,6 +1336,11 @@ iroquois-confederacy:
   image_file: File:1914 Panoramic View of Iroquois.jpg
   label: Iroquois
   qid: Q68518
+islamic-calligraphy:
+  article: Islamic calligraphy
+  image_file: File:Maghribi script sura 5.jpg
+  label: Islamic calligraphy
+  qid: Q656831
 israel-founded:
   article: Israeli Declaration of Independence
   image_file: File:Israel Declaration of Independence.jpg
@@ -1797,6 +1879,14 @@ namibia-independence:
   image_file: File:Duna en Sossusvlei, Namibia, 2018-08-06, DD 002.jpg
   label: Namibia
   qid: Q1030
+napoleon:
+  article: Napoleon
+  birth: '1769'
+  death: '1821'
+  image_file: File:Jacques-Louis David - The Emperor Napoleon in His Study at the
+    Tuileries - Google Art Project.jpg
+  label: Napoleon
+  qid: Q517
 nazca-lines:
   article: Nazca lines
   image_file: File:Líneas de Nazca, Nazca, Perú, 2015-07-29, DD 58.JPG
@@ -1944,6 +2034,23 @@ permian-triassic-extinction:
   label: Permian-Triassic mass extinction
   point: '-251900000'
   qid: Q141118
+persian-miniature:
+  article: Persian miniature
+  image_file: File:Miraj by Sultan Muhammad.jpg
+  label: Persian miniature
+  qid: Q678664
+phidias-greek-sculpture:
+  article: Ancient Greek sculpture
+  image_file: File:Cavalcade south frieze Parthenon BM.jpg
+  label: ancient Greek sculpture
+  qid: Q617793
+picasso-cubism:
+  article: Pablo Picasso
+  birth: '1881'
+  death: '1973'
+  image_file: File:Pablo picasso 1.jpg
+  label: Pablo Picasso
+  qid: Q5593
 plague-of-athens:
   article: Plague of Athens
   end: '-426'
@@ -2059,6 +2166,10 @@ quran-codified:
   article: History of the Quran
   label: history of the Quran
   qid: Q1517448
+railways:
+  article: History of rail transport
+  label: history of rail transport
+  qid: Q477862
 ramanuja:
   article: Ramanuja
   birth: '1017'
@@ -2278,6 +2389,13 @@ second-sino-japanese-war:
   label: Second Sino-Japanese War
   qid: Q170314
   start: '1937'
+second-world-war:
+  article: World War II
+  end: '1945'
+  image_file: File:Infobox collage for WWII.PNG
+  label: World War II
+  qid: Q362
+  start: '1939'
 seljuk-empire:
   article: Seljuk Empire
   label: Seljuk Empire
@@ -2484,6 +2602,18 @@ tang-dynasty:
   label: Tang dynasty
   qid: Q9683
   start: '618'
+tansen:
+  article: Tansen
+  birth: '1493'
+  death: '1589'
+  image_file: File:Tansen of Gwalior. (11.8x6.7cm) Mughal. 1585-90. National Museum,
+    New Delhi..jpg
+  label: Tansen
+  qid: Q469894
+telegraph:
+  article: Electrical telegraph
+  label: electrical telegraph
+  qid: Q6501061
 telescope:
   article: History of the telescope
   label: history of the telescope
@@ -2589,6 +2719,11 @@ transatlantic-slave-trade:
   image_file: File:Slaveshipposter.jpg
   label: Atlantic slave trade
   qid: Q10701282
+transistor:
+  article: Transistor
+  image_file: File:Transistors.agr.jpg
+  label: transistor
+  qid: Q5339
 treaty-of-waitangi:
   article: Treaty of Waitangi
   image_file: File:Treatyofwaitangi.jpg
