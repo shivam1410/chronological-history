@@ -27,6 +27,10 @@
 .panel__head {
   position: sticky;
   top: 0;
+  /* Above the body. The strip's ticks and bars are positioned, and without a
+     stacking order of its own the sticky header - which comes first in the
+     DOM - was painted over by them as the card scrolled. */
+  z-index: 2;
   padding: var(--step-4) var(--step-4) var(--step-3);
   background: var(--bg-raised);
   border-bottom: 1px solid var(--rule);

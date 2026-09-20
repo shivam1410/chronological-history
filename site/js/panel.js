@@ -301,7 +301,12 @@ function laneStrip(entry, neighbours, onNavigate) {
     axis.replaceChildren();
     for (const year of ticksFor(window_.from, window_.to)) {
       const tick = el('span', 'strip__tick', formatYear(year));
-      tick.style.left = `${view.project(year)}%`;
+      const at = view.project(year);
+      tick.style.left = `${at}%`;
+      // Centred labels overhang at the ends, where there is no room to
+      // overhang into, so the outermost ones align to their own edge instead.
+      if (at < 6) tick.style.transform = 'none';
+      else if (at > 94) tick.style.transform = 'translateX(-100%)';
       axis.append(tick);
     }
 
