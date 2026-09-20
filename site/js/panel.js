@@ -7,7 +7,18 @@
  * have in memory.
  */
 
+import { linearView, panWindow, ticksFor, windowFor } from './context.js';
+import { packLane } from './layout.js';
+import { formatYear } from './format.js';
+
 const FOCUSABLE = 'a[href], button, [tabindex]:not([tabindex="-1"])';
+
+/** Strip geometry. Widths are percentages, so it reflows with the card. */
+const STRIP_ROWS = 4;
+const STRIP_MIN_W = 2;
+const STRIP_GAP = 0.8;
+const STRIP_BAR_PX = 26;
+const STRIP_GAP_PX = 4;
 
 const KIND_LABELS = {
   person: 'Person', work: 'Text', polity: 'Polity', event: 'Event',
@@ -40,7 +51,9 @@ function chipRow(labels, { onPick } = {}) {
   return row;
 }
 
-export function createPanel(root, { onClose, onNavigate, contemporaries } = {}) {
+export function createPanel(root, {
+  onClose, onNavigate, contemporaries, laneNeighbours,
+} = {}) {
   let node = null;
   let invoker = null;
   let openId = null;
@@ -156,6 +169,15 @@ export function createPanel(root, { onClose, onNavigate, contemporaries } = {}) 
     ];
     if (tags.length) body.append(chipRow(tags));
 
+    // The entry's own lane, drawn rather than listed: what a reader wants here
+    // is the shape - whether this thing followed that one or sat inside it -
+    // which a column of dates cannot show.
+    const neighbours = laneNeighbours?.(entry) ?? [];
+    if (neighbours.length) {
+      body.append(el('h3', 'panel__h3', 'In this lane'));
+      body.append(laneStrip(entry, neighbours, onNavigate));
+    }
+
     // What else was going on. This is the question the whole site exists to
     // answer, so it sits above the curated links rather than under them, and
     // it is computed from the timeline rather than authored per entry.
@@ -248,4 +270,82 @@ export function createPanel(root, { onClose, onNavigate, contemporaries } = {}) 
 
     close,
   };
+}
+
+/**
+ * A small linear chart of one entry among its lane neighbours.
+ *
+ * Positions are percentages, so the strip reflows between a full-width phone
+ * card and a 380px desktop drawer without measuring anything or watching for
+ * resizes. packLane is handed a 100-unit view for the same reason: its minimum
+ * width and gap then read as percent, which is what the CSS consumes.
+ */
+function laneStrip(entry, neighbours, onNavigate) {
+  const strip = el('div', 'strip');
+  let window_ = windowFor(entry);
+
+  const head = el('div', 'strip__head');
+  const earlier = el('button', 'strip__step', '\u2190 Earlier');
+  const later = el('button', 'strip__step', 'Later \u2192');
+  earlier.type = 'button';
+  later.type = 'button';
+  head.append(earlier, later);
+
+  const axis = el('div', 'strip__axis');
+  const rows = el('div', 'strip__rows');
+  strip.append(head, axis, rows);
+
+  function render() {
+    const view = linearView(window_.from, window_.to, 100);
+
+    axis.replaceChildren();
+    for (const year of ticksFor(window_.from, window_.to)) {
+      const tick = el('span', 'strip__tick', formatYear(year));
+      tick.style.left = `${view.project(year)}%`;
+      axis.append(tick);
+    }
+
+    const packed = packLane([entry, ...neighbours], view, {
+      maxRows: STRIP_ROWS,
+      minWidthPx: STRIP_MIN_W,
+      gapPx: STRIP_GAP,
+    });
+
+    rows.replaceChildren();
+    rows.dataset.rows = String(Math.max(1, packed.rows.length));
+    packed.rows.forEach((row, r) => {
+      for (const item of row) {
+        const isSelf = item.entry.id === entry.id;
+        const bar = el('button', 'strip__bar');
+        bar.type = 'button';
+        if (isSelf) bar.dataset.self = 'true';
+        bar.style.left = `${item.x0}%`;
+        bar.style.width = `${item.w}%`;
+        // Too narrow to hold a name: show a plain capsule and let the tooltip
+        // and the tap carry it, rather than a letter and a half of the title.
+        if (item.w < 9) bar.dataset.narrow = 'true';
+        bar.style.top = `${r * (STRIP_BAR_PX + STRIP_GAP_PX)}px`;
+        bar.append(el('span', 'strip__bar-title', item.entry.title));
+        // The dates go in the title attribute as well as the bar, because a
+        // short bar shows neither its name nor its years.
+        const when = item.entry.sMin === item.entry.eMax
+          ? formatYear(item.entry.sMin)
+          : `${formatYear(item.entry.sMin)}\u2013${formatYear(item.entry.eMax)}`;
+        bar.title = `${item.entry.title}, ${when}`;
+        if (!isSelf) bar.addEventListener('click', () => onNavigate?.(item.entry.id));
+        else bar.disabled = true;
+        rows.append(bar);
+      }
+    });
+  }
+
+  const step = (fraction) => {
+    window_ = panWindow(window_, fraction);
+    render();
+  };
+  earlier.addEventListener('click', () => step(-0.4));
+  later.addEventListener('click', () => step(0.4));
+
+  render();
+  return strip;
 }

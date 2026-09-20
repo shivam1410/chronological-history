@@ -86,7 +86,7 @@ export function unitToYear(unit) {
 }
 
 /** Largest 1/2/5 x 10^k step not exceeding `magnitude`, never below one year. */
-function niceStep(magnitude) {
+export function niceStep(magnitude) {
   if (!(magnitude > 1)) return 1;
   const base = 10 ** Math.floor(Math.log10(magnitude));
   const ratio = magnitude / base;

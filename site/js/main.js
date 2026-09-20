@@ -7,7 +7,7 @@ import { ERAS } from './eras.js';
 import { createControls } from './controls.js';
 import { createYearView } from './yearview.js';
 import { elapsed, formatYear, roundYear } from './format.js';
-import { overlapping } from './slice.js';
+import { sameLane, elsewhere } from './context.js';
 import { ORIGIN_YEAR, presentYear } from './timescale.js';
 
 const stage = document.querySelector('#stage');
@@ -94,8 +94,12 @@ async function start() {
 
   const SAME_TIME_MAX = 6;
 
-  /** The handful of entries that were running when this one was. */
-  const contemporaries = (entry) => overlapping(entries, entry, { limit: SAME_TIME_MAX })
+  /**
+   * The rest of the world while this entry ran. Its own lane is excluded:
+   * that is what the strip above this list draws, and showing an entry in
+   * both places would waste the card's most valuable space on a repeat.
+   */
+  const contemporaries = (entry) => elsewhere(entries, entry, { limit: SAME_TIME_MAX })
     .map((other) => ({
       id: other.id,
       title: other.title,
@@ -107,6 +111,7 @@ async function start() {
 
   const panel = createPanel(stage, {
     contemporaries,
+    laneNeighbours: (entry) => sameLane(entries, entry),
     onClose: () => {
       timeline.select(null);
       if (yearView.year === null) syncHash();

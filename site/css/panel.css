@@ -161,6 +161,89 @@
 button.panel__chip { cursor: pointer; }
 button.panel__chip:hover { border-color: var(--accent); color: var(--ink); }
 
+/* The lane strip: the entry among its neighbours, drawn to scale. */
+.strip { margin: 0 0 var(--step-4); }
+
+.strip__head {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--step-2);
+  margin-bottom: var(--step-1);
+}
+
+.strip__step {
+  padding: 3px var(--step-2);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.strip__step:hover { border-color: var(--accent); color: var(--ink); }
+
+.strip__axis {
+  position: relative;
+  height: 15px;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: var(--step-2);
+}
+
+.strip__tick {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  color: var(--ink-faint);
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Height comes from the row count the packer settled on. Neighbours that run
+   past the window are clipped here rather than spilling out of the card. */
+.strip__rows { position: relative; overflow: hidden; }
+.strip__rows[data-rows="1"] { height: 26px; }
+.strip__rows[data-rows="2"] { height: 56px; }
+.strip__rows[data-rows="3"] { height: 86px; }
+.strip__rows[data-rows="4"] { height: 116px; }
+
+.strip__bar {
+  position: absolute;
+  height: 26px;
+  min-width: 6px;
+  padding: 0 var(--step-2);
+  border: 0;
+  border-radius: 999px;
+  background: var(--bg-sunken);
+  color: var(--ink-soft);
+  font: inherit;
+  font-size: 11px;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.strip__bar:hover { color: var(--ink); outline: 1px solid var(--accent); }
+
+/* The entry the card is about. Not a link - you are already here. */
+.strip__bar[data-self="true"] {
+  background: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+  cursor: default;
+}
+
+.strip__bar-title { pointer-events: none; }
+.strip__bar[data-narrow="true"] { padding: 0; min-width: 8px; }
+.strip__bar[data-narrow="true"] .strip__bar-title { display: none; }
+
+@media (pointer: coarse) {
+  .strip__step { min-height: 36px; padding-inline: var(--step-3); }
+}
+
 /* "At the same time" - one row per contemporary, each a jump. */
 .panel__same { margin: 0 0 var(--step-2); padding: 0; list-style: none; }
 
