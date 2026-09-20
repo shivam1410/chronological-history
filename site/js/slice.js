@@ -96,14 +96,33 @@ export function positionIn(entry, year) {
  * that. Sorted so the answer leads with what matters and what started nearest,
  * because the full list for a long-running entry is most of the dataset.
  */
+/*
+ * How much longer than the subject another entry may run and still count as
+ * happening "at the same time".
+ *
+ * Without a ceiling the background eras qualify for everything: the Holocene,
+ * the Himalayan orogeny and Homo sapiens overlap almost every entry in the
+ * dataset, so they were always listed and never dimmed, which told a reader
+ * nothing and left the timeline looking barely shadowed.
+ *
+ * The floor is what keeps the opposite case working. A one-year battle inside
+ * a four-century dynasty should still show the dynasty - that is its context,
+ * not background - so anything under a thousand years counts however short the
+ * subject is.
+ */
+const ERA_RATIO = 12;
+const ERA_FLOOR = 1000;
+
 export function overlapping(entries, entry, { limit = Infinity } = {}) {
   if (!entry) return [];
   const from = astro(entry.sMin);
   const to = astro(entry.eMax);
+  const ceiling = Math.max((to - from) * ERA_RATIO, ERA_FLOOR);
 
   return entries
     .filter((other) => other.id !== entry.id
-      && astro(other.sMin) <= to && astro(other.eMax) >= from)
+      && astro(other.sMin) <= to && astro(other.eMax) >= from
+      && astro(other.eMax) - astro(other.sMin) <= ceiling)
     .sort((a, b) => b.imp - a.imp
       || Math.abs(astro(a.sMin) - from) - Math.abs(astro(b.sMin) - from)
       || (a.id < b.id ? -1 : 1))

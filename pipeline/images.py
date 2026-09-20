@@ -295,3 +295,103 @@ def write_attribution(resolved: dict[str, dict], path: str = ATTRIBUTION) -> Non
             f"| [Commons]({record['source']}) |")
     with open(path, "w", encoding="utf-8") as handle:
         handle.write("\n".join(lines) + "\n")
+
+# Entries whose article carries a usable lead image even though Wikidata has
+# no P18 for the item. Asking the article beats guessing a Commons filename:
+# a guess that is wrong silently picks another subject's picture, while an
+# article that does not exist simply logs a miss and is skipped.
+#
+# Six entries are deliberately absent. African, Arab, East African and South
+# Asian independence, European contact in the Pacific, and fossil carbon in
+# the atmosphere are composites this dataset assembled, and no single article
+# represents them - the same reason they carry no Wikidata item.
+ARTICLE_LEADS: dict[str, str] = {
+    # deep time and prehistory
+    "great-oxidation": "Great Oxidation Event",
+    "cambrian-explosion": "Cambrian explosion",
+    "permian-triassic-extinction": "Permian\u2013Triassic extinction event",
+    "human-chimp-split": "Chimpanzee\u2013human last common ancestor",
+    "neanderthal-extinction": "Neanderthal extinction",
+    "last-glacial-maximum": "Last Glacial Maximum",
+    "jomon-period": "J\u014dmon period",
+
+    # south and southeast asia
+    "gupta-empire": "Gupta Empire",
+    "kushan-empire": "Kushan Empire",
+    "delhi-sultanate": "Delhi Sultanate",
+    "vijayanagara-empire": "Vijayanagara Empire",
+    "bhaskara-ii": "Bh\u0101skara II",
+    "bhavabhuti": "Bhavabhuti",
+    "ramcharitmanas": "Ramcharitmanas",
+    "khmer-empire": "Khmer Empire",
+    "srivijaya": "Srivijaya",
+    "majapahit": "Majapahit",
+    "ayutthaya": "Ayutthaya Kingdom",
+
+    # east asia
+    "shang-dynasty": "Shang dynasty",
+    "sui-dynasty": "Sui dynasty",
+    "qing-dynasty": "Qing dynasty",
+    "grand-canal": "Grand Canal (China)",
+    "movable-type": "Movable type",
+    "sengoku-period": "Sengoku period",
+    "reform-and-opening": "Chinese economic reform",
+
+    # central and west asia
+    "achaemenid-empire": "Achaemenid Empire",
+    "gokturk-khaganate": "Turkic Khaganate",
+    "uyghur-khaganate": "Uyghur Khaganate",
+    "karakhanid-khanate": "Kara-Khanid Khanate",
+    "samanid-empire": "Samanid Empire",
+    "seljuk-empire": "Seljuk Empire",
+    "khwarazmian-empire": "Khwarazmian Empire",
+    "chagatai-khanate": "Chagatai Khanate",
+    "timurid-empire": "Timurid Empire",
+    "mongol-empire": "Mongol Empire",
+    "safavid-empire": "Safavid Iran",
+    "quran-codified": "History of the Quran",
+
+    # africa
+    "egypt-old-kingdom": "Old Kingdom of Egypt",
+    "kanem-bornu": "Kanem\u2013Bornu Empire",
+    "songhai-empire": "Songhai Empire",
+    "ethiopian-empire": "Ethiopian Empire",
+    "indian-ocean-slave-trade": "Indian Ocean slave trade",
+    "south-africa-1994": "1994 South African general election",
+
+    # the americas
+    "olmec": "Olmecs",
+    "moche": "Moche culture",
+    "wari": "Wari Empire",
+    "aztec-empire": "Aztec Empire",
+    "columbus-1492": "Voyages of Christopher Columbus",
+    "latin-american-independence": "Spanish American wars of independence",
+    "abolition-us": "Thirteenth Amendment to the United States Constitution",
+    "trail-of-tears": "Trail of Tears",
+    "residential-schools": "Canadian Indian residential school system",
+
+    # oceania
+    "aboriginal-australia": "Aboriginal Australians",
+    "polynesian-navigation": "Polynesian navigation",
+    "settlement-of-aotearoa": "M\u0101ori people",
+    "tui-tonga-empire": "Tu\u02bbi Tonga Empire",
+    "hawaiian-kingdom": "Hawaiian Kingdom",
+    "kula-ring": "Kula ring",
+    "mabo-decision": "Mabo v Queensland (No 2)",
+    "stolen-generations": "Stolen Generations",
+
+    # europe
+    "antonine-plague": "Antonine Plague",
+    "plague-of-justinian": "Plague of Justinian",
+    "plato-on-socrates": "Socratic problem",
+    "irish-independence": "Irish War of Independence",
+
+    # science, industry and art
+    "germ-theory": "Germ theory of disease",
+    "telescope": "History of the telescope",
+    "human-genome": "Human Genome Project",
+    "hilbert-program": "Entscheidungsproblem",
+    "telegraph": "Electrical telegraph",
+    "railways": "History of rail transport",
+    "cinema": "History of film",
+}

@@ -148,3 +148,25 @@ describe('ticksFor', () => {
     assert.ok(Array.isArray(ticksFor(1453, 1454)));
   });
 });
+
+describe('ticksFor density', () => {
+  test('honours the count it was asked for', () => {
+    // niceStep rounds down, so an unthinned 1400-year window yields eight.
+    assert.ok(ticksFor(-1401, -1, { count: 5 }).length <= 6);
+  });
+
+  test('thins without losing the ends of the range', () => {
+    const t = ticksFor(-1401, -1, { count: 5 });
+    assert.ok(t.every((y) => y >= -1401 && y <= -1));
+  });
+
+  test('still returns ticks for a narrow window', () => {
+    assert.ok(ticksFor(1336, 1646, { count: 5 }).length >= 2);
+  });
+
+  test('stays evenly spaced after thinning', () => {
+    const t = ticksFor(-1401, -1, { count: 5 });
+    const gaps = t.slice(1).map((y, i) => y - t[i]);
+    assert.equal(new Set(gaps).size, 1, `uneven ladder: ${t}`);
+  });
+});

@@ -239,7 +239,8 @@ def cmd_images(_args) -> int:
     usually a better lead than whatever the article happens to open with.
     """
     print("resolving lead images from Wikipedia articles")
-    discovered = images_mod.lead_image_titles(citations_mod.ARTICLES)
+    discovered = images_mod.lead_image_titles(
+        {**citations_mod.ARTICLES, **images_mod.ARTICLE_LEADS})
 
     # Wikidata's P18 is the richest source, since every matched item carries one.
     from_wikidata = {

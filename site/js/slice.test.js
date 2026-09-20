@@ -246,3 +246,35 @@ describe('overlapping', () => {
     assert.deepEqual(overlapping([span('a', 1, 2)], null), []);
   });
 });
+
+describe('overlapping and background eras', () => {
+  const span = (id, sMin, eMax, imp = 3) => e(id, sMin, eMax, { imp });
+
+  test('an era vastly longer than the subject is not a contemporary', () => {
+    // The Holocene overlaps almost everything; listing it tells a reader
+    // nothing and leaves it permanently lit on the chart.
+    const all = [span('zhou', -1046, -256), span('holocene', -9750, 2026)];
+    assert.deepEqual(overlapping(all, all[0]), []);
+  });
+
+  test('but a dynasty containing a single-year event still counts', () => {
+    // The opposite case: context, not background.
+    const all = [span('battle', 1600, 1600), span('dynasty', 1500, 1900)];
+    assert.deepEqual(overlapping(all, all[0]).map((x) => x.id), ['dynasty']);
+  });
+
+  test('an entry of comparable length is kept', () => {
+    const all = [span('zhou', -1046, -256), span('scythians', -900, -300)];
+    assert.deepEqual(overlapping(all, all[0]).map((x) => x.id), ['scythians']);
+  });
+
+  test('the subject being long does not exclude everything short', () => {
+    const all = [span('zhou', -1046, -256), span('ashoka', -304, -232)];
+    assert.deepEqual(overlapping(all, all[0]).map((x) => x.id), ['ashoka']);
+  });
+
+  test('two background eras are still contemporaries of each other', () => {
+    const all = [span('pleistocene', -2580000, -9750), span('holocene', -9750, 2026)];
+    assert.deepEqual(overlapping(all, all[0]).map((x) => x.id), ['holocene']);
+  });
+});

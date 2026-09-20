@@ -80,11 +80,16 @@ export function ticksFor(from, to, { count = 5 } = {}) {
   const lo = astro(from);
   const hi = astro(to);
   const step = niceStep(Math.max(1, (hi - lo) / count));
-  const out = [];
+  let out = [];
   for (let a = Math.ceil(lo / step) * step; a <= hi; a += step) {
     // Astronomical space has a year 0 - it is 1 BCE - so nothing is skipped
     // here; fromAstroYear puts it back into the numbering people read.
     out.push(fromAstroYear(a));
   }
+
+  // niceStep rounds the step down to the next 1/2/5, which can yield half as
+  // many ticks again as were asked for - enough for "1401 BCE" and "1201 BCE"
+  // to collide in a 380px card. Thin by halves until the count is honoured.
+  while (out.length > count + 1) out = out.filter((_, i) => i % 2 === 0);
   return out;
 }

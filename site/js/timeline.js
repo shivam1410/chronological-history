@@ -114,7 +114,7 @@ export function createTimeline(canvas, {
   // Ids kept bright while a card is open. Everything else is drawn faint.
   let lit = null;
   /** Opacity of an entry that was not going on at the same time. */
-  const GHOST_ALPHA = 0.22;
+  const GHOST_ALPHA = 0.12;
   let hover = null;
   const laneById = new Map(lanes.map((lane) => [lane.id, lane]));
 
