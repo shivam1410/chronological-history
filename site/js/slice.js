@@ -87,3 +87,25 @@ export function positionIn(entry, year) {
 
   return `year ${elapsed} of ${total}`;
 }
+
+/**
+ * Entries whose span overlaps this one's - what else was going on.
+ *
+ * Overlap, not proximity: a century-long dynasty and a single year inside it
+ * were both happening at once, and a reader asking "what else?" means exactly
+ * that. Sorted so the answer leads with what matters and what started nearest,
+ * because the full list for a long-running entry is most of the dataset.
+ */
+export function overlapping(entries, entry, { limit = Infinity } = {}) {
+  if (!entry) return [];
+  const from = astro(entry.sMin);
+  const to = astro(entry.eMax);
+
+  return entries
+    .filter((other) => other.id !== entry.id
+      && astro(other.sMin) <= to && astro(other.eMax) >= from)
+    .sort((a, b) => b.imp - a.imp
+      || Math.abs(astro(a.sMin) - from) - Math.abs(astro(b.sMin) - from)
+      || (a.id < b.id ? -1 : 1))
+    .slice(0, limit);
+}

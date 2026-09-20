@@ -12,6 +12,7 @@ import { formatYear, roundYear } from './format.js';
 import { hitRow, packLanes } from './layout.js';
 import { FLAG_UNCERTAIN_END, FLAG_UNCERTAIN_START } from './store.js';
 import { wrapText } from './wrap.js';
+import { overlapping } from './slice.js';
 
 const AXIS_H = 34;
 const BAR_H = 14;
@@ -110,6 +111,10 @@ export function createTimeline(canvas, {
   const axisFont = () => (labelsAbove() ? PHONE_AXIS_FONT : AXIS_FONT);
   const laneSep = () => (labelsAbove() ? PHONE_LANE_SEP : LANE_SEP);
   let selectedId = null;
+  // Ids kept bright while a card is open. Everything else is drawn faint.
+  let lit = null;
+  /** Opacity of an entry that was not going on at the same time. */
+  const GHOST_ALPHA = 0.22;
   let hover = null;
   const laneById = new Map(lanes.map((lane) => [lane.id, lane]));
 
@@ -491,6 +496,9 @@ export function createTimeline(canvas, {
       const y = top + laneHead() + LANE_PAD_Y + r * (barH() + BAR_GAP);
       const mid = y + barH() / 2;
       row.forEach((item, i) => {
+        // Bar, point and label dim together, or a faded bar keeps a bright name.
+        const ghost = lit !== null && !lit.has(item.entry.id);
+        ctx.globalAlpha = ghost ? GHOST_ALPHA : 1;
         if (item.point) drawPoint(item, mid, colour);
         else drawBar(item, y, colour);
         if (item.entry.id === selectedId) {
@@ -503,6 +511,7 @@ export function createTimeline(canvas, {
           ctx.lineWidth = 1;
         }
         drawLabel(item, row[i + 1], mid, minImportance);
+        ctx.globalAlpha = 1;
       });
     });
 
@@ -966,8 +975,26 @@ export function createTimeline(canvas, {
     hitTest,
     /** Current hover readout, for verification. */
     get hover() { return hover; },
-    select(id) {
+    /**
+     * @param {string|null} id  the open entry
+     * @param {string[]} alsoLit  extra ids to keep bright - the curated
+     *   related entries, which may sit outside the selection's own span
+     *
+     * Selecting lights the entry and everything that was going on at the same
+     * time, and fades the rest. Contemporaries rather than curated links
+     * alone: only 59% of entries have links, so keying the effect on those
+     * would leave the other 41% as a single bar in an empty chart.
+     */
+    select(id, alsoLit = []) {
       selectedId = id;
+      if (id === null) {
+        lit = null;
+      } else {
+        const entry = entries.find((e) => e.id === id);
+        lit = new Set(overlapping(entries, entry).map((e) => e.id));
+        lit.add(id);
+        for (const other of alsoLit) lit.add(other);
+      }
       schedule();
     },
     /** Pixel geometry of a currently laid-out entry, or null. */

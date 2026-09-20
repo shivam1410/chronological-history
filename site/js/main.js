@@ -7,6 +7,7 @@ import { ERAS } from './eras.js';
 import { createControls } from './controls.js';
 import { createYearView } from './yearview.js';
 import { elapsed, formatYear, roundYear } from './format.js';
+import { overlapping } from './slice.js';
 import { ORIGIN_YEAR, presentYear } from './timescale.js';
 
 const stage = document.querySelector('#stage');
@@ -91,7 +92,21 @@ async function start() {
     }, 180);
   };
 
+  const SAME_TIME_MAX = 6;
+
+  /** The handful of entries that were running when this one was. */
+  const contemporaries = (entry) => overlapping(entries, entry, { limit: SAME_TIME_MAX })
+    .map((other) => ({
+      id: other.id,
+      title: other.title,
+      laneLabel: info.lanes.find((l) => l.id === other.lane)?.label ?? other.lane,
+      when: other.sMin === other.eMax
+        ? formatYear(other.sMin)
+        : `${formatYear(other.sMin)} \u2013 ${formatYear(other.eMax)}`,
+    }));
+
   const panel = createPanel(stage, {
+    contemporaries,
     onClose: () => {
       timeline.select(null);
       if (yearView.year === null) syncHash();
@@ -223,7 +238,12 @@ async function start() {
     }
     panel.open(entry, async () => {
       const bundle = await loadEra(entry.bucket);
-      return bundle.entries[entry.id] ?? {};
+      const detail = bundle.entries[entry.id] ?? {};
+      // Curated links can point outside the entry's own span - Valmiki to
+      // Kalidasa, eight centuries apart - so they are lit only once the detail
+      // that names them has arrived.
+      if (panel.openId === entry.id) timeline.select(entry.id, detail.related ?? []);
+      return detail;
     }, { returnFocusTo: canvas });
     live.textContent = `${entry.title}. ${describe(timeline.view)}.`;
 

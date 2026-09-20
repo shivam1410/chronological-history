@@ -1,6 +1,6 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { activeIn, groupByLane, positionIn } from './slice.js';
+import { activeIn, groupByLane, overlapping, positionIn } from './slice.js';
 
 const e = (id, sMin, eMax, extra = {}) => ({
   id, title: id, kind: 'polity', lane: 'india', region: 'north-india',
@@ -186,5 +186,63 @@ describe('age when the year falls inside a bracketed birth', () => {
   test('a precise birth is unaffected', () => {
     assert.equal(positionIn(e('a', 1542, 1605, { kind: 'person', sMax: 1542 }), 1555),
       'age 13');
+  });
+});
+
+describe('overlapping', () => {
+  const span = (id, sMin, eMax, imp = 3) => e(id, sMin, eMax, { imp });
+
+  test('finds entries whose span crosses this one', () => {
+    const all = [span('a', 1500, 1600), span('b', 1550, 1560), span('c', 1700, 1800)];
+    const ids = overlapping(all, all[0]).map((x) => x.id);
+    assert.deepEqual(ids, ['b']);
+  });
+
+  test('never includes the entry itself', () => {
+    const all = [span('a', 1500, 1600), span('b', 1500, 1600)];
+    assert.ok(!overlapping(all, all[0]).some((x) => x.id === 'a'));
+  });
+
+  test('a single year inside a long span counts as overlapping', () => {
+    const all = [span('dynasty', 1500, 1900), span('battle', 1600, 1600)];
+    assert.deepEqual(overlapping(all, all[0]).map((x) => x.id), ['battle']);
+    assert.deepEqual(overlapping(all, all[1]).map((x) => x.id), ['dynasty']);
+  });
+
+  test('touching at a single year still overlaps', () => {
+    const all = [span('a', 1500, 1600), span('b', 1600, 1700)];
+    assert.deepEqual(overlapping(all, all[0]).map((x) => x.id), ['b']);
+  });
+
+  test('a gap of one year does not overlap', () => {
+    const all = [span('a', 1500, 1599), span('b', 1600, 1700)];
+    assert.deepEqual(overlapping(all, all[0]), []);
+  });
+
+  test('spans crossing the year-zero seam overlap correctly', () => {
+    // No year 0: -1 is 1 BCE and 1 is 1 CE, so these are adjacent years.
+    const all = [span('bce', -50, -1), span('ce', 1, 50)];
+    assert.deepEqual(overlapping(all, all[0]), []);
+    const straddling = [span('bce', -50, -1), span('wide', -10, 10)];
+    assert.deepEqual(overlapping(straddling, straddling[0]).map((x) => x.id), ['wide']);
+  });
+
+  test('leads with importance, then with the nearest start', () => {
+    const all = [
+      span('subject', 1500, 1600),
+      span('minor-near', 1500, 1510, 1),
+      span('major-far', 1590, 1600, 5),
+    ];
+    assert.deepEqual(overlapping(all, all[0]).map((x) => x.id),
+      ['major-far', 'minor-near']);
+  });
+
+  test('limit caps the list', () => {
+    const all = [span('s', 1500, 1600), span('a', 1500, 1600), span('b', 1500, 1600)];
+    assert.equal(overlapping(all, all[0], { limit: 1 }).length, 1);
+  });
+
+  test('no entry means no contemporaries, not a crash', () => {
+    assert.deepEqual(overlapping([span('a', 1, 2)], null), []);
   });
 });

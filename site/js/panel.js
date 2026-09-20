@@ -40,7 +40,7 @@ function chipRow(labels, { onPick } = {}) {
   return row;
 }
 
-export function createPanel(root, { onClose, onNavigate } = {}) {
+export function createPanel(root, { onClose, onNavigate, contemporaries } = {}) {
   let node = null;
   let invoker = null;
   let openId = null;
@@ -155,6 +155,27 @@ export function createPanel(root, { onClose, onNavigate } = {}) {
       ...(detail.categories ?? []).map((id) => ({ id, label: id.replace(/-/g, ' ') })),
     ];
     if (tags.length) body.append(chipRow(tags));
+
+    // What else was going on. This is the question the whole site exists to
+    // answer, so it sits above the curated links rather than under them, and
+    // it is computed from the timeline rather than authored per entry.
+    const alsoRunning = contemporaries?.(entry) ?? [];
+    if (alsoRunning.length) {
+      body.append(el('h3', 'panel__h3', 'At the same time'));
+      const list = el('ul', 'panel__same');
+      for (const other of alsoRunning) {
+        const item = el('li', 'panel__same-item');
+        const button = el('button', 'panel__same-button');
+        button.type = 'button';
+        button.append(el('span', 'panel__same-title', other.title));
+        button.append(el('span', 'panel__same-where', other.laneLabel));
+        button.append(el('span', 'panel__same-when', other.when));
+        button.addEventListener('click', () => onNavigate?.(other.id));
+        item.append(button);
+        list.append(item);
+      }
+      body.append(list);
+    }
 
     if (detail.related?.length) {
       body.append(el('h3', 'panel__h3', 'Related'));
