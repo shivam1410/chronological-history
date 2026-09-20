@@ -33,6 +33,13 @@ adi-shankara:
   source: https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma_-_Sankaracharya.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Raja_Ravi_Varma_-_Sankaracharya.jpg/500px-Raja_Ravi_Varma_-_Sankaracharya.jpg
   url: images/adi-shankara.jpg
+ajanta-caves:
+  bytes: 68165
+  credit: Marcin Białek
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:Ajanta_cave_no._9_2010.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Ajanta_cave_no._9_2010.jpg/500px-Ajanta_cave_no._9_2010.jpg
+  url: images/ajanta-caves.jpg
 akbar:
   bytes: 203939
   credit: 1605 artist
@@ -68,6 +75,13 @@ al-khwarizmi:
   source: https://commons.wikimedia.org/wiki/File:Al-Khwarizmi_portrait.jpg
   source_url: https://upload.wikimedia.org/wikipedia/commons/d/dd/Al-Khwarizmi_portrait.jpg
   url: images/al-khwarizmi.jpg
+alexander-the-great:
+  bytes: 237403
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Alexander_the_Great_mosaic_(cropped).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Alexander_the_Great_mosaic_%28cropped%29.jpg/500px-Alexander_the_Great_mosaic_%28cropped%29.jpg
+  url: images/alexander-the-great.jpg
 algerian-war:
   bytes: 84958
   credit: Zdravko Pečar
@@ -82,6 +96,20 @@ ambedkar:
   source: https://commons.wikimedia.org/wiki/File:Dr._Bhimrao_Ambedkar.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Dr._Bhimrao_Ambedkar.jpg/500px-Dr._Bhimrao_Ambedkar.jpg
   url: images/ambedkar.jpg
+american-revolution:
+  bytes: 49927
+  credit: John Trumbull
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Declaration_of_Independence_(1819),_by_John_Trumbull.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg/500px-Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg
+  url: images/american-revolution.jpg
+amir-khusrau:
+  bytes: 206023
+  credit: India Post, Government of India
+  license: GODL-India
+  source: https://commons.wikimedia.org/wiki/File:Amir_Khusrow_1975_stamp_of_India.jpg
+  source_url: https://upload.wikimedia.org/wikipedia/commons/5/5d/Amir_Khusrow_1975_stamp_of_India.jpg
+  url: images/amir-khusrau.jpg
 an-lushan-rebellion:
   bytes: 109486
   credit: SY
@@ -159,6 +187,13 @@ aristotle:
   source: https://commons.wikimedia.org/wiki/File:Aristotle_Altemps_Inv8575.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Aristotle_Altemps_Inv8575.jpg/500px-Aristotle_Altemps_Inv8575.jpg
   url: images/aristotle.jpg
+arpanet:
+  bytes: 65637
+  credit: ARPANET
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Arpanet_logical_map,_march_1977.png
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Arpanet_logical_map%2C_march_1977.png/500px-Arpanet_logical_map%2C_march_1977.png
+  url: images/arpanet.png
 aryabhata:
   bytes: 100388
   credit: ''
@@ -187,6 +222,13 @@ augustine:
   source: https://commons.wikimedia.org/wiki/File:Saint_Augustine_by_Philippe_de_Champaigne.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Saint_Augustine_by_Philippe_de_Champaigne.jpg/500px-Saint_Augustine_by_Philippe_de_Champaigne.jpg
   url: images/augustine.jpg
+austen:
+  bytes: 85734
+  credit: Cassandra Austen
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:CassandraAusten-JaneAusten(c.1810)_hires.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/CassandraAusten-JaneAusten%28c.1810%29_hires.jpg/500px-CassandraAusten-JaneAusten%28c.1810%29_hires.jpg
+  url: images/austen.jpg
 australian-frontier-wars:
   bytes: 77401
   credit: W.Walton after Louisa and Godfrey Charles Mundy
@@ -222,6 +264,20 @@ avicenna:
   source: https://commons.wikimedia.org/wiki/File:Avicenna_Portrait_on_Silver_Vase_-_Museum_at_BuAli_Sina_(Avicenna)_Mausoleum_-_Hamadan_-_Western_Iran_(7423560860).jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Avicenna_Portrait_on_Silver_Vase_-_Museum_at_BuAli_Sina_%28Avicenna%29_Mausoleum_-_Hamadan_-_Western_Iran_%287423560860%29.jpg/500px-Avicenna_Portrait_on_Silver_Vase_-_Museum_at_BuAli_Sina_%28Avicenna%29_Mausoleum_-_Hamadan_-_Western_Iran_%287423560860%29.jpg
   url: images/avicenna.jpg
+babbage:
+  bytes: 74153
+  credit: Thomas Dewell Scott
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:CharlesBabbage.jpg
+  source_url: https://upload.wikimedia.org/wikipedia/commons/8/82/CharlesBabbage.jpg
+  url: images/babbage.jpg
+bach:
+  bytes: 490433
+  credit: Elias Gottlob Haussmann
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Johann_Sebastian_Bach.png
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Johann_Sebastian_Bach.png/500px-Johann_Sebastian_Bach.png
+  url: images/bach.png
 bangladesh-independence:
   bytes: 64269
   credit: ExcelD24
@@ -229,6 +285,34 @@ bangladesh-independence:
   source: https://commons.wikimedia.org/wiki/File:BangladeshLiberationWarMontage.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/BangladeshLiberationWarMontage.jpg/500px-BangladeshLiberationWarMontage.jpg
   url: images/bangladesh-independence.jpg
+baroque:
+  bytes: 62672
+  credit: General Cucombre from New York, USA
+  license: CC BY 2.0
+  source: https://commons.wikimedia.org/wiki/File:Doria_Pamphili_6284.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Doria_Pamphili_6284.jpg/500px-Doria_Pamphili_6284.jpg
+  url: images/baroque.jpg
+basho:
+  bytes: 37749
+  credit: unknown
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Basho_by_Buson.jpg
+  source_url: https://upload.wikimedia.org/wikipedia/commons/0/02/Basho_by_Buson.jpg
+  url: images/basho.jpg
+beatles:
+  bytes: 54817
+  credit: Bo Trenter
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Beatles_Trenter_1963.jpg
+  source_url: https://upload.wikimedia.org/wikipedia/commons/4/46/Beatles_Trenter_1963.jpg
+  url: images/beatles.jpg
+beethoven:
+  bytes: 106043
+  credit: Joseph Karl Stieler
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Beethoven.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Beethoven.jpg/500px-Beethoven.jpg
+  url: images/beethoven.jpg
 behavioural-modernity:
   bytes: 87081
   credit: EU
@@ -236,6 +320,13 @@ behavioural-modernity:
   source: https://commons.wikimedia.org/wiki/File:Lascaux_painting.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Lascaux_painting.jpg/500px-Lascaux_painting.jpg
   url: images/behavioural-modernity.jpg
+benin-bronzes:
+  bytes: 46085
+  credit: en:User:Warofdreams
+  license: CC BY-SA 3.0
+  source: https://commons.wikimedia.org/wiki/File:Benin_Bronzes.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/be/Benin_Bronzes.jpg/500px-Benin_Bronzes.jpg
+  url: images/benin-bronzes.jpg
 benin-kingdom:
   bytes: 97809
   credit: Unknown artistUnknown artist
@@ -286,6 +377,13 @@ blackbirding:
   source: https://commons.wikimedia.org/wiki/File:Groupe_de_Kanakas_dans_une_exploitation_de_canne_%C3%A0_sucre_du_Queensland.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Groupe_de_Kanakas_dans_une_exploitation_de_canne_%C3%A0_sucre_du_Queensland.jpg/500px-Groupe_de_Kanakas_dans_une_exploitation_de_canne_%C3%A0_sucre_du_Queensland.jpg
   url: images/blackbirding.jpg
+bob-marley:
+  bytes: 127528
+  credit: Dennis Morris; Distributed by Island Records
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Bob_Marley_1976_press_photo.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Bob_Marley_1976_press_photo.jpg/500px-Bob_Marley_1976_press_photo.jpg
+  url: images/bob-marley.jpg
 bohr:
   bytes: 85066
   credit: The American Institute of Physics credits the photo [1] to AB Lagrelius
@@ -295,6 +393,20 @@ bohr:
   source: https://commons.wikimedia.org/wiki/File:Niels_Bohr.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Niels_Bohr.jpg/500px-Niels_Bohr.jpg
   url: images/bohr.jpg
+bolivar:
+  bytes: 103682
+  credit: Ricardo Acevedo Bernal
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Sim%C3%B3n_Bol%C3%ADvar_by_Acevedo_Bernal,_1922.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Sim%C3%B3n_Bol%C3%ADvar_by_Acevedo_Bernal%2C_1922.jpg/500px-Sim%C3%B3n_Bol%C3%ADvar_by_Acevedo_Bernal%2C_1922.jpg
+  url: images/bolivar.jpg
+boole:
+  bytes: 147414
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:George_Boole_color.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/George_Boole_color.jpg/500px-George_Boole_color.jpg
+  url: images/boole.jpg
 borobudur:
   bytes: 38670
   credit: Gunawan Kartapranata
@@ -346,6 +458,13 @@ cave-art:
   source: https://commons.wikimedia.org/wiki/File:Lascaux_painting.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Lascaux_painting.jpg/500px-Lascaux_painting.jpg
   url: images/cave-art.jpg
+cervantes:
+  bytes: 53877
+  credit: Attributed to Juan de Jáuregui
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Cervantes_J%C3%A1uregui.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Cervantes_J%C3%A1uregui.jpg/500px-Cervantes_J%C3%A1uregui.jpg
+  url: images/cervantes.jpg
 chaco-canyon:
   bytes: 80948
   credit: National Park Service (United States)
@@ -353,6 +472,20 @@ chaco-canyon:
   source: https://commons.wikimedia.org/wiki/File:Chaco_Canyon_Chetro_Ketl_great_kiva_plaza_NPS.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Chaco_Canyon_Chetro_Ketl_great_kiva_plaza_NPS.jpg/500px-Chaco_Canyon_Chetro_Ketl_great_kiva_plaza_NPS.jpg
   url: images/chaco-canyon.jpg
+chaitanya:
+  bytes: 40522
+  credit: Self
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Chaitanya-Mahabrabhu-at-Jagannath.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Chaitanya-Mahabrabhu-at-Jagannath.jpg/500px-Chaitanya-Mahabrabhu-at-Jagannath.jpg
+  url: images/chaitanya.jpg
+chaucer:
+  bytes: 134971
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Portrait_of_Geoffrey_Chaucer_(4671380)_(cropped)_02.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Portrait_of_Geoffrey_Chaucer_%284671380%29_%28cropped%29_02.jpg/500px-Portrait_of_Geoffrey_Chaucer_%284671380%29_%28cropped%29_02.jpg
+  url: images/chaucer.jpg
 chavin:
   bytes: 73487
   credit: Sharon odb
@@ -367,6 +500,13 @@ chimu:
   source: https://commons.wikimedia.org/wiki/File:Photomontage_Chimu_Culture.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Photomontage_Chimu_Culture.jpg/500px-Photomontage_Chimu_Culture.jpg
   url: images/chimu.jpg
+chinese-landscape-painting:
+  bytes: 71147
+  credit: Guo Xi
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:%E6%97%A9%E6%98%A5%E5%9B%BE%E8%BD%B4.%E5%8C%97%E5%AE%8B.%E9%83%AD%E7%86%99%E7%BB%98.%E7%BB%A2%E6%9C%AC%E6%B5%85%E8%AE%BE%E8%89%B2.%E5%AE%8B%E7%A5%9E%E5%AE%97%E7%86%99%E5%AE%81%E4%BA%94%E5%B9%B4.%E5%8F%B0%E5%8C%97%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%99%A2%E8%97%8F.tif
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/%E6%97%A9%E6%98%A5%E5%9B%BE%E8%BD%B4.%E5%8C%97%E5%AE%8B.%E9%83%AD%E7%86%99%E7%BB%98.%E7%BB%A2%E6%9C%AC%E6%B5%85%E8%AE%BE%E8%89%B2.%E5%AE%8B%E7%A5%9E%E5%AE%97%E7%86%99%E5%AE%81%E4%BA%94%E5%B9%B4.%E5%8F%B0%E5%8C%97%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%99%A2%E8%97%8F.tif/lossy-page1-500px-%E6%97%A9%E6%98%A5%E5%9B%BE%E8%BD%B4.%E5%8C%97%E5%AE%8B.%E9%83%AD%E7%86%99%E7%BB%98.%E7%BB%A2%E6%9C%AC%E6%B5%85%E8%AE%BE%E8%89%B2.%E5%AE%8B%E7%A5%9E%E5%AE%97%E7%86%99%E5%AE%81%E4%BA%94%E5%B9%B4.%E5%8F%B0%E5%8C%97%E6%95%85%E5%AE%AB%E5%8D%9A%E7%89%A9%E9%99%A2%E8%97%8F.tif.jpg
+  url: images/chinese-landscape-painting.jpg
 chola-empire:
   bytes: 38845
   credit: Vyacheslav Argenberg
@@ -381,6 +521,13 @@ cholera-pandemics:
   source: https://commons.wikimedia.org/wiki/File:Cholera.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Cholera.jpg/500px-Cholera.jpg
   url: images/cholera-pandemics.jpg
+churchill:
+  bytes: 35090
+  credit: Yousuf Karsh
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Sir_Winston_Churchill_-_19086236948_(restored).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg/500px-Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg
+  url: images/churchill.jpg
 classical-athens:
   bytes: 44073
   credit: Christophe Meneboeuf
@@ -388,6 +535,13 @@ classical-athens:
   source: https://commons.wikimedia.org/wiki/File:View_of_the_Acropolis_Athens_(pixinn.net).jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/View_of_the_Acropolis_Athens_%28pixinn.net%29.jpg/500px-View_of_the_Acropolis_Athens_%28pixinn.net%29.jpg
   url: images/classical-athens.jpg
+cleopatra:
+  bytes: 60984
+  credit: Louis le Grand
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Kleopatra-VII.-Altes-Museum-Berlin1.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Kleopatra-VII.-Altes-Museum-Berlin1.jpg/500px-Kleopatra-VII.-Altes-Museum-Berlin1.jpg
+  url: images/cleopatra.jpg
 cocoliztli-epidemics:
   bytes: 106269
   credit: en:Bernardino de Sahagún (1499-1590), compiler. Original illustration by
@@ -397,6 +551,13 @@ cocoliztli-epidemics:
   source: https://commons.wikimedia.org/wiki/File:FlorentineCodex_BK12_F54_smallpox.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/FlorentineCodex_BK12_F54_smallpox.jpg/500px-FlorentineCodex_BK12_F54_smallpox.jpg
   url: images/cocoliztli-epidemics.jpg
+cold-war:
+  bytes: 67740
+  credit: 'U.S. Army photo Photo Credit: USAMHI'
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:US_Army_tanks_face_off_against_Soviet_tanks,_Berlin_1961.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/US_Army_tanks_face_off_against_Soviet_tanks%2C_Berlin_1961.jpg/500px-US_Army_tanks_face_off_against_Soviet_tanks%2C_Berlin_1961.jpg
+  url: images/cold-war.jpg
 columbian-exchange-epidemics:
   bytes: 52909
   credit: 'Tabac_rustique.jpg: Atilin Cacao-pod-k4636-14.jpg: The original uploader
@@ -463,6 +624,13 @@ cv-raman:
   source: https://commons.wikimedia.org/wiki/File:Sir_CV_Raman.JPG
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Sir_CV_Raman.JPG/500px-Sir_CV_Raman.JPG
   url: images/cv-raman.jpg
+dante:
+  bytes: 55664
+  credit: Sandro Botticelli
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Portrait_de_Dante.jpg
+  source_url: https://upload.wikimedia.org/wikipedia/commons/6/6f/Portrait_de_Dante.jpg
+  url: images/dante.jpg
 daodejing:
   bytes: 293102
   credit: Unknown authorUnknown author
@@ -491,6 +659,20 @@ descartes:
   source: https://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg/500px-Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg
   url: images/descartes.jpg
+dickens:
+  bytes: 83530
+  credit: Jeremiah Gurney
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Dickens_Gurney_head.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Dickens_Gurney_head.jpg/500px-Dickens_Gurney_head.jpg
+  url: images/dickens.jpg
+dijkstra:
+  bytes: 45749
+  credit: Andreas F. Borchert
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:Edsger_Dijkstra_1994.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c9/Edsger_Dijkstra_1994.jpg/500px-Edsger_Dijkstra_1994.jpg
+  url: images/dijkstra.jpg
 dinosaur-era:
   bytes: 506972
   credit: J. Spencer, Tadek Kurpaski, Daderot, Gary Todd, Domser, Captmondo. Collage
@@ -520,6 +702,13 @@ dog-domestication:
   source: https://commons.wikimedia.org/wiki/File:Canis_lupus_howling_on_glacial_erratic.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Canis_lupus_howling_on_glacial_erratic.jpg/500px-Canis_lupus_howling_on_glacial_erratic.jpg
   url: images/dog-domestication.jpg
+donatello:
+  bytes: 97151
+  credit: Original uploader was Frieda (dillo a Ubi) at it.wikipedia
+  license: CC BY-SA 3.0
+  source: https://commons.wikimedia.org/wiki/File:Uffizi_Donatello.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Uffizi_Donatello.jpg/500px-Uffizi_Donatello.jpg
+  url: images/donatello.jpg
 dostoevsky:
   bytes: 56168
   credit: Vasily Perov
@@ -527,6 +716,13 @@ dostoevsky:
   source: https://commons.wikimedia.org/wiki/File:Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg/500px-Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg
   url: images/dostoevsky.jpg
+du-fu:
+  bytes: 78127
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Dufu.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Dufu.jpg/500px-Dufu.jpg
+  url: images/du-fu.jpg
 earth-formation:
   bytes: 420084
   credit: Ivtorov, Elektro-L 3 camera
@@ -549,6 +745,13 @@ einstein:
   source: https://commons.wikimedia.org/wiki/File:Albert_Einstein_Head.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/Albert_Einstein_Head.jpg/500px-Albert_Einstein_Head.jpg
   url: images/einstein.jpg
+electrification:
+  bytes: 126208
+  credit: FDR Presidential Library & Museum
+  license: CC BY 2.0
+  source: https://commons.wikimedia.org/wiki/File:Trempealeau-Electric-Cooperative-Arcadia-Wis.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Trempealeau-Electric-Cooperative-Arcadia-Wis.jpg/500px-Trempealeau-Electric-Cooperative-Arcadia-Wis.jpg
+  url: images/electrification.jpg
 emmy-noether:
   bytes: 84941
   credit: 'Unknown authorUnknown author Publisher: Mathematical Association of America
@@ -557,6 +760,13 @@ emmy-noether:
   source: https://commons.wikimedia.org/wiki/File:Noether.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Noether.jpg/500px-Noether.jpg
   url: images/emmy-noether.jpg
+eniac:
+  bytes: 62952
+  credit: Unidentified U.S. Army photographer
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Two_women_operating_ENIAC_(full_resolution).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Two_women_operating_ENIAC_%28full_resolution%29.jpg/500px-Two_women_operating_ENIAC_%28full_resolution%29.jpg
+  url: images/eniac.jpg
 epicurus:
   bytes: 66582
   credit: ''
@@ -607,6 +817,13 @@ faraday:
   source: https://commons.wikimedia.org/wiki/File:M_Faraday_Th_Phillips_oil_1842.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/M_Faraday_Th_Phillips_oil_1842.jpg/500px-M_Faraday_Th_Phillips_oil_1842.jpg
   url: images/faraday.jpg
+ferdowsi:
+  bytes: 160857
+  credit: ca. 1476–86 artist
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Imaginary_depiction_of_the_poet_Firdausi._Folio_from_a_Khavarannama_(The_Book_of_the_East)_of_ibn_Husam_al-Din,_1476-1486.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Imaginary_depiction_of_the_poet_Firdausi._Folio_from_a_Khavarannama_%28The_Book_of_the_East%29_of_ibn_Husam_al-Din%2C_1476-1486.jpg/500px-Imaginary_depiction_of_the_poet_Firdausi._Folio_from_a_Khavarannama_%28The_Book_of_the_East%29_of_ibn_Husam_al-Din%2C_1476-1486.jpg
+  url: images/ferdowsi.jpg
 feynman:
   bytes: 120287
   credit: Copyright Tamiko Thiel 1984
@@ -628,6 +845,13 @@ first-mammals:
   source: https://commons.wikimedia.org/wiki/File:Sau_mit_ihren_Ferkeln.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Sau_mit_ihren_Ferkeln.jpg/500px-Sau_mit_ihren_Ferkeln.jpg
   url: images/first-mammals.jpg
+first-world-war:
+  bytes: 87766
+  credit: User:Hohum
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:WWImontage.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/WWImontage.jpg/500px-WWImontage.jpg
+  url: images/first-world-war.jpg
 fleming-penicillin:
   bytes: 68199
   credit: Official photographer
@@ -643,6 +867,20 @@ flowering-plants:
   source: https://commons.wikimedia.org/wiki/File:Sweetbay_Magnolia_Magnolia_virginiana_Flower_Closeup_2242px.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/Sweetbay_Magnolia_Magnolia_virginiana_Flower_Closeup_2242px.jpg/500px-Sweetbay_Magnolia_Magnolia_virginiana_Flower_Closeup_2242px.jpg
   url: images/flowering-plants.jpg
+french-revolution:
+  bytes: 63700
+  credit: Isidore Stanislas Helman / After Charles Monnet
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:LouisXVIExecutionBig.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/LouisXVIExecutionBig.jpg/500px-LouisXVIExecutionBig.jpg
+  url: images/french-revolution.jpg
+frida-kahlo:
+  bytes: 79950
+  credit: Guillermo Kahlo
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Frida_Kahlo,_by_Guillermo_Kahlo_(cropped).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Frida_Kahlo%2C_by_Guillermo_Kahlo_%28cropped%29.jpg/500px-Frida_Kahlo%2C_by_Guillermo_Kahlo_%28cropped%29.jpg
+  url: images/frida-kahlo.jpg
 galileo:
   bytes: 92470
   credit: Justus Sustermans
@@ -664,6 +902,13 @@ genghis-khan:
   source: https://commons.wikimedia.org/wiki/File:YuanEmperorAlbumGenghisPortrait.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/YuanEmperorAlbumGenghisPortrait.jpg/500px-YuanEmperorAlbumGenghisPortrait.jpg
   url: images/genghis-khan.jpg
+ghalib:
+  bytes: 64780
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Mirza_Ghalib_photograph_3.jpg
+  source_url: https://upload.wikimedia.org/wikipedia/commons/c/cd/Mirza_Ghalib_photograph_3.jpg
+  url: images/ghalib.jpg
 ghana-empire:
   bytes: 76993
   credit: Luxo
@@ -678,6 +923,20 @@ ghana-independence:
   source: https://commons.wikimedia.org/wiki/File:Beach_with_palms_Ghana.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Beach_with_palms_Ghana.jpg/500px-Beach_with_palms_Ghana.jpg
   url: images/ghana-independence.jpg
+giotto:
+  bytes: 98174
+  credit: Original uploader was Frieda at it.wikipedia
+  license: CC BY-SA 3.0
+  source: https://commons.wikimedia.org/wiki/File:Uffizi_Giotto.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Uffizi_Giotto.jpg/500px-Uffizi_Giotto.jpg
+  url: images/giotto.jpg
+goethe:
+  bytes: 60327
+  credit: Joseph Karl Stieler
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Goethe_(Stieler_1828).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Goethe_%28Stieler_1828%29.jpg/500px-Goethe_%28Stieler_1828%29.jpg
+  url: images/goethe.jpg
 golden-horde:
   bytes: 90200
   credit: Cresques Abraham
@@ -777,6 +1036,13 @@ hadith-collections:
   source: https://commons.wikimedia.org/wiki/File:Hadith_Books.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/Hadith_Books.jpg/500px-Hadith_Books.jpg
   url: images/hadith-collections.jpg
+hafez:
+  bytes: 93443
+  credit: Anselm Feuerbach
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Anselm_Feuerbach_Hafis_vor_der_Schenke_(cropped).jpg
+  source_url: https://upload.wikimedia.org/wikipedia/commons/d/de/Anselm_Feuerbach_Hafis_vor_der_Schenke_%28cropped%29.jpg
+  url: images/hafez.jpg
 haitian-revolution:
   bytes: 90379
   credit: January Suchodolski
@@ -882,6 +1148,20 @@ hiv-aids:
   source: https://commons.wikimedia.org/wiki/File:Human_Immunodeficency_Virus_-_stylized_rendering.jpg
   source_url: https://upload.wikimedia.org/wikipedia/commons/e/ea/Human_Immunodeficency_Virus_-_stylized_rendering.jpg
   url: images/hiv-aids.jpg
+hokusai:
+  bytes: 122671
+  credit: missing name
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:Hokusai_as_an_old_man.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Hokusai_as_an_old_man.jpg/500px-Hokusai_as_an_old_man.jpg
+  url: images/hokusai.jpg
+holocaust:
+  bytes: 57863
+  credit: Bernhard Walter
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Selection_on_the_ramp_at_Auschwitz-Birkenau,_1944_(Auschwitz_Album)_1b.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Selection_on_the_ramp_at_Auschwitz-Birkenau%2C_1944_%28Auschwitz_Album%29_1b.jpg/500px-Selection_on_the_ramp_at_Auschwitz-Birkenau%2C_1944_%28Auschwitz_Album%29_1b.jpg
+  url: images/holocaust.jpg
 holocene:
   bytes: 24806
   credit: Ktrinko
@@ -953,6 +1233,13 @@ homo-sapiens:
   source: https://commons.wikimedia.org/wiki/File:Akha_cropped_hires.JPG
   source_url: https://upload.wikimedia.org/wikipedia/commons/6/68/Akha_cropped_hires.JPG
   url: images/homo-sapiens.jpg
+hopper:
+  bytes: 64150
+  credit: James S. Davis
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Commodore_Grace_M._Hopper,_USN_(covered).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg/500px-Commodore_Grace_M._Hopper%2C_USN_%28covered%29.jpg
+  url: images/hopper.jpg
 horse-domestication:
   bytes: 80913
   credit: Unknown authorUnknown author
@@ -960,6 +1247,13 @@ horse-domestication:
   source: https://commons.wikimedia.org/wiki/File:Cave_painting_in_Doushe_cave,_Lorstan,_Iran,_8th_millennium_BC.JPG
   source_url: https://upload.wikimedia.org/wikipedia/commons/4/4a/Cave_painting_in_Doushe_cave%2C_Lorstan%2C_Iran%2C_8th_millennium_BC.JPG
   url: images/horse-domestication.jpg
+hubble:
+  bytes: 47412
+  credit: Johan Hagemeyer
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Studio_portrait_photograph_of_Edwin_Powell_Hubble_(cropped).JPG
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Studio_portrait_photograph_of_Edwin_Powell_Hubble_%28cropped%29.JPG/500px-Studio_portrait_photograph_of_Edwin_Powell_Hubble_%28cropped%29.JPG
+  url: images/hubble.jpg
 hume:
   bytes: 69845
   credit: Allan Ramsay
@@ -988,6 +1282,13 @@ ibn-rushd:
   source: https://commons.wikimedia.org/wiki/File:Statue_of_Averroes_in_C%C3%B3rdoba,_Spain.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Statue_of_Averroes_in_C%C3%B3rdoba%2C_Spain.jpg/500px-Statue_of_Averroes_in_C%C3%B3rdoba%2C_Spain.jpg
   url: images/ibn-rushd.jpg
+impressionism:
+  bytes: 83393
+  credit: Pierre-Auguste Renoir
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Pierre-Auguste_Renoir,_Le_Moulin_de_la_Galette.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Pierre-Auguste_Renoir%2C_Le_Moulin_de_la_Galette.jpg/500px-Pierre-Auguste_Renoir%2C_Le_Moulin_de_la_Galette.jpg
+  url: images/impressionism.jpg
 inca-empire:
   bytes: 84623
   credit: Martin St-Amant (S23678)
@@ -1016,6 +1317,13 @@ indus-valley:
   source: https://commons.wikimedia.org/wiki/File:Mohenjo-daro.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2b/Mohenjo-daro.jpg/500px-Mohenjo-daro.jpg
   url: images/indus-valley.jpg
+industrial-revolution:
+  bytes: 44689
+  credit: Société géologique de France
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:M%C3%A9moires_de_la_Soci%C3%A9t%C3%A9_g%C3%A9ologique_de_France_(IA_meymoiresdelaso00socig).pdf
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/M%C3%A9moires_de_la_Soci%C3%A9t%C3%A9_g%C3%A9ologique_de_France_%28IA_meymoiresdelaso00socig%29.pdf/page1-500px-M%C3%A9moires_de_la_Soci%C3%A9t%C3%A9_g%C3%A9ologique_de_France_%28IA_meymoiresdelaso00socig%29.pdf.jpg
+  url: images/industrial-revolution.jpg
 influenza-1918:
   bytes: 75996
   credit: Otis Historical Archives, National Museum of Health and Medicine
@@ -1023,6 +1331,13 @@ influenza-1918:
   source: https://commons.wikimedia.org/wiki/File:Emergency_hospital_during_Influenza_epidemic,_Camp_Funston,_Kansas_-_NCP_1603.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Emergency_hospital_during_Influenza_epidemic%2C_Camp_Funston%2C_Kansas_-_NCP_1603.jpg/500px-Emergency_hospital_during_Influenza_epidemic%2C_Camp_Funston%2C_Kansas_-_NCP_1603.jpg
   url: images/influenza-1918.jpg
+integrated-circuit:
+  bytes: 105942
+  credit: cole8888, https://flickr.com/photos/187597251@N05/ (aka Cole L)
+  license: CC BY-SA 2.0
+  source: https://commons.wikimedia.org/wiki/File:NXP_PCF8577C_LCD_driver_with_I%C2%B2C_(Colour_Corrected).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/NXP_PCF8577C_LCD_driver_with_I%C2%B2C_%28Colour_Corrected%29.jpg/500px-NXP_PCF8577C_LCD_driver_with_I%C2%B2C_%28Colour_Corrected%29.jpg
+  url: images/integrated-circuit.jpg
 iron-age:
   bytes: 24404
   credit: ''
@@ -1037,6 +1352,13 @@ iroquois-confederacy:
   source: https://commons.wikimedia.org/wiki/File:Flag_of_the_Iroquois_Confederacy.svg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Flag_of_the_Iroquois_Confederacy.svg/500px-Flag_of_the_Iroquois_Confederacy.svg.png
   url: images/iroquois-confederacy.png
+islamic-calligraphy:
+  bytes: 73331
+  credit: ''
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Maghribi_script_sura_5.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Maghribi_script_sura_5.jpg/500px-Maghribi_script_sura_5.jpg
+  url: images/islamic-calligraphy.jpg
 israel-founded:
   bytes: 207243
   credit: Unknown authorUnknown author
@@ -1051,6 +1373,13 @@ jain-agamas:
   source: https://commons.wikimedia.org/wiki/File:12th-century_Yogasastra,_Hemachandra_Jainism,_Sanskrit,_1_mm_Devanagari_script.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/12th-century_Yogasastra%2C_Hemachandra_Jainism%2C_Sanskrit%2C_1_mm_Devanagari_script.jpg/500px-12th-century_Yogasastra%2C_Hemachandra_Jainism%2C_Sanskrit%2C_1_mm_Devanagari_script.jpg
   url: images/jain-agamas.jpg
+jazz:
+  bytes: 43575
+  credit: World-Telegram staff photographer
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Louis_Armstrong_restored.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Louis_Armstrong_restored.jpg/500px-Louis_Armstrong_restored.jpg
+  url: images/jazz.jpg
 jesus:
   bytes: 218661
   credit: Unknown artistUnknown artist
@@ -1065,6 +1394,13 @@ joseon-dynasty:
   source: https://commons.wikimedia.org/wiki/File:1894JoseonSeoul.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/1894JoseonSeoul.jpg/500px-1894JoseonSeoul.jpg
   url: images/joseon-dynasty.jpg
+julius-caesar:
+  bytes: 57189
+  credit: Ángel M. Felicísimo from Mérida, España
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Retrato_de_Julio_C%C3%A9sar_(26724093101)_(cropped).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/Retrato_de_Julio_C%C3%A9sar_%2826724093101%29_%28cropped%29.jpg/500px-Retrato_de_Julio_C%C3%A9sar_%2826724093101%29_%28cropped%29.jpg
+  url: images/julius-caesar.jpg
 kabir:
   bytes: 123879
   credit: India Post, Government of India
@@ -1072,6 +1408,13 @@ kabir:
   source: https://commons.wikimedia.org/wiki/File:Kabir_(postage_stamp).jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Kabir_%28postage_stamp%29.jpg/500px-Kabir_%28postage_stamp%29.jpg
   url: images/kabir.jpg
+kalidasa:
+  bytes: 84414
+  credit: NehalDaveND
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:Kalidas.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Kalidas.jpg/500px-Kalidas.jpg
+  url: images/kalidasa.jpg
 kamakura-shogunate:
   bytes: 151261
   credit: Quadell
@@ -1114,6 +1457,14 @@ kingdom-of-kush:
   source: https://commons.wikimedia.org/wiki/File:Nubia_NASA-WW_places_german.jpg
   source_url: https://upload.wikimedia.org/wikipedia/commons/c/cd/Nubia_NASA-WW_places_german.jpg
   url: images/kingdom-of-kush.jpg
+knuth:
+  bytes: 44880
+  credit: Flickr user Jacob Appelbaum, uploaded to en.wikipedia by users BeSherman,
+    Duozmo
+  license: CC BY-SA 2.5
+  source: https://commons.wikimedia.org/wiki/File:KnuthAtOpenContentAlliance.jpg
+  source_url: https://upload.wikimedia.org/wikipedia/commons/4/4f/KnuthAtOpenContentAlliance.jpg
+  url: images/knuth.jpg
 korea-three-kingdoms:
   bytes: 411465
   credit: Myself
@@ -1184,6 +1535,27 @@ lavoisier:
   source: https://commons.wikimedia.org/wiki/File:David_-_Portrait_of_Monsieur_Lavoisier_(cropped).jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/David_-_Portrait_of_Monsieur_Lavoisier_%28cropped%29.jpg/500px-David_-_Portrait_of_Monsieur_Lavoisier_%28cropped%29.jpg
   url: images/lavoisier.jpg
+lenin:
+  bytes: 40756
+  credit: Pavel Zhukov
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Vladimir_Lenin_in_July_1920_by_Pavel_Zhukov.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/Vladimir_Lenin_in_July_1920_by_Pavel_Zhukov.jpg/500px-Vladimir_Lenin_in_July_1920_by_Pavel_Zhukov.jpg
+  url: images/lenin.jpg
+leonardo:
+  bytes: 661425
+  credit: Attributed to Francesco Melzi
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Francesco_Melzi_-_Portrait_of_Leonardo.png
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Francesco_Melzi_-_Portrait_of_Leonardo.png/500px-Francesco_Melzi_-_Portrait_of_Leonardo.png
+  url: images/leonardo.png
+li-bai:
+  bytes: 504040
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:%E6%9D%8E%E7%99%BD.png
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/%E6%9D%8E%E7%99%BD.png/500px-%E6%9D%8E%E7%99%BD.png
+  url: images/li-bai.png
 liberia-independence:
   bytes: 55406
   credit: David Stanley
@@ -1191,6 +1563,13 @@ liberia-independence:
   source: https://commons.wikimedia.org/wiki/File:Liberian_Capitol_Building.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Liberian_Capitol_Building.jpg/500px-Liberian_Capitol_Building.jpg
   url: images/liberia-independence.jpg
+lincoln:
+  bytes: 71943
+  credit: Alexander Gardner
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Abraham_Lincoln_O-77_matte_collodion_print.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/Abraham_Lincoln_O-77_matte_collodion_print.jpg/500px-Abraham_Lincoln_O-77_matte_collodion_print.jpg
+  url: images/lincoln.jpg
 locke:
   bytes: 422216
   credit: Godfrey Kneller
@@ -1198,6 +1577,13 @@ locke:
   source: https://commons.wikimedia.org/wiki/File:JohnLocke.png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/JohnLocke.png/500px-JohnLocke.png
   url: images/locke.png
+lovelace:
+  bytes: 88832
+  credit: Margaret Sarah Carpenter
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Ada_Lovelace.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Ada_Lovelace.jpg/500px-Ada_Lovelace.jpg
+  url: images/lovelace.jpg
 lusophone-independence:
   bytes: 57423
   credit: ''
@@ -1282,6 +1668,13 @@ mansa-musa-hajj:
   source: https://commons.wikimedia.org/wiki/File:Kanga_Moussa_Atlas_Catalan.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Kanga_Moussa_Atlas_Catalan.jpg/500px-Kanga_Moussa_Atlas_Catalan.jpg
   url: images/mansa-musa-hajj.jpg
+mao:
+  bytes: 109493
+  credit: Chen Zhengqing (1917–1966)
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Mao_Tse_Tung.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Mao_Tse_Tung.jpg/500px-Mao_Tse_Tung.jpg
+  url: images/mao.jpg
 marcus-aurelius:
   bytes: 97283
   credit: ''
@@ -1296,6 +1689,13 @@ marie-curie:
   source: https://commons.wikimedia.org/wiki/File:Marie_Curie_c1920.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Marie_Curie_c1920.jpg/500px-Marie_Curie_c1920.jpg
   url: images/marie-curie.jpg
+martin-luther:
+  bytes: 80641
+  credit: Lucas Cranach the Elder
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Lucas_Cranach_d.%C3%84._-_Martin_Luther,_1528_(Veste_Coburg).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Lucas_Cranach_d.%C3%84._-_Martin_Luther%2C_1528_%28Veste_Coburg%29.jpg/500px-Lucas_Cranach_d.%C3%84._-_Martin_Luther%2C_1528_%28Veste_Coburg%29.jpg
+  url: images/martin-luther.jpg
 marx:
   bytes: 102627
   credit: John Jabez Edwin Mayall
@@ -1366,6 +1766,13 @@ mexican-revolution:
   source: https://commons.wikimedia.org/wiki/File:Revoluci%C3%B3n_mexicana_1915.svg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Revoluci%C3%B3n_mexicana_1915.svg/500px-Revoluci%C3%B3n_mexicana_1915.svg.png
   url: images/mexican-revolution.png
+michelangelo:
+  bytes: 96339
+  credit: Attributed to Daniele da Volterra
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Michelangelo_Daniele_da_Volterra_(dettaglio).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Michelangelo_Daniele_da_Volterra_%28dettaglio%29.jpg/500px-Michelangelo_Daniele_da_Volterra_%28dettaglio%29.jpg
+  url: images/michelangelo.jpg
 mill:
   bytes: 73994
   credit: London Stereoscopic Company
@@ -1373,8 +1780,15 @@ mill:
   source: https://commons.wikimedia.org/wiki/File:John_Stuart_Mill_by_London_Stereoscopic_Company,_c1870.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/John_Stuart_Mill_by_London_Stereoscopic_Company%2C_c1870.jpg/500px-John_Stuart_Mill_by_London_Stereoscopic_Company%2C_c1870.jpg
   url: images/mill.jpg
+milton:
+  bytes: 48385
+  credit: anonymous
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:John-milton.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/John-milton.jpg/500px-John-milton.jpg
+  url: images/milton.jpg
 ming-dynasty:
-  bytes: 188175
+  bytes: 188179
   credit: 'Říše Ming.png: Michal Klajban derivative work: Jann translator: Manlleus
     (ca)'
   license: CC BY-SA 3.0 cz
@@ -1388,6 +1802,13 @@ mirabai:
   source: https://commons.wikimedia.org/wiki/File:Kangra_painting_of_Mirabai,_the_female_Bhakti_saint.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Kangra_painting_of_Mirabai%2C_the_female_Bhakti_saint.jpg/500px-Kangra_painting_of_Mirabai%2C_the_female_Bhakti_saint.jpg
   url: images/mirabai.jpg
+mlk:
+  bytes: 88605
+  credit: Associated Press
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:The_Rev._Dr._Martin_Luther_King_Jr._Color_Portrait_(high_quality).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/The_Rev._Dr._Martin_Luther_King_Jr._Color_Portrait_%28high_quality%29.jpg/500px-The_Rev._Dr._Martin_Luther_King_Jr._Color_Portrait_%28high_quality%29.jpg
+  url: images/mlk.jpg
 moai:
   bytes: 117102
   credit: Aurbina
@@ -1395,6 +1816,20 @@ moai:
   source: https://commons.wikimedia.org/wiki/File:Moai_Rano_raraku.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Moai_Rano_raraku.jpg/500px-Moai_Rano_raraku.jpg
   url: images/moai.jpg
+modernism:
+  bytes: 129667
+  credit: H.Snyers
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:HSnyers_Louvrex_1933.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/HSnyers_Louvrex_1933.jpg/500px-HSnyers_Louvrex_1933.jpg
+  url: images/modernism.jpg
+monet:
+  bytes: 66924
+  credit: Nadar
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Claude_Monet_1899_Nadar_crop.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Claude_Monet_1899_Nadar_crop.jpg/500px-Claude_Monet_1899_Nadar_crop.jpg
+  url: images/monet.jpg
 monte-alban:
   bytes: 46421
   credit: ''
@@ -1409,6 +1844,13 @@ moon-landing:
   source: https://commons.wikimedia.org/wiki/File:Aldrin_Apollo_11_original.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Aldrin_Apollo_11_original.jpg/500px-Aldrin_Apollo_11_original.jpg
   url: images/moon-landing.jpg
+mozart:
+  bytes: 58263
+  credit: Barbara Krafft
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Wolfgang-amadeus-mozart_1.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1e/Wolfgang-amadeus-mozart_1.jpg/500px-Wolfgang-amadeus-mozart_1.jpg
+  url: images/mozart.jpg
 mughal-empire:
   bytes: 30779
   credit: nafSadh
@@ -1416,6 +1858,13 @@ mughal-empire:
   source: https://commons.wikimedia.org/wiki/File:MughalEmpire1700.svg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/MughalEmpire1700.svg/500px-MughalEmpire1700.svg.png
   url: images/mughal-empire.png
+mughal-painting:
+  bytes: 195172
+  credit: Govardhan (attribution)
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Govardhan._Jahangir_Visiting_the_Ascetic_Jadrup._ca._1616-20,_Musee_Guimet,_Paris.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/16/Govardhan._Jahangir_Visiting_the_Ascetic_Jadrup._ca._1616-20%2C_Musee_Guimet%2C_Paris.jpg/500px-Govardhan._Jahangir_Visiting_the_Ascetic_Jadrup._ca._1616-20%2C_Musee_Guimet%2C_Paris.jpg
+  url: images/mughal-painting.jpg
 muhammad:
   bytes: 69756
   credit: 'derivative work: Snitty (talk) Maome.jpg: Unknown'
@@ -1444,6 +1893,13 @@ namibia-independence:
   source: https://commons.wikimedia.org/wiki/File:Duna_en_Sossusvlei,_Namibia,_2018-08-06,_DD_002.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Duna_en_Sossusvlei%2C_Namibia%2C_2018-08-06%2C_DD_002.jpg/500px-Duna_en_Sossusvlei%2C_Namibia%2C_2018-08-06%2C_DD_002.jpg
   url: images/namibia-independence.jpg
+napoleon:
+  bytes: 99656
+  credit: Jacques-Louis David
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg/500px-Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg
+  url: images/napoleon.jpg
 nazca-lines:
   bytes: 39185
   credit: BjarteSorensen
@@ -1507,6 +1963,13 @@ opium-wars:
   source: https://commons.wikimedia.org/wiki/File:Second_Opium_War-guangzhou.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Second_Opium_War-guangzhou.jpg/500px-Second_Opium_War-guangzhou.jpg
   url: images/opium-wars.jpg
+oppenheimer:
+  bytes: 69749
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Oppenheimer_(cropped).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Oppenheimer_%28cropped%29.jpg/500px-Oppenheimer_%28cropped%29.jpg
+  url: images/oppenheimer.jpg
 oracle-bone-script:
   bytes: 114121
   credit: ''
@@ -1542,6 +2005,13 @@ out-of-africa:
   source: https://commons.wikimedia.org/wiki/File:World_map_of_prehistoric_human_migrations.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ab/World_map_of_prehistoric_human_migrations.jpg/500px-World_map_of_prehistoric_human_migrations.jpg
   url: images/out-of-africa.jpg
+ovid:
+  bytes: 81088
+  credit: Lucasaw
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:Ovid_by_an_anonymous_sculptor.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Ovid_by_an_anonymous_sculptor.jpg/500px-Ovid_by_an_anonymous_sculptor.jpg
+  url: images/ovid.jpg
 oyo-empire:
   bytes: 52787
   credit: The African History
@@ -1592,6 +2062,27 @@ peopling-of-americas:
   source: https://commons.wikimedia.org/wiki/File:Early_migrations_mercator.svg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8b/Early_migrations_mercator.svg/500px-Early_migrations_mercator.svg.png
   url: images/peopling-of-americas.png
+persian-miniature:
+  bytes: 186085
+  credit: Possibly Sultan Muhammad
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Miraj_by_Sultan_Muhammad.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Miraj_by_Sultan_Muhammad.jpg/500px-Miraj_by_Sultan_Muhammad.jpg
+  url: images/persian-miniature.jpg
+phidias-greek-sculpture:
+  bytes: 70506
+  credit: Unknown artistUnknown artist
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Cavalcade_south_frieze_Parthenon_BM.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Cavalcade_south_frieze_Parthenon_BM.jpg/500px-Cavalcade_south_frieze_Parthenon_BM.jpg
+  url: images/phidias-greek-sculpture.jpg
+picasso-cubism:
+  bytes: 67602
+  credit: Argentina. Revista Vea y Lea
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Pablo_picasso_1.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Pablo_picasso_1.jpg/500px-Pablo_picasso_1.jpg
+  url: images/picasso-cubism.jpg
 plague-of-athens:
   bytes: 47017
   credit: Michiel Sweerts
@@ -1672,12 +2163,19 @@ printing-press:
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/The_Caxton_Celebration_-_William_Caxton_showing_specimens_of_his_printing_to_King_Edward_IV_and_his_Queen.jpg/500px-The_Caxton_Celebration_-_William_Caxton_showing_specimens_of_his_printing_to_King_Edward_IV_and_his_Queen.jpg
   url: images/printing-press.jpg
 ptolemy:
-  bytes: 224281
+  bytes: 224317
   credit: Unknown authorUnknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:PSM_V78_D326_Ptolemy.png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/PSM_V78_D326_Ptolemy.png/500px-PSM_V78_D326_Ptolemy.png
   url: images/ptolemy.png
+pushkin:
+  bytes: 80976
+  credit: Orest Kiprensky
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Kiprensky_Pushkin.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Kiprensky_Pushkin.jpg/500px-Kiprensky_Pushkin.jpg
+  url: images/pushkin.jpg
 pythagoras:
   bytes: 79922
   credit: Unknown authorUnknown author
@@ -1692,6 +2190,13 @@ qin-dynasty:
   source: https://commons.wikimedia.org/wiki/File:Qin_empire_210_BCE.png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/Qin_empire_210_BCE.png/500px-Qin_empire_210_BCE.png
   url: images/qin-dynasty.png
+qin-shi-huang:
+  bytes: 15241
+  credit: ''
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Qinshihuangdi3.jpg
+  source_url: https://upload.wikimedia.org/wikipedia/commons/a/ab/Qinshihuangdi3.jpg
+  url: images/qin-shi-huang.jpg
 ramanuja:
   bytes: 68268
   credit: Kasyap
@@ -1720,6 +2225,34 @@ rapa-nui-decline:
   source: https://commons.wikimedia.org/wiki/File:Easter_Island_5.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Easter_Island_5.jpg/500px-Easter_Island_5.jpg
   url: images/rapa-nui-decline.jpg
+raphael:
+  bytes: 62556
+  credit: Raphael
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Raffaello_Sanzio.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Raffaello_Sanzio.jpg/500px-Raffaello_Sanzio.jpg
+  url: images/raphael.jpg
+ravi-shankar:
+  bytes: 108037
+  credit: Markgoff2972
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:Ravi_Shankar.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Ravi_Shankar.jpg/500px-Ravi_Shankar.jpg
+  url: images/ravi-shankar.jpg
+reformation:
+  bytes: 299397
+  credit: '95Thesen.jpg: User:Shizhao derivative work: 6birc (talk)'
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:95Thesen_facsimile_colour.png
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/95Thesen_facsimile_colour.png/500px-95Thesen_facsimile_colour.png
+  url: images/reformation.png
+rembrandt:
+  bytes: 46793
+  credit: Rembrandt
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Rembrandt_van_Rijn_-_Self-Portrait_-_Google_Art_Project.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/Rembrandt_van_Rijn_-_Self-Portrait_-_Google_Art_Project.jpg/500px-Rembrandt_van_Rijn_-_Self-Portrait_-_Google_Art_Project.jpg
+  url: images/rembrandt.jpg
 renaissance:
   bytes: 67754
   credit: Sandro Botticelli
@@ -1741,6 +2274,13 @@ roman-empire:
   source: https://commons.wikimedia.org/wiki/File:Inscription_Theatre_Leptis_Magna_Libya.JPG
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Inscription_Theatre_Leptis_Magna_Libya.JPG/500px-Inscription_Theatre_Leptis_Magna_Libya.JPG
   url: images/roman-empire.jpg
+romanticism:
+  bytes: 65647
+  credit: Caspar David Friedrich
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg/500px-Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg
+  url: images/romanticism.jpg
 rosalind-franklin:
   bytes: 50101
   credit: MRC Laboratory of Molecular Biology
@@ -1748,6 +2288,13 @@ rosalind-franklin:
   source: https://commons.wikimedia.org/wiki/File:Rosalind_Franklin.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Rosalind_Franklin.jpg/500px-Rosalind_Franklin.jpg
   url: images/rosalind-franklin.jpg
+rumi:
+  bytes: 50323
+  credit: Hossein Behzad
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:%D9%85%D9%88%D9%84%D8%A7%D9%86%D8%A7_%D8%A7%D8%AB%D8%B1_%D8%AD%D8%B3%DB%8C%D9%86_%D8%A8%D9%87%D8%B2%D8%A7%D8%AF_(cropped).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/%D9%85%D9%88%D9%84%D8%A7%D9%86%D8%A7_%D8%A7%D8%AB%D8%B1_%D8%AD%D8%B3%DB%8C%D9%86_%D8%A8%D9%87%D8%B2%D8%A7%D8%AF_%28cropped%29.jpg/500px-%D9%85%D9%88%D9%84%D8%A7%D9%86%D8%A7_%D8%A7%D8%AB%D8%B1_%D8%AD%D8%B3%DB%8C%D9%86_%D8%A8%D9%87%D8%B2%D8%A7%D8%AF_%28cropped%29.jpg
+  url: images/rumi.jpg
 russian-conquest-central-asia:
   bytes: 98057
   credit: 'Turkestan_1900-es.svg: Wassily / Translator:Molorco derivative work: HylgeriaK
@@ -1763,6 +2310,13 @@ russian-flu-1889:
   source: https://commons.wikimedia.org/wiki/File:Everyone_has_Influenza_-_The_Round_of_Doctors_and_Druggists.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/Everyone_has_Influenza_-_The_Round_of_Doctors_and_Druggists.jpg/500px-Everyone_has_Influenza_-_The_Round_of_Doctors_and_Druggists.jpg
   url: images/russian-flu-1889.jpg
+russian-revolution:
+  bytes: 102893
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Revoluci%C3%B3n-marzo-rusia--russianbolshevik00rossuoft.png
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Revoluci%C3%B3n-marzo-rusia--russianbolshevik00rossuoft.png/500px-Revoluci%C3%B3n-marzo-rusia--russianbolshevik00rossuoft.png
+  url: images/russian-revolution.png
 sack-of-baghdad:
   bytes: 78696
   credit: Sayf al-vâhidî et al.
@@ -1791,6 +2345,13 @@ samoa-independence:
   source: https://commons.wikimedia.org/wiki/File:Beach_on_Upolu_Island,_Samoa,_2009.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Beach_on_Upolu_Island%2C_Samoa%2C_2009.jpg/500px-Beach_on_Upolu_Island%2C_Samoa%2C_2009.jpg
   url: images/samoa-independence.jpg
+sappho:
+  bytes: 78896
+  credit: Marie-Lan Nguyen
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Bust_Sappho_Musei_Capitolini_MC1164.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Bust_Sappho_Musei_Capitolini_MC1164.jpg/500px-Bust_Sappho_Musei_Capitolini_MC1164.jpg
+  url: images/sappho.jpg
 sartre:
   bytes: 75316
   credit: User:T1980
@@ -1847,6 +2408,13 @@ second-sino-japanese-war:
   source: https://commons.wikimedia.org/wiki/File:Japanese_Special_Naval_Landing_Forces_in_Battle_of_Shanghai_1937.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/39/Japanese_Special_Naval_Landing_Forces_in_Battle_of_Shanghai_1937.jpg/500px-Japanese_Special_Naval_Landing_Forces_in_Battle_of_Shanghai_1937.jpg
   url: images/second-sino-japanese-war.jpg
+second-world-war:
+  bytes: 415058
+  credit: User:Staberinde
+  license: CC BY-SA 3.0 de
+  source: https://commons.wikimedia.org/wiki/File:Infobox_collage_for_WWII.PNG
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Infobox_collage_for_WWII.PNG/500px-Infobox_collage_for_WWII.PNG
+  url: images/second-world-war.png
 settlement-of-hawaii:
   bytes: 90004
   credit: Staecker
@@ -1861,6 +2429,20 @@ settlement-of-rapa-nui:
   source: https://commons.wikimedia.org/wiki/File:Easter_Island_5.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Easter_Island_5.jpg/500px-Easter_Island_5.jpg
   url: images/settlement-of-rapa-nui.jpg
+shakespeare:
+  bytes: 81487
+  credit: Attributed to John Taylor
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Shakespeare.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Shakespeare.jpg/500px-Shakespeare.jpg
+  url: images/shakespeare.jpg
+shannon:
+  bytes: 37183
+  credit: Jacobs, Konrad
+  license: CC BY-SA 2.0 de
+  source: https://commons.wikimedia.org/wiki/File:ClaudeShannon_MFO3807.jpg
+  source_url: https://upload.wikimedia.org/wikipedia/commons/9/99/ClaudeShannon_MFO3807.jpg
+  url: images/shannon.jpg
 sharpeville-massacre:
   bytes: 85419
   credit: 'Godfrey Rubens (painter and photographer) .mw-parser-output .messagebox{margin:4px
@@ -1899,6 +2481,13 @@ sharpeville-massacre:
   source: https://commons.wikimedia.org/wiki/File:Murder_at_Sharpeville_21_March_1960.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Murder_at_Sharpeville_21_March_1960.jpg/500px-Murder_at_Sharpeville_21_March_1960.jpg
   url: images/sharpeville-massacre.jpg
+shivaji:
+  bytes: 155281
+  credit: Unknown authorUnknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Shivaji_British_Museum.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Shivaji_British_Museum.jpg/500px-Shivaji_British_Museum.jpg
+  url: images/shivaji.jpg
 silk-road:
   bytes: 144195
   credit: User:Kelvin Case User:Turkish Flame User:SmallJarsWithGreenLabels
@@ -1969,6 +2558,13 @@ spinoza:
   source: https://commons.wikimedia.org/wiki/File:Spinoza.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Spinoza.jpg/500px-Spinoza.jpg
   url: images/spinoza.jpg
+steam-engine:
+  bytes: 39560
+  credit: Витольд Муратов
+  license: CC BY-SA 3.0
+  source: https://commons.wikimedia.org/wiki/File:%D0%93%D0%BE%D1%80%D0%B8%D0%B7%D0%BE%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D1%80%D0%BD%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0.JPG
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/%D0%93%D0%BE%D1%80%D0%B8%D0%B7%D0%BE%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D1%80%D0%BD%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0.JPG/500px-%D0%93%D0%BE%D1%80%D0%B8%D0%B7%D0%BE%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D1%80%D0%BD%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0.JPG
+  url: images/steam-engine.jpg
 stone-tools:
   bytes: 66788
   credit: ''
@@ -1976,6 +2572,20 @@ stone-tools:
   source: https://commons.wikimedia.org/wiki/File:National_park_stone_tools.jpg
   source_url: https://upload.wikimedia.org/wikipedia/commons/f/fb/National_park_stone_tools.jpg
   url: images/stone-tools.jpg
+sun-yat-sen:
+  bytes: 58221
+  credit: 上海波尔照相馆
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:%E5%AD%99%E4%B8%AD%E5%B1%B1%E8%82%96%E5%83%8F.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/%E5%AD%99%E4%B8%AD%E5%B1%B1%E8%82%96%E5%83%8F.jpg/500px-%E5%AD%99%E4%B8%AD%E5%B1%B1%E8%82%96%E5%83%8F.jpg
+  url: images/sun-yat-sen.jpg
+surdas:
+  bytes: 129117
+  credit: India Post, Government of India
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Surdas.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Surdas.jpg/500px-Surdas.jpg
+  url: images/surdas.jpg
 sushruta:
   bytes: 151688
   credit: ''
@@ -1990,6 +2600,13 @@ swahili-coast:
   source: https://commons.wikimedia.org/wiki/File:Shimoni_fishermen.JPG
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Shimoni_fishermen.JPG/500px-Shimoni_fishermen.JPG
   url: images/swahili-coast.jpg
+tagore:
+  bytes: 105034
+  credit: Generalstabens litografiska anstalt
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Rabindranath_Tagore_in_1909.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/91/Rabindranath_Tagore_in_1909.jpg/500px-Rabindranath_Tagore_in_1909.jpg
+  url: images/tagore.jpg
 taiping-rebellion:
   bytes: 69912
   credit: Wu Youru
@@ -2018,6 +2635,13 @@ tang-dynasty:
   source: https://commons.wikimedia.org/wiki/File:Tang_Dynasty_circa_700_CE.png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Tang_Dynasty_circa_700_CE.png/500px-Tang_Dynasty_circa_700_CE.png
   url: images/tang-dynasty.png
+tansen:
+  bytes: 165333
+  credit: AnonymousUnknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Tansen_of_Gwalior._(11.8x6.7cm)_Mughal._1585-90._National_Museum,_New_Delhi..jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Tansen_of_Gwalior._%2811.8x6.7cm%29_Mughal._1585-90._National_Museum%2C_New_Delhi..jpg/500px-Tansen_of_Gwalior._%2811.8x6.7cm%29_Mughal._1585-90._National_Museum%2C_New_Delhi..jpg
+  url: images/tansen.jpg
 tenochtitlan:
   bytes: 31070
   credit: thomas kole
@@ -2032,6 +2656,13 @@ teotihuacan:
   source: https://commons.wikimedia.org/wiki/File:ZA77_Teotihuac%C3%A1n_edo_de_mex_Herberto_de_la_rosa.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/ZA77_Teotihuac%C3%A1n_edo_de_mex_Herberto_de_la_rosa.jpg/500px-ZA77_Teotihuac%C3%A1n_edo_de_mex_Herberto_de_la_rosa.jpg
   url: images/teotihuacan.jpg
+tesla:
+  bytes: 90197
+  credit: Napoleon Sarony
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Tesla_circa_1890.jpeg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Tesla_circa_1890.jpeg/500px-Tesla_circa_1890.jpeg
+  url: images/tesla.jpg
 tetrapods-on-land:
   bytes: 77532
   credit: Steffen Häuser
@@ -2053,6 +2684,13 @@ third-plague-pandemic:
   source: https://commons.wikimedia.org/wiki/File:Man_being_injected_by_doctor,_during_the_outbreak_of_bubonic_Wellcome_V0029287.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Man_being_injected_by_doctor%2C_during_the_outbreak_of_bubonic_Wellcome_V0029287.jpg/500px-Man_being_injected_by_doctor%2C_during_the_outbreak_of_bubonic_Wellcome_V0029287.jpg
   url: images/third-plague-pandemic.jpg
+thiruvalluvar:
+  bytes: 110584
+  credit: India Post, Government of India
+  license: GODL-India
+  source: https://commons.wikimedia.org/wiki/File:Thiruvalluvar_1960_stamp_of_India.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Thiruvalluvar_1960_stamp_of_India.jpg/500px-Thiruvalluvar_1960_stamp_of_India.jpg
+  url: images/thiruvalluvar.jpg
 three-kingdoms:
   bytes: 191632
   credit: Ian Kiu
@@ -2110,6 +2748,13 @@ transatlantic-slave-trade:
   source: https://commons.wikimedia.org/wiki/File:Slaveshipposter.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Slaveshipposter.jpg/500px-Slaveshipposter.jpg
   url: images/transatlantic-slave-trade.jpg
+transistor:
+  bytes: 77307
+  credit: ArnoldReinhold
+  license: CC BY-SA 3.0
+  source: https://commons.wikimedia.org/wiki/File:Transistors.agr.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5a/Transistors.agr.jpg/500px-Transistors.agr.jpg
+  url: images/transistor.jpg
 treaty-of-waitangi:
   bytes: 104668
   credit: William Hobson, James Freeman, and James Busby (English version); Henry
@@ -2181,6 +2826,20 @@ vaccination:
   source: https://commons.wikimedia.org/wiki/File:Young_girl_about_to_receive_a_vaccine_in_her_upper_arm_(48545990252).jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Young_girl_about_to_receive_a_vaccine_in_her_upper_arm_%2848545990252%29.jpg/500px-Young_girl_about_to_receive_a_vaccine_in_her_upper_arm_%2848545990252%29.jpg
   url: images/vaccination.jpg
+valmiki:
+  bytes: 56104
+  credit: ''
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Valmiki_Ramayana.jpg
+  source_url: https://upload.wikimedia.org/wikipedia/commons/2/24/Valmiki_Ramayana.jpg
+  url: images/valmiki.jpg
+van-gogh:
+  bytes: 150209
+  credit: Vincent van Gogh
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:Self-portrait_-_Vincent_van_Gogh.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Self-portrait_-_Vincent_van_Gogh.jpg/500px-Self-portrait_-_Vincent_van_Gogh.jpg
+  url: images/van-gogh.jpg
 variolation:
   bytes: 147287
   credit: George Kirtland
@@ -2195,6 +2854,13 @@ vietnam-independence:
   source: https://commons.wikimedia.org/wiki/File:French_indochina_1953_12_1.png
   source_url: https://upload.wikimedia.org/wikipedia/commons/1/1b/French_indochina_1953_12_1.png
   url: images/vietnam-independence.png
+virgil:
+  bytes: 96687
+  credit: Armando Mancini
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Parco_della_Grotta_di_Posillipo5_(crop).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Parco_della_Grotta_di_Posillipo5_%28crop%29.jpg/500px-Parco_della_Grotta_di_Posillipo5_%28crop%29.jpg
+  url: images/virgil.jpg
 vivekananda:
   bytes: 87479
   credit: The original uploader was Dziewa at English Wikipedia.
@@ -2202,6 +2868,13 @@ vivekananda:
   source: https://commons.wikimedia.org/wiki/File:Swami_Vivekananda-1893-09-signed.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Swami_Vivekananda-1893-09-signed.jpg/500px-Swami_Vivekananda-1893-09-signed.jpg
   url: images/vivekananda.jpg
+von-neumann:
+  bytes: 71824
+  credit: ''
+  license: Attribution
+  source: https://commons.wikimedia.org/wiki/File:JohnvonNeumann-LosAlamos.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/JohnvonNeumann-LosAlamos.jpg/500px-JohnvonNeumann-LosAlamos.jpg
+  url: images/von-neumann.jpg
 warring-states:
   bytes: 366930
   credit: 'China_Warring_States_Period.jpg: English Wikipedia, original upload 7 November
@@ -2210,6 +2883,13 @@ warring-states:
   source: https://commons.wikimedia.org/wiki/File:China_Warring_States_Period.png
   source_url: https://upload.wikimedia.org/wikipedia/commons/b/b8/China_Warring_States_Period.png
   url: images/warring-states.png
+washington:
+  bytes: 43627
+  credit: Gilbert Stuart
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg/500px-Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg
+  url: images/washington.jpg
 wittgenstein:
   bytes: 93178
   credit: Moritz Nähr
@@ -2226,6 +2906,13 @@ woodblock-printing:
   source: https://commons.wikimedia.org/wiki/File:Jingangjing.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Jingangjing.jpg/500px-Jingangjing.jpg
   url: images/woodblock-printing.jpg
+world-wide-web:
+  bytes: 89291
+  credit: Raimundo Pastor
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:Alcal%C3%A1_de_Henares_(RPS_08-04-2017)_Calle_WWW,_indicador.png
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/Alcal%C3%A1_de_Henares_%28RPS_08-04-2017%29_Calle_WWW%2C_indicador.png/500px-Alcal%C3%A1_de_Henares_%28RPS_08-04-2017%29_Calle_WWW%2C_indicador.png
+  url: images/world-wide-web.png
 wounded-knee:
   bytes: 51572
   credit: Trager & Kuhn, Chadron, Nebr.
@@ -2255,7 +2942,7 @@ year-of-africa:
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Africa_independence_dates.svg/500px-Africa_independence_dates.svg.png
   url: images/year-of-africa.png
 yuan-dynasty:
-  bytes: 242257
+  bytes: 242293
   credit: SY
   license: CC BY-SA 4.0
   source: https://commons.wikimedia.org/wiki/File:Yuan_Provinces.png
