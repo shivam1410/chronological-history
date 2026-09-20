@@ -1,0 +1,374 @@
+# Rulers, reformers and the events they belong to.
+#
+# An audit against a list of sixty-eight widely-known figures found forty
+# absent, including Julius Caesar, Cleopatra, Alexander, Qin Shi Huang,
+# Lincoln, Lenin, Mao, Churchill and Washington. The Europe lane had three
+# entries in it. The French, American and Russian revolutions, the Cold War
+# and the Holocaust were all missing, so several of these people had nothing
+# to stand next to.
+#
+# This is a first pass at that gap, not a complete cast. Where a figure is
+# still argued over, the entry says what is argued rather than settling it.
+
+# ---- the ancient world ----
+- id: alexander-the-great
+  title: Alexander the Great
+  kind: person
+  regions: [europe, greece]
+  start: -356
+  end: -323
+  importance: 5
+  confidence: high
+  categories: [ruler, military]
+  summary: Took the Persian empire in eleven years, reached the Punjab before
+    his army refused to go further, and died at thirty-two leaving no
+    succession — after which his generals spent forty years dividing the
+    result and, incidentally, spread Greek as far as Afghanistan.
+  related: [ashoka]
+
+- id: qin-shi-huang
+  title: Qin Shi Huang
+  kind: person
+  regions: [east-asia, china]
+  start: -259
+  end: -210
+  importance: 5
+  confidence: high
+  categories: [ruler, military]
+  summary: Ended the Warring States and made one empire of China, standardising
+    the script, the axle width and the weights — and burying a terracotta army
+    against whatever came next.
+  related: []
+
+- id: julius-caesar
+  title: Julius Caesar
+  kind: person
+  regions: [europe, rome]
+  start: -100
+  end: -44
+  importance: 5
+  confidence: high
+  categories: [ruler, military]
+  summary: Conquered Gaul, crossed the Rubicon against his own republic, was
+    made dictator for life and was killed for it within a month — after which
+    the republic never returned.
+  related: [roman-empire, cleopatra]
+
+- id: cleopatra
+  title: Cleopatra VII
+  kind: person
+  regions: [africa, egypt]
+  start: -69
+  end: -30
+  importance: 4
+  confidence: high
+  categories: [ruler]
+  note: Macedonian Greek by descent, not Egyptian, though she was reportedly
+    the first of her line in three centuries to learn Egyptian. Most of what
+    survives about her was written by the side that defeated her.
+  summary: The last ruler of independent Egypt, who kept it independent for
+    twenty years by reading Roman politics better than most Romans, and lost
+    it when she backed the losing side at Actium.
+  related: [julius-caesar, roman-empire]
+
+# ---- the reformation ----
+- id: martin-luther
+  title: Martin Luther
+  kind: person
+  regions: [europe, western-europe]
+  start: 1483
+  end: 1546
+  importance: 5
+  confidence: high
+  categories: [religion, philosopher]
+  note: Whether he nailed the theses to the Wittenberg door is doubted; that
+    he sent them to his archbishop on 31 October 1517 is not. His later
+    writings against Jews and against the peasants' revolt are part of the
+    record and are not softened here.
+  summary: An Augustinian friar whose objection to the sale of indulgences
+    split Western Christianity, and whose German Bible did for that language
+    what Dante had done for Italian — helped by a printing press that made a
+    local quarrel unstoppable within weeks.
+  related: [reformation, printing-press]
+
+- id: shivaji
+  title: Shivaji
+  kind: person
+  regions: [india, deccan]
+  start: [1627, 1630]
+  end: 1680
+  importance: 4
+  confidence: medium
+  categories: [ruler, military]
+  note: The birth year is given as either 1627 or 1630 in different records.
+  summary: Built a Maratha kingdom out of hill forts against both the Deccan
+    sultanates and Aurangzeb's much larger army, largely by refusing to fight
+    the kind of battle his enemies were equipped for.
+  related: [mughal-empire]
+
+# ---- revolutions ----
+- id: american-revolution
+  title: The American Revolution
+  kind: period
+  regions: [americas, north-america]
+  start: 1765
+  end: 1783
+  importance: 5
+  confidence: high
+  categories: [independence, military]
+  note: The bracket opens at the Stamp Act rather than 1776, because the
+    quarrel that produced the declaration had been running for a decade.
+  summary: Thirteen colonies left the British empire and wrote a constitution
+    on the claim that government derives its authority from the governed — a
+    claim its authors did not extend to the enslaved people many of them
+    owned.
+  related: [washington, french-revolution]
+
+- id: washington
+  title: George Washington
+  kind: person
+  regions: [americas, north-america]
+  start: 1732
+  end: 1799
+  importance: 4
+  confidence: high
+  categories: [ruler, military]
+  summary: Held a volunteer army together for eight years, then declined to
+    stay in power — twice — which did more to establish how the office would
+    work than anything written down.
+  related: [american-revolution]
+
+- id: french-revolution
+  title: The French Revolution
+  kind: period
+  regions: [europe, western-europe]
+  start: 1789
+  end: 1799
+  importance: 5
+  confidence: high
+  categories: [independence, philosophy, military]
+  summary: Abolished a monarchy, declared the rights of man, executed the king
+    and then some forty thousand others, and ended with a general in charge —
+    but put popular sovereignty on the table across Europe permanently.
+  related: [napoleon, american-revolution, romanticism]
+
+- id: bolivar
+  title: Simón Bolívar
+  kind: person
+  regions: [americas, andes]
+  start: 1783
+  end: 1830
+  importance: 4
+  confidence: high
+  categories: [ruler, military, independence]
+  summary: Led the campaigns that freed six South American countries from
+    Spain, tried to federate them, failed, and died saying that those who serve
+    a revolution plough the sea.
+  related: [french-revolution]
+
+- id: lincoln
+  title: Abraham Lincoln
+  kind: person
+  regions: [americas, north-america]
+  start: 1809
+  end: 1865
+  importance: 5
+  confidence: high
+  categories: [ruler, human-rights]
+  summary: Held the United States together through the war that ended slavery
+    in it, having entered office proposing only to stop slavery spreading, and
+    was shot five days after the surrender.
+  related: [transatlantic-slave-trade, mlk]
+
+- id: russian-revolution
+  title: The Russian Revolution
+  kind: period
+  regions: [europe, eastern-europe]
+  start: 1917
+  end: 1922
+  importance: 5
+  confidence: high
+  categories: [independence, military, philosophy]
+  summary: Two revolutions in one year removed the Tsar and then the
+    provisional government, and a civil war left the Bolsheviks holding the
+    first state founded on Marx — which the rest of the century organised
+    itself around, for and against.
+  related: [lenin, marx, cold-war]
+
+- id: lenin
+  title: Vladimir Lenin
+  kind: person
+  regions: [europe, eastern-europe]
+  start: 1870
+  end: 1924
+  importance: 4
+  confidence: high
+  categories: [ruler, philosopher]
+  summary: Argued that a disciplined party should seize power rather than wait
+    for conditions to ripen, did it, and built a state whose founding
+    assumptions outlived him by seven decades.
+  related: [russian-revolution, marx]
+
+# ---- the twentieth century ----
+- id: sun-yat-sen
+  title: Sun Yat-sen
+  kind: person
+  regions: [east-asia, china]
+  start: 1866
+  end: 1925
+  importance: 4
+  confidence: high
+  categories: [ruler, independence]
+  summary: The figure both the Republic of China and the People's Republic
+    still claim, whose movement ended two thousand years of imperial rule in
+    1911 and could not hold the country together afterwards.
+  related: [mao]
+
+- id: churchill
+  title: Winston Churchill
+  kind: person
+  regions: [europe, britain]
+  start: 1874
+  end: 1965
+  importance: 4
+  confidence: high
+  categories: [ruler, military]
+  note: His record is genuinely double-sided — the wartime leadership is not in
+    dispute, and neither is his imperialism, nor his government's conduct
+    during the 1943 Bengal famine.
+  summary: Prime minister through the years when Britain fought Germany alone,
+    and an unreconstructed imperialist who expected to hold India afterwards
+    and did not.
+  related: [second-world-war]
+
+- id: mao
+  title: Mao Zedong
+  kind: person
+  regions: [east-asia, china]
+  start: 1893
+  end: 1976
+  importance: 5
+  confidence: high
+  categories: [ruler, philosopher, military]
+  note: The death tolls of the Great Leap Forward and the Cultural Revolution
+    are estimates and are contested; the lowest credible figures for the famine
+    alone run to fifteen million and the highest to forty-five.
+  summary: Won a civil war from the countryside, founded the People's Republic,
+    and then launched the Great Leap Forward and the Cultural Revolution, which
+    between them killed on a scale that has no agreed number.
+  related: [sun-yat-sen, reform-and-opening]
+
+- id: holocaust
+  title: The Holocaust
+  kind: event
+  regions: [europe, eastern-europe]
+  start: 1941
+  end: 1945
+  importance: 5
+  confidence: high
+  categories: [human-rights, military]
+  note: The bracket covers the systematic extermination; the persecution began
+    with the 1933 boycotts and the 1935 Nuremberg laws, and the entry does not
+    pretend that 1941 is where it started.
+  summary: The murder of about six million Jews, alongside Roma, disabled
+    people, Poles, Soviet prisoners and others, by the German state and its
+    collaborators — organised bureaucratically, with records, by an
+    industrialised country in the middle of Europe.
+  related: [second-world-war]
+
+- id: cold-war
+  title: The Cold War
+  kind: period
+  regions: [global, north-america]
+  start: [1945, 1947]
+  end: 1991
+  importance: 5
+  confidence: high
+  categories: [military, philosophy]
+  summary: Two nuclear-armed blocs that never fought each other directly and
+    fought almost everywhere else through proxies — ending when one of them
+    dissolved rather than when either won a battle.
+  related: [russian-revolution, mao, hiroshima-nagasaki]
+
+- id: mlk
+  title: Martin Luther King Jr.
+  kind: person
+  regions: [americas, north-america]
+  start: 1929
+  end: 1968
+  importance: 5
+  confidence: high
+  categories: [human-rights, religion]
+  summary: Led the American civil rights movement on a strategy of
+    disciplined non-violence taken in part from Gandhi, won the Civil Rights
+    and Voting Rights Acts, and was assassinated at thirty-nine while
+    supporting a strike by sanitation workers.
+  related: [gandhi-ahimsa, lincoln, mandela]
+
+# ---- anchors these people needed ----
+# Added because entries above pointed at them and found nothing. The audit
+# that turned them up also found the Crusades, Constantinople, the
+# Enlightenment, Freud, Magellan and da Gama missing, which is a later pass.
+
+- id: reformation
+  title: The Reformation
+  kind: movement
+  regions: [europe, western-europe]
+  start: 1517
+  end: [1555, 1648]
+  importance: 5
+  confidence: medium
+  categories: [religion, philosophy]
+  note: The end is a choice. 1555 is the Peace of Augsburg, which let German
+    princes pick their church; 1648 is Westphalia, after the wars of religion
+    had killed perhaps a third of the German population. The bracket holds both.
+  summary: Western Christianity split, and with it the assumption that there
+    was one authority over belief in Europe — a quarrel over indulgences that
+    print turned into a continental war within a generation.
+  related: [martin-luther, printing-press]
+
+- id: napoleon
+  title: Napoleon Bonaparte
+  kind: person
+  regions: [europe, western-europe]
+  start: 1769
+  end: 1821
+  importance: 5
+  confidence: high
+  categories: [ruler, military]
+  summary: Took the French Revolution's army and made himself emperor with it,
+    redrew Europe twice, and left behind a legal code still visible in the law
+    of some seventy countries.
+  related: [french-revolution]
+
+- id: first-world-war
+  title: The First World War
+  kind: event
+  regions: [global, europe]
+  start: 1914
+  end: 1918
+  importance: 5
+  confidence: high
+  categories: [military]
+  summary: Industrial production turned on an entire continent's young men for
+    four years, killed some seventeen million people, brought down four
+    empires, and settled little enough that the next war is often read as its
+    second half.
+  related: [second-world-war, russian-revolution, modernism]
+
+- id: second-world-war
+  title: The Second World War
+  kind: event
+  regions: [global, europe]
+  start: [1937, 1939]
+  end: 1945
+  importance: 5
+  confidence: high
+  categories: [military]
+  note: The start depends where you stand. 1939 is the invasion of Poland;
+    1937 is the full Japanese invasion of China, which is where the fighting
+    began for the theatre that lost the most people.
+  summary: The deadliest conflict in history, ending with the first use of
+    nuclear weapons and a settlement that divided the world into two camps for
+    the next forty-five years.
+  related: [holocaust, hiroshima-nagasaki, cold-war, churchill]

@@ -786,3 +786,44 @@
     internet, released without patent or licence fee — the decision that let it
     become the default way people use a computer.
   related: [arpanet]
+
+- id: tesla
+  title: Nikola Tesla
+  kind: person
+  regions: [science, north-america]
+  start: 1856
+  end: 1943
+  importance: 4
+  confidence: high
+  categories: [scientist, physics, instrument]
+  summary: Whose alternating-current system won the argument about how to
+    distribute electricity, and who died in a hotel room owed money by most of
+    the industry he had made possible.
+  related: [electrification, tesla]
+
+- id: hubble
+  title: Edwin Hubble
+  kind: person
+  regions: [science, north-america]
+  start: 1889
+  end: 1953
+  importance: 4
+  confidence: high
+  categories: [scientist, astronomy]
+  summary: Showed that the smudges in the telescope were other galaxies, and
+    then that they are moving apart — which is how we know the universe has a
+    history rather than just a size.
+
+- id: oppenheimer
+  title: J. Robert Oppenheimer
+  kind: person
+  regions: [science, north-america]
+  start: 1904
+  end: 1967
+  importance: 4
+  confidence: high
+  categories: [scientist, physics]
+  summary: Ran the laboratory that built the first nuclear weapons, argued
+    afterwards against building the far larger one, and had his security
+    clearance taken away for it.
+  related: [hiroshima-nagasaki, einstein]

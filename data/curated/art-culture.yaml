@@ -661,3 +661,232 @@
     sense that the old ways could not describe an industrial century, and
     hardened by the First World War.
   related: [picasso-cubism, renaissance, impressionism]
+
+# ---- more makers -----------------------------------------------------------
+- id: chaucer
+  title: Geoffrey Chaucer
+  kind: person
+  regions: [art-culture, britain]
+  start: [1340, 1345]
+  end: 1400
+  importance: 3
+  confidence: medium
+  categories: [poet, literature]
+  summary: Wrote the Canterbury Tales in English when the court still spoke
+    French and the church wrote Latin, and gave that English a literary
+    standing it had not had.
+
+- id: donatello
+  title: Donatello
+  kind: person
+  regions: [art-culture, italy]
+  start: [1386, 1386]
+  end: 1466
+  importance: 3
+  confidence: medium
+  categories: [art, sculpture]
+  summary: Cast the first free-standing nude bronze since antiquity and worked
+    out how to suggest depth in a relief only inches deep — the generation that
+    made Michelangelo's possible.
+  related: [michelangelo, renaissance]
+
+- id: raphael
+  title: Raphael
+  kind: person
+  regions: [art-culture, italy]
+  start: 1483
+  end: 1520
+  importance: 3
+  confidence: high
+  categories: [art, painting]
+  summary: The third of the High Renaissance trio, dead at thirty-seven, whose
+    School of Athens put every philosopher worth arguing with into one room.
+  related: [leonardo, michelangelo, renaissance]
+
+- id: surdas
+  title: Surdas
+  kind: person
+  regions: [india, north-india]
+  start: [1478, 1483]
+  end: [1561, 1584]
+  importance: 3
+  confidence: contested
+  categories: [saint, poet, mystic]
+  note: Both dates are uncertain and the tradition that he was blind from
+    birth is traditional rather than documented. The Sursagar attributed to
+    him grew for centuries after his death, so most of its verses are almost
+    certainly not his.
+  summary: The Braj-language poet of Krishna's childhood, whose padas are
+    still sung in temples — and who sits with Kabir, Mirabai and Tulsidas in
+    the Bhakti lane rather than the poetry one, because the singing is the
+    devotion.
+  related: [kabir, mirabai, tulsidas]
+
+- id: chaitanya
+  title: Chaitanya Mahaprabhu
+  kind: person
+  regions: [india, bengal]
+  start: 1486
+  end: 1534
+  importance: 3
+  confidence: high
+  categories: [saint, religion, mystic]
+  summary: Turned devotion to Krishna into public ecstatic singing in the
+    streets of Bengal, and founded the tradition that four centuries later
+    became the Hare Krishna movement.
+  related: [surdas, mirabai]
+
+- id: cervantes
+  title: Miguel de Cervantes
+  kind: person
+  regions: [art-culture, western-europe]
+  start: [1547, 1547]
+  end: 1616
+  importance: 4
+  confidence: high
+  categories: [literature]
+  note: He and Shakespeare died within about ten days of each other, though
+    not on the same day — England and Spain were using different calendars.
+  summary: Maimed at Lepanto, held five years by Algerian pirates, and author
+    of Don Quixote, which is usually called the first modern novel because it
+    is about someone who has read too many of the old ones.
+  related: [shakespeare]
+
+- id: milton
+  title: John Milton
+  kind: person
+  regions: [art-culture, britain]
+  start: 1608
+  end: 1674
+  importance: 3
+  confidence: high
+  categories: [poet, epic, literature]
+  summary: Defended the regicide in print, went blind, and then dictated
+    Paradise Lost to his daughters — twelve books of blank verse arguing about
+    free will with the losing side given the best lines.
+
+- id: goethe
+  title: Johann Wolfgang von Goethe
+  kind: person
+  regions: [art-culture, western-europe]
+  start: 1749
+  end: 1832
+  importance: 4
+  confidence: high
+  categories: [poet, literature, philosopher]
+  summary: Wrote the novel that set off the first literary craze in Europe at
+    twenty-four, finished Faust at eighty-two, and did serious work on plant
+    morphology and colour in between.
+  related: [romanticism]
+
+- id: austen
+  title: Jane Austen
+  kind: person
+  regions: [art-culture, britain]
+  start: 1775
+  end: 1817
+  importance: 3
+  confidence: high
+  categories: [literature]
+  summary: Published anonymously, sold modestly, and turned six novels about
+    marriage settlements among the minor gentry into the standard against
+    which the English novel's handling of irony is still measured.
+
+- id: pushkin
+  title: Alexander Pushkin
+  kind: person
+  regions: [art-culture, eastern-europe]
+  start: 1799
+  end: 1837
+  importance: 3
+  confidence: high
+  categories: [poet, literature]
+  summary: Made Russian a literary language capable of anything, in a career
+    of twenty years ended by a duel at thirty-seven over his wife's reputation.
+  related: [romanticism]
+
+- id: dickens
+  title: Charles Dickens
+  kind: person
+  regions: [art-culture, britain]
+  start: 1812
+  end: 1870
+  importance: 3
+  confidence: high
+  categories: [literature]
+  summary: Published in monthly parts to enormous audiences, put the workhouse
+    and the debtors' prison in front of readers who had not looked, and knew
+    both from the inside at twelve.
+  related: [industrial-revolution]
+
+- id: monet
+  title: Claude Monet
+  kind: person
+  regions: [art-culture, western-europe]
+  start: 1840
+  end: 1926
+  importance: 3
+  confidence: high
+  categories: [art, painting]
+  summary: Gave Impressionism its name with one canvas a critic mocked, then
+    spent thirty years painting the same haystacks, cathedral and lily pond
+    over and over to catch what the light did to them.
+  related: [impressionism, van-gogh]
+
+- id: frida-kahlo
+  title: Frida Kahlo
+  kind: person
+  regions: [art-culture, mesoamerica]
+  start: 1907
+  end: 1954
+  importance: 4
+  confidence: high
+  categories: [art, painting]
+  summary: Painted mostly herself, from a bed and a body wrecked by a
+    streetcar at eighteen, in a Mexican visual language she chose deliberately
+    over the European one — and was known in her lifetime largely as Diego
+    Rivera's wife.
+  related: [picasso-cubism, modernism]
+
+- id: ravi-shankar
+  title: Ravi Shankar
+  kind: person
+  regions: [art-culture, bengal]
+  start: 1920
+  end: 2012
+  importance: 3
+  confidence: high
+  categories: [music, art]
+  summary: Took the sitar and the Hindustani raga to concert halls that had no
+    idea what to do with them, taught George Harrison, and spent the rest of
+    his life insisting the music was older and stranger than the audience
+    thought.
+  related: [tansen, beatles]
+
+- id: beatles
+  title: The Beatles
+  kind: period
+  regions: [art-culture, britain]
+  start: [1960, 1962]
+  end: 1970
+  importance: 4
+  confidence: high
+  categories: [music, art]
+  summary: Eight years in which popular music went from two-minute singles to
+    the album as a form — and in which the recording studio became an
+    instrument rather than a room for capturing a performance.
+  related: [ravi-shankar, jazz]
+
+- id: bob-marley
+  title: Bob Marley
+  kind: person
+  regions: [art-culture, americas]
+  start: 1945
+  end: 1981
+  importance: 4
+  confidence: high
+  categories: [music, art, human-rights]
+  summary: Carried reggae out of Kingston and made a small island's music a
+    global language of resistance — and, two days after being shot, played the
+    concert anyway.
+  related: [jazz, mandela]
