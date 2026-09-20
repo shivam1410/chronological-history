@@ -275,7 +275,12 @@ export function createTimeline(canvas, {
     } else {
       ctx.fillStyle = colour;
     }
-    ctx.fillRect(item.x0, y, item.w, h);
+    // Rounded, and fully so for anything wide enough to look like a capsule.
+    // The radius is capped by half the width as well as half the height, or a
+    // 3px bar - the minimum width - comes out as a circle wider than its span.
+    ctx.beginPath();
+    ctx.roundRect(item.x0, y, item.w, h, Math.min(h / 2, item.w / 2));
+    ctx.fill();
   }
 
   function drawPoint(item, mid, colour) {
@@ -491,7 +496,10 @@ export function createTimeline(canvas, {
         if (item.entry.id === selectedId) {
           ctx.strokeStyle = theme.ink;
           ctx.lineWidth = 2;
-          ctx.strokeRect(item.x0 - 1.5, y - 1.5, item.w + 3, barH() + 3);
+          ctx.beginPath();
+          ctx.roundRect(item.x0 - 1.5, y - 1.5, item.w + 3, barH() + 3,
+            Math.min((barH() + 3) / 2, (item.w + 3) / 2));
+          ctx.stroke();
           ctx.lineWidth = 1;
         }
         drawLabel(item, row[i + 1], mid, minImportance);
@@ -504,7 +512,9 @@ export function createTimeline(canvas, {
       const y = top + lane.h - LANE_PAD_Y - barH();
       const right = width - gutter;
       ctx.fillStyle = theme.bgSunken;
-      ctx.fillRect(right - w - 6, y, w, barH());
+      ctx.beginPath();
+      ctx.roundRect(right - w - 6, y, w, barH(), Math.min(barH() / 2, w / 2));
+      ctx.fill();
       ctx.fillStyle = theme.inkSoft;
       ctx.textAlign = 'right';
       ctx.fillText(text, right - 11, y + barH() / 2);
