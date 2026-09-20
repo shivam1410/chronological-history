@@ -11,7 +11,7 @@ import { createView, ORIGIN_YEAR, presentYear } from './timescale.js';
 import { formatYear, roundYear } from './format.js';
 import { hitRow, packLanes } from './layout.js';
 import { FLAG_UNCERTAIN_END, FLAG_UNCERTAIN_START } from './store.js';
-import { wrapText } from './wrap.js';
+import { clipToWords, wrapText } from './wrap.js';
 import { overlapping } from './slice.js';
 
 const AXIS_H = 34;
@@ -317,10 +317,18 @@ export function createTimeline(canvas, {
       // pinned to the true left edge would simply never be drawn.
       const left = Math.max(item.x0, 0);
       const right = Math.min(item.x0 + item.w, width - gutter);
-      if (right - left >= textW + 12) {
+      const room = right - left - 12;
+      // A bar too narrow for the whole title used to stay blank. It now shows
+      // what fits, cut at a separator: "Himalayan Orogeny…" rather than
+      // nothing. Only if even the first word is too wide does it give up and
+      // fall through to the space beside the bar.
+      const shown = textW <= room
+        ? label
+        : clipToWords(label, room, (text) => ctx.measureText(text).width);
+      if (room > 0 && shown) {
         ctx.fillStyle = theme.bg;
         ctx.textAlign = 'left';
-        ctx.fillText(label, left + 6, mid);
+        ctx.fillText(shown, left + 6, mid);
         return;
       }
     }

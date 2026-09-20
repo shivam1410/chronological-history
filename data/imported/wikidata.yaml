@@ -82,6 +82,13 @@ al-khwarizmi:
   image_file: File:Al-Khwarizmi portrait.jpg
   label: Muḥammad ibn Musa al-Khwarizmi
   qid: Q9038
+alexander-the-great:
+  article: Alexander the Great
+  birth: '-356'
+  death: '-323'
+  image_file: File:Alexander the Great mosaic (cropped).jpg
+  label: Alexander the Great
+  qid: Q8409
 algerian-war:
   article: Algerian War
   end: '1962'
@@ -96,6 +103,21 @@ ambedkar:
   image_file: File:Dr. Bhimrao Ambedkar.jpg
   label: ''
   qid: Q231690
+american-revolution:
+  article: American Revolution
+  end: '1783'
+  image_file: File:Declaration of Independence (1819), by John Trumbull.jpg
+  label: American Revolution
+  point: '1763'
+  qid: Q192769
+  start: '1775'
+amir-khusrau:
+  article: Amir Khusrau
+  birth: '1253'
+  death: '1325'
+  image_file: File:Amir Khusrow 1975 stamp of India.jpg
+  label: Amir Khusrau
+  qid: Q207817
 an-lushan-rebellion:
   article: An Lushan rebellion
   end: '763'
@@ -196,6 +218,13 @@ augustine:
   image_file: File:Saint Augustine by Philippe de Champaigne.jpg
   label: Augustine of Hippo
   qid: Q8018
+austen:
+  article: Jane Austen
+  birth: '1775'
+  death: '1817'
+  image_file: File:CassandraAusten-JaneAusten(c.1810) hires.jpg
+  label: Jane Austen
+  qid: Q36322
 australian-frontier-wars:
   article: Australian frontier wars
   end: '1899'
@@ -236,6 +265,20 @@ aztec-empire:
   label: Aztec Empire
   qid: Q2608489
   start: '1367'
+babbage:
+  article: Charles Babbage
+  birth: '1791'
+  death: '1871'
+  image_file: File:CharlesBabbage.jpg
+  label: Charles Babbage
+  qid: Q46633
+bach:
+  article: Johann Sebastian Bach
+  birth: '1685'
+  death: '1750'
+  image_file: File:Johann Sebastian Bach.png
+  label: Johann Sebastian Bach
+  qid: Q1339
 bangladesh-independence:
   article: Bangladesh Liberation War
   end: '1971'
@@ -243,6 +286,25 @@ bangladesh-independence:
   label: Bangladesh Liberation War
   qid: Q371394
   start: '1971'
+basho:
+  article: Matsuo Bashō
+  birth: '1644'
+  death: '1694'
+  image_file: File:Basho by Buson.jpg
+  label: Matsuo Bashō
+  qid: Q5676
+beatles:
+  article: The Beatles
+  image_file: File:Beatles Trenter 1963.jpg
+  label: The Beatles
+  qid: Q1299
+beethoven:
+  article: Ludwig van Beethoven
+  birth: '1770'
+  death: '1827'
+  image_file: File:Beethoven.jpg
+  label: Ludwig van Beethoven
+  qid: Q255
 behavioural-modernity:
   article: Behavioral modernity
   label: behavioral modernity
@@ -279,6 +341,10 @@ bhaskara-ii:
   death: '1185'
   label: Bhaskara II
   qid: Q213385
+bhavabhuti:
+  article: Bhavabhuti
+  label: Bhavabhūti
+  qid: Q29057
 bijak-kabir:
   article: Kabir
   birth: '1440'
@@ -298,6 +364,13 @@ blackbirding:
   image_file: File:Groupe de Kanakas dans une exploitation de canne à sucre du Queensland.jpg
   label: blackbirding
   qid: Q880704
+bob-marley:
+  article: Bob Marley
+  birth: '1945'
+  death: '1981'
+  image_file: File:Bob Marley 1976 press photo.jpg
+  label: Bob Marley
+  qid: Q409
 bohr:
   article: Niels Bohr
   birth: '1885'
@@ -305,6 +378,20 @@ bohr:
   image_file: File:Niels Bohr.jpg
   label: Niels Bohr
   qid: Q7085
+bolivar:
+  article: Simón Bolívar
+  birth: '1783'
+  death: '1830'
+  image_file: File:Simón Bolívar by Acevedo Bernal, 1922.jpg
+  label: Simón Bolívar
+  qid: Q8605
+boole:
+  article: George Boole
+  birth: '1815'
+  death: '1864'
+  image_file: File:George Boole color.jpg
+  label: ''
+  qid: Q134661
 borobudur:
   article: Borobudur
   image_file: File:Borobudur-Nothwest-view.jpg
@@ -351,6 +438,13 @@ cave-art:
   image_file: File:(1)Jabiru dreaming-7.jpg
   label: cave painting
   qid: Q214334
+cervantes:
+  article: Miguel de Cervantes
+  birth: '1547'
+  death: '1616'
+  image_file: File:Cervantes Jáuregui.jpg
+  label: Miguel de Cervantes
+  qid: Q5682
 chaco-canyon:
   article: Chaco Culture National Historical Park
   image_file: File:Chaco Canyon Chetro Ketl great kiva plaza NPS.jpg
@@ -360,6 +454,20 @@ chagatai-khanate:
   article: Chagatai Khanate
   label: Chagatai Khanate
   qid: Q487829
+chaitanya:
+  article: Chaitanya Mahaprabhu
+  birth: '1486'
+  death: '1534'
+  image_file: File:Chaitanya-Mahabrabhu-at-Jagannath.jpg
+  label: Chaitanya Mahaprabhu
+  qid: Q870262
+chaucer:
+  article: Geoffrey Chaucer
+  birth: '1343'
+  death: '1400'
+  image_file: File:Portrait of Geoffrey Chaucer (4671380) (cropped) 02.jpg
+  label: Geoffrey Chaucer
+  qid: Q5683
 chavin:
   article: Chavín culture
   end: '-500'
@@ -385,6 +493,17 @@ cholera-pandemics:
   label: cholera outbreak
   qid: Q959265
   start: '1817'
+churchill:
+  article: Winston Churchill
+  birth: '1874'
+  death: '1965'
+  image_file: File:Sir Winston Churchill - 19086236948 (restored).jpg
+  label: Winston Churchill
+  qid: Q8016
+cinema:
+  article: Cinema
+  label: Cinema
+  qid: Q567053
 classical-athens:
   article: Classical Athens
   image_file: File:View of the Acropolis Athens (pixinn.net).jpg
@@ -398,6 +517,14 @@ cocoliztli-epidemics:
   point: '1600'
   qid: Q63472138
   start: '1545'
+cold-war:
+  article: Cold War
+  end: '1991'
+  image_file: File:US Army tanks face off against Soviet tanks, Berlin 1961.jpg
+  label: Cold War
+  point: '1946'
+  qid: Q8683
+  start: '1945'
 columbian-exchange-epidemics:
   article: Columbian exchange
   image_file: File:New World Domesticated plants.JPG
@@ -461,6 +588,13 @@ cv-raman:
   image_file: File:Sir CV Raman.JPG
   label: Chandrasekhara Venkata Raman
   qid: Q60429
+dante:
+  article: Dante Alighieri
+  birth: '1265'
+  death: '1321'
+  image_file: File:Portrait de Dante.jpg
+  label: Dante Alighieri
+  qid: Q1067
 daodejing:
   article: Tao Te Ching
   image_file: File:Mawangdui LaoTsu Ms2.JPG
@@ -471,7 +605,7 @@ de-beauvoir:
   birth: '1908'
   death: '1986'
   image_file: File:Simone de Beauvoir2.png
-  label: ''
+  label: Simone de Beauvoir
   qid: Q7197
 delhi-sultanate:
   article: Delhi Sultanate
@@ -487,8 +621,15 @@ descartes:
   birth: '1596'
   death: '1650'
   image_file: File:Frans Hals - Portret van René Descartes.jpg
-  label: ''
+  label: René Descartes
   qid: Q9191
+dickens:
+  article: Charles Dickens
+  birth: '1812'
+  death: '1870'
+  image_file: File:Dickens Gurney head.jpg
+  label: Charles Dickens
+  qid: Q5686
 dinosaur-era:
   article: Dinosaur
   image_file: File:Various dinosaurs2.png
@@ -512,6 +653,13 @@ dog-domestication:
   image_file: File:Différences faciales.png
   label: origin of the domestic dog
   qid: Q39110
+donatello:
+  article: Donatello
+  birth: '1386'
+  death: '1466'
+  image_file: File:Uffizi Donatello.jpg
+  label: Donatello
+  qid: Q37562
 dostoevsky:
   article: Fyodor Dostoevsky
   birth: '1821'
@@ -519,6 +667,13 @@ dostoevsky:
   image_file: File:Vasily Perov - Портрет Ф.М.Достоевского - Google Art Project.jpg
   label: Fyodor Dostoyevsky
   qid: Q991
+du-fu:
+  article: Du Fu
+  birth: '712'
+  death: '770'
+  image_file: File:Dufu.jpg
+  label: Du Fu
+  qid: Q33772
 earth-formation:
   article: History of Earth
   image_file: File:2025-07-31-Elektro-L-3.png
@@ -544,6 +699,11 @@ einstein:
   image_file: File:Einstein 1921 by F Schmutzer - restoration.jpg
   label: ''
   qid: Q937
+electrification:
+  article: Electrification
+  image_file: File:Trempealeau-Electric-Cooperative-Arcadia-Wis.jpg
+  label: electrification
+  qid: Q1076056
 emmy-noether:
   article: Emmy Noether
   birth: '1882'
@@ -602,6 +762,14 @@ faraday:
   image_file: File:M Faraday Th Phillips oil 1842.jpg
   label: Michael Faraday
   qid: Q8750
+ferdowsi:
+  article: Ferdowsi
+  birth: '940'
+  death: '1020'
+  image_file: File:Imaginary depiction of the poet Firdausi. Folio from a Khavarannama
+    (The Book of the East) of ibn Husam al-Din, 1476-1486.jpg
+  label: Ferdowsi
+  qid: Q43459
 feynman:
   article: Richard Feynman
   birth: '1918'
@@ -631,6 +799,21 @@ flowering-plants:
   image_file: File:Sweetbay Magnolia Magnolia virginiana Flower Closeup 2242px.jpg
   label: ''
   qid: Q25314
+french-revolution:
+  article: French Revolution
+  end: '1799'
+  image_file: File:LouisXVIExecutionBig.jpg
+  label: French Revolution
+  point: '1789'
+  qid: Q6534
+  start: '1789'
+frida-kahlo:
+  article: Frida Kahlo
+  birth: '1907'
+  death: '1954'
+  image_file: File:Frida Kahlo, by Guillermo Kahlo (cropped).jpg
+  label: Frida Kahlo
+  qid: Q5588
 galileo:
   article: Galileo Galilei
   birth: '1564'
@@ -665,6 +848,20 @@ ghana-independence:
   image_file: File:Beach with palms Ghana.jpg
   label: Ghana
   qid: Q117
+giotto:
+  article: Giotto
+  birth: '1267'
+  death: '1337'
+  image_file: File:Uffizi Giotto.jpg
+  label: Giotto
+  qid: Q7814
+goethe:
+  article: Johann Wolfgang von Goethe
+  birth: '1749'
+  death: '1832'
+  image_file: File:Goethe (Stieler 1828).jpg
+  label: Johann Wolfgang von Goethe
+  qid: Q5879
 gokturk-khaganate:
   article: Turkic Khaganate
   label: Turkic Khaganate
@@ -765,6 +962,13 @@ hadith-collections:
   image_file: File:Hadith Books.jpg
   label: hadith
   qid: Q234343
+hafez:
+  article: Hafez
+  birth: '1326'
+  death: '1389'
+  image_file: File:Anselm Feuerbach Hafis vor der Schenke (cropped).jpg
+  label: Hafez
+  qid: Q6240
 haitian-revolution:
   article: Haitian Revolution
   end: '1804'
@@ -867,6 +1071,14 @@ hiv-aids:
   label: HIV/AIDS
   qid: Q12199
   start: '1959'
+holocaust:
+  article: The Holocaust
+  end: '1945'
+  image_file: File:Selection on the ramp at Auschwitz-Birkenau, 1944 (Auschwitz Album)
+    1b.jpg
+  label: The Holocaust
+  qid: Q2763
+  start: '1933'
 holocene:
   article: Holocene
   image_file: File:Mollweide.jpg
@@ -924,12 +1136,26 @@ homo-sapiens:
   image_file: File:Akha cropped hires.JPG
   label: human
   qid: Q5
+hopper:
+  article: Grace Hopper
+  birth: '1906'
+  death: '1992'
+  image_file: File:Commodore Grace M. Hopper, USN (covered).jpg
+  label: Grace Hopper
+  qid: Q11641
 horse-domestication:
   article: Domestication of the horse
   image_file: File:Cave painting in Doushe cave, Lorstan, Iran, 8th millennium BC.JPG
   label: domestication of the horse
   qid: Q468739
   start: '-3500'
+hubble:
+  article: Edwin Hubble
+  birth: '1889'
+  death: '1953'
+  image_file: File:Studio portrait photograph of Edwin Powell Hubble (cropped).JPG
+  label: Edwin Hubble
+  qid: Q43027
 human-chimp-split:
   article: Chimpanzee–human last common ancestor
   label: Chimpanzee–human last common ancestor
@@ -966,6 +1192,11 @@ ibn-rushd:
   image_file: File:Statue of Averroes in Córdoba, Spain.jpg
   label: Averroes
   qid: Q39837
+impressionism:
+  article: Impressionism
+  image_file: File:Pierre-Auguste Renoir, Le Moulin de la Galette.jpg
+  label: Impressionism
+  qid: Q40415
 inca-empire:
   article: Inca Empire
   end: '1533'
@@ -998,6 +1229,13 @@ indus-valley:
   label: Indus Valley Civilization
   qid: Q42534
   start: '-3000'
+industrial-revolution:
+  article: Industrial Revolution
+  end: '1820'
+  image_file: File:Mémoires de la Société géologique de France (IA meymoiresdelaso00socig).pdf
+  label: Industrial Revolution
+  qid: Q2269
+  start: '1760'
 influenza-1918:
   article: Spanish flu
   end: '1920'
@@ -1033,6 +1271,11 @@ jain-agamas:
     script.jpg
   label: Jain literature
   qid: Q17006151
+jazz:
+  article: Jazz
+  image_file: File:Louis Armstrong restored.jpg
+  label: jazz
+  qid: Q8341
 jesus:
   article: Jesus
   birth: '-7'
@@ -1051,6 +1294,13 @@ joseon-dynasty:
   image_file: File:1894JoseonSeoul.jpg
   label: Joseon
   qid: Q28179
+julius-caesar:
+  article: Julius Caesar
+  birth: '-100'
+  death: '-44'
+  image_file: File:Retrato de Julio César (26724093101) (cropped).jpg
+  label: Julius Caesar
+  qid: Q1048
 kabir:
   article: Kabir
   birth: '1440'
@@ -1058,6 +1308,11 @@ kabir:
   image_file: File:Kabir (postage stamp).jpg
   label: Kabir
   qid: Q312551
+kalidasa:
+  article: Kalidasa
+  image_file: File:Kalidas.jpg
+  label: Kalidasa
+  qid: Q7011
 kamakura-shogunate:
   article: Kamakura shogunate
   image_file: File:Kongorikishi statue from 14th century Japan.jpg
@@ -1110,6 +1365,12 @@ kingdom-of-kush:
   image_file: File:Nubia NASA-WW places german.jpg
   label: Kingdom of Kush
   qid: Q241790
+knuth:
+  article: Donald Knuth
+  birth: '1938'
+  image_file: File:KnuthAtOpenContentAlliance.jpg
+  label: Donald Knuth
+  qid: Q17457
 korea-three-kingdoms:
   article: Three Kingdoms of Korea
   end: '660'
@@ -1194,11 +1455,39 @@ lavoisier:
   image_file: File:David - Portrait of Monsieur Lavoisier (cropped).jpg
   label: Antoine Lavoisier
   qid: Q39607
+lenin:
+  article: Vladimir Lenin
+  birth: '1870'
+  death: '1924'
+  image_file: File:Vladimir Lenin in July 1920 by Pavel Zhukov.jpg
+  label: Vladimir Lenin
+  qid: Q1394
+leonardo:
+  article: Leonardo da Vinci
+  birth: '1452'
+  death: '1519'
+  image_file: File:Francesco Melzi - Portrait of Leonardo.png
+  label: Leonardo da Vinci
+  qid: Q762
+li-bai:
+  article: Li Bai
+  birth: '701'
+  death: '762'
+  image_file: File:李白.png
+  label: Li Bai
+  qid: Q7071
 liberia-independence:
   article: Liberia
   image_file: File:Liberian Capitol Building.jpg
   label: Liberia
   qid: Q1014
+lincoln:
+  article: Abraham Lincoln
+  birth: '1809'
+  death: '1865'
+  image_file: File:Abraham Lincoln O-77 matte collodion print.jpg
+  label: Abraham Lincoln
+  qid: Q91
 locke:
   article: John Locke
   birth: '1632'
@@ -1206,6 +1495,13 @@ locke:
   image_file: File:JohnLocke.png
   label: ''
   qid: Q9353
+lovelace:
+  article: Ada Lovelace
+  birth: '1815'
+  death: '1852'
+  image_file: File:Ada Lovelace.jpg
+  label: Ada Lovelace
+  qid: Q7259
 lusophone-independence:
   article: Portuguese Colonial War
   end: '1974'
@@ -1284,6 +1580,13 @@ mansa-musa-hajj:
   image_file: File:Kanga Moussa Atlas Catalan.jpg
   label: Mansa Musa
   qid: Q309333
+mao:
+  article: Mao Zedong
+  birth: '1893'
+  death: '1976'
+  image_file: File:Mao Tse Tung.jpg
+  label: Mao Zedong
+  qid: Q5816
 marcus-aurelius:
   article: Marcus Aurelius
   birth: '121'
@@ -1298,6 +1601,13 @@ marie-curie:
   image_file: File:Marie Curie (1900) (cropped).jpg
   label: ''
   qid: Q7186
+martin-luther:
+  article: Martin Luther
+  birth: '1483'
+  death: '1546'
+  image_file: File:Lucas Cranach d.Ä. - Martin Luther, 1528 (Veste Coburg).jpg
+  label: Martin Luther
+  qid: Q9554
 marx:
   article: Karl Marx
   birth: '1818'
@@ -1362,6 +1672,13 @@ mexican-revolution:
   label: Mexican Revolution
   qid: Q214426
   start: '1910'
+michelangelo:
+  article: Michelangelo
+  birth: '1475'
+  death: '1564'
+  image_file: File:Michelangelo Daniele da Volterra (dettaglio).jpg
+  label: Michelangelo
+  qid: Q5592
 mill:
   article: John Stuart Mill
   birth: '1806'
@@ -1369,6 +1686,13 @@ mill:
   image_file: File:John Stuart Mill by London Stereoscopic Company, c1870.jpg
   label: John Stuart Mill
   qid: Q50020
+milton:
+  article: John Milton
+  birth: '1608'
+  death: '1674'
+  image_file: File:John-milton.jpg
+  label: John Milton
+  qid: Q79759
 ming-dynasty:
   article: Ming dynasty
   image_file: File:Ming Empire cca 1580 (en).svg
@@ -1381,6 +1705,13 @@ mirabai:
   image_file: File:Meerabai painting.jpg
   label: Meera
   qid: Q466330
+mlk:
+  article: Martin Luther King Jr.
+  birth: '1929'
+  death: '1968'
+  image_file: File:The Rev. Dr. Martin Luther King Jr. Color Portrait (high quality).jpg
+  label: Martin Luther King Jr.
+  qid: Q8027
 moai:
   article: Moai
   image_file: File:Ahu Tongariki.jpg
@@ -1392,6 +1723,19 @@ moche:
   label: Moche culture
   qid: Q208188
   start: '1'
+modernism:
+  article: Modernism
+  image_file: File:HSnyers Louvrex 1933.jpg
+  label: modernism
+  qid: Q878985
+  start: '1900'
+monet:
+  article: Claude Monet
+  birth: '1840'
+  death: '1926'
+  image_file: File:Claude Monet 1899 Nadar crop.jpg
+  label: Claude Monet
+  qid: Q296
 mongol-empire:
   article: Mongol Empire
   label: Mongol Empire
@@ -1410,11 +1754,24 @@ movable-type:
   article: Movable type
   label: movable type
   qid: Q426853
+mozart:
+  article: Wolfgang Amadeus Mozart
+  birth: '1756'
+  death: '1791'
+  image_file: File:Wolfgang-amadeus-mozart 1.jpg
+  label: Wolfgang Amadeus Mozart
+  qid: Q254
 mughal-empire:
   article: Mughal Empire
   image_file: File:MughalEmpire1700.svg
   label: Mughal Empire
   qid: Q33296
+mughal-painting:
+  article: Mughal painting
+  image_file: File:Govardhan. Jahangir Visiting the Ascetic Jadrup. ca. 1616-20, Musee
+    Guimet, Paris.jpg
+  label: Mughal painting
+  qid: Q1049336
 muhammad:
   article: Muhammad
   birth: '571'
@@ -1507,6 +1864,13 @@ opium-wars:
   label: Opium Wars
   qid: Q220984
   start: '1839'
+oppenheimer:
+  article: J. Robert Oppenheimer
+  birth: '1904'
+  death: '1967'
+  image_file: File:Oppenheimer (cropped).jpg
+  label: ''
+  qid: Q132537
 oracle-bone-script:
   article: Oracle bone script
   end: '-1050'
@@ -1533,6 +1897,13 @@ out-of-africa:
   image_file: File:World map of prehistoric human migrations.jpg
   label: recent African origin of modern humans
   qid: Q7478419
+ovid:
+  article: Ovid
+  birth: '-43'
+  death: '17'
+  image_file: File:Ovid by an anonymous sculptor.jpg
+  label: Ovid
+  qid: Q7198
 oyo-empire:
   article: Oyo Empire
   image_file: File:Palace of Alaafin of Oyo circa mid-1900s.jpg
@@ -1653,6 +2024,13 @@ ptolemy:
   image_file: File:PSM V78 D326 Ptolemy.png
   label: Ptolemy
   qid: Q34943
+pushkin:
+  article: Alexander Pushkin
+  birth: '1799'
+  death: '1837'
+  image_file: File:Kiprensky Pushkin.jpg
+  label: Alexander Pushkin
+  qid: Q7200
 pythagoras:
   article: Pythagoras
   birth: '-550'
@@ -1665,6 +2043,13 @@ qin-dynasty:
   image_file: File:Qin empire 210 BCE.png
   label: Qin dynasty
   qid: Q7183
+qin-shi-huang:
+  article: Qin Shi Huang
+  birth: '-259'
+  death: '-210'
+  image_file: File:Qinshihuangdi3.jpg
+  label: Qin Shi Huang
+  qid: Q7192
 qing-dynasty:
   article: Qing dynasty
   label: Qing dynasty
@@ -1702,12 +2087,40 @@ rapa-nui-decline:
   image_file: File:Easter Island 5.jpg
   label: Easter Island
   qid: Q14452
+raphael:
+  article: Raphael
+  birth: '1483'
+  death: '1520'
+  image_file: File:Raffaello Sanzio.jpg
+  label: Raphael
+  qid: Q5597
+ravi-shankar:
+  article: Ravi Shankar
+  birth: '1920'
+  death: '2012'
+  image_file: File:Ravi Shankar.jpg
+  label: Ravi Shankar
+  qid: Q103774
 reform-and-opening:
   article: Reform and opening up
   label: Chinese economic reform
   point: '1978'
   qid: Q1205521
   start: '1978'
+reformation:
+  article: Reformation
+  end: '1648'
+  image_file: File:95Thesen facsimile colour.png
+  label: Protestant Reformation
+  qid: Q12562
+  start: '1517'
+rembrandt:
+  article: Rembrandt
+  birth: '1606'
+  death: '1669'
+  image_file: File:Rembrandt van Rijn - Self-Portrait - Google Art Project.jpg
+  label: Rembrandt
+  qid: Q5598
 renaissance:
   article: Renaissance
   end: '1650'
@@ -1731,6 +2144,13 @@ roman-empire:
   label: Roman Empire
   qid: Q2277
   start: '-27'
+romanticism:
+  article: Romanticism
+  end: '1900'
+  image_file: File:Caspar David Friedrich - Wanderer above the sea of fog.jpg
+  label: Romanticism
+  qid: Q37068
+  start: '1800'
 rosalind-franklin:
   article: Rosalind Franklin
   birth: '1920'
@@ -1738,6 +2158,13 @@ rosalind-franklin:
   image_file: File:Rosalind Franklin.jpg
   label: Rosalind Franklin
   qid: Q7474
+rumi:
+  article: Rumi
+  birth: '1207'
+  death: '1273'
+  image_file: File:مولانا اثر حسین بهزاد (cropped).jpg
+  label: Rumi
+  qid: Q43347
 russian-conquest-central-asia:
   article: Russian conquest of Central Asia
   image_file: File:Turkestan 1900-en.svg
@@ -1752,6 +2179,12 @@ russian-flu-1889:
   point: '1889'
   qid: Q10658304
   start: '1889'
+russian-revolution:
+  article: Russian Revolution
+  image_file: File:Revolución-marzo-rusia--russianbolshevik00rossuoft.png
+  label: Russian Revolution
+  point: '1917'
+  qid: Q8729
 sack-of-baghdad:
   article: Siege of Baghdad
   end: '1258'
@@ -1784,12 +2217,19 @@ samoa-independence:
   image_file: File:Beach on Upolu Island, Samoa, 2009.jpg
   label: Samoa
   qid: Q683
+sappho:
+  article: Sappho
+  birth: '-650'
+  death: '-550'
+  image_file: File:Bust Sappho Musei Capitolini MC1164.jpg
+  label: Sappho
+  qid: Q17892
 sartre:
   article: Jean-Paul Sartre
   birth: '1905'
   death: '1980'
   image_file: File:Jean Paul Sartre 1967.jpg
-  label: ''
+  label: Jean-Paul Sartre
   qid: Q9364
 satyendra-bose:
   article: Satyendra Nath Bose
@@ -1862,16 +2302,37 @@ settlement-of-rapa-nui:
   image_file: File:Easter Island 5.jpg
   label: Easter Island
   qid: Q14452
+shakespeare:
+  article: William Shakespeare
+  birth: '1564'
+  death: '1616'
+  image_file: File:Shakespeare.jpg
+  label: William Shakespeare
+  qid: Q692
 shang-dynasty:
   article: Shang dynasty
   label: Shang dynasty
   qid: Q128938
+shannon:
+  article: Claude Shannon
+  birth: '1916'
+  death: '2001'
+  image_file: File:ClaudeShannon MFO3807.jpg
+  label: Claude Shannon
+  qid: Q92760
 sharpeville-massacre:
   article: Sharpeville massacre
   image_file: File:Murder at Sharpeville 21 March 1960.jpg
   label: Sharpeville massacre
   point: '1960'
   qid: Q518753
+shivaji:
+  article: Shivaji
+  birth: '1627'
+  death: '1680'
+  image_file: File:Shivaji British Museum.jpg
+  label: Shivaji
+  qid: Q239505
 silk-road:
   article: Silk Road
   image_file: File:Silk road Kazakhstan.svg
@@ -1947,6 +2408,11 @@ srivijaya:
   article: Srivijaya
   label: Srivijaya
   qid: Q234197
+steam-engine:
+  article: Steam engine
+  image_file: File:Горизонтальная стационарная паровая машина.JPG
+  label: steam engine
+  qid: Q12760
 stolen-generations:
   article: Stolen Generations
   label: Stolen Generations
@@ -1960,6 +2426,20 @@ sui-dynasty:
   article: Sui dynasty
   label: Sui dynasty
   qid: Q7405
+sun-yat-sen:
+  article: Sun Yat-sen
+  birth: '1866'
+  death: '1925'
+  image_file: File:孙中山肖像.jpg
+  label: Sun Yat-sen
+  qid: Q8573
+surdas:
+  article: Surdas
+  birth: '1500'
+  death: '1563'
+  image_file: File:Surdas.jpg
+  label: Surdas
+  qid: Q1325652
 sushruta:
   article: Sushruta
   birth: '-600'
@@ -1972,6 +2452,13 @@ swahili-coast:
   image_file: File:Shimoni fishermen.JPG
   label: Swahili coast
   qid: Q2739014
+tagore:
+  article: Rabindranath Tagore
+  birth: '1861'
+  death: '1941'
+  image_file: File:Rabindranath Tagore in 1909.jpg
+  label: Rabindranath Tagore
+  qid: Q7241
 taiping-rebellion:
   article: Taiping Rebellion
   end: '1864'
@@ -2011,6 +2498,13 @@ teotihuacan:
   image_file: File:ZA77 Teotihuacán edo de mex Herberto de la rosa.jpg
   label: Teotihuacan
   qid: Q172613
+tesla:
+  article: Nikola Tesla
+  birth: '1856'
+  death: '1943'
+  image_file: File:Tesla circa 1890.jpeg
+  label: Nikola Tesla
+  qid: Q9036
 tetrapods-on-land:
   article: Tetrapod
   image_file: File:Feuer Salamander 2.jpg
@@ -2032,6 +2526,11 @@ third-plague-pandemic:
   label: third plague pandemic
   qid: Q1259178
   start: '1855'
+thiruvalluvar:
+  article: Thiruvalluvar
+  image_file: File:Thiruvalluvar 1960 stamp of India.jpg
+  label: Thiruvalluvar
+  qid: Q2353373
 three-kingdoms:
   article: Three Kingdoms
   end: '280'
@@ -2160,6 +2659,18 @@ vaccination:
   image_file: File:Young girl about to receive a vaccine in her upper arm (48545990252).jpg
   label: vaccination
   qid: Q192995
+valmiki:
+  article: Valmiki
+  image_file: File:Valmiki Ramayana.jpg
+  label: Valmiki
+  qid: Q715607
+van-gogh:
+  article: Vincent van Gogh
+  birth: '1853'
+  death: '1890'
+  image_file: File:Self-portrait - Vincent van Gogh.jpg
+  label: Vincent van Gogh
+  qid: Q5582
 variolation:
   article: Inoculation
   image_file: File:Inoculation day 16.png
@@ -2176,6 +2687,13 @@ vijayanagara-empire:
   article: Vijayanagara Empire
   label: Vijayanagara Empire
   qid: Q167639
+virgil:
+  article: Virgil
+  birth: '-70'
+  death: '-19'
+  image_file: File:Parco della Grotta di Posillipo5 (crop).jpg
+  label: Virgil
+  qid: Q1398
 vivekananda:
   article: Swami Vivekananda
   birth: '1863'
@@ -2183,6 +2701,13 @@ vivekananda:
   image_file: File:Swami Vivekananda-1893-09-signed.jpg
   label: Swami Vivekananda
   qid: Q47478
+von-neumann:
+  article: John von Neumann
+  birth: '1903'
+  death: '1957'
+  image_file: File:JohnvonNeumann-LosAlamos.jpg
+  label: John von Neumann
+  qid: Q17455
 wari:
   article: Wari Empire
   label: Wari Empire
@@ -2194,6 +2719,13 @@ warring-states:
   label: Warring States period
   qid: Q185063
   start: '-476'
+washington:
+  article: George Washington
+  birth: '1732'
+  death: '1799'
+  image_file: File:Gilbert Stuart Williamstown Portrait of George Washington.jpg
+  label: George Washington
+  qid: Q23
 wittgenstein:
   article: Ludwig Wittgenstein
   birth: '1889'
@@ -2206,6 +2738,11 @@ woodblock-printing:
   image_file: File:Jingangjing.jpg
   label: woodblock printing
   qid: Q1261053
+world-wide-web:
+  article: World Wide Web
+  image_file: File:Alcalá de Henares (RPS 08-04-2017) Calle WWW, indicador.png
+  label: World Wide Web
+  qid: Q466
 wounded-knee:
   article: Wounded Knee Massacre
   image_file: File:Woundedkneesceneafterbattle.jpg

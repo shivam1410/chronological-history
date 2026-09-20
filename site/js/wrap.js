@@ -50,3 +50,47 @@ function clip(text, maxWidth, measure) {
   }
   return `${cut}${ELLIPSIS}`;
 }
+
+/** Space, hyphen, en dash, em dash - anywhere a title can be cut cleanly. */
+const BREAKS = /[\s\u2010\u2011\u2012\u2013\u2014-]/;
+
+/**
+ * As much of a title as fits, cut at a separator rather than mid-word.
+ *
+ * A bar too narrow for its whole title used to show nothing at all, which
+ * wastes space a reader could have used: "Himalayan Orogeny - India collides
+ * with Eurasia" becomes "Himalayan Orogeny…" rather than a blank capsule. If
+ * not even the first word fits, nothing is drawn - half a word is noise.
+ *
+ * @param {(s: string) => number} measure  rendered width, in px
+ */
+export function clipToWords(text, maxWidth, measure) {
+  const full = String(text ?? '');
+  if (!full) return '';
+  if (measure(full) <= maxWidth) return full;
+
+  // Each token carries its own trailing separators, so the cut lands after a
+  // word and the separator never starts the next chunk.
+  const tokens = full.match(/[^\s\u2010-\u2014-]+[\s\u2010-\u2014-]*/g) ?? [];
+  let kept = '';
+  for (const token of tokens) {
+    const candidate = kept + token;
+    if (measure(`${trimBreaks(candidate)}${ELLIPSIS}`) > maxWidth) break;
+    kept = candidate;
+  }
+
+  const out = trimBreaks(kept);
+  // "The…" is not worth the space it takes: an article alone names nothing,
+  // so a bar that can only hold one falls back to showing no label at all.
+  if (!out || ARTICLES.has(out.toLowerCase())) return '';
+  return `${out}${ELLIPSIS}`;
+}
+
+const ARTICLES = new Set(['the', 'a', 'an']);
+
+/** Drop trailing separators, so a cut never reads as "Ming -…". */
+function trimBreaks(text) {
+  let out = text;
+  while (out && BREAKS.test(out[out.length - 1])) out = out.slice(0, -1);
+  return out;
+}

@@ -1,6 +1,6 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { wrapText } from './wrap.js';
+import { clipToWords, wrapText } from './wrap.js';
 
 /** A stand-in for canvas text metrics: every character is 10px wide. */
 const measure = (s) => s.length * 10;
@@ -64,5 +64,71 @@ describe('wrapText', () => {
 
   test('collapses runs of whitespace', () => {
     assert.deepEqual(wrap('East   &  Asia', 200), ['East & Asia']);
+  });
+});
+
+describe('clipToWords', () => {
+  const clip = (text, width) => clipToWords(text, width, measure);
+
+  test('a title that fits is returned whole, with no ellipsis', () => {
+    assert.equal(clip('Ming', 100), 'Ming');
+  });
+
+  test('cuts at a space rather than mid-word', () => {
+    // "Mughal Empire" is 130px; 90px holds "Mughal" plus the ellipsis.
+    assert.equal(clip('Mughal Empire', 90), 'Mughal…');
+  });
+
+  test('cuts at an em dash', () => {
+    const out = clip('Himalayan Orogeny — India collides with Eurasia', 190);
+    assert.equal(out, 'Himalayan Orogeny…');
+  });
+
+  test('cuts at a hyphen', () => {
+    assert.equal(clip('Austro-Hungarian', 90), 'Austro…');
+  });
+
+  test('never ends on the separator it cut at', () => {
+    for (const w of [60, 80, 100, 120, 140]) {
+      const out = clip('Sun Yat-sen – the Republic', w);
+      assert.ok(!/[\s–—-]…$/.test(out), `trailing separator in "${out}"`);
+    }
+  });
+
+  test('shows nothing when not even the first word fits', () => {
+    assert.equal(clip('Constantinople', 40), '');
+  });
+
+  test('what it returns always fits the width it was given', () => {
+    const titles = ['Mughal Empire', 'Himalayan Orogeny — India collides with Eurasia',
+      'Compilation of the Adi Granth', 'ENIAC and the first electronic computers'];
+    for (const t of titles) {
+      for (const w of [30, 60, 90, 150, 240]) {
+        const out = clip(t, w);
+        assert.ok(measure(out) <= w, `"${out}" (${measure(out)}px) exceeds ${w}px`);
+      }
+    }
+  });
+
+  test('empty and missing input are not a crash', () => {
+    assert.equal(clip('', 100), '');
+    assert.equal(clip(null, 100), '');
+  });
+});
+
+describe('clipToWords and bare articles', () => {
+  const clip = (text, width) => clipToWords(text, width, measure);
+
+  test('does not offer an article as the whole label', () => {
+    // "The Austronesian expansion" cut to "The…" tells a reader nothing.
+    assert.equal(clip('The Austronesian expansion', 55), '');
+  });
+
+  test('but keeps an article when a real word comes with it', () => {
+    assert.equal(clip('The Grand Canal', 110), 'The Grand…');
+  });
+
+  test('an article as the entire title is still returned whole', () => {
+    assert.equal(clip('The', 100), 'The');
   });
 });
