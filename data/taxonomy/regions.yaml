@@ -98,16 +98,20 @@
     Philosophers and schools of thought, same convention as science - put the
     home region second.
 
-- id: literature
-  label: Literature & Poetry
+- id: art-culture
+  label: Art & Culture
   order: 12
-  color: "--lane-literature"
+  color: "--lane-art-culture"
   note: >-
-    Poets and the works that outlived them, same convention as science and
-    philosophy - put the home region second, so Kalidasa shows an india chip.
-    Figures who are saints first and poets second, like Kabir and Mirabai, stay
-    in their own region: their verse is inseparable from the devotional
-    movement they belong to.
+    Makers and the traditions they worked in - poets, painters, sculptors,
+    composers. Same convention as science and philosophy: put the home region
+    second, so Kalidasa shows an india chip.
+
+    Two things deliberately stay out. Monuments belong to the civilisation that
+    raised them, so Angkor Wat, the Taj Mahal, Borobudur and the Great Pyramid
+    stay in their regional lanes. And figures who are saints first and poets
+    second, like Kabir and Mirabai, stay in their own region: their verse is
+    inseparable from the devotional movement beside it.
 
 - id: global
   label: Global
