@@ -175,7 +175,7 @@
     Our species is younger than the Sahara and roughly the same age as the
     oldest surviving cave floors. Everything in the lanes below happened in
     the last 5% of our existence.
-  title: Emergence of Homo sapiens
+  title: Homo sapiens
   kind: biological
   regions: [east-africa, africa]
   start: ["315 ka", "200 ka"]
@@ -193,12 +193,15 @@
   kind: event
   regions: [oceania]
   start: ["65 ka", "50 ka"]
-  end: ongoing
+  end: ["50 ka", "45 ka"]
   importance: 4
   confidence: medium
   categories: [exploration]
+  note: The bracket is the crossing and the spread across Sahul, not the
+    occupation that followed. The continuity is in the summary, where it can be
+    stated; as a bar running to the present it read as a 65,000-year arrival.
   summary: Humans crossed Wallacea to reach Sahul, beginning the longest
-    continuous cultural tradition known.
+    continuous cultural tradition known, unbroken to the present day.
 
 - id: neolithic-revolution
   title: Neolithic Revolution — agriculture begins

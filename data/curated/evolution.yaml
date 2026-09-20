@@ -124,14 +124,18 @@
   related: [dinosaur-era]
 
 - id: flowering-plants
-  title: Flowering plants
+  title: Flowering plants spread
   kind: biological
   regions: [earth-life]
   start: "140 Ma"
-  end: ongoing
+  end: "80 Ma"
   importance: 3
   confidence: medium
   categories: [evolution]
+  note: The bracket is the radiation, not the lineage. Angiosperms appear in
+    the Early Cretaceous and hold most of the world's plant cover by the Late
+    Cretaceous; they are of course still here, as are the eukaryotes, mammals
+    and birds whose entries are bracketed the same way.
   summary: Angiosperms coevolved with insect pollinators and came to dominate
     the land, eventually supplying almost everything humans eat.
 
@@ -140,10 +144,14 @@
   kind: biological
   regions: [earth-life]
   start: "66 Ma"
-  end: ongoing
+  end: "55 Ma"
   importance: 4
   confidence: medium
   categories: [evolution]
+  note: The bracket is the radiation that followed the K-Pg extinction, ending
+    with the first unambiguous true primates in the early Eocene. Primates did
+    not stop in the Eocene; the entry is their arrival, as "First mammals" is
+    the arrival of mammals.
   summary: Small tree-dwellers with grasping hands, forward-facing eyes and
     unusually large brains for their size, radiating in the space left by the
     dinosaurs.
