@@ -1,0 +1,123 @@
+# Industry and the technologies that carried it.
+#
+# The dataset had the science of the eighteenth and nineteenth centuries -
+# Lavoisier, Faraday, Maxwell, Mendeleev - and none of the engineering. No
+# steam engine, no railway, no telegraph, no electricity, and no Industrial
+# Revolution for any of it to belong to. These are the entries that lane was
+# missing, not a survey of technology.
+#
+# The Industrial Revolution sits in the Global lane beside the Bronze Age and
+# the Iron Age, which is the company it keeps: an age named for what people
+# could make. Britain shows as a chip, because that is where it started and
+# not where it stayed.
+
+- id: industrial-revolution
+  title: The Industrial Revolution
+  kind: period
+  regions: [global, britain]
+  start: [1760, 1780]
+  end: [1840, 1914]
+  importance: 5
+  confidence: contested
+  categories: [civilisation, trade, instrument]
+  note: The end is genuinely disputed. One convention closes the first
+    Industrial Revolution around 1840, after which a Second - steel,
+    chemicals, electricity, the internal combustion engine - runs from roughly
+    1870 to 1914. Another treats it as one continuous process. The bracket
+    holds both readings rather than choosing, which is why it is unusually
+    wide at the closing end.
+  summary: Coal, steam and the factory replaced muscle, water and the workshop,
+    first in British textiles and then almost everywhere — the change that
+    broke the ceiling on how much a population could produce, and began the
+    rise in atmospheric carbon that has not stopped since.
+  related: [steam-engine, railways, romanticism, coal-and-carbon]
+
+- id: steam-engine
+  title: The steam engine
+  kind: event
+  regions: [science, britain]
+  start: [1712, 1712]
+  end: [1776, 1776]
+  importance: 5
+  confidence: high
+  categories: [instrument, discovery]
+  note: The bracket runs from Newcomen's atmospheric engine, which worked but
+    wasted most of its heat, to Watt's separate condenser in commercial
+    production. Watt did not invent the steam engine; he made it efficient
+    enough to put anywhere, which is the part that mattered.
+  summary: The first engine that could turn heat into work anywhere, rather
+    than only where a river fell — which is what let factories leave the
+    valleys and cities grow around coal instead of water.
+  related: [industrial-revolution, railways]
+
+- id: railways
+  title: The railway age
+  kind: period
+  regions: [global, britain]
+  start: [1825, 1830]
+  end: [1900, 1914]
+  importance: 4
+  confidence: medium
+  categories: [trade, instrument, civilisation]
+  note: The bracket opens on the Stockton and Darlington and the Liverpool and
+    Manchester, the first lines to carry the public behind steam, and closes
+    once the world's main networks are built. Track kept being laid; the age
+    of it being new did not.
+  summary: Land transport stopped being limited by how far a horse could walk
+    in a day. Within seventy years railways had redrawn where people lived,
+    made standard time necessary to run a timetable, and given empires a way
+    to move troops and extract raw materials at speed.
+  related: [steam-engine, industrial-revolution, telegraph]
+
+- id: telegraph
+  title: The electric telegraph
+  kind: period
+  regions: [science, north-america]
+  start: [1837, 1844]
+  end: [1866, 1866]
+  importance: 4
+  confidence: high
+  categories: [instrument, discovery, trade]
+  note: The bracket closes at the first durable transatlantic cable. An 1858
+    cable worked for three weeks and failed, which is why 1866 rather than
+    1858 is the date that counts.
+  summary: The first time a message could outrun the person carrying it. News
+    that had taken a ship three weeks to cross the Atlantic arrived in minutes,
+    and markets, newspapers and governments reorganised themselves around it.
+  related: [railways, maxwell]
+
+- id: electrification
+  title: Electrification
+  kind: period
+  regions: [science, north-america]
+  start: [1882, 1882]
+  end: [1930, 1950]
+  importance: 5
+  confidence: medium
+  categories: [instrument, discovery]
+  note: The bracket opens at Edison's Pearl Street station, the first central
+    generating plant selling power to the public, and closes when supply
+    reaches most households in the industrialised world — decades later
+    elsewhere, and still not everywhere.
+  summary: Power that could be generated in one place and used in another
+    ended the factory shaft that drove every machine from one engine, made the
+    electric motor and the light bulb ordinary, and turned night into usable
+    time.
+  related: [faraday, industrial-revolution]
+
+- id: coal-and-carbon
+  title: Fossil carbon enters the atmosphere
+  kind: period
+  regions: [global, britain]
+  start: [1750, 1800]
+  end: ongoing
+  importance: 5
+  confidence: high
+  categories: [climate, civilisation]
+  note: Kept open deliberately. Atmospheric CO2 was about 280 parts per million
+    before industrial coal burning and passed 420 in the 2020s; the line has
+    not turned down, so the entry does not close.
+  summary: Burning coal, and later oil and gas, released carbon that had been
+    buried for hundreds of millions of years — the same Carboniferous forests
+    that are elsewhere on this timeline, returned to the air in two centuries.
+  related: [industrial-revolution, pacific-sea-level]
