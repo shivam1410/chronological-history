@@ -25,6 +25,7 @@
   --lane-oceania: #7a5a8a;
   --lane-science: #3d7ea6;
   --lane-philosophy: #8a6aa8;
+  --lane-literature: #a1614f;
   --lane-global: #6e6a63;
 
   --font-ui: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -72,6 +73,7 @@
     --lane-oceania: #b48cc4;
     --lane-science: #6fb3d6;
     --lane-philosophy: #b69ad0;
+    --lane-literature: #cf8f79;
     --lane-global: #a7a299;
   }
 }
@@ -98,5 +100,6 @@
   --lane-oceania: #b48cc4;
   --lane-science: #6fb3d6;
   --lane-philosophy: #b69ad0;
+  --lane-literature: #cf8f79;
   --lane-global: #a7a299;
 }

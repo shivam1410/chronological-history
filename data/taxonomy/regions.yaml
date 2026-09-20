@@ -98,8 +98,19 @@
     Philosophers and schools of thought, same convention as science - put the
     home region second.
 
+- id: literature
+  label: Literature & Poetry
+  order: 12
+  color: "--lane-literature"
+  note: >-
+    Poets and the works that outlived them, same convention as science and
+    philosophy - put the home region second, so Kalidasa shows an india chip.
+    Figures who are saints first and poets second, like Kabir and Mirabai, stay
+    in their own region: their verse is inseparable from the devotional
+    movement they belong to.
+
 - id: global
   label: Global
-  order: 12
+  order: 13
   color: "--lane-global"
   note: Entries with no single home - ages, pandemics, worldwide events.

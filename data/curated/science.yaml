@@ -575,3 +575,214 @@
   categories: [biology, discovery]
   summary: Sequenced the three billion letters of human DNA and published the
     result openly.
+
+# ---- computing -------------------------------------------------------------
+# Alan Turing sits above with the mathematicians, where he belongs; these are
+# the people and machines on either side of him. The lane had a theory of
+# computation and nothing that computed.
+
+- id: babbage
+  title: Charles Babbage
+  kind: person
+  regions: [science, britain]
+  start: 1791
+  end: 1871
+  importance: 4
+  confidence: high
+  categories: [scientist, computing, mathematics]
+  summary: Designed the Difference Engine and then the Analytical Engine, a
+    general-purpose mechanical computer with a store, a mill and punched-card
+    programs — a century before one was built, and never finished in his life.
+  related: [lovelace, turing]
+
+- id: lovelace
+  title: Ada Lovelace
+  kind: person
+  regions: [science, britain]
+  start: 1815
+  end: 1852
+  importance: 4
+  confidence: high
+  categories: [scientist, computing, mathematics]
+  note: Whether her notes constitute the first computer program is argued.
+    What is not argued is that she saw the machine could operate on symbols
+    rather than only numbers, which Babbage's own writing does not say.
+  summary: Whose notes on the Analytical Engine include an algorithm for
+    computing Bernoulli numbers, and the observation that such a machine might
+    compose music — the first published sense of a computer as more than a
+    calculator.
+  related: [babbage]
+
+- id: boole
+  title: George Boole
+  kind: person
+  regions: [science, britain]
+  start: 1815
+  end: 1864
+  importance: 3
+  confidence: high
+  categories: [scientist, mathematics, logic, computing]
+  summary: Reduced logic to algebra, giving the true-and-false arithmetic that
+    every digital circuit since has been built from — eighty years before there
+    were any circuits to build.
+  related: [shannon, turing]
+
+- id: hilbert-program
+  title: Hilbert's decision problem
+  kind: work
+  regions: [science, europe]
+  start: 1928
+  end: 1936
+  importance: 3
+  confidence: high
+  categories: [mathematics, logic, computing, discovery]
+  summary: The question of whether a mechanical procedure could decide any
+    mathematical statement. Answering it no forced Church and Turing to define
+    what a mechanical procedure is, which is where the computer comes from.
+  related: [turing]
+
+- id: shannon
+  title: Claude Shannon
+  kind: person
+  regions: [science, north-america]
+  start: 1916
+  end: 2001
+  importance: 5
+  confidence: high
+  categories: [scientist, computing, mathematics]
+  summary: Showed in a master's thesis that Boolean algebra describes switching
+    circuits, then founded information theory — the bit, channel capacity, and
+    the proof that reliable communication over a noisy line is possible at all.
+  related: [boole, turing]
+
+- id: von-neumann
+  title: John von Neumann
+  kind: person
+  regions: [science, north-america]
+  start: 1903
+  end: 1957
+  importance: 5
+  confidence: high
+  categories: [scientist, computing, mathematics, physics]
+  summary: Whose report on the EDVAC described storing a program in the same
+    memory as its data — the architecture nearly every computer since has used,
+    and the reason software can be written rather than wired.
+  related: [turing, eniac]
+
+- id: eniac
+  title: ENIAC and the first electronic computers
+  kind: work
+  regions: [science, north-america]
+  start: [1943, 1945]
+  end: [1946, 1946]
+  importance: 4
+  confidence: medium
+  categories: [computing, instrument, discovery]
+  note: Which machine was first depends on the definition. Colossus ran at
+    Bletchley Park in 1943 but was secret until the 1970s and not
+    general-purpose; the Z3 was programmable but electromechanical. ENIAC was
+    electronic, general-purpose, and public.
+  summary: Eighteen thousand valves filling a room, programmed by rewiring it,
+    and operated largely by women mathematicians whose work went uncredited for
+    decades.
+  related: [von-neumann, hopper]
+
+- id: hopper
+  title: Grace Hopper
+  kind: person
+  regions: [science, north-america]
+  start: 1906
+  end: 1992
+  importance: 4
+  confidence: high
+  categories: [scientist, computing]
+  summary: Wrote the first compiler and argued that programs could be written
+    in something closer to English, which became COBOL and with it most of the
+    world's business software.
+  related: [eniac, von-neumann]
+
+- id: transistor
+  title: The transistor
+  kind: event
+  regions: [science, north-america]
+  start: 1947
+  end: 1947
+  importance: 5
+  confidence: high
+  categories: [computing, instrument, discovery]
+  summary: Bardeen, Brattain and Shockley at Bell Labs replaced the valve with
+    a sliver of semiconductor — the component that made computers small, cheap
+    and cool enough to be everywhere.
+  related: [integrated-circuit]
+
+- id: integrated-circuit
+  title: The integrated circuit
+  kind: event
+  regions: [science, north-america]
+  start: [1958, 1959]
+  end: [1959, 1959]
+  importance: 5
+  confidence: high
+  categories: [computing, instrument, discovery]
+  summary: Kilby and Noyce independently put a whole circuit on one piece of
+    semiconductor, which is what made it possible to keep doubling the number
+    of components on a chip for the next fifty years.
+  related: [transistor]
+
+- id: dijkstra
+  title: Edsger Dijkstra
+  kind: person
+  regions: [science, europe]
+  start: 1930
+  end: 2002
+  importance: 3
+  confidence: high
+  categories: [scientist, computing, mathematics]
+  summary: Gave the shortest-path algorithm every routing system uses, and
+    spent the rest of his life insisting that programming is a mathematical
+    discipline and that most of the industry was doing it wrong.
+  related: [knuth, turing]
+
+- id: knuth
+  title: Donald Knuth
+  kind: person
+  regions: [science, north-america]
+  start: 1938
+  end: ongoing
+  importance: 3
+  confidence: high
+  categories: [scientist, computing, mathematics]
+  summary: Who set out to write one book on compilers, is still writing The
+    Art of Computer Programming sixty years later, and wrote a typesetting
+    system from scratch because the proofs looked wrong.
+  related: [dijkstra]
+
+- id: arpanet
+  title: ARPANET and the internet protocols
+  kind: period
+  regions: [science, north-america]
+  start: 1969
+  end: 1983
+  importance: 5
+  confidence: high
+  categories: [computing, discovery]
+  note: The bracket runs from the first ARPANET link to the switch to TCP/IP,
+    which is the date the internet as a network of networks begins rather than
+    any single machine connecting.
+  summary: Packet switching between four American universities, grown into a
+    protocol that assumes the network is unreliable and lets any network join.
+  related: [world-wide-web]
+
+- id: world-wide-web
+  title: The World Wide Web
+  kind: event
+  regions: [science, europe]
+  start: 1989
+  end: 1991
+  importance: 5
+  confidence: high
+  categories: [computing, discovery]
+  summary: Tim Berners-Lee's proposal at CERN for linking documents across the
+    internet, released without patent or licence fee — the decision that let it
+    become the default way people use a computer.
+  related: [arpanet]
