@@ -324,11 +324,17 @@ function laneStrip(entry, neighbours, onNavigate) {
         const bar = el('button', 'strip__bar');
         bar.type = 'button';
         if (isSelf) bar.dataset.self = 'true';
-        bar.style.left = `${item.x0}%`;
-        bar.style.width = `${item.w}%`;
+        // Clamped to the window. A neighbour that starts before it has a
+        // negative x0, and its label - pinned to the bar's own left edge -
+        // was being laid out off-screen, leaving a wide blank capsule. The
+        // canvas renderer clamps for the same reason.
+        const left = Math.max(0, item.x0);
+        const width = Math.max(0, Math.min(100, item.x0 + item.w) - left);
+        bar.style.left = `${left}%`;
+        bar.style.width = `${width}%`;
         // Too narrow to hold a name: show a plain capsule and let the tooltip
         // and the tap carry it, rather than a letter and a half of the title.
-        if (item.w < 9) bar.dataset.narrow = 'true';
+        if (width < 9) bar.dataset.narrow = 'true';
         bar.style.top = `${r * (STRIP_BAR_PX + STRIP_GAP_PX)}px`;
         bar.append(el('span', 'strip__bar-title', item.entry.title));
         // The dates go in the title attribute as well as the bar, because a
