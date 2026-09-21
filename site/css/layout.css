@@ -383,8 +383,12 @@ body[data-year-view="true"] .stage { padding-top: 0; }
  * selection itself.
  */
 ::selection {
-  background: var(--accent);
-  color: var(--bg);
+  /* A wash rather than a solid block. At full strength the accent turned a
+     selected date into a bright slab - most of what you see on tapping the
+     field, since it selects its own contents on focus. The text keeps its
+     normal colour so it stays legible over the tint. */
+  background: color-mix(in srgb, var(--accent) 28%, transparent);
+  color: var(--ink);
 }
 
 /* Prose is for reading, so it keeps normal selection. */
