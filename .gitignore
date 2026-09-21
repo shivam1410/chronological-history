@@ -8,3 +8,7 @@ data/imported/.cache/
 
 # Local editor/agent config, not part of the project
 .claude/
+# A symlink to ~/.aw. It was committed by accident: git stored it as a link
+# whose content is the absolute path /Users/<name>/.aw, which is meaningless
+# to anyone else and dangling in any fresh clone.
+.aw
