@@ -9,6 +9,28 @@ import { createYearView } from './yearview.js';
 import { elapsed, formatYear, roundYear } from './format.js';
 import { sameLane, elsewhere } from './context.js';
 import { ORIGIN_YEAR, presentYear } from './timescale.js';
+import { DEFAULT_TITLE, readEnvironment, siteTitle } from './title.js';
+
+/*
+ * The site answers to a different name in India.
+ *
+ * Both the tab and the heading, not just the heading - the heading is hidden
+ * below 1280px, where most readers are, so changing it alone would rename the
+ * site for almost nobody. The tab is the one place the name always shows.
+ *
+ * Done before the data loads, so the name never visibly changes under the
+ * reader, and left alone when it matches the markup so the hand-placed
+ * non-breaking space in the default survives.
+ */
+function nameThisSite() {
+  const title = siteTitle(readEnvironment());
+  document.title = title;
+  if (title === DEFAULT_TITLE) return;
+  const heading = document.querySelector('.header__title');
+  if (heading) heading.textContent = title;
+}
+
+nameThisSite();
 
 const stage = document.querySelector('#stage');
 const live = document.querySelector('#live');
