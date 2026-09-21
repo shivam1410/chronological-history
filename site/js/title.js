@@ -11,7 +11,7 @@
  */
 
 export const DEFAULT_TITLE = 'Chronological History';
-export const INDIA_TITLE = 'Aap chronology samjhiye';
+export const INDIA_TITLE = 'Aap chronology samajhiye';
 
 /* Asia/Calcutta is the older name for the same zone and is still what some
    systems report, so both spellings count. */
