@@ -42,6 +42,9 @@ DOWNLOAD_TRIES = 3
 # Every filename here has been confirmed to resolve on Commons. Ones that do
 # not are removed rather than left to fail on every run.
 COMMONS_FILES: dict[str, str] = {
+    # Both Laetoli articles lead with a photograph of an excavation
+    # test-pit. The entry is about the footprints, so it shows them.
+    "laetoli-footprints": "File:Laetoli footprints replica.jpg",
     "australopithecus": "File:Lucy Skeleton.jpg",
     "neanderthals": "File:Homo sapiens neanderthalensis.jpg",
     "cave-art": "File:Lascaux painting.jpg",
@@ -410,6 +413,44 @@ ARTICLE_LEADS: dict[str, str] = {
     # with Vesuvius behind it, which carries both halves of the entry and is
     # evidence rather than an imagining.
     "pompeii": "Pompeii",
+    # ---- human origins ----
+    # Lucy's own article leads with the reconstruction; Laetoli, Taung and
+    # Paranthropus lead with the evidence itself. Interbreeding has no page
+    # of its own worth using, so it borrows the Neanderthal genome project,
+    # which is where the finding came from.
+    "lucy": "Lucy (Australopithecus)",
+    "taung-child": "Taung Child",
+    "paranthropus": "Paranthropus",
+    # The genome-project page has no lead image; the interbreeding page
+    # leads with a map of where and when it happened, which is the entry.
+    "neanderthal-admixture": "Interbreeding between archaic and modern humans",
+
+    # ---- art & culture, second pass ----
+    # Most of these resolve to a portrait or a likeness on their own article.
+    # Two do not, and are pointed somewhere honest instead:
+    # Zeami has no lead image at all, so the entry shows the theatre he made;
+    # Khayyam's own article leads with a photograph of his mausoleum, and the
+    # Rubaiyat's leads with a bound copy - a book he may not have written, but
+    # the object that carried his name into English.
+    "nizami-ganjavi": "Nizami Ganjavi",
+    "omar-khayyam": "Omar Khayyam",
+    "saadi-shirazi": "Saadi Shirazi",
+    "murasaki-shikibu": "Murasaki Shikibu",
+    "zeami": "Noh",
+    "cao-xueqin": "Cao Xueqin",
+    "hildegard-of-bingen": "Hildegard of Bingen",
+    "caravaggio": "Caravaggio",
+    "vermeer": "Johannes Vermeer",
+    "goya": "Francisco Goya",
+    "chopin": "Fr\u00e9d\u00e9ric Chopin",
+    "kafka": "Franz Kafka",
+    "virginia-woolf": "Virginia Woolf",
+    "borges": "Jorge Luis Borges",
+    "garcia-marquez": "Gabriel Garc\u00eda M\u00e1rquez",
+    "chinua-achebe": "Chinua Achebe",
+    "umm-kulthum": "Umm Kulthum",
+    "fela-kuti": "Fela Kuti",
+
     "great-oxidation": "Great Oxidation Event",
     "cambrian-explosion": "Cambrian explosion",
     "permian-triassic-extinction": "Permian\u2013Triassic extinction event",

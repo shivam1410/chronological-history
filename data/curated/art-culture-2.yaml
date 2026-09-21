@@ -1,0 +1,407 @@
+# Art & Culture, second pass: the names the first pass missed.
+#
+# The lane had Ferdowsi, Rumi, Hafez and Amir Khusrau but not Nizami, whose
+# Khamsa is the frame every later Persian romance was written against. It had
+# Basho and Hokusai but not Murasaki Shikibu, and it ran from Tagore in 1861
+# to Picasso in 1881 with no prose in between - no Kafka, no Woolf, no Borges,
+# no Marquez, no Achebe. Africa was represented by the Benin bronzes alone.
+#
+# Same conventions as the first file: a bracket around a working life where a
+# birth is unknown, and a note wherever the dates or the attribution are
+# argued rather than settled.
+
+# ---- Persia ----
+- id: nizami-ganjavi
+  significance: >-
+    Every later Persian romance is written against his five. Khosrow and
+    Shirin and Layla and Majnun became the stories other poets retold rather
+    than the poems other poets admired, which is a rarer kind of influence.
+  title: Nizami Ganjavi
+  kind: person
+  regions: [art-culture, persia]
+  start: [1141, 1141]
+  end: [1202, 1209]
+  importance: 4
+  confidence: medium
+  categories: [poet, literature, epic]
+  note: >-
+    What to call him is a live argument rather than a settled fact. He was
+    born in Ganja, in what is now Azerbaijan, and wrote entirely in Persian
+    within the Persian literary tradition; Soviet-era scholarship promoted him
+    as an Azerbaijani national poet and the question is still contested on
+    both sides. The death year is given as anywhere from 1202 to 1209.
+  summary: Author of the Khamsa, five long narrative poems that turned Persian
+    verse from court panegyric towards romance and psychology — and gave the
+    Islamic world two of its central love stories in forms that were copied,
+    illustrated and argued with for the next six hundred years.
+  related: [ferdowsi, rumi, persian-miniature]
+  sources:
+    - {title: "Encyclopaedia Iranica — Nezami Ganjavi", url: "https://iranicaonline.org/articles/nezami-ganjavi"}
+
+- id: omar-khayyam
+  significance: >-
+    Famous in English for quatrains that may not be his, and important in
+    Persian for mathematics that certainly is. The calendar he helped reform
+    kept better time than the one Europe adopted five centuries later.
+  title: Omar Khayyam
+  kind: person
+  regions: [art-culture, persia]
+  start: 1048
+  end: 1131
+  importance: 3
+  confidence: medium
+  categories: [poet, literature, mathematics, astronomy]
+  note: >-
+    The attribution problem is severe. Over a thousand quatrains have been
+    credited to him across the centuries; scholars who have tried to sort them
+    put the securely his at a few dozen, and some argue for almost none. What
+    made him famous in English is Edward FitzGerald's 1859 Rubaiyat, which is
+    a free adaptation rather than a translation.
+  summary: Mathematician who solved cubic equations geometrically and helped
+    reform the Persian calendar in 1079 to an accuracy the Gregorian would not
+    match, and — in a body of verse whose ownership is disputed — the voice
+    Europe later took for Persian scepticism itself.
+  related: [nizami-ganjavi, ferdowsi]
+
+- id: saadi-shirazi
+  significance: >-
+    Read for seven centuries as the plainest teacher in Persian. Children
+    learned the language from the Gulistan the way English children once
+    learned it from the King James Bible.
+  title: Saadi Shirazi
+  kind: person
+  regions: [art-culture, persia]
+  start: [1210, 1210]
+  end: [1291, 1292]
+  importance: 3
+  confidence: medium
+  categories: [poet, literature, ethics]
+  note: >-
+    His lines beginning "the children of Adam are limbs of one body" are often
+    said to be inscribed at the entrance to the United Nations. What is
+    actually there is a carpet gifted by Iran carrying the verse, hung in
+    2005 — the poem is real, the inscription story is not quite.
+  summary: Author of the Gulistan and the Bustan, who spent decades travelling
+    the Islamic world and wrote what he learned as short prose tales with
+    verse stitched through them — moral instruction that survives because it
+    is funny and unillusioned rather than despite it.
+  related: [nizami-ganjavi, hafez, rumi]
+
+# ---- East Asia ----
+- id: murasaki-shikibu
+  significance: >-
+    A thousand-page psychological novel written by a woman at a court where
+    men wrote in Chinese and women wrote in Japanese — which is why the
+    literature of the period that survives as literature is largely by women.
+  title: Murasaki Shikibu
+  kind: person
+  regions: [art-culture, japan]
+  start: [973, 978]
+  end: [1014, 1031]
+  importance: 4
+  confidence: contested
+  categories: [writing, literature]
+  note: >-
+    Neither her real name nor her dates are known; Murasaki Shikibu is a
+    nickname combining a character from her book with her father's office.
+    Whether the Tale of Genji is "the world's first novel" depends entirely on
+    what counts as one — the safer claim is that it is the earliest work of
+    this length and interiority that is still read as a novel rather than
+    studied as an antiquity.
+  summary: Lady-in-waiting at the Heian court whose Tale of Genji follows a
+    prince and his descendants across four hundred characters and three
+    generations, written around 1008 in a vernacular Japanese that court men
+    considered beneath them.
+  related: [chinese-landscape-painting]
+
+- id: zeami
+  significance: >-
+    He wrote the plays and then wrote down how to perform them, which is why
+    Noh survived six hundred years with its technique intact rather than
+    being reinvented every generation.
+  title: Zeami Motokiyo
+  kind: person
+  regions: [art-culture, japan]
+  start: [1363, 1363]
+  end: [1443, 1443]
+  importance: 3
+  confidence: medium
+  categories: [drama, literature, music]
+  note: >-
+    His treatises were family secrets, passed down within the school and not
+    published until 1909. The aesthetic vocabulary they set out — yūgen, and
+    the idea of the flower that an actor must keep — reached the wider world
+    only in the twentieth century, and promptly influenced Yeats and Brecht.
+  summary: Actor and playwright who, with his father Kan'ami and the patronage
+    of the shogun, turned a popular entertainment into Noh — a theatre of
+    masks, stillness and suggestion — and then set down its training in
+    treatises meant for his heirs rather than his audience.
+  related: [murasaki-shikibu, basho]
+
+- id: cao-xueqin
+  significance: >-
+    China has a field of scholarship devoted to a single novel. Redology has
+    its own journals and its own feuds, which is what happens when the
+    greatest work in a language is also unfinished.
+  title: Cao Xueqin
+  kind: person
+  regions: [art-culture, china]
+  start: [1715, 1724]
+  end: [1763, 1764]
+  importance: 4
+  confidence: contested
+  categories: [writing, literature]
+  note: >-
+    He left roughly eighty chapters in circulating manuscript. The hundred-and
+    -twenty-chapter version printed in 1791 supplies an ending usually
+    credited to Gao E and Cheng Weiyuan, and whether they were finishing his
+    drafts or inventing is argued to this day. His own dates are uncertain.
+  summary: Author of Dream of the Red Chamber, a novel of a great family's
+    decline written from the inside — Cao's own clan had been stripped of its
+    imperial position — with several hundred characters and a precision about
+    domestic life that no Chinese fiction had attempted.
+  related: [chinese-landscape-painting, murasaki-shikibu]
+
+# ---- Europe ----
+- id: hildegard-of-bingen
+  significance: >-
+    The earliest composer in the Western canon whose biography is known, and
+    she is a twelfth-century abbess — which says less about her exceptionality
+    than about who else's name went unrecorded.
+  title: Hildegard of Bingen
+  kind: person
+  regions: [art-culture, western-europe]
+  start: 1098
+  end: 1179
+  importance: 3
+  confidence: high
+  categories: [music, religion, mystic, writing]
+  summary: Benedictine abbess who wrote seventy-odd surviving chants of
+    unusually wide range, a morality play set to music, three books of
+    visions, and treatises on medicine and the natural world — and invented a
+    private language while she was at it. Made a Doctor of the Church in 2012.
+  related: [baroque]
+
+- id: caravaggio
+  significance: >-
+    He put a single hard light into a dark room and the next century of
+    European painting followed him into it. The models were people off the
+    street, which was the scandal and is now the point.
+  title: Caravaggio
+  kind: person
+  regions: [art-culture, rome]
+  start: 1571
+  end: 1610
+  importance: 4
+  confidence: high
+  categories: [painting, art]
+  summary: Painter of violent contrasts and unidealised bodies whose
+    naturalism split Roman opinion and whose technique was imitated from
+    Utrecht to Seville — done in under twenty working years, ended by a death
+    at thirty-eight on a beach in Tuscany that is still not fully explained.
+  related: [baroque, rembrandt]
+
+- id: vermeer
+  significance: >-
+    Thirty-odd paintings, almost all of one or two people in one room doing
+    almost nothing, and two centuries of obscurity before anyone decided they
+    were among the best pictures ever made in Europe.
+  title: Johannes Vermeer
+  kind: person
+  regions: [art-culture, western-europe]
+  start: 1632
+  end: 1675
+  importance: 3
+  confidence: high
+  categories: [painting, art]
+  note: >-
+    Around thirty-four paintings are generally accepted as his, with a few
+    argued over. He was locally known but not famous, died in debt, and was
+    largely forgotten until the French critic Théophile Thoré-Bürger
+    reassembled the oeuvre in the 1860s.
+  summary: Dutch painter of interiors lit from a left-hand window, working so
+    slowly and in such small numbers that his entire surviving output fits in
+    a single exhibition — which one Amsterdam show in 2023 nearly managed.
+  related: [rembrandt, baroque]
+
+- id: goya
+  significance: >-
+    Court painter to a monarchy and the first European artist to draw modern
+    war as it is rather than as it should look. The Disasters of War were too
+    dangerous to publish and waited thirty-five years after his death.
+  title: Francisco Goya
+  kind: person
+  regions: [art-culture, western-europe]
+  start: 1746
+  end: 1828
+  importance: 4
+  confidence: high
+  categories: [painting, art]
+  summary: Spanish painter who moved from court portraits to the Third of May
+    1808, the Disasters of War and finally the Black Paintings — done on the
+    walls of his own house, for nobody, as he went deaf and the country he had
+    painted tore itself apart.
+  related: [romanticism, napoleon]
+
+- id: chopin
+  significance: >-
+    He wrote almost nothing that is not for the piano, and in doing so
+    decided what the instrument was for. The nocturnes and mazurkas are also
+    an exile's Poland, kept in a form the partitioning powers could not ban.
+  title: Frédéric Chopin
+  kind: person
+  regions: [art-culture, eastern-europe]
+  start: 1810
+  end: 1849
+  importance: 3
+  confidence: high
+  categories: [music]
+  summary: Polish composer who left for Paris at twenty and never returned,
+    writing a body of piano music — ballades, études, mazurkas, nocturnes —
+    that is both the technical foundation of modern piano playing and a
+    national literature for a country then off the map.
+  related: [beethoven, romanticism]
+
+# ---- the twentieth century ----
+- id: kafka
+  significance: >-
+    He asked for it all to be burned. Max Brod published it instead, and the
+    adjective that came out of it is one of the few in any language named for
+    a writer and understood by people who have not read him.
+  title: Franz Kafka
+  kind: person
+  regions: [art-culture, eastern-europe]
+  start: 1883
+  end: 1924
+  importance: 4
+  confidence: high
+  categories: [writing, literature]
+  summary: German-speaking Jewish insurance clerk in Prague who published
+    almost nothing in his lifetime and left three unfinished novels about
+    people processed by systems that never explain themselves — written before
+    the century supplied the examples.
+  related: [modernism]
+
+- id: virginia-woolf
+  significance: >-
+    A Room of One's Own made the economic argument about art that the
+    aesthetic arguments kept avoiding: five hundred a year and a door that
+    locks, or the work does not get written.
+  title: Virginia Woolf
+  kind: person
+  regions: [art-culture, britain]
+  start: 1882
+  end: 1941
+  importance: 4
+  confidence: high
+  categories: [writing, literature, human-rights]
+  summary: Novelist who moved the English novel inside the head — a day in
+    Mrs Dalloway, a house over a decade in To the Lighthouse — and argued in
+    essays that women had been kept from writing by money and space rather
+    than by capacity.
+  related: [modernism, kafka]
+
+- id: borges
+  significance: >-
+    Libraries, labyrinths, forking paths and infinite books, mostly in eight
+    pages at a time. He never wrote a novel and reshaped the century's
+    fiction anyway.
+  title: Jorge Luis Borges
+  kind: person
+  regions: [art-culture, americas]
+  start: 1899
+  end: 1986
+  importance: 4
+  confidence: high
+  categories: [writing, literature, philosophy]
+  summary: Argentine writer of short fictions that review imaginary books,
+    map impossible libraries and treat metaphysics as plot — blind from his
+    fifties, by which time he was directing the national library he could no
+    longer read.
+  related: [modernism, garcia-marquez]
+
+- id: garcia-marquez
+  significance: >-
+    One Hundred Years of Solitude sold tens of millions and made Latin
+    American fiction a world literature rather than a regional one — and gave
+    the rest of the world a permission it is still using.
+  title: Gabriel García Márquez
+  kind: person
+  regions: [art-culture, americas]
+  start: 1927
+  end: 2014
+  importance: 4
+  confidence: high
+  categories: [writing, literature]
+  summary: Colombian novelist and journalist whose Macondo — founded, flooded,
+    besieged and forgotten across seven generations — told the history of a
+    continent in a register where the miraculous is reported in the same tone
+    as the weather. Nobel in 1982.
+  related: [borges, modernism]
+
+- id: chinua-achebe
+  significance: >-
+    Things Fall Apart answered the colonial novel in its own language and
+    from the inside. It is the most widely read African novel there is, and
+    it is a rebuttal.
+  title: Chinua Achebe
+  kind: person
+  regions: [art-culture, west-africa]
+  start: 1930
+  end: 2013
+  importance: 4
+  confidence: high
+  categories: [writing, literature, colonialism]
+  summary: Nigerian novelist who wrote Igbo society before and during the
+    British arrival as a complete world with its own logic and its own
+    failures — in English, a choice he defended and was criticised for — and
+    who later took apart Conrad's Africa in a lecture that changed how Heart
+    of Darkness is taught.
+  related: [benin-bronzes, garcia-marquez]
+
+# ---- voices ----
+- id: umm-kulthum
+  significance: >-
+    On the first Thursday of the month the Arab world stopped. Streets
+    emptied from Morocco to Iraq for a live broadcast that might run five
+    hours on three songs.
+  title: Umm Kulthum
+  kind: person
+  regions: [art-culture, egypt]
+  start: [1898, 1904]
+  end: 1975
+  importance: 4
+  confidence: medium
+  categories: [music]
+  note: >-
+    Her birth year is not recorded reliably and is given as anywhere between
+    1898 and 1904. Estimates of the crowd at her funeral in Cairo run to four
+    million, which is a guess of the usual kind, but the scale is not in
+    dispute.
+  summary: Egyptian singer whose monthly radio concerts were the largest
+    shared cultural event in the Arab world for forty years, improvising
+    around a single line until an audience of millions demanded it again —
+    and who remains, half a century after her death, the standard.
+  related: [islamic-calligraphy]
+
+- id: fela-kuti
+  significance: >-
+    He invented a genre and used it to attack a military government by name,
+    at length, in songs of twenty minutes or more — and was beaten, jailed and
+    raided for it, repeatedly, without stopping.
+  title: Fela Kuti
+  kind: person
+  regions: [art-culture, west-africa]
+  start: 1938
+  end: 1997
+  importance: 3
+  confidence: high
+  categories: [music, human-rights]
+  note: >-
+    In 1977 a thousand soldiers burned his Kalakuta compound and threw his
+    mother from a window; she died of her injuries. He delivered her coffin to
+    the barracks of the head of state and wrote two songs about it.
+  summary: Nigerian musician who fused highlife, jazz and Yoruba rhythm into
+    Afrobeat and turned it into sustained political attack, declaring his
+    compound an independent republic and paying for the joke for twenty years.
+  related: [jazz, bob-marley, chinua-achebe]

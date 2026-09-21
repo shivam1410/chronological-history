@@ -90,7 +90,14 @@
     every Indian entry that follows.
   title: Himalayan Orogeny — India collides with Eurasia
   kind: geological
-  regions: [himalaya, india]
+  # Earth & Life rather than the India lane. The dates are right - the range
+  # is still rising - but 59 Myr was the only entry in the Himalaya
+  # sub-region, so expanding India conjured a whole row to hold one bar that
+  # spanned the window and said the same thing at every zoom. Geology belongs
+  # in the geology lane, where a 59-million-year bar is unremarkable. India
+  # and Himalaya stay as chips, so the connection the entry argues for is
+  # still on the card.
+  regions: [earth-life, himalaya, india]
   start: ["59 Ma", "50 Ma"]
   end: ongoing
   importance: 5

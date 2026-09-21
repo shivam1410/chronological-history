@@ -1,0 +1,144 @@
+# Human evolution: the specimens, and what they overturned.
+#
+# The chain of species was already here - Sahelanthropus to Homo sapiens,
+# fourteen entries. What was missing was the evidence itself. Lucy is named
+# in the Australopithecus summary without a date of her own; the Laetoli
+# footprints are mentioned the same way. Both are individual finds with their
+# own moment, and both changed what people thought the sequence was.
+#
+# Two of these exist mainly to break the ladder. Paranthropus is the branch
+# that led nowhere, and the Taung child was rejected for twenty years because
+# a forgery had already told Europe what the answer should look like. Human
+# evolution is a bush that was read as a ladder for most of the time anyone
+# has been reading it.
+
+- id: lucy
+  significance: >-
+    She settled the order of events. Before Lucy the assumption was that the
+    big brain came first and walking upright followed; a 3.2-million-year-old
+    skeleton that walked upright with a brain the size of a chimpanzee's
+    reversed it, and every account since has had to start from that.
+  title: Lucy
+  kind: biological
+  regions: [earth-life, east-africa]
+  start: "3.2 Ma"
+  end: "3.2 Ma"
+  importance: 5
+  confidence: high
+  categories: [evolution, discovery]
+  note: >-
+    Not a missing link, and not a chain. Australopithecus afarensis may be
+    ancestral to our genus or may be a close cousin of whatever was - the
+    fossils do not settle it - and several other hominin species were alive
+    at the same time. She is about forty per cent of one skeleton, found on
+    24 November 1974 at Hadar in the Afar of Ethiopia by Donald Johanson and
+    Tom Gray, and named after the Beatles song playing in camp that night.
+    Ethiopians call her Dinkinesh: you are marvellous.
+  summary: An adult female Australopithecus afarensis, about 1.1 metres tall,
+    whose pelvis and knee show she walked upright on a body that still had a
+    brain of roughly 400cc — the most complete early hominin known when she
+    was found, and still the one everybody can name.
+  related: [australopithecus, laetoli-footprints, human-chimp-split]
+  sources:
+    - {title: "Institute of Human Origins — Lucy's Story", url: "https://iho.asu.edu/about/lucys-story"}
+
+- id: laetoli-footprints
+  significance: >-
+    Bones tell you what an animal could do. These tell you what three of them
+    did, one morning, in the rain — which is a different kind of evidence and
+    a much rarer one.
+  title: The Laetoli footprints
+  kind: biological
+  regions: [earth-life, east-africa]
+  start: "3.66 Ma"
+  end: "3.66 Ma"
+  importance: 4
+  confidence: high
+  categories: [evolution, discovery]
+  note: >-
+    Found in 1976 and excavated by Mary Leakey's team over the following two
+    years. The trackmakers are usually taken to be Australopithecus afarensis
+    on grounds of date and place rather than direct association — no bones
+    were in the ash with them.
+  summary: Seventy metres of hominin trackway preserved in volcanic ash in
+    northern Tanzania, made by at least three individuals walking upright
+    with a modern heel-strike gait — direct behavioural evidence of bipedalism
+    more than a million years before the first stone tools.
+  related: [lucy, australopithecus]
+
+- id: taung-child
+  significance: >-
+    The right answer, published in 1925, and disbelieved for twenty years
+    because a forged skull in England had already convinced Europe that the
+    brain came first and that humans began somewhere other than Africa.
+  title: The Taung child
+  kind: biological
+  regions: [earth-life, africa]
+  start: ["3 Ma", "2.6 Ma"]
+  end: ["3 Ma", "2.6 Ma"]
+  importance: 4
+  confidence: medium
+  categories: [evolution, discovery]
+  note: >-
+    Raymond Dart described it in Nature in February 1925 as Australopithecus
+    africanus and was dismissed by most of the British establishment. Piltdown
+    Man — a human skull with an orangutan jaw, planted in Sussex — was not
+    exposed as a fake until 1953, by which time other African australopithecines
+    had made Dart's case for him. The specimen's own age is argued, with
+    estimates from about 3 to 2.6 million years.
+  summary: The fossilised skull and brain endocast of a three-year-old,
+    quarried at Taung in South Africa in 1924, whose forward-set foramen
+    magnum showed it had walked upright — the first australopithecine found,
+    and the first evidence that human origins were African.
+  related: [lucy, australopithecus]
+
+- id: paranthropus
+  significance: >-
+    A hominin lineage that lasted a million and a half years, chewed its way
+    through the same landscapes as our ancestors, and left no descendants at
+    all. The family tree is a bush, and most of its branches end.
+  title: Paranthropus
+  kind: biological
+  regions: [earth-life, africa]
+  start: "2.7 Ma"
+  end: "1.2 Ma"
+  importance: 3
+  confidence: medium
+  categories: [evolution]
+  note: >-
+    Whether the robust australopithecines form one genus or are several
+    separate lineages that converged on the same heavy-chewing anatomy is
+    still argued. Their disappearance has no agreed explanation; competition
+    with early Homo and climate-driven changes in their food plants are both
+    proposed and neither is settled.
+  summary: Robust australopithecines with molars four times the area of ours,
+    jaw muscles anchored to a crest along the skull, and a diet of hard, low
+    quality plant food — living alongside early Homo in eastern and southern
+    Africa for over a million years before vanishing.
+  related: [australopithecus, homo-habilis]
+
+- id: neanderthal-admixture
+  significance: >-
+    Everyone whose ancestry runs outside Africa carries Neanderthal DNA. The
+    two populations were not sequential and did not merely overlap; they
+    interbred, and the result is in almost every living genome.
+  title: Humans and Neanderthals interbreed
+  kind: biological
+  regions: [earth-life, west-asia]
+  start: ["60 ka", "60 ka"]
+  end: ["45 ka", "45 ka"]
+  importance: 4
+  confidence: medium
+  categories: [evolution, discovery]
+  note: >-
+    Established by sequencing rather than by bones: the draft Neanderthal
+    genome published in 2010 found that non-African populations carry roughly
+    one to two per cent Neanderthal ancestry, and later work put Denisovan
+    ancestry in parts of Melanesia higher still. The dating of the mixing is
+    inferred from the length of the surviving segments and is a range, not a
+    date.
+  summary: As modern humans moved out of Africa they met Neanderthals in
+    western Asia and had children with them — and Denisovans further east —
+    leaving tracts of archaic DNA that still affect immunity, metabolism and
+    altitude tolerance in living people.
+  related: [neanderthals, denisovans, out-of-africa, homo-sapiens]
