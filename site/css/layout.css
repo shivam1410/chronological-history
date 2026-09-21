@@ -594,8 +594,17 @@ body[data-year-view="true"] .stage { padding-top: 0; }
   /* Chips only. The phone layout turns these into tabs with no horizontal
      padding, and this rule used to override that from further down the file -
      the buttons were then shrunk below their own text width, which ran
-     "Bronze Age" into "Classical". */
-  @media (min-width: 561px) {
+     "Bronze Age" into "Classical".
+
+     The floor is 600 rather than 561 because this padding is not free: 12px
+     either side of seven chips is 56px more than the 8px the chips carry
+     otherwise, and it took the row from 522px to 578px. Gated at 561 that
+     landed one pixel above the tab layout, so a touch screen 561 to 577px
+     wide overflowed and sliced "Modern" by 17px - the same fault as the
+     desktop band, a breakpoint down. Below 600 the chips keep the ordinary
+     padding; they are still 44px tall, which is the target size that
+     matters. */
+  @media (min-width: 600px) {
     .eras button { padding-inline: var(--step-3); }
   }
 
