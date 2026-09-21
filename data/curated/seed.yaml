@@ -184,7 +184,12 @@
     the last 5% of our existence.
   title: Homo sapiens
   kind: biological
-  regions: [east-africa, africa]
+  # Earth & Life, with Africa kept as a chip. Sixteen of the seventeen
+  # hominin entries already live there - Lucy, Paranthropus, erectus,
+  # the Neanderthals, out-of-africa - and our own species was the lone
+  # exception sitting in a regional lane. It also left the Africa lane
+  # opening on a 313,000-year bar and then nothing until 2686 BCE.
+  regions: [earth-life, east-africa, africa]
   start: ["315 ka", "200 ka"]
   end: ongoing
   importance: 5

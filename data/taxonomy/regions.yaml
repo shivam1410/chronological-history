@@ -4,7 +4,13 @@
   label: Earth & Life
   order: 1
   color: "--lane-earth-life"
-  note: Non-human deep time - geology, climate, and the history of life.
+  # A plain scalar cannot hold "arrived: Lucy" - YAML reads the colon as a
+  # mapping - so this is a block scalar.
+  note: >-
+    Deep time - geology, climate, and the history of life, our own species
+    included. This said non-human until Homo sapiens joined the rest of the
+    genus here; Lucy, Paranthropus, erectus and the Neanderthals were already
+    in this lane, so it had not been true for some time.
 
 - id: india
   label: Indian Subcontinent
