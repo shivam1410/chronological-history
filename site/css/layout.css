@@ -374,6 +374,19 @@ body[data-year-view="true"] .stage { padding-top: 0; }
   cursor: pointer;
 }
 
+/*
+ * Selected text, in the site's own colours.
+ *
+ * The browser default is a blue block with black text, which on a dark field
+ * reads as a rendering fault - most visible in the date inputs, which select
+ * their contents on focus, so the first thing you see when you tap one is the
+ * selection itself.
+ */
+::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
 /* Prose is for reading, so it keeps normal selection. */
 .panel__body,
 .panel__title,
