@@ -3,10 +3,14 @@
 Status: **proposal, nothing built.** This is a feasibility answer and a sketch
 of how it would work, written so the decision can be made before any code is.
 
-The idea: as the reader moves through the timeline, a panel shows the Earth of
-that moment — the Hadean under permanent cloud, the rains that filled the
-oceans, the first green on land, Carboniferous forest, Pangaea splitting, the
-asteroid, ice. Drawn, not photographed. Every frame computed in JavaScript.
+The idea: a view, reached from the sidebar, showing the Earth at whatever
+moment the timeline is sitting on — the Hadean under permanent cloud, the rains
+that filled the oceans, the first green on land, Carboniferous forest, Pangaea
+splitting, the asteroid, ice, dinosaurs. Drawn, not photographed. Every frame
+computed in JavaScript, and scrubbed by the cursor rather than played.
+
+Three things are already decided and are marked **Settled** below: the view is
+paper-themed throughout, it is not a video, and it lives behind the sidebar.
 
 ## The short answer
 
@@ -43,6 +47,74 @@ The results are grainy, slightly misregistered, and limited to a handful of
 rich flat inks. Crucially for us, the constraints are *generative*: a small
 palette, hard-edged shapes, visible texture. That is a much better fit for
 procedural drawing than photorealism, which JavaScript would lose at.
+
+## What the technique actually looks like
+
+A worked example is worth more than the description: a ChatGPT session
+(shared by the user) produced a 15-second procedural motion study in this
+exact aesthetic, and its source is instructive. Notes from it that change
+decisions here:
+
+**The effect has a name: halftone, not just grain.** The look is "risograph-
+inspired motion graphics" — saturated pink, yellow and blue on paper, slightly
+imperfect colour alignment, and *halftone dot patterns* doing the shading and
+the colour mixing. Halftone is a separate technique from paper grain and we
+need both. In canvas it is a 9×9 tile with one dot in it, turned into a
+`createPattern` and filled through a clip:
+
+```js
+c.save(); c.clip(shape); c.globalAlpha *= 0.2;
+c.fillStyle = dotPattern; c.fillRect(...); c.restore();
+```
+
+**Pick scenes whose content is repetition.** The example's subjects were a
+Ferris wheel, fireworks, a sunflower, a forest — all things that are one shape
+repeated around a circle or scattered across a field. That is why they looked
+rich for so little code. It is a selection criterion, and our scene list
+should be read against it:
+
+- Repeats well: Carboniferous forest (trees), Snowball (ice), Cambrian (body
+  plans in water), ice ages (drifting sheets), the rains (falling lines).
+- Repeats badly: **dinosaurs.** A dinosaur is a one-off silhouette, not a
+  pattern, and it is the scene most likely to look amateur. Either draw very
+  few of them very deliberately, or show the era through what repeats — ferns,
+  herds at a distance, footprints — rather than through a hero animal.
+
+**One element should persist and morph across scenes.** The example's whole
+trick is a pink ribbon that becomes steam, then a river, then a kite tail, by
+interpolating between corresponding points rather than crossfading:
+
+```js
+return { x: mix(mix(steam.x, river.x, a), kite.x, b), … }
+```
+
+For deep time the obvious persistent element is **water**: steam condensing,
+ocean, ice, swamp, sea. It is literally the through-line of the planet's
+history, and it gives the eye something continuous to hold while everything
+else changes. Worth designing around from the start rather than bolting on.
+
+**Cache everything static.** The example pre-renders 67,000 paper fibres into
+an offscreen surface once and reuses it every frame. Same rule as the grain
+tile, applied more broadly: if it does not change with `t`, draw it once.
+
+**One correction to the performance claim above.** Procedural is dramatically
+cheaper to *download* — the example measured 9.3KB of JavaScript against a
+2.79MB MP4 of the same thing, roughly 300× — but it is not necessarily cheaper
+to *run*. Video decode is hardware-accelerated; recomputing curves and
+compositing transparent layers is not. And file size is not memory: a
+1200×1200 surface is about 5.8MB of RAM whatever produced it, and this design
+wants several of them.
+
+For our case that still comes out fine, because we are not playing 60fps for
+30 seconds — we redraw on scrub, like the chart already does. But "performance
+is a non-issue" was too breezy. The honest version: **the cost is per-redraw
+and bounded by how many offscreen surfaces we keep.**
+
+**The reality check from that session is worth repeating.** Producing a
+plausible version of this is approachable. Reliably achieving a *particular*
+polished result is demanding, and most of the difficulty is not in any one
+scene — it is in sequencing, transition rhythm, and keeping one aesthetic
+across all of them.
 
 ## Why riso is the right constraint
 
@@ -82,19 +154,49 @@ Details that matter:
 - **Paper is off-white, never pure white**, and ink sits *on* it — so nothing
   is fully opaque.
 
-### One conflict to settle
+### Settled: the view is paper, all of it
 
-Riso is ink on paper, and the site's default theme is dark. Either the
-animation is a lit panel — a paper-coloured plate inside the dark app,
-deliberately — or the metaphor has to change. My preference is the plate: it
-frames the animation as an artefact, which is honest about it being an
-illustration rather than data.
+Not a plate inside the dark app — the whole view switches to the paper theme
+when you enter it. The animation is an artefact and the frame around it should
+agree. The app's own dark chrome returns when you leave.
+
+Practically this means the view owns its palette rather than inheriting
+`--bg` and `--ink`. Easiest as a scoped override on the view's root, so the
+rest of the token system is untouched:
+
+```css
+.deeptime { --bg: #f4ecd9; --ink: #153f4a; … }   /* paper, in both themes */
+```
+
+### Settled: it is not a video
+
+There is no playback, no timeline of its own, no play button. The reader
+scrubs the site's timeline with the cursor and the scene answers. This is the
+most important constraint in the document, because of what it rules out:
+
+**Every frame must be a pure function of the window position.** `draw(t)`,
+where `t` comes from the window's midpoint — nothing accumulated, nothing
+integrated, no state carried between frames.
+
+That means no particle systems that evolve, no physics, no "the smoke has been
+rising for 4 seconds". The reader can drag backwards, jump three billion years
+in one flick, or hold still for a minute; all three must land on exactly the
+same picture for the same position. A scene that drifts when you stop moving
+is a scene that shows you something different each time you return to it.
+
+Small caveat: some motion can be genuinely time-driven — a slow shimmer, a
+drifting misregistration — as long as it carries no information. Anything the
+reader might read as *content* must come from position alone.
 
 ## The scenes
 
 Roughly a dozen. Each one is a stop, with the animation interpolating between
 stops as the timeline window moves. Dates are from the dataset where the entry
 already exists.
+
+The scenes are inhabited, not just landscapes — dinosaurs, the giant insects of
+the Carboniferous, Ediacaran fronds. See the note above on which of these
+repeat well and which do not; the animals are the expensive part.
 
 | When | Scene | Entry |
 |---|---|---|
@@ -137,13 +239,15 @@ support.
 
 ## Where it lives
 
-**Not a separate tab.** This and the proposed Globe are the same feature: a
-view of the Earth at the timeline's current position. One is the planet from
-outside, the other is the scene from inside. Building them as two tabs would
-mean two copies of "what time is it and what did that look like".
+**Its own view, reached from the sidebar** — decided. It shares the timeline's
+window state the way the minimap already does (`minimap.setWindow(from, to)`
+is the pattern), but it owns the screen while it is open, and it owns its
+palette.
 
-The natural shape is a panel that shares the timeline's window state, the way
-the minimap already does — `minimap.setWindow(from, to)` is the pattern.
+Still worth resolving: this and the proposed Globe are arguably one feature
+seen from two distances — the planet from outside, the scene from inside. Two
+sidebar entries means two implementations of "what time is it and what did
+that look like". If the Globe happens, it should share the scene's clock.
 
 ### The log scale will bite
 
@@ -200,32 +304,42 @@ does not need to change that.
 
 ## Build order
 
-1. **One scene, static.** Carboniferous forest as four inks on a plate. No
-   animation, no timeline wiring. This answers "does the look work" for the
-   cost of an afternoon, and it is the question everything else depends on.
+1. **One scene, static.** Carboniferous forest as four inks on paper — halftone
+   and grain included, since they are most of the look. No animation, no
+   timeline wiring. This answers "does the look work" for the cost of an
+   afternoon, and it is the question everything else depends on.
 2. **The riso compositor**, extracted from (1): layers, tint, offset, multiply,
    grain. Pure and testable — given layers and a palette, does it produce the
    right composite.
-3. **Two scenes and a cross-fade.** Answers "does interpolation look like
-   anything".
-4. **Timeline wiring.** Window midpoint drives scene selection; panel hides
-   above ~500 Myr window width.
+3. **Two scenes and the water morph.** Not a cross-fade — interpolate
+   corresponding points, so the ocean becomes the ice. Answers the real
+   question, which is whether the through-line works.
+4. **Timeline wiring**, as `draw(t)` from the window midpoint. Scrub it
+   backwards and forwards and confirm it lands identically both ways; that is
+   the test that the render is genuinely stateless.
 5. **The remaining scenes**, one at a time.
 6. **Captions**, including the ones that say "inferred".
 
 Stop after (1) if it does not look good. That is the point of doing it first.
 
-## What I would decide before writing any of it
+## Still to decide
+
+Answered: paper theme for the whole view; scrubbed, not played; its own view
+from the sidebar.
+
+Still open:
 
 - Stylised continents or real reconstructions? (I would say stylised.)
-- Does the panel replace the minimap's row, share the card's drawer, or open
-  full-screen? Each costs something that currently exists.
-- On a phone, where does it go? The header fight at 1024–1100px is a warning:
-  there is no spare room, and a 375px screen has less.
-- Is this a feature of the timeline, or a separate piece that happens to live
-  in the same repo? A "watch 4.5 billion years in 90 seconds" set-piece is a
-  different product from a panel that tracks your scroll position, and the
-  second is much harder to make good.
+- What is the persistent element? Water is the obvious candidate and the one
+  I would design around, but it wants deciding before any scene is drawn,
+  because every scene has to hand it on.
+- On a phone, what drives the scrub? There is no cursor. Dragging the scene
+  itself is the obvious answer, but that is also how the timeline pans, so the
+  two gestures need separating — the axis-lock code in `timeline.js` is the
+  precedent.
+- Does the sidebar itself cost too much? A permanent sidebar is 200px+ and the
+  header already ran out of room at 1024–1100px. It may need to be a rail of
+  icons, or a bottom bar on phones.
 
 ## Honest risk
 
