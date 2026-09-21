@@ -13,6 +13,7 @@ never needs network access to build.
 from __future__ import annotations
 
 import html
+import os
 import re
 import time
 from typing import Iterable
@@ -31,6 +32,10 @@ OUTPUT = "data/imported/images.yaml"
 # picture about 350px wide, and pulling multi-megabyte originals for that is
 # both slow and discourteous to a service that gives its bandwidth away.
 THUMB_WIDTH = 480
+
+# Commons resets a connection now and then. Without retries a single reset
+# drops an image the site already had, silently, on an otherwise good run.
+DOWNLOAD_TRIES = 3
 
 # entry id -> Commons file title. Curated: the picture has to actually depict
 # the thing, and be a reasonable lead image rather than a detail or a diagram.
@@ -237,18 +242,37 @@ def download_all(resolved: dict[str, dict], out_dir: str = LOCAL_DIR,
     someone giving bandwidth away. The remote url is kept as `source_url` so
     the origin stays traceable.
     """
-    import os
     os.makedirs(out_dir, exist_ok=True)
     session = requests.Session()
     out: dict[str, dict] = {}
 
     for entry_id, record in sorted(resolved.items()):
-        try:
-            response = session.get(record["url"], headers={"User-Agent": USER_AGENT},
-                                   timeout=60)
-            response.raise_for_status()
-        except requests.RequestException as exc:
-            print(f"  {entry_id:<26} download failed ({exc})")
+        response = None
+        for attempt in range(DOWNLOAD_TRIES):
+            try:
+                response = session.get(record["url"],
+                                       headers={"User-Agent": USER_AGENT},
+                                       timeout=60)
+                response.raise_for_status()
+                break
+            except requests.RequestException as exc:
+                response = None
+                if attempt + 1 < DOWNLOAD_TRIES:
+                    time.sleep(1.5 * (attempt + 1))
+                    continue
+                print(f"  {entry_id:<26} download failed ({exc})")
+
+        if response is None:
+            # A reset connection should not cost an image the site already
+            # has. The licence and credit came from the resolve step, which
+            # succeeded, so a copy already on disk is still publishable.
+            kept = _existing_local(entry_id, out_dir)
+            if kept:
+                print(f"  {entry_id:<26} kept the copy already on disk")
+                out[entry_id] = {**record, "url": f"images/{kept}",
+                                 "source_url": record["url"],
+                                 "bytes": os.path.getsize(
+                                     os.path.join(out_dir, kept))}
             continue
 
         suffix = _EXT.get(response.headers.get("content-type", "").split(";")[0])
@@ -395,3 +419,12 @@ ARTICLE_LEADS: dict[str, str] = {
     "railways": "History of rail transport",
     "cinema": "History of film",
 }
+
+
+def _existing_local(entry_id: str, out_dir: str) -> str | None:
+    """A previously downloaded file for this entry, whatever its extension."""
+    for suffix in sorted(set(_EXT.values())):
+        name = f"{entry_id}{suffix}"
+        if os.path.exists(os.path.join(out_dir, name)):
+            return name
+    return None

@@ -8,6 +8,9 @@ as well as here, because most of these licences require it.
 |---|---|---|---|
 | `abolition-brazil` | Valter Campanato/Agência Brasil | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Mostra_Brasilis_a_Bras%C3%ADlia_03.jpg) |
 | `abolition-british` | Sodacan | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_Great_Britain_(1714%E2%80%931801).svg) |
+| `abolition-us` | Ssolbergj | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Greater_coat_of_arms_of_the_United_States.svg) |
+| `aboriginal-australia` | Original: Harold Thomas; Vectorization: Trisreed | Copyrighted free use | [Commons](https://commons.wikimedia.org/wiki/File:Australian_Aboriginal_Flag.svg) |
+| `achaemenid-empire` | Cattette | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Achaemenid_Empire_500_BCE.jpg) |
 | `acheulean-handaxe` | José Manuel Benito Álvarez | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Biface_Extension.png) |
 | `adi-granth-compiled` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Sri_Guru_Granth_Sahib_Nishan.jpg) |
 | `adi-shankara` | Raja Ravi Varma | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Raja_Ravi_Varma_-_Sankaracharya.jpg) |
@@ -26,6 +29,7 @@ as well as here, because most of these licences require it.
 | `analects` | Confucius and his disciples, | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Rongo_Analects_02.jpg) |
 | `andronovo-culture` | Krakkos | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Andronovo_culture.jpg) |
 | `angkor-wat` | Bjørn Christian Tørrissen | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Angkor_Wat.jpg) |
+| `antonine-plague` | Tataryn77 | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Aurelius180AD.png) |
 | `apartheid` | Guinnog | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:DurbanSign1989.jpg) |
 | `apes-emerge` | de:User:Matthias Trautsch | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Weisshandgibbon_tierpark_berlin.jpg) |
 | `aquinas` | Carlo Crivelli | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:St-thomas-aquinasFXD.jpg) |
@@ -44,6 +48,8 @@ as well as here, because most of these licences require it.
 | `austronesian-expansion` | Stanislav Kozlovskiy | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Taiwanese_aborigines.JPG) |
 | `avesta-written` | Daderot | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Videvdad_Sadah_(Zoroastrian_religious_code),_opened_to_first_chapter,_unknown_copyist,_Yazd,_Iran,_1647_AD_-_British_Library,_London_-_DSC00550.jpg) |
 | `avicenna` | Adam Jones from Kelowna, BC, Canada | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Avicenna_Portrait_on_Silver_Vase_-_Museum_at_BuAli_Sina_(Avicenna)_Mausoleum_-_Hamadan_-_Western_Iran_(7423560860).jpg) |
+| `ayutthaya` | Xiengyod | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Flag_of_Thailand_(Ayutthaya_period).svg) |
+| `aztec-empire` | File:Aztec Empire (orthographic projection).svg : Keepscases Derivative work : Giggette | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Aztec_Empire_ME_(orthographic_projection).svg) |
 | `babbage` | Thomas Dewell Scott | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:CharlesBabbage.jpg) |
 | `bach` | Elias Gottlob Haussmann | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Johann_Sebastian_Bach.png) |
 | `bangladesh-independence` | ExcelD24 | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:BangladeshLiberationWarMontage.jpg) |
@@ -57,6 +63,7 @@ as well as here, because most of these licences require it.
 | `berdyaev` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:NBerdyaev.jpg) |
 | `berlin-conference` | Adalbert von Roessler | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Kongokonferenz.jpg) |
 | `bertrand-russell` | Honourable Bertrand Russell.jpg: Photographer not identified derivative work: Conquistador | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Bertrand_Russell_transparent_bg.png) |
+| `bhaskara-ii` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:%E0%A4%AD%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A4%B0%E0%A4%BE%E0%A4%9A%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AF.jpg) |
 | `bijak-kabir` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Kabir004.jpg) |
 | `black-death` | Pierart dou Tielt (fl. 1340-1360) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Doutielt3.jpg) |
 | `blackbirding` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Groupe_de_Kanakas_dans_une_exploitation_de_canne_%C3%A0_sucre_du_Queensland.jpg) |
@@ -73,6 +80,7 @@ as well as here, because most of these licences require it.
 | `cave-art` | EU | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Lascaux_painting.jpg) |
 | `cervantes` | Attributed to Juan de Jáuregui | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Cervantes_J%C3%A1uregui.jpg) |
 | `chaco-canyon` | National Park Service (United States) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Chaco_Canyon_Chetro_Ketl_great_kiva_plaza_NPS.jpg) |
+| `chagatai-khanate` | MapMaster | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Chagatai_Khanate_map_en.svg) |
 | `chaitanya` | Self | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Chaitanya-Mahabrabhu-at-Jagannath.jpg) |
 | `chaucer` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Portrait_of_Geoffrey_Chaucer_(4671380)_(cropped)_02.jpg) |
 | `chavin` | Sharon odb | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Chav%C3%ADn_de_Hu%C3%A1ntar.JPG) |
@@ -86,6 +94,7 @@ as well as here, because most of these licences require it.
 | `cocoliztli-epidemics` | en:Bernardino de Sahagún (1499-1590), compiler. Original illustration by unknown 16th-century artist; this version of the drawing by unknown 16th-century copyist. | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:FlorentineCodex_BK12_F54_smallpox.jpg) |
 | `cold-war` | U.S. Army photo Photo Credit: USAMHI | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:US_Army_tanks_face_off_against_Soviet_tanks,_Berlin_1961.jpg) |
 | `columbian-exchange-epidemics` | Tabac_rustique.jpg: Atilin Cacao-pod-k4636-14.jpg: The original uploader was Kbh3rd at English Wikipedia. VegCorn.jpg: ? Potato_and_cross_section.jpg: ? Latex_dripping.JPG: AxelBoldt Bright_red_tomato_and_cross_section02.jpg: ? Vanilla_6beans.JPG: ? derivative work: A111111 (talk) | GFDL | [Commons](https://commons.wikimedia.org/wiki/File:New_World_Domesticated_plants.JPG) |
+| `columbus-1492` | Rezza Editores | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Viajes_de_colon_en2.svg) |
 | `confucius` | Wu Daozi, 685-758, Tang Dynasty. | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Confucius_Tang_Dynasty.jpg) |
 | `congo-free-state` | See file history below for details. | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Flag_of_the_Congo_Free_State.svg) |
 | `control-of-fire` | Charles Robert Knight | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Font-de-Gaume.jpg) |
@@ -97,6 +106,7 @@ as well as here, because most of these licences require it.
 | `dante` | Sandro Botticelli | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Portrait_de_Dante.jpg) |
 | `daodejing` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Mawangdui_LaoTsu_Ms2.JPG) |
 | `de-beauvoir` | Moshe Milner | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Simone_de_Beauvoir2.png) |
+| `delhi-sultanate` | Maps created from DEMIS Mapserver, which are public domain. Koba-chan Territorial area: पाटलिपुत्र (talk), per Schwartberg Atlas p.147 | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_the_Mamluk_Dynasty.png) |
 | `denisovans` | Fu et al. (2025) | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Homo_longi_holotype.jpg) |
 | `descartes` | After Frans Hals | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Frans_Hals_-_Portret_van_Ren%C3%A9_Descartes.jpg) |
 | `dickens` | Jeremiah Gurney | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Dickens_Gurney_head.jpg) |
@@ -110,12 +120,14 @@ as well as here, because most of these licences require it.
 | `du-fu` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Dufu.jpg) |
 | `earth-formation` | Ivtorov, Elektro-L 3 camera | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:2025-07-31-Elektro-L-3.png) |
 | `edo-period` | UBC Library Digitization Centre | No restrictions | [Commons](https://commons.wikimedia.org/wiki/File:Newly_engraved_map_of_Great_Japan_(15136421840).jpg) |
+| `egypt-old-kingdom` | Cattette | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:4th_Dynasty_of_Egypt-03.png) |
 | `einstein` | Photograph by Orren Jack Turner, Princeton, N.J. Modified with Photoshop by PM_Poon and later by Dantadd. | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Albert_Einstein_Head.jpg) |
 | `electrification` | FDR Presidential Library & Museum | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Trempealeau-Electric-Cooperative-Arcadia-Wis.jpg) |
 | `emmy-noether` | Unknown authorUnknown author Publisher: Mathematical Association of America [3], Brooklyn Museum [4], Agnes Scott College [5], [6] | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Noether.jpg) |
 | `eniac` | Unidentified U.S. Army photographer | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Two_women_operating_ENIAC_(full_resolution).jpg) |
 | `epicurus` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Epicurus_Massimo_Inv197306.jpg) |
 | `eratosthenes` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Eratosthenes.jpg) |
+| `ethiopian-empire` | Oren neu dag | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Flag_of_Ethiopia_(1897%E2%80%931974).svg) |
 | `euclid` | Jusepe de Ribera (Spanish / Italian, 1591 - 1652) (1591 - 1652) – artist (Spanish / Italian) Details on Google Art Project | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Italian_-_Euclid_-_Google_Art_Project.jpg) |
 | `eukaryotes` | Daniel Vaulot, CNRS, Station Biologique de Roscoff | CC BY-SA 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Rhodomonas_salina_CCMP_322_(cropped).jpg) |
 | `fall-of-tenochtitlan` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Conquista-de-M%C3%A9xico-por-Cort%C3%A9s-Tenochtitlan-Painting.png) |
@@ -133,6 +145,7 @@ as well as here, because most of these licences require it.
 | `galileo` | Justus Sustermans | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Justus_Sustermans_-_Portrait_of_Galileo_Galilei,_1636.jpg) |
 | `gandhi-ahimsa` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Portrait_Gandhi.jpg) |
 | `genghis-khan` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:YuanEmperorAlbumGenghisPortrait.jpg) |
+| `germ-theory` | Unknown | Copyrighted free use | [Commons](https://commons.wikimedia.org/wiki/File:Cholera_bacteria_SEM.jpg) |
 | `ghalib` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Mirza_Ghalib_photograph_3.jpg) |
 | `ghana-empire` | Luxo | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Ghana_empire_map.png) |
 | `ghana-independence` | Erik Kristensen | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Beach_with_palms_Ghana.jpg) |
@@ -141,14 +154,17 @@ as well as here, because most of these licences require it.
 | `golden-horde` | Cresques Abraham | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Golden_Horde_in_the_Catalan_Atlas_(1375).jpg) |
 | `goryeo-dynasty` | 작가 미상 | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Goryeonobles.jpg) |
 | `gospels` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:P46.jpg) |
+| `grand-canal` | EditQ | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Wanning_Bridge_1.jpg) |
 | `grasslands-spread` | Vincent van Zeijst | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Chile_(3),_Patagonia,_Road_Y-50_towards_Rio_Verde.JPG) |
 | `great-game` | Edward Stanford Ltd. | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%B0%D1%80%D1%82%D0%B0_%D0%90%D0%B7%D0%B8%D0%B8_%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%BE_XX_%D0%B2%D0%B5%D0%BA%D0%B0.jpg) |
 | `great-leap-forward` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:People%27s_commone_canteen3.jpg) |
+| `great-oxidation` | Sciencia58 | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Precambrian_Evolution_of_Life.png) |
 | `great-plague-london` | unknwn | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Great_plague_of_london-1665.jpg) |
 | `great-pyramid` | Nina | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Kheops-Pyramid.jpg) |
 | `great-zimbabwe` | Image taken by Jan Derk in 1997 in Zimbabwe. | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Great-Zimbabwe-2.jpg) |
 | `greek-independence` | Louis Dupré | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Dupre-Salona-1821.jpg) |
 | `gunpowder` | Jacek Halicki | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:2023_Czarny_proch_Vesuvit_LC_(3).jpg) |
+| `gupta-empire` | Map created from DEMIS Mapserver, which are public domain. Koba-chan. | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_the_Gupta_Empire.png) |
 | `guru-granth-sahib` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Sri_Guru_Granth_Sahib_Nishan.jpg) |
 | `guru-nanak` | Amritpal Singh Mann. Painted by Jaimal Singh Naqqash (1860–1916), Mehtab Singh Naqqash (1871–1940), and Hukum Singh. | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Mural_painting_of_Guru_Nanak_from_Gurdwara_Baba_Atal_Rai.jpg) |
 | `hadith-collections` | Bakkouz at Arabic Wikipedia | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Hadith_Books.jpg) |
@@ -157,6 +173,7 @@ as well as here, because most of these licences require it.
 | `han-dynasty` | The Real Bear | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Summer_Vacation_2007,_263,_Watchtower_In_The_Morning_Light,_Dunhuang,_Gansu_Province.jpg) |
 | `hangul` | Serg!o | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Hangeul-basic.png) |
 | `hannah-arendt` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Hannah_Arendt_1975_(cropped).jpg) |
+| `hawaiian-kingdom` | Dbenbenn | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Flag_of_Hawaii.svg) |
 | `hegel` | Jakob Schlesinger | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Jakob_Schlesinger_-_Hegel_1831.jpg) |
 | `heian-period` | Wikiwikiyarou | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:%E8%A5%BF%E5%AF%BA%E5%BE%A9%E5%85%83%E6%A8%A1%E5%9E%8B.jpg) |
 | `heidegger` | Willy Pragher | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Heidegger_2_(1960).jpg) |
@@ -182,6 +199,7 @@ as well as here, because most of these licences require it.
 | `hopper` | James S. Davis | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Commodore_Grace_M._Hopper,_USN_(covered).jpg) |
 | `horse-domestication` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Cave_painting_in_Doushe_cave,_Lorstan,_Iran,_8th_millennium_BC.JPG) |
 | `hubble` | Johan Hagemeyer | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Studio_portrait_photograph_of_Edwin_Powell_Hubble_(cropped).JPG) |
+| `human-genome` | U.S. Department of Energy, Human Genome Project | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Logo_HGP.jpg) |
 | `hume` | Allan Ramsay | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:David_Hume_Ramsay.jpg) |
 | `ibn-al-haytham` | Michel Bakni | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Ibn_Al-Haytham_portrait.jpg) |
 | `ibn-khaldun` | Reda Kerbush | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Bust_of_Ibn_Khaldun_(Casbah_of_Bejaia,_Algeria).jpg) |
@@ -194,6 +212,7 @@ as well as here, because most of these licences require it.
 | `industrial-revolution` | Société géologique de France | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:M%C3%A9moires_de_la_Soci%C3%A9t%C3%A9_g%C3%A9ologique_de_France_(IA_meymoiresdelaso00socig).pdf) |
 | `influenza-1918` | Otis Historical Archives, National Museum of Health and Medicine | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Emergency_hospital_during_Influenza_epidemic,_Camp_Funston,_Kansas_-_NCP_1603.jpg) |
 | `integrated-circuit` | cole8888, https://flickr.com/photos/187597251@N05/ (aka Cole L) | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:NXP_PCF8577C_LCD_driver_with_I%C2%B2C_(Colour_Corrected).jpg) |
+| `irish-independence` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Hogan%27s_Flying_Column.gif) |
 | `iron-age` | Unknown | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:HMB_Keltengrab_M%C3%BCnsingen-Rain_Grab_91.jpg) |
 | `iroquois-confederacy` | Rick Hill, Harold Johnson, and Tim Johnson | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Flag_of_the_Iroquois_Confederacy.svg) |
 | `islamic-calligraphy` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Maghribi_script_sura_5.jpg) |
@@ -206,9 +225,11 @@ as well as here, because most of these licences require it.
 | `kabir` | India Post, Government of India | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Kabir_(postage_stamp).jpg) |
 | `kalidasa` | NehalDaveND | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Kalidas.jpg) |
 | `kamakura-shogunate` | Quadell | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Kongorikishi_statue_from_14th_century_Japan.jpg) |
+| `kanem-bornu` | Megartonius | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Kanem%E2%80%93Bornu,_13th_century.png) |
 | `kant` | Becker | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Immanuel_Kant_-_Gemaelde_2.jpg) |
 | `kautilya` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Chanakya_artistic_depiction.jpg) |
 | `kepler` | August Köhler [1] | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:JKepler.jpg) |
+| `khmer-empire` | Jembezmamy | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Map-of-southeast-asia_900_CE.svg) |
 | `kingdom-of-aksum` | A.Savin | FAL | [Commons](https://commons.wikimedia.org/wiki/File:ET_Axum_asv2018-01_img48_Dungur.jpg) |
 | `kingdom-of-kush` | User Udimu on de.wikipedia | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Nubia_NASA-WW_places_german.jpg) |
 | `knuth` | Flickr user Jacob Appelbaum, uploaded to en.wikipedia by users BeSherman, Duozmo | CC BY-SA 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:KnuthAtOpenContentAlliance.jpg) |
@@ -217,10 +238,14 @@ as well as here, because most of these licences require it.
 | `kpg-extinction` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:KT-impact.jpg) |
 | `krishnamurti` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Jiddu_Krishnamurti_01.jpg) |
 | `kuk-swamp-agriculture` | NASA: JPL | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Kuk_New_Guinea_2002.jpg) |
+| `kula-ring` | Bendeguz | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Trobriand.png) |
+| `kushan-empire` | Map created from DEMIS Mapserver, which are public domain. Koba-chan. Reference: Schwartzberg Atlas, v. , p. 145. Map g | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_the_Kushan_Empire.png) |
 | `land-plants` | Unknown | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Plants.jpg) |
 | `laozi` | White whirlwind | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Laozi_(Chinese_characters).svg) |
 | `lapita-culture` | Torbenbrinker | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:PortVilaLapita.jpg) |
+| `last-glacial-maximum` | Unknown | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:CLIMAP.jpg) |
 | `last-glacial-period` | Alps_location_map.png: Lencer derivative work: Jo (talk) | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_Alpine_Glaciations.png) |
+| `latin-american-independence` | Ricardo Acevedo Bernal | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Congreso_de_C%C3%BAcuta.jpg) |
 | `lavoisier` | Jacques-Louis David | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:David_-_Portrait_of_Monsieur_Lavoisier_(cropped).jpg) |
 | `lenin` | Pavel Zhukov | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Vladimir_Lenin_in_July_1920_by_Pavel_Zhukov.jpg) |
 | `leonardo` | Attributed to Francesco Melzi | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Francesco_Melzi_-_Portrait_of_Leonardo.png) |
@@ -230,12 +255,14 @@ as well as here, because most of these licences require it.
 | `locke` | Godfrey Kneller | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:JohnLocke.png) |
 | `lovelace` | Margaret Sarah Carpenter | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Ada_Lovelace.jpg) |
 | `lusophone-independence` | Unknown | Copyrighted free use | [Commons](https://commons.wikimedia.org/wiki/File:MatasdorioOnzo.jpg) |
+| `mabo-decision` | Sodacan | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Coat_of_arms_of_the_Commonwealth_of_Australia.svg) |
 | `machu-picchu` | Pedro Szekely at https://www.flickr.com/photos/pedrosz/ | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Machu_Picchu,_Peru.jpg) |
 | `madhvacharya` | AR767 | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Shri_Madhvacharya_Vigraha,_Pajaka,_Udupi.jpg) |
 | `magnetic-compass` | Evan-Amos | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Plastic-compass.jpg) |
 | `mahabharata` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Kurukshetra.jpg) |
 | `mahavira` | Dayodaya | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Mahavir.jpg) |
 | `maize-domestication` | Spedona | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Corntassel_7095.jpg) |
+| `majapahit` | source: BP47Dhorifah, svg: Puck04 | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Naval_flag_of_Majapahit_Kingdom.svg) |
 | `maji-maji-rebellion` | Maximilian Dörrbecker (Chumwa) | CC BY-SA 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Maji_Maji_rebellion_-_de.png) |
 | `malaria` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Histopathology_of_malaria_exoerythrocytic_forms_in_liver_07G0024_lores.jpg) |
 | `mali-empire` | attributed to Abraham Cresques | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Catalan_Atlas_BNF_Sheet_6_Western_Sahara.jpg) |
@@ -262,10 +289,13 @@ as well as here, because most of these licences require it.
 | `mirabai` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Kangra_painting_of_Mirabai,_the_female_Bhakti_saint.jpg) |
 | `mlk` | Associated Press | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:The_Rev._Dr._Martin_Luther_King_Jr._Color_Portrait_(high_quality).jpg) |
 | `moai` | Aurbina | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Moai_Rano_raraku.jpg) |
+| `moche` | Unknown | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:H_Luna_Frisorestaurado_lou.jpg) |
 | `modernism` | H.Snyers | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:HSnyers_Louvrex_1933.jpg) |
 | `monet` | Nadar | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Claude_Monet_1899_Nadar_crop.jpg) |
+| `mongol-empire` | DannamEmpire | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Expansion_of_the_Mongol_Empire_1206%E2%80%931294.gif) |
 | `monte-alban` | Unknown | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Monte_Alb%C3%A1n_archeological_site,_Oaxaca.jpg) |
 | `moon-landing` | Neil Armstrong | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Aldrin_Apollo_11_original.jpg) |
+| `movable-type` | Willi Heidelbach | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Metal_movable_type.jpg) |
 | `mozart` | Barbara Krafft | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Wolfgang-amadeus-mozart_1.jpg) |
 | `mughal-empire` | nafSadh | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:MughalEmpire1700.svg) |
 | `mughal-painting` | Govardhan (attribution) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Govardhan._Jahangir_Visiting_the_Ascetic_Jadrup._ca._1616-20,_Musee_Guimet,_Paris.jpg) |
@@ -275,6 +305,7 @@ as well as here, because most of these licences require it.
 | `namibia-independence` | Diego Delso | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Duna_en_Sossusvlei,_Namibia,_2018-08-06,_DD_002.jpg) |
 | `napoleon` | Jacques-Louis David | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg) |
 | `nazca-lines` | BjarteSorensen | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Nazca_colibri.jpg) |
+| `neanderthal-extinction` | Berria | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Neanderthal_distribution.jpg) |
 | `neanderthals` | Luna04 | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Homo_sapiens_neanderthalensis.jpg) |
 | `neolithic-revolution` | Unknown | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Knapp_of_Howar_2.jpg) |
 | `new-zealand-wars` | DO'Neil at English Wikipedia | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Newzealandwarsmemorial.jpg) |
@@ -282,6 +313,7 @@ as well as here, because most of these licences require it.
 | `nietzsche` | Friedrich Hermann Hartmann | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Nietzsche187a.jpg) |
 | `norse-vinland` | User carlb on en: | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Carlb-ansemeadows-vinland-01.jpg) |
 | `norte-chico` | Dravinia | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Aspero.jpg) |
+| `olmec` | Unknown | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Olmec_Heartland_Overview_4.svg) |
 | `opium-wars` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Second_Opium_War-guangzhou.jpg) |
 | `oppenheimer` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Oppenheimer_(cropped).jpg) |
 | `oracle-bone-script` | Unknown | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Shang_dynasty_inscribed_scapula.jpg) |
@@ -297,14 +329,18 @@ as well as here, because most of these licences require it.
 | `panama-canal` | User:Stan Shebs | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Panama_Canal_Gatun_Locks.jpg) |
 | `paper-making` | Nikhilesh Haval | Copyrighted free use | [Commons](https://commons.wikimedia.org/wiki/File:Paperball_2.jpeg) |
 | `peopling-of-americas` | User:Dbachmann | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Early_migrations_mercator.svg) |
+| `permian-triassic-extinction` | Unknown | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Extinction_intensity.svg) |
 | `persian-miniature` | Possibly Sultan Muhammad | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Miraj_by_Sultan_Muhammad.jpg) |
 | `phidias-greek-sculpture` | Unknown artistUnknown artist | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Cavalcade_south_frieze_Parthenon_BM.jpg) |
 | `picasso-cubism` | Argentina. Revista Vea y Lea | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Pablo_picasso_1.jpg) |
 | `plague-of-athens` | Michiel Sweerts | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Plague_in_an_Ancient_City_LACMA_AC1997.10.1_(1_of_2).jpg) |
+| `plague-of-justinian` | Josse Lieferinxe | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Plaguet03.jpg) |
 | `plato` | Marie-Lan Nguyen | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Plato_Silanion_Musei_Capitolini_MC1377.jpg) |
+| `plato-on-socrates` | Photograph by Greg O'Beirne. Cropped by User:Tomisti | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:UWASocrates_gobeirne_cropped.jpg) |
 | `pleistocene` | Scotese, Christopher R.; Wright, Nicky M. | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Mollweide_Paleographic_Map_of_Earth,_21_Ka_(Late_Pleistocene_Age).png) |
 | `png-independence` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Papua_New_Guinea_map.png) |
 | `polio-vaccine` | USAID | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Poliodrops.jpg) |
+| `polynesian-navigation` | HongKongHuey | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Hokule%27aSailing2009.jpg) |
 | `potato-domestication` | Unknown | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Potato_sprout,_January_23,_2006.jpg) |
 | `potosi-silver` | Parallelepiped09 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Vista_de_la_Villa_Imperial_de_Potos%C3%AD.jpg) |
 | `prc-founded` | 邹健东 (Zou Jiandong) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:People%27s_Liberation_Army_occupied_the_presidential_palace_1949.jpg) |
@@ -315,15 +351,21 @@ as well as here, because most of these licences require it.
 | `pythagoras` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Pythagoras_in_the_Roman_Forum,_Colosseum.jpg) |
 | `qin-dynasty` | Itsmine | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Qin_empire_210_BCE.png) |
 | `qin-shi-huang` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Qinshihuangdi3.jpg) |
+| `qing-dynasty` | Original: zh:清朝政府 Vector: Sodacan | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Flag_of_China_(1889%E2%80%931912).svg) |
+| `quran-codified` | Gerd R. Puin | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:SanaaQuoranDoubleVersions.jpg) |
+| `railways` | Arkady Rose | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Puffingbilly-side.jpg) |
 | `ramanuja` | Kasyap | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Statue_Of_Equality_Samatha_Murthy.jpg) |
 | `ramanujan` | Konrad Jacobs | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Srinivasa_Ramanujan_-_OPC_-_2_(cleaned).jpg) |
 | `ramayana` | Sahibdin | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Battle_at_Lanka,_Ramayana,_Udaipur,_1649-53.jpg) |
+| `ramcharitmanas` | Jānak De (scribe) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:R%C4%81macaritam%C4%81nasa_manuscript_(19th_century).png) |
 | `rapa-nui-decline` | kallerna | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Easter_Island_5.jpg) |
 | `raphael` | Raphael | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Raffaello_Sanzio.jpg) |
 | `ravi-shankar` | Markgoff2972 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Ravi_Shankar.jpg) |
+| `reform-and-opening` | 张元柏 | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:2011_%E6%B7%B1%E5%9C%B3_%E8%8E%B2%E8%8A%B1%E5%B1%B1%E9%A1%B6%EF%BC%8D%E9%82%93%E5%B0%8F%E5%B9%B3%E5%A4%B4%E5%83%8F_-_panoramio.jpg) |
 | `reformation` | 95Thesen.jpg: User:Shizhao derivative work: 6birc (talk) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:95Thesen_facsimile_colour.png) |
 | `rembrandt` | Rembrandt | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Rembrandt_van_Rijn_-_Self-Portrait_-_Google_Art_Project.jpg) |
 | `renaissance` | Sandro Botticelli | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Sandro_Botticelli_046.jpg) |
+| `residential-schools` | BiblioArchives / LibraryArchives from Canada | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Study_period_at_Roman_Catholic_Indian_Residential_School,_Fort_Resolution,_NWT_(14112957392).jpg) |
 | `rigveda` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Rigveda_MS2097.jpg) |
 | `roman-empire` | Papageizichta | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Inscription_Theatre_Leptis_Magna_Libya.JPG) |
 | `romanticism` | Caspar David Friedrich | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg) |
@@ -333,8 +375,10 @@ as well as here, because most of these licences require it.
 | `russian-flu-1889` | Unknown | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Everyone_has_Influenza_-_The_Round_of_Doctors_and_Druggists.jpg) |
 | `russian-revolution` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Revoluci%C3%B3n-marzo-rusia--russianbolshevik00rossuoft.png) |
 | `sack-of-baghdad` | Sayf al-vâhidî et al. | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Bagdad1258.jpg) |
+| `safavid-empire` | Safavid_Flag.png: Orange Tuesday (talk) The original uploader was Orange Tuesday at English Wikipedia. derivative work: Himasaram (talk) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Safavid_Flag.svg) |
 | `sahelanthropus` | Didier Descouens | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Sahelanthropus_tchadensis_-_TM_266-01-060-1.jpg) |
 | `sahul-separation` | Maximilian Dörrbecker (Chumwa) | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_Sunda_and_Sahul.png) |
+| `samanid-empire` | Original file by Ro4444, edited by me | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_the_Samanid_amirate_at_the_death_of_Nasr_II,_943.svg) |
 | `samoa-independence` | Stephen Glauser | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Beach_on_Upolu_Island,_Samoa,_2009.jpg) |
 | `sappho` | Marie-Lan Nguyen | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Bust_Sappho_Musei_Capitolini_MC1164.jpg) |
 | `sartre` | User:T1980 | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Jean_Paul_Sartre_1967.jpg) |
@@ -346,9 +390,11 @@ as well as here, because most of these licences require it.
 | `second-plague-pandemic` | Rita Greer | FAL | [Commons](https://commons.wikimedia.org/wiki/File:20_The_Great_Plague.JPG) |
 | `second-sino-japanese-war` | Unknown photographer, Ministry of the Navy | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Japanese_Special_Naval_Landing_Forces_in_Battle_of_Shanghai_1937.jpg) |
 | `second-world-war` | User:Staberinde | CC BY-SA 3.0 de | [Commons](https://commons.wikimedia.org/wiki/File:Infobox_collage_for_WWII.PNG) |
+| `settlement-of-aotearoa` | Jorge Royan | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:New_Zealand_-_Maori_rowing_-_8444.jpg) |
 | `settlement-of-hawaii` | Staecker | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Hawaii_petroglyph_men.jpg) |
 | `settlement-of-rapa-nui` | kallerna | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Easter_Island_5.jpg) |
 | `shakespeare` | Attributed to John Taylor | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Shakespeare.jpg) |
+| `shang-dynasty` | Lamassu Design Gurdjieff (talk) | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Shang_dynasty.svg) |
 | `shannon` | Jacobs, Konrad | CC BY-SA 2.0 de | [Commons](https://commons.wikimedia.org/wiki/File:ClaudeShannon_MFO3807.jpg) |
 | `sharpeville-massacre` | Godfrey Rubens (painter and photographer) .mw-parser-output .messagebox{margin:4px 0;width:auto;border-collapse:collapse;border:2px solid var(--border-color-progressive,#6485d1);background-color:var(--background-color-neutral-subtle,#fbfcff);color:var(--color-base,#202122);box-sizing:border-box;border-inline-start-width:8px}.mw-parser-output .messagebox.mbox-small{font-size:88%;line-height:1.25em}.mw-parser-output .mbox-warning,.mw-parser-output .mbox-speedy{border:2px solid var(--border-color-error,#b22222);background:var(--background-color-error-subtle,#ffdbdb);border-inline-start-width:8px}.mw-parser-output .mbox-serious,.mw-parser-output .mbox-delete,.mw-parser-output .mbox-stop{border:2px solid var(--border-color-error,#b22222);border-inline-start-width:8px}.mw-parser-output .mbox-issue,.mw-parser-output .mbox-content{border:2px solid #f28500;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output .mbox-query,.mw-parser-output .mbox-style{border:2px solid #f4c430;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output .mbox-shit{border:2px solid #960;border-inline-start-width:8px}.mw-parser-output .mbox-license{border:2px solid #88a;border-inline-start-width:initial}.mw-parser-output .mbox-legal{border:2px solid var(--border-color-notice,#666);background:var(--background-color-base,#fff);border-inline-start-width:8px}.mw-parser-output .mbox-honor{border:2px solid #ca3;background:var(--background-color-warning-subtle,#fcf4db);border-inline-start-width:8px}.mw-parser-output .mbox-growth{border:2px solid #8d4;background:var(--background-color-success-subtle,#d5fdf4);border-inline-start-width:8px}.mw-parser-output .mbox-move{border:2px solid #93c;border-inline-start-width:8px}.mw-parser-output .mbox-protection,.mw-parser-output .mbox-message{border:2px solid var(--border-color-base,#aaa);border-inline-start-width:8px}.mw-parser-output .messagebox .mbox-text{border:none;padding:0.25em 0.9em;width:100%}.mw-parser-output .messagebox .mbox-image{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0.9em;padding-inline-end:0;text-align:center}.mw-parser-output .messagebox .mbox-imageright{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0;padding-inline-end:0.9em;text-align:center}.mw-parser-output .messagebox .mbox-empty-cell{border:none;padding:0;width:1px}.mw-parser-output .messagebox .mbox-invalid-type{text-align:center}@media(min-width:720px){.mw-parser-output .messagebox{margin:4px 10%}.mw-parser-output .messagebox.mbox-small{clear:right;float:right;margin:4px 0 4px 1em;width:238px}}body.skin--responsive .mw-parser-output table.messagebox img{max-width:none!important}This work is free and may be used by anyone for any purpose. If you wish to use this content, you do not need to request permission as long as you follow any licensing requirements mentioned on this page. The Wikimedia Foundation has received an e-mail confirming that the copyright holder has approved publication under the terms mentioned on this page. This correspondence has been reviewed by a Volunteer Response Team (VRT) member and stored in our permission archive. The correspondence is available to trusted volunteers as ticket #2009032410048598. If you have questions about the archived correspondence, please use the VRT noticeboard. Ticket link: https://ticket.wikimedia.org/otrs/index.pl?Action=AgentTicketZoom&TicketNumber=2009032410048598 Find other files from the same ticket: | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Murder_at_Sharpeville_21_March_1960.jpg) |
 | `shivaji` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Shivaji_British_Museum.jpg) |
@@ -357,13 +403,18 @@ as well as here, because most of these licences require it.
 | `socrates` | Copy of Lysippos (?) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Socrates_Louvre.jpg) |
 | `sogdian-merchants` | A.Davey from Portland, Oregon, EE UU | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Sogdian_Tribute_Bearers_on_the_Apadana_Staircase_16_(Best_Viewed_Size_%22Large%22)_(4689076272).jpg) |
 | `song-dynasty` | derivative work: Augusta 89 | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:China_-_Song_Dynasty-fr.svg) |
+| `songhai-empire` | HetmanTheResearcher | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_the_Songhay_Empire.png) |
+| `south-africa-1994` | Kingkongphoto & www.celebrity-photos.com from Laurel | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Nelson_Mandela_1994.jpg) |
 | `south-sudan-independence` | Goran_tek-en | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:South_Sudan_topographic_map.svg) |
 | `soviet-central-asia` | Cacahuate, Russian translation by Peter Fitzgerald | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_Central_Asia.svg) |
 | `soviet-dissolution` | Yuriy Kuydin / Юрий Куйдин | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:RIAN_archive_140800_Signing_of_Protocol_on_Establishing_Commonwealth_of_Independent_States.jpg) |
 | `soweto-uprising` | Sam Nzima | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Mbuyisa_Makhubu_carries_Hector_Pieterson_at_Soweto_Uprising.jpg) |
 | `spinoza` | anonymous | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Spinoza.jpg) |
+| `srivijaya` | Gunawan Kartapranata | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Srivijaya_Empire.svg) |
 | `steam-engine` | Витольд Муратов | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:%D0%93%D0%BE%D1%80%D0%B8%D0%B7%D0%BE%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D1%80%D0%BD%D0%B0%D1%8F_%D0%BF%D0%B0%D1%80%D0%BE%D0%B2%D0%B0%D1%8F_%D0%BC%D0%B0%D1%88%D0%B8%D0%BD%D0%B0.JPG) |
+| `stolen-generations` | The original uploader was Bjenks at English Wikipedia. | Attribution | [Commons](https://commons.wikimedia.org/wiki/File:QVB135lg.jpg) |
 | `stone-tools` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:National_park_stone_tools.jpg) |
+| `sui-dynasty` | Ian Kiu | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Cheui_Dynasty_581_CE.png) |
 | `sun-yat-sen` | 上海波尔照相馆 | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:%E5%AD%99%E4%B8%AD%E5%B1%B1%E8%82%96%E5%83%8F.jpg) |
 | `surdas` | India Post, Government of India | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Surdas.jpg) |
 | `sushruta` | Unknown | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Susruta._Pen_drawing._Wellcome_V0006619.jpg) |
@@ -374,6 +425,8 @@ as well as here, because most of these licences require it.
 | `talmud` | Reuvenk | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Talmud_set.JPG) |
 | `tang-dynasty` | Ian Kiu | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Tang_Dynasty_circa_700_CE.png) |
 | `tansen` | AnonymousUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Tansen_of_Gwalior._(11.8x6.7cm)_Mughal._1585-90._National_Museum,_New_Delhi..jpg) |
+| `telegraph` | (c) 2006 Zubro | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Morse_Telegraph_1837.jpg) |
+| `telescope` | Adriaen van de Venne | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Emblemata_1624.jpg) |
 | `tenochtitlan` | thomas kole | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Vista_completa_de_Tenochtitl%C3%A1n.jpg) |
 | `teotihuacan` | Hdlrosa | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:ZA77_Teotihuac%C3%A1n_edo_de_mex_Herberto_de_la_rosa.jpg) |
 | `tesla` | Napoleon Sarony | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Tesla_circa_1890.jpeg) |
@@ -384,14 +437,17 @@ as well as here, because most of these licences require it.
 | `three-kingdoms` | Ian Kiu | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Saam_Gwok_262_CE.png) |
 | `timbuktu` | Senani P | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Timbuktu_Mosque_Sankore.jpg) |
 | `timur` | 1405-1409 artist | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Timur_seated_(earliest_known_portrait),_Timurid_genealogy,_1405-1409,_Samarkand_(TSMK,_H2152).jpg) |
+| `timurid-empire` | DigitalNomadWikiKzRu | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Timurid_State.png) |
 | `tiwanaku` | Mhwater | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Zonnepoort_tiwanaku.jpg) |
 | `toba-eruption` | NASA Landsat | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Toba_zoom.jpg) |
 | `tolstoy` | Sergei Prokudin-Gorskii | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:L.N.Tolstoy_Prokudin-Gorsky.jpg) |
+| `trail-of-tears` | http://en.wikipedia.org/wiki/User:Cculber007 | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:TrailofTearsMemorial-3.jpg) |
 | `trans-saharan-trade` | Unknown | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:A_long_line_of_men_are_marching_with_their_hands_thrust_thro_Wellcome_V0041263.jpg) |
 | `transatlantic-slave-trade` | Plymouth Chapter of the Society for Effecting the Abolition of the Slave Trade | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Slaveshipposter.jpg) |
 | `transistor` | ArnoldReinhold | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Transistors.agr.jpg) |
 | `treaty-of-waitangi` | William Hobson, James Freeman, and James Busby (English version); Henry Williams and Edward Williams (Māori translation) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Treatyofwaitangi.jpg) |
 | `tuberculosis` | Photo Credit: Content Providers(s): CDC/Dr. George Kubica | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:TB_Culture.jpg) |
+| `tui-tonga-empire` | Thommy | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Flag_of_Tonga_(1862-1866).svg) |
 | `tulsidas` | Mohan, 1949 | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Goswami_Tulsidas_Awadhi_Hindi_Poet.jpg) |
 | `turing` | Possibly Arthur Reginald Chaffin (1893-1954) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Alan_Turing_Aged_16.jpg) |
 | `tycho-brahe` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Portr%C3%A4tt_av_Tycho_Brahe_-_Skoklosters_slott_-_90153.tif) |
@@ -399,14 +455,17 @@ as well as here, because most of these licences require it.
 | `upanishads` | Unknown authorUnknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Guru_and_DiscipleI.jpg) |
 | `us-civil-war` | Excel23 | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:CivilWarUSAColl.png) |
 | `us-independence` | original: w:Second Continental Congress; reproduction: William Stone | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:United_States_Declaration_of_Independence.jpg) |
+| `uyghur-khaganate` | 8th century Manichean painter | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Conversion_of_B%C3%B6g%C3%BC_Qaghan_(759-780_CE)_to_Manicheism_in_762_(detailed_of_B%C3%B6g%C3%BC_Qaghan_in_a_suit_of_armour,_kneeling_to_a_Manichean_high_priest).jpg) |
 | `vaccination` | SELF Magazine | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Young_girl_about_to_receive_a_vaccine_in_her_upper_arm_(48545990252).jpg) |
 | `valmiki` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Valmiki_Ramayana.jpg) |
 | `van-gogh` | Vincent van Gogh | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Self-portrait_-_Vincent_van_Gogh.jpg) |
 | `variolation` | George Kirtland | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Inoculation_day_16.png) |
 | `vietnam-independence` | Warner Pathé News | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:French_indochina_1953_12_1.png) |
+| `vijayanagara-empire` | Avantiputra7 | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Vijayanagara_Empire_c.1485.png) |
 | `virgil` | Armando Mancini | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Parco_della_Grotta_di_Posillipo5_(crop).jpg) |
 | `vivekananda` | The original uploader was Dziewa at English Wikipedia. | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Swami_Vivekananda-1893-09-signed.jpg) |
 | `von-neumann` | Unknown | Attribution | [Commons](https://commons.wikimedia.org/wiki/File:JohnvonNeumann-LosAlamos.jpg) |
+| `wari` | QQuantum | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_Wari_and_Tiawaku.svg) |
 | `warring-states` | China_Warring_States_Period.jpg: English Wikipedia, original upload 7 November 2004 by Yeu Ninje derivative work: Bility (talk) | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:China_Warring_States_Period.png) |
 | `washington` | Gilbert Stuart | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Gilbert_Stuart_Williamstown_Portrait_of_George_Washington.jpg) |
 | `wittgenstein` | Moritz Nähr | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Ludwig_Wittgenstein.jpg) |
