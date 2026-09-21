@@ -84,7 +84,7 @@ body {
   font-size: 13px;
 }
 
-.search__input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.search__input:focus-visible { outline: 2px solid var(--select); outline-offset: 1px; }
 
 .search__key {
   position: absolute;
@@ -165,7 +165,7 @@ body {
   text-align: center;
 }
 
-.range__input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.range__input:focus-visible { outline: 2px solid var(--select); outline-offset: 1px; }
 
 .range__field { position: relative; display: flex; align-items: center; }
 
@@ -253,8 +253,8 @@ body {
 }
 
 .range__summary::after { content: '\25be'; color: var(--ink-faint); }
-.range__summary[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
-.range__summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.range__summary[aria-expanded="true"] { border-color: var(--select); color: var(--select); }
+.range__summary:focus-visible { outline: 2px solid var(--select); outline-offset: 1px; }
 
 .range__go {
   min-height: var(--control-h);
@@ -299,8 +299,8 @@ body {
 .eras__rule { display: none; }
 
 .eras button:hover { border-color: var(--rule-strong); color: var(--ink); }
-.eras button[aria-current="true"] { border-color: var(--accent); color: var(--accent); }
-.eras button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.eras button[aria-current="true"] { border-color: var(--select); color: var(--select); }
+.eras button:focus-visible { outline: 2px solid var(--select); outline-offset: 1px; }
 
 /* ----------------------------------------------------------------- stage */
 
@@ -383,11 +383,12 @@ body[data-year-view="true"] .stage { padding-top: 0; }
  * selection itself.
  */
 ::selection {
-  /* A wash rather than a solid block. At full strength the accent turned a
-     selected date into a bright slab - most of what you see on tapping the
-     field, since it selects its own contents on focus. The text keeps its
-     normal colour so it stays legible over the tint. */
-  background: color-mix(in srgb, var(--accent) 28%, transparent);
+  /* A wash rather than a solid block. At full strength this turned a selected
+     date into a bright slab - most of what you see on tapping the field, since
+     it selects its own contents on focus. The text keeps its normal colour so
+     it stays legible over the tint: 9.4:1 light, 6.2:1 dark, with the wash
+     itself about 1.6:1 against the field so it is clearly there. */
+  background: color-mix(in srgb, var(--select) 34%, transparent);
   color: var(--ink);
 }
 
@@ -494,8 +495,8 @@ body[data-year-view="true"] .stage { padding-top: 0; }
   .eras button:hover { border-color: transparent; }
 
   .eras button[aria-current="true"] {
-    border-bottom-color: var(--accent);
-    color: var(--accent);
+    border-bottom-color: var(--select);
+    color: var(--select);
   }
 
   /* The slash hint is for a keyboard nobody has here, and it costs the search

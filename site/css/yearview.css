@@ -133,7 +133,7 @@
 
 .yearview__empty { color: var(--ink-faint); }
 
-.yearview :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.yearview :focus-visible { outline: 2px solid var(--select); outline-offset: 2px; }
 
 @media (max-width: 560px) {
   /* The header was taking more than half the screen: the year on one line,

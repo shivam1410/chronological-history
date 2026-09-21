@@ -39,7 +39,7 @@ export function createMinimap(canvas, { entries = [], lanes = [], onWindow } = {
       bg: read('--bg-sunken', '#f2f0ea'),
       ink: read('--ink', '#1c1a17'),
       rule: read('--rule-strong', '#c4bdaf'),
-      accent: read('--accent', '#8a5a2b'),
+      select: read('--select', '#116b86'),
       lanes: colours,
     };
   }
@@ -79,7 +79,7 @@ export function createMinimap(canvas, { entries = [], lanes = [], onWindow } = {
     ctx.fillRect(b, 0, width - b, height);
     ctx.globalAlpha = 1;
 
-    ctx.strokeStyle = theme.accent;
+    ctx.strokeStyle = theme.select;
     ctx.lineWidth = 1.5;
     ctx.strokeRect(a + 0.5, 1, Math.max(2, b - a - 1), height - 2);
   }

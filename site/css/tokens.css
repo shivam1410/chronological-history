@@ -11,9 +11,18 @@
   --ink-faint: #6b7280;
   --rule: #dde2e9;
   --rule-strong: #c2cad4;
-  /* Dark enough that white text on it clears 4.5:1 - the selected bar in the
-     card strip and the text-selection highlight both put bg on accent. */
+  /* The warm note: links, hovers, a contested flag, the things worth
+     looking at twice. Dark enough that white text on it clears 4.5:1. */
   --accent: #a4660f;
+
+  /* The interaction colour: what is selected, what is open, what has
+     focus, and the wash behind selected text. Kept off the amber accent,
+     which stays on content, because a selected control and an emphasised
+     word are different claims - and because an amber pill reads as a
+     warning. Hue 194 against amber's 35 is nearly the opposite side of
+     the wheel, so the two never look like a near-miss of each other.
+     5.2:1 on the sunken field the date pill sits on. */
+  --select: #116b86;
 
   /* Lane hues. Spaced around the wheel and kept separable under protanopia
      and deuteranopia, which is why the three warm earth tones - India,
@@ -66,6 +75,7 @@
     --rule: #262c35;
     --rule-strong: #3a424e;
     --accent: #f0a94c;
+    --select: #5cc9e6;
 
     --lane-earth-life: #8fb56e;
     --lane-americas: #5ec79b;
@@ -93,6 +103,7 @@
   --rule: #262c35;
   --rule-strong: #3a424e;
   --accent: #f0a94c;
+  --select: #5cc9e6;
 
   --lane-earth-life: #8fb56e;
   --lane-americas: #5ec79b;
