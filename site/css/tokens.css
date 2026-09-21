@@ -3,30 +3,35 @@
 :root {
   color-scheme: light dark;
 
-  --bg: #fbfaf7;
-  --bg-raised: #ffffff;
-  --bg-sunken: #f2f0ea;
-  --ink: #1c1a17;
-  --ink-soft: #57524a;
-  --ink-faint: #8b847a;
-  --rule: #ddd8ce;
-  --rule-strong: #c4bdaf;
-  --accent: #8a5a2b;
+  --bg: #ffffff;
+  --bg-raised: #f4f6f9;
+  --bg-sunken: #e9edf3;
+  --ink: #14171c;
+  --ink-soft: #4a5261;
+  --ink-faint: #6b7280;
+  --rule: #dde2e9;
+  --rule-strong: #c2cad4;
+  /* Dark enough that white text on it clears 4.5:1 - the selected bar in the
+     card strip and the text-selection highlight both put bg on accent. */
+  --accent: #a4660f;
 
-  /* Lane hues, chosen to stay separable under protanopia and deuteranopia. */
-  --lane-earth-life: #6b7f5c;
-  --lane-india: #b4652a;
-  --lane-east-asia: #a8434a;
-  --lane-central-asia: #8a6d3b;
-  --lane-west-asia: #4f7a8a;
-  --lane-europe: #5a5f9c;
-  --lane-africa: #927339;
-  --lane-americas: #3f7a63;
-  --lane-oceania: #7a5a8a;
-  --lane-science: #3d7ea6;
-  --lane-philosophy: #8a6aa8;
-  --lane-art-culture: #a1614f;
-  --lane-global: #6e6a63;
+  /* Lane hues. Spaced around the wheel and kept separable under protanopia
+     and deuteranopia, which is why the three warm earth tones - India,
+     Africa and Central Asia - are pulled apart by saturation as well as hue
+     rather than sitting together as three oranges. */
+  --lane-earth-life: #55803c;
+  --lane-americas: #1f7d5c;
+  --lane-west-asia: #17798c;
+  --lane-science: #1f6bb0;
+  --lane-europe: #4a53ad;
+  --lane-oceania: #7a4aa8;
+  --lane-philosophy: #a33f96;
+  --lane-east-asia: #bf3350;
+  --lane-art-culture: #b0522f;
+  --lane-india: #a4611a;
+  --lane-africa: #8a6a12;
+  --lane-central-asia: #7d6a4a;
+  --lane-global: #5f6773;
 
   --font-ui: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-text: ui-serif, Georgia, "Times New Roman", serif;
@@ -52,54 +57,54 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #14130f;
-    --bg-raised: #1e1c17;
-    --bg-sunken: #0d0c0a;
-    --ink: #ece7dd;
-    --ink-soft: #a9a294;
-    --ink-faint: #746d61;
-    --rule: #2e2b24;
-    --rule-strong: #464137;
-    --accent: #d99b5c;
+    --bg: #0e1014;
+    --bg-raised: #161a20;
+    --bg-sunken: #1b212a;
+    --ink: #e6e9ee;
+    --ink-soft: #a3acba;
+    --ink-faint: #7d8796;
+    --rule: #262c35;
+    --rule-strong: #3a424e;
+    --accent: #f0a94c;
 
-    --lane-earth-life: #9ab387;
-    --lane-india: #e0965a;
-    --lane-east-asia: #dd7a80;
-    --lane-central-asia: #c7a36a;
-    --lane-west-asia: #7fb4c6;
-    --lane-europe: #9298dd;
-    --lane-africa: #cfa963;
-    --lane-americas: #6bb394;
-    --lane-oceania: #b48cc4;
-    --lane-science: #6fb3d6;
-    --lane-philosophy: #b69ad0;
-    --lane-art-culture: #cf8f79;
-    --lane-global: #a7a299;
+    --lane-earth-life: #8fb56e;
+    --lane-americas: #5ec79b;
+    --lane-west-asia: #58bccd;
+    --lane-science: #6aaef2;
+    --lane-europe: #8e9bf2;
+    --lane-oceania: #b78ce4;
+    --lane-philosophy: #d98fd0;
+    --lane-east-asia: #ef7f97;
+    --lane-art-culture: #e8896b;
+    --lane-india: #f0a552;
+    --lane-africa: #ddc158;
+    --lane-central-asia: #b9a481;
+    --lane-global: #9aa3b0;
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #14130f;
-  --bg-raised: #1e1c17;
-  --bg-sunken: #0d0c0a;
-  --ink: #ece7dd;
-  --ink-soft: #a9a294;
-  --ink-faint: #746d61;
-  --rule: #2e2b24;
-  --rule-strong: #464137;
-  --accent: #d99b5c;
+  --bg: #0e1014;
+  --bg-raised: #161a20;
+  --bg-sunken: #1b212a;
+  --ink: #e6e9ee;
+  --ink-soft: #a3acba;
+  --ink-faint: #7d8796;
+  --rule: #262c35;
+  --rule-strong: #3a424e;
+  --accent: #f0a94c;
 
-  --lane-earth-life: #9ab387;
-  --lane-india: #e0965a;
-  --lane-east-asia: #dd7a80;
-  --lane-central-asia: #c7a36a;
-  --lane-west-asia: #7fb4c6;
-  --lane-europe: #9298dd;
-  --lane-africa: #cfa963;
-  --lane-americas: #6bb394;
-  --lane-oceania: #b48cc4;
-  --lane-science: #6fb3d6;
-  --lane-philosophy: #b69ad0;
-  --lane-art-culture: #cf8f79;
-  --lane-global: #a7a299;
+  --lane-earth-life: #8fb56e;
+  --lane-americas: #5ec79b;
+  --lane-west-asia: #58bccd;
+  --lane-science: #6aaef2;
+  --lane-europe: #8e9bf2;
+  --lane-oceania: #b78ce4;
+  --lane-philosophy: #d98fd0;
+  --lane-east-asia: #ef7f97;
+  --lane-art-culture: #e8896b;
+  --lane-india: #f0a552;
+  --lane-africa: #ddc158;
+  --lane-central-asia: #b9a481;
+  --lane-global: #9aa3b0;
 }
