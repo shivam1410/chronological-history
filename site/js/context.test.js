@@ -1,6 +1,8 @@
 import { test, describe } from 'node:test';
 import assert from 'node:assert/strict';
-import { elsewhere, linearView, panWindow, sameLane, ticksFor, windowFor } from './context.js';
+import {
+  elsewhere, linearView, packStrip, panWindow, sameLane, ticksFor, windowFor,
+} from './context.js';
 
 const e = (id, lane, sMin, eMax, imp = 3) => ({
   id, title: id, kind: 'polity', lane, region: lane, alias: '',
@@ -168,5 +170,59 @@ describe('ticksFor density', () => {
     const t = ticksFor(-1401, -1, { count: 5 });
     const gaps = t.slice(1).map((y, i) => y - t[i]);
     assert.equal(new Set(gaps).size, 1, `uneven ladder: ${t}`);
+  });
+});
+
+describe('packStrip keeps the card’s own entry in its own strip', () => {
+  // Akbar's card, as it shipped: five contemporaries in the North India lane,
+  // all overlapping each other and him, so every one of them takes a row.
+  // packLane sorts by position, so being first in the array bought nothing
+  // and the fourth row filled before Akbar's turn came.
+  const AKBAR = e('akbar', 'north-india', 1542, 1605, 5);
+  const CROWD = [
+    e('vijayanagara', 'north-india', 1336, 1646, 4),
+    e('surdas', 'north-india', 1478, 1583, 3),
+    e('tulsidas', 'north-india', 1497, 1623, 4),
+    e('mirabai', 'north-india', 1498, 1557, 3),
+    e('kabir-collections', 'north-india', 1570, 1604, 3),
+    e('adi-granth', 'north-india', 1604, 1604, 3),
+  ];
+  const view = linearView(1520, 1620, 100);
+  const opts = { maxRows: 4, minWidthPx: 2, gapPx: 0.8 };
+
+  const ids = (packed) => packed.rows.flat().map((item) => item.entry.id);
+
+  test('the entry is present even when neighbours would fill every row', () => {
+    assert.ok(ids(packStrip(AKBAR, CROWD, view, opts)).includes('akbar'));
+  });
+
+  test('the entry is on the first row, alone', () => {
+    const packed = packStrip(AKBAR, CROWD, view, opts);
+    assert.deepEqual(packed.rows[0].map((item) => item.entry.id), ['akbar']);
+  });
+
+  test('neighbours share the rows that are left, and no more', () => {
+    const packed = packStrip(AKBAR, CROWD, view, opts);
+    assert.ok(packed.rows.length <= opts.maxRows,
+      `${packed.rows.length} rows exceeds the cap`);
+  });
+
+  test('neighbours that do not fit are counted, not dropped silently', () => {
+    const packed = packStrip(AKBAR, CROWD, view, opts);
+    const shown = ids(packed).length;
+    assert.equal(shown + packed.hidden, CROWD.length + 1);
+  });
+
+  test('a lane with room keeps every neighbour', () => {
+    // Inside the window: cull drops anything outside it before packing, and
+    // what is culled is not overflow.
+    const quiet = [e('before', 'north-india', 1525, 1538, 3)];
+    const packed = packStrip(AKBAR, quiet, view, opts);
+    assert.equal(packed.hidden, 0);
+    assert.deepEqual(ids(packed).sort(), ['akbar', 'before']);
+  });
+
+  test('no neighbours at all still yields the entry', () => {
+    assert.deepEqual(ids(packStrip(AKBAR, [], view, opts)), ['akbar']);
   });
 });

@@ -7,8 +7,7 @@
  * have in memory.
  */
 
-import { linearView, panWindow, ticksFor, windowFor } from './context.js';
-import { packLane } from './layout.js';
+import { linearView, packStrip, panWindow, ticksFor, windowFor } from './context.js';
 import { formatYear } from './format.js';
 
 const FOCUSABLE = 'a[href], button, [tabindex]:not([tabindex="-1"])';
@@ -310,7 +309,7 @@ function laneStrip(entry, neighbours, onNavigate) {
       axis.append(tick);
     }
 
-    const packed = packLane([entry, ...neighbours], view, {
+    const packed = packStrip(entry, neighbours, view, {
       maxRows: STRIP_ROWS,
       minWidthPx: STRIP_MIN_W,
       gapPx: STRIP_GAP,

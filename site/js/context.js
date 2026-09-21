@@ -9,6 +9,7 @@
  */
 
 import { astro, fromAstroYear } from './format.js';
+import { packLane } from './layout.js';
 import { niceStep } from './timescale.js';
 import { overlapping } from './slice.js';
 
@@ -92,4 +93,31 @@ export function ticksFor(from, to, { count = 5 } = {}) {
   // to collide in a 380px card. Thin by halves until the count is honoured.
   while (out.length > count + 1) out = out.filter((_, i) => i % 2 === 0);
   return out;
+}
+
+/**
+ * Rows for the strip: the entry on its own line, its neighbours beneath.
+ *
+ * The entry needs a reserved row rather than a place in the queue. packLane
+ * sorts by position before it packs, so handing it `[entry, ...neighbours]`
+ * privileged the entry not at all - and where a card's neighbours all overlap
+ * each other, every one of them takes a row of its own. Four rows and nine
+ * overlapping bars meant the card's own entry could land in the overflow and
+ * vanish from its own strip. Akbar's card did exactly that: surrounded by
+ * Vijayanagara, Surdas, Tulsidas, Mirabai and the Kabir collections, the one
+ * entry the card was about was the one missing from it.
+ *
+ * Putting it first also gives the strip a fixed shape - you are the top line,
+ * everyone else is below - instead of a position that moves card to card.
+ */
+export function packStrip(entry, neighbours, view, { maxRows = 4, ...rest } = {}) {
+  const self = packLane(entry ? [entry] : [], view, { ...rest, maxRows: 1 });
+  const around = packLane(neighbours, view, {
+    ...rest,
+    maxRows: Math.max(0, maxRows - self.rows.length),
+  });
+  return {
+    rows: [...self.rows, ...around.rows],
+    hidden: self.hidden + around.hidden,
+  };
 }
