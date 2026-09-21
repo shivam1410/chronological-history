@@ -208,6 +208,12 @@ body {
   overflow-y: auto;
 }
 
+/* The end field's list hangs from its right edge. Anchored left it ran off
+   a 375px screen - the field starts two thirds of the way across the row, and
+   210px of list does not fit in what is left - so the labels that explain the
+   dates ("Cambrian explosion", "Iron Age") were the part cut off. */
+.range__field:last-of-type .range__list { left: auto; right: 0; }
+
 .range__option {
   display: flex;
   align-items: baseline;

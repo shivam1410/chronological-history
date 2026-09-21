@@ -93,6 +93,12 @@ export function createControls({
     else rangeForm.dispatchEvent(new Event('submit', { cancelable: true }));
   }
 
+  /** input -> its anchor list, so the summary button can open one. */
+  const dropdowns = new Map();
+  // Set when a submit should step to the other end of the range instead of
+  // closing the panel. See choose().
+  let advanceTo = null;
+
   function attachDropdown(input) {
     const field = document.createElement('div');
     field.className = 'range__field';
@@ -123,6 +129,13 @@ export function createControls({
     const choose = (i) => {
       input.value = YEAR_ANCHORS[i][0];
       close();
+      // On a phone the panel holds both ends of the range, and a start on its
+      // own is half an answer. Apply it, then step to the end list rather
+      // than closing: a whole window is two taps from the summary button, and
+      // stopping after the first still leaves the start applied.
+      if (input === fromInput && rangeForm.dataset.open === 'true') {
+        advanceTo = toInput;
+      }
       submitRange();
     };
 
@@ -191,10 +204,33 @@ export function createControls({
     input.setAttribute('autocomplete', 'off');
 
     field.append(toggle, list);
+
+    return {
+      show,
+      close,
+      /* Blur closes the list when the field was focused to open it. The
+         summary button opens it without focus - see its handler - so
+         dismissal needs a tap outside as well. */
+      closeOnOutside(target) {
+        if (!list.hidden && !field.contains(target)) close();
+      },
+    };
   }
 
-  attachDropdown(fromInput);
-  attachDropdown(toInput);
+  dropdowns.set(fromInput, attachDropdown(fromInput));
+  dropdowns.set(toInput, attachDropdown(toInput));
+
+  document.addEventListener('pointerdown', (event) => {
+    for (const list of dropdowns.values()) list.closeOnOutside(event.target);
+    // A tap outside puts the whole phone panel away, not just the list it was
+    // holding - otherwise dismissing the dropdown leaves an orphan row of
+    // fields behind it. The tap still reaches whatever it landed on.
+    const open = rangeSummary && rangeForm.dataset.open === 'true';
+    if (open && !rangeForm.contains(event.target)
+        && !rangeSummary.contains(event.target)) {
+      setRangeOpen(false);
+    }
+  }, true);
 
   // ---- search ------------------------------------------------------------
 
@@ -283,6 +319,13 @@ export function createControls({
   searchInput.addEventListener('blur', () => setTimeout(closeResults, 120));
 
   document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      // Focus may be on the summary button rather than in a field, so neither
+      // the field's nor the form's own Escape handler is always listening.
+      for (const list of dropdowns.values()) list.close();
+      if (rangeSummary && rangeForm.dataset.open === 'true') setRangeOpen(false);
+      return;
+    }
     if (event.key === '/' && document.activeElement !== searchInput) {
       const tag = document.activeElement?.tagName;
       if (tag === 'INPUT' || tag === 'TEXTAREA') return;
@@ -300,6 +343,8 @@ export function createControls({
 
   rangeForm.addEventListener('submit', (event) => {
     event.preventDefault();
+    const next = advanceTo;
+    advanceTo = null;
     const from = parseYearInput(fromInput.value);
     const to = parseYearInput(toInput.value);
     if (from === null || to === null) return;
@@ -307,7 +352,8 @@ export function createControls({
     // edited, so applying first leaves the summary showing the old window.
     fromInput.blur();
     toInput.blur();
-    setRangeOpen(false);
+    if (next) dropdowns.get(next).show();
+    else setRangeOpen(false);
     onRange?.(Math.min(from, to), Math.max(from, to));
   });
 
@@ -318,16 +364,32 @@ export function createControls({
   function setRangeOpen(open) {
     if (!rangeSummary) return;
     rangeSummary.setAttribute('aria-expanded', String(open));
-    if (open) rangeForm.dataset.open = 'true';
-    else delete rangeForm.dataset.open;
+    if (open) {
+      rangeForm.dataset.open = 'true';
+    } else {
+      delete rangeForm.dataset.open;
+      for (const list of dropdowns.values()) list.close();
+    }
   }
 
   if (rangeSummary) {
     rangeSummary.addEventListener('click', () => {
       const open = rangeSummary.getAttribute('aria-expanded') !== 'true';
       setRangeOpen(open);
-      // Focus only on opening, and only once the row is displayed.
-      if (open) fromInput.focus();
+      /*
+       * Open the choices with the row, not one tap behind it.
+       *
+       * Tapping a button labelled with the window should put the dates in
+       * front of you; it used to reveal two text fields, and reaching the
+       * anchor list - which is the point, since "2.58 Ma" is a value nobody
+       * would think to type - took a second tap on a 20px chevron.
+       *
+       * Focus stays on the button rather than moving to the field, because
+       * focusing a text input raises the on-screen keyboard, which would
+       * cover the list that just opened. Typing is still available: tap the
+       * field itself.
+       */
+      if (open) dropdowns.get(fromInput).show();
     });
 
     rangeForm.addEventListener('keydown', (event) => {
