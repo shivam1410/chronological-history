@@ -1,0 +1,42 @@
+# Days the ground moved.
+#
+# The dataset had one volcanic eruption in 4.54 billion years - Toba, at 74 ka
+# - and no earthquake, flood or eruption anywhere in recorded history. Thera,
+# Vesuvius, Lisbon 1755, Tambora 1815 and Krakatoa 1883 were all absent, which
+# left the Europe lane holding two entries for the whole of the first five
+# centuries CE.
+#
+# This file is opened with one of them. The others are a later pass.
+
+- id: pompeii
+  significance: >-
+    The only Roman town anyone can walk through. Everything else known about
+    ordinary Roman life is reconstructed from fragments and from what the
+    literate chose to write down; Pompeii is a whole place caught mid-sentence,
+    including the sentences — election notices, insults and prices are still
+    on the walls.
+  title: The eruption of Vesuvius buries Pompeii
+  kind: event
+  regions: [rome, europe]
+  start: 79
+  end: 79
+  importance: 4
+  confidence: high
+  categories: [architecture, discovery]
+  note: >-
+    The year is not in doubt; the day is. The traditional 24 August comes from
+    manuscripts of Pliny the Younger's letters, which are much later copies and
+    disagree with each other. A charcoal inscription uncovered in 2018 reading
+    XVI K Nov — 17 October — fits the other evidence from the site: autumn
+    fruit, braziers in use, wine already sealed for the year. The death toll is
+    unknown. Around 1,500 bodies have been found at the two towns against
+    population estimates in the low tens of thousands, so most people probably
+    got out.
+  summary: Vesuvius buried Pompeii and Herculaneum in pumice and pyroclastic
+    flow over two days, killing those who stayed and sealing the towns under
+    metres of ash — streets, shops, bread, graffiti and the voids left by the
+    dead, which excavators later filled with plaster to recover the shapes of
+    people who died in 79 CE.
+  related: [roman-empire]
+  sources:
+    - {title: "British Museum — Pompeii and Herculaneum", url: "https://www.britishmuseum.org/blog/pompeii-and-herculaneum"}

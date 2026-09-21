@@ -1,0 +1,127 @@
+# The planet itself, as distinct from what lived on it.
+#
+# Earth & Life had forty entries and over half were hominin: everything from
+# Sahelanthropus onward covers 7 Ma of a 4.54 Ga lane. What was missing was
+# the Earth - the oceans arriving, the ice, the coal forests, and Pangaea.
+#
+# Pangaea was the striking absence. It is the single most recognisable fact
+# about deep-time geography and the timeline did not mention it. The
+# Carboniferous was worse than absent: the entry on fossil carbon in
+# industry.yaml already said "the same Carboniferous forests that are
+# elsewhere on this timeline", and they were not.
+#
+# Every date here is a bracket, because every one of them is argued over.
+# These are inferences from rock, not records.
+
+- id: first-oceans
+  significance: >-
+    Liquid water arrived within a few hundred million years of the planet
+    itself, and has never entirely left. Everything else on this timeline
+    happens in it or beside it.
+  title: The first oceans
+  kind: geological
+  regions: [earth-life]
+  start: ["4.4 Ga", "4.28 Ga"]
+  end: ["4 Ga", "3.8 Ga"]
+  importance: 5
+  confidence: contested
+  categories: [climate, discovery]
+  note: >-
+    The early bracket rests on zircon crystals from the Jack Hills in Western
+    Australia, whose oxygen isotope ratios are read as contact with liquid
+    water at 4.4 Ga - a reading that is disputed. The late bracket is firmer:
+    pillow basalts and water-laid sediments in Greenland put oceans beyond
+    doubt by 3.8 Ga. The popular image of rain falling for thousands of years
+    without stopping is inference rather than evidence; how long condensation
+    took, and whether it happened once or repeatedly as impacts boiled it off
+    again, is not settled.
+  summary: As the surface cooled below the boiling point, the steam atmosphere
+    condensed and fell, and the planet acquired the oceans it has had almost
+    ever since — the first surface on Earth that could hold chemistry together
+    long enough for anything to start.
+  related: [earth-formation, origin-of-life]
+  sources:
+    - {title: "Nature — Evidence from detrital zircons for the existence of continental crust and oceans on the Earth 4.4 Gyr ago", url: "https://www.nature.com/articles/35051550"}
+
+- id: snowball-earth
+  significance: >-
+    The planet has a second stable state, and it has been in it. Ice reflects
+    sunlight, which makes more ice, which reflects more sunlight - and the way
+    out was not sunlight but volcanoes, over millions of years.
+  title: Snowball Earth
+  kind: period
+  regions: [earth-life]
+  start: ["720 Ma", "717 Ma"]
+  end: ["635 Ma", "635 Ma"]
+  importance: 4
+  confidence: medium
+  categories: [glaciation, climate]
+  note: >-
+    Two glaciations, not one - the Sturtian from about 717 to 660 Ma and the
+    Marinoan from about 650 to 635 Ma. How complete the ice was is the live
+    argument: a hard snowball frozen to the equator, or a slushball with open
+    water in the tropics that kept photosynthesis going. Glacial deposits at
+    sea level in the tropics are the evidence either way.
+  summary: Ice reached the tropics twice in the Cryogenian, for spans of
+    millions of years, and the Earth escaped only because volcanic carbon
+    dioxide kept accumulating in an atmosphere with no rain to wash it out —
+    ending in a greenhouse as violent as the freeze.
+  related: [multicellular-life, cambrian-explosion]
+  sources:
+    - {title: "Science — A Neoproterozoic Snowball Earth", url: "https://www.science.org/doi/10.1126/science.281.5381.1342"}
+
+- id: carboniferous-forests
+  significance: >-
+    The coal that powered the Industrial Revolution is this forest. Two
+    hundred years of burning is returning to the air a hundred million years
+    of buried summers.
+  title: The Carboniferous coal forests
+  kind: period
+  regions: [earth-life]
+  start: ["359 Ma", "359 Ma"]
+  end: ["299 Ma", "299 Ma"]
+  importance: 5
+  confidence: high
+  categories: [evolution, climate]
+  note: >-
+    Why so much carbon was buried rather than rotting is disputed. One
+    explanation is a gap of millions of years between plants evolving lignin
+    and fungi evolving the means to digest it; a competing one is simply
+    tectonic — vast wet equatorial basins subsiding fast enough to bury wood
+    before it could decay. Recent work leans towards the second. Atmospheric
+    oxygen near 35% is modelled, not measured.
+  summary: Swamp forests of giant clubmosses and horsetails covered the wet
+    equatorial lowlands, and their remains were buried rather than rotted,
+    laying down most of the world's coal. Oxygen rose high enough for
+    dragonflies with the wingspan of a hawk and millipedes two metres long.
+  related: [land-plants, tetrapods-on-land, coal-and-carbon, pangaea]
+
+- id: pangaea
+  significance: >-
+    You could have walked from the South Pole to Siberia. Everything that
+    lived on land met everything else, once, and the split that followed
+    decided which continents got which animals — which is why Australia is
+    the way it is.
+  title: Pangaea
+  kind: geological
+  regions: [earth-life]
+  start: ["336 Ma", "320 Ma"]
+  end: ["200 Ma", "175 Ma"]
+  importance: 5
+  confidence: medium
+  categories: [orogeny, climate]
+  note: >-
+    Both ends are processes rather than dates. The assembly finished as
+    Gondwana and Laurussia collided through the Carboniferous, raising the
+    Appalachians; the break-up began with the rifting that opened the central
+    Atlantic around 200 Ma and was well advanced by 175 Ma. Alfred Wegener
+    proposed continental drift in 1912 and named Pangaea in 1920, and was
+    dismissed for decades because he could not say what moved the continents —
+    the mechanism, sea-floor spreading, arrived in the 1960s.
+  summary: Almost all land on Earth joined into one continent, surrounded by
+    one ocean, for about 150 million years — a single arid supercontinent
+    whose interior was too far from any sea to rain on, and whose break-up
+    drew the coastlines we have now.
+  related: [carboniferous-forests, permian-triassic-extinction, dinosaur-era]
+  sources:
+    - {title: "USGS — Historical perspective: the Pangaea hypothesis", url: "https://pubs.usgs.gov/gip/dynamic/historical.html"}
