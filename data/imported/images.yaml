@@ -42,7 +42,7 @@ acheulean-handaxe:
   url: images/acheulean-handaxe.png
 adi-granth-compiled:
   bytes: 201230
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Sri_Guru_Granth_Sahib_Nishan.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Sri_Guru_Granth_Sahib_Nishan.jpg/500px-Sri_Guru_Granth_Sahib_Nishan.jpg
@@ -98,7 +98,7 @@ al-khwarizmi:
   url: images/al-khwarizmi.jpg
 alexander-the-great:
   bytes: 237403
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Alexander_the_Great_mosaic_(cropped).jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Alexander_the_Great_mosaic_%28cropped%29.jpg/500px-Alexander_the_Great_mosaic_%28cropped%29.jpg
@@ -112,7 +112,7 @@ algerian-war:
   url: images/algerian-war.jpg
 ambedkar:
   bytes: 62409
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Dr._Bhimrao_Ambedkar.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c3/Dr._Bhimrao_Ambedkar.jpg/500px-Dr._Bhimrao_Ambedkar.jpg
@@ -372,14 +372,14 @@ benin-bronzes:
   url: images/benin-bronzes.jpg
 benin-kingdom:
   bytes: 97809
-  credit: Unknown artistUnknown artist
+  credit: Unknown artist
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Benin_kingdom_Louvre_A97-4-1.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Benin_kingdom_Louvre_A97-4-1.jpg/500px-Benin_kingdom_Louvre_A97-4-1.jpg
   url: images/benin-kingdom.jpg
 berdyaev:
   bytes: 97361
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:NBerdyaev.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/NBerdyaev.jpg/500px-NBerdyaev.jpg
@@ -406,9 +406,16 @@ bhaskara-ii:
   source: https://commons.wikimedia.org/wiki/File:%E0%A4%AD%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A4%B0%E0%A4%BE%E0%A4%9A%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AF.jpg
   source_url: https://upload.wikimedia.org/wikipedia/commons/7/7b/%E0%A4%AD%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A4%B0%E0%A4%BE%E0%A4%9A%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AF.jpg
   url: images/bhaskara-ii.jpg
+bhavabhuti:
+  bytes: 78681
+  credit: Unknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:M%C4%81lat%C4%ABm%C4%81dhava_Bhavabh%C5%ABti_(%E0%A4%AE%E0%A4%BE%E0%A4%B2%E0%A4%A4%E0%A5%80%E0%A4%AE%E0%A4%BE%E0%A4%A7%E0%A4%B5_%E0%A4%AD%E0%A4%B5%E0%A4%AD%E0%A5%82%E0%A4%A4%E0%A4%BF)%E2%80%93_Pigment_Painting_(Old).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/M%C4%81lat%C4%ABm%C4%81dhava_Bhavabh%C5%ABti_%28%E0%A4%AE%E0%A4%BE%E0%A4%B2%E0%A4%A4%E0%A5%80%E0%A4%AE%E0%A4%BE%E0%A4%A7%E0%A4%B5_%E0%A4%AD%E0%A4%B5%E0%A4%AD%E0%A5%82%E0%A4%A4%E0%A4%BF%29%E2%80%93_Pigment_Painting_%28Old%29.jpg/500px-M%C4%81lat%C4%ABm%C4%81dhava_Bhavabh%C5%ABti_%28%E0%A4%AE%E0%A4%BE%E0%A4%B2%E0%A4%A4%E0%A5%80%E0%A4%AE%E0%A4%BE%E0%A4%A7%E0%A4%B5_%E0%A4%AD%E0%A4%B5%E0%A4%AD%E0%A5%82%E0%A4%A4%E0%A4%BF%29%E2%80%93_Pigment_Painting_%28Old%29.jpg
+  url: images/bhavabhuti.jpg
 bijak-kabir:
   bytes: 58953
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Kabir004.jpg
   source_url: https://upload.wikimedia.org/wikipedia/commons/c/c8/Kabir004.jpg
@@ -422,7 +429,7 @@ black-death:
   url: images/black-death.jpg
 blackbirding:
   bytes: 79076
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Groupe_de_Kanakas_dans_une_exploitation_de_canne_%C3%A0_sucre_du_Queensland.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Groupe_de_Kanakas_dans_une_exploitation_de_canne_%C3%A0_sucre_du_Queensland.jpg/500px-Groupe_de_Kanakas_dans_une_exploitation_de_canne_%C3%A0_sucre_du_Queensland.jpg
@@ -452,7 +459,7 @@ bolivar:
   url: images/bolivar.jpg
 boole:
   bytes: 147414
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:George_Boole_color.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/George_Boole_color.jpg/500px-George_Boole_color.jpg
@@ -466,7 +473,7 @@ borobudur:
   url: images/borobudur.jpg
 brahmagupta:
   bytes: 68469
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Hindu_astronomer,_19th-century_illustration.jpg
   source_url: https://upload.wikimedia.org/wikipedia/commons/b/b5/Hindu_astronomer%2C_19th-century_illustration.jpg
@@ -501,6 +508,13 @@ cahokia:
   source: https://commons.wikimedia.org/wiki/File:Monks_Mound_in_July.JPG
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Monks_Mound_in_July.JPG/500px-Monks_Mound_in_July.JPG
   url: images/cahokia.jpg
+cambrian-explosion:
+  bytes: 84126
+  credit: Junnn11
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:20191108_Opabinia_regalis.png
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/20191108_Opabinia_regalis.png/500px-20191108_Opabinia_regalis.png
+  url: images/cambrian-explosion.png
 cave-art:
   bytes: 87081
   credit: EU
@@ -538,7 +552,7 @@ chaitanya:
   url: images/chaitanya.jpg
 chaucer:
   bytes: 134971
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Portrait_of_Geoffrey_Chaucer_(4671380)_(cropped)_02.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/Portrait_of_Geoffrey_Chaucer_%284671380%29_%28cropped%29_02.jpg/500px-Portrait_of_Geoffrey_Chaucer_%284671380%29_%28cropped%29_02.jpg
@@ -573,7 +587,7 @@ chola-empire:
   url: images/chola-empire.jpg
 cholera-pandemics:
   bytes: 129733
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Cholera.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Cholera.jpg/500px-Cholera.jpg
@@ -585,6 +599,13 @@ churchill:
   source: https://commons.wikimedia.org/wiki/File:Sir_Winston_Churchill_-_19086236948_(restored).jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg/500px-Sir_Winston_Churchill_-_19086236948_%28restored%29.jpg
   url: images/churchill.jpg
+cinema:
+  bytes: 78420
+  credit: Marcellin Auzolle
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Cinematographe_Lumiere.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/Cinematographe_Lumiere.jpg/500px-Cinematographe_Lumiere.jpg
+  url: images/cinema.jpg
 classical-athens:
   bytes: 44073
   credit: Christophe Meneboeuf
@@ -655,7 +676,7 @@ control-of-fire:
   url: images/control-of-fire.jpg
 copernicus:
   bytes: 53119
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Nikolaus_Kopernikus_MOT.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e2/Nikolaus_Kopernikus_MOT.jpg/500px-Nikolaus_Kopernikus_MOT.jpg
@@ -676,7 +697,7 @@ cultural-revolution:
   url: images/cultural-revolution.jpg
 cuneiform:
   bytes: 106292
-  credit: Unknown artistUnknown artist
+  credit: Unknown artist
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Sales_contract_Shuruppak_Louvre_AO3766.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ed/Sales_contract_Shuruppak_Louvre_AO3766.jpg/500px-Sales_contract_Shuruppak_Louvre_AO3766.jpg
@@ -697,7 +718,7 @@ dante:
   url: images/dante.jpg
 daodejing:
   bytes: 293102
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Mawangdui_LaoTsu_Ms2.JPG
   source_url: https://upload.wikimedia.org/wikipedia/commons/e/ed/Mawangdui_LaoTsu_Ms2.JPG
@@ -790,7 +811,7 @@ dostoevsky:
   url: images/dostoevsky.jpg
 du-fu:
   bytes: 78127
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Dufu.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Dufu.jpg/500px-Dufu.jpg
@@ -833,8 +854,8 @@ electrification:
   url: images/electrification.jpg
 emmy-noether:
   bytes: 84941
-  credit: 'Unknown authorUnknown author Publisher: Mathematical Association of America
-    [3], Brooklyn Museum [4], Agnes Scott College [5], [6]'
+  credit: 'Unknown author Publisher: Mathematical Association of America [3] , Brooklyn
+    Museum [4] , Agnes Scott College [5] , [6]'
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Noether.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Noether.jpg/500px-Noether.jpg
@@ -884,7 +905,7 @@ eukaryotes:
   url: images/eukaryotes.jpg
 fall-of-tenochtitlan:
   bytes: 357768
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Conquista-de-M%C3%A9xico-por-Cort%C3%A9s-Tenochtitlan-Painting.png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Conquista-de-M%C3%A9xico-por-Cort%C3%A9s-Tenochtitlan-Painting.png/500px-Conquista-de-M%C3%A9xico-por-Cort%C3%A9s-Tenochtitlan-Painting.png
@@ -976,14 +997,14 @@ galileo:
   url: images/galileo.jpg
 gandhi-ahimsa:
   bytes: 128391
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Portrait_Gandhi.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Portrait_Gandhi.jpg/500px-Portrait_Gandhi.jpg
   url: images/gandhi-ahimsa.jpg
 genghis-khan:
   bytes: 70287
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:YuanEmperorAlbumGenghisPortrait.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/YuanEmperorAlbumGenghisPortrait.jpg/500px-YuanEmperorAlbumGenghisPortrait.jpg
@@ -997,7 +1018,7 @@ germ-theory:
   url: images/germ-theory.jpg
 ghalib:
   bytes: 64780
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Mirza_Ghalib_photograph_3.jpg
   source_url: https://upload.wikimedia.org/wikipedia/commons/c/cd/Mirza_Ghalib_photograph_3.jpg
@@ -1030,6 +1051,13 @@ goethe:
   source: https://commons.wikimedia.org/wiki/File:Goethe_(Stieler_1828).jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Goethe_%28Stieler_1828%29.jpg/500px-Goethe_%28Stieler_1828%29.jpg
   url: images/goethe.jpg
+gokturk-khaganate:
+  bytes: 107333
+  credit: Betta27
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Bilge_Khagan_monument_Mongolia.JPG
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Bilge_Khagan_monument_Mongolia.JPG/500px-Bilge_Khagan_monument_Mongolia.JPG
+  url: images/gokturk-khaganate.jpg
 golden-horde:
   bytes: 90200
   credit: Cresques Abraham
@@ -1046,7 +1074,7 @@ goryeo-dynasty:
   url: images/goryeo-dynasty.jpg
 gospels:
   bytes: 129746
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:P46.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/P46.jpg/500px-P46.jpg
@@ -1074,7 +1102,7 @@ great-game:
   url: images/great-game.jpg
 great-leap-forward:
   bytes: 65318
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:People%27s_commone_canteen3.jpg
   source_url: https://upload.wikimedia.org/wikipedia/commons/a/a8/People%27s_commone_canteen3.jpg
@@ -1130,7 +1158,7 @@ gupta-empire:
   url: images/gupta-empire.png
 guru-granth-sahib:
   bytes: 201230
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Sri_Guru_Granth_Sahib_Nishan.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Sri_Guru_Granth_Sahib_Nishan.jpg/500px-Sri_Guru_Granth_Sahib_Nishan.jpg
@@ -1180,7 +1208,7 @@ hangul:
   url: images/hangul.png
 hannah-arendt:
   bytes: 5332
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Hannah_Arendt_1975_(cropped).jpg
   source_url: https://upload.wikimedia.org/wikipedia/commons/8/8f/Hannah_Arendt_1975_%28cropped%29.jpg
@@ -1215,7 +1243,7 @@ heidegger:
   url: images/heidegger.jpg
 heisenberg:
   bytes: 41977
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: CC BY-SA 3.0 de
   source: https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild183-R57262,_Werner_Heisenberg.jpg
   source_url: https://upload.wikimedia.org/wikipedia/commons/f/f8/Bundesarchiv_Bild183-R57262%2C_Werner_Heisenberg.jpg
@@ -1236,11 +1264,18 @@ heraclitus:
   url: images/heraclitus.jpg
 herero-nama-genocide:
   bytes: 68705
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Herero_and_Nama_prisoners.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Herero_and_Nama_prisoners.jpg/500px-Herero_and_Nama_prisoners.jpg
   url: images/herero-nama-genocide.jpg
+hilbert-program:
+  bytes: 91434
+  credit: Unknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:David_Hilbert,_1907.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/David_Hilbert%2C_1907.jpg/500px-David_Hilbert%2C_1907.jpg
+  url: images/hilbert-program.jpg
 himalayan-orogeny:
   bytes: 76228
   credit: NASA
@@ -1363,7 +1398,7 @@ hopper:
   url: images/hopper.jpg
 horse-domestication:
   bytes: 80913
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Cave_painting_in_Doushe_cave,_Lorstan,_Iran,_8th_millennium_BC.JPG
   source_url: https://upload.wikimedia.org/wikipedia/commons/4/4a/Cave_painting_in_Doushe_cave%2C_Lorstan%2C_Iran%2C_8th_millennium_BC.JPG
@@ -1375,6 +1410,13 @@ hubble:
   source: https://commons.wikimedia.org/wiki/File:Studio_portrait_photograph_of_Edwin_Powell_Hubble_(cropped).JPG
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Studio_portrait_photograph_of_Edwin_Powell_Hubble_%28cropped%29.JPG/500px-Studio_portrait_photograph_of_Edwin_Powell_Hubble_%28cropped%29.JPG
   url: images/hubble.jpg
+human-chimp-split:
+  bytes: 193102
+  credit: GHPhotography
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:Portrait_of_an_Chimpanzee.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Portrait_of_an_Chimpanzee.jpg/500px-Portrait_of_an_Chimpanzee.jpg
+  url: images/human-chimp-split.jpg
 human-genome:
   bytes: 77091
   credit: U.S. Department of Energy, Human Genome Project
@@ -1431,6 +1473,13 @@ indian-independence:
   source: https://commons.wikimedia.org/wiki/File:Partition_of_India_1947_en.svg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Partition_of_India_1947_en.svg/500px-Partition_of_India_1947_en.svg.png
   url: images/indian-independence.png
+indian-ocean-slave-trade:
+  bytes: 80975
+  credit: 'Artist: Edwin R L Stocqueler (1829-1895)'
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Zanzibar_Slave_Market,_1860_-_Stocqueler.JPG
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Zanzibar_Slave_Market%2C_1860_-_Stocqueler.JPG/500px-Zanzibar_Slave_Market%2C_1860_-_Stocqueler.JPG
+  url: images/indian-ocean-slave-trade.jpg
 indonesia-independence:
   bytes: 55972
   credit: C.J. (Cees) Taillie (Fotograaf/photographer).
@@ -1468,7 +1517,7 @@ integrated-circuit:
   url: images/integrated-circuit.jpg
 irish-independence:
   bytes: 77398
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Hogan%27s_Flying_Column.gif
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Hogan%27s_Flying_Column.gif/500px-Hogan%27s_Flying_Column.gif
@@ -1496,7 +1545,7 @@ islamic-calligraphy:
   url: images/islamic-calligraphy.jpg
 israel-founded:
   bytes: 207243
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Israel_Declaration_of_Independence.jpg
   source_url: https://upload.wikimedia.org/wikipedia/commons/3/34/Israel_Declaration_of_Independence.jpg
@@ -1517,11 +1566,18 @@ jazz:
   url: images/jazz.jpg
 jesus:
   bytes: 218661
-  credit: Unknown artistUnknown artist
+  credit: Unknown artist
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Spas_vsederzhitel_sinay_(cropped1).jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Spas_vsederzhitel_sinay_%28cropped1%29.jpg/500px-Spas_vsederzhitel_sinay_%28cropped1%29.jpg
   url: images/jesus.jpg
+jomon-period:
+  bytes: 79523
+  credit: Netherzone
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:Jomon_Flame_Style_Pottery,_3000_BC.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Jomon_Flame_Style_Pottery%2C_3000_BC.jpg/500px-Jomon_Flame_Style_Pottery%2C_3000_BC.jpg
+  url: images/jomon-period.jpg
 joseon-dynasty:
   bytes: 44930
   credit: Frank G. Carpenter
@@ -1571,9 +1627,16 @@ kant:
   source: https://commons.wikimedia.org/wiki/File:Immanuel_Kant_-_Gemaelde_2.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/Immanuel_Kant_-_Gemaelde_2.jpg/500px-Immanuel_Kant_-_Gemaelde_2.jpg
   url: images/kant.jpg
+karakhanid-khanate:
+  bytes: 106927
+  credit: 'Artist circa 1200 CE Photography: Yury Karev'
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Kara-Khanid_ruler_(sitting_cross-legged_on_a_throne),_Afrasiab,_circa_1200_CE.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Kara-Khanid_ruler_%28sitting_cross-legged_on_a_throne%29%2C_Afrasiab%2C_circa_1200_CE.jpg/500px-Kara-Khanid_ruler_%28sitting_cross-legged_on_a_throne%29%2C_Afrasiab%2C_circa_1200_CE.jpg
+  url: images/karakhanid-khanate.jpg
 kautilya:
   bytes: 81461
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Chanakya_artistic_depiction.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Chanakya_artistic_depiction.jpg/500px-Chanakya_artistic_depiction.jpg
@@ -1592,6 +1655,13 @@ khmer-empire:
   source: https://commons.wikimedia.org/wiki/File:Map-of-southeast-asia_900_CE.svg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Map-of-southeast-asia_900_CE.svg/500px-Map-of-southeast-asia_900_CE.svg.png
   url: images/khmer-empire.png
+khwarazmian-empire:
+  bytes: 102552
+  credit: Doron
+  license: CC BY-SA 3.0
+  source: https://commons.wikimedia.org/wiki/File:KonyeUrgenchMinaret.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/KonyeUrgenchMinaret.jpg/500px-KonyeUrgenchMinaret.jpg
+  url: images/khwarazmian-empire.jpg
 kingdom-of-aksum:
   bytes: 62838
   credit: A.Savin
@@ -1637,7 +1707,7 @@ kpg-extinction:
   url: images/kpg-extinction.gif
 krishnamurti:
   bytes: 72771
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Jiddu_Krishnamurti_01.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Jiddu_Krishnamurti_01.jpg/500px-Jiddu_Krishnamurti_01.jpg
@@ -1729,7 +1799,7 @@ leonardo:
   url: images/leonardo.png
 li-bai:
   bytes: 504040
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:%E6%9D%8E%E7%99%BD.png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/%E6%9D%8E%E7%99%BD.png/500px-%E6%9D%8E%E7%99%BD.png
@@ -1904,7 +1974,7 @@ maurya-empire:
   url: images/maurya-empire.png
 maxwell:
   bytes: 46639
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:James-Clerk-Maxwell-1831-1879.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/James-Clerk-Maxwell-1831-1879.jpg/500px-James-Clerk-Maxwell-1831-1879.jpg
@@ -1939,14 +2009,14 @@ meiji-restoration:
   url: images/meiji-restoration.jpg
 mendel:
   bytes: 163162
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Gregor_Mendel_with_cross.jpg
   source_url: https://upload.wikimedia.org/wikipedia/commons/a/ab/Gregor_Mendel_with_cross.jpg
   url: images/mendel.jpg
 mendeleev:
   bytes: 91943
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:DIMendeleevCab.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/DIMendeleevCab.jpg/500px-DIMendeleevCab.jpg
@@ -1989,7 +2059,7 @@ ming-dynasty:
   url: images/ming-dynasty.png
 mirabai:
   bytes: 147435
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Kangra_painting_of_Mirabai,_the_female_Bhakti_saint.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a8/Kangra_painting_of_Mirabai%2C_the_female_Bhakti_saint.jpg/500px-Kangra_painting_of_Mirabai%2C_the_female_Bhakti_saint.jpg
@@ -2192,7 +2262,7 @@ opium-wars:
   url: images/opium-wars.jpg
 oppenheimer:
   bytes: 69749
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Oppenheimer_(cropped).jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Oppenheimer_%28cropped%29.jpg/500px-Oppenheimer_%28cropped%29.jpg
@@ -2305,7 +2375,7 @@ persian-miniature:
   url: images/persian-miniature.jpg
 phidias-greek-sculpture:
   bytes: 70506
-  credit: Unknown artistUnknown artist
+  credit: Unknown artist
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Cavalcade_south_frieze_Parthenon_BM.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Cavalcade_south_frieze_Parthenon_BM.jpg/500px-Cavalcade_south_frieze_Parthenon_BM.jpg
@@ -2419,7 +2489,7 @@ printing-press:
   url: images/printing-press.jpg
 ptolemy:
   bytes: 224317
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:PSM_V78_D326_Ptolemy.png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/PSM_V78_D326_Ptolemy.png/500px-PSM_V78_D326_Ptolemy.png
@@ -2433,7 +2503,7 @@ pushkin:
   url: images/pushkin.jpg
 pythagoras:
   bytes: 79922
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Pythagoras_in_the_Roman_Forum,_Colosseum.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Pythagoras_in_the_Roman_Forum%2C_Colosseum.jpg/500px-Pythagoras_in_the_Roman_Forum%2C_Colosseum.jpg
@@ -2559,7 +2629,7 @@ residential-schools:
   url: images/residential-schools.jpg
 rigveda:
   bytes: 125431
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Rigveda_MS2097.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Rigveda_MS2097.jpg/500px-Rigveda_MS2097.jpg
@@ -2609,7 +2679,7 @@ russian-flu-1889:
   url: images/russian-flu-1889.jpg
 russian-revolution:
   bytes: 102893
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Revoluci%C3%B3n-marzo-rusia--russianbolshevik00rossuoft.png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Revoluci%C3%B3n-marzo-rusia--russianbolshevik00rossuoft.png/500px-Revoluci%C3%B3n-marzo-rusia--russianbolshevik00rossuoft.png
@@ -2673,7 +2743,7 @@ sartre:
   url: images/sartre.jpg
 satyendra-bose:
   bytes: 186224
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:SatyenBose1925.jpg
   source_url: https://upload.wikimedia.org/wikipedia/commons/f/fe/SatyenBose1925.jpg
@@ -2687,7 +2757,7 @@ schopenhauer:
   url: images/schopenhauer.jpg
 schrodinger:
   bytes: 89783
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Erwin_Schr%C3%B6dinger_-_Narodowe_Archiwum_Cyfrowe_(1-E-939).jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Erwin_Schr%C3%B6dinger_-_Narodowe_Archiwum_Cyfrowe_%281-E-939%29.jpg/500px-Erwin_Schr%C3%B6dinger_-_Narodowe_Archiwum_Cyfrowe_%281-E-939%29.jpg
@@ -2701,7 +2771,7 @@ scramble-for-africa:
   url: images/scramble-for-africa.png
 scythians:
   bytes: 31328
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Scythian_Warriors.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Scythian_Warriors.jpg/500px-Scythian_Warriors.jpg
@@ -2727,6 +2797,20 @@ second-world-war:
   source: https://commons.wikimedia.org/wiki/File:Infobox_collage_for_WWII.PNG
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Infobox_collage_for_WWII.PNG/500px-Infobox_collage_for_WWII.PNG
   url: images/second-world-war.png
+seljuk-empire:
+  bytes: 370020
+  credit: Ktrinko MapMaster
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:Map_of_the_Seljuk_Empire_(1092).png
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Map_of_the_Seljuk_Empire_%281092%29.png/500px-Map_of_the_Seljuk_Empire_%281092%29.png
+  url: images/seljuk-empire.png
+sengoku-period:
+  bytes: 54395
+  credit: Unknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Battle_of_Nagashino.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Battle_of_Nagashino.jpg/500px-Battle_of_Nagashino.jpg
+  url: images/sengoku-period.jpg
 settlement-of-aotearoa:
   bytes: 67021
   credit: Jorge Royan
@@ -2809,7 +2893,7 @@ sharpeville-massacre:
   url: images/sharpeville-massacre.jpg
 shivaji:
   bytes: 155281
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Shivaji_British_Museum.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Shivaji_British_Museum.jpg/500px-Shivaji_British_Museum.jpg
@@ -3182,21 +3266,21 @@ turing:
   url: images/turing.jpg
 tycho-brahe:
   bytes: 69621
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Portr%C3%A4tt_av_Tycho_Brahe_-_Skoklosters_slott_-_90153.tif
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Portr%C3%A4tt_av_Tycho_Brahe_-_Skoklosters_slott_-_90153.tif/lossy-page1-500px-Portr%C3%A4tt_av_Tycho_Brahe_-_Skoklosters_slott_-_90153.tif.jpg
   url: images/tycho-brahe.jpg
 ulugh-beg:
   bytes: 115890
-  credit: Unknown artistUnknown artist
+  credit: Unknown artist
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Ulugh_Beg,_Timurid_painting_1425-50.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Ulugh_Beg%2C_Timurid_painting_1425-50.jpg/500px-Ulugh_Beg%2C_Timurid_painting_1425-50.jpg
   url: images/ulugh-beg.jpg
 upanishads:
   bytes: 49886
-  credit: Unknown authorUnknown author
+  credit: Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Guru_and_DiscipleI.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Guru_and_DiscipleI.jpg/500px-Guru_and_DiscipleI.jpg

@@ -71,16 +71,62 @@ COMMONS_FILES: dict[str, str] = {
     "socrates": "File:Socrates Louvre.jpg",
     "confucius": "File:Confucius Tang Dynasty.jpg",
     "genghis-khan": "File:YuanEmperorAlbumGenghisPortrait.jpg",
+
+    # Entries whose Wikipedia article has no lead image at all, so neither
+    # Wikidata nor the article lookup could supply one. Each file below was
+    # chosen from a Commons search and then confirmed to resolve with a stated
+    # licence - none is a guessed filename.
+    "cambrian-explosion": "File:20191108 Opabinia regalis.png",
+    # The reconstruction Commons currently treats as current; the others in
+    # the series are explicitly labelled outdated.
+    "human-chimp-split": "File:Portrait of an Chimpanzee.jpg",
+    # A chimpanzee rather than Sahelanthropus, which has an entry of its own
+    # and would otherwise appear twice under different titles.
+    "jomon-period": "File:Jomon Flame Style Pottery, 3000 BC.jpg",
+    "sengoku-period": "File:Battle of Nagashino.jpg",
+    "gokturk-khaganate": "File:Bilge Khagan monument Mongolia.JPG",
+    "karakhanid-khanate": (
+        "File:Kara-Khanid ruler (sitting cross-legged on a throne), "
+        "Afrasiab, circa 1200 CE.jpg"),
+    "khwarazmian-empire": "File:KonyeUrgenchMinaret.jpg",
+    # Konye-Urgench was the Khwarazmian capital; the minaret is what survives
+    # of it, though it outlasted the empire itself.
+    "seljuk-empire": "File:Map of the Seljuk Empire (1092).png",
+    "indian-ocean-slave-trade": "File:Zanzibar Slave Market, 1860 - Stocqueler.JPG",
+    "bhavabhuti": (
+        "File:M\u0101lat\u012bm\u0101dhava Bhavabh\u016bti "
+        "(\u092e\u093e\u0932\u0924\u0940\u092e\u093e\u0927\u0935 "
+        "\u092d\u0935\u092d\u0942\u0924\u093f)\u2013 Pigment Painting (Old).jpg"),
+    # His play Malatimadhava, there being no likeness of the man.
+    "hilbert-program": "File:David Hilbert, 1907.jpg",
+    "cinema": "File:Cinematographe Lumiere.jpg",
 }
 
 _TAG = re.compile(r"<[^>]+>")
 
 
 def _plain(markup: str | None) -> str:
-    """Commons returns attribution as HTML; reduce it to a readable name."""
+    """Commons returns attribution as HTML; reduce it to a readable name.
+
+    Tags become a space rather than nothing. Dropping them outright welded
+    adjacent elements together, so `<a>Unknown author</a><a>Unknown author</a>`
+    reached the panel as "Unknown authorUnknown author".
+
+    Commons also renders some names twice - a link and its own label - so an
+    attribution that is one phrase repeated is collapsed back to the phrase.
+    Only an exact repeat: two different names stay as two names.
+    """
     if not markup:
         return ""
-    return " ".join(html.unescape(_TAG.sub("", markup)).split())
+    words = html.unescape(_TAG.sub(" ", markup)).split()
+    # The repeat is not always the whole string: one Commons record reads
+    # "Unknown author Unknown author Publisher: ...", so collapse the longest
+    # phrase that is immediately repeated at the start and keep the remainder.
+    for size in range(len(words) // 2, 0, -1):
+        if words[:size] == words[size:size * 2]:
+            words = words[:size] + words[size * 2:]
+            break
+    return " ".join(words)
 
 
 def fetch_image(title: str, session: requests.Session | None = None) -> dict | None:
