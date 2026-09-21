@@ -18,6 +18,17 @@ const STRIP_MIN_W = 2;
 const STRIP_GAP = 0.8;
 const STRIP_BAR_PX = 26;
 const STRIP_GAP_PX = 4;
+/*
+ * Below this share of the strip, a bar shows no name at all.
+ *
+ * It was 9%, which on a 366px strip is 33px - and 33px of bar, less 16px of
+ * padding, holds about two characters and an ellipsis. "Martin Luther" came
+ * out as "M...", which says less than a plain capsule does and looks worse.
+ * 15% is about 55px, enough for four or five characters before the ellipsis,
+ * which is the point where a fragment starts being a hint rather than noise.
+ * Narrower than that, the name lives in the tooltip and the tap.
+ */
+const STRIP_NARROW_PCT = 15;
 
 const KIND_LABELS = {
   person: 'Person', work: 'Text', polity: 'Polity', event: 'Event',
@@ -333,7 +344,7 @@ function laneStrip(entry, neighbours, onNavigate) {
         bar.style.width = `${width}%`;
         // Too narrow to hold a name: show a plain capsule and let the tooltip
         // and the tap carry it, rather than a letter and a half of the title.
-        if (width < 9) bar.dataset.narrow = 'true';
+        if (width < STRIP_NARROW_PCT) bar.dataset.narrow = 'true';
         bar.style.top = `${r * (STRIP_BAR_PX + STRIP_GAP_PX)}px`;
         bar.append(el('span', 'strip__bar-title', item.entry.title));
         // The dates go in the title attribute as well as the bar, because a

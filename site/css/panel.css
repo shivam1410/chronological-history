@@ -226,6 +226,13 @@ button.panel__chip:hover { border-color: var(--accent); color: var(--ink); }
   font-size: 11px;
   text-align: left;
   overflow: hidden;
+  /* A cut title reads as a mistake without this: "Martin Luther" arrived as
+     "Mart" and "The Reformation" as "The Reform", sliced mid-word with no
+     sign anything was missing. The canvas clips at word boundaries instead,
+     which needs text measurement this strip deliberately does without - its
+     bars are percentages so it reflows without measuring anything. An
+     ellipsis is the honest version of the same promise. */
+  text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
 }
