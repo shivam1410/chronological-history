@@ -301,8 +301,8 @@ ayutthaya:
   url: images/ayutthaya.png
 aztec-empire:
   bytes: 85895
-  credit: 'File:Aztec Empire (orthographic projection).svg : Keepscases Derivative
-    work : Giggette'
+  credit: 'File:Aztec Empire (orthographic projection).svg: Keepscases Derivative
+    work: Giggette'
   license: CC BY-SA 3.0
   source: https://commons.wikimedia.org/wiki/File:Aztec_Empire_ME_(orthographic_projection).svg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/de/Aztec_Empire_ME_%28orthographic_projection%29.svg/500px-Aztec_Empire_ME_%28orthographic_projection%29.svg.png
@@ -515,6 +515,13 @@ cambrian-explosion:
   source: https://commons.wikimedia.org/wiki/File:20191108_Opabinia_regalis.png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/20191108_Opabinia_regalis.png/500px-20191108_Opabinia_regalis.png
   url: images/cambrian-explosion.png
+carboniferous-forests:
+  bytes: 207795
+  credit: Unknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Plants_of_the_Carboniferous_age_MKL_Bd._15_1890_(128660878).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Plants_of_the_Carboniferous_age_MKL_Bd._15_1890_%28128660878%29.jpg/500px-Plants_of_the_Carboniferous_age_MKL_Bd._15_1890_%28128660878%29.jpg
+  url: images/carboniferous-forests.jpg
 cave-art:
   bytes: 87081
   credit: EU
@@ -639,9 +646,9 @@ cold-war:
 columbian-exchange-epidemics:
   bytes: 52909
   credit: 'Tabac_rustique.jpg: Atilin Cacao-pod-k4636-14.jpg: The original uploader
-    was Kbh3rd at English Wikipedia. VegCorn.jpg: ? Potato_and_cross_section.jpg:
-    ? Latex_dripping.JPG: AxelBoldt Bright_red_tomato_and_cross_section02.jpg: ? Vanilla_6beans.JPG:
-    ? derivative work: A111111 (talk)'
+    was Kbh3rd at English Wikipedia. VegCorn.jpg:? Potato_and_cross_section.jpg:?
+    Latex_dripping.JPG: AxelBoldt Bright_red_tomato_and_cross_section02.jpg:? Vanilla_6beans.JPG:?
+    derivative work: A111111 (talk)'
   license: GFDL
   source: https://commons.wikimedia.org/wiki/File:New_World_Domesticated_plants.JPG
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/New_World_Domesticated_plants.JPG/500px-New_World_Domesticated_plants.JPG
@@ -854,8 +861,8 @@ electrification:
   url: images/electrification.jpg
 emmy-noether:
   bytes: 84941
-  credit: 'Unknown author Publisher: Mathematical Association of America [3] , Brooklyn
-    Museum [4] , Agnes Scott College [5] , [6]'
+  credit: 'Unknown author Publisher: Mathematical Association of America [3], Brooklyn
+    Museum [4], Agnes Scott College [5], [6]'
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Noether.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Noether.jpg/500px-Noether.jpg
@@ -952,6 +959,13 @@ first-mammals:
   source: https://commons.wikimedia.org/wiki/File:Sau_mit_ihren_Ferkeln.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Sau_mit_ihren_Ferkeln.jpg/500px-Sau_mit_ihren_Ferkeln.jpg
   url: images/first-mammals.jpg
+first-oceans:
+  bytes: 228616
+  credit: Tim Bertelink
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:Hadean.png
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Hadean.png/500px-Hadean.png
+  url: images/first-oceans.png
 first-world-war:
   bytes: 87766
   credit: User:Hohum
@@ -1729,7 +1743,7 @@ kula-ring:
 kushan-empire:
   bytes: 374032
   credit: 'Map created from DEMIS Mapserver, which are public domain. Koba-chan. Reference:
-    Schwartzberg Atlas, v. , p. 145. Map g'
+    Schwartzberg Atlas, v., p. 145. Map g'
   license: CC BY-SA 3.0
   source: https://commons.wikimedia.org/wiki/File:Map_of_the_Kushan_Empire.png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ad/Map_of_the_Kushan_Empire.png/500px-Map_of_the_Kushan_Empire.png
@@ -2247,7 +2261,7 @@ norte-chico:
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Aspero.jpg/500px-Aspero.jpg
   url: images/norte-chico.jpg
 olmec:
-  bytes: 92008
+  bytes: 92045
   credit: ''
   license: CC BY 3.0
   source: https://commons.wikimedia.org/wiki/File:Olmec_Heartland_Overview_4.svg
@@ -2345,6 +2359,14 @@ panama-canal:
   source: https://commons.wikimedia.org/wiki/File:Panama_Canal_Gatun_Locks.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Panama_Canal_Gatun_Locks.jpg/500px-Panama_Canal_Gatun_Locks.jpg
   url: images/panama-canal.jpg
+pangaea:
+  bytes: 142334
+  credit: Scotese, Christopher R.; Vérard, Christian; Burgener, Landon; Elling, Reece
+    P.; Kocsis, Ádám T.
+  license: CC BY 4.0
+  source: https://commons.wikimedia.org/wiki/File:Mollweide_Paleographic_Map_of_Earth,_225_Ma_(Norian_Age).png
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Mollweide_Paleographic_Map_of_Earth%2C_225_Ma_%28Norian_Age%29.png/500px-Mollweide_Paleographic_Map_of_Earth%2C_225_Ma_%28Norian_Age%29.png
+  url: images/pangaea.png
 paper-making:
   bytes: 24464
   credit: Nikhilesh Haval
@@ -2443,6 +2465,13 @@ polynesian-navigation:
   source: https://commons.wikimedia.org/wiki/File:Hokule%27aSailing2009.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Hokule%27aSailing2009.jpg/500px-Hokule%27aSailing2009.jpg
   url: images/polynesian-navigation.jpg
+pompeii:
+  bytes: 75013
+  credit: Carsten Steger
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:Aerial_image_of_Pompeii_and_Mount_Vesuvius_(view_from_the_southeast).jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Aerial_image_of_Pompeii_and_Mount_Vesuvius_%28view_from_the_southeast%29.jpg/500px-Aerial_image_of_Pompeii_and_Mount_Vesuvius_%28view_from_the_southeast%29.jpg
+  url: images/pompeii.jpg
 potato-domestication:
   bytes: 34375
   credit: ''
@@ -2467,12 +2496,12 @@ prc-founded:
 primates:
   bytes: 78907
   credit: 'Lemur_catta_001.jpg: Alex Dunkel (Visionholder) Aye-aye_(Daubentonia_madagascariensis)_2b.jpg:
-    *Aye-aye_(Daubentonia_madagascariensis)_2.jpg: Tom Junek derivative work: WolfmanSF
+    * Aye-aye_(Daubentonia_madagascariensis)_2.jpg: Tom Junek derivative work: WolfmanSF
     (talk) Loris_tardigradus_tardigradus_003.jpg: Dr. K.A.I. Nekaris Bohol_Tarsier.jpg:
     mtoz Cebus_capucinus_(Cahuita).jpg: Hans Hillewaert Ateles_paniscus_-Brazil-8.jpg:
     Ana_Cotta Eating_Male_Papio_hamadryas.JPG: LadyofHats Hylobates_lar_pair_of_white_and_black_01.jpg:
     User:MatthiasKabel Pan_troglodytes_(male).jpg: Hans Hillewaert Tamarin_lion_à_tête_dorée.jpg:
-    Thomas Bresson Camera location47° 44′ 01.25″ N, 7° 21′ 00.63″ E View this and
+    Thomas Bresson Camera location 47° 44′ 01.25″ N, 7° 21′ 00.63″ E View this and
     other nearby images on: OpenStreetMap 47.733681; 7.350175 There is a discrepancy
     of 9222172 meters between the above coordinates and the ones stored at SDC (9°44′10″N
     82°50′20″W, precision: 5 m). Please reconcile them. derivative work: Miguelrangeljr'
@@ -2664,7 +2693,7 @@ rumi:
   url: images/rumi.jpg
 russian-conquest-central-asia:
   bytes: 98057
-  credit: 'Turkestan_1900-es.svg: Wassily / Translator:Molorco derivative work: HylgeriaK
+  credit: 'Turkestan_1900-es.svg: Wassily / Translator: Molorco derivative work: HylgeriaK
     (talk)'
   license: CC BY-SA 3.0
   source: https://commons.wikimedia.org/wiki/File:Turkestan_1900-en.svg
@@ -2855,30 +2884,24 @@ shannon:
   url: images/shannon.jpg
 sharpeville-massacre:
   bytes: 85419
-  credit: 'Godfrey Rubens (painter and photographer) .mw-parser-output .messagebox{margin:4px
-    0;width:auto;border-collapse:collapse;border:2px solid var(--border-color-progressive,#6485d1);background-color:var(--background-color-neutral-subtle,#fbfcff);color:var(--color-base,#202122);box-sizing:border-box;border-inline-start-width:8px}.mw-parser-output
-    .messagebox.mbox-small{font-size:88%;line-height:1.25em}.mw-parser-output .mbox-warning,.mw-parser-output
-    .mbox-speedy{border:2px solid var(--border-color-error,#b22222);background:var(--background-color-error-subtle,#ffdbdb);border-inline-start-width:8px}.mw-parser-output
-    .mbox-serious,.mw-parser-output .mbox-delete,.mw-parser-output .mbox-stop{border:2px
-    solid var(--border-color-error,#b22222);border-inline-start-width:8px}.mw-parser-output
-    .mbox-issue,.mw-parser-output .mbox-content{border:2px solid #f28500;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output
-    .mbox-query,.mw-parser-output .mbox-style{border:2px solid #f4c430;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output
-    .mbox-shit{border:2px solid #960;border-inline-start-width:8px}.mw-parser-output
-    .mbox-license{border:2px solid #88a;border-inline-start-width:initial}.mw-parser-output
-    .mbox-legal{border:2px solid var(--border-color-notice,#666);background:var(--background-color-base,#fff);border-inline-start-width:8px}.mw-parser-output
-    .mbox-honor{border:2px solid #ca3;background:var(--background-color-warning-subtle,#fcf4db);border-inline-start-width:8px}.mw-parser-output
-    .mbox-growth{border:2px solid #8d4;background:var(--background-color-success-subtle,#d5fdf4);border-inline-start-width:8px}.mw-parser-output
-    .mbox-move{border:2px solid #93c;border-inline-start-width:8px}.mw-parser-output
-    .mbox-protection,.mw-parser-output .mbox-message{border:2px solid var(--border-color-base,#aaa);border-inline-start-width:8px}.mw-parser-output
-    .messagebox .mbox-text{border:none;padding:0.25em 0.9em;width:100%}.mw-parser-output
-    .messagebox .mbox-image{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0.9em;padding-inline-end:0;text-align:center}.mw-parser-output
-    .messagebox .mbox-imageright{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0;padding-inline-end:0.9em;text-align:center}.mw-parser-output
-    .messagebox .mbox-empty-cell{border:none;padding:0;width:1px}.mw-parser-output
-    .messagebox .mbox-invalid-type{text-align:center}@media(min-width:720px){.mw-parser-output
-    .messagebox{margin:4px 10%}.mw-parser-output .messagebox.mbox-small{clear:right;float:right;margin:4px
-    0 4px 1em;width:238px}}body.skin--responsive .mw-parser-output table.messagebox
-    img{max-width:none!important}This work is free and may be used by anyone for any
-    purpose. If you wish to use this content, you do not need to request permission
+  credit: 'Godfrey Rubens (painter and photographer).mw-parser-output.messagebox{margin:4px
+    0;width:auto;border-collapse:collapse;border:2px solid var(--border-color-progressive,#6485d1);background-color:var(--background-color-neutral-subtle,#fbfcff);color:var(--color-base,#202122);box-sizing:border-box;border-inline-start-width:8px}.mw-parser-output.messagebox.mbox-small{font-size:88%;line-height:1.25em}.mw-parser-output.mbox-warning,.mw-parser-output.mbox-speedy{border:2px
+    solid var(--border-color-error,#b22222);background:var(--background-color-error-subtle,#ffdbdb);border-inline-start-width:8px}.mw-parser-output.mbox-serious,.mw-parser-output.mbox-delete,.mw-parser-output.mbox-stop{border:2px
+    solid var(--border-color-error,#b22222);border-inline-start-width:8px}.mw-parser-output.mbox-issue,.mw-parser-output.mbox-content{border:2px
+    solid #f28500;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output.mbox-query,.mw-parser-output.mbox-style{border:2px
+    solid #f4c430;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output.mbox-shit{border:2px
+    solid #960;border-inline-start-width:8px}.mw-parser-output.mbox-license{border:2px
+    solid #88a;border-inline-start-width:initial}.mw-parser-output.mbox-legal{border:2px
+    solid var(--border-color-notice,#666);background:var(--background-color-base,#fff);border-inline-start-width:8px}.mw-parser-output.mbox-honor{border:2px
+    solid #ca3;background:var(--background-color-warning-subtle,#fcf4db);border-inline-start-width:8px}.mw-parser-output.mbox-growth{border:2px
+    solid #8d4;background:var(--background-color-success-subtle,#d5fdf4);border-inline-start-width:8px}.mw-parser-output.mbox-move{border:2px
+    solid #93c;border-inline-start-width:8px}.mw-parser-output.mbox-protection,.mw-parser-output.mbox-message{border:2px
+    solid var(--border-color-base,#aaa);border-inline-start-width:8px}.mw-parser-output.messagebox.mbox-text{border:none;padding:0.25em
+    0.9em;width:100%}.mw-parser-output.messagebox.mbox-image{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0.9em;padding-inline-end:0;text-align:center}.mw-parser-output.messagebox.mbox-imageright{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0;padding-inline-end:0.9em;text-align:center}.mw-parser-output.messagebox.mbox-empty-cell{border:none;padding:0;width:1px}.mw-parser-output.messagebox.mbox-invalid-type{text-align:center}@media(min-width:720px){.mw-parser-output.messagebox{margin:4px
+    10%}.mw-parser-output.messagebox.mbox-small{clear:right;float:right;margin:4px
+    0 4px 1em;width:238px}}body.skin--responsive.mw-parser-output table.messagebox
+    img{max-width:none!important} This work is free and may be used by anyone for
+    any purpose. If you wish to use this content, you do not need to request permission
     as long as you follow any licensing requirements mentioned on this page. The Wikimedia
     Foundation has received an e-mail confirming that the copyright holder has approved
     publication under the terms mentioned on this page. This correspondence has been
@@ -2912,6 +2935,13 @@ smallpox-eradication:
   source: https://commons.wikimedia.org/wiki/File:Smallpox_virus_virions_TEM_PHIL_1849.JPG
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/92/Smallpox_virus_virions_TEM_PHIL_1849.JPG/500px-Smallpox_virus_virions_TEM_PHIL_1849.JPG
   url: images/smallpox-eradication.jpg
+snowball-earth:
+  bytes: 12184
+  credit: Oleg Kuznetsov - 3depix - http://3depix.com/
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:Snowball_Huronian.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Snowball_Huronian.jpg/500px-Snowball_Huronian.jpg
+  url: images/snowball-earth.jpg
 socrates:
   bytes: 81083
   credit: Copy of Lysippos (?)
@@ -3082,7 +3112,7 @@ tang-dynasty:
   url: images/tang-dynasty.png
 tansen:
   bytes: 165333
-  credit: AnonymousUnknown author
+  credit: Anonymous Unknown author
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Tansen_of_Gwalior._(11.8x6.7cm)_Mughal._1585-90._National_Museum,_New_Delhi..jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Tansen_of_Gwalior._%2811.8x6.7cm%29_Mughal._1585-90._National_Museum%2C_New_Delhi..jpg/500px-Tansen_of_Gwalior._%2811.8x6.7cm%29_Mughal._1585-90._National_Museum%2C_New_Delhi..jpg
@@ -3402,7 +3432,7 @@ woodblock-printing:
   bytes: 85268
   credit: 'The colophon, at the inner end, reads: Reverently [caused to be] made for
     universal free distribution by Wang Jie on behalf of his two parents on the 13th
-    of the 4th moon of the 9th year of Xiantong [i.e. 11th May, CE 868 ].'
+    of the 4th moon of the 9th year of Xiantong [i.e. 11th May, CE 868].'
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Jingangjing.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Jingangjing.jpg/500px-Jingangjing.jpg
@@ -3458,8 +3488,8 @@ zeno-stoic:
   url: images/zeno-stoic.jpg
 zero-decimal-system:
   bytes: 4477
-  credit: 'Chess x0l45.svg: : Betalph derivative work: NikNaks talk - gallery - wikipedia
-    iThe source code of the previous SVG was invalid due to an error.'
+  credit: 'Chess x0l45.svg:: Betalph derivative work: Nik Naks talk - gallery - wikipedia
+    i The source code of the previous SVG was invalid due to an error.'
   license: Public domain
   source: https://commons.wikimedia.org/wiki/File:Chess_x0t45.svg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/Chess_x0t45.svg/500px-Chess_x0t45.svg.png

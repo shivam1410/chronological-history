@@ -275,13 +275,24 @@ Two levels:
 Start with (1). (2) is only worth it if the stepping is visible, and with a
 cross-fade and a riso texture over the top, it probably will not be.
 
-**Sources.** GPlates / EarthByte publish open plate models and are the ones to
-use — verify the licence on the specific model before shipping, but the ones
-I have seen are CC BY. Scotese's PALEOMAP and Ron Blakey's reconstructions are
-the beautiful ones you have probably seen, and are **not** freely reusable.
-Given every image in `site/images/` has a resolved licence in `CREDITS.md`,
-dropping in a copyrighted reconstruction would be out of character for the
-project.
+**Sources.** GPlates / EarthByte publish open plate models and are the obvious
+place to start — verify the licence on the specific model before shipping, but
+the ones I have seen are CC BY.
+
+An earlier draft of this note said flatly that Scotese's reconstructions are
+not freely reusable. That is too broad, and fetching the image for the new
+Pangaea entry disproved it: the map now on that card is
+`Mollweide Paleographic Map of Earth, 225 Ma (Norian Age).png`, credited to
+Scotese, Vérard, Burgener, Elling and Kocsis, and Commons records it as
+**CC BY 4.0**. The rule is the same one the image pipeline already enforces —
+the licence is a matter of fact to be fetched, not a matter of reputation to
+be assumed. Some of this material is open; check each file.
+
+Ron Blakey's paintings remain the ones to avoid without permission.
+
+Either way, dropping in a reconstruction whose terms we guessed at would be out
+of character: every image in `site/images/` has a licence resolved from the
+Commons API and recorded in `CREDITS.md`.
 
 An alternative worth considering: **do not use real reconstructions at all.**
 Draw stylised continents that are honestly stylised. A riso illustration is not

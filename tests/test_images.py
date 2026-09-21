@@ -77,3 +77,32 @@ class TestPlain:
     ])
     def test_reduces_markup_to_text(self, markup, expected):
         assert _plain(markup) == expected
+
+    @pytest.mark.parametrize("markup,expected", [
+        ("<a>Unknown author</a><a>Unknown author</a>", "Unknown author"),
+        ("<a>Unknown author</a><a>Unknown author</a> Publisher: Acme",
+         "Unknown author Publisher: Acme"),
+        ("<a>Jane</a><a>John</a>", "Jane John"),
+    ])
+    def test_welded_names_are_separated_and_exact_repeats_collapsed(
+            self, markup, expected):
+        # Dropping tags outright welded adjacent elements into one word;
+        # substituting a space unwelded them but left Commons' habit of
+        # rendering a name twice, as a link and its own label.
+        assert _plain(markup) == expected
+
+    @pytest.mark.parametrize("markup,expected", [
+        ("<a>Westphal</a>, which is Swedish", "Westphal, which is Swedish"),
+        ("<a>Harold Thomas</a>; Vectorization: T", "Harold Thomas; Vectorization: T"),
+        ("<i>Les Prix Nobel</i>.", "Les Prix Nobel."),
+        ("<a>Russell.jpg</a>: Photographer", "Russell.jpg: Photographer"),
+        ("<a>A</a> (<a>B</a>)", "A (B)"),
+        ("<a>Jane Doe</a> [<a>CC BY 4.0</a>]", "Jane Doe [CC BY 4.0]"),
+        ("Photo by <a>X</a> and <a>Y</a>", "Photo by X and Y"),
+    ])
+    def test_the_unwelding_space_is_taken_back_out_at_punctuation(
+            self, markup, expected):
+        # The fix for welding put a space where every tag had been, including
+        # where a tag sat directly against punctuation - which is how 52
+        # credits came to read "Westphal , which" and "Les Prix Nobel .".
+        assert _plain(markup) == expected

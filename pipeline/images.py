@@ -105,6 +105,12 @@ COMMONS_FILES: dict[str, str] = {
 _TAG = re.compile(r"<[^>]+>")
 
 
+# Punctuation that should never be preceded by a space, once tags are gone,
+# and brackets that should never be followed by one.
+_SPACE_BEFORE_PUNCT = re.compile(r"\s+([,;:.!?)\]])")
+_SPACE_AFTER_OPEN = re.compile(r"([(\[])\s+")
+
+
 def _plain(markup: str | None) -> str:
     """Commons returns attribution as HTML; reduce it to a readable name.
 
@@ -112,13 +118,21 @@ def _plain(markup: str | None) -> str:
     adjacent elements together, so `<a>Unknown author</a><a>Unknown author</a>`
     reached the panel as "Unknown authorUnknown author".
 
+    That space then has to be taken back out again where the tag sat directly
+    before punctuation, or `<a>Westphal</a>, which` arrives as "Westphal ,
+    which" - which is how 52 credits came to read like that after the welding
+    fix and before this one.
+
     Commons also renders some names twice - a link and its own label - so an
     attribution that is one phrase repeated is collapsed back to the phrase.
     Only an exact repeat: two different names stay as two names.
     """
     if not markup:
         return ""
-    words = html.unescape(_TAG.sub(" ", markup)).split()
+    text = html.unescape(_TAG.sub(" ", markup))
+    text = _SPACE_BEFORE_PUNCT.sub(r"\1", text)
+    text = _SPACE_AFTER_OPEN.sub(r"\1", text)
+    words = text.split()
     # The repeat is not always the whole string: one Commons record reads
     # "Unknown author Unknown author Publisher: ...", so collapse the longest
     # phrase that is immediately repeated at the start and keep the remainder.
@@ -377,6 +391,25 @@ def write_attribution(resolved: dict[str, dict], path: str = ATTRIBUTION) -> Non
 # represents them - the same reason they carry no Wikidata item.
 ARTICLE_LEADS: dict[str, str] = {
     # deep time and prehistory
+    # "Early Earth" rather than "Hadean": the Hadean article's lead is an
+    # artist's concept of a collision in another star system entirely, and
+    # "Origin of water on Earth" leads with a modern Blue Marble photograph,
+    # which is the wrong planet by four billion years.
+    "first-oceans": "Early Earth",
+    "snowball-earth": "Snowball Earth",
+    # "Coal forest" rather than "Carboniferous", whose lead is a Mollweide
+    # projection - a diagram of where the continents were, not a picture of
+    # the forest. The coal-forest article leads with an 1890 engraving of one.
+    "carboniferous-forests": "Coal forest",
+    # Here a map is the depiction: Pangaea is a continental arrangement, so
+    # the paleogeographic projection is the thing itself rather than a
+    # diagram of it.
+    "pangaea": "Pangaea",
+    # The eruption article leads with a Romantic painting of the event. The
+    # town's own article leads with an aerial photograph of the excavation
+    # with Vesuvius behind it, which carries both halves of the entry and is
+    # evidence rather than an imagining.
+    "pompeii": "Pompeii",
     "great-oxidation": "Great Oxidation Event",
     "cambrian-explosion": "Cambrian explosion",
     "permian-triassic-extinction": "Permian\u2013Triassic extinction event",
