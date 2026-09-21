@@ -419,16 +419,26 @@ body[data-year-view="true"] .stage { padding-top: 0; }
 /* ----------------------------------------------------------- responsive */
 
 @media (max-width: 1280px) {
-  /* Below this the era chips start clipping. The title is the least useful
-     thing in the bar - the tab already says what this is - so it goes first. */
+  /* Below this the header cannot hold the title and the seven era chips
+     both. The title is the least useful thing in the bar - the tab already
+     says what this is - so it goes first, which buys the chips another
+     180px of inline life before they move to a strip of their own. */
   .header__title { display: none; }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1100px) {
   /* The era chips get their own scrollable strip rather than being hidden or
      folded into a menu. Jumping eras is the main way to move across 4.5
      billion years, so burying it would cost two taps and make the primary
-     navigation undiscoverable. The row already scrolls horizontally. */
+     navigation undiscoverable. The row already scrolls horizontally.
+
+     This was 980px, which was measured short. Seven chips need 498px, and
+     what the header can spare beside a 238px search field and a 243px date
+     row runs out at about 1063 - so between 980 and 1063 the row overflowed
+     and sliced its last chip mid-word: "Mod" at 1024, "M" at 1000. It still
+     scrolled, but scrollbar-width:none hides the only clue that it does, so
+     it read as broken text rather than as a strip with more in it. 1100
+     leaves headroom for a longer era name or a wider font. */
   .eras {
     position: absolute;
     top: var(--header-h);
