@@ -115,6 +115,20 @@ export function createTimeline(canvas, {
   let lit = null;
   /** Opacity of an entry that was not going on at the same time. */
   const GHOST_ALPHA = 0.12;
+  /*
+   * A bar with neither end in view is context, not an event.
+   *
+   * At a 350-year window twenty-one bars run edge to edge - the Ottoman
+   * Empire, six African polities, the Grand Canal, the Holocene - and none of
+   * them can tell you *when*, because you cannot see either end. They are not
+   * wrong and nothing is hidden; there is just a lot of ink saying the same
+   * thing, and the eye has to sort it from the entries that do carry a date.
+   *
+   * So they are drawn with less ink and read as ground rather than figure.
+   * Not as faint as a ghosted entry: those are excluded from an answer, these
+   * are part of it.
+   */
+  const SPANNING_ALPHA = 0.42;
   let hover = null;
   const laneById = new Map(lanes.map((lane) => [lane.id, lane]));
 
@@ -306,7 +320,7 @@ export function createTimeline(canvas, {
    * are dense enough that labelling everything would be unreadable, so minor
    * entries give up their label before major ones do.
    */
-  function drawLabel(item, next, mid, minImportance) {
+  function drawLabel(item, next, mid, minImportance, onFaint = null) {
     if (item.entry.imp < minImportance) return;
     const label = item.entry.title;
     const textW = ctx.measureText(label).width;
@@ -326,7 +340,10 @@ export function createTimeline(canvas, {
         ? label
         : clipToWords(label, room, (text) => ctx.measureText(text).width);
       if (room > 0 && shown) {
-        ctx.fillStyle = theme.bg;
+        // Inside a bar the name is knocked out in the page colour. On a bar
+        // drawn at 42% there is not enough bar left to knock out of, so the
+        // name switches to the lane colour and sits on the page instead.
+        ctx.fillStyle = onFaint ?? theme.bg;
         ctx.textAlign = 'left';
         ctx.fillText(shown, left + 6, mid);
         return;
@@ -506,9 +523,16 @@ export function createTimeline(canvas, {
       row.forEach((item, i) => {
         // Bar, point and label dim together, or a faded bar keeps a bright name.
         const ghost = lit !== null && !lit.has(item.entry.id);
-        ctx.globalAlpha = ghost ? GHOST_ALPHA : 1;
+        // Neither end in view: the bar is background, the label is not. The
+        // selected entry is never background - you asked for it, so it is the
+        // subject however long it runs.
+        const spanning = !item.point && !ghost
+          && item.entry.id !== selectedId
+          && item.x0 <= 0 && item.x0 + item.w >= width - gutter;
+        ctx.globalAlpha = ghost ? GHOST_ALPHA : spanning ? SPANNING_ALPHA : 1;
         if (item.point) drawPoint(item, mid, colour);
         else drawBar(item, y, colour);
+        if (spanning) ctx.globalAlpha = 1;
         if (item.entry.id === selectedId) {
           ctx.strokeStyle = theme.ink;
           ctx.lineWidth = 2;
@@ -518,7 +542,7 @@ export function createTimeline(canvas, {
           ctx.stroke();
           ctx.lineWidth = 1;
         }
-        drawLabel(item, row[i + 1], mid, minImportance);
+        drawLabel(item, row[i + 1], mid, minImportance, spanning ? colour : null);
         ctx.globalAlpha = 1;
       });
     });
