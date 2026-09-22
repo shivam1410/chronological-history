@@ -32,7 +32,7 @@ as well as here, because most of these licences require it.
 | `angkor-wat` | Bjørn Christian Tørrissen | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Angkor_Wat.jpg) |
 | `antonine-plague` | Tataryn77 | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Aurelius180AD.png) |
 | `apartheid` | Guinnog | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:DurbanSign1989.jpg) |
-| `apes-emerge` | de:User:Matthias Trautsch | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Weisshandgibbon_tierpark_berlin.jpg) |
+| `apes-emerge` | de:Matthias Trautsch | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Weisshandgibbon_tierpark_berlin.jpg) |
 | `aquinas` | Carlo Crivelli | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:St-thomas-aquinasFXD.jpg) |
 | `arab-spring` | cjb | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Tunisian_Revolution_Protest.jpg) |
 | `aral-sea` | NASA, derivative work by Zafiroblue05 at en.wikipedia | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Aral_Sea_1989-2008.jpg) |
@@ -62,7 +62,7 @@ as well as here, because most of these licences require it.
 | `beatles` | Bo Trenter | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Beatles_Trenter_1963.jpg) |
 | `beethoven` | Joseph Karl Stieler | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Beethoven.jpg) |
 | `behavioural-modernity` | EU | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Lascaux_painting.jpg) |
-| `benin-bronzes` | en:User:Warofdreams | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Benin_Bronzes.jpg) |
+| `benin-bronzes` | en:Warofdreams | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Benin_Bronzes.jpg) |
 | `benin-kingdom` | Unknown artist | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Benin_kingdom_Louvre_A97-4-1.jpg) |
 | `berdyaev` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:NBerdyaev.jpg) |
 | `berlin-conference` | Adalbert von Roessler | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Kongokonferenz.jpg) |
@@ -86,7 +86,7 @@ as well as here, because most of these licences require it.
 | `buddha` | พระมหาเทวประภาส วชิรญาณเมธี (ผู้ถ่าย-ปล่อยสัญญาอนุญาตภาพให้นำไปใช้ได้เพื่อการศึกษาโดยอยู่ภา่ยใต้ cc-by-sa-3.0) ผู้สร้างสรรค์ผลงาน/ส่งข้อมูลเก็บในคลังข้อมูลเสรีวิกิมีเดียคอมมอนส์ - เทวประภาส มากคล้าย | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Buddha_in_Sarnath_Museum_(Dhammajak_Mutra).jpg) |
 | `cahokia` | Skubasteve834 | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Monks_Mound_in_July.JPG) |
 | `cambrian-explosion` | Junnn11 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:20191108_Opabinia_regalis.png) |
-| `cao-xueqin` | User:Yongxinge | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Statue_of_Cao_Xueqin.JPG) |
+| `cao-xueqin` | Yongxinge | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Statue_of_Cao_Xueqin.JPG) |
 | `caravaggio` | Ottavio Leoni | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Bild-Ottavio_Leoni,_Caravaggio.jpg) |
 | `carboniferous-forests` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Plants_of_the_Carboniferous_age_MKL_Bd._15_1890_(128660878).jpg) |
 | `cave-art` | EU | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Lascaux_painting.jpg) |
@@ -159,7 +159,7 @@ as well as here, because most of these licences require it.
 | `first-birds` | User Ballista on en.wikipedia | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Archaeopteryx_lithographica.JPG) |
 | `first-mammals` | SPBer | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Sau_mit_ihren_Ferkeln.jpg) |
 | `first-oceans` | Tim Bertelink | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Hadean.png) |
-| `first-world-war` | User:Hohum | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:WWImontage.jpg) |
+| `first-world-war` | Hohum | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:WWImontage.jpg) |
 | `fleming-penicillin` | Official photographer | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Synthetic_Production_of_Penicillin_TR1468.jpg) |
 | `flowering-plants` | Photo by and (c)2008 Derek Ramsey (Ram-Man). Co-attribution must be given to the Chanticleer Garden. | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Sweetbay_Magnolia_Magnolia_virginiana_Flower_Closeup_2242px.jpg) |
 | `french-revolution` | Isidore Stanislas Helman / After Charles Monnet | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:LouisXVIExecutionBig.jpg) |
@@ -374,14 +374,14 @@ as well as here, because most of these licences require it.
 | `pacific-nuclear-testing` | Jack W. Aeby, July 16, 1945, Civilian worker at Los Alamos laboratory, working under the aegis of the Manhattan Project. | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Trinity_shot_color.jpg) |
 | `pacific-sea-level` | Llywelyn2000 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Rhos_on_Sea_Coastal_Defence_Improvements_-_Gwelliannau_i_Amddiffynfeydd_Arfordirol_Llandrillo-yn-Rhos;_Mehefin_-_June_2023_01.jpg) |
 | `pali-canon-written` | Unknown | CC BY-SA 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Tipitaka1.jpg) |
-| `panama-canal` | User:Stan Shebs | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Panama_Canal_Gatun_Locks.jpg) |
+| `panama-canal` | Stan Shebs | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Panama_Canal_Gatun_Locks.jpg) |
 | `panchatantra` | Unknown | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:%22The_Attack_on_the_Camel_by_the_Lion,_Crow,_Wolf,_and_Jackal%22,_Folio_from_a_Kalila_wa_Dimna_MET_DP300742.jpg) |
 | `pangaea` | Scotese, Christopher R.; Vérard, Christian; Burgener, Landon; Elling, Reece P.; Kocsis, Ádám T. | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Mollweide_Paleographic_Map_of_Earth,_225_Ma_(Norian_Age).png) |
 | `panini` | Unknown | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Birch_bark_MS_from_Kashmir_of_the_Rupavatra_Wellcome_L0032691.jpg) |
 | `paper-making` | Nikhilesh Haval | Copyrighted free use | [Commons](https://commons.wikimedia.org/wiki/File:Paperball_2.jpeg) |
 | `paranthropus` | Einsamer Schütze | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Smac_Pal%C3%A4olithikum_013.jpg) |
 | `paris-agreement` | L.tak | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:ParisAgreement.svg) |
-| `peopling-of-americas` | User:Dbachmann | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Early_migrations_mercator.svg) |
+| `peopling-of-americas` | Dbachmann | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Early_migrations_mercator.svg) |
 | `permian-triassic-extinction` | Unknown | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Extinction_intensity.svg) |
 | `persian-miniature` | Possibly Sultan Muhammad | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Miraj_by_Sultan_Muhammad.jpg) |
 | `phidias-greek-sculpture` | Unknown artist | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Cavalcade_south_frieze_Parthenon_BM.jpg) |
@@ -389,7 +389,7 @@ as well as here, because most of these licences require it.
 | `plague-of-athens` | Michiel Sweerts | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Plague_in_an_Ancient_City_LACMA_AC1997.10.1_(1_of_2).jpg) |
 | `plague-of-justinian` | Josse Lieferinxe | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Plaguet03.jpg) |
 | `plato` | Marie-Lan Nguyen | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Plato_Silanion_Musei_Capitolini_MC1377.jpg) |
-| `plato-on-socrates` | Photograph by Greg O'Beirne. Cropped by User:Tomisti | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:UWASocrates_gobeirne_cropped.jpg) |
+| `plato-on-socrates` | Photograph by Greg O'Beirne. Cropped by Tomisti | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:UWASocrates_gobeirne_cropped.jpg) |
 | `pleistocene` | Scotese, Christopher R.; Wright, Nicky M. | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Mollweide_Paleographic_Map_of_Earth,_21_Ka_(Late_Pleistocene_Age).png) |
 | `png-independence` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Papua_New_Guinea_map.png) |
 | `polio-vaccine` | USAID | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Poliodrops.jpg) |
@@ -398,7 +398,7 @@ as well as here, because most of these licences require it.
 | `potato-domestication` | Unknown | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Potato_sprout,_January_23,_2006.jpg) |
 | `potosi-silver` | Parallelepiped09 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Vista_de_la_Villa_Imperial_de_Potos%C3%AD.jpg) |
 | `prc-founded` | 邹健东 (Zou Jiandong) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:People%27s_Liberation_Army_occupied_the_presidential_palace_1949.jpg) |
-| `primates` | Lemur_catta_001.jpg: Alex Dunkel (Visionholder) Aye-aye_(Daubentonia_madagascariensis)_2b.jpg: * Aye-aye_(Daubentonia_madagascariensis)_2.jpg: Tom Junek derivative work: WolfmanSF (talk) Loris_tardigradus_tardigradus_003.jpg: Dr. K.A.I. Nekaris Bohol_Tarsier.jpg: mtoz Cebus_capucinus_(Cahuita).jpg: Hans Hillewaert Ateles_paniscus_-Brazil-8.jpg: Ana_Cotta Eating_Male_Papio_hamadryas.JPG: LadyofHats Hylobates_lar_pair_of_white_and_black_01.jpg: User:MatthiasKabel Pan_troglodytes_(male).jpg: Hans Hillewaert Tamarin_lion_à_tête_dorée.jpg: Thomas Bresson Camera location 47° 44′ 01.25″ N, 7° 21′ 00.63″ E View this and other nearby images on: OpenStreetMap 47.733681; 7.350175 There is a discrepancy of 9222172 meters between the above coordinates and the ones stored at SDC (9°44′10″N 82°50′20″W, precision: 5 m). Please reconcile them. derivative work: Miguelrangeljr | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Primates_-_some_families.jpg) |
+| `primates` | Lemur_catta_001.jpg: Alex Dunkel (Visionholder) Aye-aye_(Daubentonia_madagascariensis)_2b.jpg: * Aye-aye_(Daubentonia_madagascariensis)_2.jpg: Tom Junek derivative work: WolfmanSF (talk) Loris_tardigradus_tardigradus_003.jpg: Dr. K.A.I. Nekaris Bohol_Tarsier.jpg: mtoz Cebus_capucinus_(Cahuita).jpg: Hans Hillewaert Ateles_paniscus_-Brazil-8.jpg: Ana_Cotta Eating_Male_Papio_hamadryas.JPG: LadyofHats Hylobates_lar_pair_of_white_and_black_01.jpg: MatthiasKabel Pan_troglodytes_(male).jpg: Hans Hillewaert Tamarin_lion_à_tête_dorée.jpg: Thomas Bresson Camera location 47° 44′ 01.25″ N, 7° 21′ 00.63″ E View this and other nearby images on: OpenStreetMap 47.733681; 7.350175 There is a discrepancy of 9222172 meters between the above coordinates and the ones stored at SDC (9°44′10″N 82°50′20″W, precision: 5 m). Please reconcile them. derivative work: Miguelrangeljr | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Primates_-_some_families.jpg) |
 | `printing-press` | William Small | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:The_Caxton_Celebration_-_William_Caxton_showing_specimens_of_his_printing_to_King_Edward_IV_and_his_Queen.jpg) |
 | `ptolemy` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:PSM_V78_D326_Ptolemy.png) |
 | `puranas` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:5_Masters_of_the_Dispersed_Bhagavata_Purana._Krishna_and_Balarama_Taking_the_Cattle_to_Graze_Folio_from_a_Bhagavata_Purana_Manuscript_1520-40._Museum_Rietberg,_Zurich.jpg) |
@@ -417,7 +417,7 @@ as well as here, because most of these licences require it.
 | `raphael` | Raphael | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Raffaello_Sanzio.jpg) |
 | `ravi-shankar` | Markgoff2972 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Ravi_Shankar.jpg) |
 | `reform-and-opening` | 张元柏 | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:2011_%E6%B7%B1%E5%9C%B3_%E8%8E%B2%E8%8A%B1%E5%B1%B1%E9%A1%B6%EF%BC%8D%E9%82%93%E5%B0%8F%E5%B9%B3%E5%A4%B4%E5%83%8F_-_panoramio.jpg) |
-| `reformation` | 95Thesen.jpg: User:Shizhao derivative work: 6birc (talk) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:95Thesen_facsimile_colour.png) |
+| `reformation` | 95Thesen.jpg: Shizhao derivative work: 6birc (talk) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:95Thesen_facsimile_colour.png) |
 | `rembrandt` | Rembrandt | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Rembrandt_van_Rijn_-_Self-Portrait_-_Google_Art_Project.jpg) |
 | `renaissance` | Sandro Botticelli | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Sandro_Botticelli_046.jpg) |
 | `residential-schools` | BiblioArchives / LibraryArchives from Canada | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Study_period_at_Roman_Catholic_Indian_Residential_School,_Fort_Resolution,_NWT_(14112957392).jpg) |
@@ -438,7 +438,7 @@ as well as here, because most of these licences require it.
 | `samoa-independence` | Stephen Glauser | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Beach_on_Upolu_Island,_Samoa,_2009.jpg) |
 | `sangam-literature` | Ms Sarah Welch | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Palm-leaf_manuscript,_ancient_and_medieval_Tamil_literature_(partly_Sangam_era),_Languages_in_the_manuscript_Tamil_Telugu_Sanskrit,_Scripts_Grantha_Telugu_Tamil,_Hindu_Shaivism_monastery,_UVSL_589.jpg) |
 | `sappho` | Marie-Lan Nguyen | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Bust_Sappho_Musei_Capitolini_MC1164.jpg) |
-| `sartre` | User:T1980 | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Jean_Paul_Sartre_1967.jpg) |
+| `sartre` | T1980 | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Jean_Paul_Sartre_1967.jpg) |
 | `satyendra-bose` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:SatyenBose1925.jpg) |
 | `schopenhauer` | Johann Schäfer | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Arthur_Schopenhauer_by_J_Sch%C3%A4fer,_1859b.jpg) |
 | `schrodinger` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Erwin_Schr%C3%B6dinger_-_Narodowe_Archiwum_Cyfrowe_(1-E-939).jpg) |
@@ -446,7 +446,7 @@ as well as here, because most of these licences require it.
 | `scythians` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Scythian_Warriors.jpg) |
 | `second-plague-pandemic` | Rita Greer | FAL | [Commons](https://commons.wikimedia.org/wiki/File:20_The_Great_Plague.JPG) |
 | `second-sino-japanese-war` | Unknown photographer, Ministry of the Navy | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Japanese_Special_Naval_Landing_Forces_in_Battle_of_Shanghai_1937.jpg) |
-| `second-world-war` | User:Staberinde | CC BY-SA 3.0 de | [Commons](https://commons.wikimedia.org/wiki/File:Infobox_collage_for_WWII.PNG) |
+| `second-world-war` | Staberinde | CC BY-SA 3.0 de | [Commons](https://commons.wikimedia.org/wiki/File:Infobox_collage_for_WWII.PNG) |
 | `seljuk-empire` | Ktrinko MapMaster | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_the_Seljuk_Empire_(1092).png) |
 | `sengoku-period` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Battle_of_Nagashino.jpg) |
 | `september-11` | Flickr user Michael Foran | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:WTC_smoking_on_9-11.jpeg) |
@@ -458,7 +458,7 @@ as well as here, because most of these licences require it.
 | `shannon` | Jacobs, Konrad | CC BY-SA 2.0 de | [Commons](https://commons.wikimedia.org/wiki/File:ClaudeShannon_MFO3807.jpg) |
 | `sharpeville-massacre` | Godfrey Rubens (painter and photographer).mw-parser-output.messagebox{margin:4px 0;width:auto;border-collapse:collapse;border:2px solid var(--border-color-progressive,#6485d1);background-color:var(--background-color-neutral-subtle,#fbfcff);color:var(--color-base,#202122);box-sizing:border-box;border-inline-start-width:8px}.mw-parser-output.messagebox.mbox-small{font-size:88%;line-height:1.25em}.mw-parser-output.mbox-warning,.mw-parser-output.mbox-speedy{border:2px solid var(--border-color-error,#b22222);background:var(--background-color-error-subtle,#ffdbdb);border-inline-start-width:8px}.mw-parser-output.mbox-serious,.mw-parser-output.mbox-delete,.mw-parser-output.mbox-stop{border:2px solid var(--border-color-error,#b22222);border-inline-start-width:8px}.mw-parser-output.mbox-issue,.mw-parser-output.mbox-content{border:2px solid #f28500;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output.mbox-query,.mw-parser-output.mbox-style{border:2px solid #f4c430;background:var(--background-color-warning-subtle,#ffe);border-inline-start-width:8px}.mw-parser-output.mbox-shit{border:2px solid #960;border-inline-start-width:8px}.mw-parser-output.mbox-license{border:2px solid #88a;border-inline-start-width:initial}.mw-parser-output.mbox-legal{border:2px solid var(--border-color-notice,#666);background:var(--background-color-base,#fff);border-inline-start-width:8px}.mw-parser-output.mbox-honor{border:2px solid #ca3;background:var(--background-color-warning-subtle,#fcf4db);border-inline-start-width:8px}.mw-parser-output.mbox-growth{border:2px solid #8d4;background:var(--background-color-success-subtle,#d5fdf4);border-inline-start-width:8px}.mw-parser-output.mbox-move{border:2px solid #93c;border-inline-start-width:8px}.mw-parser-output.mbox-protection,.mw-parser-output.mbox-message{border:2px solid var(--border-color-base,#aaa);border-inline-start-width:8px}.mw-parser-output.messagebox.mbox-text{border:none;padding:0.25em 0.9em;width:100%}.mw-parser-output.messagebox.mbox-image{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0.9em;padding-inline-end:0;text-align:center}.mw-parser-output.messagebox.mbox-imageright{border:none;padding-top:2px;padding-bottom:2px;padding-inline-start:0;padding-inline-end:0.9em;text-align:center}.mw-parser-output.messagebox.mbox-empty-cell{border:none;padding:0;width:1px}.mw-parser-output.messagebox.mbox-invalid-type{text-align:center}@media(min-width:720px){.mw-parser-output.messagebox{margin:4px 10%}.mw-parser-output.messagebox.mbox-small{clear:right;float:right;margin:4px 0 4px 1em;width:238px}}body.skin--responsive.mw-parser-output table.messagebox img{max-width:none!important} This work is free and may be used by anyone for any purpose. If you wish to use this content, you do not need to request permission as long as you follow any licensing requirements mentioned on this page. The Wikimedia Foundation has received an e-mail confirming that the copyright holder has approved publication under the terms mentioned on this page. This correspondence has been reviewed by a Volunteer Response Team (VRT) member and stored in our permission archive. The correspondence is available to trusted volunteers as ticket #2009032410048598. If you have questions about the archived correspondence, please use the VRT noticeboard. Ticket link: https://ticket.wikimedia.org/otrs/index.pl?Action=AgentTicketZoom&TicketNumber=2009032410048598 Find other files from the same ticket: | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Murder_at_Sharpeville_21_March_1960.jpg) |
 | `shivaji` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Shivaji_British_Museum.jpg) |
-| `silk-road` | User:Kelvin Case User:Turkish Flame User:SmallJarsWithGreenLabels | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Silk_road_Kazakhstan.svg) |
+| `silk-road` | Kelvin Case Turkish Flame SmallJarsWithGreenLabels | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Silk_road_Kazakhstan.svg) |
 | `smallpox-eradication` | Content Providers(s): CDC/ Dr. Fred Murphy; Sylvia Whitfield | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Smallpox_virus_virions_TEM_PHIL_1849.JPG) |
 | `smartphone` | Sage Ross | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Wikipedia_homepage_on_a_large_Android_phone,_2015-04-16.jpg) |
 | `snowball-earth` | Oleg Kuznetsov - 3depix - http://3depix.com/ | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Snowball_Huronian.jpg) |
@@ -503,7 +503,7 @@ as well as here, because most of these licences require it.
 | `timbuktu` | Senani P | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Timbuktu_Mosque_Sankore.jpg) |
 | `timur` | 1405-1409 artist | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Timur_seated_(earliest_known_portrait),_Timurid_genealogy,_1405-1409,_Samarkand_(TSMK,_H2152).jpg) |
 | `timurid-empire` | DigitalNomadWikiKzRu | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Timurid_State.png) |
-| `tirukkural` | Template:Naynapragasanar | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Thirukkural_Madras_1812.JPG) |
+| `tirukkural` | Naynapragasanar | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Thirukkural_Madras_1812.JPG) |
 | `tiwanaku` | Mhwater | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Zonnepoort_tiwanaku.jpg) |
 | `toba-eruption` | NASA Landsat | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Toba_zoom.jpg) |
 | `tolstoy` | Sergei Prokudin-Gorskii | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:L.N.Tolstoy_Prokudin-Gorsky.jpg) |
@@ -555,6 +555,6 @@ as well as here, because most of these licences require it.
 | `zero-decimal-system` | Chess x0l45.svg:: Betalph derivative work: Nik Naks talk - gallery - wikipedia i The source code of the previous SVG was invalid due to an error. | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Chess_x0t45.svg) |
 | `zheng-he-voyages` | Photograph by Mike Peel (www.mikepeel.net). | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Zheng_He%27s_Treasure_Ship_3.jpg) |
 | `zhou-dynasty` | Chinese_plain_5c._BC-fr.svg: Yug derivative work: Zunkir | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Zhou_capitales.svg) |
-| `zimbabwe-independence` | CIA përpunuar nga User:Hipi Zhdripi | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:000_Zimbabveja_harta.PNG) |
+| `zimbabwe-independence` | CIA përpunuar nga Hipi Zhdripi | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:000_Zimbabveja_harta.PNG) |
 | `zoroaster` | LBM1948 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Yazd,_Templo_del_Fuego_(2000)_02_(cropped).jpg) |
 | `zulu-kingdom` | JMK | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Gees_van_eMakhosini-monument,_eMakhosini.jpg) |

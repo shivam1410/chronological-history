@@ -169,6 +169,13 @@ _TAG = re.compile(r"<[^>]+>")
 _SPACE_BEFORE_PUNCT = re.compile(r"\s+([,;:.!?)\]])")
 _SPACE_AFTER_OPEN = re.compile(r"([(\[])\s+")
 
+# A MediaWiki namespace that arrived as part of a link's label rather than as
+# part of anybody's name. Only these four, and only with no space after the
+# colon, so "Publisher: Acme" and "Russell.jpg: Photographer" are untouched.
+# Not after a slash either: one credit is a bare profile URL, and taking the
+# namespace out of its path leaves a link to a page that does not exist.
+_WIKI_NAMESPACE = re.compile(r"(?<!/)\b(?:Template|User|Category|Image):(?=\S)")
+
 
 def _plain(markup: str | None) -> str:
     """Commons returns attribution as HTML; reduce it to a readable name.
@@ -185,10 +192,16 @@ def _plain(markup: str | None) -> str:
     Commons also renders some names twice - a link and its own label - so an
     attribution that is one phrase repeated is collapsed back to the phrase.
     Only an exact repeat: two different names stay as two names.
+
+    Where the label is a page title the namespace comes with it, and the panel
+    then credits "User:Hohum" or, for a template that was never created,
+    "Template:Naynapragasanar". Neither is a name, and Commons' own attribution
+    guidance uses the bare one, so the namespace is dropped.
     """
     if not markup:
         return ""
     text = html.unescape(_TAG.sub(" ", markup))
+    text = _WIKI_NAMESPACE.sub("", text)
     text = _SPACE_BEFORE_PUNCT.sub(r"\1", text)
     text = _SPACE_AFTER_OPEN.sub(r"\1", text)
     words = text.split()
