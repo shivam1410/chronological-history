@@ -65,7 +65,7 @@
     the Mahabharata, arguing that action performed without attachment to its
     result is what resolves the conflict between duty and conscience.
   aliases: [Gita, Bhagavadgita]
-  related: [mahabharata, adi-shankara, gandhi-ahimsa]
+  related: [mahabharata, adi-shankara, gandhi-ahimsa, yoga-sutras]
 
 - id: arthashastra
   significance: >-
@@ -192,4 +192,135 @@
     Some 2,300 Tamil poems in eighteen anthologies by more than 400 poets, on
     love and on war — the oldest surviving literature in any Indian language
     other than Sanskrit.
-  related: [thiruvalluvar]
+  related: [thiruvalluvar, tirukkural]
+
+# ---- the rest of the set ----
+
+- id: tirukkural
+  significance: >-
+    It names no god, no caste and no king, which is why Jains, Shaivas,
+    Vaishnavas and nineteenth-century missionaries could each read it as
+    theirs. A text survives that long by being usable, not by being agreed
+    with.
+  title: The Tirukkural
+  kind: work
+  regions: [art-culture, south-india]
+  start: [-300, 500]
+  end: [-250, 650]
+  importance: 4
+  confidence: contested
+  categories: [literature, ethics, poet]
+  note: >-
+    The bracket is as wide as the proposals, which run from 300 BCE to the
+    seventh century CE. Zvelebil's 450-500 CE, argued from grammatical
+    innovations the Sangam poems do not have, is the usual scholarly position
+    now; Vaiyapuri Pillai read the Sanskrit borrowings as pushing it to about
+    650. The Tamil Nadu government's 31 BCE is a convention from the 1920s.
+  summary: >-
+    1,330 Tamil couplets in three books — on virtue, on wealth and government,
+    and on love — compressed to seven words a couplet, and the most translated
+    Tamil work there is.
+  aliases: [Kural, Thirukkural]
+  related: [thiruvalluvar, sangam-literature]
+
+- id: yoga-sutras
+  significance: >-
+    The eight limbs set out here are the skeleton of what the twentieth
+    century exported as yoga - though the posture practice that word now means
+    occupies about three of its 196 verses.
+  title: The Yoga Sutras of Patanjali
+  kind: work
+  regions: [philosophy, north-india]
+  start: [-200, 350]
+  end: [-100, 450]
+  importance: 4
+  confidence: contested
+  categories: [philosophy, religion]
+  note: >-
+    Two positions, both live. Most place the text shortly after the turn of
+    the common era; Woods in 1914 and Maas more recently argue for about 400
+    CE, reading its arguments against the Buddhist philosopher Vasubandhu.
+    Maas also holds that the sutras and the commentary attributed to Vyasa are
+    one work by one author, not a text and a later gloss.
+  summary: >-
+    196 terse aphorisms systematising yoga as the stilling of the movements of
+    the mind, and setting out the eight limbs — restraint, observance, posture,
+    breath, withdrawal, concentration, meditation, absorption.
+  aliases: [Patanjali, Yogasutra, Patanjalayogashastra]
+  related: [upanishads, bhagavad-gita, adi-shankara]
+
+- id: puranas
+  significance: >-
+    Where most of what is now practised as Hinduism is actually written down -
+    the gods with biographies, the pilgrimage sites, the festivals, the vows.
+    The Vedas are older and the Puranas are what people did.
+  title: The Puranas
+  kind: work
+  regions: [north-india, india]
+  start: [200, 400]
+  end: [800, 1200]
+  importance: 4
+  confidence: contested
+  categories: [scripture, literature]
+  note: >-
+    Eighteen Mahapuranas, and no single date among them. Doniger puts the
+    Markandeya near 250 CE and the Linga at 600-1000; Rocher's position is
+    that each is stratified, grown by accretion over successive eras, so that
+    dating any of them as a work is the wrong question. The bracket is the
+    span of first versions to settled form, and it is soft at both ends.
+  summary: >-
+    A body of Sanskrit texts telling cosmology, genealogy and the deeds of the
+    gods, and carrying — in a form meant to be recited rather than studied —
+    most of the devotional material that Vedic literature does not.
+  related: [mahabharata, ramayana, adi-shankara]
+
+- id: panchatantra
+  significance: >-
+    Translated into Pahlavi, then Arabic, then Hebrew, Latin, Spanish and on,
+    and the route by which Indian fables reached Aesop's territory. It may be
+    the most widely travelled book written before printing.
+  title: The Panchatantra
+  kind: work
+  regions: [art-culture, north-india]
+  start: [100, 400]
+  end: [200, 550]
+  importance: 4
+  confidence: contested
+  categories: [literature]
+  note: >-
+    About 300 CE is the usual guess, and it is a guess - the original is lost
+    and Edgerton reconstructed it in 1924 by comparing the surviving
+    descendants. The hard end of the bracket is Burzoe's Pahlavi translation
+    of about 550 CE, made for the Sasanian court, which proves the book
+    existed by then. That version is itself lost; it survives as an Arabic
+    translation, Kalila wa Dimna.
+  summary: >-
+    A Sanskrit collection of interlocking animal fables framed as a course in
+    statecraft for three inattentive princes, ascribed to Vishnu Sharma.
+  aliases: [Kalila wa Dimna]
+  related: [natyashastra, kalidasa]
+
+- id: aryabhatiya
+  significance: >-
+    The one early Indian text that dates itself. It says the author was
+    twenty-three when 3,600 years of the Kali Yuga had passed, which is 499
+    CE - a fixed point in a chronology otherwise argued in centuries.
+  title: The Aryabhatiya
+  kind: work
+  regions: [science, north-india]
+  start: 499
+  end: 499
+  importance: 4
+  confidence: high
+  categories: [mathematics, astronomy]
+  note: >-
+    In 121 verses it gives a place-value system without a symbol for zero, a
+    sine table, a value of pi accurate to four decimal places and described as
+    approximate, and a rotating earth to explain the apparent motion of the
+    stars. Later Indian astronomers including Brahmagupta rejected the
+    rotation.
+  summary: >-
+    Aryabhata's astronomical and mathematical treatise, compressed into verse
+    for memorisation, and the text through which Indian trigonometry and
+    place-value arithmetic reached the Islamic world and then Europe.
+  related: [aryabhata, brahmagupta, zero-decimal-system, al-khwarizmi]

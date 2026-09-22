@@ -140,6 +140,25 @@ COMMONS_FILES: dict[str, str] = {
         "(partly Sangam era), Languages in the manuscript Tamil Telugu "
         "Sanskrit, Scripts Grantha Telugu Tamil, Hindu Shaivism monastery, "
         "UVSL 589.jpg"),
+    "tirukkural": "File:Thirukkural Madras 1812.JPG",
+    # The 1812 Madras printing, the first known edition. Commons has a palm
+    # leaf too, but at six times wider than tall it is a sliver in the panel.
+    # Thiruvalluvar himself already carries the 1960 stamp.
+    "yoga-sutras": "File:Patanjali Yoga Sutras manuscript.jpg",
+    "puranas": (
+        "File:5 Masters of the Dispersed Bhagavata Purana. Krishna and "
+        "Balarama Taking the Cattle to Graze Folio from a Bhagavata Purana "
+        "Manuscript 1520-40. Museum Rietberg, Zurich.jpg"),
+    # A painted folio rather than a page of script: what the Puranas were for
+    # was being told, and the illustrated manuscripts are how they were told.
+    "panchatantra": (
+        "File:\"The Attack on the Camel by the Lion, Crow, Wolf, and "
+        "Jackal\", Folio from a Kalila wa Dimna MET DP300742.jpg"),
+    # A folio from the Arabic descendant, which is the point of the entry -
+    # the Sanskrit original is lost and survives only through its translations.
+    "aryabhatiya": "File:Aryabhata-code-table.png",
+    # His alphabetic numeral code, which is how 121 verses hold an astronomy.
+    # Aryabhata the person already has the bas-relief.
 }
 
 _TAG = re.compile(r"<[^>]+>")

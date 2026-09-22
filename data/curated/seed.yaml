@@ -357,7 +357,7 @@
     precise than a few centuries is a house of cards.
   summary: Philosophical dialogues concluding the Vedic corpus, introducing
     brahman, atman and rebirth, and forming the basis of Vedanta.
-  related: [rigveda, bhagavad-gita]
+  related: [rigveda, bhagavad-gita, yoga-sutras]
 
 - id: buddha
   significance: >-
@@ -585,7 +585,7 @@
   summary: Astronomer-mathematician who gave a place-value system without zero
     as a symbol, an accurate value of pi, and a heliocentric-leaning account of
     the Earth's rotation.
-  related: [gupta-empire]
+  related: [gupta-empire, aryabhatiya]
 
 - id: muhammad
   title: Prophet Muhammad

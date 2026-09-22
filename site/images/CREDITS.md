@@ -42,6 +42,7 @@ as well as here, because most of these licences require it.
 | `arpanet` | ARPANET | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Arpanet_logical_map,_march_1977.png) |
 | `arthashastra` | Unknown scribe | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Rediscovered_circa_16th_century_Arthashastra_manuscript_in_Grantha_script_from_the_Oriental_Research_Institute_(ORI)_which_was_found_in_1905_01.jpg) |
 | `aryabhata` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:2064_aryabhata-crp.jpg) |
+| `aryabhatiya` | Bhaskara | CC BY-SA 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Aryabhata-code-table.png) |
 | `ashanti-empire` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Asante_map.jpg) |
 | `ashoka` | Photo Dharma from Sadao, Thailand | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Ashoka%27s_visit_to_the_Ramagrama_stupa_Sanchi_Stupa_1_Southern_gateway.jpg) |
 | `augustine` | Philippe de Champaigne | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Saint_Augustine_by_Philippe_de_Champaigne.jpg) |
@@ -374,6 +375,7 @@ as well as here, because most of these licences require it.
 | `pacific-sea-level` | Llywelyn2000 | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Rhos_on_Sea_Coastal_Defence_Improvements_-_Gwelliannau_i_Amddiffynfeydd_Arfordirol_Llandrillo-yn-Rhos;_Mehefin_-_June_2023_01.jpg) |
 | `pali-canon-written` | Unknown | CC BY-SA 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Tipitaka1.jpg) |
 | `panama-canal` | User:Stan Shebs | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Panama_Canal_Gatun_Locks.jpg) |
+| `panchatantra` | Unknown | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:%22The_Attack_on_the_Camel_by_the_Lion,_Crow,_Wolf,_and_Jackal%22,_Folio_from_a_Kalila_wa_Dimna_MET_DP300742.jpg) |
 | `pangaea` | Scotese, Christopher R.; Vérard, Christian; Burgener, Landon; Elling, Reece P.; Kocsis, Ádám T. | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Mollweide_Paleographic_Map_of_Earth,_225_Ma_(Norian_Age).png) |
 | `panini` | Unknown | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Birch_bark_MS_from_Kashmir_of_the_Rupavatra_Wellcome_L0032691.jpg) |
 | `paper-making` | Nikhilesh Haval | Copyrighted free use | [Commons](https://commons.wikimedia.org/wiki/File:Paperball_2.jpeg) |
@@ -399,6 +401,7 @@ as well as here, because most of these licences require it.
 | `primates` | Lemur_catta_001.jpg: Alex Dunkel (Visionholder) Aye-aye_(Daubentonia_madagascariensis)_2b.jpg: * Aye-aye_(Daubentonia_madagascariensis)_2.jpg: Tom Junek derivative work: WolfmanSF (talk) Loris_tardigradus_tardigradus_003.jpg: Dr. K.A.I. Nekaris Bohol_Tarsier.jpg: mtoz Cebus_capucinus_(Cahuita).jpg: Hans Hillewaert Ateles_paniscus_-Brazil-8.jpg: Ana_Cotta Eating_Male_Papio_hamadryas.JPG: LadyofHats Hylobates_lar_pair_of_white_and_black_01.jpg: User:MatthiasKabel Pan_troglodytes_(male).jpg: Hans Hillewaert Tamarin_lion_à_tête_dorée.jpg: Thomas Bresson Camera location 47° 44′ 01.25″ N, 7° 21′ 00.63″ E View this and other nearby images on: OpenStreetMap 47.733681; 7.350175 There is a discrepancy of 9222172 meters between the above coordinates and the ones stored at SDC (9°44′10″N 82°50′20″W, precision: 5 m). Please reconcile them. derivative work: Miguelrangeljr | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Primates_-_some_families.jpg) |
 | `printing-press` | William Small | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:The_Caxton_Celebration_-_William_Caxton_showing_specimens_of_his_printing_to_King_Edward_IV_and_his_Queen.jpg) |
 | `ptolemy` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:PSM_V78_D326_Ptolemy.png) |
+| `puranas` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:5_Masters_of_the_Dispersed_Bhagavata_Purana._Krishna_and_Balarama_Taking_the_Cattle_to_Graze_Folio_from_a_Bhagavata_Purana_Manuscript_1520-40._Museum_Rietberg,_Zurich.jpg) |
 | `pushkin` | Orest Kiprensky | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Kiprensky_Pushkin.jpg) |
 | `pythagoras` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Pythagoras_in_the_Roman_Forum,_Colosseum.jpg) |
 | `qin-dynasty` | Itsmine | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Qin_empire_210_BCE.png) |
@@ -500,6 +503,7 @@ as well as here, because most of these licences require it.
 | `timbuktu` | Senani P | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Timbuktu_Mosque_Sankore.jpg) |
 | `timur` | 1405-1409 artist | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Timur_seated_(earliest_known_portrait),_Timurid_genealogy,_1405-1409,_Samarkand_(TSMK,_H2152).jpg) |
 | `timurid-empire` | DigitalNomadWikiKzRu | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Timurid_State.png) |
+| `tirukkural` | Template:Naynapragasanar | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Thirukkural_Madras_1812.JPG) |
 | `tiwanaku` | Mhwater | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Zonnepoort_tiwanaku.jpg) |
 | `toba-eruption` | NASA Landsat | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Toba_zoom.jpg) |
 | `tolstoy` | Sergei Prokudin-Gorskii | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:L.N.Tolstoy_Prokudin-Gorsky.jpg) |
@@ -544,6 +548,7 @@ as well as here, because most of these licences require it.
 | `xinhai-revolution` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Xinhai_Revolution_in_Shanghai.jpg) |
 | `xiongnu` | Davide Mauro | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Xiongnu_chieftain_(black_backgrouond).jpg) |
 | `year-of-africa` | Original uploader was Mehmetaergun; recreated by Nobelium (talk) 2010-05-10 | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Africa_independence_dates.svg) |
+| `yoga-sutras` | Patanjali (original author) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Patanjali_Yoga_Sutras_manuscript.jpg) |
 | `yuan-dynasty` | SY | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Yuan_Provinces.png) |
 | `zeami` | Yoshiyuki Ito | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Noh_Performance_(235951661).jpeg) |
 | `zeno-stoic` | Paolo Monti | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Paolo_Monti_-_Servizio_fotografico_(Napoli,_1969)_-_BEIC_6353768.jpg) |

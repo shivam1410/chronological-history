@@ -250,6 +250,13 @@ aryabhata:
   source: https://commons.wikimedia.org/wiki/File:2064_aryabhata-crp.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/2064_aryabhata-crp.jpg/500px-2064_aryabhata-crp.jpg
   url: images/aryabhata.jpg
+aryabhatiya:
+  bytes: 23698
+  credit: Bhaskara
+  license: CC BY-SA 2.5
+  source: https://commons.wikimedia.org/wiki/File:Aryabhata-code-table.png
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Aryabhata-code-table.png/500px-Aryabhata-code-table.png
+  url: images/aryabhatiya.png
 ashanti-empire:
   bytes: 96939
   credit: ''
@@ -2606,6 +2613,13 @@ panama-canal:
   source: https://commons.wikimedia.org/wiki/File:Panama_Canal_Gatun_Locks.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/Panama_Canal_Gatun_Locks.jpg/500px-Panama_Canal_Gatun_Locks.jpg
   url: images/panama-canal.jpg
+panchatantra:
+  bytes: 128540
+  credit: ''
+  license: CC0
+  source: https://commons.wikimedia.org/wiki/File:%22The_Attack_on_the_Camel_by_the_Lion,_Crow,_Wolf,_and_Jackal%22,_Folio_from_a_Kalila_wa_Dimna_MET_DP300742.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/%22The_Attack_on_the_Camel_by_the_Lion%2C_Crow%2C_Wolf%2C_and_Jackal%22%2C_Folio_from_a_Kalila_wa_Dimna_MET_DP300742.jpg/500px-%22The_Attack_on_the_Camel_by_the_Lion%2C_Crow%2C_Wolf%2C_and_Jackal%22%2C_Folio_from_a_Kalila_wa_Dimna_MET_DP300742.jpg
+  url: images/panchatantra.jpg
 pangaea:
   bytes: 142334
   credit: Scotese, Christopher R.; Vérard, Christian; Burgener, Landon; Elling, Reece
@@ -2791,6 +2805,13 @@ ptolemy:
   source: https://commons.wikimedia.org/wiki/File:PSM_V78_D326_Ptolemy.png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/PSM_V78_D326_Ptolemy.png/500px-PSM_V78_D326_Ptolemy.png
   url: images/ptolemy.png
+puranas:
+  bytes: 91240
+  credit: Unknown author
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:5_Masters_of_the_Dispersed_Bhagavata_Purana._Krishna_and_Balarama_Taking_the_Cattle_to_Graze_Folio_from_a_Bhagavata_Purana_Manuscript_1520-40._Museum_Rietberg,_Zurich.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/5_Masters_of_the_Dispersed_Bhagavata_Purana._Krishna_and_Balarama_Taking_the_Cattle_to_Graze_Folio_from_a_Bhagavata_Purana_Manuscript_1520-40._Museum_Rietberg%2C_Zurich.jpg/500px-thumbnail.jpg
+  url: images/puranas.jpg
 pushkin:
   bytes: 80976
   credit: Orest Kiprensky
@@ -3525,6 +3546,13 @@ timurid-empire:
   source: https://commons.wikimedia.org/wiki/File:Timurid_State.png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Timurid_State.png/500px-Timurid_State.png
   url: images/timurid-empire.png
+tirukkural:
+  bytes: 112379
+  credit: Template:Naynapragasanar
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Thirukkural_Madras_1812.JPG
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/54/Thirukkural_Madras_1812.JPG/500px-Thirukkural_Madras_1812.JPG
+  url: images/tirukkural.jpg
 tiwanaku:
   bytes: 57702
   credit: Mhwater
@@ -3838,6 +3866,13 @@ year-of-africa:
   source: https://commons.wikimedia.org/wiki/File:Africa_independence_dates.svg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Africa_independence_dates.svg/500px-Africa_independence_dates.svg.png
   url: images/year-of-africa.png
+yoga-sutras:
+  bytes: 99707
+  credit: Patanjali (original author)
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Patanjali_Yoga_Sutras_manuscript.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c8/Patanjali_Yoga_Sutras_manuscript.jpg/500px-Patanjali_Yoga_Sutras_manuscript.jpg
+  url: images/yoga-sutras.jpg
 yuan-dynasty:
   bytes: 242293
   credit: SY
