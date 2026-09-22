@@ -7,7 +7,7 @@
  */
 
 import { activeIn, groupByLane, positionIn } from './slice.js';
-import { formatYear } from './format.js';
+import { astro, formatYear } from './format.js';
 
 const STEPS = [
   { label: '◂ 100', delta: -100 },
@@ -52,6 +52,29 @@ export function createYearView(root, {
     return entry.sMin === entry.eMax
       ? formatYear(entry.sMin)
       : `${formatYear(entry.sMin)} – ${formatYear(entry.eMax)}`;
+  }
+
+  /*
+   * How far through its own span this year falls, as a fraction, or null when
+   * a bar would say nothing.
+   *
+   * "year 217 of 235" and "year 82 of 276" are the Safavids at 92% and the
+   * Qing at 30% - one empire eighteen years from collapse and one a third of
+   * the way in - and telling them apart from the text alone is arithmetic.
+   * The rule under each row is that comparison made visible.
+   *
+   * Two cases get nothing. An entry with no span has no progress to show. And
+   * an entry whose span dwarfs recorded history - Homo sapiens, the Himalayan
+   * orogeny - computes to 100% and would do so on every year anyone can look
+   * up, so a full bar there is decoration rather than information.
+   */
+  const DEEP_SPAN = 100_000;
+
+  function progress(entry, year) {
+    const span_ = astro(entry.eMax) - astro(entry.sMin);
+    if (span_ <= 0 || span_ > DEEP_SPAN) return null;
+    const through = (astro(year) - astro(entry.sMin)) / span_;
+    return Math.min(1, Math.max(0, through));
   }
 
   function render(year) {
@@ -131,6 +154,15 @@ export function createYearView(root, {
         item.append(el('span',
           `yearview__where${boundary ? ' yearview__where--now' : ''}`,
           positionIn(entry, year)));
+
+        const through = progress(entry, year);
+        if (through !== null) {
+          const track = el('span', 'yearview__track');
+          const done = el('span', 'yearview__done');
+          done.style.width = `${(through * 100).toFixed(1)}%`;
+          track.append(done);
+          item.append(track);
+        }
         list.append(item);
       }
       section.append(list);

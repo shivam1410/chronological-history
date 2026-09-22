@@ -126,6 +126,37 @@
   font-size: 11px;
 }
 
+/*
+ * How far through its own span this year falls.
+ *
+ * A rule rather than a chart. The numbers are already on the row - "year 217
+ * of 235" - so this adds no labels and no axis; it exists so the column can
+ * be read down, and an empire near its end can be told from one just begun
+ * without doing arithmetic on every line.
+ *
+ * Two pixels tall, because there are up to forty of these in a view whose
+ * whole virtue is that it is a dense text column.
+ */
+.yearview__track {
+  grid-column: 1 / -1;
+  height: 2px;
+  margin-top: 3px;
+  border-radius: 1px;
+  background: color-mix(in srgb, var(--rule-strong) 55%, transparent);
+  overflow: hidden;
+}
+
+.yearview__done {
+  display: block;
+  height: 100%;
+  border-radius: 1px;
+  background: var(--ink-faint);
+}
+
+/* On the row that began or ended this year, the rule takes the accent too, so
+   the eye finds those first. */
+.yearview__item[data-boundary="true"] .yearview__done { background: var(--accent); }
+
 /* Something that began or ended in this exact year, rather than a century
    merely passing through it. */
 .yearview__item[data-boundary="true"] .yearview__name { font-weight: 600; }
@@ -196,6 +227,8 @@
     display: inline;
     font-size: 11px;
   }
+
+  .yearview__track { grid-column: 1; margin-top: 4px; }
 
   /* Span and position read as one meta line under the title. */
   .yearview__span::after {
