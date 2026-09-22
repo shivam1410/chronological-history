@@ -887,6 +887,13 @@ dostoevsky:
   source: https://commons.wikimedia.org/wiki/File:Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/78/Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg/500px-Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg
   url: images/dostoevsky.jpg
+dot-com-bubble:
+  bytes: 11770
+  credit: Lalala666 at English Wikipedia
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Nasdaq_Composite_dot-com_bubble.svg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/84/Nasdaq_Composite_dot-com_bubble.svg/500px-Nasdaq_Composite_dot-com_bubble.svg.png
+  url: images/dot-com-bubble.png
 du-fu:
   bytes: 78127
   credit: Unknown author
@@ -1214,6 +1221,13 @@ gravitational-waves:
   source: https://commons.wikimedia.org/wiki/File:LIGO_measurement_of_gravitational_waves.svg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/d/db/LIGO_measurement_of_gravitational_waves.svg/500px-LIGO_measurement_of_gravitational_waves.svg.png
   url: images/gravitational-waves.png
+great-depression:
+  bytes: 76181
+  credit: Unknown author or not provided
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Unemployed_men_queued_outside_a_depression_soup_kitchen_opened_in_Chicago_by_Al_Capone,_02-1931_-_NARA_-_541927.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/Unemployed_men_queued_outside_a_depression_soup_kitchen_opened_in_Chicago_by_Al_Capone%2C_02-1931_-_NARA_-_541927.jpg/500px-Unemployed_men_queued_outside_a_depression_soup_kitchen_opened_in_Chicago_by_Al_Capone%2C_02-1931_-_NARA_-_541927.jpg
+  url: images/great-depression.jpg
 great-game:
   bytes: 69605
   credit: Edward Stanford Ltd.
@@ -3217,6 +3231,13 @@ south-africa-1994:
   source: https://commons.wikimedia.org/wiki/File:Nelson_Mandela_1994.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/02/Nelson_Mandela_1994.jpg/500px-Nelson_Mandela_1994.jpg
   url: images/south-africa-1994.jpg
+south-sea-bubble:
+  bytes: 460666
+  credit: William Hogarth
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:William_Hogarth_-_The_South_Sea_Scheme.png
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/17/William_Hogarth_-_The_South_Sea_Scheme.png/500px-William_Hogarth_-_The_South_Sea_Scheme.png
+  url: images/south-sea-bubble.png
 south-sudan-independence:
   bytes: 180175
   credit: Goran_tek-en
@@ -3498,6 +3519,13 @@ transatlantic-slave-trade:
   source: https://commons.wikimedia.org/wiki/File:Slaveshipposter.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Slaveshipposter.jpg/500px-Slaveshipposter.jpg
   url: images/transatlantic-slave-trade.jpg
+transformer:
+  bytes: 64473
+  credit: dvgodoy
+  license: CC BY 4.0
+  source: https://commons.wikimedia.org/wiki/File:Transformer,_full_architecture.png
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Transformer%2C_full_architecture.png/500px-Transformer%2C_full_architecture.png
+  url: images/transformer.png
 transistor:
   bytes: 77307
   credit: ArnoldReinhold
@@ -3527,6 +3555,13 @@ tui-tonga-empire:
   source: https://commons.wikimedia.org/wiki/File:Flag_of_Tonga_(1862-1866).svg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1c/Flag_of_Tonga_%281862-1866%29.svg/500px-Flag_of_Tonga_%281862-1866%29.svg.png
   url: images/tui-tonga-empire.png
+tulip-mania:
+  bytes: 78954
+  credit: Jan Brueghel the Younger
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Jan_Brueghel_the_Younger,_Satire_on_Tulip_Mania,_c._1640.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Jan_Brueghel_the_Younger%2C_Satire_on_Tulip_Mania%2C_c._1640.jpg/500px-Jan_Brueghel_the_Younger%2C_Satire_on_Tulip_Mania%2C_c._1640.jpg
+  url: images/tulip-mania.jpg
 tulsidas:
   bytes: 141956
   credit: Mohan, 1949

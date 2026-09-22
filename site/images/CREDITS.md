@@ -131,6 +131,7 @@ as well as here, because most of these licences require it.
 | `dog-domestication` | Jim Peaco for NPS | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Canis_lupus_howling_on_glacial_erratic.jpg) |
 | `donatello` | Original uploader was Frieda (dillo a Ubi) at it.wikipedia | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Uffizi_Donatello.jpg) |
 | `dostoevsky` | Vasily Perov | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Vasily_Perov_-_%D0%9F%D0%BE%D1%80%D1%82%D1%80%D0%B5%D1%82_%D0%A4.%D0%9C.%D0%94%D0%BE%D1%81%D1%82%D0%BE%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE_-_Google_Art_Project.jpg) |
+| `dot-com-bubble` | Lalala666 at English Wikipedia | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Nasdaq_Composite_dot-com_bubble.svg) |
 | `du-fu` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Dufu.jpg) |
 | `earth-formation` | Ivtorov, Elektro-L 3 camera | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:2025-07-31-Elektro-L-3.png) |
 | `edo-period` | UBC Library Digitization Centre | No restrictions | [Commons](https://commons.wikimedia.org/wiki/File:Newly_engraved_map_of_Great_Japan_(15136421840).jpg) |
@@ -177,6 +178,7 @@ as well as here, because most of these licences require it.
 | `grand-canal` | EditQ | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Wanning_Bridge_1.jpg) |
 | `grasslands-spread` | Vincent van Zeijst | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Chile_(3),_Patagonia,_Road_Y-50_towards_Rio_Verde.JPG) |
 | `gravitational-waves` | B. P. Abbott et al. (LIGO Scientific Collaboration and Virgo Collaboration) — full list at the end of the article | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:LIGO_measurement_of_gravitational_waves.svg) |
+| `great-depression` | Unknown author or not provided | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Unemployed_men_queued_outside_a_depression_soup_kitchen_opened_in_Chicago_by_Al_Capone,_02-1931_-_NARA_-_541927.jpg) |
 | `great-game` | Edward Stanford Ltd. | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:%D0%9F%D0%BE%D0%BB%D0%B8%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F_%D0%BA%D0%B0%D1%80%D1%82%D0%B0_%D0%90%D0%B7%D0%B8%D0%B8_%D0%BD%D0%B0%D1%87%D0%B0%D0%BB%D0%BE_XX_%D0%B2%D0%B5%D0%BA%D0%B0.jpg) |
 | `great-leap-forward` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:People%27s_commone_canteen3.jpg) |
 | `great-oxidation` | Sciencia58 | CC0 | [Commons](https://commons.wikimedia.org/wiki/File:Precambrian_Evolution_of_Life.png) |
@@ -456,6 +458,7 @@ as well as here, because most of these licences require it.
 | `song-dynasty` | derivative work: Augusta 89 | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:China_-_Song_Dynasty-fr.svg) |
 | `songhai-empire` | HetmanTheResearcher | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_the_Songhay_Empire.png) |
 | `south-africa-1994` | Kingkongphoto & www.celebrity-photos.com from Laurel | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Nelson_Mandela_1994.jpg) |
+| `south-sea-bubble` | William Hogarth | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:William_Hogarth_-_The_South_Sea_Scheme.png) |
 | `south-sudan-independence` | Goran_tek-en | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:South_Sudan_topographic_map.svg) |
 | `soviet-central-asia` | Cacahuate, Russian translation by Peter Fitzgerald | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_Central_Asia.svg) |
 | `soviet-dissolution` | Yuriy Kuydin / Юрий Куйдин | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:RIAN_archive_140800_Signing_of_Protocol_on_Establishing_Commonwealth_of_Independent_States.jpg) |
@@ -496,10 +499,12 @@ as well as here, because most of these licences require it.
 | `trail-of-tears` | http://en.wikipedia.org/wiki/User:Cculber007 | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:TrailofTearsMemorial-3.jpg) |
 | `trans-saharan-trade` | Unknown | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:A_long_line_of_men_are_marching_with_their_hands_thrust_thro_Wellcome_V0041263.jpg) |
 | `transatlantic-slave-trade` | Plymouth Chapter of the Society for Effecting the Abolition of the Slave Trade | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Slaveshipposter.jpg) |
+| `transformer` | dvgodoy | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Transformer,_full_architecture.png) |
 | `transistor` | ArnoldReinhold | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Transistors.agr.jpg) |
 | `treaty-of-waitangi` | William Hobson, James Freeman, and James Busby (English version); Henry Williams and Edward Williams (Māori translation) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Treatyofwaitangi.jpg) |
 | `tuberculosis` | Photo Credit: Content Providers(s): CDC/Dr. George Kubica | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:TB_Culture.jpg) |
 | `tui-tonga-empire` | Thommy | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Flag_of_Tonga_(1862-1866).svg) |
+| `tulip-mania` | Jan Brueghel the Younger | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Jan_Brueghel_the_Younger,_Satire_on_Tulip_Mania,_c._1640.jpg) |
 | `tulsidas` | Mohan, 1949 | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Goswami_Tulsidas_Awadhi_Hindi_Poet.jpg) |
 | `turing` | Possibly Arthur Reginald Chaffin (1893-1954) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Alan_Turing_Aged_16.jpg) |
 | `tycho-brahe` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Portr%C3%A4tt_av_Tycho_Brahe_-_Skoklosters_slott_-_90153.tif) |
