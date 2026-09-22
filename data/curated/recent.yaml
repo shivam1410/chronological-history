@@ -151,6 +151,7 @@
     banking collapse and the deepest global recession since the 1930s — met
     with bank rescues, a decade of austerity in much of Europe, and a politics
     that has not gone back to what it was.
+  related: [great-depression, dot-com-bubble]
 
 - id: aadhaar
   title: Aadhaar
@@ -237,7 +238,7 @@
   summary: Neural networks trained on very large datasets moved from a
     research approach to the method behind image recognition, translation,
     protein structure prediction and systems that produce fluent language.
-  related: [turing, transistor, integrated-circuit]
+  related: [transformer, turing, transistor, integrated-circuit]
 
 - id: gravitational-waves
   significance: >-

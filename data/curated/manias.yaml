@@ -1,0 +1,141 @@
+# Manias and crashes, which the dataset had almost none of.
+#
+# Across 540 entries the only financial event anywhere in history was the
+# 2008 crisis, sitting on its own with nothing to compare it to. The Great
+# Depression was missing entirely - the largest economic event of the
+# twentieth century, and a direct cause of one of the two world wars that
+# were already here.
+#
+# Filed as a thread rather than as one-offs, because the pattern is the
+# point: the same shape recurs across four centuries in bulbs, in shares
+# nobody could value, in companies with no revenue, and in mortgages nobody
+# had read. Each one was also, at the time, a good reason.
+
+- id: tulip-mania
+  significance: >-
+    The first speculative bubble anybody wrote down, and the template for how
+    every later one gets told - which is why the telling has outrun the
+    evidence by some distance.
+  title: Tulip mania
+  kind: event
+  regions: [western-europe, europe]
+  start: 1636
+  end: 1637
+  importance: 3
+  confidence: contested
+  categories: [economics, trade]
+  note: >-
+    The myth is bigger than the event. Contract prices for rare bulbs did
+    reach several years of a craftsman's wages before collapsing in February
+    1637, but Anne Goldgar's archival work found few bankruptcies, no wider
+    depression and no suicides - the lurid version descends from moralising
+    pamphlets of the 1630s and from Charles Mackay's retelling in 1841, not
+    from the records. It was a bubble in a luxury market, not a national ruin.
+  summary: Forward contracts for tulip bulbs in the Dutch Republic rose to
+    extraordinary prices over a single winter and collapsed within weeks,
+    leaving a story that has been told as a warning ever since.
+  related: [south-sea-bubble]
+
+- id: south-sea-bubble
+  significance: >-
+    A company with a monopoly on trade it never conducted, valued on the
+    strength of the monopoly. Parliament's response was to ban joint-stock
+    companies almost entirely for a century.
+  title: The South Sea Bubble
+  kind: event
+  regions: [britain, europe]
+  start: 1720
+  end: 1720
+  importance: 4
+  confidence: high
+  categories: [economics, trade]
+  note: >-
+    Newton is said to have lost around £20,000 and to have remarked that he
+    could calculate the motions of the heavenly bodies but not the madness of
+    people. He did lose money; the remark is not traceable to him. The
+    company's actual South American trade amounted to little beyond a
+    contract to supply enslaved people to the Spanish colonies.
+  summary: The South Sea Company swapped British government debt for a trading
+    monopoly, and its shares went from about £128 in January 1720 to £1,000 by
+    August and back under £200 by autumn — ruining investors including much of
+    Parliament, and producing the Bubble Act that outlawed new joint-stock
+    companies for the next hundred years.
+  related: [tulip-mania, dot-com-bubble]
+
+- id: great-depression
+  significance: >-
+    A quarter of American workers and nearly a third of German ones had no
+    job. The Nazi vote went from 2.6% in 1928 to 37.3% in July 1932, which is
+    the shortest route between this entry and the war four entries along.
+  title: The Great Depression
+  kind: period
+  regions: [global, north-america]
+  start: 1929
+  end: [1939, 1941]
+  importance: 5
+  confidence: contested
+  categories: [economics]
+  note: >-
+    Its causes are still argued: monetary contraction, the gold standard,
+    debt deflation and a collapse in demand each have serious cases and are
+    not mutually exclusive. The end depends where you stand - Britain
+    recovered from 1931 after leaving gold, the United States not fully until
+    rearmament. The Wall Street crash of October 1929 sits inside this entry
+    rather than beside it; the crash was weeks, the depression a decade.
+  summary: >-
+    The deepest and longest downturn of the industrial era: the Dow lost 89%
+    of its value between 1929 and 1932, world trade fell by roughly two
+    thirds, and unemployment reached a quarter of the workforce in the United
+    States — reshaping the role of the state almost everywhere, and politics
+    fatally in Germany.
+  related: [second-world-war, financial-crisis-2008, holocaust]
+
+- id: dot-com-bubble
+  significance: >-
+    The technology was real and the valuations were not, which is the harder
+    version of the lesson. The fibre laid by companies that went bankrupt is
+    still carrying traffic.
+  title: The dot-com bubble
+  kind: event
+  regions: [global, north-america]
+  start: [1995, 1995]
+  end: [2000, 2002]
+  importance: 4
+  confidence: high
+  categories: [economics, computing]
+  note: >-
+    The bracket opens at Netscape's IPO in August 1995 and closes on the
+    NASDAQ's floor. The index peaked at 5,048 on 10 March 2000 and bottomed at
+    1,114 in October 2002 - a fall of 78%, and some five trillion dollars of
+    market value. Amazon fell about 95% and survived; Google was founded
+    during the inflation and profited from the wreckage.
+  summary: Internet companies with no earnings and sometimes no product were
+    floated at enormous valuations, and the correction wiped out most of them
+    while leaving the infrastructure, the engineers and a handful of survivors
+    that became the largest firms in the world.
+  related: [world-wide-web, south-sea-bubble, financial-crisis-2008]
+
+- id: transformer
+  significance: >-
+    Eight authors, fifteen pages, and the architecture under essentially every
+    language model since. It removed the part of the design that forced
+    sequence processing to happen in order, which is what made training at
+    scale possible.
+  title: Attention Is All You Need
+  kind: work
+  regions: [science, north-america]
+  start: 2017
+  end: 2017
+  importance: 5
+  confidence: high
+  categories: [computing, discovery]
+  note: >-
+    Attention mechanisms were not new - Bahdanau and colleagues had added
+    them to recurrent translation models in 2014. The contribution here was
+    dropping recurrence entirely, which made the computation parallel and
+    therefore cheap to scale on the hardware that existed. BERT followed in
+    2018 and the GPT line from the same year.
+  summary: A Google paper posted to arXiv in June 2017 that replaced recurrent
+    networks with self-attention alone, and in doing so supplied the design
+    that every large language model since has been a variation on.
+  related: [deep-learning, turing, integrated-circuit]

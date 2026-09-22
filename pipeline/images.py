@@ -42,6 +42,9 @@ DOWNLOAD_TRIES = 3
 # Every filename here has been confirmed to resolve on Commons. Ones that do
 # not are removed rather than left to fail on every run.
 COMMONS_FILES: dict[str, str] = {
+    # The article leads with the company's coat of arms; Hogarth's 1721
+    # satire is what the episode is actually remembered by.
+    "south-sea-bubble": "File:William Hogarth - The South Sea Scheme.png",
     # No lead image on the Aadhaar article or the UIDAI one. This is the
     # authority's own mark, released under the Government Open Data Licence.
     "aadhaar": "File:Aadhaar.svg",
@@ -416,6 +419,14 @@ ARTICLE_LEADS: dict[str, str] = {
     # with Vesuvius behind it, which carries both halves of the entry and is
     # evidence rather than an imagining.
     "pompeii": "Pompeii",
+    # ---- manias and crashes ----
+    "tulip-mania": "Tulip mania",
+    "great-depression": "Great Depression",
+    "dot-com-bubble": "Dot-com bubble",
+    # The paper has no page image of its own, so the entry shows the
+    # architecture it introduced.
+    "transformer": "Transformer (deep learning architecture)",
+
     # ---- the last twenty-five years ----
     # Most of these resolve on their own article. Three do not:
     # liberalisation has no page image, so it shows the man who delivered the
