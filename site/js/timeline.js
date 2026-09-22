@@ -523,10 +523,22 @@ export function createTimeline(canvas, {
       row.forEach((item, i) => {
         // Bar, point and label dim together, or a faded bar keeps a bright name.
         const ghost = lit !== null && !lit.has(item.entry.id);
-        // Neither end in view: the bar is background, the label is not. The
-        // selected entry is never background - you asked for it, so it is the
-        // subject however long it runs.
+        /*
+         * Neither end in view: the bar is background, the label is not.
+         *
+         * A person never is. At a 1900-1950 window this rule backgrounded
+         * seventeen people - Einstein, Bohr, Schrodinger, Wittgenstein,
+         * Ambedkar, Churchill, Mao - because each was born before 1900 and
+         * died after 1950, so neither end was on screen. But a life is not
+         * context the way the Holocene is: you are looking at the half
+         * century they worked in, and greying them out inverts the point of
+         * the view. Epochs, pandemics and trade routes still recede.
+         *
+         * The selected entry is never background either - you asked for it,
+         * so it is the subject however long it runs.
+         */
         const spanning = !item.point && !ghost
+          && item.entry.kind !== 'person'
           && item.entry.id !== selectedId
           && item.x0 <= 0 && item.x0 + item.w >= width - gutter;
         ctx.globalAlpha = ghost ? GHOST_ALPHA : spanning ? SPANNING_ALPHA : 1;
