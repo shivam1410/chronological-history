@@ -131,6 +131,59 @@ describe('packLane', () => {
   });
 });
 
+describe('packLane with a pinned entry', () => {
+  const view = fakeView(0, 1000, 1000);
+  // Six bars all covering the window, so a seventh has nowhere to go.
+  const crowd = ['a', 'b', 'c', 'd', 'e', 'f'].map((id) => entry(id, 0, 1000));
+
+  test('without a pin the seventh entry is counted as hidden', () => {
+    const { rows, hidden } = packLane([...crowd, entry('wanted', 0, 1000)], view);
+    assert.equal(rows.length, 6);
+    assert.equal(hidden, 1);
+    assert.equal(rows.flat().some((i) => i.entry.id === 'wanted'), false);
+  });
+
+  test('a pinned entry is always drawn, even past maxRows', () => {
+    // Selecting an entry opens its card. Leaving it in the overflow means the
+    // card describes something the reader cannot see anywhere on the chart.
+    const { rows, hidden } = packLane(
+      [...crowd, entry('wanted', 0, 1000)], view, { pin: 'wanted' });
+    assert.equal(rows.flat().some((i) => i.entry.id === 'wanted'), true);
+    assert.equal(hidden, 0);
+  });
+
+  test('pinning does not move anything that already had a row', () => {
+    const before = packLane([...crowd, entry('wanted', 0, 1000)], view);
+    const after = packLane(
+      [...crowd, entry('wanted', 0, 1000)], view, { pin: 'wanted' });
+    const ids = (p) => p.rows.slice(0, 6).map((r) => r.map((i) => i.entry.id));
+    assert.deepEqual(ids(after), ids(before));
+  });
+
+  test('a pin that already fits changes nothing', () => {
+    const roomy = [entry('a', 0, 100), entry('wanted', 200, 300)];
+    const plain = packLane(roomy, view);
+    const pinned = packLane(roomy, view, { pin: 'wanted' });
+    assert.equal(pinned.rows.length, plain.rows.length);
+    assert.equal(pinned.hidden, 0);
+  });
+
+  test('a pin naming an entry that is not here is ignored', () => {
+    const { rows, hidden } = packLane(
+      [...crowd, entry('wanted', 0, 1000)], view, { pin: 'absent' });
+    assert.equal(rows.length, 6);
+    assert.equal(hidden, 1);
+  });
+
+  test('packLanes passes the pin down to the lane that holds it', () => {
+    const packed = packLanes(
+      [...crowd, entry('wanted', 0, 1000)], ['india'], view, { pin: 'wanted' });
+    const india = packed.find((l) => l.lane === 'india');
+    assert.equal(india.rows.flat().some((i) => i.entry.id === 'wanted'), true);
+    assert.equal(india.hidden, 0);
+  });
+});
+
 describe('packLanes', () => {
   const view = fakeView(0, 1000, 1000);
 

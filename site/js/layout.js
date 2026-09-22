@@ -12,6 +12,7 @@ const DEFAULTS = {
   gapPx: 4,
   minWidthPx: 3,
   laneKey: 'lane',
+  pin: null,
 };
 
 /** Entries overlapping the view's window. Touching an edge counts. */
@@ -34,7 +35,7 @@ function measure(entry, view, minWidthPx) {
  * that were in view, so the renderer can show a truthful "+N more".
  */
 export function packLane(entries, view, options = {}) {
-  const { maxRows, gapPx, minWidthPx } = { ...DEFAULTS, ...options };
+  const { maxRows, gapPx, minWidthPx, pin } = { ...DEFAULTS, ...options };
 
   const items = cull(entries, view)
     .map((entry) => measure(entry, view, minWidthPx))
@@ -45,6 +46,7 @@ export function packLane(entries, view, options = {}) {
   const rows = [];
   const ends = []; // right edge of each row's last item, including the gap
   let hidden = 0;
+  let pinned = null; // the pinned item, but only if it overflowed
 
   for (const item of items) {
     // Items arrive in ascending x0, so only each row's last item can collide.
@@ -62,10 +64,26 @@ export function packLane(entries, view, options = {}) {
     if (rows.length < maxRows) {
       rows.push([item]);
       ends.push(item.x0 + item.w + gapPx);
+    } else if (pin !== null && item.entry.id === pin) {
+      pinned = item;
     } else {
       hidden += 1;
     }
   }
+
+  /*
+   * The pinned entry gets a row rather than a place in the "+N more" count.
+   *
+   * `pin` is the open entry. At a 1533-1647 window Art & Culture holds nine
+   * bars in six rows, and Shakespeare was one of the three that overflowed -
+   * so searching for him opened his card, lit his contemporaries, and drew
+   * nothing at all where he should have been. A card describing something
+   * that is nowhere on the chart is worse than one extra row.
+   *
+   * It is appended rather than inserted, so every bar that already had a
+   * place keeps it and the lane does not reshuffle under the reader.
+   */
+  if (pinned) rows.push([pinned]);
 
   return { rows, hidden };
 }

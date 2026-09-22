@@ -145,6 +145,21 @@ export function createTimeline(canvas, {
 
   /** Does backgrounding still tell the reader anything at this zoom? */
   function assessBackground() {
+    /*
+     * One dimming system at a time.
+     *
+     * Selecting already sorts figure from ground, and it does it better -
+     * it knows what was going on at the same time, which is the question the
+     * reader is asking. Running the spanning rule underneath it put three
+     * greys on the chart at once: solid, backgrounded at 0.42, ghosted at
+     * 0.12. At a 1533-1647 window with Shakespeare open that left 61% of
+     * bars faint, and the subject of the card was not among the bright ones
+     * because it had not been drawn at all.
+     */
+    if (selectedId !== null) {
+      backgroundOK = false;
+      return;
+    }
     let total = 0;
     let spanning = 0;
     for (const lane of layout) {
@@ -220,6 +235,31 @@ export function createTimeline(canvas, {
     return { order, labels, colours, key: expand ? 'region' : 'lane' };
   }
 
+  /*
+   * Put the lane holding `id` on screen, and do nothing if it already is.
+   *
+   * The layout is rebuilt on the next frame - a selection can add a pinned
+   * row and change lane heights - so the scroll is computed after that pack
+   * rather than against the geometry the click happened on.
+   */
+  function reveal(id) {
+    layout = computeLayout();
+    const lane = layout.find(
+      (l) => l.rows.some((row) => row.some((item) => item.entry.id === id)));
+    if (!lane) return;
+    const viewH = height - AXIS_H;
+    const top = lane.y;
+    const bottom = lane.y + lane.h;
+    if (top < scrollY) scrollY = Math.max(0, top - LANE_SEP);
+    else if (bottom > scrollY + viewH) {
+      scrollY = Math.min(Math.max(0, contentH - viewH), bottom - viewH + LANE_SEP);
+    }
+    schedule();
+  }
+
+  const hasSelected = (rows) => rows.some(
+    (row) => row.some((item) => item.entry.id === selectedId));
+
   function computeLayout() {
     const model = laneModel();
     // Always packed to the widest cap, then trimmed to what fits. First-fit
@@ -230,6 +270,8 @@ export function createTimeline(canvas, {
       maxRows: MAX_ROWS,
       minWidthPx: MIN_BAR_W,
       laneKey: model.key,
+      // The open entry is guaranteed a row instead of a place in "+N more".
+      pin: selectedId,
     });
     const caps = rowCaps(packed);
 
@@ -239,10 +281,26 @@ export function createTimeline(canvas, {
       const cap = caps.get(lane.lane) ?? MAX_ROWS;
       // A collapsed lane draws every entry into one thin band, so trimming its
       // rows would drop entries it has the room for.
-      const rows = isCollapsed ? lane.rows : lane.rows.slice(0, cap);
-      const trimmed = isCollapsed
+      let rows = isCollapsed ? lane.rows : lane.rows.slice(0, cap);
+      let trimmed = isCollapsed
         ? 0
         : lane.rows.slice(cap).reduce((n, row) => n + row.length, 0);
+      /*
+       * The trim is a second chance for the open entry to fall off the chart.
+       *
+       * packLane pins it a row, but that row is appended last, so slicing to
+       * the height that actually fits takes it straight back off. Both had to
+       * be fixed or neither counted: Shakespeare survived the pack and then
+       * lost his row here.
+       */
+      if (!isCollapsed && selectedId !== null && !hasSelected(rows)) {
+        const home = lane.rows.find(
+          (row) => row.some((item) => item.entry.id === selectedId));
+        if (home) {
+          rows = [...rows, home];
+          trimmed -= home.length;
+        }
+      }
       // A lane is as tall as its bars or its wrapped name, whichever needs more:
       // a three-line name in a two-row lane would otherwise overflow into the
       // lane below.
@@ -1071,7 +1129,18 @@ export function createTimeline(canvas, {
         for (const other of alsoLit) lit.add(other);
       }
       schedule();
+      if (id !== null) reveal(id);
     },
+    /**
+     * Scroll the open entry's lane into view.
+     *
+     * Sixteen lanes at a window that expands sub-regions need more height
+     * than the canvas has, and the only way to move down it was shift+wheel
+     * or a vertical drag - neither of which the on-canvas hint mentions. So
+     * searching for Shakespeare opened his card and left his lane 130px below
+     * the last thing drawn, with nothing to say so.
+     */
+    reveal(id) { reveal(id); },
     /** Pixel geometry of a currently laid-out entry, or null. */
     itemFor(id) {
       for (const lane of layout) {
