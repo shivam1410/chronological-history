@@ -42,6 +42,9 @@ DOWNLOAD_TRIES = 3
 # Every filename here has been confirmed to resolve on Commons. Ones that do
 # not are removed rather than left to fail on every run.
 COMMONS_FILES: dict[str, str] = {
+    # No lead image on the Aadhaar article or the UIDAI one. This is the
+    # authority's own mark, released under the Government Open Data Licence.
+    "aadhaar": "File:Aadhaar.svg",
     # Both Laetoli articles lead with a photograph of an excavation
     # test-pit. The entry is about the footprints, so it shows them.
     "laetoli-footprints": "File:Laetoli footprints replica.jpg",
@@ -413,6 +416,30 @@ ARTICLE_LEADS: dict[str, str] = {
     # with Vesuvius behind it, which carries both halves of the entry and is
     # evidence rather than an imagining.
     "pompeii": "Pompeii",
+    # ---- the last twenty-five years ----
+    # Most of these resolve on their own article. Three do not:
+    # liberalisation has no page image, so it shows the man who delivered the
+    # 1991 budget; mRNA's own article leads with a journal figure, so it
+    # borrows the vaccine that carried the technique; Aadhaar has no lead
+    # either and is handled as a Commons file below.
+    "september-11": "September 11 attacks",
+    "iraq-war": "Iraq War",
+    "india-liberalisation": "Manmohan Singh",
+    "m-pesa": "M-Pesa",
+    "smartphone": "Smartphone",
+    "social-media": "Social media",
+    "financial-crisis-2008": "2007\u20132008 financial crisis",
+    "arab-spring": "Arab Spring",
+    "crispr": "CRISPR gene editing",
+    "deep-learning": "Deep learning",
+    "gravitational-waves": "First observation of gravitational waves",
+    "paris-agreement": "Paris Agreement",
+    "upi": "Unified Payments Interface",
+    "brexit": "Brexit",
+    "mrna-vaccines": "Pfizer\u2013BioNTech COVID-19 vaccine",
+    "james-webb": "James Webb Space Telescope",
+    "ukraine-invasion": "Russian invasion of Ukraine",
+
     # ---- human origins ----
     # Lucy's own article leads with the reconstruction; Laetoli, Taung and
     # Paranthropus lead with the evidence itself. Interbreeding has no page
