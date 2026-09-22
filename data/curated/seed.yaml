@@ -143,7 +143,8 @@
 
 - id: last-glacial-maximum
   title: Last Glacial Maximum
-  kind: event
+  # 7,500 years of ice at its greatest extent: a period, not a moment.
+  kind: period
   regions: [earth-life]
   start: "26.5 ka"
   end: "19 ka"

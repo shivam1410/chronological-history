@@ -92,12 +92,20 @@
   kind: structure
   regions: [china, east-asia]
   start: 605
-  end: ongoing
+  end: [609, 1293]
   importance: 4
   confidence: high
   categories: [architecture, trade]
+  note: >-
+    Two campaigns, not one: the Sui cut the main line between 605 and 609, and
+    the Yuan rerouted it to reach Beijing by 1293. It ran to the present here
+    until this was written, which is not how the rest of this dataset treats
+    standing structures - the Great Pyramid gets forty years and the Panama
+    Canal gets ten, both of them still in use. The building is the event; that
+    it still carries freight belongs in a sentence, not in a bar.
   summary: Nearly 1,800 km linking the Yangtze rice country to the northern
-    capitals, the longest artificial waterway ever built and still in use.
+    capitals, the longest artificial waterway ever built — and still working,
+    seventeen centuries after the first stretch was dug.
 
 - id: an-lushan-rebellion
   title: An Lushan Rebellion

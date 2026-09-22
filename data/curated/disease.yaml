@@ -172,6 +172,12 @@
   importance: 4
   confidence: medium
   categories: [disease, pandemic]
+  note: >-
+    The bar is a series, not one continuous event: seven pandemics with lulls
+    between them. It is open because the seventh, which began in Sulawesi in
+    1961, has never been declared over - cholera is endemic in some fifty
+    countries, the outbreak in Yemen from 2016 is the largest on record, and
+    the WHO raised a global emergency over a multi-country upsurge in 2023.
   summary: Seven pandemics since 1817, all originating in the Ganges delta. The
     1854 London outbreak prompted John Snow to trace cases to a single water
     pump, which founded epidemiology and made the case for sanitation.

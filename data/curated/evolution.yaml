@@ -29,7 +29,8 @@
     The first mass extinction was caused by a lifeform poisoning its own
     atmosphere. It is also the reason anything can breathe.
   title: The Great Oxidation Event
-  kind: event
+  # 450 million years is not an event whatever its name says.
+  kind: period
   regions: [earth-life]
   start: "2.45 Ga"
   end: "2 Ga"

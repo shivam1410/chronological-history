@@ -352,13 +352,22 @@
 
 - id: aral-sea
   title: Desiccation of the Aral Sea
-  kind: event
+  # A sixty-six year process, not a moment. It was kind: event, which this
+  # dataset otherwise reserves for things that happen rather than things that
+  # unfold.
+  kind: period
   regions: [central-asia]
   start: 1960
   end: ongoing
   importance: 4
   confidence: high
   categories: [climate]
+  note: >-
+    Still true of one half and no longer true of the other. The sea split in
+    1987, and the Kok-Aral dam completed in 2005 stabilised the North Aral:
+    the water rose, the salinity fell and the fishery at Aralsk came back. The
+    South Aral kept going - its eastern basin dried completely in 2014 for the
+    first time in some six hundred years. The entry stays open for the South.
   summary: Soviet irrigation diverted the two rivers feeding what was the
     world's fourth-largest lake; it has lost most of its volume, leaving a salt
     desert, a collapsed fishery and a public health crisis.

@@ -558,20 +558,26 @@
   related: [mozart]
 
 - id: jazz
-  title: Jazz
+  title: The rise of jazz
   kind: period
   regions: [art-culture, north-america]
   start: [1895, 1910]
-  end: ongoing
+  end: [1945, 1959]
   importance: 4
   confidence: medium
   categories: [music, art]
-  note: No single origin point survives scrutiny; the bracket opens on the New
-    Orleans years from which the first recordings and first-hand accounts come.
-    It stays open because the music did not stop.
+  note: >-
+    This used to run to the present, which said only that jazz still exists -
+    true of every music ever invented, and a bar across every modern view. The
+    bracket now covers the rise: New Orleans, where no single origin point
+    survives scrutiny and the opening is set by the first recordings and
+    first-hand accounts, through to the years when bebop turned a popular
+    dance music into something people sat down to listen to. Jazz did not stop
+    in 1959. It stopped being the thing everyone was dancing to.
   summary: Blues and ragtime met brass-band instruments in Black New Orleans
     and produced a music built on improvisation — which within fifty years had
-    become the common language of popular music almost everywhere.
+    become the common language of popular music almost everywhere, and then
+    handed that role on.
 
 - id: cinema
   title: Cinema
