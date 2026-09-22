@@ -1,0 +1,195 @@
+# The early Indian texts the dataset was missing.
+#
+# The audit that corrected seven Indian datings also turned up what was simply
+# absent: Panini, whose Ashtadhyayi is arguably the first formal system anyone
+# built; the Arthashastra as a text rather than as a line in Kautilya's note;
+# the Gita, which the Mahabharata entry already referred to without it existing;
+# the two medical compendia as a pair; the Sanskrit treatise that Indian
+# aesthetics still argues from; the most contested legal text on the
+# subcontinent; and the whole early Tamil corpus.
+#
+# Every date here is contested and most of them are contested widely. The
+# brackets are wide on purpose and the notes say where the weight sits, which
+# is the only honest way to put a text with no manuscript within nine centuries
+# of its composition onto a timeline at all.
+
+- id: panini
+  significance: >-
+    Roughly four thousand rules, ordered so that a later rule overrides an
+    earlier one, written in a technical metalanguage he had to invent before he
+    could state them. It is a generative grammar in the modern sense, some
+    twenty-three centuries before anyone built another.
+  title: Panini
+  kind: person
+  regions: [science, north-india]
+  start: [-500, -380]
+  end: [-450, -350]
+  importance: 5
+  confidence: contested
+  categories: [scientist, logic, literature]
+  note: >-
+    Estimates run from the sixth to the fourth century BCE and turn partly on a
+    single word - yavanani in rule 4.1.49, which means either Greek script or
+    Greek women. Script implies contact after Alexander and a late date;
+    Cardona argues for women and an early one. Most settle near the fourth
+    century BCE. He worked at Shalatula in Gandhara, and the Ashtadhyayi was
+    built to be memorised rather than read.
+  summary: >-
+    Grammarian of Sanskrit, whose Ashtadhyayi describes a language as a system
+    of rules applied in order rather than as a catalogue of forms — the method
+    that twentieth-century linguistics and computer science arrived at
+    independently, and then recognised.
+  aliases: [Pāṇini]
+  related: [upanishads, kautilya]
+
+- id: bhagavad-gita
+  significance: >-
+    Seven hundred verses inside an epic of a hundred thousand, and the part
+    read most outside India. Gandhi called it his dictionary of daily
+    reference; Oppenheimer reached for it at Trinity.
+  title: The Bhagavad Gita
+  kind: work
+  regions: [philosophy, north-india]
+  start: [-400, -100]
+  end: [-100, 200]
+  importance: 5
+  confidence: contested
+  categories: [scripture, philosophy]
+  note: >-
+    Its date rests on a prior question - whether it belonged to the Mahabharata
+    early or was inserted into it later. Estimates run from the fifth century
+    BCE to the second century CE and cluster on the second or first century
+    BCE. It is less a separate book than a passage that became one.
+  summary: >-
+    A dialogue between Arjuna and Krishna on the eve of a battle, set inside
+    the Mahabharata, arguing that action performed without attachment to its
+    result is what resolves the conflict between duty and conscience.
+  aliases: [Gita, Bhagavadgita]
+  related: [mahabharata, adi-shankara, gandhi-ahimsa]
+
+- id: arthashastra
+  significance: >-
+    It sets out famine relief, tax rates, the licensing of brothels and the
+    running of spies in one register, and never once asks whether any of it is
+    right. That neutrality is why it read as cynical when it resurfaced.
+  title: The Arthashastra
+  kind: work
+  regions: [philosophy, north-india]
+  start: [-200, 100]
+  end: [100, 300]
+  importance: 4
+  confidence: contested
+  categories: [philosophy, economics, ethics]
+  note: >-
+    Lost for centuries, and recovered in 1905 when a manuscript reached the
+    Mysore Oriental Library. Tradition ascribes it to Kautilya in the fourth
+    century BCE; McClish and Olivelle read the surviving text as a composite
+    assembled between the second century BCE and the third century CE over an
+    older core. This bracket is the text, not the man.
+  summary: >-
+    A Sanskrit manual of statecraft covering administration, law, taxation,
+    war and espionage, written as instruction to a ruler rather than as an
+    argument about what rulers ought to be.
+  related: [kautilya, maurya-empire, manusmriti]
+
+- id: manusmriti
+  significance: >-
+    Ambedkar burned it in public in December 1927, which tells you it was still
+    doing work seventeen centuries on. Colonial courts had treated it as the
+    Hindu law code, giving one text an authority it never held alone.
+  title: The Manusmriti
+  kind: work
+  regions: [philosophy, north-india]
+  start: [-200, 100]
+  end: [100, 300]
+  importance: 4
+  confidence: contested
+  categories: [ethics, philosophy]
+  note: >-
+    Most scholars place it between 200 BCE and 200 CE; Olivelle argues from its
+    mention of gold coins as fines that the surviving text is second or third
+    century CE. It is composite, and it is one of many dharmashastras - its
+    standing as the Hindu law code is largely an artefact of which text the
+    British had translated first, by William Jones in 1794.
+  summary: >-
+    A Sanskrit treatise on dharma setting out duty by varna and by stage of
+    life, together with law, penance and statecraft — the most quoted and the
+    most contested of the Indian legal texts.
+  aliases: [Manava Dharmashastra, Laws of Manu]
+  related: [arthashastra, ambedkar]
+
+- id: charaka-samhita
+  significance: >-
+    It defines what is to count as evidence - testimony, observation,
+    inference - before it says anything about disease. The epistemology comes
+    first, which is not how most ancient medicine opens.
+  title: The Charaka Samhita
+  kind: work
+  regions: [science, north-india]
+  start: [-400, -100]
+  end: [400, 600]
+  importance: 4
+  confidence: contested
+  categories: [medicine, scientist]
+  note: >-
+    Three layers rather than one text. An older compendium ascribed to
+    Agnivesha was revised by Charaka somewhere between 100 BCE and 200 CE, and
+    about a third of the surviving work was rewritten around the sixth century
+    CE by Dridhabala - who says so himself, because that part had been lost.
+    The bracket spans all three.
+  summary: >-
+    The foundational text of Ayurvedic internal medicine, on diagnosis, diet,
+    pharmacology and the conduct of physicians, and the counterpart to the
+    Sushruta Samhita's surgery.
+  related: [sushruta]
+
+- id: natyashastra
+  significance: >-
+    It treats performance as a mechanism that can be described, and names the
+    part that matters most: rasa, the flavour a work leaves in an audience
+    rather than the feeling an actor has. Indian aesthetics has been arguing
+    with that term ever since.
+  title: The Natyashastra
+  kind: work
+  regions: [art-culture, north-india]
+  start: [-400, -100]
+  end: [200, 500]
+  importance: 4
+  confidence: contested
+  categories: [drama, music, art, literature]
+  note: >-
+    Estimates run from 500 BCE to 500 CE. Most hold that the first complete
+    version was finished between 200 BCE and 200 CE, over material that had
+    been accumulating for some time before that. It is ascribed to Bharata,
+    who may be a name for the compilers rather than a person.
+  summary: >-
+    A Sanskrit treatise on performance covering dance, music, stagecraft,
+    costume, gesture and dramatic structure, and setting out the theory of rasa
+    that Indian criticism has worked from since.
+  aliases: [Natya Shastra]
+  related: [kalidasa, bhavabhuti]
+
+- id: sangam-literature
+  significance: >-
+    Secular poetry of love and war, in a classical language, by hundreds of
+    named poets including women, and almost none of it religious. Nothing else
+    quite like it survives from early India.
+  title: Sangam literature
+  kind: work
+  regions: [art-culture, south-india]
+  start: [-300, -100]
+  end: [250, 300]
+  importance: 4
+  confidence: contested
+  categories: [poet, literature]
+  note: >-
+    Zvelebil puts the bulk of it at 100 BCE to 250 CE on linguistic and
+    prosodic grounds; the wider convention is 300 BCE to 300 CE. Excavations at
+    Keeladi have been read as pushing Tamil literacy back towards 600 BCE, but
+    that reading is disputed and does not date these texts. The legend of three
+    academies at Madurai is later than the poems.
+  summary: >-
+    Some 2,300 Tamil poems in eighteen anthologies by more than 400 poets, on
+    love and on war — the oldest surviving literature in any Indian language
+    other than Sanskrit.
+  related: [thiruvalluvar]

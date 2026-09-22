@@ -109,6 +109,37 @@ COMMONS_FILES: dict[str, str] = {
     # His play Malatimadhava, there being no likeness of the man.
     "hilbert-program": "File:David Hilbert, 1907.jpg",
     "cinema": "File:Cinematographe Lumiere.jpg",
+
+    # The early Indian texts. Six of the seven show a manuscript rather than a
+    # portrait, because for none of these is there a likeness worth the name -
+    # and a palm leaf is closer to what the entry is actually about. They
+    # render as thin bands, which is the true shape of the object.
+    "panini": (
+        "File:Birch bark MS from Kashmir of the Rupavatra "
+        "Wellcome L0032691.jpg"),
+    # A Kashmiri birch-bark manuscript of the Rupavatara, a later textbook
+    # built on his grammar - not the Ashtadhyayi itself. Commons has the
+    # Ashtadhyayi only as a single palm-leaf line, seven times wider than it
+    # is tall, which in the panel is a sliver. Same trade as Bhavabhuti below.
+    "bhagavad-gita": (
+        "File:1800 CE manuscript copy, 2nd century BCE Bhagavad Gita, "
+        "Schoyen Collection Norway.jpg"),
+    "arthashastra": (
+        "File:Rediscovered circa 16th century Arthashastra manuscript in "
+        "Grantha script from the Oriental Research Institute (ORI) which "
+        "was found in 1905 01.jpg"),
+    # The manuscript the 1905 rediscovery turned up, which the note describes.
+    "manusmriti": "File:Manusmriti.jpg",
+    "charaka-samhita": (
+        "File:A section of the Carakasamhita - sutrasthana "
+        "Wellcome L0040423.jpg"),
+    "natyashastra": "File:Natya Shastra (1898).jpg",
+    # The 1898 printed edition's title page; no early manuscript is on Commons.
+    "sangam-literature": (
+        "File:Palm-leaf manuscript, ancient and medieval Tamil literature "
+        "(partly Sangam era), Languages in the manuscript Tamil Telugu "
+        "Sanskrit, Scripts Grantha Telugu Tamil, Hindu Shaivism monastery, "
+        "UVSL 589.jpg"),
 }
 
 _TAG = re.compile(r"<[^>]+>")

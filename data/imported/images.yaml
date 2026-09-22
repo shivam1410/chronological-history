@@ -236,6 +236,13 @@ arpanet:
   source: https://commons.wikimedia.org/wiki/File:Arpanet_logical_map,_march_1977.png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Arpanet_logical_map%2C_march_1977.png/500px-Arpanet_logical_map%2C_march_1977.png
   url: images/arpanet.png
+arthashastra:
+  bytes: 25463
+  credit: Unknown scribe
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Rediscovered_circa_16th_century_Arthashastra_manuscript_in_Grantha_script_from_the_Oriental_Research_Institute_(ORI)_which_was_found_in_1905_01.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Rediscovered_circa_16th_century_Arthashastra_manuscript_in_Grantha_script_from_the_Oriental_Research_Institute_%28ORI%29_which_was_found_in_1905_01.jpg/500px-Rediscovered_circa_16th_century_Arthashastra_manuscript_in_Grantha_script_from_the_Oriental_Research_Institute_%28ORI%29_which_was_found_in_1905_01.jpg
+  url: images/arthashastra.jpg
 aryabhata:
   bytes: 100388
   credit: ''
@@ -413,6 +420,13 @@ bertrand-russell:
   source: https://commons.wikimedia.org/wiki/File:Bertrand_Russell_transparent_bg.png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Bertrand_Russell_transparent_bg.png/500px-Bertrand_Russell_transparent_bg.png
   url: images/bertrand-russell.png
+bhagavad-gita:
+  bytes: 118123
+  credit: Ms Sarah Welch
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:1800_CE_manuscript_copy,_2nd_century_BCE_Bhagavad_Gita,_Schoyen_Collection_Norway.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/1800_CE_manuscript_copy%2C_2nd_century_BCE_Bhagavad_Gita%2C_Schoyen_Collection_Norway.jpg/500px-1800_CE_manuscript_copy%2C_2nd_century_BCE_Bhagavad_Gita%2C_Schoyen_Collection_Norway.jpg
+  url: images/bhagavad-gita.jpg
 bhaskara-ii:
   bytes: 28304
   credit: ''
@@ -599,6 +613,13 @@ chaitanya:
   source: https://commons.wikimedia.org/wiki/File:Chaitanya-Mahabrabhu-at-Jagannath.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Chaitanya-Mahabrabhu-at-Jagannath.jpg/500px-Chaitanya-Mahabrabhu-at-Jagannath.jpg
   url: images/chaitanya.jpg
+charaka-samhita:
+  bytes: 76545
+  credit: ''
+  license: CC BY 4.0
+  source: https://commons.wikimedia.org/wiki/File:A_section_of_the_Carakasamhita_-_sutrasthana_Wellcome_L0040423.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/A_section_of_the_Carakasamhita_-_sutrasthana_Wellcome_L0040423.jpg/500px-A_section_of_the_Carakasamhita_-_sutrasthana_Wellcome_L0040423.jpg
+  url: images/charaka-samhita.jpg
 chaucer:
   bytes: 134971
   credit: Unknown author
@@ -2121,6 +2142,13 @@ mansa-musa-hajj:
   source: https://commons.wikimedia.org/wiki/File:Kanga_Moussa_Atlas_Catalan.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Kanga_Moussa_Atlas_Catalan.jpg/500px-Kanga_Moussa_Atlas_Catalan.jpg
   url: images/mansa-musa-hajj.jpg
+manusmriti:
+  bytes: 17568
+  credit: Katyare
+  license: CC BY-SA 3.0
+  source: https://commons.wikimedia.org/wiki/File:Manusmriti.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Manusmriti.jpg/500px-Manusmriti.jpg
+  url: images/manusmriti.jpg
 mao:
   bytes: 109493
   credit: Chen Zhengqing (1917–1966)
@@ -2388,6 +2416,13 @@ napoleon:
   source: https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg/500px-Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg
   url: images/napoleon.jpg
+natyashastra:
+  bytes: 34712
+  credit: Bharata Muni
+  license: Public domain
+  source: https://commons.wikimedia.org/wiki/File:Natya_Shastra_(1898).jpg
+  source_url: https://upload.wikimedia.org/wikipedia/commons/f/fa/Natya_Shastra_%281898%29.jpg
+  url: images/natyashastra.jpg
 nazca-lines:
   bytes: 39185
   credit: BjarteSorensen
@@ -2466,7 +2501,7 @@ norte-chico:
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Aspero.jpg/500px-Aspero.jpg
   url: images/norte-chico.jpg
 olmec:
-  bytes: 92008
+  bytes: 92045
   credit: ''
   license: CC BY 3.0
   source: https://commons.wikimedia.org/wiki/File:Olmec_Heartland_Overview_4.svg
@@ -2579,6 +2614,13 @@ pangaea:
   source: https://commons.wikimedia.org/wiki/File:Mollweide_Paleographic_Map_of_Earth,_225_Ma_(Norian_Age).png
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Mollweide_Paleographic_Map_of_Earth%2C_225_Ma_%28Norian_Age%29.png/500px-Mollweide_Paleographic_Map_of_Earth%2C_225_Ma_%28Norian_Age%29.png
   url: images/pangaea.png
+panini:
+  bytes: 83607
+  credit: ''
+  license: CC BY 4.0
+  source: https://commons.wikimedia.org/wiki/File:Birch_bark_MS_from_Kashmir_of_the_Rupavatra_Wellcome_L0032691.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Birch_bark_MS_from_Kashmir_of_the_Rupavatra_Wellcome_L0032691.jpg/500px-Birch_bark_MS_from_Kashmir_of_the_Rupavatra_Wellcome_L0032691.jpg
+  url: images/panini.jpg
 paper-making:
   bytes: 24464
   credit: Nikhilesh Haval
@@ -2989,6 +3031,13 @@ samoa-independence:
   source: https://commons.wikimedia.org/wiki/File:Beach_on_Upolu_Island,_Samoa,_2009.jpg
   source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Beach_on_Upolu_Island%2C_Samoa%2C_2009.jpg/500px-Beach_on_Upolu_Island%2C_Samoa%2C_2009.jpg
   url: images/samoa-independence.jpg
+sangam-literature:
+  bytes: 70571
+  credit: Ms Sarah Welch
+  license: CC BY-SA 4.0
+  source: https://commons.wikimedia.org/wiki/File:Palm-leaf_manuscript,_ancient_and_medieval_Tamil_literature_(partly_Sangam_era),_Languages_in_the_manuscript_Tamil_Telugu_Sanskrit,_Scripts_Grantha_Telugu_Tamil,_Hindu_Shaivism_monastery,_UVSL_589.jpg
+  source_url: https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Palm-leaf_manuscript%2C_ancient_and_medieval_Tamil_literature_%28partly_Sangam_era%29%2C_Languages_in_the_manuscript_Tamil_Telugu_Sanskrit%2C_Scripts_Grantha_Telugu_Tamil%2C_Hindu_Shaivism_monastery%2C_UVSL_589.jpg/500px-thumbnail.jpg
+  url: images/sangam-literature.jpg
 sappho:
   bytes: 78896
   credit: Marie-Lan Nguyen

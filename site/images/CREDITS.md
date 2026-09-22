@@ -40,6 +40,7 @@ as well as here, because most of these licences require it.
 | `ardipithecus` | T. Michael Keesey | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Ardi.jpg) |
 | `aristotle` | After Lysippos | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Aristotle_Altemps_Inv8575.jpg) |
 | `arpanet` | ARPANET | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Arpanet_logical_map,_march_1977.png) |
+| `arthashastra` | Unknown scribe | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Rediscovered_circa_16th_century_Arthashastra_manuscript_in_Grantha_script_from_the_Oriental_Research_Institute_(ORI)_which_was_found_in_1905_01.jpg) |
 | `aryabhata` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:2064_aryabhata-crp.jpg) |
 | `ashanti-empire` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Asante_map.jpg) |
 | `ashoka` | Photo Dharma from Sadao, Thailand | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Ashoka%27s_visit_to_the_Ramagrama_stupa_Sanchi_Stupa_1_Southern_gateway.jpg) |
@@ -65,6 +66,7 @@ as well as here, because most of these licences require it.
 | `berdyaev` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:NBerdyaev.jpg) |
 | `berlin-conference` | Adalbert von Roessler | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Kongokonferenz.jpg) |
 | `bertrand-russell` | Honourable Bertrand Russell.jpg: Photographer not identified derivative work: Conquistador | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Bertrand_Russell_transparent_bg.png) |
+| `bhagavad-gita` | Ms Sarah Welch | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:1800_CE_manuscript_copy,_2nd_century_BCE_Bhagavad_Gita,_Schoyen_Collection_Norway.jpg) |
 | `bhaskara-ii` | Unknown | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:%E0%A4%AD%E0%A4%BE%E0%A4%B8%E0%A5%8D%E0%A4%95%E0%A4%B0%E0%A4%BE%E0%A4%9A%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%AF.jpg) |
 | `bhavabhuti` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:M%C4%81lat%C4%ABm%C4%81dhava_Bhavabh%C5%ABti_(%E0%A4%AE%E0%A4%BE%E0%A4%B2%E0%A4%A4%E0%A5%80%E0%A4%AE%E0%A4%BE%E0%A4%A7%E0%A4%B5_%E0%A4%AD%E0%A4%B5%E0%A4%AD%E0%A5%82%E0%A4%A4%E0%A4%BF)%E2%80%93_Pigment_Painting_(Old).jpg) |
 | `bijak-kabir` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Kabir004.jpg) |
@@ -91,6 +93,7 @@ as well as here, because most of these licences require it.
 | `chaco-canyon` | National Park Service (United States) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Chaco_Canyon_Chetro_Ketl_great_kiva_plaza_NPS.jpg) |
 | `chagatai-khanate` | MapMaster | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Chagatai_Khanate_map_en.svg) |
 | `chaitanya` | Self | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Chaitanya-Mahabrabhu-at-Jagannath.jpg) |
+| `charaka-samhita` | Unknown | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:A_section_of_the_Carakasamhita_-_sutrasthana_Wellcome_L0040423.jpg) |
 | `chaucer` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Portrait_of_Geoffrey_Chaucer_(4671380)_(cropped)_02.jpg) |
 | `chavin` | Sharon odb | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Chav%C3%ADn_de_Hu%C3%A1ntar.JPG) |
 | `chimu` | Trustsongs | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Photomontage_Chimu_Culture.jpg) |
@@ -305,6 +308,7 @@ as well as here, because most of these licences require it.
 | `mali-empire` | attributed to Abraham Cresques | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Catalan_Atlas_BNF_Sheet_6_Western_Sahara.jpg) |
 | `mandela` | Kingkongphoto & www.celebrity-photos.com from Laurel | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Nelson_Mandela_1994.jpg) |
 | `mansa-musa-hajj` | Cresques Abraham | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Kanga_Moussa_Atlas_Catalan.jpg) |
+| `manusmriti` | Katyare | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Manusmriti.jpg) |
 | `mao` | Chen Zhengqing (1917–1966) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Mao_Tse_Tung.jpg) |
 | `marcus-aurelius` | Unknown | CC BY 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Marcus_Aurelius_Louvre_MR561_n02.jpg) |
 | `marie-curie` | Henri Manuel | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Marie_Curie_c1920.jpg) |
@@ -343,6 +347,7 @@ as well as here, because most of these licences require it.
 | `nagarjuna` | Unknown / Recovered from Himalayan Art Resources | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Nagarjuna_with_84_mahasiddha_cropped.jpg) |
 | `namibia-independence` | Diego Delso | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Duna_en_Sossusvlei,_Namibia,_2018-08-06,_DD_002.jpg) |
 | `napoleon` | Jacques-Louis David | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Jacques-Louis_David_-_The_Emperor_Napoleon_in_His_Study_at_the_Tuileries_-_Google_Art_Project.jpg) |
+| `natyashastra` | Bharata Muni | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Natya_Shastra_(1898).jpg) |
 | `nazca-lines` | BjarteSorensen | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Nazca_colibri.jpg) |
 | `neanderthal-admixture` | Steven E. Churchill, Kamryn Keys, Ann H. Ross | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_western_Eurasia_showing_areas_and_estimated_dates_of_possible_Neandertal%E2%80%93modern_human_hybridization_(in_red)_based_on_fossil_samples_from_indicated_sites.jpg) |
 | `neanderthal-extinction` | Berria | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Neanderthal_distribution.jpg) |
@@ -370,6 +375,7 @@ as well as here, because most of these licences require it.
 | `pali-canon-written` | Unknown | CC BY-SA 2.5 | [Commons](https://commons.wikimedia.org/wiki/File:Tipitaka1.jpg) |
 | `panama-canal` | User:Stan Shebs | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Panama_Canal_Gatun_Locks.jpg) |
 | `pangaea` | Scotese, Christopher R.; Vérard, Christian; Burgener, Landon; Elling, Reece P.; Kocsis, Ádám T. | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Mollweide_Paleographic_Map_of_Earth,_225_Ma_(Norian_Age).png) |
+| `panini` | Unknown | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Birch_bark_MS_from_Kashmir_of_the_Rupavatra_Wellcome_L0032691.jpg) |
 | `paper-making` | Nikhilesh Haval | Copyrighted free use | [Commons](https://commons.wikimedia.org/wiki/File:Paperball_2.jpeg) |
 | `paranthropus` | Einsamer Schütze | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Smac_Pal%C3%A4olithikum_013.jpg) |
 | `paris-agreement` | L.tak | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:ParisAgreement.svg) |
@@ -427,6 +433,7 @@ as well as here, because most of these licences require it.
 | `sahul-separation` | Maximilian Dörrbecker (Chumwa) | CC BY-SA 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_Sunda_and_Sahul.png) |
 | `samanid-empire` | Original file by Ro4444, edited by me | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Map_of_the_Samanid_amirate_at_the_death_of_Nasr_II,_943.svg) |
 | `samoa-independence` | Stephen Glauser | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File:Beach_on_Upolu_Island,_Samoa,_2009.jpg) |
+| `sangam-literature` | Ms Sarah Welch | CC BY-SA 4.0 | [Commons](https://commons.wikimedia.org/wiki/File:Palm-leaf_manuscript,_ancient_and_medieval_Tamil_literature_(partly_Sangam_era),_Languages_in_the_manuscript_Tamil_Telugu_Sanskrit,_Scripts_Grantha_Telugu_Tamil,_Hindu_Shaivism_monastery,_UVSL_589.jpg) |
 | `sappho` | Marie-Lan Nguyen | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:Bust_Sappho_Musei_Capitolini_MC1164.jpg) |
 | `sartre` | User:T1980 | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File:Jean_Paul_Sartre_1967.jpg) |
 | `satyendra-bose` | Unknown author | Public domain | [Commons](https://commons.wikimedia.org/wiki/File:SatyenBose1925.jpg) |

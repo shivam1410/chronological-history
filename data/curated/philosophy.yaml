@@ -152,7 +152,7 @@
     disputed.
   summary: Political theorist and minister to the first Mauryan emperor, whose
     Arthashastra treats statecraft, economics and espionage without moralising.
-  related: [maurya-empire]
+  related: [maurya-empire, arthashastra]
 
 - id: nagarjuna
   title: Nagarjuna
@@ -558,7 +558,7 @@
   categories: [philosopher, ethics, human-rights]
   summary: Economist and jurist who dismantled the philosophical defence of
     caste, drafted India's constitution, and led a mass conversion to Buddhism.
-  related: [indian-independence, buddha]
+  related: [indian-independence, buddha, manusmriti]
 
 - id: gandhi-ahimsa
   significance: >-
