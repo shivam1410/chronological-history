@@ -129,6 +129,36 @@ export function createTimeline(canvas, {
    * are part of it.
    */
   const SPANNING_ALPHA = 0.42;
+  /*
+   * Background only works while it is the minority.
+   *
+   * The rule above assumes a few slabs among many dated bars. Zoom to a single
+   * year and that inverts: at 2022-2023, 23 of 25 visible entries run clean
+   * through the window, so everything dimmed at once and the chart read as a
+   * shadow of itself with two bright bars in it. Dimming everything separates
+   * nothing - it just turns the lights down.
+   *
+   * So the treatment switches off when spanning bars stop being the exception.
+   */
+  const SPANNING_MAX_SHARE = 0.5;
+  let backgroundOK = true;
+
+  /** Does backgrounding still tell the reader anything at this zoom? */
+  function assessBackground() {
+    let total = 0;
+    let spanning = 0;
+    for (const lane of layout) {
+      for (const row of lane.rows) {
+        for (const item of row) {
+          if (item.point) continue;
+          total += 1;
+          if (item.entry.kind !== 'person'
+              && item.x0 <= 0 && item.x0 + item.w >= width - gutter) spanning += 1;
+        }
+      }
+    }
+    backgroundOK = total === 0 || spanning / total <= SPANNING_MAX_SHARE;
+  }
   let hover = null;
   const laneById = new Map(lanes.map((lane) => [lane.id, lane]));
 
@@ -537,7 +567,7 @@ export function createTimeline(canvas, {
          * The selected entry is never background either - you asked for it,
          * so it is the subject however long it runs.
          */
-        const spanning = !item.point && !ghost
+        const spanning = backgroundOK && !item.point && !ghost
           && item.entry.kind !== 'person'
           && item.entry.id !== selectedId
           && item.x0 <= 0 && item.x0 + item.w >= width - gutter;
@@ -663,6 +693,7 @@ export function createTimeline(canvas, {
     if (!view) return;
     theme = readTheme();
     layout = computeLayout();
+    assessBackground();
 
     ctx.fillStyle = theme.bg;
     ctx.fillRect(0, 0, width, height);
