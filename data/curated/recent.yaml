@@ -1,0 +1,381 @@
+# The last twenty-five years, which were almost entirely missing.
+#
+# Two entries in 522 began after 2000 - South Sudan's independence and
+# COVID-19 - so a reader who zoomed to their own lifetime found nothing but
+# long-running bars passing through. That is not a judgement that nothing
+# happened; it is a dataset that stopped paying attention around 1994.
+#
+# Recency is the hard part here. Everything else on this timeline has had
+# time to be argued over, and these have not: the significance lines are
+# written to say what changed rather than what it will mean, and where the
+# verdict is obviously still open the note says so.
+
+# ---- the 2000s ----
+- id: september-11
+  significance: >-
+    The two decades of war that followed killed vastly more people than the
+    attack did, in countries that had not carried it out.
+  title: The September 11 attacks
+  kind: event
+  regions: [north-america, americas]
+  start: 2001
+  end: 2001
+  importance: 5
+  confidence: high
+  categories: [war, military]
+  summary: Four hijacked aircraft killed 2,977 people in New York, at the
+    Pentagon and in a Pennsylvania field, and produced a reordering of American
+    law, borders and foreign policy that outlasted the presidency that began it.
+  related: [iraq-war]
+
+- id: iraq-war
+  title: The Iraq War
+  kind: event
+  regions: [west-asia, mesopotamia]
+  start: 2003
+  end: 2011
+  importance: 4
+  confidence: contested
+  categories: [war, military]
+  note: >-
+    The stated justification - Iraqi weapons of mass destruction - proved to
+    be unfounded, which is not disputed. The death toll is: documented
+    civilian deaths pass 200,000, while survey-based estimates of total excess
+    deaths run several times higher and are argued over on method.
+  summary: An invasion by the United States and its allies removed Saddam
+    Hussein in three weeks and then occupied the country for eight years,
+    through an insurgency and a sectarian civil war whose consequences
+    included the conditions for the Islamic State.
+  related: [september-11]
+
+- id: india-liberalisation
+  significance: >-
+    Three weeks of foreign reserves left, and the response rewrote the terms
+    of the Indian economy. Growth roughly doubled over the following two
+    decades; so did inequality.
+  title: India's economic liberalisation
+  kind: event
+  regions: [india, north-india]
+  start: 1991
+  end: 1991
+  importance: 5
+  confidence: high
+  categories: [economics, trade]
+  summary: A balance-of-payments crisis forced India to pledge gold and accept
+    IMF terms, and Narasimha Rao's government used the moment to dismantle the
+    licence system — Manmohan Singh's July budget opened the economy to
+    foreign investment and ended four decades of planned autarky.
+  related: [indian-independence]
+
+- id: m-pesa
+  significance: >-
+    Banking reached people the banks had never reached, on handsets that were
+    not smartphones, in a country with few branches. It was copied across
+    Africa and South Asia long before the rich world had anything comparable.
+  title: M-Pesa and mobile money
+  kind: technology
+  regions: [east-africa, africa]
+  start: 2007
+  end: ongoing
+  importance: 4
+  confidence: high
+  categories: [economics, trade, instrument]
+  note: >-
+    Kept open because it is infrastructure in daily use rather than an episode
+    that closed. By the late 2010s a sum equivalent to around half of Kenyan
+    GDP was moving through it each year.
+  summary: A Kenyan service that let anyone with a basic phone send money by
+    text, turning airtime agents into a banking network and giving tens of
+    millions their first account of any kind.
+
+- id: smartphone
+  significance: >-
+    Within fifteen years most of humanity was carrying a networked computer,
+    and the industries of photography, navigation, music, retail, taxis and
+    news were rebuilt around that fact.
+  title: The smartphone
+  kind: technology
+  regions: [science, north-america]
+  start: 2007
+  end: ongoing
+  importance: 5
+  confidence: medium
+  categories: [computing, instrument]
+  note: >-
+    Not the first: Nokia, BlackBerry and IBM's Simon all put computing on a
+    phone before this. The 2007 iPhone is the bracket's opening because the
+    touchscreen-plus-app-store pattern it set is the one every later device
+    copied, not because it invented the category.
+  summary: A pocket computer with a camera, a satellite receiver and a
+    permanent network connection, which went from a luxury to the default way
+    most people on Earth use a computer at all.
+  related: [social-media, world-wide-web]
+
+- id: social-media
+  significance: >-
+    The first communications medium where the sorting is done by software
+    optimising for attention. What that has done to politics and to teenagers
+    is argued over with real evidence on more than one side.
+  title: Social media
+  kind: technology
+  regions: [science, north-america]
+  start: [2004, 2006]
+  end: ongoing
+  importance: 4
+  confidence: contested
+  categories: [computing, civilisation]
+  note: >-
+    The bracket opens between Facebook in 2004 and Twitter in 2006; earlier
+    networks existed and did not reach the scale. Claims about its effects on
+    mental health and on democracy are contested in the literature rather than
+    settled, and this entry does not settle them either.
+  summary: Networks where users supply the content and an algorithm chooses who
+    sees it, which within a decade carried a substantial share of the world's
+    news, politics, advertising and social life.
+  related: [smartphone]
+
+- id: financial-crisis-2008
+  title: The global financial crisis
+  kind: event
+  regions: [global, north-america]
+  start: 2007
+  end: 2009
+  importance: 5
+  confidence: high
+  categories: [economics]
+  note: >-
+    The bracket opens in August 2007, when BNP Paribas froze three funds and
+    interbank lending seized, rather than at the Lehman failure in September
+    2008 that is usually remembered as the start.
+  summary: American mortgage losses propagated through securitised debt into a
+    banking collapse and the deepest global recession since the 1930s — met
+    with bank rescues, a decade of austerity in much of Europe, and a politics
+    that has not gone back to what it was.
+
+- id: aadhaar
+  title: Aadhaar
+  kind: technology
+  regions: [india, north-india]
+  start: 2009
+  end: ongoing
+  importance: 4
+  confidence: contested
+  categories: [computing, human-rights]
+  note: >-
+    Genuinely two-sided. It gave hundreds of millions a usable identity and
+    cut leakage from welfare transfers; it has also produced documented
+    exclusion when biometrics fail for manual labourers and the elderly, and
+    the Supreme Court in 2018 upheld it for state benefits while striking down
+    its mandatory use by private companies.
+  summary: A biometric identity number issued to over a billion Indians, the
+    largest such system ever built, used to route subsidies and payments
+    directly to individuals.
+  related: [upi, india-liberalisation]
+
+# ---- the 2010s ----
+- id: arab-spring
+  significance: >-
+    Four governments fell in two years. A decade later Tunisia alone had kept
+    anything like the result, and Syria, Libya and Yemen were at war.
+  title: The Arab Spring
+  kind: event
+  regions: [north-africa, west-asia]
+  start: 2010
+  end: 2012
+  importance: 4
+  confidence: high
+  categories: [independence, human-rights]
+  summary: A Tunisian street vendor's self-immolation in December 2010 set off
+    protests that removed the rulers of Tunisia, Egypt, Libya and Yemen, and
+    were met elsewhere with concessions, repression or civil war.
+  related: [social-media]
+
+- id: crispr
+  significance: >-
+    Editing a genome went from a specialist project to something a graduate
+    student could do in a week, which is why the ethical argument arrived at
+    the same time as the technique.
+  title: CRISPR gene editing
+  kind: technology
+  regions: [science, western-europe]
+  start: 2012
+  end: ongoing
+  importance: 5
+  confidence: high
+  categories: [biology, discovery, medicine]
+  note: >-
+    Doudna and Charpentier's 2012 paper showed the system could be programmed
+    to cut chosen DNA; the Nobel followed in 2020. In 2018 He Jiankui used it
+    on human embryos that were carried to term, which was condemned almost
+    universally and brought him a prison sentence. The first approved therapy,
+    for sickle-cell disease, came in 2023.
+  summary: A bacterial immune mechanism repurposed into a cheap, precise way of
+    cutting and rewriting DNA in any organism, and now the basis of approved
+    treatments for inherited disease.
+  related: [human-genome, dna-structure]
+
+- id: deep-learning
+  significance: >-
+    The methods had been published for decades. What changed was enough data
+    and enough parallel hardware to make them work, which is a reminder of how
+    often an idea waits for its machinery.
+  title: Machine learning becomes general-purpose
+  kind: technology
+  regions: [science, north-america]
+  start: 2012
+  end: ongoing
+  importance: 5
+  confidence: contested
+  categories: [computing, discovery]
+  note: >-
+    The bracket opens at AlexNet in 2012, the image model whose margin of
+    victory made neural networks the default approach. AlphaGo followed in
+    2016, the transformer in 2017, and general-purpose language models from
+    2020. How far this goes is exactly the kind of question this timeline is
+    usually written long after; it is open here because it is unresolved, not
+    because the answer is known.
+  summary: Neural networks trained on very large datasets moved from a
+    research approach to the method behind image recognition, translation,
+    protein structure prediction and systems that produce fluent language.
+  related: [turing, transistor, integrated-circuit]
+
+- id: gravitational-waves
+  significance: >-
+    Einstein predicted them in 1916 and doubted they could ever be measured.
+    The measurement is a change in length a thousandth the width of a proton.
+  title: Gravitational waves detected
+  kind: event
+  regions: [science, north-america]
+  start: 2015
+  end: 2015
+  importance: 4
+  confidence: high
+  categories: [physics, astronomy, discovery]
+  note: >-
+    Detected on 14 September 2015 and announced in February 2016 once the
+    result had been checked; the Nobel followed in 2017. The source was two
+    black holes of about thirty solar masses merging more than a billion years
+    ago.
+  summary: LIGO measured a ripple in spacetime passing through the Earth,
+    confirming the last untested prediction of general relativity and opening
+    a way of observing the universe that does not use light.
+  related: [einstein]
+
+- id: paris-agreement
+  title: The Paris Agreement
+  kind: event
+  regions: [global, western-europe]
+  start: 2015
+  end: 2015
+  importance: 4
+  confidence: high
+  categories: [climate, treaty]
+  note: >-
+    Nearly universal and largely unenforceable: each country sets its own
+    target and there is no penalty for missing it. Emissions have continued to
+    rise since, and the 1.5°C limit is now widely expected to be passed.
+  summary: A treaty adopted by nearly every country, committing them to hold
+    warming well below 2°C above pre-industrial levels and to try for 1.5°C,
+    through pledges each government writes for itself.
+  related: [coal-and-carbon, pacific-sea-level]
+
+- id: upi
+  significance: >-
+    A state-built payment rail rather than a company's product, free at the
+    point of use, which is why it took a share of everyday payments that card
+    networks never reached.
+  title: Unified Payments Interface
+  kind: technology
+  regions: [india, north-india]
+  start: 2016
+  end: ongoing
+  importance: 4
+  confidence: high
+  categories: [economics, computing, trade]
+  note: >-
+    Kept open as working infrastructure. By the mid-2020s it was handling
+    well over ten billion transactions a month and a large share of the
+    world's real-time payments by volume.
+  summary: Public payment infrastructure that let any Indian bank account send
+    money instantly to any other from a phone, and pushed digital payment down
+    to the vegetable stall.
+  related: [aadhaar, m-pesa]
+
+- id: brexit
+  title: Brexit
+  kind: event
+  regions: [britain, europe]
+  start: 2016
+  end: 2020
+  importance: 4
+  confidence: high
+  categories: [independence, economics]
+  summary: A referendum in June 2016 voted by 52 to 48 to leave the European
+    Union; four years of negotiation and two changes of prime minister later,
+    the United Kingdom left — the first country to reverse the direction
+    European integration had run in since 1957.
+
+# ---- the 2020s ----
+- id: mrna-vaccines
+  significance: >-
+    Eleven months from the publication of a viral genome to an authorised
+    vaccine, against a previous record measured in years. The groundwork took
+    thirty years and was for most of that time unfundable.
+  title: mRNA vaccines
+  kind: technology
+  regions: [science, western-europe]
+  start: 2020
+  end: ongoing
+  importance: 5
+  confidence: high
+  categories: [medicine, biology, discovery]
+  note: >-
+    Katalin Karikó and Drew Weissman's 2005 work on modifying mRNA so the
+    immune system would tolerate it is the step that made this possible; both
+    spent years with grants refused and Karikó was demoted over it. The Nobel
+    came in 2023.
+  summary: Vaccines that deliver instructions rather than a pathogen, letting
+    the body make the target protein itself — authorised within a year of
+    COVID-19's genome being published, and now being turned on other diseases.
+  related: [covid-19]
+
+- id: james-webb
+  title: The James Webb Space Telescope
+  kind: technology
+  regions: [science, north-america]
+  start: 2021
+  # Launch and commissioning, not the whole operating life. The Panama Canal
+  # gets its ten years of construction and the Grand Canal its two campaigns;
+  # that an instrument is still working belongs in a sentence.
+  end: 2022
+  importance: 4
+  confidence: high
+  categories: [astronomy, instrument, discovery]
+  note: >-
+    Launched on 25 December 2021 after roughly twenty-five years of
+    development and repeated overruns, and returned its first images in July
+    2022. Its deployment involved several hundred single-point failures at a
+    distance where no repair was possible; none of them failed.
+  summary: An infrared observatory a million and a half kilometres from Earth,
+    with a segmented mirror six and a half metres across, built to see the
+    first galaxies and the atmospheres of planets around other stars.
+
+- id: ukraine-invasion
+  title: The invasion of Ukraine
+  kind: event
+  regions: [eastern-europe, europe]
+  start: 2022
+  end: ongoing
+  importance: 5
+  confidence: contested
+  categories: [war, military]
+  note: >-
+    Open because it is still being fought. The bracket opens at the full-scale
+    invasion of February 2022; the war began in 2014 with the annexation of
+    Crimea and fighting in the Donbas, and where to date its start is itself
+    part of the argument. Casualty figures from all sides are unverifiable
+    while it continues.
+  summary: Russia's full-scale invasion of Ukraine, the largest war in Europe
+    since 1945 — which failed to take Kyiv in its opening weeks and settled
+    into an artillery and drone war along a front of a thousand kilometres.
+  related: [soviet-dissolution]

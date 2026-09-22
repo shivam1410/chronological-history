@@ -382,10 +382,18 @@
   kind: period
   regions: [china, east-asia]
   start: 1978
-  end: ongoing
+  end: [2012, 2026]
   importance: 5
-  confidence: high
+  confidence: contested
   categories: [economics]
+  note: >-
+    The end is a live argument and this entry used to settle it by running to
+    the present, which is taking a side quietly. Beijing still uses gaige
+    kaifang as current policy and marked its fortieth anniversary in 2018.
+    Many analysts date the era's close to about 2012, when the direction
+    turned towards state-led consolidation, larger roles for the Party in
+    firms, and a slowing of private-sector liberalisation. The bracket holds
+    both readings rather than choosing.
   summary: Market reforms under Deng Xiaoping moved several hundred million
     people out of poverty within a generation, the fastest such change ever
     recorded.
