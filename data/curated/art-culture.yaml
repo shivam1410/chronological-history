@@ -37,8 +37,8 @@
   title: Valmiki
   kind: person
   regions: [art-culture, north-india]
-  start: [-500, -300]
-  end: [-400, -200]
+  start: [-700, -400]
+  end: [-600, -300]
   importance: 4
   confidence: contested
   categories: [poet, epic, literature]
@@ -117,17 +117,23 @@
   title: Thiruvalluvar
   kind: person
   regions: [art-culture, south-india]
-  start: [-300, 100]
-  end: [-200, 200]
+  start: [-300, 500]
+  end: [-200, 650]
   importance: 3
   confidence: contested
   categories: [poet, literature, ethics]
-  note: The dating spans some five centuries and is argued on linguistic
-    grounds. The Tamil Nadu government's official date of 31 BCE is a
-    convention, not a finding.
+  note: >-
+    Proposals run from 300 BCE to the seventh century CE and the bracket holds
+    all of them, but the weight has shifted a long way. Zvelebil dated the
+    Tirukkural to 450-500 CE on grammatical innovations absent from Sangam
+    literature, and that is now the usual scholarly position - some five
+    centuries after the Tamil Nadu government's official date of 31 BCE, which
+    was adopted in the 1920s and is a convention rather than a finding.
   summary: Author of the Tirukkural, 1,330 couplets on virtue, wealth and
     love that belong to no one religion — which is why Jains, Hindus and
     Christians have each claimed him.
+  sources:
+    - {title: "Wikipedia — Dating the Tirukkural", url: "https://en.wikipedia.org/wiki/Dating_the_Tirukkural"}
 
 # ---- the medieval world ----
 - id: li-bai

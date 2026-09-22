@@ -45,15 +45,23 @@
   title: Sushruta
   kind: person
   regions: [science, north-india]
-  start: [-800, -600]
-  end: [-700, -500]
+  start: [-600, -100]
+  end: [-500, 100]
   importance: 3
   confidence: contested
   categories: [scientist, medicine]
-  note: Dating rests on the Sushruta Samhita's layers; the surviving text was
-    revised for centuries after any historical Sushruta.
+  note: >-
+    The 600 BCE date still quoted everywhere comes from Hoernle in 1907 and has
+    outlived its evidence. Meulenbeld's survey of Indian medical literature puts
+    the composition of the Sushruta Samhita in the last centuries BCE at the
+    earliest, with the surviving recension - the one Dalhana commented on -
+    taking shape between the third and fifth centuries CE. A historical Sushruta
+    behind the text is a reasonable inference and nothing more, so the bracket
+    is wide.
   summary: Associated with an early surgical tradition describing cataract
     couching, reconstructive skin grafts, and hundreds of instruments.
+  sources:
+    - {title: "Wikipedia — Sushruta Samhita", url: "https://en.wikipedia.org/wiki/Sushruta_Samhita"}
 
 - id: euclid
   title: Euclid

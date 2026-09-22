@@ -144,8 +144,12 @@
   importance: 4
   confidence: contested
   categories: [philosopher, ruler]
-  note: The Arthashastra reached its present form centuries later; how much is
-    his is disputed.
+  note: >-
+    His own dates are traditional. The Arthashastra is a separate question:
+    McClish and Olivelle read it as a composite assembled between the second
+    century BCE and the third century CE, so the treatise that carries his name
+    postdates any historical Kautilya by centuries, and how much of it is his is
+    disputed.
   summary: Political theorist and minister to the first Mauryan emperor, whose
     Arthashastra treats statecraft, economics and espionage without moralising.
   related: [maurya-empire]

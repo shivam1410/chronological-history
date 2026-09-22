@@ -84,14 +84,18 @@
   title: The Pali Canon is committed to writing
   kind: work
   regions: [sri-lanka, india]
-  start: [-29, -29]
-  end: [-17, 100]
+  start: [-89, -29]
+  end: [-77, 100]
   importance: 5
   confidence: contested
   categories: [scripture]
-  note: Sri Lankan chronicles place the writing at Aluvihare during a famine,
-    around 29 BCE. Theravada tradition holds the oral transmission to have been
-    exact, so the gap is a gap in writing, not necessarily in content.
+  note: >-
+    Sri Lankan chronicles place the writing at Aluvihare during a famine, in the
+    reign of Vattagamani Abhaya - but that reign is itself dated two ways. The
+    chronology Geiger worked out in 1912 gives 29-17 BCE and is the figure
+    usually cited; the older reckoning puts him in 89-77 BCE. Theravada
+    tradition holds the oral transmission to have been exact, so the gap is a
+    gap in writing, not necessarily in content.
   summary: Roughly four centuries after the Buddha's death, his teachings were
     written on palm leaves in Sri Lanka because war and famine threatened the
     monks who held them in memory.

@@ -344,13 +344,17 @@
   kind: work
   regions: [north-india, india]
   start: [-800, -500]
-  end: [-300, -100]
+  end: [-300, 100]
   importance: 5
   confidence: contested
   categories: [scripture, philosophy]
-  note: The oldest prose Upanishads (Brihadaranyaka, Chandogya) are usually put
-    at c. 800–500 BCE; the later verse Upanishads extend to the early centuries
-    BCE. Individual datings vary widely between scholars.
+  note: >-
+    The oldest prose Upanishads, Brihadaranyaka and Chandogya, are usually put
+    at c. 800-500 BCE and are pre-Buddhist. The verse Upanishads follow in the
+    last centuries BCE, and Olivelle places the two late prose ones, Prashna and
+    Mandukya, no earlier than about the start of the common era - which is where
+    the bracket closes. He also warns that any dating of these texts more
+    precise than a few centuries is a house of cards.
   summary: Philosophical dialogues concluding the Vedic corpus, introducing
     brahman, atman and rebirth, and forming the basis of Vedanta.
   related: [rigveda]
@@ -408,15 +412,18 @@
   title: Composition of the Valmiki Ramayana
   kind: work
   regions: [north-india, india]
-  start: [-500, -200]
+  start: [-700, -400]
   end: [100, 300]
   importance: 5
   confidence: contested
   categories: [epic, scripture]
-  note: The core books are generally dated to roughly the 5th–4th centuries BCE,
-    with books 1 and 7 added later; the text reached something like its present
-    form by about the 3rd century CE. Traditional accounts place the events far
-    earlier, in the Treta Yuga.
+  note: >-
+    Books 2 to 6 are the oldest, with 1 and 7 added later. Brockington reads the
+    language and puts the first oral stage around the fifth century BCE;
+    Goldman argues the archetype cannot be much earlier than the start of the
+    seventh, which is where the bracket opens. The text reached something like
+    its present form by about the third century CE. Traditional accounts place
+    the events far earlier, in the Treta Yuga.
   summary: The Sanskrit epic of Rama, Sita and Ravana, ascribed to Valmiki. With
     the Mahabharata it is one of the two great epics of the subcontinent and the
     source of retellings across South and Southeast Asia.
